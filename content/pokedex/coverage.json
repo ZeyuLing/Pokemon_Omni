@@ -1,0 +1,29 @@
+{
+  "content_sha256": "8deaac4783364baff47c40d068217e67c341a73f5edec3b8325f4c7323293805",
+  "entries": 2153,
+  "base_species": 1025,
+  "localized_base_species": 1025,
+  "reference_browsable": 2080,
+  "research_only": 73,
+  "categories": {
+    "base": 1025,
+    "dynamax": 661,
+    "mega": 97,
+    "gigantamax": 32,
+    "rocket_bond_candidate": 23,
+    "regional": 61,
+    "other_form_review": 193,
+    "cosmetic": 52,
+    "primal_reversion": 2,
+    "ultra_burst": 1,
+    "tera_related": 6
+  },
+  "limitations": [
+    "Not a complete current official-form audit",
+    "Dynamax reference entries currently generated for base species; regional/state eligibility remains to extend",
+    "Bond candidate stats and art unavailable",
+    "Acquisition routes and capture gates unassigned",
+    "Remote preview sprites are optional, not GBA assets",
+    "Cosmetic combinations such as Alcremie sweets are not exhaustively enumerated"
+  ]
+}

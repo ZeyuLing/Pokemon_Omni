@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": "illustrative_bindings_no_existing_scenes",
+  "quest_id": "quest.partner_introduction",
+  "platforms": {
+    "gba": {
+      "world.lab.entrance": {"map_id": "OMNI_DEMO_LAB", "tile_x": 4, "tile_y": 7},
+      "world.lab.mentor": {"map_id": "OMNI_DEMO_LAB", "object_id": "DEMO_MENTOR", "character_id": "character.research_mentor"}
+    },
+    "open_world_3d": {
+      "world.lab.entrance": {"scene_id": "demo_lab", "entity_id": "entrance_trigger"},
+      "world.lab.mentor": {"scene_id": "demo_lab", "entity_id": "mentor_actor", "character_id": "character.research_mentor"}
+    }
+  }
+}

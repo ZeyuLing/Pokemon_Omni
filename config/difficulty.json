@@ -1,0 +1,47 @@
+{
+  "schema_version": 2,
+  "status": "policy_core_implemented_game_adapter_pending",
+  "profiles": [
+    {
+      "id": "easy",
+      "name_zh": "简单",
+      "ai": "basic",
+      "player_level_cap": false,
+      "npc_level_scaling": false,
+      "npc_ivs": "authored",
+      "player_bag": true,
+      "player_gimmick_quota": "unlimited"
+    },
+    {
+      "id": "hard",
+      "name_zh": "困难",
+      "ai": "medium_public_information",
+      "player_level_cap": true,
+      "npc_level_scaling": true,
+      "npc_ivs": "31_except_audited_strategy",
+      "player_bag": false,
+      "player_gimmick_quota": 1,
+      "bond_distribution": "strong_trainers"
+    },
+    {
+      "id": "insane",
+      "name_zh": "疯子",
+      "ai": "strongest_bounded_public_information",
+      "player_level_cap": true,
+      "npc_level_scaling": true,
+      "npc_ivs": "31_except_audited_strategy",
+      "player_bag": false,
+      "player_gimmick_quota": 1,
+      "bond_distribution": "strong_and_selected_ordinary_trainers",
+      "permanent_mega": "explicit_boss_allowlist"
+    }
+  ],
+  "forbidden_difficulty_modifiers": [
+    "read_hidden_player_state",
+    "read_committed_player_action",
+    "rigged_rng",
+    "unannounced_stat_bonus"
+  ],
+  "team_sizes": "authored_1_to_6",
+  "natures_and_evs": "role_appropriate_not_universal_template"
+}

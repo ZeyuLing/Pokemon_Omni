@@ -1,0 +1,8 @@
+{
+  "name": "omni-legality-reference",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Development-host upstream rules validator; never shipped in a GBA ROM",
+  "scripts": {"test": "node test.cjs"},
+  "dependencies": {"pokemon-showdown": "0.11.11"}
+}

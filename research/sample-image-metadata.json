@@ -1,0 +1,74 @@
+[
+  {
+    "species": "fuecoco",
+    "file": "back.png",
+    "width": 64,
+    "height": 64,
+    "bit_depth": 4,
+    "color_type": 3
+  },
+  {
+    "species": "fuecoco",
+    "file": "front.png",
+    "width": 64,
+    "height": 64,
+    "bit_depth": 4,
+    "color_type": 3
+  },
+  {
+    "species": "fuecoco",
+    "file": "icon.png",
+    "width": 32,
+    "height": 64,
+    "bit_depth": 8,
+    "color_type": 3
+  },
+  {
+    "species": "quaxly",
+    "file": "back.png",
+    "width": 64,
+    "height": 64,
+    "bit_depth": 8,
+    "color_type": 3
+  },
+  {
+    "species": "quaxly",
+    "file": "front.png",
+    "width": 64,
+    "height": 64,
+    "bit_depth": 8,
+    "color_type": 3
+  },
+  {
+    "species": "quaxly",
+    "file": "icon.png",
+    "width": 32,
+    "height": 64,
+    "bit_depth": 8,
+    "color_type": 3
+  },
+  {
+    "species": "sprigatito",
+    "file": "back.png",
+    "width": 64,
+    "height": 64,
+    "bit_depth": 8,
+    "color_type": 3
+  },
+  {
+    "species": "sprigatito",
+    "file": "front.png",
+    "width": 64,
+    "height": 64,
+    "bit_depth": 8,
+    "color_type": 3
+  },
+  {
+    "species": "sprigatito",
+    "file": "icon.png",
+    "width": 32,
+    "height": 64,
+    "bit_depth": 8,
+    "color_type": 3
+  }
+]

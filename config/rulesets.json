@@ -1,0 +1,46 @@
+{
+  "schema_version": 2,
+  "status": "policy_core_implemented_full_battle_pending",
+  "common": {
+    "free_switch_after_opponent_faints": false,
+    "announce_next_opponent": false,
+    "badge_stat_boosts": false,
+    "affection_battle_bonuses": false,
+    "read_opponent_committed_action": false,
+    "read_hidden_opponent_state": false,
+    "ai_rng_separate_from_battle_rng": true
+  },
+  "rulesets": [
+    {
+      "id": "omni_campaign_v1",
+      "classification": "custom_campaign",
+      "mode": "singles_or_authored_doubles",
+      "team_size": "authored_1_to_6",
+      "level": "story_and_difficulty_policy",
+      "gimmicks": [
+        "mega",
+        "z_move",
+        "dynamax",
+        "tera",
+        "bond"
+      ],
+      "independent_quotas": true,
+      "uses_per_mechanic_per_side": 1,
+      "easy_player_uses": "unlimited",
+      "bond_quota_status": "proposed_default",
+      "permanent_mega": {
+        "insane_npc_allowlist_only": true,
+        "held_item_allowed": true,
+        "consumes_mega_quota": false,
+        "other_mechanics_allowed": false,
+        "player_obtainable": false
+      }
+    },
+    {
+      "id": "official_doubles_reserved",
+      "classification": "official_format_reserved",
+      "custom_bond_forms": false,
+      "enabled": false
+    }
+  ]
+}

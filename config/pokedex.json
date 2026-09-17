@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "status": "portable_core_and_interactive_preview_implemented_gba_ui_pending",
+  "catalog": "content/pokedex/catalog.json",
+  "identity_inventory": "content/pokedex/entries.json",
+  "runtime_core": "core/src/pokedex.c",
+  "generated_rom_table": "content/pokedex/generated/catalog.c",
+  "preview": "adapters/pokedex-preview/index.html",
+  "default_view": "all_species_and_special_forms",
+  "special_forms_are_standalone_entries": true,
+  "shared_national_number_does_not_merge_entries": true,
+  "group_by_species_is_optional_view": true,
+  "filters": ["region", "type", "base", "regional", "mega", "dynamax", "gigantamax", "primal_reversion", "ultra_burst", "tera_related", "bond", "boss_only"],
+  "progress": ["seen", "registered", "player_unlocked"],
+  "completion_requires_capturing_temporary_forms": false,
+  "boss_only_registration": "encounter_or_defeat_per_story",
+  "ordinary_dynamax": {
+    "presentation": "individually_browsable_state_entry_for_eligible_forms",
+    "data_storage": "reference_base_form_plus_mechanic_modifier",
+    "eligibility": "official_swsh_general_rule_plus_explicit_community_availability_crosscheck",
+    "generate_speculative_out_of_scope_entries": false,
+    "official_per_species_verification_complete": false
+  },
+  "z_moves": "mechanic_and_move_pages_linked_from_entries_not_invented_species",
+  "generic_tera": "browsable_type_state_in_entry_without_cartesian_product_of_species_records",
+  "unverified_records": "research_catalog_only_not_production_unlocks",
+  "approved_acquisition_policy": {
+    "all_official_species_obtainable_in_one_save": true,
+    "required_online_events": false,
+    "required_real_world_limited_events": false,
+    "mythical_pokemon_have_in_game_quests": true
+  }
+}

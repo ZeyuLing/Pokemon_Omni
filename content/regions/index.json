@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "status": "planning_inventory_no_maps_implemented",
+  "regions": [
+    {"id": "kanto", "name_zh": "关都", "priority": "P1", "story_anchor": "FRLG", "asset_strategy": "expansion_frlg_reference_and_adaptation"},
+    {"id": "sevii", "name_zh": "七之岛", "priority": "P1", "story_anchor": "FRLG_postgame", "asset_strategy": "expansion_frlg_reference_and_adaptation"},
+    {"id": "johto", "name_zh": "城都", "priority": "P2", "story_anchor": "GSC_HGSS", "asset_strategy": "gba_redraw_from_verified_references"},
+    {"id": "hoenn", "name_zh": "丰缘", "priority": "P0", "story_anchor": "Emerald_with_ORAS_optional_arc", "asset_strategy": "expansion_native"},
+    {"id": "sinnoh", "name_zh": "神奥", "priority": "P2", "story_anchor": "DP_Platinum", "asset_strategy": "gba_redraw"},
+    {"id": "unova", "name_zh": "合众", "priority": "P3", "story_anchor": "BW_then_B2W2", "asset_strategy": "gba_redraw"},
+    {"id": "kalos", "name_zh": "卡洛斯", "priority": "P3", "story_anchor": "XY_with_ZA_separate_adaptation", "asset_strategy": "gba_redraw"},
+    {"id": "alola", "name_zh": "阿罗拉", "priority": "P3", "story_anchor": "SM_or_USUM_branch", "asset_strategy": "gba_redraw"},
+    {"id": "galar", "name_zh": "伽勒尔", "priority": "P3", "story_anchor": "SwSh_including_isle_and_tundra", "asset_strategy": "gba_redraw"},
+    {"id": "hisui", "name_zh": "洗翠", "priority": "P4", "story_anchor": "Legends_Arceus_time_chapter", "asset_strategy": "gba_redraw_and_gameplay_adaptation"},
+    {"id": "paldea", "name_zh": "帕底亚", "priority": "P3", "story_anchor": "SV_three_paths_and_area_zero", "asset_strategy": "gba_redraw"},
+    {"id": "kitakami", "name_zh": "北上乡", "priority": "P4", "story_anchor": "SV_DLC", "asset_strategy": "gba_redraw"},
+    {"id": "blueberry", "name_zh": "蓝莓学园", "priority": "P4", "story_anchor": "SV_DLC", "asset_strategy": "gba_redraw"},
+    {"id": "future_gen10", "name_zh": "新作地区预留", "priority": "future", "story_anchor": "Winds_Waves_announced_2027", "asset_strategy": "unreleased_no_invented_content"}
+  ]
+}

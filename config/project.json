@@ -1,0 +1,41 @@
+{
+  "project": "Pokemon Omni",
+  "schema_version": 2,
+  "stage": "research_and_design",
+  "target": "portable_game_core",
+  "primary_platform": "gba_hardware",
+  "platforms": {
+    "gba_hardware": {"status": "first_delivery_target", "rom_limit_bytes": 33554432},
+    "headless_host": {"status": "required_portability_validation_target"},
+    "open_world_3d": {"status": "future_frontend", "engine": null}
+  },
+  "architecture": {
+    "core_language": "portable_c99_subset_proposed",
+    "content_source": "platform_neutral_declarative_data",
+    "state_authority": "core_per_domain",
+    "platform_dependencies_in_core": false,
+    "shared_rules_require_matching_versions": true
+  },
+  "engine": {
+    "role": "gba_adapter_candidate_and_legacy_reference_not_shared_core",
+    "repository": "https://github.com/rh-hideout/pokeemerald-expansion",
+    "tag": "expansion/1.17.0",
+    "commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "status": "candidate_source_inspected_not_built",
+    "path": "engine/pokeemerald-expansion"
+  },
+  "generation_policy": {
+    "baseline": "released_gen_1_to_9_content",
+    "future": "announced_content_is_reference_only_until_verified_and_supported",
+    "audit_date": "2026-09-17"
+  },
+  "user_reference_versions": {
+    "team_rocket_dragonsden": "2.1",
+    "ultimate_emerald": {
+      "original_team": "5.1-5.5",
+      "successors": "5.6-5.8",
+      "provenance": "user_reported_2026-09-17",
+      "exact_successor_authors_and_rules": "unverified"
+    }
+  }
+}

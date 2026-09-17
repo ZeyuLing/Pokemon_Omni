@@ -1,0 +1,15 @@
+{
+  "schema_version": 2,
+  "status": "roster_research_effects_pending",
+  "roster": "content/bond/rocket-2.1-roster.json",
+  "basis": "Dragonsden_2.1",
+  "uses_shared_gimmick_token": false,
+  "proposed_uses_per_battle": 1,
+  "easy_player_uses": "unlimited",
+  "activation": "pending_design",
+  "held_item_requirement": null,
+  "duration_turns": null,
+  "switch_out_behavior": null,
+  "all_species_supported": false,
+  "official_formats_allowed": false
+}

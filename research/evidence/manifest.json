@@ -1,0 +1,302 @@
+[
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/README.md",
+    "relative_path": "research/evidence/rhh/README.md",
+    "kind": "source_evidence",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:35.3026331Z",
+    "status": "downloaded",
+    "bytes": 4502,
+    "sha256": "8881a5d77e30fe40a4ab4de7ab077961d109e4d3b32baee06a650fd3b256ed18"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/FEATURES.md",
+    "relative_path": "research/evidence/rhh/FEATURES.md",
+    "kind": "source_evidence",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:35.5059100Z",
+    "status": "downloaded",
+    "bytes": 8694,
+    "sha256": "8bf44e2b6a01f00cb31450284f80784f618001117531eeecb588732b3d7c4774"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/CREDITS.md",
+    "relative_path": "research/evidence/rhh/CREDITS.md",
+    "kind": "source_evidence",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:36.0204750Z",
+    "status": "downloaded",
+    "bytes": 31586,
+    "sha256": "fcbe3c3bdeb477a02d307c7b7a4437aadbd518b07392f679f07134dafd209a6e"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/INSTALL.md",
+    "relative_path": "research/evidence/rhh/INSTALL.md",
+    "kind": "source_evidence",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:36.5540353Z",
+    "status": "downloaded",
+    "bytes": 7351,
+    "sha256": "3b4e87a0ab5aa73a1fad798a100c77410f36a98cb8e0aaf74c0ea76d37768c0c"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/Makefile",
+    "relative_path": "research/evidence/rhh/Makefile",
+    "kind": "source_evidence",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:37.1375992Z",
+    "status": "downloaded",
+    "bytes": 22257,
+    "sha256": "49cdf5f9c7a981eb20b286247684b563344b7712917f860af15e62130075a914"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/include/config/ai.h",
+    "relative_path": "research/evidence/rhh/include/config/ai.h",
+    "kind": "source_evidence",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:37.3530059Z",
+    "status": "downloaded",
+    "bytes": 14764,
+    "sha256": "e02715eb465d29944cfdf8a65ab270fcea9ffed84a9963a27bcc017dbbbdcea2"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/include/constants/battle_ai.h",
+    "relative_path": "research/evidence/rhh/include/constants/battle_ai.h",
+    "kind": "source_evidence",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:37.5479242Z",
+    "status": "downloaded",
+    "bytes": 7119,
+    "sha256": "bb8b05f67f74d82b068fc20329774df4efae9d93636d1aaec9840736268b63fa"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/include/config/battle.h",
+    "relative_path": "research/evidence/rhh/include/config/battle.h",
+    "kind": "source_evidence",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:38.0323966Z",
+    "status": "downloaded",
+    "bytes": 55103,
+    "sha256": "56d3eb68994173519b3910781e29de112d8dc6cf040928b9151917cc1026f94c"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/include/config/pokemon.h",
+    "relative_path": "research/evidence/rhh/include/config/pokemon.h",
+    "kind": "source_evidence",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:38.6750718Z",
+    "status": "downloaded",
+    "bytes": 10537,
+    "sha256": "e476277d082276ac078452c44482cf9b3b6fb076159fe4745f0774bc276b85ba"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/include/constants/species.h",
+    "relative_path": "research/evidence/rhh/include/constants/species.h",
+    "kind": "source_evidence",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:38.8367897Z",
+    "status": "downloaded",
+    "bytes": 55257,
+    "sha256": "cd07f8773c77b41b9821ac030cbc3e0ef82cc6f0740efc7608afbf5ffe78ceaf"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/docs/tutorials/how_to_frlg.md",
+    "relative_path": "research/evidence/rhh/docs/tutorials/how_to_frlg.md",
+    "kind": "source_evidence",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:39.0006933Z",
+    "status": "downloaded",
+    "bytes": 6424,
+    "sha256": "231849ced4ae919b8c6e6ecd1945517cd02db77faa09b8d1e017f102196d316c"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/docs/tutorials/how_to_testing_system.md",
+    "relative_path": "research/evidence/rhh/docs/tutorials/how_to_testing_system.md",
+    "kind": "source_evidence",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:39.1556913Z",
+    "status": "downloaded",
+    "bytes": 25435,
+    "sha256": "0df7c82e9c031bf7d251cfd0b5ff2f0bd9ab1b59ce5b593fd31c7f33c7a49f06"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/docs/install/windows/WSL.md",
+    "relative_path": "research/evidence/rhh/docs/install/windows/WSL.md",
+    "kind": "source_evidence",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:39.6480692Z",
+    "status": "downloaded",
+    "bytes": 4296,
+    "sha256": "6a2accb582d7287b387a8eaa5b8a19c9f27a289bfef560f49dcd39840b9e7581"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/docs/install/linux/UBUNTU.md",
+    "relative_path": "research/evidence/rhh/docs/install/linux/UBUNTU.md",
+    "kind": "source_evidence",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:40.1457989Z",
+    "status": "downloaded",
+    "bytes": 254,
+    "sha256": "cf681729c399b9f22198ef45fc8e9e127aa3fdaec09ddbb494976bc27c3d5418"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/docs/install/linux/DEBIAN.md",
+    "relative_path": "research/evidence/rhh/docs/install/linux/DEBIAN.md",
+    "kind": "source_evidence",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:40.6291044Z",
+    "status": "downloaded",
+    "bytes": 254,
+    "sha256": "25d4ba62d7a3e1a0142f637f236b4f37c3b8fe256322117620ee50d9c1c94f83"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/graphics/pokemon/sprigatito/front.png",
+    "relative_path": "assets/imported/research_samples/sprigatito/front.png",
+    "kind": "art_sample_pending_individual_credit_review",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:40.8429930Z",
+    "status": "downloaded",
+    "bytes": 618,
+    "sha256": "1c59ed8b837e64c4578be735ed58539be3d2b9f67adb1a507925e998bc3e4244"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/graphics/pokemon/sprigatito/back.png",
+    "relative_path": "assets/imported/research_samples/sprigatito/back.png",
+    "kind": "art_sample_pending_individual_credit_review",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:41.3456534Z",
+    "status": "downloaded",
+    "bytes": 524,
+    "sha256": "95fe263e0a436c18367a05dc6cbeabdc3c19b14a2694e191addf8813cb896a7b"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/graphics/pokemon/sprigatito/icon.png",
+    "relative_path": "assets/imported/research_samples/sprigatito/icon.png",
+    "kind": "art_sample_pending_individual_credit_review",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:41.8265213Z",
+    "status": "downloaded",
+    "bytes": 693,
+    "sha256": "365a540f416dd76d59daf3a49c5f83624a58dee44226af835dc215b79be03739"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/graphics/pokemon/sprigatito/normal.pal",
+    "relative_path": "assets/imported/research_samples/sprigatito/normal.pal",
+    "kind": "art_sample_pending_individual_credit_review",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:42.6228176Z",
+    "status": "downloaded",
+    "bytes": 153,
+    "sha256": "e1cb2e6801f50e20588542e5bbcd302f93adcb6287b7fe1407ef0597b9ea2a29"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/graphics/pokemon/sprigatito/shiny.pal",
+    "relative_path": "assets/imported/research_samples/sprigatito/shiny.pal",
+    "kind": "art_sample_pending_individual_credit_review",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:43.6924896Z",
+    "status": "downloaded",
+    "bytes": 155,
+    "sha256": "f340503c8cf3f07c500f9aa8ab564662ab0da9ac8dcb623b16a021106d52510e"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/graphics/pokemon/fuecoco/front.png",
+    "relative_path": "assets/imported/research_samples/fuecoco/front.png",
+    "kind": "art_sample_pending_individual_credit_review",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:44.6903851Z",
+    "status": "downloaded",
+    "bytes": 564,
+    "sha256": "d78b20364bf649df9460ef7577e2882ce12c2cc094dae663ed0f3026c6350b42"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/graphics/pokemon/fuecoco/back.png",
+    "relative_path": "assets/imported/research_samples/fuecoco/back.png",
+    "kind": "art_sample_pending_individual_credit_review",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:45.6820549Z",
+    "status": "downloaded",
+    "bytes": 529,
+    "sha256": "6f5e6f25c2e01f57562ae7b56bc8d5e4407a06f9102f7272f582a422edf0a422"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/graphics/pokemon/fuecoco/icon.png",
+    "relative_path": "assets/imported/research_samples/fuecoco/icon.png",
+    "kind": "art_sample_pending_individual_credit_review",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:46.4323647Z",
+    "status": "downloaded",
+    "bytes": 699,
+    "sha256": "71eb77f4a87d2c766271e8a0cdd5a2be548433999dafa95aee1df9e35ea31a8b"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/graphics/pokemon/fuecoco/normal.pal",
+    "relative_path": "assets/imported/research_samples/fuecoco/normal.pal",
+    "kind": "art_sample_pending_individual_credit_review",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:47.0149233Z",
+    "status": "downloaded",
+    "bytes": 187,
+    "sha256": "14bf5786e1a0ba233cee9322b960839cede88dcc0e9b9822ee77727ebf0f5b74"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/graphics/pokemon/fuecoco/shiny.pal",
+    "relative_path": "assets/imported/research_samples/fuecoco/shiny.pal",
+    "kind": "art_sample_pending_individual_credit_review",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:47.5341259Z",
+    "status": "downloaded",
+    "bytes": 190,
+    "sha256": "142f3216a7316e10a86aa393211669287edf7b8dc316f184e2f64a38b5a0e67c"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/graphics/pokemon/quaxly/front.png",
+    "relative_path": "assets/imported/research_samples/quaxly/front.png",
+    "kind": "art_sample_pending_individual_credit_review",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:48.0715304Z",
+    "status": "downloaded",
+    "bytes": 529,
+    "sha256": "8583e37405e74a976e045250d50c65851174227c7836e676d4f7190f5cd4f25d"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/graphics/pokemon/quaxly/back.png",
+    "relative_path": "assets/imported/research_samples/quaxly/back.png",
+    "kind": "art_sample_pending_individual_credit_review",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:48.5700021Z",
+    "status": "downloaded",
+    "bytes": 448,
+    "sha256": "918df42264ea39959c496684625dc709553dd281f4dc580085463167e4350c94"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/graphics/pokemon/quaxly/icon.png",
+    "relative_path": "assets/imported/research_samples/quaxly/icon.png",
+    "kind": "art_sample_pending_individual_credit_review",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:49.0923777Z",
+    "status": "downloaded",
+    "bytes": 725,
+    "sha256": "62a851315c617188c34ea4fc49692b8782ccc8f707483a2578ad5caa43ff5868"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/graphics/pokemon/quaxly/normal.pal",
+    "relative_path": "assets/imported/research_samples/quaxly/normal.pal",
+    "kind": "art_sample_pending_individual_credit_review",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:49.6601960Z",
+    "status": "downloaded",
+    "bytes": 168,
+    "sha256": "48e05d4ec6fa09c76c61bdab3068deaa86fa238c227c766e0e0e96eeab8c9bf4"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7/graphics/pokemon/quaxly/shiny.pal",
+    "relative_path": "assets/imported/research_samples/quaxly/shiny.pal",
+    "kind": "art_sample_pending_individual_credit_review",
+    "upstream_commit": "e8bd1cd7b03fc032ea37e3ecd38b379b5d01a1e7",
+    "accessed_at_utc": "2026-09-17T08:41:50.1811395Z",
+    "status": "downloaded",
+    "bytes": 171,
+    "sha256": "35ec0f359db974380ed06628124314472658872bfdb5406b5cbda291da831949"
+  }
+]

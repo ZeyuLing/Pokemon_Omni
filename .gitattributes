@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.png binary
+*.wasm binary
+# Preserve vendored source snapshot bytes for SHA-256 verification.
+research/catalog-sources/*.csv -text

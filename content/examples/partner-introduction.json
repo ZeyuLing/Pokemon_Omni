@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": "contract_example_not_executable",
+  "quest_id": "quest.partner_introduction",
+  "character_id": "character.research_mentor",
+  "required_anchor_ids": ["world.lab.entrance", "world.lab.mentor"],
+  "initial_state": "available",
+  "transitions": [
+    {"from": "available", "trigger": "interact_character", "subject_id": "character.research_mentor", "to": "offered", "effects": [{"type": "show_dialogue", "id": "dialogue.partner_trial_offer"}]},
+    {"from": "offered", "trigger": "choose_dialogue_option", "subject_id": "option.accept_trial", "to": "trial_requested", "effects": [{"type": "request_battle", "encounter_id": "encounter.partner_trial", "correlation_id": "quest.partner_introduction.trial"}]},
+    {"from": "trial_requested", "trigger": "core_battle_finished", "subject_id": "quest.partner_introduction.trial", "condition": {"outcome": "win"}, "to": "completed", "effects": [{"type": "unlock_quest", "id": "quest.partner_bond", "once_key": "reward.partner_introduction"}]},
+    {"from": "trial_requested", "trigger": "core_battle_finished", "subject_id": "quest.partner_introduction.trial", "condition": {"outcome": "loss"}, "to": "available", "effects": []}
+  ],
+  "notes": "Illustrates semantic IDs and a correlated trusted battle result. Full dialogue, cancellation, validation schemas and runtime execution are not implemented."
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "status": "portable_validator_and_host_reference_implemented_content_catalog_pending",
+  "hard_insane_capture_gates": true,
+  "capture_gate_meaning": "capture_story_available_not_plot_mention",
+  "ev_per_stat_max": 252,
+  "ev_total_max": 510,
+  "iv_max": 31,
+  "level_max": 100,
+  "move_validation": "single_compatible_acquisition_route_for_complete_set",
+  "invalid_mon_action": "atomic_deposit_no_release",
+  "unknown_or_incomplete_data_action": "block_and_report_data_problem_never_accuse_or_deposit",
+  "overcap_action": "adjust_team_no_automatic_deposit",
+  "storage_full_action": "no_mutation_open_storage_management",
+  "runtime_mutations": "revalidate_before_each_trainer_battle",
+  "save_security": "consistency_checks_not_unforgeable_offline_anticheat",
+  "host_reference": {
+    "package": "pokemon-showdown",
+    "version": "0.11.11",
+    "format": "explicit_cli_argument",
+    "scope": "reference_formats_only"
+  }
+}

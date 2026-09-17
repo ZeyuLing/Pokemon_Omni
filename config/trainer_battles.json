@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "highest_player_level": "entire_carried_party_including_fainted_excluding_eggs",
+  "npc_baseline": "max(authored_level,progress_level,gym_cap_if_applicable)",
+  "hard_insane_scaling": "if party_max > baseline: min(100, party_max + 1); else baseline",
+  "at_level_100": "equal_100_due_to_species_level_ceiling",
+  "low_level_strategy_exception": "explicit_authored_and_reviewed",
+  "gym_cap_unlock": "first_victory_each_required_gym_only",
+  "gym_cap_values": "pending_story_content",
+  "rematch": {
+    "unlimited": true,
+    "first_encounter": "automatic_sight_or_interaction",
+    "subsequent": "interaction_then_confirmation",
+    "prompt_zh": "是想再战斗一次吗？",
+    "levels": "current_story_progress_then_difficulty_scaling",
+    "rewards": "repeat_reward_table_no_repeated_story_unlock"
+  },
+  "easy_rematch": "authored_progress_level_not_player_scaling"
+}

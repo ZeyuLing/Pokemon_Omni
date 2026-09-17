@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Omni 图鉴 · 物种与形态</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<a class="skip" href="#detail">跳到宝可梦资料</a>
+<header class="mast"><div class="brand"><span class="mark" aria-hidden="true"></span><div><strong>OMNI<span>全国图鉴</span></strong><p>物种、形态与伙伴的完整档案</p></div></div><span class="edition">FIELD INDEX <b>研究预览 / 01</b></span></header>
+<main>
+<div class="intro"><div><p class="eyebrow">探索每一种可能</p><h1>每一个形态，都有自己的记录。</h1><p class="muted">普通、Mega、超极巨化与羁绊在同一图鉴中独立展示。待核实资料保留明确标记。</p></div><div id="totals" class="totals" aria-label="图鉴进度">正在载入资料…</div></div>
+<div id="notice" role="status" aria-live="polite"></div>
+<section class="toolbar" aria-label="图鉴筛选">
+<label class="search">搜索名称或全国编号<input id="search" type="search" maxlength="80" placeholder="例如：喷火龙、Charizard、006" autocomplete="off"></label>
+<label>形态分类<select id="category"><option value="0">全部形态</option></select></label>
+<label>属性<select id="type"><option value="0">全部属性</option></select></label>
+<label>初登场世代<select id="generation"><option value="0">全部世代</option></select></label>
+<label>收集进度<select id="progress"><option value="0">全部记录</option><option value="1">未发现</option><option value="2">已见过</option><option value="3">已登记</option><option value="4">已解锁</option></select></label>
+<label class="check"><input id="research" type="checkbox" checked>包含待核实条目</label><button id="clear" class="quiet">清除筛选</button>
+</section>
+<div class="workspace">
+<section class="index" aria-label="图鉴条目列表"><div class="index-head"><strong>图鉴目录</strong><span id="result-count" role="status">加载中</span></div><div id="entries" class="entry-list" aria-busy="true"><p class="empty">正在读取物种与形态档案…</p></div><nav class="pagination" aria-label="图鉴分页"><button id="previous" disabled>上一页</button><span id="page">—</span><button id="next" disabled>下一页</button></nav></section>
+<article id="detail" tabindex="-1" aria-label="宝可梦详细资料"><div class="empty"><h2>正在准备图鉴</h2><p>加载完成后，选择任一形态查看资料。</p></div></article>
+</div>
+<footer><div><strong>收集记录 · 仅本机预览</strong><p>这里的手动登记用于验证图鉴，不代表游戏内获得资格。正式游戏由战斗与剧情事件登记。</p></div><div class="save-tools"><button id="export" disabled>导出记录</button><label class="file-button">导入记录<input id="import" type="file" accept=".odex" disabled></label></div></footer>
+<details class="about"><summary>资料来源与当前覆盖范围</summary><p>物种、形态和战斗资料来自固定 Pokémon Showdown 0.11.11；中文名称使用 PokeAPI 数据快照。招式列表用于研究，不能代替配招合法性验证。羁绊候选及未核实形态不填入猜测数值。图片为可选在线参考，加载失败不影响资料浏览。</p><p>本预览还不代表完整游戏内容：捕捉剧情、地区分布、部分形态的中文名称与资源，以及全部当前形态的逐项审定仍在整理。</p><a href="/coverage.json" target="_blank" rel="noopener">查看覆盖报告</a></details>
+</main><script type="module" src="/app.js"></script>
+</body></html>
