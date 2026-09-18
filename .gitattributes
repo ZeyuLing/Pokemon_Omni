@@ -2,4 +2,4 @@
 *.png binary
 *.wasm binary
 # Preserve vendored source snapshot bytes for SHA-256 verification.
-research/catalog-sources/*.csv -text
+research/catalog-sources/*.csv -text whitespace=cr-at-eol

@@ -11,6 +11,16 @@ typedef struct {
     uint8_t category, generation, research_only, reserved;
 } OmniDexEntry;
 typedef struct { const OmniDexEntry *entries; uint16_t count; } OmniDex;
+
+/* Read-only catalog references, not approved battle rules. Same index order as OmniDex. */
+typedef struct {
+    uint32_t id, parent_id;
+    uint16_t stats[6]; /* HP, attack, defense, special attack, special defense, speed */
+    uint16_t abilities[4]; /* normal 0/1, hidden H, special S; 0 means absent */
+    uint8_t type1, type2, has_stats, author_reference;
+} OmniDexProfile;
+const OmniDexProfile *omni_dex_profile(const OmniDex *dex, const OmniDexProfile *profiles,
+    uint16_t profile_count, uint32_t id);
 typedef struct { uint8_t *flags; uint16_t count; } OmniDexState;
 typedef struct {
     const char *text;

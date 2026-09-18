@@ -17,6 +17,18 @@ unsigned dex_count(void) { return omni_pokedex_catalog.count; }
 unsigned dex_input_ptr(void) { return (unsigned)(uintptr_t)input; }
 unsigned dex_result_ptr(void) { return (unsigned)(uintptr_t)results; }
 unsigned dex_id(unsigned index) { return index<state.count?omni_pokedex_catalog.entries[index].id:0; }
+unsigned dex_stat(unsigned index,unsigned stat) {
+    const OmniDexProfile *p;
+    if(index>=state.count||stat>=6)return 0;
+    p=omni_dex_profile(&omni_pokedex_catalog,omni_pokedex_profiles,OMNI_CATALOG_ENTRY_COUNT,dex_id(index));
+    return p&&p->has_stats?p->stats[stat]:0;
+}
+unsigned dex_parent(unsigned index) {
+    return index<state.count?omni_pokedex_profiles[index].parent_id:0;
+}
+unsigned dex_ability(unsigned index,unsigned slot) {
+    return index<state.count&&slot<4?omni_pokedex_profiles[index].abilities[slot]:0;
+}
 unsigned dex_flags(unsigned index) { return index<state.count?flags[index]:0; }
 unsigned dex_total(unsigned flag) { return omni_dex_count(&omni_pokedex_catalog,&state,(uint8_t)flag,0); }
 unsigned dex_query(unsigned category,unsigned gen,unsigned type,unsigned progress,unsigned research,unsigned national,unsigned offset) {

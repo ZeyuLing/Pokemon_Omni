@@ -1,0 +1,450 @@
+{
+  "schema_version": 1,
+  "source_url": "https://www.mediafire.com/file/jagpq55gx21rv8d/Pkmn_Edicion_Team_Rocket_-_Dragonsden_-_.zip/file",
+  "author_post": "https://whackahack.com/foro/threads/31-12-2024-pokemon-edicion-team-rocket-4-regiones-kanto-archi7-johto-y-hoenn.65493/",
+  "archive_sha256": "311c6aebcc34fd9b2a6fb1c59be1d95c2822c2ebe2e4a463b43b09f4614a8224",
+  "document_sha256": "41fca3a03df6042865905db0b57f3fb582cf3f2f897b25294c580cedfd8321d8",
+  "document": "Fuertes Vínculo.txt",
+  "retrieved_at": "2026-09-18",
+  "version_status": "Author-linked archive; document has no explicit 2.1 marker. Exact 2.1 equivalence remains unverified.",
+  "records": [
+    {
+      "name": "Rhyperior",
+      "stats": {
+        "hp": 125,
+        "atk": 175,
+        "def": 175,
+        "spa": 65,
+        "spd": 65,
+        "spe": 55
+      },
+      "reported_total": 670,
+      "computed_total": 660,
+      "types": [
+        "Steel",
+        "Ground"
+      ],
+      "ability": "Speed Boost",
+      "source_issues": [
+        "Author stated total differs from sum of six stats"
+      ]
+    },
+    {
+      "name": "Hypno",
+      "stats": {
+        "hp": 95,
+        "atk": 63,
+        "def": 110,
+        "spa": 143,
+        "spd": 165,
+        "spe": 32
+      },
+      "reported_total": 608,
+      "computed_total": 608,
+      "types": [
+        "Psychic"
+      ],
+      "ability": "Magic Bounce",
+      "source_issues": []
+    },
+    {
+      "name": "Rapidash",
+      "stats": {
+        "hp": 75,
+        "atk": 135,
+        "def": 90,
+        "spa": 80,
+        "spd": 100,
+        "spe": 145
+      },
+      "reported_total": 625,
+      "computed_total": 625,
+      "types": [
+        "Fire",
+        "Flying"
+      ],
+      "ability": "Fur Coat",
+      "source_issues": []
+    },
+    {
+      "name": "Butterfree",
+      "stats": {
+        "hp": 60,
+        "atk": 5,
+        "def": 80,
+        "spa": 140,
+        "spd": 125,
+        "spe": 110
+      },
+      "reported_total": 520,
+      "computed_total": 520,
+      "types": [
+        "Psychic",
+        "Flying"
+      ],
+      "ability": "Adaptability",
+      "source_issues": []
+    },
+    {
+      "name": "Kingdra",
+      "stats": {
+        "hp": 85,
+        "atk": 120,
+        "def": 120,
+        "spa": 120,
+        "spd": 120,
+        "spe": 100
+      },
+      "reported_total": 665,
+      "computed_total": 665,
+      "types": [
+        "Dark",
+        "Water"
+      ],
+      "ability": "Contrary",
+      "source_issues": []
+    },
+    {
+      "name": "Skarmory",
+      "stats": {
+        "hp": 75,
+        "atk": 110,
+        "def": 160,
+        "spa": 45,
+        "spd": 100,
+        "spe": 100
+      },
+      "reported_total": 590,
+      "computed_total": 590,
+      "types": [
+        "Steel",
+        "Flying"
+      ],
+      "ability": "Volt Absorb",
+      "source_issues": []
+    },
+    {
+      "name": "Poliwrath",
+      "stats": {
+        "hp": 100,
+        "atk": 145,
+        "def": 140,
+        "spa": 80,
+        "spd": 110,
+        "spe": 80
+      },
+      "reported_total": 635,
+      "computed_total": 655,
+      "types": [
+        "Water",
+        "Fighting"
+      ],
+      "ability": "Iron Fist",
+      "source_issues": [
+        "Author stated total differs from sum of six stats"
+      ]
+    },
+    {
+      "name": "Eevee",
+      "stats": {
+        "hp": 130,
+        "atk": 60,
+        "def": 110,
+        "spa": 130,
+        "spd": 110,
+        "spe": 110
+      },
+      "reported_total": 650,
+      "computed_total": 650,
+      "types": [
+        "Normal"
+      ],
+      "ability": "Protean",
+      "source_issues": []
+    },
+    {
+      "name": "Mamoswine",
+      "stats": {
+        "hp": 120,
+        "atk": 170,
+        "def": 115,
+        "spa": 70,
+        "spd": 85,
+        "spe": 105
+      },
+      "reported_total": 665,
+      "computed_total": 665,
+      "types": [
+        "Ice",
+        "Ground"
+      ],
+      "ability": "Refrigerate",
+      "source_issues": [
+        "Author uses Mamoswine-M in the stat line under MAMOSWINE-&"
+      ]
+    },
+    {
+      "name": "Delphox",
+      "stats": {
+        "hp": 85,
+        "atk": 79,
+        "def": 82,
+        "spa": 164,
+        "spd": 130,
+        "spe": 119
+      },
+      "reported_total": 659,
+      "computed_total": 659,
+      "types": [
+        "Fire",
+        "Psychic"
+      ],
+      "ability": "Magic Bounce",
+      "source_issues": []
+    },
+    {
+      "name": "Feraligatr",
+      "stats": {
+        "hp": 95,
+        "atk": 165,
+        "def": 130,
+        "spa": 79,
+        "spd": 103,
+        "spe": 88
+      },
+      "reported_total": 660,
+      "computed_total": 660,
+      "types": [
+        "Water",
+        "Dark"
+      ],
+      "ability": "Strong Jaw",
+      "source_issues": []
+    },
+    {
+      "name": "Flareon EN",
+      "stats": {
+        "hp": 85,
+        "atk": 152,
+        "def": 75,
+        "spa": 116,
+        "spd": 137,
+        "spe": 85
+      },
+      "reported_total": 650,
+      "computed_total": 650,
+      "types": [
+        "Fire"
+      ],
+      "ability": "Sheer Force",
+      "source_issues": []
+    },
+    {
+      "name": "Jolteon RAI",
+      "stats": {
+        "hp": 85,
+        "atk": 85,
+        "def": 75,
+        "spa": 137,
+        "spd": 116,
+        "spe": 152
+      },
+      "reported_total": 650,
+      "computed_total": 650,
+      "types": [
+        "Electric"
+      ],
+      "ability": "No Guard",
+      "source_issues": []
+    },
+    {
+      "name": "Vaporeon SUI",
+      "stats": {
+        "hp": 152,
+        "atk": 85,
+        "def": 75,
+        "spa": 137,
+        "spd": 116,
+        "spe": 85
+      },
+      "reported_total": 650,
+      "computed_total": 650,
+      "types": [
+        "Water"
+      ],
+      "ability": "Magic Guard",
+      "source_issues": []
+    },
+    {
+      "name": "Ninetales",
+      "stats": {
+        "hp": 83,
+        "atk": 67,
+        "def": 90,
+        "spa": 121,
+        "spd": 140,
+        "spe": 129
+      },
+      "reported_total": 630,
+      "computed_total": 630,
+      "types": [
+        "Fire",
+        "Ghost"
+      ],
+      "ability": "Fur Coat",
+      "source_issues": []
+    },
+    {
+      "name": "Crobat Protagonist",
+      "stats": {
+        "hp": 95,
+        "atk": 120,
+        "def": 95,
+        "spa": 85,
+        "spd": 105,
+        "spe": 160
+      },
+      "reported_total": 660,
+      "computed_total": 660,
+      "types": [
+        "Poison",
+        "Flying"
+      ],
+      "ability": "Compound Eyes",
+      "source_issues": []
+    },
+    {
+      "name": "Crobat Andra",
+      "stats": {
+        "hp": 95,
+        "atk": 160,
+        "def": 115,
+        "spa": 85,
+        "spd": 85,
+        "spe": 120
+      },
+      "reported_total": 660,
+      "computed_total": 660,
+      "types": [
+        "Poison",
+        "Steel"
+      ],
+      "ability": "Levitate",
+      "source_issues": []
+    },
+    {
+      "name": "Volcarona",
+      "stats": {
+        "hp": 95,
+        "atk": 50,
+        "def": 75,
+        "spa": 190,
+        "spd": 130,
+        "spe": 135
+      },
+      "reported_total": 675,
+      "computed_total": 675,
+      "types": [
+        "Fire",
+        "Bug"
+      ],
+      "ability": "Magic Guard",
+      "source_issues": []
+    },
+    {
+      "name": "Milotic",
+      "stats": {
+        "hp": 115,
+        "atk": 65,
+        "def": 79,
+        "spa": 150,
+        "spd": 195,
+        "spe": 91
+      },
+      "reported_total": 695,
+      "computed_total": 695,
+      "types": [
+        "Water",
+        "Psychic"
+      ],
+      "ability": "Volt Absorb",
+      "source_issues": []
+    },
+    {
+      "name": "Goodra",
+      "stats": {
+        "hp": 100,
+        "atk": 125,
+        "def": 125,
+        "spa": 150,
+        "spd": 200,
+        "spe": 25
+      },
+      "reported_total": 725,
+      "computed_total": 725,
+      "types": [
+        "Dragon",
+        "Poison"
+      ],
+      "ability": "Contrary",
+      "source_issues": []
+    },
+    {
+      "name": "Dragonite",
+      "stats": {
+        "hp": 101,
+        "atk": 91,
+        "def": 115,
+        "spa": 154,
+        "spd": 154,
+        "spe": 110
+      },
+      "reported_total": 725,
+      "computed_total": 725,
+      "types": [
+        "Dragon",
+        "Fairy"
+      ],
+      "ability": "No Guard",
+      "source_issues": []
+    },
+    {
+      "name": "Jirachi",
+      "stats": {
+        "hp": 110,
+        "atk": 50,
+        "def": 155,
+        "spa": 155,
+        "spd": 155,
+        "spe": 100
+      },
+      "reported_total": 725,
+      "computed_total": 725,
+      "types": [
+        "Steel",
+        "Fairy"
+      ],
+      "ability": "Levitate",
+      "source_issues": []
+    },
+    {
+      "name": "Sacred Dragon Dun",
+      "stats": {
+        "hp": 163,
+        "atk": 2,
+        "def": 103,
+        "spa": 157,
+        "spd": 193,
+        "spe": 109
+      },
+      "reported_total": 727,
+      "computed_total": 727,
+      "types": [
+        "Dragon",
+        "Psychic"
+      ],
+      "ability": "Psychic Surge",
+      "source_issues": []
+    }
+  ]
+}

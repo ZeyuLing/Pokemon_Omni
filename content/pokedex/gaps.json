@@ -1,0 +1,1815 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-09-18",
+  "bond_version_and_rules": [
+    {
+      "entry_id": "dex:omni:rocket-bond:butterfree",
+      "name": "巴大蝶 · 羁绊",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:ninetales",
+      "name": "九尾 · 羁绊",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:poliwrath",
+      "name": "蚊香泳士 · 羁绊",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:rapidash",
+      "name": "烈焰马 · 羁绊",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:hypno",
+      "name": "引梦貘人 · 羁绊",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:eevee",
+      "name": "伊布 · 羁绊",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:vaporeon-sui",
+      "name": "水伊布 · 羁绊（SUI）",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:jolteon-rai",
+      "name": "雷伊布 · 羁绊（RAI）",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:flareon-en",
+      "name": "火伊布 · 羁绊（EN）",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:dragonite",
+      "name": "快龙 · 羁绊",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:feraligatr",
+      "name": "大力鳄 · 羁绊",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:crobat-andra",
+      "name": "叉字蝠 · 羁绊（Andra）",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:crobat-protagonist",
+      "name": "叉字蝠 · 羁绊（主角）",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:skarmory",
+      "name": "盔甲鸟 · 羁绊",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:kingdra",
+      "name": "刺龙王 · 羁绊",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:milotic",
+      "name": "美纳斯 · 羁绊",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:jirachi",
+      "name": "基拉祈 · 羁绊",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:rhyperior",
+      "name": "超甲狂犀 · 羁绊",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:mamoswine",
+      "name": "象牙猪 · 羁绊",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:volcarona",
+      "name": "火神蛾 · 羁绊",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:delphox",
+      "name": "妖火红狐 · 羁绊",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:goodra",
+      "name": "黏美龙 · 羁绊",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:sacred-dragon-dun",
+      "name": "神圣龙 · Dun 羁绊",
+      "reason": "Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified."
+    }
+  ],
+  "source_contradictions": [
+    {
+      "entry_id": "dex:omni:rocket-bond:poliwrath",
+      "name": "蚊香泳士 · 羁绊",
+      "reason": [
+        "Author stated total differs from sum of six stats"
+      ],
+      "reported_total": 635,
+      "computed_total": 655
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:rhyperior",
+      "name": "超甲狂犀 · 羁绊",
+      "reason": [
+        "Author stated total differs from sum of six stats"
+      ],
+      "reported_total": 670,
+      "computed_total": 660
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:mamoswine",
+      "name": "象牙猪 · 羁绊",
+      "reason": [
+        "Author uses Mamoswine-M in the stat line under MAMOSWINE-&"
+      ],
+      "reported_total": 665,
+      "computed_total": 665
+    }
+  ],
+  "artwork": [
+    {
+      "entry_id": "dex:appearance:koraidon-gliding-build",
+      "name": "故勒顿 · 滑翔形态",
+      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
+    },
+    {
+      "entry_id": "dex:appearance:koraidon-limited-build",
+      "name": "故勒顿 · 收敛形态",
+      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
+    },
+    {
+      "entry_id": "dex:appearance:koraidon-sprinting-build",
+      "name": "故勒顿 · 疾驰形态",
+      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
+    },
+    {
+      "entry_id": "dex:appearance:koraidon-swimming-build",
+      "name": "故勒顿 · 浮水形态",
+      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
+    },
+    {
+      "entry_id": "dex:appearance:miraidon-aquatic-mode",
+      "name": "密勒顿 · 浮游模式",
+      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
+    },
+    {
+      "entry_id": "dex:appearance:miraidon-drive-mode",
+      "name": "密勒顿 · 行驶模式",
+      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
+    },
+    {
+      "entry_id": "dex:appearance:miraidon-glide-mode",
+      "name": "密勒顿 · 滑翔模式",
+      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
+    },
+    {
+      "entry_id": "dex:appearance:miraidon-low-power-mode",
+      "name": "密勒顿 · 低功率模式",
+      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
+    },
+    {
+      "entry_id": "dex:form:ogerponcornerstonetera",
+      "name": "厄诡椪 · 础石面具太晶化",
+      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
+    },
+    {
+      "entry_id": "dex:form:ogerponhearthflametera",
+      "name": "厄诡椪 · 火灶面具太晶化",
+      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
+    },
+    {
+      "entry_id": "dex:form:ogerpontealtera",
+      "name": "厄诡椪 · 碧草面具太晶化",
+      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
+    },
+    {
+      "entry_id": "dex:form:ogerponwellspringtera",
+      "name": "厄诡椪 · 水井面具太晶化",
+      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
+    }
+  ],
+  "ability_crosscheck": [
+    {
+      "entry_id": "dex:form:raticatealolatotem",
+      "name": "拉达 · 阿罗拉霸主",
+      "reason": "Showdown 列霸主个体的限定特性，PokeAPI 沿用整个物种的特性集合。",
+      "showdown": [
+        "thickfat"
+      ],
+      "pokeapi": [
+        "gluttony",
+        "hustle",
+        "thickfat"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "Showdown 列霸主个体的限定特性，PokeAPI 沿用整个物种的特性集合。"
+    },
+    {
+      "entry_id": "dex:form:pikachubelle",
+      "name": "皮卡丘 · 贵妇装扮",
+      "reason": "Showdown 列特殊装扮／活动个体的限定特性，PokeAPI 沿用物种特性集合。",
+      "showdown": [
+        "lightningrod"
+      ],
+      "pokeapi": [
+        "static",
+        "lightningrod"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "Showdown 列特殊装扮／活动个体的限定特性，PokeAPI 沿用物种特性集合。"
+    },
+    {
+      "entry_id": "dex:form:pikachucosplay",
+      "name": "皮卡丘 · 换装形态",
+      "reason": "Showdown 列特殊装扮／活动个体的限定特性，PokeAPI 沿用物种特性集合。",
+      "showdown": [
+        "lightningrod"
+      ],
+      "pokeapi": [
+        "static",
+        "lightningrod"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "Showdown 列特殊装扮／活动个体的限定特性，PokeAPI 沿用物种特性集合。"
+    },
+    {
+      "entry_id": "dex:form:pikachulibre",
+      "name": "皮卡丘 · 面罩摔角手",
+      "reason": "Showdown 列特殊装扮／活动个体的限定特性，PokeAPI 沿用物种特性集合。",
+      "showdown": [
+        "lightningrod"
+      ],
+      "pokeapi": [
+        "static",
+        "lightningrod"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "Showdown 列特殊装扮／活动个体的限定特性，PokeAPI 沿用物种特性集合。"
+    },
+    {
+      "entry_id": "dex:form:pikachuphd",
+      "name": "皮卡丘 · 博士装扮",
+      "reason": "Showdown 列特殊装扮／活动个体的限定特性，PokeAPI 沿用物种特性集合。",
+      "showdown": [
+        "lightningrod"
+      ],
+      "pokeapi": [
+        "static",
+        "lightningrod"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "Showdown 列特殊装扮／活动个体的限定特性，PokeAPI 沿用物种特性集合。"
+    },
+    {
+      "entry_id": "dex:form:pikachupopstar",
+      "name": "皮卡丘 · 偶像装扮",
+      "reason": "Showdown 列特殊装扮／活动个体的限定特性，PokeAPI 沿用物种特性集合。",
+      "showdown": [
+        "lightningrod"
+      ],
+      "pokeapi": [
+        "static",
+        "lightningrod"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "Showdown 列特殊装扮／活动个体的限定特性，PokeAPI 沿用物种特性集合。"
+    },
+    {
+      "entry_id": "dex:form:pikachurockstar",
+      "name": "皮卡丘 · 摇滚装扮",
+      "reason": "Showdown 列特殊装扮／活动个体的限定特性，PokeAPI 沿用物种特性集合。",
+      "showdown": [
+        "lightningrod"
+      ],
+      "pokeapi": [
+        "static",
+        "lightningrod"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "Showdown 列特殊装扮／活动个体的限定特性，PokeAPI 沿用物种特性集合。"
+    },
+    {
+      "entry_id": "dex:form:marowakalolatotem",
+      "name": "嘎啦嘎啦 · 阿罗拉霸主",
+      "reason": "Showdown 列霸主个体的限定特性，PokeAPI 沿用整个物种的特性集合。",
+      "showdown": [
+        "rockhead"
+      ],
+      "pokeapi": [
+        "cursedbody",
+        "lightningrod",
+        "rockhead"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "Showdown 列霸主个体的限定特性，PokeAPI 沿用整个物种的特性集合。"
+    },
+    {
+      "entry_id": "dex:form:pichuspikyeared",
+      "name": "皮丘 · 刺刺耳",
+      "reason": "Showdown 列特殊装扮／活动个体的限定特性，PokeAPI 沿用物种特性集合。",
+      "showdown": [
+        "static"
+      ],
+      "pokeapi": [
+        "static",
+        "lightningrod"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "Showdown 列特殊装扮／活动个体的限定特性，PokeAPI 沿用物种特性集合。"
+    },
+    {
+      "entry_id": "dex:form:heatranmega",
+      "name": "席多蓝恩 · 超级进化",
+      "reason": "PokeAPI 对此形态没有特性记录；当前仅列回合制适配参考，尚未获得第二来源确认。",
+      "showdown": [
+        "flashfire",
+        "flamebody"
+      ],
+      "pokeapi": [],
+      "status": "second_source_missing",
+      "explanation_zh": "PokeAPI 对此形态没有特性记录；当前仅列回合制适配参考，尚未获得第二来源确认。"
+    },
+    {
+      "entry_id": "dex:form:darkraimega",
+      "name": "达克莱伊 · 超级进化",
+      "reason": "PokeAPI 对此形态没有特性记录；当前仅列回合制适配参考，尚未获得第二来源确认。",
+      "showdown": [
+        "baddreams"
+      ],
+      "pokeapi": [],
+      "status": "second_source_missing",
+      "explanation_zh": "PokeAPI 对此形态没有特性记录；当前仅列回合制适配参考，尚未获得第二来源确认。"
+    },
+    {
+      "entry_id": "dex:form:darmanitangalarzen",
+      "name": "达摩狒狒 · 伽勒尔达摩模式",
+      "reason": "达摩状态由达摩模式特性触发；物种表中的其他特性不应自动赋予该战斗状态。",
+      "showdown": [
+        "zenmode"
+      ],
+      "pokeapi": [
+        "gorillatactics",
+        "zenmode"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "达摩状态由达摩模式特性触发；物种表中的其他特性不应自动赋予该战斗状态。"
+    },
+    {
+      "entry_id": "dex:form:darmanitanzen",
+      "name": "达摩狒狒 · 达摩模式",
+      "reason": "达摩状态由达摩模式特性触发；物种表中的其他特性不应自动赋予该战斗状态。",
+      "showdown": [
+        "zenmode"
+      ],
+      "pokeapi": [
+        "sheerforce",
+        "zenmode"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "达摩状态由达摩模式特性触发；物种表中的其他特性不应自动赋予该战斗状态。"
+    },
+    {
+      "entry_id": "dex:greninja:base",
+      "name": "甲贺忍蛙",
+      "reason": "两份来源对特殊特性个体的拆分方式不同；图鉴保留 Showdown 跨版本集合，具体个体是否合法须使用来源规则校验。",
+      "showdown": [
+        "torrent",
+        "protean",
+        "battlebond"
+      ],
+      "pokeapi": [
+        "torrent",
+        "protean"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "两份来源对特殊特性个体的拆分方式不同；图鉴保留 Showdown 跨版本集合，具体个体是否合法须使用来源规则校验。"
+    },
+    {
+      "entry_id": "dex:zygarde:base",
+      "name": "基格尔德",
+      "reason": "两份来源对特殊特性个体的拆分方式不同；图鉴保留 Showdown 跨版本集合，具体个体是否合法须使用来源规则校验。",
+      "showdown": [
+        "aurabreak",
+        "powerconstruct"
+      ],
+      "pokeapi": [
+        "aurabreak"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "两份来源对特殊特性个体的拆分方式不同；图鉴保留 Showdown 跨版本集合，具体个体是否合法须使用来源规则校验。"
+    },
+    {
+      "entry_id": "dex:form:zygardemega",
+      "name": "基格尔德 · 超级进化",
+      "reason": "PokeAPI 对此形态没有特性记录；当前仅列回合制适配参考，尚未获得第二来源确认。",
+      "showdown": [
+        "aurabreak"
+      ],
+      "pokeapi": [],
+      "status": "second_source_missing",
+      "explanation_zh": "PokeAPI 对此形态没有特性记录；当前仅列回合制适配参考，尚未获得第二来源确认。"
+    },
+    {
+      "entry_id": "dex:form:zygarde10",
+      "name": "基格尔德 · １０％形态",
+      "reason": "两份来源对特殊特性个体的拆分方式不同；图鉴保留 Showdown 跨版本集合，具体个体是否合法须使用来源规则校验。",
+      "showdown": [
+        "aurabreak",
+        "powerconstruct"
+      ],
+      "pokeapi": [
+        "powerconstruct"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "两份来源对特殊特性个体的拆分方式不同；图鉴保留 Showdown 跨版本集合，具体个体是否合法须使用来源规则校验。"
+    },
+    {
+      "entry_id": "dex:form:gumshoostotem",
+      "name": "猫鼬探长 · 霸主",
+      "reason": "Showdown 列霸主个体的限定特性，PokeAPI 沿用整个物种的特性集合。",
+      "showdown": [
+        "adaptability"
+      ],
+      "pokeapi": [
+        "stakeout",
+        "strongjaw",
+        "adaptability"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "Showdown 列霸主个体的限定特性，PokeAPI 沿用整个物种的特性集合。"
+    },
+    {
+      "entry_id": "dex:form:ribombeetotem",
+      "name": "蝶结萌虻 · 霸主",
+      "reason": "Showdown 列霸主个体的限定特性，PokeAPI 沿用整个物种的特性集合。",
+      "showdown": [
+        "sweetveil"
+      ],
+      "pokeapi": [
+        "honeygather",
+        "shielddust",
+        "sweetveil"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "Showdown 列霸主个体的限定特性，PokeAPI 沿用整个物种的特性集合。"
+    },
+    {
+      "entry_id": "dex:rockruff:base",
+      "name": "岩狗狗",
+      "reason": "两份来源对特殊特性个体的拆分方式不同；图鉴保留 Showdown 跨版本集合，具体个体是否合法须使用来源规则校验。",
+      "showdown": [
+        "keeneye",
+        "vitalspirit",
+        "steadfast",
+        "owntempo"
+      ],
+      "pokeapi": [
+        "keeneye",
+        "vitalspirit",
+        "steadfast"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "两份来源对特殊特性个体的拆分方式不同；图鉴保留 Showdown 跨版本集合，具体个体是否合法须使用来源规则校验。"
+    },
+    {
+      "entry_id": "dex:form:araquanidtotem",
+      "name": "滴蛛霸 · 霸主",
+      "reason": "Showdown 列霸主个体的限定特性，PokeAPI 沿用整个物种的特性集合。",
+      "showdown": [
+        "waterbubble"
+      ],
+      "pokeapi": [
+        "waterbubble",
+        "waterabsorb"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "Showdown 列霸主个体的限定特性，PokeAPI 沿用整个物种的特性集合。"
+    },
+    {
+      "entry_id": "dex:form:lurantistotem",
+      "name": "兰螳花 · 霸主",
+      "reason": "Showdown 列霸主个体的限定特性，PokeAPI 沿用整个物种的特性集合。",
+      "showdown": [
+        "leafguard"
+      ],
+      "pokeapi": [
+        "leafguard",
+        "contrary"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "Showdown 列霸主个体的限定特性，PokeAPI 沿用整个物种的特性集合。"
+    },
+    {
+      "entry_id": "dex:form:salazzletotem",
+      "name": "焰后蜥 · 霸主",
+      "reason": "Showdown 列霸主个体的限定特性，PokeAPI 沿用整个物种的特性集合。",
+      "showdown": [
+        "corrosion"
+      ],
+      "pokeapi": [
+        "corrosion",
+        "oblivious"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "Showdown 列霸主个体的限定特性，PokeAPI 沿用整个物种的特性集合。"
+    },
+    {
+      "entry_id": "dex:form:togedemarutotem",
+      "name": "托戈德玛尔 · 霸主",
+      "reason": "Showdown 列霸主个体的限定特性，PokeAPI 沿用整个物种的特性集合。",
+      "showdown": [
+        "sturdy"
+      ],
+      "pokeapi": [
+        "ironbarbs",
+        "lightningrod",
+        "sturdy"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "Showdown 列霸主个体的限定特性，PokeAPI 沿用整个物种的特性集合。"
+    },
+    {
+      "entry_id": "dex:form:kommoototem",
+      "name": "杖尾鳞甲龙 · 霸主",
+      "reason": "Showdown 列霸主个体的限定特性，PokeAPI 沿用整个物种的特性集合。",
+      "showdown": [
+        "overcoat"
+      ],
+      "pokeapi": [
+        "bulletproof",
+        "soundproof",
+        "overcoat"
+      ],
+      "status": "different_record_scope",
+      "explanation_zh": "Showdown 列霸主个体的限定特性，PokeAPI 沿用整个物种的特性集合。"
+    },
+    {
+      "entry_id": "dex:form:magearnamega",
+      "name": "玛机雅娜 · 超级进化",
+      "reason": "PokeAPI 对此形态没有特性记录；当前仅列回合制适配参考，尚未获得第二来源确认。",
+      "showdown": [
+        "soulheart"
+      ],
+      "pokeapi": [],
+      "status": "second_source_missing",
+      "explanation_zh": "PokeAPI 对此形态没有特性记录；当前仅列回合制适配参考，尚未获得第二来源确认。"
+    },
+    {
+      "entry_id": "dex:form:magearnaoriginalmega",
+      "name": "玛机雅娜 · 原始颜色超级进化",
+      "reason": "PokeAPI 对此形态没有特性记录；当前仅列回合制适配参考，尚未获得第二来源确认。",
+      "showdown": [
+        "soulheart"
+      ],
+      "pokeapi": [],
+      "status": "second_source_missing",
+      "explanation_zh": "PokeAPI 对此形态没有特性记录；当前仅列回合制适配参考，尚未获得第二来源确认。"
+    },
+    {
+      "entry_id": "dex:form:zeraoramega",
+      "name": "捷拉奥拉 · 超级进化",
+      "reason": "PokeAPI 对此形态没有特性记录；当前仅列回合制适配参考，尚未获得第二来源确认。",
+      "showdown": [
+        "voltabsorb"
+      ],
+      "pokeapi": [],
+      "status": "second_source_missing",
+      "explanation_zh": "PokeAPI 对此形态没有特性记录；当前仅列回合制适配参考，尚未获得第二来源确认。"
+    },
+    {
+      "entry_id": "dex:form:tatsugiricurlymega",
+      "name": "米立龙 · 上弓姿势超级进化",
+      "reason": "PokeAPI 对此形态没有特性记录；当前仅列回合制适配参考，尚未获得第二来源确认。",
+      "showdown": [
+        "commander",
+        "stormdrain"
+      ],
+      "pokeapi": [],
+      "status": "second_source_missing",
+      "explanation_zh": "PokeAPI 对此形态没有特性记录；当前仅列回合制适配参考，尚未获得第二来源确认。"
+    },
+    {
+      "entry_id": "dex:form:tatsugiridroopymega",
+      "name": "米立龙 · 下垂姿势超级进化",
+      "reason": "PokeAPI 对此形态没有特性记录；当前仅列回合制适配参考，尚未获得第二来源确认。",
+      "showdown": [
+        "commander",
+        "stormdrain"
+      ],
+      "pokeapi": [],
+      "status": "second_source_missing",
+      "explanation_zh": "PokeAPI 对此形态没有特性记录；当前仅列回合制适配参考，尚未获得第二来源确认。"
+    },
+    {
+      "entry_id": "dex:form:tatsugiristretchymega",
+      "name": "米立龙 · 平挺姿势超级进化",
+      "reason": "PokeAPI 对此形态没有特性记录；当前仅列回合制适配参考，尚未获得第二来源确认。",
+      "showdown": [
+        "commander",
+        "stormdrain"
+      ],
+      "pokeapi": [],
+      "status": "second_source_missing",
+      "explanation_zh": "PokeAPI 对此形态没有特性记录；当前仅列回合制适配参考，尚未获得第二来源确认。"
+    }
+  ],
+  "official_identity": [
+    {
+      "entry_id": "dex:form:raticatealolatotem",
+      "name": "拉达 · 阿罗拉霸主",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:pikachualola",
+      "name": "皮卡丘 · 阿罗拉之帽",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:pikachubelle",
+      "name": "皮卡丘 · 贵妇装扮",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:pikachucosplay",
+      "name": "皮卡丘 · 换装形态",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:pikachuhoenn",
+      "name": "皮卡丘 · 丰缘之帽",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:pikachukalos",
+      "name": "皮卡丘 · 卡洛斯之帽",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:pikachulibre",
+      "name": "皮卡丘 · 面罩摔角手",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:pikachuoriginal",
+      "name": "皮卡丘 · 初始之帽",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:pikachupartner",
+      "name": "皮卡丘 · 就决定是你了之帽",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:pikachuphd",
+      "name": "皮卡丘 · 博士装扮",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:pikachupopstar",
+      "name": "皮卡丘 · 偶像装扮",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:pikachurockstar",
+      "name": "皮卡丘 · 摇滚装扮",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:pikachusinnoh",
+      "name": "皮卡丘 · 神奥之帽",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:pikachuunova",
+      "name": "皮卡丘 · 合众之帽",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:pikachuworld",
+      "name": "皮卡丘 · 世界之帽",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:pikachustarter",
+      "name": "皮卡丘 · 搭档形态",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:marowakalolatotem",
+      "name": "嘎啦嘎啦 · 阿罗拉霸主",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:eeveestarter",
+      "name": "伊布 · 搭档形态",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:pichuspikyeared",
+      "name": "皮丘 · 刺刺耳",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownb",
+      "name": "未知图腾 · B",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownc",
+      "name": "未知图腾 · C",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownd",
+      "name": "未知图腾 · D",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unowne",
+      "name": "未知图腾 · E",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownexclamation",
+      "name": "未知图腾 · ！",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownf",
+      "name": "未知图腾 · F",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unowng",
+      "name": "未知图腾 · G",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownh",
+      "name": "未知图腾 · H",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unowni",
+      "name": "未知图腾 · I",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownj",
+      "name": "未知图腾 · J",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownk",
+      "name": "未知图腾 · K",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownl",
+      "name": "未知图腾 · L",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownm",
+      "name": "未知图腾 · M",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownn",
+      "name": "未知图腾 · N",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unowno",
+      "name": "未知图腾 · O",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownp",
+      "name": "未知图腾 · P",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownq",
+      "name": "未知图腾 · Q",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownquestion",
+      "name": "未知图腾 · ？",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownr",
+      "name": "未知图腾 · R",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unowns",
+      "name": "未知图腾 · S",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownt",
+      "name": "未知图腾 · T",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownu",
+      "name": "未知图腾 · U",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownv",
+      "name": "未知图腾 · V",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownw",
+      "name": "未知图腾 · W",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownx",
+      "name": "未知图腾 · X",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unowny",
+      "name": "未知图腾 · Y",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:unownz",
+      "name": "未知图腾 · Z",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:castformrainy",
+      "name": "飘浮泡泡 · 雨水的样子",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:castformsnowy",
+      "name": "飘浮泡泡 · 雪云的样子",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:castformsunny",
+      "name": "飘浮泡泡 · 太阳的样子",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:arceusbug",
+      "name": "阿尔宙斯 · 虫属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:arceusdark",
+      "name": "阿尔宙斯 · 恶属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:arceusdragon",
+      "name": "阿尔宙斯 · 龙属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:arceuselectric",
+      "name": "阿尔宙斯 · 电属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:arceusfairy",
+      "name": "阿尔宙斯 · 妖精属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:arceusfighting",
+      "name": "阿尔宙斯 · 格斗属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:arceusfire",
+      "name": "阿尔宙斯 · 火属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:arceusflying",
+      "name": "阿尔宙斯 · 飞行属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:arceusghost",
+      "name": "阿尔宙斯 · 幽灵属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:arceusgrass",
+      "name": "阿尔宙斯 · 草属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:arceusground",
+      "name": "阿尔宙斯 · 地面属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:arceusice",
+      "name": "阿尔宙斯 · 冰属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:arceuspoison",
+      "name": "阿尔宙斯 · 毒属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:arceuspsychic",
+      "name": "阿尔宙斯 · 超能力属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:arceusrock",
+      "name": "阿尔宙斯 · 岩石属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:arceussteel",
+      "name": "阿尔宙斯 · 钢属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:arceuswater",
+      "name": "阿尔宙斯 · 水属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:genesectburn",
+      "name": "盖诺赛克特 · 火焰卡带",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:genesectchill",
+      "name": "盖诺赛克特 · 冰冻卡带",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:genesectdouse",
+      "name": "盖诺赛克特 · 水流卡带",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:genesectshock",
+      "name": "盖诺赛克特 · 闪电卡带",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:greninjaash",
+      "name": "甲贺忍蛙 · 小智版甲贺忍蛙",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:greninjabond",
+      "name": "甲贺忍蛙 · 牵绊变身特性个体",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:vivillonarchipelago",
+      "name": "彩粉蝶 · 群岛花纹",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:vivilloncontinental",
+      "name": "彩粉蝶 · 大陆花纹",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:vivillonelegant",
+      "name": "彩粉蝶 · 高雅花纹",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:vivillonfancy",
+      "name": "彩粉蝶 · 花园花纹",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:vivillongarden",
+      "name": "彩粉蝶 · 庭园花纹",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:vivillonhighplains",
+      "name": "彩粉蝶 · 荒野花纹",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:vivillonicysnow",
+      "name": "彩粉蝶 · 冰雪花纹",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:vivillonjungle",
+      "name": "彩粉蝶 · 热带雨林花纹",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:vivillonmarine",
+      "name": "彩粉蝶 · 大海花纹",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:vivillonmodern",
+      "name": "彩粉蝶 · 摩登花纹",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:vivillonmonsoon",
+      "name": "彩粉蝶 · 骤雨花纹",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:vivillonocean",
+      "name": "彩粉蝶 · 大洋花纹",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:vivillonpokeball",
+      "name": "彩粉蝶 · 球球花纹",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:vivillonpolar",
+      "name": "彩粉蝶 · 雪国花纹",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:vivillonriver",
+      "name": "彩粉蝶 · 大河花纹",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:vivillonsandstorm",
+      "name": "彩粉蝶 · 沙尘花纹",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:vivillonsavanna",
+      "name": "彩粉蝶 · 热带草原花纹",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:vivillonsun",
+      "name": "彩粉蝶 · 太阳花纹",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:vivillontundra",
+      "name": "彩粉蝶 · 雪原花纹",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:flabebeblue",
+      "name": "花蓓蓓 · 蓝色",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:flabebeorange",
+      "name": "花蓓蓓 · 橙色",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:flabebewhite",
+      "name": "花蓓蓓 · 白色",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:flabebeyellow",
+      "name": "花蓓蓓 · 黄色",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:floetteblue",
+      "name": "花叶蒂 · 蓝色",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:floetteorange",
+      "name": "花叶蒂 · 橙色",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:floettewhite",
+      "name": "花叶蒂 · 白色",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:floetteyellow",
+      "name": "花叶蒂 · 黄色",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:florgesblue",
+      "name": "花洁夫人 · 蓝色",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:florgesorange",
+      "name": "花洁夫人 · 橙色",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:florgeswhite",
+      "name": "花洁夫人 · 白色",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:florgesyellow",
+      "name": "花洁夫人 · 黄色",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:furfroudandy",
+      "name": "多丽米亚 · 绅士造型",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:furfroudebutante",
+      "name": "多丽米亚 · 淑女造型",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:furfroudiamond",
+      "name": "多丽米亚 · 菱形造型",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:furfrouheart",
+      "name": "多丽米亚 · 心形造型",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:furfroukabuki",
+      "name": "多丽米亚 · 歌舞伎造型",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:furfroulareine",
+      "name": "多丽米亚 · 女王造型",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:furfroumatron",
+      "name": "多丽米亚 · 贵妇造型",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:furfroupharaoh",
+      "name": "多丽米亚 · 国王造型",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:furfroustar",
+      "name": "多丽米亚 · 星形造型",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:pumpkaboolarge",
+      "name": "南瓜精 · 大尺寸",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:pumpkaboosmall",
+      "name": "南瓜精 · 小尺寸",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:pumpkaboosuper",
+      "name": "南瓜精 · 特大尺寸",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:gourgeistlarge",
+      "name": "南瓜怪人 · 大尺寸",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:gourgeistsmall",
+      "name": "南瓜怪人 · 小尺寸",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:gourgeistsuper",
+      "name": "南瓜怪人 · 特大尺寸",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:xerneasneutral",
+      "name": "哲尔尼亚斯 · 放松模式",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:gumshoostotem",
+      "name": "猫鼬探长 · 霸主",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:vikavolttotem",
+      "name": "锹农炮虫 · 霸主",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:ribombeetotem",
+      "name": "蝶结萌虻 · 霸主",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:rockruffdusk",
+      "name": "岩狗狗 · 我行我素个体",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:araquanidtotem",
+      "name": "滴蛛霸 · 霸主",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:lurantistotem",
+      "name": "兰螳花 · 霸主",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:salazzletotem",
+      "name": "焰后蜥 · 霸主",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:silvallybug",
+      "name": "银伴战兽 · 虫属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:silvallydark",
+      "name": "银伴战兽 · 恶属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:silvallydragon",
+      "name": "银伴战兽 · 龙属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:silvallyelectric",
+      "name": "银伴战兽 · 电属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:silvallyfairy",
+      "name": "银伴战兽 · 妖精属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:silvallyfighting",
+      "name": "银伴战兽 · 格斗属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:silvallyfire",
+      "name": "银伴战兽 · 火属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:silvallyflying",
+      "name": "银伴战兽 · 飞行属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:silvallyghost",
+      "name": "银伴战兽 · 幽灵属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:silvallygrass",
+      "name": "银伴战兽 · 草属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:silvallyground",
+      "name": "银伴战兽 · 地面属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:silvallyice",
+      "name": "银伴战兽 · 冰属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:silvallypoison",
+      "name": "银伴战兽 · 毒属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:silvallypsychic",
+      "name": "银伴战兽 · 超能力属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:silvallyrock",
+      "name": "银伴战兽 · 岩石属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:silvallysteel",
+      "name": "银伴战兽 · 钢属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:silvallywater",
+      "name": "银伴战兽 · 水属性",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:miniorblue",
+      "name": "小陨星 · 蓝色核心",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:miniorgreen",
+      "name": "小陨星 · 绿色核心",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:miniorindigo",
+      "name": "小陨星 · 靛蓝色核心",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:miniororange",
+      "name": "小陨星 · 橙色核心",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:miniorviolet",
+      "name": "小陨星 · 紫色核心",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:minioryellow",
+      "name": "小陨星 · 黄色核心",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:togedemarutotem",
+      "name": "托戈德玛尔 · 霸主",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:mimikyubusted",
+      "name": "谜拟丘 · 现形的样子",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:mimikyubustedtotem",
+      "name": "谜拟丘 · 现形霸主",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:mimikyutotem",
+      "name": "谜拟丘 · 霸主",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:kommoototem",
+      "name": "杖尾鳞甲龙 · 霸主",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:cramorantgorging",
+      "name": "古月鸟 · 大口吞的样子",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:cramorantgulping",
+      "name": "古月鸟 · 一口吞的样子",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-caramel-swirl-berry-sweet",
+      "name": "霜奶仙 · 焦糖综合＋野莓糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-caramel-swirl-clover-sweet",
+      "name": "霜奶仙 · 焦糖综合＋幸运草糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-caramel-swirl-flower-sweet",
+      "name": "霜奶仙 · 焦糖综合＋花朵糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-caramel-swirl-love-sweet",
+      "name": "霜奶仙 · 焦糖综合＋爱心糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-caramel-swirl-ribbon-sweet",
+      "name": "霜奶仙 · 焦糖综合＋蝴蝶结糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-caramel-swirl-star-sweet",
+      "name": "霜奶仙 · 焦糖综合＋星星糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-lemon-cream-berry-sweet",
+      "name": "霜奶仙 · 奶香柠檬＋野莓糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-lemon-cream-clover-sweet",
+      "name": "霜奶仙 · 奶香柠檬＋幸运草糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-lemon-cream-flower-sweet",
+      "name": "霜奶仙 · 奶香柠檬＋花朵糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-lemon-cream-love-sweet",
+      "name": "霜奶仙 · 奶香柠檬＋爱心糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-lemon-cream-ribbon-sweet",
+      "name": "霜奶仙 · 奶香柠檬＋蝴蝶结糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-lemon-cream-star-sweet",
+      "name": "霜奶仙 · 奶香柠檬＋星星糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-matcha-cream-berry-sweet",
+      "name": "霜奶仙 · 奶香抹茶＋野莓糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-matcha-cream-clover-sweet",
+      "name": "霜奶仙 · 奶香抹茶＋幸运草糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-matcha-cream-flower-sweet",
+      "name": "霜奶仙 · 奶香抹茶＋花朵糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-matcha-cream-love-sweet",
+      "name": "霜奶仙 · 奶香抹茶＋爱心糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-matcha-cream-ribbon-sweet",
+      "name": "霜奶仙 · 奶香抹茶＋蝴蝶结糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-matcha-cream-star-sweet",
+      "name": "霜奶仙 · 奶香抹茶＋星星糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-mint-cream-berry-sweet",
+      "name": "霜奶仙 · 奶香薄荷＋野莓糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-mint-cream-clover-sweet",
+      "name": "霜奶仙 · 奶香薄荷＋幸运草糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-mint-cream-flower-sweet",
+      "name": "霜奶仙 · 奶香薄荷＋花朵糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-mint-cream-love-sweet",
+      "name": "霜奶仙 · 奶香薄荷＋爱心糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-mint-cream-ribbon-sweet",
+      "name": "霜奶仙 · 奶香薄荷＋蝴蝶结糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-mint-cream-star-sweet",
+      "name": "霜奶仙 · 奶香薄荷＋星星糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-rainbow-swirl-berry-sweet",
+      "name": "霜奶仙 · 三色综合＋野莓糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-rainbow-swirl-clover-sweet",
+      "name": "霜奶仙 · 三色综合＋幸运草糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-rainbow-swirl-flower-sweet",
+      "name": "霜奶仙 · 三色综合＋花朵糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-rainbow-swirl-love-sweet",
+      "name": "霜奶仙 · 三色综合＋爱心糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-rainbow-swirl-ribbon-sweet",
+      "name": "霜奶仙 · 三色综合＋蝴蝶结糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-rainbow-swirl-star-sweet",
+      "name": "霜奶仙 · 三色综合＋星星糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-ruby-cream-berry-sweet",
+      "name": "霜奶仙 · 奶香红钻＋野莓糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-ruby-cream-clover-sweet",
+      "name": "霜奶仙 · 奶香红钻＋幸运草糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-ruby-cream-flower-sweet",
+      "name": "霜奶仙 · 奶香红钻＋花朵糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-ruby-cream-love-sweet",
+      "name": "霜奶仙 · 奶香红钻＋爱心糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-ruby-cream-ribbon-sweet",
+      "name": "霜奶仙 · 奶香红钻＋蝴蝶结糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-ruby-cream-star-sweet",
+      "name": "霜奶仙 · 奶香红钻＋星星糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-ruby-swirl-berry-sweet",
+      "name": "霜奶仙 · 红钻综合＋野莓糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-ruby-swirl-clover-sweet",
+      "name": "霜奶仙 · 红钻综合＋幸运草糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-ruby-swirl-flower-sweet",
+      "name": "霜奶仙 · 红钻综合＋花朵糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-ruby-swirl-love-sweet",
+      "name": "霜奶仙 · 红钻综合＋爱心糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-ruby-swirl-ribbon-sweet",
+      "name": "霜奶仙 · 红钻综合＋蝴蝶结糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-ruby-swirl-star-sweet",
+      "name": "霜奶仙 · 红钻综合＋星星糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-salted-cream-berry-sweet",
+      "name": "霜奶仙 · 奶香海盐＋野莓糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-salted-cream-clover-sweet",
+      "name": "霜奶仙 · 奶香海盐＋幸运草糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-salted-cream-flower-sweet",
+      "name": "霜奶仙 · 奶香海盐＋花朵糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-salted-cream-love-sweet",
+      "name": "霜奶仙 · 奶香海盐＋爱心糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-salted-cream-ribbon-sweet",
+      "name": "霜奶仙 · 奶香海盐＋蝴蝶结糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-salted-cream-star-sweet",
+      "name": "霜奶仙 · 奶香海盐＋星星糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-vanilla-cream-berry-sweet",
+      "name": "霜奶仙 · 奶香香草＋野莓糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-vanilla-cream-clover-sweet",
+      "name": "霜奶仙 · 奶香香草＋幸运草糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-vanilla-cream-flower-sweet",
+      "name": "霜奶仙 · 奶香香草＋花朵糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-vanilla-cream-love-sweet",
+      "name": "霜奶仙 · 奶香香草＋爱心糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-vanilla-cream-ribbon-sweet",
+      "name": "霜奶仙 · 奶香香草＋蝴蝶结糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:alcremie-vanilla-cream-star-sweet",
+      "name": "霜奶仙 · 奶香香草＋星星糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:cosmetic:alcremiesaltedcream",
+      "name": "霜奶仙 · 奶香海盐＋草莓糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:alcremiecaramelswirl",
+      "name": "霜奶仙 · 焦糖综合＋草莓糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:alcremielemoncream",
+      "name": "霜奶仙 · 奶香柠檬＋草莓糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:alcremiematchacream",
+      "name": "霜奶仙 · 奶香抹茶＋草莓糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:alcremiemintcream",
+      "name": "霜奶仙 · 奶香薄荷＋草莓糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:alcremierainbowswirl",
+      "name": "霜奶仙 · 三色综合＋草莓糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:alcremierubycream",
+      "name": "霜奶仙 · 奶香红钻＋草莓糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:alcremierubyswirl",
+      "name": "霜奶仙 · 红钻综合＋草莓糖饰",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:eternatuseternamax",
+      "name": "无极汰那 · 无极巨化",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:zarudedada",
+      "name": "萨戮德 · 阿爸",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:koraidon-gliding-build",
+      "name": "故勒顿 · 滑翔形态",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:koraidon-limited-build",
+      "name": "故勒顿 · 收敛形态",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:koraidon-sprinting-build",
+      "name": "故勒顿 · 疾驰形态",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:koraidon-swimming-build",
+      "name": "故勒顿 · 浮水形态",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:miraidon-aquatic-mode",
+      "name": "密勒顿 · 浮游模式",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:miraidon-drive-mode",
+      "name": "密勒顿 · 行驶模式",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:miraidon-glide-mode",
+      "name": "密勒顿 · 滑翔模式",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:appearance:miraidon-low-power-mode",
+      "name": "密勒顿 · 低功率模式",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:ogerponcornerstonetera",
+      "name": "厄诡椪 · 础石面具太晶化",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:ogerponhearthflametera",
+      "name": "厄诡椪 · 火灶面具太晶化",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:ogerpontealtera",
+      "name": "厄诡椪 · 碧草面具太晶化",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    },
+    {
+      "entry_id": "dex:form:ogerponwellspringtera",
+      "name": "厄诡椪 · 水井面具太晶化",
+      "reason": "Reference dataset identity is present; no manually verified official per-form citation attached."
+    }
+  ],
+  "project_integration": [
+    {
+      "scope": "all entries",
+      "reason": "World acquisition routes and story gates require world design; they are intentionally unassigned."
+    },
+    {
+      "scope": "all art",
+      "reason": "Preview URLs are not distributable GBA graphics; target assets require conversion/creation and provenance review."
+    }
+  ],
+  "declared_scope": {
+    "released_national_numbers": "1–1025",
+    "announced_future": "Separate announcement registry, no invented National numbers or stats",
+    "ordinary_dynamax": "Gen8 available non-battle-only persistent forms; excludes Mega and Zacian/Zamazenta/Eternatus. Transient battle-state combinations are not auto-generated.",
+    "appearance": "63 Alcremie cream/sweet combinations; 28 Unown; 14 Minior shell/core encodings. Shiny/general gender appearance use image variants, Spinda spots are procedural individual data."
+  }
+}

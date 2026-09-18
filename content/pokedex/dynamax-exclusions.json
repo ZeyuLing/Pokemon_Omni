@@ -1456,6 +1456,802 @@
     {
       "species_id": "pokemon:pecharunt",
       "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:rattata",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:raticate",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:raticate",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:pikachu",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:pikachu",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:pikachu",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:pikachu",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:pikachu",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:pikachu",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:pikachu",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:growlithe",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:arcanine",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:geodude",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:graveler",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:golem",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:grimer",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:muk",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:voltorb",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:electrode",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:marowak",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:tauros",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:tauros",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:tauros",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:eevee",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:typhlosion",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:pichu",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:wooper",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:qwilfish",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:sneasel",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:deoxys",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:deoxys",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:deoxys",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:burmy",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:burmy",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:wormadam",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:wormadam",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:dialga",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:palkia",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:shaymin",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:arceus",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:arceus",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:arceus",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:arceus",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:arceus",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:arceus",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:arceus",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:arceus",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:arceus",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:arceus",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:arceus",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:arceus",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:arceus",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:arceus",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:arceus",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:arceus",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:arceus",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:samurott",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:lilligant",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:basculin",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:zorua",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:zoroark",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:deerling",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:deerling",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:deerling",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:braviary",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:greninja",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:vivillon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:vivillon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:vivillon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:vivillon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:vivillon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:vivillon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:vivillon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:vivillon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:vivillon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:vivillon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:vivillon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:vivillon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:vivillon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:vivillon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:vivillon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:vivillon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:vivillon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:vivillon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:vivillon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:floette",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:sliggoo",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:goodra",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:avalugg",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:xerneas",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:hoopa",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:decidueye",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:gumshoos",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:vikavolt",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:oricorio",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:oricorio",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:oricorio",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:ribombee",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:araquanid",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:lurantis",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:salazzle",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:minior",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:minior",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:minior",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:minior",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:minior",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:minior",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:minior",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:togedemaru",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:mimikyu",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:kommoo",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:eternatus",
+      "reason": "mechanic_forbidden"
+    },
+    {
+      "species_id": "pokemon:ursaluna",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:basculegion",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:enamorus",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:oinkologne",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:maushold",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:squawkabilly",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:squawkabilly",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:squawkabilly",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:tatsugiri",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:tatsugiri",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:dudunsparce",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:gimmighoul",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:poltchageist",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:sinistcha",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:ogerpon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:ogerpon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:ogerpon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:ogerpon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:ogerpon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:ogerpon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:ogerpon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:unown",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:sawsbuck",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:sawsbuck",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:sawsbuck",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:flabebe",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:flabebe",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:flabebe",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:flabebe",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:floette",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:floette",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:floette",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:floette",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:florges",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:florges",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:florges",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:florges",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:furfrou",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:furfrou",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:furfrou",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:furfrou",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:furfrou",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:furfrou",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:furfrou",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:furfrou",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:furfrou",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:minior",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:minior",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:minior",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:minior",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:minior",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:minior",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:koraidon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:koraidon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:koraidon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:koraidon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:miraidon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:miraidon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:miraidon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:miraidon",
+      "reason": "outside_supported_swsh_reference_scope"
+    },
+    {
+      "species_id": "pokemon:pyroar",
+      "reason": "outside_supported_swsh_reference_scope"
     }
   ]
 }

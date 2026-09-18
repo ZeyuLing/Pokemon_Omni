@@ -24,7 +24,7 @@ try {
     if ($LASTEXITCODE) { throw 'ARM HP rules build failed' }
     & $Zig cc -target arm-freestanding-eabi -mcpu=arm7tdmi -mthumb -std=c99 -Os -ffreestanding -Icore/include -Icontent/pokedex/generated -c content/pokedex/generated/catalog.c -o build/pokedex/catalog_arm.o
     if ($LASTEXITCODE) { throw 'ARM catalog build failed' }
-    $exports=@('dex_hp','dex_max_hp','dex_count','dex_input_ptr','dex_result_ptr','dex_id','dex_flags','dex_total','dex_query','dex_record','dex_save','dex_load') | ForEach-Object { '-Wl,--export=' + $_ }
+    $exports=@('dex_ability','dex_stat','dex_parent','dex_hp','dex_max_hp','dex_count','dex_input_ptr','dex_result_ptr','dex_id','dex_flags','dex_total','dex_query','dex_record','dex_save','dex_load') | ForEach-Object { '-Wl,--export=' + $_ }
     & $Zig cc -target wasm32-freestanding -std=c99 -Oz -ffreestanding -fno-builtin -nostdlib -Icore/include -Icontent/pokedex/generated core/src/pokedex.c core/src/battle_stats.c content/pokedex/generated/catalog.c adapters/headless/pokedex_wasm.c '-Wl,--no-entry' @exports '-Wl,--export-memory' -o build/pokedex/pokedex.wasm
     if ($LASTEXITCODE) { throw 'Wasm core build failed' }
     Copy-Item -LiteralPath content/pokedex/catalog.json -Destination build/pokedex/catalog.json

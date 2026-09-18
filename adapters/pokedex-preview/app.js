@@ -24,6 +24,7 @@ function typeName(id){return data.types.find(t=>t.id===id)?.name||id;}
 function select(index){
  selected=index;moveLimit=15;const e=data.entries[index];history.replaceState(null,'','#'+encodeURIComponent(e.entry_id));
  for(const b of $('entries').querySelectorAll('button'))b.setAttribute('aria-pressed',String(+b.dataset.index===index));
+ const identity=e.identity_evidence||e.species_identity_evidence;
  const abilities=e.abilities.map(a=>`${escape(data.abilities[a.id]?.name_zh||a.id)}${a.slot==='H'?'〔隐藏〕':''}`).join(' / ')||'待核实';
  const stats=e.stats?Object.entries(e.stats).map(([s,v])=>`<div class="stat"><span>${{hp:'HP',atk:'攻击',def:'防御',spa:'特攻',spd:'特防',spe:'速度'}[s]}</span><b>${v}</b><span class="bar"><i style="width:${Math.min(100,v/255*100)}%"></i></span></div>`).join(''):'<p class="muted">该形态数值尚未核实。</p>';
  const related=data.entries.map((v,i)=>({v,i})).filter(({v})=>e.species_id&&v.species_id===e.species_id);
@@ -31,17 +32,37 @@ function select(index){
  const evol=e.evolutions.map(name=>{const target=data.entries.find(v=>v.name_reference===name);return escape(target?.name_zh_hans||name);}).join('、');
  const prevo=data.entries.find(v=>v.name_reference===e.prevo);
  $('detail').innerHTML=`<div class="detail-heading"><div><p class="kicker">NO. ${e.national_number?String(e.national_number).padStart(4,'0'):'待定'} / ${escape(categoryName(e))}</p><h2>${escape(e.name_zh_hans)}</h2><p class="english">${escape(e.name_reference)}</p></div><span class="badge ${e.research_only?'review':''}">${escape(e.reference_status)}</span></div>
- <div class="portrait-row"><div class="portrait"><span class="image-note">${e.sprite_id?'正在加载参考图…':'形态图待核实'}</span></div><div><div class="types">${e.types.map(t=>`<span class="type">${escape(typeName(t))}</span>`).join('')||'<span class="type">属性待核实</span>'}</div><div class="facts">特性 <b>${abilities}</b><br>身高 <b>${e.height_m??'—'} m</b> · 体重 <b>${e.weight_kg??'—'} kg</b><br>种族值合计 <b>${e.stats?Object.values(e.stats).reduce((a,b)=>a+b,0):'—'}</b></div></div></div>
- <h3 class="stats-title">种族值（不是实战能力值）</h3><div class="stats">${stats}</div>${hpPanel(e)}<p class="note">${escape(e.mechanic_note)}${e.eligibility_evidence?`<br><a href="${escape(e.eligibility_evidence.official_rule)}" target="_blank" rel="noopener">官方极巨化机制说明</a> · <a href="${escape(e.eligibility_evidence.official_compatibility_guidance)}" target="_blank" rel="noopener">官方游戏兼容性核对方法</a>`:''}</p>
- ${e.identity_evidence?`<section class="section" aria-label="官方形态依据"><h3>官方形态依据</h3><p class="facts"><a href="${escape(e.identity_evidence.url)}" target="_blank" rel="noopener">${escape(e.identity_evidence.title)}</a><br>官方页面明确列出该形态；这项依据不代表种族值、招式或获取条件已由官方逐项核实。核对日期：${escape(e.identity_evidence.reviewed_at)}。${e.research_only?'数值仍待核验，暂不开放登记。':'战斗数值仍采用固定社区参考版本。'}</p></section>`:''}
- <section class="section"><h3>形态与进化</h3><div class="related">${relatedHtml||'<p class="muted">基础物种关联待核实。</p>'}</div><p class="facts" style="margin-top:10px">${e.prevo?'进化前：'+escape(prevo?.name_zh_hans||e.prevo)+'。 ':''}${e.evolution_reference?.level?'参考进化等级：'+e.evolution_reference.level+'。 ':''}${evol?'后续进化：'+evol+'。 ':''}${e.form_transition_reference?.required_move?'参考必需招式：'+escape(data.moves[e.form_transition_reference.required_move.toLowerCase().replace(/[^a-z0-9]/g,'')]?.name_zh||e.form_transition_reference.required_move)+'。 ':''}${e.required_items.length?'参考所需物品：'+escape(e.required_items.join('、'))+'。 ':''}本项目获取地点与捕捉剧情尚未配置。</p></section>
+ <div class="portrait-row"><div class="portrait"><span class="image-note">${e.art_reference?.variants.front_default||e.sprite_id?'正在加载参考图…':'形态图待核实'}</span></div><div><div class="types">${e.types.map(t=>`<span class="type">${escape(typeName(t))}</span>`).join('')||'<span class="type">属性待核实</span>'}</div><div class="facts">特性 <b>${abilities}</b><br>身高 <b>${e.height_m??'—'} m</b> · 体重 <b>${e.weight_kg??'—'} kg</b><br>种族值合计 <b>${e.stats?Object.values(e.stats).reduce((a,b)=>a+b,0):'—'}</b></div></div></div>
+ ${artControls(e)}<h3 class="stats-title">种族值（不是实战能力值）</h3><div class="stats">${stats}</div>${hpPanel(e)}${e.source_issues?.length?`<p class="note">作者文档疑点：${e.source_issues.includes('Author stated total differs from sum of six stats')?'原文标注总和 '+e.reported_total+'，六项实际相加为 '+Object.values(e.stats).reduce((a,b)=>a+b,0)+'；此处保留原始六项数值。':'原文象牙猪数值行使用了 M 后缀，所在章节为羁绊形态；保留该来源疑点。'}</p>`:''}<p class="note">${escape(e.mechanic_note)}${e.eligibility_evidence?`<br><a href="${escape(e.eligibility_evidence.official_rule)}" target="_blank" rel="noopener">官方极巨化机制说明</a> · <a href="${escape(e.eligibility_evidence.official_compatibility_guidance)}" target="_blank" rel="noopener">官方游戏兼容性核对方法</a>`:''}</p>
+ ${identity?`<section class="section" aria-label="官方形态依据"><h3>官方形态依据</h3><p class="facts"><a href="${escape(identity.url)}" target="_blank" rel="noopener">${escape(identity.title||'宝可梦官方图鉴：物种记录')}</a><br>${identity.claims.some(c=>c.includes('family'))?'官方页面确认该形态家族，细分性别／外观由参考表补充；':e.identity_evidence?'官方页面列出对应形态；':'官方页面确认该物种身份；'}这项依据不代表种族值、招式或获取条件已由官方逐项核实。核对日期：${escape(identity.reviewed_at||identity.checked_at)}。${e.research_only?'数值仍待核验，暂不开放登记。':'战斗数值仍采用固定社区参考版本。'}</p></section>`:''}
+ ${e.author_evidence?`<section class="section"><h3>作者羁绊资料</h3><p class="facts"><a href="${escape(e.author_evidence.url)}" target="_blank" rel="noopener">Dragonsden 作者发布帖</a> · ${escape(e.author_evidence.document)}。文档未标注精确版本，2.1 对应关系待核实；此处为资料参考。</p></section>`:''}
+ <section class="section"><h3>数据核对</h3><p class="facts">${e.stats_status==='two_reference_sources_agree'?'六项种族值：两份固定参考数据逐项一致。':e.stats_status==='author_document_reference'?'六项种族值：作者文档参考。':'六项种族值：固定社区参考。'}${e.ability_status==='turn_based_adaptation_reference'?' 特性：回合制适配候选，尚未核实为官方赋予本形态的特性。':e.ability_status.startsWith('champions_')?' 特性：固定 Champions 数据参考。':''}${e.ability_comparison?' '+escape(e.ability_comparison.explanation_zh):''}${e.ability_evidence?` <a href="${escape(e.ability_evidence.source)}" target="_blank" rel="noopener">2026 年 9 月特性快照</a>。`:''}${e.move_pool_status==='base_species_reference_not_ZA_learnset'?' 招式表为基础物种跨世代参考，不是 Z-A 专属招式表。':''}</p></section>
+ <section class="section"><h3>形态与进化</h3><div class="related" role="region" aria-label="同物种形态列表" tabindex="0">${relatedHtml||'<p class="muted">自定义物种：Dun；不占用官方全国编号。</p>'}</div><p class="facts" style="margin-top:10px">${e.prevo?'进化前：'+escape(prevo?.name_zh_hans||e.prevo)+'。 ':''}${e.evolution_reference?.level?'参考进化等级：'+e.evolution_reference.level+'。 ':''}${evol?'后续进化：'+evol+'。 ':''}${e.form_transition_reference?.required_move?'参考必需招式：'+escape(data.moves[e.form_transition_reference.required_move.toLowerCase().replace(/[^a-z0-9]/g,'')]?.name_zh||e.form_transition_reference.required_move)+'。 ':''}${e.required_items.length?'参考所需物品：'+escape((e.required_items_zh||e.required_items).join('、'))+'。 ':''}本项目获取地点与捕捉剧情尚未配置。</p><p class="facts">${escape(e.transition?.summary_zh)}</p>${e.evolution_edges?.length?`<ul class="facts">${e.evolution_edges.map(v=>`<li>${escape(v.name_zh)}：${escape(v.summary_zh)}${v.item_zh?'；'+escape(v.item_zh):''}${v.move_zh?'；'+escape(v.move_zh):''}${v.condition?'；'+escape(v.condition):''}</li>`).join('')}</ul>`:''}</section>
  <section class="section"><h3>图鉴记录</h3><p class="facts">${escape(e.registration_rule)}。特殊形态独立登记，不会自动登记普通形态。</p><div class="progress-buttons"></div>${e.research_only?'<p class="facts">此条目待核实，暂不开放登记。</p>':''}</section>
  <section class="section"><div class="move-toolbar"><h3>招式来源参考 <span id="move-count"></span></h3><label>筛选招式<input id="move-search" type="search" placeholder="招式中文或英文名" maxlength="80"></label></div><p class="facts">含前置进化与基础形态来源；来源并集不代表四个招式可以同时合法使用。数字为世代，L 为升级、M 为机器、T 为教学、E 为蛋招式、S 为活动。</p><div id="moves"></div></section>`;
- const portrait=$('detail').querySelector('.portrait');
- if(e.sprite_id){const img=new Image();img.alt=e.name_zh_hans+'参考像素图';img.width=135;img.height=135;img.referrerPolicy='no-referrer';const fallback=()=>{const note=portrait.querySelector('.image-note');if(note)note.textContent='参考图暂不可用';};const timer=setTimeout(fallback,5000);img.onload=()=>{clearTimeout(timer);portrait.replaceChildren(img);};img.onerror=()=>{clearTimeout(timer);fallback();};img.src=`https://play.pokemonshowdown.com/sprites/gen5/${encodeURIComponent(e.sprite_id)}.png`;}
+ renderArt(e);
+ for(const id of ['art-shiny','art-female'])if($(id))$(id).onchange=()=>renderArt(e);
  for(const b of $('detail').querySelectorAll('[data-related]'))b.onclick=()=>select(+b.dataset.related);
  progressButtons();moves();$('move-search').oninput=()=>{moveLimit=15;moves();};
  if($('hp-comparison')){for(const id of ['hp-level','hp-iv','hp-ev','hp-dynamax'])$(id).oninput=updateHp;updateHp();}
+}
+function artControls(e){
+ const v=e.art_reference?.variants||{};
+ return `<div class="facts art-controls">${v.front_shiny?'<label><input id="art-shiny" type="checkbox"> 异色参考图</label>':''}${v.front_female?'<label><input id="art-female" type="checkbox"> 雌性参考图</label>':''}${e.category==='dynamax'?'<span>图片为极巨化前的对应形态</span>':''}</div>`;
+}
+function renderArt(e){
+ const portrait=$('detail').querySelector('.portrait'),v=e.art_reference?.variants||{};
+ const shiny=$('art-shiny')?.checked,female=$('art-female')?.checked;
+ const variant=shiny?(female?'front_shiny_female':'front_shiny'):(female?'front_female':'front_default');
+ const url=v[variant]||(!shiny&&!female?(e.art_reference?.fallback_url|| (e.sprite_id?`https://play.pokemonshowdown.com/sprites/gen5/${encodeURIComponent(e.sprite_id)}.png`:null)):null);
+ portrait.innerHTML='<span class="image-note">'+(url?'正在加载参考图…':'此形态参考图待补充')+'</span>';
+ if(!url)return;
+ const img=new Image();img.alt=e.name_zh_hans+(shiny?'异色':'')+(female?'雌性':'')+'参考图';img.width=135;img.height=135;img.referrerPolicy='no-referrer';
+ const token={};portrait.artToken=token;
+ const fallback=()=>{if(portrait.artToken!==token)return;const note=portrait.querySelector('.image-note');if(note)note.textContent='参考图暂不可用';};
+ const timer=setTimeout(fallback,5000);
+ img.onload=()=>{clearTimeout(timer);if(portrait.artToken===token)portrait.replaceChildren(img);};
+ img.onerror=()=>{clearTimeout(timer);fallback();};img.src=url;
 }
 function hpPanel(e){
  if(!e.stats||!['dynamax','gigantamax'].includes(e.category))return '';
@@ -62,6 +83,7 @@ function moves(){const e=data.entries[selected],q=$('move-search').value.toLower
 async function init(){
  try{const responses=await Promise.all([fetch('/catalog.json'),fetch('/pokedex.wasm')]);if(responses.some(r=>!r.ok))throw Error('资料包读取失败');data=await responses[0].json();core=(await WebAssembly.instantiate(await responses[1].arrayBuffer(),{})).instance.exports;
  if(core.dex_count()!==data.entries.length||data.entries.some((e,i)=>(core.dex_id(i)>>>0)!==e.numeric_id))throw Error('资料与图鉴核心版本不一致，请重新构建');
+ $('announced-list').innerHTML=data.announced.records.map(r=>`<li><a href="${escape(r.source_zh||data.announced.source)}" target="_blank" rel="noopener">${escape(r.name_zh||r.name_en)}</a>${r.types?' · '+r.types.map(typeName).join('／'):' · 已公布角色外观，尚未确认玩法形态'}${r.ability?' · '+escape(data.abilities[r.ability.toLowerCase()]?.name_zh||r.ability):''}</li>`).join('');
  data.categories.forEach((c,i)=>$('category').add(new Option(c.name,i+1)));data.types.forEach((t,i)=>$('type').add(new Option(t.name,i+1)));for(let i=1;i<=9;i++)$('generation').add(new Option(`第 ${i} 世代`,i));
  try{const stored=localStorage.getItem(key);if(stored){const bytes=Uint8Array.from(atob(stored),c=>c.charCodeAt(0));if(bytes.length>65536)throw Error();input(bytes);if(core.dex_load(bytes.length))throw Error();}}catch{notice('本机旧记录未能读取，未覆盖原记录。可以导入已有备份恢复。',true);}
  for(const id of ['search','category','type','generation','progress','research'])$(id).addEventListener(id==='search'?'input':'change',()=>{offset=0;query();});

@@ -1,5 +1,14 @@
 #include "omni/pokedex.h"
 
+const OmniDexProfile *omni_dex_profile(const OmniDex *dex, const OmniDexProfile *profiles,
+    uint16_t profile_count, uint32_t id) {
+    int32_t index;
+    if (!dex || !profiles || profile_count != dex->count) return NULL;
+    index = omni_dex_find(dex, id);
+    if (index < 0 || profiles[index].id != id) return NULL;
+    return &profiles[index];
+}
+
 static int shape(const OmniDex *d) { return d && d->entries && d->count; }
 static int state_ok(const OmniDex *d,const OmniDexState *s) { return shape(d) && s && s->flags && s->count==d->count; }
 static int flags_ok(uint8_t f) { return !(f & 248u) && (!(f&2u)||(f&1u)) && (!(f&4u)||((f&3u)==3u)); }

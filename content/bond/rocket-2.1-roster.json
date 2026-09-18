@@ -2,125 +2,126 @@
   "schema_version": 1,
   "target_version": "2.1",
   "complete_version_verified": false,
-  "notice": "Author credits corroborate 15 names, not a complete version-specific roster. Fan site adds 8 candidates. No stats or art approved for production.",
+  "notice": "All 23 candidate identities and reference stats/types/ability are now corroborated by the author-linked Fuertes Vínculo.txt snapshot. The document does not state 2.1; exact version, triggers, custom learnsets and art remain unverified. No production battle approval.",
   "sources": {
     "author": "https://whackahack.com/foro/threads/31-12-2024-pokemon-edicion-team-rocket-4-regiones-kanto-archi7-johto-y-hoenn.65493/",
-    "fan_site": "https://teamrocketedition.com/bond-forms/"
+    "fan_site": "https://teamrocketedition.com/bond-forms/",
+    "author_document": "content/bond/author-reference.json"
   },
   "forms": [
     {
       "name": "Rhyperior",
-      "evidence": "author_credits_and_fan_site",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Rapidash",
-      "evidence": "author_credits_and_fan_site",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Butterfree",
-      "evidence": "author_credits_and_fan_site",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Kingdra",
-      "evidence": "author_credits_and_fan_site",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Skarmory",
-      "evidence": "author_credits_and_fan_site",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Poliwrath",
-      "evidence": "author_credits_and_fan_site",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Eevee",
-      "evidence": "author_credits_and_fan_site",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Feraligatr",
-      "evidence": "author_credits_and_fan_site",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Crobat Protagonist",
-      "evidence": "author_credits_and_fan_site",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Delphox",
-      "evidence": "author_credits_and_fan_site",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Mamoswine",
-      "evidence": "author_credits_and_fan_site",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Dragonite",
-      "evidence": "author_credits_and_fan_site",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Goodra",
-      "evidence": "author_credits_and_fan_site",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Milotic",
-      "evidence": "author_credits_and_fan_site",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Jirachi",
-      "evidence": "author_credits_and_fan_site",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Hypno",
-      "evidence": "fan_site_only_needs_author_verification",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Flareon EN",
-      "evidence": "fan_site_only_needs_author_verification",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Jolteon RAI",
-      "evidence": "fan_site_only_needs_author_verification",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Vaporeon SUI",
-      "evidence": "fan_site_only_needs_author_verification",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Ninetales",
-      "evidence": "fan_site_only_needs_author_verification",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Crobat Andra",
-      "evidence": "fan_site_only_needs_author_verification",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Volcarona",
-      "evidence": "fan_site_only_needs_author_verification",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Sacred Dragon Dun",
-      "evidence": "fan_site_only_needs_author_verification",
+      "evidence": "author_document_reference_version_unverified",
       "production_ready": false
     }
   ]

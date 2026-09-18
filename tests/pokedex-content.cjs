@@ -16,11 +16,40 @@ for(const source of evidence.sources)for(const id of source.form_ids){
  assert.equal(e.battle_data_approved,false);
 }
 assert.equal(evidence.sources.find(s=>s.key==='mega_classic').form_ids.length,48);
-assert.equal(catalog.entries.filter(e=>e.identity_evidence).length,100);
-for(const e of catalog.entries.filter(e=>e.research_only))assert.equal(e.stats,null);
+assert.equal(evidence.sources.flatMap(s=>s.form_ids).length,131);
+for(const e of catalog.entries.filter(e=>e.research_only))assert(e.author_evidence&&e.stats);
 assert(byForm('dragonitemega').identity_evidence);
-assert(byForm('dragonitemega').research_only,'Identity evidence must not approve reference stats');
+assert.equal(byForm('dragonitemega').stats_status,'two_reference_sources_agree');
+assert.equal(byForm('dragonitemega').battle_data_approved,false,'Reference data must not approve project battle rules');
 assert.equal(byForm('rayquazamega').form_transition_reference.required_move,'Dragon Ascent');
 assert.deepEqual(byForm('rayquazamega').required_items,[]);
 assert.equal(byForm('urshifurapidstrikegmax').form_transition_reference.changes_from,'Urshifu-Rapid-Strike');
-console.log('PASS: 34 evidenced Gmax records, 66 evidenced Mega records, cap classification, transition exceptions and evidence isolation');
+const audit=require('../content/pokedex/form-source-audit.json');
+const official=require('../content/pokedex/official-zukan-audit.json');
+const coverage=require('../content/pokedex/coverage.json');
+assert.equal(official.official_rows,1302);assert.equal(official.matched_rows,1302);assert.deepEqual(official.unmatched_rows,[]);
+assert.equal(audit.records.length,1579);assert.equal(coverage.source_form_rows_accounted_for,1579);
+const entries=new Map(catalog.entries.map(e=>[e.entry_id,e]));
+for(const r of audit.records){assert(['represented','represented_as_metadata','excluded'].includes(r.status));if(r.entry_id)assert(entries.has(r.entry_id));else assert(r.reason);}
+for(const [id,num] of Object.entries(require('./fixtures/pokedex-ids-v1.json'))){assert(entries.has(id),`Old entry removed: ${id}`);assert.equal(entries.get(id).numeric_id,num);}
+assert.equal(coverage.alcremie_appearance_combinations,63);
+assert.equal(catalog.entries.filter(e=>e.national_number===201&&e.category!=='dynamax').length,28);
+assert.equal(catalog.entries.filter(e=>e.national_number===774&&e.category!=='dynamax').length,14);
+assert.equal(catalog.entries.filter(e=>e.category==='other_form_review').length,0);
+for(const e of catalog.entries){
+ assert(e.stats&&Object.keys(e.stats).length===6,`Missing six stats ${e.entry_id}`);
+ assert(Object.values(e.stats).every(n=>Number.isInteger(n)&&n>0&&n<=255));
+ assert(e.types.length>0);assert(e.abilities.length>0);
+ if(e.field_crosschecks){assert(e.field_crosschecks.stats,`Stats differ: ${e.entry_id}`);assert(e.field_crosschecks.types,`Types differ: ${e.entry_id}`);}
+ for(const id of e.transition.parent_entry_ids)assert(entries.has(id));
+ if(e.category==='dynamax'){const p=entries.get(e.source_entry_id);assert(p);assert.deepEqual(e.stats,p.stats);assert.equal(e.name_zh_hans,p.name_zh_hans+' · 极巨化');}
+ if(!e.author_evidence)assert(!/[A-Za-z]{3}/.test(e.name_zh_hans),`Untranslated form: ${e.name_zh_hans}`);
+}
+const bonds=catalog.entries.filter(e=>e.author_evidence);assert.equal(bonds.length,23);assert(bonds.every(e=>e.research_only&&!e.battle_data_approved));
+assert.equal(bonds.find(e=>e.entry_id.endsWith(':rhyperior')).reported_total,670);
+assert.equal(Object.values(bonds.find(e=>e.entry_id.endsWith(':rhyperior')).stats).reduce((a,b)=>a+b),660);
+assert.equal(catalog.announced.records.length,5);assert(catalog.announced.records.every(e=>e.stats===null));
+assert.equal(byForm('garchompmegaz').abilities[0].id,'levitate');
+assert.equal(byForm('lucariomegaz').abilities[0].id,'auraguard');
+assert.equal(catalog.abilities.auraguard.reference_number,319);
+console.log('PASS: complete pinned form inventories, official 1302-row reconciliation, six-stat/type comparisons, author bond contradictions, all previous IDs and transition links');

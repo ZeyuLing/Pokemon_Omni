@@ -16,6 +16,14 @@ const fs=require('node:fs'),assert=require('node:assert/strict');
  assert(data.entries.some(e=>e.category==='dynamax'&&e.source_form_id==='charizard'));
  for(const e of data.entries.filter(e=>e.category==='dynamax'))assert(e.eligibility_evidence?.official_rule&&e.eligibility_evidence?.availability_reference);
  for(let i=0;i<data.entries.length;i++)assert.equal(c.dex_id(i)>>>0,data.entries[i].numeric_id);
+ for(let i=0;i<data.entries.length;i++){
+  const e=data.entries[i];
+  for(const [j,key] of ['hp','atk','def','spa','spd','spe'].entries())assert.equal(c.dex_stat(i,j),e.stats?.[key]||0);
+  for(const [j,slot] of ['0','1','H','S'].entries()){const a=e.abilities.find(a=>a.slot===slot);assert.equal(c.dex_ability(i,j),a?data.abilities[a.id].reference_number:0);}
+  assert.equal(c.dex_parent(i)>>>0,data.entries.find(p=>p.entry_id===e.transition.parent_entry_ids[0])?.numeric_id||0);
+ }
+ assert.equal(c.dex_stat(99999,0),0);assert.equal(c.dex_stat(0,6),0);
+ assert.equal(c.dex_ability(99999,0),0);assert.equal(c.dex_ability(0,4),0);
  assert.equal(query(),data.entries.length);
  assert.equal(query('喷火龙'),data.entries.filter(e=>e.name_zh_hans.includes('喷火龙')).length);
  assert.equal(query('CHARIZARD'),query('charizard'));

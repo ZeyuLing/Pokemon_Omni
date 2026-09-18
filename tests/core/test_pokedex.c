@@ -16,6 +16,14 @@ int main(void) {
  const OmniDex d={rows,4};uint8_t flags[4]={0};OmniDexState s={flags,4};
  OmniDexFilter f={"",0,0,0,0,0,0};uint16_t out[2]={65535,65535};
  uint8_t bytes[100],bad[100],small[10],before[4];size_t written=0;
+ {
+  const OmniDexProfile profiles[]={{101,0,{78,84,78,109,85,100},{66,0,94},2,10,1,0},{102,101,{78,130,111,130,85,100},{181,0,0},2,15,1,0},{103,0,{0},{0},0,0,0,1},{104,0,{35,55,40,50,50,90},{9,0,31},4,0,1,0}};
+  assert(omni_dex_profile(&d,profiles,4,102)->parent_id==101);
+  assert(omni_dex_profile(&d,profiles,4,102)->stats[1]==130);
+  assert(!omni_dex_profile(&d,profiles,3,102));
+  assert(!omni_dex_profile(&d,profiles,4,999));
+  assert(!omni_dex_profile(NULL,profiles,4,101));
+ }
  assert(omni_hp_stat(78,50,31,0,0)==153);
  assert(omni_dynamax_max_hp(153,10,0)==306);
  assert(omni_dynamax_max_hp(153,0,0)==229);

@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-09-18",
+  "scope": "Champions Regulation M-C ability reference; community implementation, not official numeric certification",
+  "official_roster": "https://news.pokemon-home.com/en/page/816.html",
+  "commit": "2ddfa0476f8207e12e204b1c69f7c7683b17633c",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/smogon/pokemon-showdown/2ddfa0476f8207e12e204b1c69f7c7683b17633c/data/pokedex.ts",
+      "sha256": "73048386b864be5aff093e9393acf32e8016299e9d7b76078bf5120b769e2fe0"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/smogon/pokemon-showdown/2ddfa0476f8207e12e204b1c69f7c7683b17633c/data/abilities.ts",
+      "sha256": "818edd100c8eb5bdf4d4ded8dd1b1ce9d394f87f40f7d9d53a5414276e84f82b"
+    }
+  ],
+  "records": [
+    {
+      "source_form_id": "absolmegaz",
+      "abilities": [
+        {
+          "slot": "0",
+          "id": "sharpness",
+          "name_en": "Sharpness",
+          "num": 292
+        }
+      ]
+    },
+    {
+      "source_form_id": "garchompmegaz",
+      "abilities": [
+        {
+          "slot": "0",
+          "id": "levitate",
+          "name_en": "Levitate",
+          "num": 26
+        }
+      ]
+    },
+    {
+      "source_form_id": "lucariomegaz",
+      "abilities": [
+        {
+          "slot": "0",
+          "id": "auraguard",
+          "name_en": "Aura Guard",
+          "num": 319
+        }
+      ]
+    },
+    {
+      "source_form_id": "golisopodmega",
+      "abilities": [
+        {
+          "slot": "0",
+          "id": "toughclaws",
+          "name_en": "Tough Claws",
+          "num": 181
+        }
+      ]
+    },
+    {
+      "source_form_id": "baxcaliburmega",
+      "abilities": [
+        {
+          "slot": "0",
+          "id": "thermalexchange",
+          "name_en": "Thermal Exchange",
+          "num": 270
+        }
+      ]
+    }
+  ]
+}

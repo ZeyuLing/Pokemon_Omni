@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-09-18",
+  "release_status": "announced_for_2027",
+  "source": "https://windswaves.pokemon.com/en-us/",
+  "scope": "Announced identities are kept outside the released National Dex. No invented National numbers, stats, evolutions or legality rules.",
+  "records": [
+    {"name_en":"Browt","name_zh":"叶眉鸟","types":["Grass"],"ability":"Overgrow","national_number":null,"stats":null,"source_zh":"https://www.pokemon.co.jp/ex/winds_waves/sc/pokemon/202602_01/"},
+    {"name_en":"Pombon","name_zh":"博姆耿","types":["Fire"],"ability":"Blaze","national_number":null,"stats":null,"source_zh":"https://www.pokemon.co.jp/ex/winds_waves/sc/pokemon/202602_02/"},
+    {"name_en":"Gecqua","name_zh":"妙澪儿","types":["Water"],"ability":"Torrent","national_number":null,"stats":null,"source_zh":"https://www.pokemon.co.jp/ex/winds_waves/sc/pokemon/202602_03/"},
+    {"name_en":"Mr. Windychu","name_zh":null,"species_reference":"pokemon:pikachu","stats":null,"status":"announced_character_appearance_not_confirmed_gameplay_form"},
+    {"name_en":"Ms. Wavychu","name_zh":null,"species_reference":"pokemon:pikachu","stats":null,"status":"announced_character_appearance_not_confirmed_gameplay_form"}
+  ]
+}

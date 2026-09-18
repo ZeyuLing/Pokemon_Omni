@@ -172,6 +172,127 @@
         "lucariomegaz",
         "garchompmegaz"
       ]
+    },
+    {
+      "key": "champions_ma",
+      "url": "https://news.pokemon-home.com/en/page/751.html",
+      "title": "官方 Champions M-A 规则名单",
+      "claims": [
+        "form_identity"
+      ],
+      "form_ids": [
+        "clefablemega",
+        "starmiemega",
+        "skarmorymega",
+        "froslassmega",
+        "excadrillmega",
+        "chandeluremega",
+        "golurkmega",
+        "floettemega",
+        "crabominablemega",
+        "drampamega",
+        "scovillainmega",
+        "glimmoramega"
+      ]
+    },
+    {
+      "key": "champions_meowstic",
+      "url": "https://news.pokemon-home.com/en/page/751.html",
+      "title": "官方名单确认超级超能妙喵；雌雄细分由两份参考数据核对",
+      "claims": [
+        "mega_family_identity"
+      ],
+      "form_ids": [
+        "meowsticfmega",
+        "meowsticmmega"
+      ]
+    },
+    {
+      "key": "champions_mb",
+      "url": "https://news.pokemon-home.com/en/page/776.html",
+      "title": "官方 Champions M-B 规则名单",
+      "claims": [
+        "form_identity"
+      ],
+      "form_ids": [
+        "staraptormega",
+        "scolipedemega",
+        "scraftymega",
+        "pyroarmega",
+        "barbaraclemega",
+        "dragalgemega",
+        "falinksmega"
+      ]
+    },
+    {
+      "key": "champions_mc",
+      "url": "https://news.pokemon-home.com/en/page/816.html",
+      "title": "官方 Champions M-C 规则名单",
+      "claims": [
+        "form_identity"
+      ],
+      "form_ids": [
+        "absolmegaz",
+        "golisopodmega"
+      ]
+    },
+    {
+      "key": "official_dex_heatran",
+      "url": "https://www.pokemon.com/uk/pokedex/heatran",
+      "title": "宝可梦官方图鉴：heatran",
+      "claims": [
+        "form_identity"
+      ],
+      "form_ids": [
+        "heatranmega"
+      ]
+    },
+    {
+      "key": "official_dex_darkrai",
+      "url": "https://www.pokemon.com/uk/pokedex/darkrai",
+      "title": "宝可梦官方图鉴：darkrai",
+      "claims": [
+        "form_identity"
+      ],
+      "form_ids": [
+        "darkraimega"
+      ]
+    },
+    {
+      "key": "official_dex_magearna",
+      "url": "https://www.pokemon.com/uk/pokedex/magearna",
+      "title": "宝可梦官方图鉴：magearna",
+      "claims": [
+        "form_identity"
+      ],
+      "form_ids": [
+        "magearnamega",
+        "magearnaoriginalmega"
+      ]
+    },
+    {
+      "key": "official_dex_tatsugiri",
+      "url": "https://www.pokemon.com/uk/pokedex/tatsugiri",
+      "title": "宝可梦官方图鉴：tatsugiri",
+      "claims": [
+        "form_identity"
+      ],
+      "form_ids": [
+        "tatsugiricurlymega",
+        "tatsugiridroopymega",
+        "tatsugiristretchymega"
+      ]
+    },
+    {
+      "key": "official_dex_zygarde",
+      "url": "https://www.pokemon.com/us/pokedex/zygarde",
+      "title": "宝可梦官方图鉴：基格尔德",
+      "claims": [
+        "form_identity"
+      ],
+      "form_ids": [
+        "zygardemega"
+      ]
     }
   ]
 }
