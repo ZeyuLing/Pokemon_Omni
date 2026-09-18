@@ -12,6 +12,7 @@ let activeBrowser;
  assert.equal(await page.locator('#entries .entry').count(),5);
  await page.locator('#entries .entry').filter({hasText:'超级进化 X'}).click();
  assert((await page.locator('#detail h2').textContent()).includes('超级进化 X'));
+ assert.equal(await page.getByRole('region',{name:'官方形态依据'}).locator('a').getAttribute('href'),'https://mega.pokemon.com/en-us/');
  await page.getByRole('button',{name:'登记形态',exact:true}).click();
  assert(await page.getByRole('button',{name:'✓ 登记形态',exact:true}).isDisabled());
  await page.reload();await page.locator('#entries .entry').first().waitFor();

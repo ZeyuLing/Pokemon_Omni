@@ -7,8 +7,12 @@ try {
     if ($LASTEXITCODE) { throw 'Localization source validation failed' }
     node tools/legality-reference/export-dex.cjs
     if ($LASTEXITCODE) { throw 'National species export failed' }
+    node tools/legality-reference/export-dex-entries.cjs
+    if ($LASTEXITCODE) { throw 'Form identity export failed' }
     node tools/legality-reference/build-pokedex.cjs
     if ($LASTEXITCODE) { throw 'Catalog build failed' }
+    node tests/pokedex-content.cjs
+    if ($LASTEXITCODE) { throw 'Content evidence checks failed' }
     $null=New-Item -ItemType Directory -Force -Path build/pokedex
     & $Zig cc -std=c99 -Wall -Wextra -Werror -pedantic -O1 -Icore/include core/src/pokedex.c core/src/battle_stats.c tests/core/test_pokedex.c -o build/pokedex/test_pokedex.exe
     if ($LASTEXITCODE) { throw 'Native Pokedex build failed' }

@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-18",
+  "scope": "Manually reviewed named forms only. Identity evidence does not certify stats, learnsets, assets, translation or project eligibility.",
+  "sources": [
+    {
+      "key": "gmax_festival",
+      "url": "https://swordshield.pokemon.com/en-us/expansionpass/gigantamax-festival/",
+      "title": "剑盾官网：超极巨化活动名单",
+      "claims": [
+        "form_identity"
+      ],
+      "form_ids": [
+        "snorlaxgmax",
+        "gengargmax",
+        "kinglergmax",
+        "laprasgmax",
+        "garbodorgmax",
+        "corviknightgmax",
+        "appletungmax",
+        "toxtricitygmax",
+        "centiskorchgmax",
+        "grimmsnarlgmax",
+        "alcremiegmax",
+        "duraludongmax",
+        "charizardgmax",
+        "butterfreegmax",
+        "machampgmax",
+        "orbeetlegmax",
+        "drednawgmax",
+        "coalossalgmax",
+        "flapplegmax",
+        "sandacondagmax",
+        "toxtricitylowkeygmax",
+        "hatterenegmax",
+        "copperajahgmax"
+      ]
+    },
+    {
+      "key": "gmax_overview",
+      "url": "https://swordshield.pokemon.com/en-us/gameplay/gigantamax/",
+      "title": "剑盾官网：超极巨化介绍",
+      "claims": [
+        "form_identity"
+      ],
+      "form_ids": [
+        "pikachugmax",
+        "eeveegmax",
+        "meowthgmax"
+      ]
+    },
+    {
+      "key": "gmax_expansion",
+      "url": "https://swordshield.pokemon.com/en-us/expansionpass/pokemon/",
+      "title": "剑盾扩展票：宝可梦介绍",
+      "claims": [
+        "form_identity"
+      ],
+      "form_ids": [
+        "venusaurgmax",
+        "blastoisegmax",
+        "rillaboomgmax",
+        "cinderacegmax",
+        "inteleongmax",
+        "melmetalgmax"
+      ]
+    },
+    {
+      "key": "gmax_urshifu",
+      "url": "https://swordshield.pokemon.com/en-us/expansionpass/pokemon/gigantamax-urshifu/",
+      "title": "剑盾官网：武道熊师两种超极巨化",
+      "claims": [
+        "form_identity"
+      ],
+      "form_ids": [
+        "urshifugmax",
+        "urshifurapidstrikegmax"
+      ]
+    },
+    {
+      "key": "mega_classic",
+      "url": "https://mega.pokemon.com/en-us/",
+      "title": "官方 Mega 进化专题",
+      "claims": [
+        "form_identity"
+      ],
+      "form_ids": [
+        "charizardmegax",
+        "charizardmegay",
+        "lucariomega",
+        "gardevoirmega",
+        "gyaradosmega",
+        "kangaskhanmega",
+        "ampharosmega",
+        "sableyemega",
+        "altariamega",
+        "absolmega",
+        "venusaurmega",
+        "blastoisemega",
+        "beedrillmega",
+        "pidgeotmega",
+        "alakazammega",
+        "slowbromega",
+        "gengarmega",
+        "pinsirmega",
+        "aerodactylmega",
+        "mewtwomegax",
+        "mewtwomegay",
+        "steelixmega",
+        "scizormega",
+        "heracrossmega",
+        "houndoommega",
+        "tyranitarmega",
+        "sceptilemega",
+        "blazikenmega",
+        "swampertmega",
+        "mawilemega",
+        "aggronmega",
+        "medichammega",
+        "manectricmega",
+        "sharpedomega",
+        "cameruptmega",
+        "banettemega",
+        "glaliemega",
+        "salamencemega",
+        "metagrossmega",
+        "latiasmega",
+        "latiosmega",
+        "rayquazamega",
+        "lopunnymega",
+        "garchompmega",
+        "abomasnowmega",
+        "gallademega",
+        "audinomega",
+        "dianciemega"
+      ]
+    },
+    {
+      "key": "mega_za",
+      "url": "https://legends.pokemon.com/en-us/story-world/pokemon",
+      "title": "传说 Z-A 官网：宝可梦介绍",
+      "claims": [
+        "form_identity"
+      ],
+      "form_ids": [
+        "dragonitemega",
+        "victreebelmega",
+        "hawluchamega",
+        "malamarmega",
+        "chesnaughtmega",
+        "delphoxmega",
+        "greninjamega",
+        "meganiummega",
+        "emboarmega",
+        "feraligatrmega",
+        "eelektrossmega"
+      ]
+    },
+    {
+      "key": "mega_dimension",
+      "url": "https://legends.pokemon.com/en-us/dlc",
+      "title": "传说 Z-A 官网：超次元爆涌",
+      "claims": [
+        "form_identity"
+      ],
+      "form_ids": [
+        "raichumegax",
+        "raichumegay",
+        "chimechomega",
+        "baxcaliburmega",
+        "zeraoramega",
+        "lucariomegaz",
+        "garchompmegaz"
+      ]
+    }
+  ]
+}

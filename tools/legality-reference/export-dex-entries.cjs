@@ -12,7 +12,8 @@ const entries=national.species.map(s=>({entry_id:`dex:${s.id.slice(8)}:base`,spe
   evidence_status:'pinned_reference_identity',production_ready:false,registration_rule:'pending_acquisition_design'}));
 function category(s) {
   if (s.isMega) return 'mega';
-  if (s.forme==='Gmax') return 'gigantamax';
+  if (s.forme.endsWith('Gmax')) return 'gigantamax';
+  if (s.baseSpecies==='Pikachu' && ['Original','Hoenn','Sinnoh','Unova','Kalos','Alola','Partner','World'].includes(s.forme)) return 'cosmetic';
   if (s.forme==='Primal') return 'primal_reversion';
   if (s.name==='Necrozma-Ultra') return 'ultra_burst';
   if (s.name.startsWith('Ogerpon-') && s.forme.endsWith('Tera') || s.name.startsWith('Terapagos-')) return 'tera_related';

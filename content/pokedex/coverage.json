@@ -1,6 +1,11 @@
 {
-  "content_sha256": "8deaac4783364baff47c40d068217e67c341a73f5edec3b8325f4c7323293805",
+  "content_sha256": "af78090635e0ead8ef488e3db342db7c1030a82145e41b31128df0425c9d27ef",
   "entries": 2153,
+  "official_named_forms": 100,
+  "official_named_forms_by_category": {
+    "mega": 66,
+    "gigantamax": 34
+  },
   "base_species": 1025,
   "localized_base_species": 1025,
   "reference_browsable": 2080,
@@ -9,11 +14,11 @@
     "base": 1025,
     "dynamax": 661,
     "mega": 97,
-    "gigantamax": 32,
+    "gigantamax": 34,
     "rocket_bond_candidate": 23,
-    "regional": 61,
-    "other_form_review": 193,
-    "cosmetic": 52,
+    "regional": 60,
+    "other_form_review": 184,
+    "cosmetic": 60,
     "primal_reversion": 2,
     "ultra_burst": 1,
     "tera_related": 6
