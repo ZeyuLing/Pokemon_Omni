@@ -6,3 +6,5 @@
 .related {max-height:300px;overflow:auto;align-content:flex-start;padding:4px;scrollbar-color:#b2c4b6 transparent}.art-controls label {flex-direction:row;align-items:center}
 
 .portrait.game-screenshot {border-radius:8px}.portrait.game-screenshot img {width:100%;height:auto;object-fit:contain;image-rendering:auto}.image-note button {margin-top:8px}
+
+.portrait.art-sheet {width:min(100%,320px);height:170px;flex-shrink:1}.portrait.art-sheet img {image-rendering:pixelated}.concept-label {color:#795114;background:#fff1d6;border-radius:5px;padding:8px;line-height:1.6}

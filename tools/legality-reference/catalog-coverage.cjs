@@ -9,6 +9,8 @@ module.exports=({entries,reference,digest,categories})=>{
   bond_version_and_rules:bonds.map(e=>issue(e,'Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified.')),
   source_contradictions:entries.filter(e=>e.source_issues?.length).map(e=>({...issue(e,e.source_issues),reported_total:e.reported_total,computed_total:Object.values(e.stats).reduce((a,b)=>a+b,0)})),
   artwork:specific.filter(e=>!e.art_reference?.variants.front_default).map(e=>issue(e,'Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art.')),
+  missing_artwork:entries.filter(e=>!e.art_reference?.variants.front_default).map(e=>issue(e,'No selected reference image or generated concept is available. See assets/source/bond-concepts/attempts.json for generation outcomes.')),
+  original_concepts:entries.filter(e=>e.art_reference?.status==='ai_original_concept').map(e=>issue(e,'Omni original AI concept only; not evidence of official or Rocket Edition appearance, and not final production art.')),
   ability_crosscheck:entries.filter(e=>e.ability_comparison).map(e=>({...issue(e,e.ability_comparison.explanation_zh),...e.ability_comparison})),
   official_identity:specific.filter(e=>!e.identity_evidence).map(e=>issue(e,'Reference dataset identity is present; no manually verified official per-form citation attached.')),
   project_integration:[{scope:'all entries',reason:'World acquisition routes and story gates require world design; they are intentionally unassigned.'},{scope:'all art',reason:'Preview URLs are not distributable GBA graphics; target assets require conversion/creation and provenance review.'}],
@@ -21,7 +23,8 @@ module.exports=({entries,reference,digest,categories})=>{
   six_stats_available:count(e=>e.stats),six_stats_crosschecked:count(e=>e.stats_crosscheck?.agrees),author_bond_records:bonds.filter(e=>e.stats).length,
   official_species_identity:count(e=>e.category==='base'&&e.species_identity_evidence),
   ability_scope_differences:count(e=>e.ability_comparison?.status==='different_record_scope'),ability_second_source_missing:count(e=>e.ability_comparison?.status==='second_source_missing'),
-  front_art_metadata_mapped:count(e=>e.art_reference?.variants.front_default),front_art_head_confirmed:count(e=>e.art_reference?.front_http_status===200),
+  front_art_metadata_mapped:count(e=>e.art_reference?.variants.front_default&&e.art_reference.status!=='ai_original_concept'),front_art_head_confirmed:count(e=>e.art_reference?.front_http_status===200),
+  original_concept_art:count(e=>e.art_reference?.status==='ai_original_concept'),artwork_presentation_available:count(e=>e.art_reference?.variants.front_default),
   alcremie_appearance_combinations:count(e=>e.pokeapi?.identifier.startsWith('alcremie-')&&e.pokeapi.identifier!=='alcremie-gmax'),
   limitations:['Reference catalog coverage is complete against the two pinned source inventories, not a claim that every fact is officially certified.','23 author-documented bonds retain exact-version/rules/art gaps and disabled registration.','See gaps.json for actual source contradictions and missing dedicated reference artwork.','Announced 2027 identities are separate from released numbered species.','Game world acquisition and final GBA assets remain platform/world work.']
  };

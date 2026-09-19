@@ -147,46 +147,69 @@
       "computed_total": 665
     }
   ],
-  "artwork": [
+  "artwork": [],
+  "missing_artwork": [
     {
-      "entry_id": "dex:appearance:koraidon-gliding-build",
-      "name": "故勒顿 · 滑翔形态",
-      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
+      "entry_id": "dex:omni:rocket-bond:ninetales",
+      "name": "九尾 · 羁绊",
+      "reason": "No selected reference image or generated concept is available. See assets/source/bond-concepts/attempts.json for generation outcomes."
     },
     {
-      "entry_id": "dex:appearance:koraidon-limited-build",
-      "name": "故勒顿 · 收敛形态",
-      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
+      "entry_id": "dex:omni:rocket-bond:jolteon-rai",
+      "name": "雷伊布 · 羁绊（RAI）",
+      "reason": "No selected reference image or generated concept is available. See assets/source/bond-concepts/attempts.json for generation outcomes."
     },
     {
-      "entry_id": "dex:appearance:koraidon-sprinting-build",
-      "name": "故勒顿 · 疾驰形态",
-      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
+      "entry_id": "dex:omni:rocket-bond:flareon-en",
+      "name": "火伊布 · 羁绊（EN）",
+      "reason": "No selected reference image or generated concept is available. See assets/source/bond-concepts/attempts.json for generation outcomes."
     },
     {
-      "entry_id": "dex:appearance:koraidon-swimming-build",
-      "name": "故勒顿 · 浮水形态",
-      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
+      "entry_id": "dex:omni:rocket-bond:crobat-andra",
+      "name": "叉字蝠 · 羁绊（Andra）",
+      "reason": "No selected reference image or generated concept is available. See assets/source/bond-concepts/attempts.json for generation outcomes."
     },
     {
-      "entry_id": "dex:appearance:miraidon-aquatic-mode",
-      "name": "密勒顿 · 浮游模式",
-      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
+      "entry_id": "dex:omni:rocket-bond:milotic",
+      "name": "美纳斯 · 羁绊",
+      "reason": "No selected reference image or generated concept is available. See assets/source/bond-concepts/attempts.json for generation outcomes."
     },
     {
-      "entry_id": "dex:appearance:miraidon-drive-mode",
-      "name": "密勒顿 · 行驶模式",
-      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
+      "entry_id": "dex:omni:rocket-bond:jirachi",
+      "name": "基拉祈 · 羁绊",
+      "reason": "No selected reference image or generated concept is available. See assets/source/bond-concepts/attempts.json for generation outcomes."
     },
     {
-      "entry_id": "dex:appearance:miraidon-glide-mode",
-      "name": "密勒顿 · 滑翔模式",
-      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
+      "entry_id": "dex:omni:rocket-bond:volcarona",
+      "name": "火神蛾 · 羁绊",
+      "reason": "No selected reference image or generated concept is available. See assets/source/bond-concepts/attempts.json for generation outcomes."
+    }
+  ],
+  "original_concepts": [
+    {
+      "entry_id": "dex:omni:rocket-bond:hypno",
+      "name": "引梦貘人 · 羁绊",
+      "reason": "Omni original AI concept only; not evidence of official or Rocket Edition appearance, and not final production art."
     },
     {
-      "entry_id": "dex:appearance:miraidon-low-power-mode",
-      "name": "密勒顿 · 低功率模式",
-      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
+      "entry_id": "dex:omni:rocket-bond:vaporeon-sui",
+      "name": "水伊布 · 羁绊（SUI）",
+      "reason": "Omni original AI concept only; not evidence of official or Rocket Edition appearance, and not final production art."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:skarmory",
+      "name": "盔甲鸟 · 羁绊",
+      "reason": "Omni original AI concept only; not evidence of official or Rocket Edition appearance, and not final production art."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:mamoswine",
+      "name": "象牙猪 · 羁绊",
+      "reason": "Omni original AI concept only; not evidence of official or Rocket Edition appearance, and not final production art."
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:sacred-dragon-dun",
+      "name": "神圣龙 · Dun 羁绊",
+      "reason": "Omni original AI concept only; not evidence of official or Rocket Edition appearance, and not final production art."
     }
   ],
   "ability_crosscheck": [

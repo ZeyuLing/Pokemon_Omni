@@ -92,6 +92,24 @@ let activeBrowser;
  await hpPage.locator('.portrait img').waitFor({timeout:15000});
  assert((await hpPage.locator('.art-controls').textContent()).includes('官方游戏截图'));
  await hpPage.screenshot({path:'build/pokedex/ogerpon-official.png',fullPage:true});
+ await visit(catalog.entries.find(e=>e.entry_id==='dex:appearance:koraidon-swimming-build'));
+ await hpPage.locator('.portrait img').waitFor({timeout:15000});
+ assert((await hpPage.locator('.art-controls').textContent()).includes('官方游戏截图'));
+ await visit(catalog.entries.find(e=>e.entry_id==='dex:appearance:miraidon-low-power-mode'));
+ await hpPage.locator('.portrait img').waitFor({timeout:15000});
+ assert((await hpPage.locator('.art-controls').textContent()).includes('社区图鉴参考图'));
+ await visit(catalog.entries.find(e=>e.entry_id.endsWith(':rhyperior')&&e.author_evidence));
+ await hpPage.locator('.portrait img').waitFor({timeout:15000});
+ assert((await hpPage.locator('.art-controls').textContent()).includes('FYTYNo1'));
+ await hpPage.setViewportSize({width:320,height:740});
+ assert(await hpPage.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'credited sprite sheet overflow');
+ for(const e of catalog.entries.filter(e=>e.art_reference.status==='ai_original_concept')){
+  await visit(e);await hpPage.locator('.portrait img').waitFor();
+  assert((await hpPage.locator('.concept-label').textContent()).includes('非官方／火箭队原图'));
+  assert(await hpPage.getByRole('button',{name:'登记形态',exact:true}).isDisabled());
+ }
+ await hpPage.setViewportSize({width:1440,height:1050});
+ await hpPage.screenshot({path:'build/pokedex/original-concept-desktop.png',fullPage:true});
  assert.deepEqual(errors,[]);await browser.close();
  console.log('PASS: desktop/tablet/mobile/320px rendered; Chinese search; independent Mega registration + reload; research protection; empty state; invalid import preserves records; keyboard focus; offline sprite fallback; dependency error/retry; no page errors');
 })().catch(async e=>{console.error(e);if(activeBrowser)await activeBrowser.close();process.exitCode=1;});

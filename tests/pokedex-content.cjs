@@ -55,3 +55,13 @@ assert.equal(catalog.abilities.auraguard.reference_number,319);
 console.log('PASS: complete pinned form inventories, official 1302-row reconciliation, six-stat/type comparisons, author bond contradictions, all previous IDs and transition links');
 
 for(const id of ['ogerpontealtera','ogerponwellspringtera','ogerponhearthflametera','ogerponcornerstonetera']){assert.equal(byForm(id).art_reference.status,'official_game_screenshot');assert.equal(byForm(id).art_reference.front_http_status,200);}
+for(const r of require('../content/pokedex/supplemental-art-reference.json').records){
+ const e=r.entry_id?entries.get(r.entry_id):byForm(r.source_form_id);
+ assert.equal(e.art_reference.variants.front_default,r.url);assert.equal(e.art_reference.front_http_status,200);
+ if(r.kind==='author_credited_artwork')assert(e.research_only&&e.art_reference.creator&&e.art_reference.credit_evidence);
+}
+for(const r of require('../assets/source/bond-concepts/manifest.json').records){
+ const e=entries.get(r.entry_id);assert.equal(e.art_reference.status,'ai_original_concept');
+ assert(e.research_only&&!e.battle_data_approved&&e.art_reference.not_source_game_appearance);
+ assert.equal(e.art_reference.sha256,r.sha256);
+}

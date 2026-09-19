@@ -2,7 +2,7 @@
   "schema_version": 1,
   "checked_at": "2026-09-19",
   "page_snapshot_sha256": "a47b0bc376ec204e595eac705224457ae317d7179a1e9f8e722072aab37734d0",
-  "scope": "Official screenshots with adjacent mask captions, not transparent sprites or production GBA assets",
+  "scope": "Reference images: official screenshots, separately labeled community illustrations and author-credited artwork. Not approval for shipping GBA assets.",
   "records": [
     {
       "source_form_id": "ogerpontealtera",
@@ -34,6 +34,186 @@
       "source_page": "https://www.pokemon.co.jp/ex/sv_dlc/ja/pokemon/230808_01/",
       "source_caption": "いしずえのめん",
       "kind": "official_game_screenshot",
+      "http_status": 200
+    },
+    {
+      "entry_id": "dex:appearance:koraidon-sprinting-build",
+      "url": "https://www.pokemon.co.jp/ex/sv/assets/img/story/ja/220803_04/story_img_04.jpg",
+      "source_page": "https://www.pokemon.co.jp/ex/sv/ja/story/220803_04/",
+      "source_caption": "しっそうけいたい",
+      "kind": "official_game_screenshot",
+      "page_snapshot_sha256": "8850ac453684269b0d212c36694119fe60a251952ecc83469d9feaffdf066b9a",
+      "http_status": 200
+    },
+    {
+      "entry_id": "dex:appearance:miraidon-drive-mode",
+      "url": "https://www.pokemon.co.jp/ex/sv/assets/img/story/ja/220803_04/story_img_05.jpg",
+      "source_page": "https://www.pokemon.co.jp/ex/sv/ja/story/220803_04/",
+      "source_caption": "ドライブモード",
+      "kind": "official_game_screenshot",
+      "page_snapshot_sha256": "8850ac453684269b0d212c36694119fe60a251952ecc83469d9feaffdf066b9a",
+      "http_status": 200
+    },
+    {
+      "entry_id": "dex:appearance:koraidon-swimming-build",
+      "url": "https://www.pokemon.co.jp/ex/sv/assets/img/story/ja/220803_04/story_img_08.jpg",
+      "source_page": "https://www.pokemon.co.jp/ex/sv/ja/story/220803_04/",
+      "source_caption": "ゆうえいけいたい",
+      "kind": "official_game_screenshot",
+      "page_snapshot_sha256": "8850ac453684269b0d212c36694119fe60a251952ecc83469d9feaffdf066b9a",
+      "http_status": 200
+    },
+    {
+      "entry_id": "dex:appearance:miraidon-aquatic-mode",
+      "url": "https://www.pokemon.co.jp/ex/sv/assets/img/story/ja/220803_04/story_img_09.jpg",
+      "source_page": "https://www.pokemon.co.jp/ex/sv/ja/story/220803_04/",
+      "source_caption": "フロートモード",
+      "kind": "official_game_screenshot",
+      "page_snapshot_sha256": "8850ac453684269b0d212c36694119fe60a251952ecc83469d9feaffdf066b9a",
+      "http_status": 200
+    },
+    {
+      "entry_id": "dex:appearance:koraidon-gliding-build",
+      "url": "https://www.pokemon.co.jp/ex/sv/assets/img/story/ja/220803_04/story_img_10.jpg",
+      "source_page": "https://www.pokemon.co.jp/ex/sv/ja/story/220803_04/",
+      "source_caption": "かっくうけいたい",
+      "kind": "official_game_screenshot",
+      "page_snapshot_sha256": "8850ac453684269b0d212c36694119fe60a251952ecc83469d9feaffdf066b9a",
+      "http_status": 200
+    },
+    {
+      "entry_id": "dex:appearance:miraidon-glide-mode",
+      "url": "https://www.pokemon.co.jp/ex/sv/assets/img/story/ja/220803_04/story_img_11.jpg",
+      "source_page": "https://www.pokemon.co.jp/ex/sv/ja/story/220803_04/",
+      "source_caption": "グライドモード",
+      "kind": "official_game_screenshot",
+      "page_snapshot_sha256": "8850ac453684269b0d212c36694119fe60a251952ecc83469d9feaffdf066b9a",
+      "http_status": 200
+    },
+    {
+      "entry_id": "dex:appearance:koraidon-limited-build",
+      "url": "https://www.serebii.net/pokemon/art/1007-l.png",
+      "source_page": "https://www.serebii.net/pokemon/koraidon/",
+      "source_caption": "Limited Build",
+      "kind": "community_form_illustration",
+      "http_status": 200
+    },
+    {
+      "entry_id": "dex:appearance:miraidon-low-power-mode",
+      "url": "https://www.serebii.net/pokemon/art/1008-l.png",
+      "source_page": "https://www.serebii.net/pokemon/miraidon/",
+      "source_caption": "Low-Power Mode",
+      "kind": "community_form_illustration",
+      "http_status": 200
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:rhyperior",
+      "url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bc4e1d47-193f-419c-8c83-2101755b06e7/dczdcb2-69ccacd0-68ab-4973-a226-1722b18c4901.png/v1/fill/w_256,h_64,q_80,strp/mega_rhyperior_gba_sprite_by_fytyno1_dczdcb2-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjQiLCJwYXRoIjoiL2YvYmM0ZTFkNDctMTkzZi00MTljLThjODMtMjEwMTc1NWIwNmU3L2RjemRjYjItNjljY2FjZDAtNjhhYi00OTczLWEyMjYtMTcyMmIxOGM0OTAxLnBuZyIsIndpZHRoIjoiPD0yNTYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Vuh-zK6ne-mK-AKehPq9Fdy3XxghZf8eN4fvYy9QFrA",
+      "source_page": "https://www.deviantart.com/fytyno1/art/Mega-Rhyperior-GBA-sprite-785003150",
+      "source_caption": "Author-credited original artwork; exact 2.1 in-game appearance not independently verified",
+      "kind": "author_credited_artwork",
+      "creator": "FYTYNo1 (GBA adaptation; original-design credits in author post)",
+      "credit_evidence": "https://whackahack.com/foro/threads/31-12-2024-pokemon-edicion-team-rocket-4-regiones-kanto-archi7-johto-y-hoenn.65493/",
+      "http_status": 200
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:rapidash",
+      "url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bc4e1d47-193f-419c-8c83-2101755b06e7/ddht0wt-a49a5599-831c-4dbe-9923-639efc9789ef.png/v1/fill/w_256,h_64,q_80,strp/mega_rapidash_gba_sprite_by_fytyno1_ddht0wt-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjQiLCJwYXRoIjoiL2YvYmM0ZTFkNDctMTkzZi00MTljLThjODMtMjEwMTc1NWIwNmU3L2RkaHQwd3QtYTQ5YTU1OTktODMxYy00ZGJlLTk5MjMtNjM5ZWZjOTc4OWVmLnBuZyIsIndpZHRoIjoiPD0yNTYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.AJQMr576T0ptTfi-d4BLfED7-I61pWEo3t5fRjzYYgc",
+      "source_page": "https://www.deviantart.com/fytyno1/art/Mega-rapidash-GBA-sprite-815967965",
+      "source_caption": "Author-credited original artwork; exact 2.1 in-game appearance not independently verified",
+      "kind": "author_credited_artwork",
+      "creator": "FYTYNo1 (GBA adaptation; original-design credits in author post)",
+      "credit_evidence": "https://whackahack.com/foro/threads/31-12-2024-pokemon-edicion-team-rocket-4-regiones-kanto-archi7-johto-y-hoenn.65493/",
+      "http_status": 200
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:butterfree",
+      "url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bc4e1d47-193f-419c-8c83-2101755b06e7/dcc8c5j-b197dc48-ba9e-4f43-b6d9-8fd4bff1cca9.png/v1/fill/w_256,h_64,q_80,strp/mega_butterfree_gba_sprite_by_fytyno1_dcc8c5j-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjQiLCJwYXRoIjoiL2YvYmM0ZTFkNDctMTkzZi00MTljLThjODMtMjEwMTc1NWIwNmU3L2RjYzhjNWotYjE5N2RjNDgtYmE5ZS00ZjQzLWI2ZDktOGZkNGJmZjFjY2E5LnBuZyIsIndpZHRoIjoiPD0yNTYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.w4ruSgiP6nWvgvG17YT6hVPqS3e_XkEDM1FKPQcVMYM",
+      "source_page": "https://www.deviantart.com/fytyno1/art/Mega-butterfree-GBA-sprite-746138503",
+      "source_caption": "Author-credited original artwork; exact 2.1 in-game appearance not independently verified",
+      "kind": "author_credited_artwork",
+      "creator": "FYTYNo1 (GBA adaptation; original-design credits in author post)",
+      "credit_evidence": "https://whackahack.com/foro/threads/31-12-2024-pokemon-edicion-team-rocket-4-regiones-kanto-archi7-johto-y-hoenn.65493/",
+      "http_status": 200
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:kingdra",
+      "url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bc4e1d47-193f-419c-8c83-2101755b06e7/dbl5z30-b35df4c1-6ea5-4c73-9506-152f084871e9.png/v1/fill/w_256,h_64,q_80,strp/mega_kingdra_gba_sprite_by_fytyno1_dbl5z30-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjQiLCJwYXRoIjoiL2YvYmM0ZTFkNDctMTkzZi00MTljLThjODMtMjEwMTc1NWIwNmU3L2RibDV6MzAtYjM1ZGY0YzEtNmVhNS00YzczLTk1MDYtMTUyZjA4NDg3MWU5LnBuZyIsIndpZHRoIjoiPD0yNTYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Qk9S9dVixxVx9DS1TYTdLLZuz1fNjzAF5n16t28cZjc",
+      "source_page": "https://www.deviantart.com/fytyno1/art/Mega-Kingdra-GBA-sprite-700678620",
+      "source_caption": "Author-credited original artwork; exact 2.1 in-game appearance not independently verified",
+      "kind": "author_credited_artwork",
+      "creator": "FYTYNo1 (GBA adaptation; original-design credits in author post)",
+      "credit_evidence": "https://whackahack.com/foro/threads/31-12-2024-pokemon-edicion-team-rocket-4-regiones-kanto-archi7-johto-y-hoenn.65493/",
+      "http_status": 200
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:poliwrath",
+      "url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bc4e1d47-193f-419c-8c83-2101755b06e7/ddfncjh-dd6041ea-4b12-4665-a099-d13e3cd1d237.png/v1/fill/w_256,h_64,q_80,strp/mega_poliwrath_gba_sprite_by_fytyno1_ddfncjh-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjQiLCJwYXRoIjoiL2YvYmM0ZTFkNDctMTkzZi00MTljLThjODMtMjEwMTc1NWIwNmU3L2RkZm5jamgtZGQ2MDQxZWEtNGIxMi00NjY1LWEwOTktZDEzZTNjZDFkMjM3LnBuZyIsIndpZHRoIjoiPD0yNTYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.QWOKumSPuyZ85ATDSIuVu_Otx0zVX0U06QYiJ9bMOlM",
+      "source_page": "https://www.deviantart.com/fytyno1/art/Mega-poliwrath-GBA-sprite-812343869",
+      "source_caption": "Author-credited original artwork; exact 2.1 in-game appearance not independently verified",
+      "kind": "author_credited_artwork",
+      "creator": "FYTYNo1 (GBA adaptation; original-design credits in author post)",
+      "credit_evidence": "https://whackahack.com/foro/threads/31-12-2024-pokemon-edicion-team-rocket-4-regiones-kanto-archi7-johto-y-hoenn.65493/",
+      "http_status": 200
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:feraligatr",
+      "url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bc4e1d47-193f-419c-8c83-2101755b06e7/dcsy7ie-8a1660af-e92b-4cc5-857d-74117e58e578.png/v1/fill/w_256,h_131,q_80,strp/mega_feraligatr_gba_sprite_dragon_version_by_fytyno1_dcsy7ie-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTMxIiwicGF0aCI6Ii9mL2JjNGUxZDQ3LTE5M2YtNDE5Yy04YzgzLTIxMDE3NTViMDZlNy9kY3N5N2llLThhMTY2MGFmLWU5MmItNGNjNS04NTdkLTc0MTE3ZTU4ZTU3OC5wbmciLCJ3aWR0aCI6Ijw9MjU2In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.WEi197OXyw4zNCkrMsqZKkhMAJNNeXBtFvMsZeki90A",
+      "source_page": "https://www.deviantart.com/fytyno1/art/Mega-feraligatr-GBA-sprite-Dragon-version-774219398",
+      "source_caption": "Author-credited original artwork; exact 2.1 in-game appearance not independently verified",
+      "kind": "author_credited_artwork",
+      "creator": "FYTYNo1 (GBA adaptation; original-design credits in author post)",
+      "credit_evidence": "https://whackahack.com/foro/threads/31-12-2024-pokemon-edicion-team-rocket-4-regiones-kanto-archi7-johto-y-hoenn.65493/",
+      "http_status": 200
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:crobat-protagonist",
+      "url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bc4e1d47-193f-419c-8c83-2101755b06e7/dcxg9e1-f85f60db-6fc1-45e4-88b0-f9a07072bc83.png/v1/fill/w_256,h_64,q_80,strp/mega_crobat_gba_sprite_by_fytyno1_dcxg9e1-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjQiLCJwYXRoIjoiL2YvYmM0ZTFkNDctMTkzZi00MTljLThjODMtMjEwMTc1NWIwNmU3L2RjeGc5ZTEtZjg1ZjYwZGItNmZjMS00NWU0LTg4YjAtZjlhMDcwNzJiYzgzLnBuZyIsIndpZHRoIjoiPD0yNTYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.9AmI39_4BHjbixnsHbjhYcK-0s2Q-RLHk0jUyvd3_Lk",
+      "source_page": "https://www.deviantart.com/fytyno1/art/Mega-crobat-GBA-sprite-781780105",
+      "source_caption": "Author-credited original artwork; exact 2.1 in-game appearance not independently verified",
+      "kind": "author_credited_artwork",
+      "creator": "FYTYNo1 (GBA adaptation; original-design credits in author post)",
+      "credit_evidence": "https://whackahack.com/foro/threads/31-12-2024-pokemon-edicion-team-rocket-4-regiones-kanto-archi7-johto-y-hoenn.65493/",
+      "http_status": 200
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:delphox",
+      "url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bc4e1d47-193f-419c-8c83-2101755b06e7/dcbb311-54de6e75-4116-4364-a0bb-5970c896f069.png/v1/fill/w_256,h_64,q_80,strp/mega_delphox_gba_sprite_by_fytyno1_dcbb311-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjQiLCJwYXRoIjoiL2YvYmM0ZTFkNDctMTkzZi00MTljLThjODMtMjEwMTc1NWIwNmU3L2RjYmIzMTEtNTRkZTZlNzUtNDExNi00MzY0LWEwYmItNTk3MGM4OTZmMDY5LnBuZyIsIndpZHRoIjoiPD0yNTYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Gi5rBg-7TgxHUxSJHUnnoKEjJisvBwYpo_mKI_H3rl0",
+      "source_page": "https://www.deviantart.com/fytyno1/art/Mega-Delphox-GBA-sprite-744587029",
+      "source_caption": "Author-credited original artwork; exact 2.1 in-game appearance not independently verified",
+      "kind": "author_credited_artwork",
+      "creator": "FYTYNo1 (GBA adaptation; original-design credits in author post)",
+      "credit_evidence": "https://whackahack.com/foro/threads/31-12-2024-pokemon-edicion-team-rocket-4-regiones-kanto-archi7-johto-y-hoenn.65493/",
+      "http_status": 200
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:dragonite",
+      "url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bc4e1d47-193f-419c-8c83-2101755b06e7/dd1d6m9-35d3e238-d9ad-4057-9663-5450aa3978a8.png/v1/fill/w_256,h_64,q_80,strp/mega_dragonite_gba_sprite_version_amazen_megas_by_fytyno1_dd1d6m9-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjQiLCJwYXRoIjoiL2YvYmM0ZTFkNDctMTkzZi00MTljLThjODMtMjEwMTc1NWIwNmU3L2RkMWQ2bTktMzVkM2UyMzgtZDlhZC00MDU3LTk2NjMtNTQ1MGFhMzk3OGE4LnBuZyIsIndpZHRoIjoiPD0yNTYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.llnXM748jH0lEC65_Zl2mgvVOQDt8L47-feEci089Ms",
+      "source_page": "https://www.deviantart.com/fytyno1/art/Mega-dragonite-GBA-sprite-version-Amazen-Megas-788355009",
+      "source_caption": "Author-credited original artwork; exact 2.1 in-game appearance not independently verified",
+      "kind": "author_credited_artwork",
+      "creator": "FYTYNo1 (GBA adaptation; original-design credits in author post)",
+      "credit_evidence": "https://whackahack.com/foro/threads/31-12-2024-pokemon-edicion-team-rocket-4-regiones-kanto-archi7-johto-y-hoenn.65493/",
+      "http_status": 200
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:goodra",
+      "url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bc4e1d47-193f-419c-8c83-2101755b06e7/dcbiiq3-08f9eab0-003d-4ee4-82a0-705bea80a4ce.png/v1/fill/w_256,h_64,q_80,strp/mega_goodra_gba_sprite_by_fytyno1_dcbiiq3-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjQiLCJwYXRoIjoiL2YvYmM0ZTFkNDctMTkzZi00MTljLThjODMtMjEwMTc1NWIwNmU3L2RjYmlpcTMtMDhmOWVhYjAtMDAzZC00ZWU0LTgyYTAtNzA1YmVhODBhNGNlLnBuZyIsIndpZHRoIjoiPD0yNTYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.rQNwNz39lHQU_ibRlYSt9ndgtyGCYOVQgoHCGKIPEPA",
+      "source_page": "https://www.deviantart.com/fytyno1/art/Mega-goodra-GBA-sprite-744933963",
+      "source_caption": "Author-credited original artwork; exact 2.1 in-game appearance not independently verified",
+      "kind": "author_credited_artwork",
+      "creator": "FYTYNo1 (GBA adaptation; original-design credits in author post)",
+      "credit_evidence": "https://whackahack.com/foro/threads/31-12-2024-pokemon-edicion-team-rocket-4-regiones-kanto-archi7-johto-y-hoenn.65493/",
+      "http_status": 200
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:eevee",
+      "url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7dbe8bc0-1045-4ff1-b4e7-2a65d497738c/dd1tqgw-2e9c9434-a6d0-4028-b415-f719fba602a9.png/v1/fill/w_422,h_263,q_80,strp/omneon_by_pixelheim_dd1tqgw-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjYzIiwicGF0aCI6Ii9mLzdkYmU4YmMwLTEwNDUtNGZmMS1iNGU3LTJhNjVkNDk3NzM4Yy9kZDF0cWd3LTJlOWM5NDM0LWE2ZDAtNDAyOC1iNDE1LWY3MTlmYmE2MDJhOS5wbmciLCJ3aWR0aCI6Ijw9NDIyIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.dbD9y2_iIrdoVmTn58LuDdNcl7eOZhTO6m_orNwVxwI",
+      "source_page": "https://www.deviantart.com/pixelheim/art/Omneon-789127232",
+      "source_caption": "Author-credited original artwork; exact 2.1 in-game appearance not independently verified",
+      "kind": "author_credited_artwork",
+      "creator": "Pixelheim",
+      "credit_evidence": "https://whackahack.com/foro/threads/31-12-2024-pokemon-edicion-team-rocket-4-regiones-kanto-archi7-johto-y-hoenn.65493/",
       "http_status": 200
     }
   ]

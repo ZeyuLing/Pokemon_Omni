@@ -1,0 +1,54 @@
+{
+  "checked_at": "2026-09-19",
+  "tool": "built-in image_gen",
+  "records": [
+    {
+      "id": "ninetales",
+      "status": "no_image_returned_error_detail_not_retained"
+    },
+    {
+      "id": "hypno",
+      "status": "generated"
+    },
+    {
+      "id": "vaporeon-sui",
+      "status": "generated"
+    },
+    {
+      "id": "jolteon-rai",
+      "status": "no_image_returned_error_detail_not_retained"
+    },
+    {
+      "id": "flareon-en",
+      "status": "no_image_returned_error_detail_not_retained"
+    },
+    {
+      "id": "crobat-andra",
+      "status": "no_image_returned_error_detail_not_retained"
+    },
+    {
+      "id": "skarmory",
+      "status": "generated"
+    },
+    {
+      "id": "milotic",
+      "status": "tool_moderation_blocked"
+    },
+    {
+      "id": "jirachi",
+      "status": "tool_moderation_blocked"
+    },
+    {
+      "id": "mamoswine",
+      "status": "generated"
+    },
+    {
+      "id": "volcarona",
+      "status": "tool_moderation_blocked"
+    },
+    {
+      "id": "sacred-dragon-dun",
+      "status": "generated"
+    }
+  ]
+}

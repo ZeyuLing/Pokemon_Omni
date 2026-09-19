@@ -46,9 +46,15 @@ function select(index){
  progressButtons();moves();$('move-search').oninput=()=>{moveLimit=15;moves();};
  if($('hp-comparison')){for(const id of ['hp-level','hp-iv','hp-ev','hp-dynamax'])$(id).oninput=updateHp;updateHp();}
 }
+function artProvenance(e){
+ const art=e.art_reference;
+ if(art?.status==='ai_original_concept')return '<span class="concept-label">AI 原创概念稿 · Omni 设计提案，非官方／火箭队原图</span>';
+ const labels={official_game_screenshot:'官方游戏截图 · 非独立精灵图',community_form_illustration:'社区图鉴参考图',author_credited_artwork:'作者致谢对应作品 · 完整图集，2.1 游戏内外观待核对'};
+ return labels[art?.status]?`<span>${labels[art.status]}</span><a href="${escape(art.source)}" target="_blank" rel="noopener">图片出处</a>${art.creator?`<span>署名：${escape(art.creator)}</span><a href="${escape(art.credit_evidence)}" target="_blank" rel="noopener">作者致谢依据</a>`:''}`:'';
+}
 function artControls(e){
  const v=e.art_reference?.variants||{};
- return `<div class="facts art-controls">${v.front_shiny?'<label><input id="art-shiny" type="checkbox"> 异色参考图</label>':''}${v.front_female?'<label><input id="art-female" type="checkbox"> 雌性参考图</label>':''}${e.category==='dynamax'?'<span>图片为极巨化前的对应形态</span>':''}${e.art_reference?.status==='official_game_screenshot'?`<span>官方游戏截图 · 非独立精灵图</span><a href="${escape(e.art_reference.source)}" target="_blank" rel="noopener">图片出处</a>`:''}</div>`;
+ return `<div class="facts art-controls">${v.front_shiny?'<label><input id="art-shiny" type="checkbox"> 异色参考图</label>':''}${v.front_female?'<label><input id="art-female" type="checkbox"> 雌性参考图</label>':''}${e.category==='dynamax'?'<span>图片为极巨化前的对应形态</span>':''}${artProvenance(e)}</div>`;
 }
 function renderArt(e){
  const portrait=$('detail').querySelector('.portrait'),v=e.art_reference?.variants||{};
@@ -56,7 +62,8 @@ function renderArt(e){
  const variant=shiny?(female?'front_shiny_female':'front_shiny'):(female?'front_female':'front_default');
  const url=v[variant]||(!shiny&&!female?(e.art_reference?.fallback_url|| (e.sprite_id?`https://play.pokemonshowdown.com/sprites/gen5/${encodeURIComponent(e.sprite_id)}.png`:null)):null);
  const token={};portrait.artToken=token;
- portrait.classList.toggle('game-screenshot',e.art_reference?.status==='official_game_screenshot');
+ portrait.classList.toggle('game-screenshot',['official_game_screenshot','community_form_illustration','author_credited_artwork','ai_original_concept'].includes(e.art_reference?.status));
+ portrait.classList.toggle('art-sheet',e.art_reference?.status==='author_credited_artwork');
  portrait.innerHTML='<span class="image-note">'+(url?'正在加载参考图…':e.author_evidence?'尚未收录作者的羁绊形态图':'当前来源未收录此形态图片')+'</span>';
  if(!url)return;
  const img=new Image();img.alt=e.name_zh_hans+(shiny?'异色':'')+(female?'雌性':'')+'参考图';img.width=135;img.height=135;img.referrerPolicy='no-referrer';

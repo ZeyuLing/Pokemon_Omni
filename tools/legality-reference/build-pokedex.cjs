@@ -127,9 +127,16 @@ require('./finalize-catalog.cjs')({entries,reference,l,Dex,toID,root});
 require('./official-zukan.cjs')({entries,reference,Dex,root});
 const supplementalArt=read('content/pokedex/supplemental-art-reference.json');
 for(const row of supplementalArt.records){
- const entry=entries.find(e=>e.source_form_id===row.source_form_id&&e.category!=='dynamax');
+ const entry=entries.find(e=>row.entry_id?e.entry_id===row.entry_id:e.source_form_id===row.source_form_id&&e.category!=='dynamax');
  assert(entry,`Unknown supplemental art form: ${row.source_form_id}`);
- entry.art_reference={status:row.kind,source:row.source_page,variants:{front_default:row.url},front_http_status:row.http_status,checked_at:supplementalArt.checked_at};
+ entry.art_reference={status:row.kind,source:row.source_page,variants:{front_default:row.url},front_http_status:row.http_status,checked_at:supplementalArt.checked_at,creator:row.creator||null,credit_evidence:row.credit_evidence||null};
+}
+for(const row of read('assets/source/bond-concepts/manifest.json').records){
+ const entry=entries.find(e=>e.entry_id===row.entry_id);assert(entry);
+ const bytes=fs.readFileSync(path.join(root,row.path));
+ assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),row.sha256);
+ assert(!entry.art_reference.variants.front_default,'Generated art must not silently replace a reference image');
+ entry.art_reference={status:'ai_original_concept',source:null,variants:{front_default:row.url},asset_path:row.path,sha256:row.sha256,tool:'built-in image_gen',not_source_game_appearance:true};
 }
 json('content/pokedex/form-source-audit.json',{source:'PokeAPI CSV SHA-256 snapshot',records:reference.audit});
 for(const p of Object.values(movePools))for(const id of Object.keys(p))if(!moves[id]) {

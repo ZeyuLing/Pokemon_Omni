@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "tool": "built-in image_gen",
+  "status": "original_Omni_concepts_not_Rocket_reference",
+  "records": [
+    {
+      "id": "hypno",
+      "entry_id": "dex:omni:rocket-bond:hypno",
+      "path": "assets/source/bond-concepts/images/hypno-v1.png",
+      "url": "/concept-art/hypno-v1.png",
+      "sha256": "ee849ebdddb64a0c56126f3abe4f14c08a4295a94b1f28ac24bae79f182eb647",
+      "width": 1254,
+      "height": 1254,
+      "prompt_id": "hypno",
+      "created_at": "2026-09-19",
+      "status": "concept_not_approved_final_design",
+      "not_source_game_appearance": true
+    },
+    {
+      "id": "mamoswine",
+      "entry_id": "dex:omni:rocket-bond:mamoswine",
+      "path": "assets/source/bond-concepts/images/mamoswine-v1.png",
+      "url": "/concept-art/mamoswine-v1.png",
+      "sha256": "e3be9c8d6386a2028cc6de119b54472e943fc2277f61e4f4b2e4d0b0df67b3ac",
+      "width": 1254,
+      "height": 1254,
+      "prompt_id": "mamoswine",
+      "created_at": "2026-09-19",
+      "status": "concept_not_approved_final_design",
+      "not_source_game_appearance": true
+    },
+    {
+      "id": "sacred-dragon-dun",
+      "entry_id": "dex:omni:rocket-bond:sacred-dragon-dun",
+      "path": "assets/source/bond-concepts/images/sacred-dragon-dun-v1.png",
+      "url": "/concept-art/sacred-dragon-dun-v1.png",
+      "sha256": "2a6061a1ea92d54726706b495a80a3b8370677c4b740a82a645a99b3738756bb",
+      "width": 1254,
+      "height": 1254,
+      "prompt_id": "sacred-dragon-dun",
+      "created_at": "2026-09-19",
+      "status": "concept_not_approved_final_design",
+      "not_source_game_appearance": true
+    },
+    {
+      "id": "skarmory",
+      "entry_id": "dex:omni:rocket-bond:skarmory",
+      "path": "assets/source/bond-concepts/images/skarmory-v1.png",
+      "url": "/concept-art/skarmory-v1.png",
+      "sha256": "326c99f06c836716c59315cb0e01bf14c1cef6ceb9000301acb4769364d406ef",
+      "width": 1254,
+      "height": 1254,
+      "prompt_id": "skarmory",
+      "created_at": "2026-09-19",
+      "status": "concept_not_approved_final_design",
+      "not_source_game_appearance": true
+    },
+    {
+      "id": "vaporeon-sui",
+      "entry_id": "dex:omni:rocket-bond:vaporeon-sui",
+      "path": "assets/source/bond-concepts/images/vaporeon-sui-v1.png",
+      "url": "/concept-art/vaporeon-sui-v1.png",
+      "sha256": "3c31a156c859fc2f4389fdd15e99eaa658c455157ac957aa030fea508fe212ac",
+      "width": 1254,
+      "height": 1254,
+      "prompt_id": "vaporeon-sui",
+      "created_at": "2026-09-19",
+      "status": "concept_not_approved_final_design",
+      "not_source_game_appearance": true
+    }
+  ]
+}
