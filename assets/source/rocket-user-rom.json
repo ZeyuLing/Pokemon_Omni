@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-20",
+  "source": "user-provided",
+  "user_confirmed": "The user identifies this file as the version they actually play.",
+  "original_filename": "西班牙火箭队内置修改器版 .gba",
+  "local_path": "assets/imported/rocket-user/rocket-user-modifier.gba",
+  "bytes": 33554432,
+  "sha256": "033235cdd389c4c8cb1aa6d68a93954a55fd681c92a1a554ebc63431117b4eaf",
+  "copy_verified": true,
+  "header": {
+    "title": "POKEMON EMER",
+    "game_code": "BPEE",
+    "revision_byte": 0,
+    "checksum_valid": true
+  },
+  "version_status": "unverified",
+  "limitations": [
+    "The filename describes a built-in modifier edition; the modification scope and exact upstream version have not been verified.",
+    "A valid GBA header does not establish the hack version or verify gameplay and asset tables.",
+    "Use this hash as the user-played reference identity. Do not automatically replace author-documented values with unverified modified-ROM values."
+  ],
+  "storage_policy": "ROM is local-only under git-ignored assets/imported; this manifest contains no ROM payload or private source path.",
+  "author_archive_comparison": {
+    "rom_sha256": "008c256ca16c46d81f7417edfc2ec40ab9e3d2932e67bf5317e48d15b206ff9e",
+    "identical": false
+  }
+}
