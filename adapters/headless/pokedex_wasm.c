@@ -1,10 +1,17 @@
 #include "omni/pokedex.h"
 #include "omni/battle_stats.h"
 #include "catalog.h"
+#include "plans.h"
 static uint8_t flags[OMNI_CATALOG_ENTRY_COUNT];
 static OmniDexState state={flags,OMNI_CATALOG_ENTRY_COUNT};
 static uint8_t input[65536];
-static uint16_t results[40];
+static uint16_t results[4096];
+unsigned training_hash(void){return OMNI_TRAINING_HASH;}
+unsigned training_count(void){return OMNI_TRAINING_COUNT;}
+unsigned training_status(unsigned index,unsigned gen,unsigned kind,unsigned known,unsigned unlocked){
+    if(index>=OMNI_TRAINING_COUNT||gen>9||kind>2||known>7||unlocked>7)return OMNI_PLAN_BAD_DATA;
+    return omni_training_status(&omni_training_plans[index],(uint8_t)gen,(uint8_t)kind,(uint8_t)known,(uint8_t)unlocked);
+}
 unsigned dex_hp(unsigned base,unsigned level,unsigned iv,unsigned ev,unsigned fixed) {
     if(base>255||level>100||iv>31||ev>252||fixed>1)return 0;
     return omni_hp_stat((uint16_t)base,(uint8_t)level,(uint8_t)iv,(uint16_t)ev,(uint8_t)fixed);
@@ -44,6 +51,13 @@ unsigned dex_query(unsigned category,unsigned gen,unsigned type,unsigned progres
 unsigned dex_record(unsigned index,unsigned event) {
     if(index>=state.count||event>255)return OMNI_DEX_ARGUMENT;
     return (unsigned)omni_dex_record(&omni_pokedex_catalog,&state,omni_pokedex_catalog.entries[index].id,(uint8_t)event);
+}
+unsigned dex_query_all(unsigned category,unsigned gen,unsigned type,unsigned progress,unsigned research,unsigned national){
+    OmniDexFilter f;
+    if(category>31||gen>9||type>18||progress>4||research>1||national>65535)return 0;
+    input[255]=0;f.text=(const char*)input;f.category=(uint8_t)category;f.generation=(uint8_t)gen;f.type=(uint8_t)type;
+    f.progress=(uint8_t)progress;f.include_research=(uint8_t)research;f.national=(uint16_t)national;
+    return omni_dex_query(&omni_pokedex_catalog,&state,&f,0,results,4096);
 }
 unsigned dex_save(void) {
     size_t n=0;

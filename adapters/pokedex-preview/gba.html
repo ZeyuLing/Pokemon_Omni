@@ -1,0 +1,8 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Omni · GBA 图鉴</title><link rel="stylesheet" href="/style.css"></head><body>
+<main class="gba-shell"><a href="/">返回网站图鉴</a><h1>GBA 图鉴运行器</h1><p class="facts">运行本地构建的真实 GBA ROM。当前是独立图鉴联调程序，尚未接入完整冒险游戏。</p><div id="emulator-status" role="status">正在加载模拟器…</div>
+<canvas id="gba-screen" width="240" height="160" tabindex="0" role="img" aria-label="GBA 图鉴画面，240乘160像素"></canvas>
+<div class="gba-controls" aria-label="GBA 按键"><button data-key="64">↑ 上</button><button data-key="128">↓ 下</button><button data-key="32">← 左</button><button data-key="16">→ 右</button><button data-key="1">A 确认</button><button data-key="2">B 返回</button><button data-key="512">L</button><button data-key="256">R</button><button data-key="4">SELECT</button><button data-key="8">START</button></div>
+<p class="facts">键盘：方向键移动，Z / X 对应 A / B，A / S 对应 L / R，Shift 对应 SELECT，Enter 对应 START。点击画面后即可操作。手机可使用上方按键。</p>
+<div class="entry-actions"><button id="gba-pause">暂停</button><button id="gba-export">导出 SRAM 存档</button><label class="file-button">导入 SRAM<input id="gba-import" type="file" accept=".sav"></label><a href="/omni-dex.gba" download>下载 .gba</a></div>
+<p class="facts">游戏内事件联调：详情页按 START，再按 A 模拟见过、R 模拟捕捉、L 模拟形态解锁。研究中的羁绊条目拒绝登记。当前浏览器 SRAM 与网站收藏／ODEX 记录分别保存。</p>
+</main><script src="/emulator/mgba.js"></script><script src="/gba-save.js"></script><script src="/gba-player.js"></script></body></html>

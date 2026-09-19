@@ -1,0 +1,83 @@
+{
+  "retrieved_at": "2026-09-20",
+  "source": "Smogon analysis sets via pkmn/smogon data distribution",
+  "records": [
+    {
+      "format": "gen9ou",
+      "file": "gen9ou.json",
+      "url": "https://pkmn.github.io/smogon/data/sets/gen9ou.json",
+      "sha256": "49695ab6d932f9f7826bed4aa0c43a729368e76e26526d94dd4d9ca47eb325ac",
+      "bytes": 54644
+    },
+    {
+      "format": "gen9uu",
+      "file": "gen9uu.json",
+      "url": "https://pkmn.github.io/smogon/data/sets/gen9uu.json",
+      "sha256": "437f514ee145bfc0a10306cc193b134083166fc492291f0696c1ab8fa5e1633a",
+      "bytes": 32759
+    },
+    {
+      "format": "gen9ru",
+      "file": "gen9ru.json",
+      "url": "https://pkmn.github.io/smogon/data/sets/gen9ru.json",
+      "sha256": "d37acaedd3a30fac753532904944691dfdd16b8210ef9c602918e2d43bcf5175",
+      "bytes": 34122
+    },
+    {
+      "format": "gen9nu",
+      "file": "gen9nu.json",
+      "url": "https://pkmn.github.io/smogon/data/sets/gen9nu.json",
+      "sha256": "d1b4c220506239a42075a3abf5b5e67fa75b94426173337f304c20010ea1402f",
+      "bytes": 37836
+    },
+    {
+      "format": "gen9pu",
+      "file": "gen9pu.json",
+      "url": "https://pkmn.github.io/smogon/data/sets/gen9pu.json",
+      "sha256": "897f1761f26a0d19ae1775197346884ef3fdd141f647b72a954c488336d11fa5",
+      "bytes": 37532
+    },
+    {
+      "format": "gen9ubers",
+      "file": "gen9ubers.json",
+      "url": "https://pkmn.github.io/smogon/data/sets/gen9ubers.json",
+      "sha256": "9ef091fa644a5f4447059db92c70dd38930354bbf82c0267f1ac361b3a72ff6d",
+      "bytes": 35928
+    },
+    {
+      "format": "gen9doublesou",
+      "file": "gen9doublesou.json",
+      "url": "https://pkmn.github.io/smogon/data/sets/gen9doublesou.json",
+      "sha256": "4f9d667822b8a72c4abcfe045264fbfd59db8db84e1c78a3a0c327a05614dfed",
+      "bytes": 18976
+    },
+    {
+      "format": "gen8ou",
+      "file": "gen8ou.json",
+      "url": "https://pkmn.github.io/smogon/data/sets/gen8ou.json",
+      "sha256": "70d71c689d362fb5640099f64efd4eeb84941ca87435625a83fcd30254f15670",
+      "bytes": 34081
+    },
+    {
+      "format": "gen7ou",
+      "file": "gen7ou.json",
+      "url": "https://pkmn.github.io/smogon/data/sets/gen7ou.json",
+      "sha256": "80b528a0f155a65b65b54166b272bf2c17109c91405b21faf1473511877bc46d",
+      "bytes": 40092
+    },
+    {
+      "format": "gen7uu",
+      "file": "gen7uu.json",
+      "url": "https://pkmn.github.io/smogon/data/sets/gen7uu.json",
+      "sha256": "90ca9e98baec76ee45c4f5cd0c12dcd23825ca12290982cf5be3a3cb241d5223",
+      "bytes": 38674
+    },
+    {
+      "format": "gen7ubers",
+      "file": "gen7ubers.json",
+      "url": "https://pkmn.github.io/smogon/data/sets/gen7ubers.json",
+      "sha256": "dc9a9ef23fcd04b3dbdfcb9250e2fba14aaeec94ebb50193ec5ef9c8f1a7e495",
+      "bytes": 28481
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "validated_on": "2026-09-20",
+  "build": {
+    "rom": "build/gba/omni-dex.gba",
+    "bytes": 14680064,
+    "sha256": "e3cc19a56a9bd4a8c111303330dd89330421ceb2b16899309890b3a821850d3b",
+    "header_checksum_valid": true,
+    "scope": "Standalone GBA Pokedex integration cartridge, not the full world game."
+  },
+  "emulator": {
+    "emulator": "@wasm-gaming/mgba-wasm@0.1.1",
+    "rom_sha256": "e3cc19a56a9bd4a8c111303330dd89330421ceb2b16899309890b3a821850d3b",
+    "boot": true,
+    "navigation": true,
+    "capture_save": true,
+    "reload": true,
+    "corrupt_newest_slot_fallback": true,
+    "training_and_form_pages": true,
+    "chinese_font_pixels": true,
+    "close_and_reopen": true,
+    "frames": 732
+  },
+  "assets": {
+    "unique_images": 1532,
+    "art_bytes": 12550144,
+    "glyph_count": 1808,
+    "missing_images": 0
+  },
+  "training": {
+    "plans": 987,
+    "forms": 324,
+    "uncovered_forms": 2060
+  },
+  "rejected_source_sets": 633,
+  "checks_passed": [
+    "tools/build_pokedex.ps1 (native, ARM, Wasm, content)",
+    "tests/training-wasm.cjs",
+    "tools/build_gba.ps1 (host callback contract, ARM ROM, embedded asset bytes)",
+    "tests/gba-smoke.cjs (actual ROM, saves, Chinese pixels, close/reopen)",
+    "tests/pokedex-preview.cjs",
+    "tests/pokedex-features.cjs"
+  ],
+  "limitations": [
+    "No physical GBA validation",
+    "Standalone Pokedex, full adventure-game integration pending",
+    "Story acquisition gates unconfigured",
+    "Training references not Omni battle-approved",
+    "23 bond entries remain research-only"
+  ]
+}
