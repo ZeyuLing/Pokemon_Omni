@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "content_sha256": "b3f39e9aa1883de21fcfb0a18181336fcdfeb6d7baef15fc45b7244733ebc619",
+  "content_sha256": "3692dcfdda49a36fe4cbb45f86d6043767d03be4404ebdd2607c8700848ca0e3",
   "entries": 2384,
   "base_species": 1025,
   "localized_base_species": 1025,
@@ -46,8 +46,8 @@
   "official_species_identity": 1025,
   "ability_scope_differences": 22,
   "ability_second_source_missing": 9,
-  "front_art_metadata_mapped": 2349,
-  "front_art_head_confirmed": 2348,
+  "front_art_metadata_mapped": 2353,
+  "front_art_head_confirmed": 2352,
   "alcremie_appearance_combinations": 63,
   "limitations": [
     "Reference catalog coverage is complete against the two pinned source inventories, not a claim that every fact is officially certified.",

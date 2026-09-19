@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-09-18",
+  "checked_at": "2026-09-19",
   "bond_version_and_rules": [
     {
       "entry_id": "dex:omni:rocket-bond:butterfree",
@@ -186,26 +186,6 @@
     {
       "entry_id": "dex:appearance:miraidon-low-power-mode",
       "name": "密勒顿 · 低功率模式",
-      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
-    },
-    {
-      "entry_id": "dex:form:ogerponcornerstonetera",
-      "name": "厄诡椪 · 础石面具太晶化",
-      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
-    },
-    {
-      "entry_id": "dex:form:ogerponhearthflametera",
-      "name": "厄诡椪 · 火灶面具太晶化",
-      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
-    },
-    {
-      "entry_id": "dex:form:ogerpontealtera",
-      "name": "厄诡椪 · 碧草面具太晶化",
-      "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
-    },
-    {
-      "entry_id": "dex:form:ogerponwellspringtera",
-      "name": "厄诡椪 · 水井面具太晶化",
       "reason": "Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art."
     }
   ],

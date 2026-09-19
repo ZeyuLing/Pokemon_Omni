@@ -5,7 +5,7 @@ module.exports=({entries,reference,digest,categories})=>{
  const bonds=entries.filter(e=>e.category==='rocket_bond_candidate');
  const specific=entries.filter(e=>!['base','dynamax','rocket_bond_candidate'].includes(e.category));
  const issue=(e,reason)=>({entry_id:e.entry_id,name:e.name_zh_hans,reason});
- const gaps={schema_version:1,checked_at:'2026-09-18',
+ const gaps={schema_version:1,checked_at:'2026-09-19',
   bond_version_and_rules:bonds.map(e=>issue(e,'Author snapshot supplies stats/types/ability; exact 2.1 equivalence, custom learnsets, triggers and art are unverified.')),
   source_contradictions:entries.filter(e=>e.source_issues?.length).map(e=>({...issue(e,e.source_issues),reported_total:e.reported_total,computed_total:Object.values(e.stats).reduce((a,b)=>a+b,0)})),
   artwork:specific.filter(e=>!e.art_reference?.variants.front_default).map(e=>issue(e,'Pinned form API has no dedicated front sprite. Optional fallback is not counted as verified art.')),

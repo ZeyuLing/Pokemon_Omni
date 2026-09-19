@@ -4,3 +4,5 @@
 .art-controls {display:flex;flex-wrap:wrap;gap:12px;margin:12px 0}.art-controls input {width:auto}.about li {margin:8px 0}
 
 .related {max-height:300px;overflow:auto;align-content:flex-start;padding:4px;scrollbar-color:#b2c4b6 transparent}.art-controls label {flex-direction:row;align-items:center}
+
+.portrait.game-screenshot {border-radius:8px}.portrait.game-screenshot img {width:100%;height:auto;object-fit:contain;image-rendering:auto}.image-note button {margin-top:8px}

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-09-19",
+  "page_snapshot_sha256": "a47b0bc376ec204e595eac705224457ae317d7179a1e9f8e722072aab37734d0",
+  "scope": "Official screenshots with adjacent mask captions, not transparent sprites or production GBA assets",
+  "records": [
+    {
+      "source_form_id": "ogerpontealtera",
+      "url": "https://www.pokemon.co.jp/ex/sv_dlc/assets/img/ja/pokemon/230808_01/img240125_img11.jpg",
+      "source_page": "https://www.pokemon.co.jp/ex/sv_dlc/ja/pokemon/230808_01/",
+      "source_caption": "みどりのめん",
+      "kind": "official_game_screenshot",
+      "http_status": 200
+    },
+    {
+      "source_form_id": "ogerponwellspringtera",
+      "url": "https://www.pokemon.co.jp/ex/sv_dlc/assets/img/ja/pokemon/230808_01/img240125_img12.jpg",
+      "source_page": "https://www.pokemon.co.jp/ex/sv_dlc/ja/pokemon/230808_01/",
+      "source_caption": "いどのめん",
+      "kind": "official_game_screenshot",
+      "http_status": 200
+    },
+    {
+      "source_form_id": "ogerponhearthflametera",
+      "url": "https://www.pokemon.co.jp/ex/sv_dlc/assets/img/ja/pokemon/230808_01/img240125_img13.jpg",
+      "source_page": "https://www.pokemon.co.jp/ex/sv_dlc/ja/pokemon/230808_01/",
+      "source_caption": "かまどのめん",
+      "kind": "official_game_screenshot",
+      "http_status": 200
+    },
+    {
+      "source_form_id": "ogerponcornerstonetera",
+      "url": "https://www.pokemon.co.jp/ex/sv_dlc/assets/img/ja/pokemon/230808_01/img240125_img14.jpg",
+      "source_page": "https://www.pokemon.co.jp/ex/sv_dlc/ja/pokemon/230808_01/",
+      "source_caption": "いしずえのめん",
+      "kind": "official_game_screenshot",
+      "http_status": 200
+    }
+  ]
+}

@@ -53,3 +53,5 @@ assert.equal(byForm('garchompmegaz').abilities[0].id,'levitate');
 assert.equal(byForm('lucariomegaz').abilities[0].id,'auraguard');
 assert.equal(catalog.abilities.auraguard.reference_number,319);
 console.log('PASS: complete pinned form inventories, official 1302-row reconciliation, six-stat/type comparisons, author bond contradictions, all previous IDs and transition links');
+
+for(const id of ['ogerpontealtera','ogerponwellspringtera','ogerponhearthflametera','ogerponcornerstonetera']){assert.equal(byForm(id).art_reference.status,'official_game_screenshot');assert.equal(byForm(id).art_reference.front_http_status,200);}

@@ -125,6 +125,12 @@ for(const e of entries) {
 for(const e of entries.filter(e=>e.category==='dynamax')){const parent=entries.find(p=>p.entry_id===e.source_entry_id);e.name_zh_hans=parent.name_zh_hans+' · 极巨化';}
 require('./finalize-catalog.cjs')({entries,reference,l,Dex,toID,root});
 require('./official-zukan.cjs')({entries,reference,Dex,root});
+const supplementalArt=read('content/pokedex/supplemental-art-reference.json');
+for(const row of supplementalArt.records){
+ const entry=entries.find(e=>e.source_form_id===row.source_form_id&&e.category!=='dynamax');
+ assert(entry,`Unknown supplemental art form: ${row.source_form_id}`);
+ entry.art_reference={status:row.kind,source:row.source_page,variants:{front_default:row.url},front_http_status:row.http_status,checked_at:supplementalArt.checked_at};
+}
 json('content/pokedex/form-source-audit.json',{source:'PokeAPI CSV SHA-256 snapshot',records:reference.audit});
 for(const p of Object.values(movePools))for(const id of Object.keys(p))if(!moves[id]) {
  const m=Dex.moves.get(id);moves[id]={name_en:m.name,name_zh:l.moves[m.num]||m.name,type:m.type,category:m.category,power:m.basePower,accuracy:m.accuracy,pp:m.pp};

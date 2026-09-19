@@ -48,19 +48,20 @@ function select(index){
 }
 function artControls(e){
  const v=e.art_reference?.variants||{};
- return `<div class="facts art-controls">${v.front_shiny?'<label><input id="art-shiny" type="checkbox"> 异色参考图</label>':''}${v.front_female?'<label><input id="art-female" type="checkbox"> 雌性参考图</label>':''}${e.category==='dynamax'?'<span>图片为极巨化前的对应形态</span>':''}</div>`;
+ return `<div class="facts art-controls">${v.front_shiny?'<label><input id="art-shiny" type="checkbox"> 异色参考图</label>':''}${v.front_female?'<label><input id="art-female" type="checkbox"> 雌性参考图</label>':''}${e.category==='dynamax'?'<span>图片为极巨化前的对应形态</span>':''}${e.art_reference?.status==='official_game_screenshot'?`<span>官方游戏截图 · 非独立精灵图</span><a href="${escape(e.art_reference.source)}" target="_blank" rel="noopener">图片出处</a>`:''}</div>`;
 }
 function renderArt(e){
  const portrait=$('detail').querySelector('.portrait'),v=e.art_reference?.variants||{};
  const shiny=$('art-shiny')?.checked,female=$('art-female')?.checked;
  const variant=shiny?(female?'front_shiny_female':'front_shiny'):(female?'front_female':'front_default');
  const url=v[variant]||(!shiny&&!female?(e.art_reference?.fallback_url|| (e.sprite_id?`https://play.pokemonshowdown.com/sprites/gen5/${encodeURIComponent(e.sprite_id)}.png`:null)):null);
- portrait.innerHTML='<span class="image-note">'+(url?'正在加载参考图…':'此形态参考图待补充')+'</span>';
+ const token={};portrait.artToken=token;
+ portrait.classList.toggle('game-screenshot',e.art_reference?.status==='official_game_screenshot');
+ portrait.innerHTML='<span class="image-note">'+(url?'正在加载参考图…':e.author_evidence?'尚未收录作者的羁绊形态图':'当前来源未收录此形态图片')+'</span>';
  if(!url)return;
  const img=new Image();img.alt=e.name_zh_hans+(shiny?'异色':'')+(female?'雌性':'')+'参考图';img.width=135;img.height=135;img.referrerPolicy='no-referrer';
- const token={};portrait.artToken=token;
- const fallback=()=>{if(portrait.artToken!==token)return;const note=portrait.querySelector('.image-note');if(note)note.textContent='参考图暂不可用';};
- const timer=setTimeout(fallback,5000);
+ const fallback=(slow=false)=>{if(portrait.artToken!==token)return;const note=portrait.querySelector('.image-note');if(note){note.textContent=slow?'参考图加载较慢，仍在尝试…':'参考图暂不可用：远程图片加载失败';if(!slow){const retry=document.createElement('button');retry.textContent='重试图片';retry.onclick=()=>renderArt(e);note.append(document.createElement('br'),retry);}}};
+ const timer=setTimeout(()=>fallback(true),5000);
  img.onload=()=>{clearTimeout(timer);if(portrait.artToken===token)portrait.replaceChildren(img);};
  img.onerror=()=>{clearTimeout(timer);fallback();};img.src=url;
 }
