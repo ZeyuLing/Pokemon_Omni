@@ -100,16 +100,36 @@ let activeBrowser;
  assert((await hpPage.locator('.art-controls').textContent()).includes('社区图鉴参考图'));
  await visit(catalog.entries.find(e=>e.entry_id.endsWith(':rhyperior')&&e.author_evidence));
  await hpPage.locator('.portrait img').waitFor({timeout:15000});
- assert((await hpPage.locator('.art-controls').textContent()).includes('FYTYNo1'));
+ assert((await hpPage.locator('.art-controls').textContent()).includes('用户 ROM 与作者发布包一致'));
  await hpPage.setViewportSize({width:320,height:740});
- assert(await hpPage.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'credited sprite sheet overflow');
- for(const e of catalog.entries.filter(e=>e.art_reference.status==='ai_original_concept')){
+ assert(await hpPage.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'ROM sprite view overflow');
+ for(const e of catalog.entries.filter(e=>e.art_reference.status==='rom_extracted')){
   await visit(e);await hpPage.locator('.portrait img').waitFor();
-  assert((await hpPage.locator('.concept-label').textContent()).includes('非官方／火箭队原图'));
+  assert.equal(await hpPage.locator('.portrait img').getAttribute('src'),e.art_reference.variants.front_default);
+  assert((await hpPage.locator('.art-controls').textContent()).includes('普通与异色调色板相同'));
+  for(const [back,shiny,variant] of [[false,true,'front_shiny'],[true,true,'back_shiny'],[true,false,'back_default']]){
+   await hpPage.locator('#art-back').setChecked(back);await hpPage.locator('#art-shiny').setChecked(shiny);
+   await hpPage.locator('.portrait img').waitFor();
+   assert.equal(await hpPage.locator('.portrait img').getAttribute('src'),e.art_reference.variants[variant]);
+   assert.equal(await hpPage.locator('.portrait img').evaluate(img=>img.naturalWidth),64);
+  }
   assert(await hpPage.getByRole('button',{name:'登记形态',exact:true}).isDisabled());
  }
  await hpPage.setViewportSize({width:1440,height:1050});
- await hpPage.screenshot({path:'build/pokedex/original-concept-desktop.png',fullPage:true});
+ for(const [id,expected] of [['butterfree','虫／超能力'],['volcarona','特防：作者文档 130，两份 ROM 均为 135']]){
+  await visit(catalog.entries.find(e=>e.entry_id==='dex:omni:rocket-bond:'+id));
+  assert((await hpPage.locator('.rom-discrepancy').textContent()).includes(expected));
+ }
+ await visit(catalog.entries.find(e=>e.entry_id==='dex:omni:rocket-bond:sacred-dragon-dun'));
+ await hpPage.locator('.portrait img').waitFor();
+ await hpPage.screenshot({path:'build/pokedex/rocket-rom-desktop.png',fullPage:true});
+ const dunArt=catalog.entries.find(e=>e.entry_id==='dex:omni:rocket-bond:sacred-dragon-dun').art_reference.variants.front_default;
+ await hpPage.route('**'+dunArt,route=>route.fulfill({status:503,body:'local asset missing'}));
+ await hpPage.reload();await hpPage.locator('#entries .entry').first().waitFor();
+ await hpPage.getByText('本地 ROM 素材缺失或读取失败，请先运行素材提取脚本。',{exact:false}).waitFor();
+ await hpPage.unroute('**'+dunArt);
+ await hpPage.getByRole('button',{name:'重试图片',exact:true}).click();
+ await hpPage.locator('.portrait img').waitFor();
  assert.deepEqual(errors,[]);await browser.close();
  console.log('PASS: desktop/tablet/mobile/320px rendered; Chinese search; independent Mega registration + reload; research protection; empty state; invalid import preserves records; keyboard focus; offline sprite fallback; dependency error/retry; no page errors');
 })().catch(async e=>{console.error(e);if(activeBrowser)await activeBrowser.close();process.exitCode=1;});

@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "content_sha256": "42a2e2fe7570395a22d0fe1690e45651a04b4cb014069704a9e96327c31a2caa",
+  "content_sha256": "fdb69498b3820b1649cb2a93ce90a527b640d574ffe2d5b0e783c53a20489baa",
   "entries": 2384,
   "base_species": 1025,
   "localized_base_species": 1025,
@@ -46,16 +46,19 @@
   "official_species_identity": 1025,
   "ability_scope_differences": 22,
   "ability_second_source_missing": 9,
-  "front_art_metadata_mapped": 2372,
-  "front_art_head_confirmed": 2371,
-  "original_concept_art": 5,
-  "artwork_presentation_available": 2377,
+  "front_art_metadata_mapped": 2384,
+  "front_art_head_confirmed": 2360,
+  "original_concept_art": 0,
+  "artwork_presentation_available": 2384,
+  "rom_extracted_bond_art": 23,
+  "rom_verified_bond_records": 23,
   "alcremie_appearance_combinations": 63,
   "limitations": [
     "Reference catalog coverage is complete against the two pinned source inventories, not a claim that every fact is officially certified.",
-    "23 author-documented bonds retain exact-version/rules/art gaps and disabled registration.",
-    "See gaps.json for actual source contradictions and missing dedicated reference artwork.",
+    "23 bonds have crosschecked ROM records and local front/back art; release number, learnsets and rules remain unverified with disabled registration.",
+    "ROM-derived PNGs are local-only and must be regenerated from the pinned inputs on another checkout.",
+    "See gaps.json for actual source contradictions.",
     "Announced 2027 identities are separate from released numbered species.",
-    "Game world acquisition and final GBA assets remain platform/world work."
+    "Game world acquisition and final GBA integration remain platform/world work."
   ]
 }

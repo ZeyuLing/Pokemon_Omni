@@ -2,126 +2,127 @@
   "schema_version": 1,
   "target_version": "2.1",
   "complete_version_verified": false,
-  "notice": "All 23 candidate identities and reference stats/types/ability are now corroborated by the author-linked Fuertes Vínculo.txt snapshot. The document does not state 2.1; exact version, triggers, custom learnsets and art remain unverified. No production battle approval.",
+  "notice": "All 23 documented bond identities, species records and decoded graphics are crosschecked between the user-played ROM and author-linked ROM. Exact release number, learnsets and transition code remain unverified. No production battle approval.",
   "sources": {
     "author": "https://whackahack.com/foro/threads/31-12-2024-pokemon-edicion-team-rocket-4-regiones-kanto-archi7-johto-y-hoenn.65493/",
     "fan_site": "https://teamrocketedition.com/bond-forms/",
-    "author_document": "content/bond/author-reference.json"
+    "author_document": "content/bond/author-reference.json",
+    "rom_reference": "content/bond/rom-reference.json"
   },
   "forms": [
     {
       "name": "Rhyperior",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Rapidash",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Butterfree",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Kingdra",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Skarmory",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Poliwrath",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Eevee",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Feraligatr",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Crobat Protagonist",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Delphox",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Mamoswine",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Dragonite",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Goodra",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Milotic",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Jirachi",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Hypno",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Flareon EN",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Jolteon RAI",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Vaporeon SUI",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Ninetales",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Crobat Andra",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Volcarona",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     },
     {
       "name": "Sacred Dragon Dun",
-      "evidence": "author_document_reference_version_unverified",
+      "evidence": "author_document_and_two_roms_reference_version_unverified",
       "production_ready": false
     }
   ]

@@ -1,0 +1,3596 @@
+{
+  "schema_version": 1,
+  "user_rom_sha256": "033235cdd389c4c8cb1aa6d68a93954a55fd681c92a1a554ebc63431117b4eaf",
+  "author_rom_sha256": "008c256ca16c46d81f7417edfc2ec40ab9e3d2932e67bf5317e48d15b206ff9e",
+  "identity_basis": "Author Spanish species names + exact 36-byte species records and four decoded graphic/palette payloads shared by both ROMs.",
+  "version_status": "User-played modifier ROM; upstream release number still unverified.",
+  "graphics_scope": "First front/back frame, normal/shiny palettes. No battle animation or transition code verification.",
+  "battle_data_approved": false,
+  "records": [
+    {
+      "entry_id": "dex:omni:rocket-bond:rhyperior",
+      "name": "Rhyperior",
+      "species_id": 936,
+      "author_rom_name": "Rhyper&",
+      "user_rom": {
+        "species_offset": 6015748,
+        "stats": {
+          "hp": 125,
+          "atk": 175,
+          "def": 175,
+          "spe": 55,
+          "spa": 65,
+          "spd": 65
+        },
+        "types": [
+          "Ground",
+          "Steel"
+        ],
+        "ability_ids": [
+          3,
+          3,
+          3
+        ],
+        "species_record_sha256": "42b0d0dd319a2412d69891b94ad38319bc38118a1d7b8e321b2402a72871cd57",
+        "name_bytes_hex": "022e05c208080dd02dffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5678528,
+            "data_offset": 26169228,
+            "compressed_bytes": 1403,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "efd45763ff51d476f36b75688e5b6817f2b4243b41a6a364fe370748ded098d2"
+          },
+          "back": {
+            "table_entry_offset": 5577268,
+            "data_offset": 27375768,
+            "compressed_bytes": 1403,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "efd45763ff51d476f36b75688e5b6817f2b4243b41a6a364fe370748ded098d2"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5595916,
+            "data_offset": 27752848,
+            "compressed_bytes": 36,
+            "decoded_bytes": 32,
+            "decoded_sha256": "6c051451c69d90175afd7443b490fba00685c0b724d2c6a7a71ba55852084e6d"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5614564,
+            "data_offset": 27806364,
+            "compressed_bytes": 36,
+            "decoded_bytes": 32,
+            "decoded_sha256": "6c051451c69d90175afd7443b490fba00685c0b724d2c6a7a71ba55852084e6d"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6034328,
+        "stats": {
+          "hp": 125,
+          "atk": 175,
+          "def": 175,
+          "spe": 55,
+          "spa": 65,
+          "spd": 65
+        },
+        "types": [
+          "Ground",
+          "Steel"
+        ],
+        "ability_ids": [
+          3,
+          3,
+          3
+        ],
+        "species_record_sha256": "42b0d0dd319a2412d69891b94ad38319bc38118a1d7b8e321b2402a72871cd57",
+        "name_bytes_hex": "ccdcede4d9e62dff000000",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5697108,
+            "data_offset": 26488180,
+            "compressed_bytes": 1403,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "efd45763ff51d476f36b75688e5b6817f2b4243b41a6a364fe370748ded098d2"
+          },
+          "back": {
+            "table_entry_offset": 5595848,
+            "data_offset": 27694720,
+            "compressed_bytes": 1403,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "efd45763ff51d476f36b75688e5b6817f2b4243b41a6a364fe370748ded098d2"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5614496,
+            "data_offset": 28071800,
+            "compressed_bytes": 36,
+            "decoded_bytes": 32,
+            "decoded_sha256": "6c051451c69d90175afd7443b490fba00685c0b724d2c6a7a71ba55852084e6d"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5633144,
+            "data_offset": 28125316,
+            "compressed_bytes": 36,
+            "decoded_bytes": 32,
+            "decoded_sha256": "6c051451c69d90175afd7443b490fba00685c0b724d2c6a7a71ba55852084e6d"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Impulso",
+        "Impulso",
+        "Impulso"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/rhyperior-front_default.png",
+          "url": "/rocket-art/rhyperior-front_default.png",
+          "sha256": "de3ac8686413c5b4b0ad6e94dd06ac055fd88a2a3fadec019d6886a4282c13d7",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/rhyperior-front_shiny.png",
+          "url": "/rocket-art/rhyperior-front_shiny.png",
+          "sha256": "de3ac8686413c5b4b0ad6e94dd06ac055fd88a2a3fadec019d6886a4282c13d7",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/rhyperior-back_default.png",
+          "url": "/rocket-art/rhyperior-back_default.png",
+          "sha256": "de3ac8686413c5b4b0ad6e94dd06ac055fd88a2a3fadec019d6886a4282c13d7",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/rhyperior-back_shiny.png",
+          "url": "/rocket-art/rhyperior-back_shiny.png",
+          "sha256": "de3ac8686413c5b4b0ad6e94dd06ac055fd88a2a3fadec019d6886a4282c13d7",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:hypno",
+      "name": "Hypno",
+      "species_id": 933,
+      "author_rom_name": "Hypno&",
+      "user_rom": {
+        "species_offset": 6015640,
+        "stats": {
+          "hp": 95,
+          "atk": 63,
+          "def": 110,
+          "spe": 32,
+          "spa": 143,
+          "spd": 165
+        },
+        "types": [
+          "Psychic"
+        ],
+        "ability_ids": [
+          156,
+          156,
+          156
+        ],
+        "species_record_sha256": "0ebb18fed2cb9522f856a0a8463669eece2ce2e1f4bc048f30126829733107ac",
+        "name_bytes_hex": "0f4d09661d920b4b2dffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5678504,
+            "data_offset": 26163792,
+            "compressed_bytes": 1044,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "7d09fc770ccaecaf8cf296989945b8f5c4dd0edb79bdefd5b76bf945e0809ce9"
+          },
+          "back": {
+            "table_entry_offset": 5577244,
+            "data_offset": 27371304,
+            "compressed_bytes": 1044,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "7d09fc770ccaecaf8cf296989945b8f5c4dd0edb79bdefd5b76bf945e0809ce9"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5595892,
+            "data_offset": 27752728,
+            "compressed_bytes": 38,
+            "decoded_bytes": 32,
+            "decoded_sha256": "00224277881e9ae3420421999cf5ed39e6b417574e81c4721f0ab446acd198f6"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5614540,
+            "data_offset": 27806244,
+            "compressed_bytes": 38,
+            "decoded_bytes": 32,
+            "decoded_sha256": "00224277881e9ae3420421999cf5ed39e6b417574e81c4721f0ab446acd198f6"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6034220,
+        "stats": {
+          "hp": 95,
+          "atk": 63,
+          "def": 110,
+          "spe": 32,
+          "spa": 143,
+          "spd": 165
+        },
+        "types": [
+          "Psychic"
+        ],
+        "ability_ids": [
+          156,
+          156,
+          156
+        ],
+        "species_record_sha256": "0ebb18fed2cb9522f856a0a8463669eece2ce2e1f4bc048f30126829733107ac",
+        "name_bytes_hex": "c2ede4e2e32dff00000000",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5697084,
+            "data_offset": 26482744,
+            "compressed_bytes": 1044,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "7d09fc770ccaecaf8cf296989945b8f5c4dd0edb79bdefd5b76bf945e0809ce9"
+          },
+          "back": {
+            "table_entry_offset": 5595824,
+            "data_offset": 27690256,
+            "compressed_bytes": 1044,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "7d09fc770ccaecaf8cf296989945b8f5c4dd0edb79bdefd5b76bf945e0809ce9"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5614472,
+            "data_offset": 28071680,
+            "compressed_bytes": 38,
+            "decoded_bytes": 32,
+            "decoded_sha256": "00224277881e9ae3420421999cf5ed39e6b417574e81c4721f0ab446acd198f6"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5633120,
+            "data_offset": 28125196,
+            "compressed_bytes": 38,
+            "decoded_bytes": 32,
+            "decoded_sha256": "00224277881e9ae3420421999cf5ed39e6b417574e81c4721f0ab446acd198f6"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Espejomágico",
+        "Espejomágico",
+        "Espejomágico"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/hypno-front_default.png",
+          "url": "/rocket-art/hypno-front_default.png",
+          "sha256": "f4918ec1b12a9a2af54b194889553a7513c72a8fe0e48b8abff7b6666fe340a5",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/hypno-front_shiny.png",
+          "url": "/rocket-art/hypno-front_shiny.png",
+          "sha256": "f4918ec1b12a9a2af54b194889553a7513c72a8fe0e48b8abff7b6666fe340a5",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/hypno-back_default.png",
+          "url": "/rocket-art/hypno-back_default.png",
+          "sha256": "f4918ec1b12a9a2af54b194889553a7513c72a8fe0e48b8abff7b6666fe340a5",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/hypno-back_shiny.png",
+          "url": "/rocket-art/hypno-back_shiny.png",
+          "sha256": "f4918ec1b12a9a2af54b194889553a7513c72a8fe0e48b8abff7b6666fe340a5",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:rapidash",
+      "name": "Rapidash",
+      "species_id": 929,
+      "author_rom_name": "Rapidash&",
+      "user_rom": {
+        "species_offset": 6015496,
+        "stats": {
+          "hp": 75,
+          "atk": 135,
+          "def": 90,
+          "spe": 145,
+          "spa": 80,
+          "spd": 100
+        },
+        "types": [
+          "Fire",
+          "Flying"
+        ],
+        "ability_ids": [
+          169,
+          169,
+          169
+        ],
+        "species_record_sha256": "1c1f5fb7cd3365cec5bddfa0e3384c6d74d57e5456791244ef35e01ab666aa6a",
+        "name_bytes_hex": "08a50ecf09272dffffffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5678472,
+            "data_offset": 26158680,
+            "compressed_bytes": 1486,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "163839a26648b8bcb845ac5647e2fa70b46eb6e03b3b412a59bc8f1d4317ff14"
+          },
+          "back": {
+            "table_entry_offset": 5577212,
+            "data_offset": 27366192,
+            "compressed_bytes": 1486,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "163839a26648b8bcb845ac5647e2fa70b46eb6e03b3b412a59bc8f1d4317ff14"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5595860,
+            "data_offset": 27752568,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "9408ac9930b21543348ff9fbca0e48d7de6f39629a1d31415e2f522f5815baf1"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5614508,
+            "data_offset": 27806084,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "9408ac9930b21543348ff9fbca0e48d7de6f39629a1d31415e2f522f5815baf1"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6034076,
+        "stats": {
+          "hp": 75,
+          "atk": 135,
+          "def": 90,
+          "spe": 145,
+          "spa": 80,
+          "spd": 100
+        },
+        "types": [
+          "Fire",
+          "Flying"
+        ],
+        "ability_ids": [
+          169,
+          169,
+          169
+        ],
+        "species_record_sha256": "1c1f5fb7cd3365cec5bddfa0e3384c6d74d57e5456791244ef35e01ab666aa6a",
+        "name_bytes_hex": "ccd5e4ddd8d5e7dc2dff00",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5697052,
+            "data_offset": 26477632,
+            "compressed_bytes": 1486,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "163839a26648b8bcb845ac5647e2fa70b46eb6e03b3b412a59bc8f1d4317ff14"
+          },
+          "back": {
+            "table_entry_offset": 5595792,
+            "data_offset": 27685144,
+            "compressed_bytes": 1486,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "163839a26648b8bcb845ac5647e2fa70b46eb6e03b3b412a59bc8f1d4317ff14"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5614440,
+            "data_offset": 28071520,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "9408ac9930b21543348ff9fbca0e48d7de6f39629a1d31415e2f522f5815baf1"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5633088,
+            "data_offset": 28125036,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "9408ac9930b21543348ff9fbca0e48d7de6f39629a1d31415e2f522f5815baf1"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Pelaje Recio",
+        "Pelaje Recio",
+        "Pelaje Recio"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/rapidash-front_default.png",
+          "url": "/rocket-art/rapidash-front_default.png",
+          "sha256": "f9f816d63fd025781995fcf73f08a2e6b46031e5e77049fa30944036baacf24d",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/rapidash-front_shiny.png",
+          "url": "/rocket-art/rapidash-front_shiny.png",
+          "sha256": "f9f816d63fd025781995fcf73f08a2e6b46031e5e77049fa30944036baacf24d",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/rapidash-back_default.png",
+          "url": "/rocket-art/rapidash-back_default.png",
+          "sha256": "f9f816d63fd025781995fcf73f08a2e6b46031e5e77049fa30944036baacf24d",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/rapidash-back_shiny.png",
+          "url": "/rocket-art/rapidash-back_shiny.png",
+          "sha256": "f9f816d63fd025781995fcf73f08a2e6b46031e5e77049fa30944036baacf24d",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:butterfree",
+      "name": "Butterfree",
+      "species_id": 927,
+      "author_rom_name": "Butterfr&",
+      "user_rom": {
+        "species_offset": 6015424,
+        "stats": {
+          "hp": 60,
+          "atk": 5,
+          "def": 80,
+          "spe": 110,
+          "spa": 140,
+          "spd": 125
+        },
+        "types": [
+          "Bug",
+          "Psychic"
+        ],
+        "ability_ids": [
+          91,
+          91,
+          91
+        ],
+        "species_record_sha256": "2686af0d6cea6d80aea8808af379f120f559283d79885ae300c29f387f421bb5",
+        "name_bytes_hex": "012c02d303422dffffffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5678456,
+            "data_offset": 26156216,
+            "compressed_bytes": 1096,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "7ab9abe894535fc673cf3b8daee8ca83c8d44b61955e21f476dd55b06398c5b7"
+          },
+          "back": {
+            "table_entry_offset": 5577196,
+            "data_offset": 27363728,
+            "compressed_bytes": 1096,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "7ab9abe894535fc673cf3b8daee8ca83c8d44b61955e21f476dd55b06398c5b7"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5595844,
+            "data_offset": 27752488,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "8d91e7c2383560e90a2b36a2f4a1a8acffdaca685163f79a6406da9866e5d75b"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5614492,
+            "data_offset": 27806004,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "8d91e7c2383560e90a2b36a2f4a1a8acffdaca685163f79a6406da9866e5d75b"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6034004,
+        "stats": {
+          "hp": 60,
+          "atk": 5,
+          "def": 80,
+          "spe": 110,
+          "spa": 140,
+          "spd": 125
+        },
+        "types": [
+          "Bug",
+          "Psychic"
+        ],
+        "ability_ids": [
+          91,
+          91,
+          91
+        ],
+        "species_record_sha256": "2686af0d6cea6d80aea8808af379f120f559283d79885ae300c29f387f421bb5",
+        "name_bytes_hex": "bce9e8e8d9e6dae62dff00",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5697036,
+            "data_offset": 26475168,
+            "compressed_bytes": 1096,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "7ab9abe894535fc673cf3b8daee8ca83c8d44b61955e21f476dd55b06398c5b7"
+          },
+          "back": {
+            "table_entry_offset": 5595776,
+            "data_offset": 27682680,
+            "compressed_bytes": 1096,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "7ab9abe894535fc673cf3b8daee8ca83c8d44b61955e21f476dd55b06398c5b7"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5614424,
+            "data_offset": 28071440,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "8d91e7c2383560e90a2b36a2f4a1a8acffdaca685163f79a6406da9866e5d75b"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5633072,
+            "data_offset": 28124956,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "8d91e7c2383560e90a2b36a2f4a1a8acffdaca685163f79a6406da9866e5d75b"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Adaptable",
+        "Adaptable",
+        "Adaptable"
+      ],
+      "document_differences": {
+        "types": {
+          "document": [
+            "Psychic",
+            "Flying"
+          ],
+          "rom": [
+            "Bug",
+            "Psychic"
+          ]
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/butterfree-front_default.png",
+          "url": "/rocket-art/butterfree-front_default.png",
+          "sha256": "3a6367f5dbd82f8453c773f3885bd756d86e58c1e0a46d5bd27836b829607fe4",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/butterfree-front_shiny.png",
+          "url": "/rocket-art/butterfree-front_shiny.png",
+          "sha256": "3a6367f5dbd82f8453c773f3885bd756d86e58c1e0a46d5bd27836b829607fe4",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/butterfree-back_default.png",
+          "url": "/rocket-art/butterfree-back_default.png",
+          "sha256": "3a6367f5dbd82f8453c773f3885bd756d86e58c1e0a46d5bd27836b829607fe4",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/butterfree-back_shiny.png",
+          "url": "/rocket-art/butterfree-back_shiny.png",
+          "sha256": "3a6367f5dbd82f8453c773f3885bd756d86e58c1e0a46d5bd27836b829607fe4",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:kingdra",
+      "name": "Kingdra",
+      "species_id": 930,
+      "author_rom_name": "Kingdra&",
+      "user_rom": {
+        "species_offset": 6015532,
+        "stats": {
+          "hp": 85,
+          "atk": 120,
+          "def": 120,
+          "spe": 100,
+          "spa": 120,
+          "spd": 120
+        },
+        "types": [
+          "Water",
+          "Dark"
+        ],
+        "ability_ids": [
+          126,
+          126,
+          126
+        ],
+        "species_record_sha256": "c65a5bbfcb43b8c9cee4d7f0c04c380d3e0c233a425a5616804234cdece5aa5d",
+        "name_bytes_hex": "02ac08cd0d5d2dffffffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5678480,
+            "data_offset": 26160168,
+            "compressed_bytes": 1091,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "7f61ceaf01d73b673db25756144ea5ee59c72e44268c96577b266907bbc633dd"
+          },
+          "back": {
+            "table_entry_offset": 5577220,
+            "data_offset": 27367680,
+            "compressed_bytes": 1091,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "7f61ceaf01d73b673db25756144ea5ee59c72e44268c96577b266907bbc633dd"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5595868,
+            "data_offset": 27752608,
+            "compressed_bytes": 38,
+            "decoded_bytes": 32,
+            "decoded_sha256": "e10c244754d4bd931efb4b75850020e34915e8acf7d92e7dbc2e66016e0f8e05"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5614516,
+            "data_offset": 27806124,
+            "compressed_bytes": 38,
+            "decoded_bytes": 32,
+            "decoded_sha256": "e10c244754d4bd931efb4b75850020e34915e8acf7d92e7dbc2e66016e0f8e05"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6034112,
+        "stats": {
+          "hp": 85,
+          "atk": 120,
+          "def": 120,
+          "spe": 100,
+          "spa": 120,
+          "spd": 120
+        },
+        "types": [
+          "Water",
+          "Dark"
+        ],
+        "ability_ids": [
+          126,
+          126,
+          126
+        ],
+        "species_record_sha256": "c65a5bbfcb43b8c9cee4d7f0c04c380d3e0c233a425a5616804234cdece5aa5d",
+        "name_bytes_hex": "c5dde2dbd8e6d52dff0000",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5697060,
+            "data_offset": 26479120,
+            "compressed_bytes": 1091,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "7f61ceaf01d73b673db25756144ea5ee59c72e44268c96577b266907bbc633dd"
+          },
+          "back": {
+            "table_entry_offset": 5595800,
+            "data_offset": 27686632,
+            "compressed_bytes": 1091,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "7f61ceaf01d73b673db25756144ea5ee59c72e44268c96577b266907bbc633dd"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5614448,
+            "data_offset": 28071560,
+            "compressed_bytes": 38,
+            "decoded_bytes": 32,
+            "decoded_sha256": "e10c244754d4bd931efb4b75850020e34915e8acf7d92e7dbc2e66016e0f8e05"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5633096,
+            "data_offset": 28125076,
+            "compressed_bytes": 38,
+            "decoded_bytes": 32,
+            "decoded_sha256": "e10c244754d4bd931efb4b75850020e34915e8acf7d92e7dbc2e66016e0f8e05"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Respondón",
+        "Respondón",
+        "Respondón"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/kingdra-front_default.png",
+          "url": "/rocket-art/kingdra-front_default.png",
+          "sha256": "3d47a8b525acd8ac041ef106f4ebaf0e46cc0dc9959b889712801b15d04f315e",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/kingdra-front_shiny.png",
+          "url": "/rocket-art/kingdra-front_shiny.png",
+          "sha256": "3d47a8b525acd8ac041ef106f4ebaf0e46cc0dc9959b889712801b15d04f315e",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/kingdra-back_default.png",
+          "url": "/rocket-art/kingdra-back_default.png",
+          "sha256": "3d47a8b525acd8ac041ef106f4ebaf0e46cc0dc9959b889712801b15d04f315e",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/kingdra-back_shiny.png",
+          "url": "/rocket-art/kingdra-back_shiny.png",
+          "sha256": "3d47a8b525acd8ac041ef106f4ebaf0e46cc0dc9959b889712801b15d04f315e",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:skarmory",
+      "name": "Skarmory",
+      "species_id": 931,
+      "author_rom_name": "Skarmory&",
+      "user_rom": {
+        "species_offset": 6015568,
+        "stats": {
+          "hp": 75,
+          "atk": 110,
+          "def": 160,
+          "spe": 100,
+          "spa": 45,
+          "spd": 100
+        },
+        "types": [
+          "Steel",
+          "Flying"
+        ],
+        "ability_ids": [
+          10,
+          10,
+          10
+        ],
+        "species_record_sha256": "443c455a26370e85aae178859736f8efa184e01d95553187f6df0a1effb5978c",
+        "name_bytes_hex": "080f05c209e72dffffffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5678488,
+            "data_offset": 26161260,
+            "compressed_bytes": 1420,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "4c341c75007655cb82bbf88d604e1a3e5f5c544c7b266d2e45bbf3df03d8cf53"
+          },
+          "back": {
+            "table_entry_offset": 5577228,
+            "data_offset": 27368772,
+            "compressed_bytes": 1420,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "4c341c75007655cb82bbf88d604e1a3e5f5c544c7b266d2e45bbf3df03d8cf53"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5595876,
+            "data_offset": 27752648,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "16233d794226511a0d774d98f5b8a4e6634412369807557db687587f1a3dc2a9"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5614524,
+            "data_offset": 27806164,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "16233d794226511a0d774d98f5b8a4e6634412369807557db687587f1a3dc2a9"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6034148,
+        "stats": {
+          "hp": 75,
+          "atk": 110,
+          "def": 160,
+          "spe": 100,
+          "spa": 45,
+          "spd": 100
+        },
+        "types": [
+          "Steel",
+          "Flying"
+        ],
+        "ability_ids": [
+          10,
+          10,
+          10
+        ],
+        "species_record_sha256": "443c455a26370e85aae178859736f8efa184e01d95553187f6df0a1effb5978c",
+        "name_bytes_hex": "cddfd5e6e1e3e6ed2dff00",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5697068,
+            "data_offset": 26480212,
+            "compressed_bytes": 1420,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "4c341c75007655cb82bbf88d604e1a3e5f5c544c7b266d2e45bbf3df03d8cf53"
+          },
+          "back": {
+            "table_entry_offset": 5595808,
+            "data_offset": 27687724,
+            "compressed_bytes": 1420,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "4c341c75007655cb82bbf88d604e1a3e5f5c544c7b266d2e45bbf3df03d8cf53"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5614456,
+            "data_offset": 28071600,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "16233d794226511a0d774d98f5b8a4e6634412369807557db687587f1a3dc2a9"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5633104,
+            "data_offset": 28125116,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "16233d794226511a0d774d98f5b8a4e6634412369807557db687587f1a3dc2a9"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Absorbe Elec",
+        "Absorbe Elec",
+        "Absorbe Elec"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/skarmory-front_default.png",
+          "url": "/rocket-art/skarmory-front_default.png",
+          "sha256": "24f65a145b8960a236e4e466e22b3eecce87c3731ff968e78c41c63ef1493455",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/skarmory-front_shiny.png",
+          "url": "/rocket-art/skarmory-front_shiny.png",
+          "sha256": "24f65a145b8960a236e4e466e22b3eecce87c3731ff968e78c41c63ef1493455",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/skarmory-back_default.png",
+          "url": "/rocket-art/skarmory-back_default.png",
+          "sha256": "24f65a145b8960a236e4e466e22b3eecce87c3731ff968e78c41c63ef1493455",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/skarmory-back_shiny.png",
+          "url": "/rocket-art/skarmory-back_shiny.png",
+          "sha256": "24f65a145b8960a236e4e466e22b3eecce87c3731ff968e78c41c63ef1493455",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:poliwrath",
+      "name": "Poliwrath",
+      "species_id": 926,
+      "author_rom_name": "Poliwrath&",
+      "user_rom": {
+        "species_offset": 6015388,
+        "stats": {
+          "hp": 100,
+          "atk": 145,
+          "def": 140,
+          "spe": 80,
+          "spa": 80,
+          "spd": 110
+        },
+        "types": [
+          "Water",
+          "Fighting"
+        ],
+        "ability_ids": [
+          89,
+          89,
+          89
+        ],
+        "species_record_sha256": "91bbec97cec6bf3ceeb3fd2393bab845ee79783d99a8adb0180b3a5f55b738e5",
+        "name_bytes_hex": "0d890e100f6c0c042dffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5678448,
+            "data_offset": 26155076,
+            "compressed_bytes": 1138,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "30fd4daea0db67aa4149fbeafc3caf6d20414dca15e67d32532852b61272ffa1"
+          },
+          "back": {
+            "table_entry_offset": 5577188,
+            "data_offset": 27362588,
+            "compressed_bytes": 1138,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "30fd4daea0db67aa4149fbeafc3caf6d20414dca15e67d32532852b61272ffa1"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5595836,
+            "data_offset": 27752456,
+            "compressed_bytes": 31,
+            "decoded_bytes": 32,
+            "decoded_sha256": "851d3a2e65e1b3daba3d6df46599ddce7f781c66e2e0ac470164362347dd2f1d"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5614484,
+            "data_offset": 27805972,
+            "compressed_bytes": 31,
+            "decoded_bytes": 32,
+            "decoded_sha256": "851d3a2e65e1b3daba3d6df46599ddce7f781c66e2e0ac470164362347dd2f1d"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6033968,
+        "stats": {
+          "hp": 100,
+          "atk": 145,
+          "def": 140,
+          "spe": 80,
+          "spa": 80,
+          "spd": 110
+        },
+        "types": [
+          "Water",
+          "Fighting"
+        ],
+        "ability_ids": [
+          89,
+          89,
+          89
+        ],
+        "species_record_sha256": "91bbec97cec6bf3ceeb3fd2393bab845ee79783d99a8adb0180b3a5f55b738e5",
+        "name_bytes_hex": "cae3e0ddebe6d5e8dc2dff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5697028,
+            "data_offset": 26474028,
+            "compressed_bytes": 1138,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "30fd4daea0db67aa4149fbeafc3caf6d20414dca15e67d32532852b61272ffa1"
+          },
+          "back": {
+            "table_entry_offset": 5595768,
+            "data_offset": 27681540,
+            "compressed_bytes": 1138,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "30fd4daea0db67aa4149fbeafc3caf6d20414dca15e67d32532852b61272ffa1"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5614416,
+            "data_offset": 28071408,
+            "compressed_bytes": 31,
+            "decoded_bytes": 32,
+            "decoded_sha256": "851d3a2e65e1b3daba3d6df46599ddce7f781c66e2e0ac470164362347dd2f1d"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5633064,
+            "data_offset": 28124924,
+            "compressed_bytes": 31,
+            "decoded_bytes": 32,
+            "decoded_sha256": "851d3a2e65e1b3daba3d6df46599ddce7f781c66e2e0ac470164362347dd2f1d"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Puño Férreo",
+        "Puño Férreo",
+        "Puño Férreo"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/poliwrath-front_default.png",
+          "url": "/rocket-art/poliwrath-front_default.png",
+          "sha256": "327791a388beb04b210cb8d1d8cd1ebf3f223c58777f7df72bd7f2deba51c613",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/poliwrath-front_shiny.png",
+          "url": "/rocket-art/poliwrath-front_shiny.png",
+          "sha256": "327791a388beb04b210cb8d1d8cd1ebf3f223c58777f7df72bd7f2deba51c613",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/poliwrath-back_default.png",
+          "url": "/rocket-art/poliwrath-back_default.png",
+          "sha256": "327791a388beb04b210cb8d1d8cd1ebf3f223c58777f7df72bd7f2deba51c613",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/poliwrath-back_shiny.png",
+          "url": "/rocket-art/poliwrath-back_shiny.png",
+          "sha256": "327791a388beb04b210cb8d1d8cd1ebf3f223c58777f7df72bd7f2deba51c613",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:eevee",
+      "name": "Eevee",
+      "species_id": 932,
+      "author_rom_name": "Eevee&",
+      "user_rom": {
+        "species_offset": 6015604,
+        "stats": {
+          "hp": 130,
+          "atk": 60,
+          "def": 110,
+          "spe": 110,
+          "spa": 130,
+          "spd": 110
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability_ids": [
+          168,
+          168,
+          168
+        ],
+        "species_record_sha256": "024e4615a1188a018d7a17e748ab30969ae61b5643afbf95d6ff3e22a5ddcdd2",
+        "name_bytes_hex": "0f1101d72dffffffffffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5678496,
+            "data_offset": 26162680,
+            "compressed_bytes": 1110,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "028e628124878b27f4ee16946b3da051497417667de6a929e882bfa84d6875b7"
+          },
+          "back": {
+            "table_entry_offset": 5577236,
+            "data_offset": 27370192,
+            "compressed_bytes": 1110,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "028e628124878b27f4ee16946b3da051497417667de6a929e882bfa84d6875b7"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5595884,
+            "data_offset": 27752688,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "4b6d3952e2d8c1497e4df0d1953b4fafb45b11f4e739a10f8072935e0d803f8c"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5614532,
+            "data_offset": 27806204,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "4b6d3952e2d8c1497e4df0d1953b4fafb45b11f4e739a10f8072935e0d803f8c"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6034184,
+        "stats": {
+          "hp": 130,
+          "atk": 60,
+          "def": 110,
+          "spe": 110,
+          "spa": 130,
+          "spd": 110
+        },
+        "types": [
+          "Normal"
+        ],
+        "ability_ids": [
+          168,
+          168,
+          168
+        ],
+        "species_record_sha256": "024e4615a1188a018d7a17e748ab30969ae61b5643afbf95d6ff3e22a5ddcdd2",
+        "name_bytes_hex": "bfd9ead9d92dff00000000",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5697076,
+            "data_offset": 26481632,
+            "compressed_bytes": 1110,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "028e628124878b27f4ee16946b3da051497417667de6a929e882bfa84d6875b7"
+          },
+          "back": {
+            "table_entry_offset": 5595816,
+            "data_offset": 27689144,
+            "compressed_bytes": 1110,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "028e628124878b27f4ee16946b3da051497417667de6a929e882bfa84d6875b7"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5614464,
+            "data_offset": 28071640,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "4b6d3952e2d8c1497e4df0d1953b4fafb45b11f4e739a10f8072935e0d803f8c"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5633112,
+            "data_offset": 28125156,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "4b6d3952e2d8c1497e4df0d1953b4fafb45b11f4e739a10f8072935e0d803f8c"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Mutatipo",
+        "Mutatipo",
+        "Mutatipo"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/eevee-front_default.png",
+          "url": "/rocket-art/eevee-front_default.png",
+          "sha256": "822693d631d6387499a0d53eafe8f8999659cf8f9c245fbd64ab3b2dcdfa808f",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/eevee-front_shiny.png",
+          "url": "/rocket-art/eevee-front_shiny.png",
+          "sha256": "822693d631d6387499a0d53eafe8f8999659cf8f9c245fbd64ab3b2dcdfa808f",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/eevee-back_default.png",
+          "url": "/rocket-art/eevee-back_default.png",
+          "sha256": "822693d631d6387499a0d53eafe8f8999659cf8f9c245fbd64ab3b2dcdfa808f",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/eevee-back_shiny.png",
+          "url": "/rocket-art/eevee-back_shiny.png",
+          "sha256": "822693d631d6387499a0d53eafe8f8999659cf8f9c245fbd64ab3b2dcdfa808f",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:mamoswine",
+      "name": "Mamoswine",
+      "species_id": 1309,
+      "author_rom_name": "Mamosw-&",
+      "user_rom": {
+        "species_offset": 6029176,
+        "stats": {
+          "hp": 120,
+          "atk": 170,
+          "def": 115,
+          "spe": 105,
+          "spa": 70,
+          "spd": 85
+        },
+        "types": [
+          "Ice",
+          "Ground"
+        ],
+        "ability_ids": [
+          174,
+          174,
+          174
+        ],
+        "species_record_sha256": "3cfbae0e9b1166c3c1f761e454aeef161ccd5db0f5a29b19f7a56e0436ee0f15",
+        "name_bytes_hex": "0e200ea910be2dffffffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5681512,
+            "data_offset": 26534740,
+            "compressed_bytes": 1391,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "9aacf5265106c6fe5a1fbb76a5d6a027f74a77c79c1aba39da8eea4e5878843e"
+          },
+          "back": {
+            "table_entry_offset": 5580252,
+            "data_offset": 27641344,
+            "compressed_bytes": 1391,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "9aacf5265106c6fe5a1fbb76a5d6a027f74a77c79c1aba39da8eea4e5878843e"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5598900,
+            "data_offset": 27765732,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "3eeab35ad8b57cc14d2b444d41d354403244631d9ee48003de0c6dc659f13bc6"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5617548,
+            "data_offset": 27819036,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "3eeab35ad8b57cc14d2b444d41d354403244631d9ee48003de0c6dc659f13bc6"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6047756,
+        "stats": {
+          "hp": 120,
+          "atk": 170,
+          "def": 115,
+          "spe": 105,
+          "spa": 70,
+          "spd": 85
+        },
+        "types": [
+          "Ice",
+          "Ground"
+        ],
+        "ability_ids": [
+          174,
+          174,
+          174
+        ],
+        "species_record_sha256": "3cfbae0e9b1166c3c1f761e454aeef161ccd5db0f5a29b19f7a56e0436ee0f15",
+        "name_bytes_hex": "c7d5e1e3e7ebae2dff0000",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5700092,
+            "data_offset": 26853692,
+            "compressed_bytes": 1391,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "9aacf5265106c6fe5a1fbb76a5d6a027f74a77c79c1aba39da8eea4e5878843e"
+          },
+          "back": {
+            "table_entry_offset": 5598832,
+            "data_offset": 27960296,
+            "compressed_bytes": 1391,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "9aacf5265106c6fe5a1fbb76a5d6a027f74a77c79c1aba39da8eea4e5878843e"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5617480,
+            "data_offset": 28084684,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "3eeab35ad8b57cc14d2b444d41d354403244631d9ee48003de0c6dc659f13bc6"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5636128,
+            "data_offset": 28137988,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "3eeab35ad8b57cc14d2b444d41d354403244631d9ee48003de0c6dc659f13bc6"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Piel Helada",
+        "Piel Helada",
+        "Piel Helada"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/mamoswine-front_default.png",
+          "url": "/rocket-art/mamoswine-front_default.png",
+          "sha256": "b23a6de96e632dfd247717e21142c4ee4cfb1f2b1864dfe6dde5990b2dc9d6e7",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/mamoswine-front_shiny.png",
+          "url": "/rocket-art/mamoswine-front_shiny.png",
+          "sha256": "b23a6de96e632dfd247717e21142c4ee4cfb1f2b1864dfe6dde5990b2dc9d6e7",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/mamoswine-back_default.png",
+          "url": "/rocket-art/mamoswine-back_default.png",
+          "sha256": "b23a6de96e632dfd247717e21142c4ee4cfb1f2b1864dfe6dde5990b2dc9d6e7",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/mamoswine-back_shiny.png",
+          "url": "/rocket-art/mamoswine-back_shiny.png",
+          "sha256": "b23a6de96e632dfd247717e21142c4ee4cfb1f2b1864dfe6dde5990b2dc9d6e7",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:delphox",
+      "name": "Delphox",
+      "species_id": 935,
+      "author_rom_name": "Delphox-&",
+      "user_rom": {
+        "species_offset": 6015712,
+        "stats": {
+          "hp": 85,
+          "atk": 79,
+          "def": 82,
+          "spe": 119,
+          "spa": 164,
+          "spd": 130
+        },
+        "types": [
+          "Fire",
+          "Psychic"
+        ],
+        "ability_ids": [
+          156,
+          156,
+          156
+        ],
+        "species_record_sha256": "d1750b3244dc00805b6538ab240f5ffe67d542cfee060751fed10ec6111ff7f1",
+        "name_bytes_hex": "0ee6057d051b052b2dffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5678520,
+            "data_offset": 26167840,
+            "compressed_bytes": 1385,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "4dc66236ba0950cf98665aab7b3edcd1bea6736b681bba8b2cb648d6aa284a32"
+          },
+          "back": {
+            "table_entry_offset": 5577260,
+            "data_offset": 27374380,
+            "compressed_bytes": 1385,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "4dc66236ba0950cf98665aab7b3edcd1bea6736b681bba8b2cb648d6aa284a32"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5595908,
+            "data_offset": 27752808,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "a76dba8be1f0a9defd249addd74e0d892a8d3c57c5c9ab56c92443d3cda4f12a"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5614556,
+            "data_offset": 27806324,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "a76dba8be1f0a9defd249addd74e0d892a8d3c57c5c9ab56c92443d3cda4f12a"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6034292,
+        "stats": {
+          "hp": 85,
+          "atk": 79,
+          "def": 82,
+          "spe": 119,
+          "spa": 164,
+          "spd": 130
+        },
+        "types": [
+          "Fire",
+          "Psychic"
+        ],
+        "ability_ids": [
+          156,
+          156,
+          156
+        ],
+        "species_record_sha256": "d1750b3244dc00805b6538ab240f5ffe67d542cfee060751fed10ec6111ff7f1",
+        "name_bytes_hex": "bed9e0e4dce3ecae2dff00",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5697100,
+            "data_offset": 26486792,
+            "compressed_bytes": 1385,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "4dc66236ba0950cf98665aab7b3edcd1bea6736b681bba8b2cb648d6aa284a32"
+          },
+          "back": {
+            "table_entry_offset": 5595840,
+            "data_offset": 27693332,
+            "compressed_bytes": 1385,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "4dc66236ba0950cf98665aab7b3edcd1bea6736b681bba8b2cb648d6aa284a32"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5614488,
+            "data_offset": 28071760,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "a76dba8be1f0a9defd249addd74e0d892a8d3c57c5c9ab56c92443d3cda4f12a"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5633136,
+            "data_offset": 28125276,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "a76dba8be1f0a9defd249addd74e0d892a8d3c57c5c9ab56c92443d3cda4f12a"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Espejomágico",
+        "Espejomágico",
+        "Espejomágico"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/delphox-front_default.png",
+          "url": "/rocket-art/delphox-front_default.png",
+          "sha256": "f0e3d3f40c17bd053ef5860ec6b1a4ce0f7673fc59710f420b02a39c289713db",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/delphox-front_shiny.png",
+          "url": "/rocket-art/delphox-front_shiny.png",
+          "sha256": "f0e3d3f40c17bd053ef5860ec6b1a4ce0f7673fc59710f420b02a39c289713db",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/delphox-back_default.png",
+          "url": "/rocket-art/delphox-back_default.png",
+          "sha256": "f0e3d3f40c17bd053ef5860ec6b1a4ce0f7673fc59710f420b02a39c289713db",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/delphox-back_shiny.png",
+          "url": "/rocket-art/delphox-back_shiny.png",
+          "sha256": "f0e3d3f40c17bd053ef5860ec6b1a4ce0f7673fc59710f420b02a39c289713db",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:feraligatr",
+      "name": "Feraligatr",
+      "species_id": 928,
+      "author_rom_name": "Feralig&",
+      "user_rom": {
+        "species_offset": 6015460,
+        "stats": {
+          "hp": 95,
+          "atk": 165,
+          "def": 130,
+          "spe": 88,
+          "spa": 79,
+          "spd": 103
+        },
+        "types": [
+          "Water",
+          "Dark"
+        ],
+        "ability_ids": [
+          173,
+          0,
+          173
+        ],
+        "species_record_sha256": "4963c468f55d88d5f0cd0f47e3933b1f9c266a4bf2ea2ab9931e93e0bd81bd5a",
+        "name_bytes_hex": "02d308791df12dffffffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5678464,
+            "data_offset": 26157312,
+            "compressed_bytes": 1366,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "8910cdb1c1232e9041f846204f34b274e86beab7bd7bbd4feb541f5ba812c0d2"
+          },
+          "back": {
+            "table_entry_offset": 5577204,
+            "data_offset": 27364824,
+            "compressed_bytes": 1366,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "8910cdb1c1232e9041f846204f34b274e86beab7bd7bbd4feb541f5ba812c0d2"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5595852,
+            "data_offset": 27752528,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "abcce4064e87340c7fd4cb622204fa6483a8dc85d2f90fd5d0140072b0c4b263"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5614500,
+            "data_offset": 27806044,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "abcce4064e87340c7fd4cb622204fa6483a8dc85d2f90fd5d0140072b0c4b263"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6034040,
+        "stats": {
+          "hp": 95,
+          "atk": 165,
+          "def": 130,
+          "spe": 88,
+          "spa": 79,
+          "spd": 103
+        },
+        "types": [
+          "Water",
+          "Dark"
+        ],
+        "ability_ids": [
+          173,
+          0,
+          173
+        ],
+        "species_record_sha256": "4963c468f55d88d5f0cd0f47e3933b1f9c266a4bf2ea2ab9931e93e0bd81bd5a",
+        "name_bytes_hex": "c0d9e6d5e0dddb2dff0000",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5697044,
+            "data_offset": 26476264,
+            "compressed_bytes": 1366,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "8910cdb1c1232e9041f846204f34b274e86beab7bd7bbd4feb541f5ba812c0d2"
+          },
+          "back": {
+            "table_entry_offset": 5595784,
+            "data_offset": 27683776,
+            "compressed_bytes": 1366,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "8910cdb1c1232e9041f846204f34b274e86beab7bd7bbd4feb541f5ba812c0d2"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5614432,
+            "data_offset": 28071480,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "abcce4064e87340c7fd4cb622204fa6483a8dc85d2f90fd5d0140072b0c4b263"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5633080,
+            "data_offset": 28124996,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "abcce4064e87340c7fd4cb622204fa6483a8dc85d2f90fd5d0140072b0c4b263"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Mandíbula Fuerte",
+        "-------",
+        "Mandíbula Fuerte"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/feraligatr-front_default.png",
+          "url": "/rocket-art/feraligatr-front_default.png",
+          "sha256": "3a4c5a86c5b64e2b513026b552b49b98bf5d61b27ba3ef0c2fafc4e5ac7bba91",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/feraligatr-front_shiny.png",
+          "url": "/rocket-art/feraligatr-front_shiny.png",
+          "sha256": "3a4c5a86c5b64e2b513026b552b49b98bf5d61b27ba3ef0c2fafc4e5ac7bba91",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/feraligatr-back_default.png",
+          "url": "/rocket-art/feraligatr-back_default.png",
+          "sha256": "3a4c5a86c5b64e2b513026b552b49b98bf5d61b27ba3ef0c2fafc4e5ac7bba91",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/feraligatr-back_shiny.png",
+          "url": "/rocket-art/feraligatr-back_shiny.png",
+          "sha256": "3a4c5a86c5b64e2b513026b552b49b98bf5d61b27ba3ef0c2fafc4e5ac7bba91",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:flareon-en",
+      "name": "Flareon EN",
+      "species_id": 972,
+      "author_rom_name": "En",
+      "user_rom": {
+        "species_offset": 6017044,
+        "stats": {
+          "hp": 85,
+          "atk": 152,
+          "def": 75,
+          "spe": 85,
+          "spa": 116,
+          "spd": 137
+        },
+        "types": [
+          "Fire"
+        ],
+        "ability_ids": [
+          125,
+          125,
+          125
+        ],
+        "species_record_sha256": "80a8dc06fc67b2202f2bc0fccc34409550bd9b412fdbb5ca70ab6dc04fdfcfcf",
+        "name_bytes_hex": "0ec0ffffffffffffffffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5678816,
+            "data_offset": 26210240,
+            "compressed_bytes": 1091,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "4d224a9d619da4ca246e1baef88f721ee9c3c467aacb932a5a3d7a8ea91b0941"
+          },
+          "back": {
+            "table_entry_offset": 5577556,
+            "data_offset": 27412312,
+            "compressed_bytes": 1091,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "4d224a9d619da4ca246e1baef88f721ee9c3c467aacb932a5a3d7a8ea91b0941"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5596204,
+            "data_offset": 27754204,
+            "compressed_bytes": 36,
+            "decoded_bytes": 32,
+            "decoded_sha256": "7ac7e3e64c4769e1cca50180040ba711cded6359a3b914803d4be3c4e511c9fb"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5614852,
+            "data_offset": 27807708,
+            "compressed_bytes": 36,
+            "decoded_bytes": 32,
+            "decoded_sha256": "7ac7e3e64c4769e1cca50180040ba711cded6359a3b914803d4be3c4e511c9fb"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6035624,
+        "stats": {
+          "hp": 85,
+          "atk": 152,
+          "def": 75,
+          "spe": 85,
+          "spa": 116,
+          "spd": 137
+        },
+        "types": [
+          "Fire"
+        ],
+        "ability_ids": [
+          125,
+          125,
+          125
+        ],
+        "species_record_sha256": "80a8dc06fc67b2202f2bc0fccc34409550bd9b412fdbb5ca70ab6dc04fdfcfcf",
+        "name_bytes_hex": "bfe2ff0000000000000000",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5697396,
+            "data_offset": 26529192,
+            "compressed_bytes": 1091,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "4d224a9d619da4ca246e1baef88f721ee9c3c467aacb932a5a3d7a8ea91b0941"
+          },
+          "back": {
+            "table_entry_offset": 5596136,
+            "data_offset": 27731264,
+            "compressed_bytes": 1091,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "4d224a9d619da4ca246e1baef88f721ee9c3c467aacb932a5a3d7a8ea91b0941"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5614784,
+            "data_offset": 28073156,
+            "compressed_bytes": 36,
+            "decoded_bytes": 32,
+            "decoded_sha256": "7ac7e3e64c4769e1cca50180040ba711cded6359a3b914803d4be3c4e511c9fb"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5633432,
+            "data_offset": 28126660,
+            "compressed_bytes": 36,
+            "decoded_bytes": 32,
+            "decoded_sha256": "7ac7e3e64c4769e1cca50180040ba711cded6359a3b914803d4be3c4e511c9fb"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Potencia Bruta",
+        "Potencia Bruta",
+        "Potencia Bruta"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/flareon-en-front_default.png",
+          "url": "/rocket-art/flareon-en-front_default.png",
+          "sha256": "c753e2bfc9bb1f2d327deddee65c6d6dc18477db3a02ef5e1e36158a72cb41cb",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/flareon-en-front_shiny.png",
+          "url": "/rocket-art/flareon-en-front_shiny.png",
+          "sha256": "c753e2bfc9bb1f2d327deddee65c6d6dc18477db3a02ef5e1e36158a72cb41cb",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/flareon-en-back_default.png",
+          "url": "/rocket-art/flareon-en-back_default.png",
+          "sha256": "c753e2bfc9bb1f2d327deddee65c6d6dc18477db3a02ef5e1e36158a72cb41cb",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/flareon-en-back_shiny.png",
+          "url": "/rocket-art/flareon-en-back_shiny.png",
+          "sha256": "c753e2bfc9bb1f2d327deddee65c6d6dc18477db3a02ef5e1e36158a72cb41cb",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:jolteon-rai",
+      "name": "Jolteon RAI",
+      "species_id": 971,
+      "author_rom_name": "Rai",
+      "user_rom": {
+        "species_offset": 6017008,
+        "stats": {
+          "hp": 85,
+          "atk": 85,
+          "def": 75,
+          "spe": 152,
+          "spa": 137,
+          "spd": 116
+        },
+        "types": [
+          "Electric"
+        ],
+        "ability_ids": [
+          99,
+          99,
+          99
+        ],
+        "species_record_sha256": "629e937ff4a9d4f1fa798f19e128e2eb47ba10d8f93f6a32f65b81b59f71af92",
+        "name_bytes_hex": "084cffffffffffffffffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5678808,
+            "data_offset": 26209140,
+            "compressed_bytes": 1097,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "7a4bb4c08e33ddc9829d68568a4cf850ca43ca46ae4b7503b4992714c1d21d17"
+          },
+          "back": {
+            "table_entry_offset": 5577548,
+            "data_offset": 27411212,
+            "compressed_bytes": 1097,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "7a4bb4c08e33ddc9829d68568a4cf850ca43ca46ae4b7503b4992714c1d21d17"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5596196,
+            "data_offset": 27754168,
+            "compressed_bytes": 36,
+            "decoded_bytes": 32,
+            "decoded_sha256": "4f75bf67a42a6d7507436bb12e0725daa65211e6564980194863745e536ba82e"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5614844,
+            "data_offset": 27807672,
+            "compressed_bytes": 36,
+            "decoded_bytes": 32,
+            "decoded_sha256": "4f75bf67a42a6d7507436bb12e0725daa65211e6564980194863745e536ba82e"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6035588,
+        "stats": {
+          "hp": 85,
+          "atk": 85,
+          "def": 75,
+          "spe": 152,
+          "spa": 137,
+          "spd": 116
+        },
+        "types": [
+          "Electric"
+        ],
+        "ability_ids": [
+          99,
+          99,
+          99
+        ],
+        "species_record_sha256": "629e937ff4a9d4f1fa798f19e128e2eb47ba10d8f93f6a32f65b81b59f71af92",
+        "name_bytes_hex": "ccd5ddff00000000000000",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5697388,
+            "data_offset": 26528092,
+            "compressed_bytes": 1097,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "7a4bb4c08e33ddc9829d68568a4cf850ca43ca46ae4b7503b4992714c1d21d17"
+          },
+          "back": {
+            "table_entry_offset": 5596128,
+            "data_offset": 27730164,
+            "compressed_bytes": 1097,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "7a4bb4c08e33ddc9829d68568a4cf850ca43ca46ae4b7503b4992714c1d21d17"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5614776,
+            "data_offset": 28073120,
+            "compressed_bytes": 36,
+            "decoded_bytes": 32,
+            "decoded_sha256": "4f75bf67a42a6d7507436bb12e0725daa65211e6564980194863745e536ba82e"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5633424,
+            "data_offset": 28126624,
+            "compressed_bytes": 36,
+            "decoded_bytes": 32,
+            "decoded_sha256": "4f75bf67a42a6d7507436bb12e0725daa65211e6564980194863745e536ba82e"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Indefenso",
+        "Indefenso",
+        "Indefenso"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/jolteon-rai-front_default.png",
+          "url": "/rocket-art/jolteon-rai-front_default.png",
+          "sha256": "2037f7ef0b1e2cbc613d2916a6fa0c752706b90a16844e67d385bf1678b5fe36",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/jolteon-rai-front_shiny.png",
+          "url": "/rocket-art/jolteon-rai-front_shiny.png",
+          "sha256": "2037f7ef0b1e2cbc613d2916a6fa0c752706b90a16844e67d385bf1678b5fe36",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/jolteon-rai-back_default.png",
+          "url": "/rocket-art/jolteon-rai-back_default.png",
+          "sha256": "2037f7ef0b1e2cbc613d2916a6fa0c752706b90a16844e67d385bf1678b5fe36",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/jolteon-rai-back_shiny.png",
+          "url": "/rocket-art/jolteon-rai-back_shiny.png",
+          "sha256": "2037f7ef0b1e2cbc613d2916a6fa0c752706b90a16844e67d385bf1678b5fe36",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:vaporeon-sui",
+      "name": "Vaporeon SUI",
+      "species_id": 970,
+      "author_rom_name": "Sui",
+      "user_rom": {
+        "species_offset": 6016972,
+        "stats": {
+          "hp": 152,
+          "atk": 85,
+          "def": 75,
+          "spe": 85,
+          "spa": 137,
+          "spd": 116
+        },
+        "types": [
+          "Water"
+        ],
+        "ability_ids": [
+          98,
+          98,
+          98
+        ],
+        "species_record_sha256": "77dbd0120d8a99d1fd40ff044c98a4ce03924a9e8ea92b5d67c96056900a408f",
+        "name_bytes_hex": "0c51ffffffffffffffffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5678800,
+            "data_offset": 26207980,
+            "compressed_bytes": 1159,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "dd37f9a5d1a34b2bd9159b2ad9687b1016baff341cbcc1316dd7d52212d0a764"
+          },
+          "back": {
+            "table_entry_offset": 5577540,
+            "data_offset": 27410052,
+            "compressed_bytes": 1159,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "dd37f9a5d1a34b2bd9159b2ad9687b1016baff341cbcc1316dd7d52212d0a764"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5596188,
+            "data_offset": 27754128,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "cb41a7b505b555acda1a47eeef0598d2582658ba725feff4faba58a18e3d1eba"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5614836,
+            "data_offset": 27807632,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "cb41a7b505b555acda1a47eeef0598d2582658ba725feff4faba58a18e3d1eba"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6035552,
+        "stats": {
+          "hp": 152,
+          "atk": 85,
+          "def": 75,
+          "spe": 85,
+          "spa": 137,
+          "spd": 116
+        },
+        "types": [
+          "Water"
+        ],
+        "ability_ids": [
+          98,
+          98,
+          98
+        ],
+        "species_record_sha256": "77dbd0120d8a99d1fd40ff044c98a4ce03924a9e8ea92b5d67c96056900a408f",
+        "name_bytes_hex": "cde9ddff00000000000000",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5697380,
+            "data_offset": 26526932,
+            "compressed_bytes": 1159,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "dd37f9a5d1a34b2bd9159b2ad9687b1016baff341cbcc1316dd7d52212d0a764"
+          },
+          "back": {
+            "table_entry_offset": 5596120,
+            "data_offset": 27729004,
+            "compressed_bytes": 1159,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "dd37f9a5d1a34b2bd9159b2ad9687b1016baff341cbcc1316dd7d52212d0a764"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5614768,
+            "data_offset": 28073080,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "cb41a7b505b555acda1a47eeef0598d2582658ba725feff4faba58a18e3d1eba"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5633416,
+            "data_offset": 28126584,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "cb41a7b505b555acda1a47eeef0598d2582658ba725feff4faba58a18e3d1eba"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Muro Mágico",
+        "Muro Mágico",
+        "Muro Mágico"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/vaporeon-sui-front_default.png",
+          "url": "/rocket-art/vaporeon-sui-front_default.png",
+          "sha256": "bf40d93a12a264d958b898ddccf7dabc9f098d49f755f50ce4f50b1dcc0f41f2",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/vaporeon-sui-front_shiny.png",
+          "url": "/rocket-art/vaporeon-sui-front_shiny.png",
+          "sha256": "bf40d93a12a264d958b898ddccf7dabc9f098d49f755f50ce4f50b1dcc0f41f2",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/vaporeon-sui-back_default.png",
+          "url": "/rocket-art/vaporeon-sui-back_default.png",
+          "sha256": "bf40d93a12a264d958b898ddccf7dabc9f098d49f755f50ce4f50b1dcc0f41f2",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/vaporeon-sui-back_shiny.png",
+          "url": "/rocket-art/vaporeon-sui-back_shiny.png",
+          "sha256": "bf40d93a12a264d958b898ddccf7dabc9f098d49f755f50ce4f50b1dcc0f41f2",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:ninetales",
+      "name": "Ninetales",
+      "species_id": 1380,
+      "author_rom_name": "Ninetales&",
+      "user_rom": {
+        "species_offset": 6031732,
+        "stats": {
+          "hp": 83,
+          "atk": 67,
+          "def": 90,
+          "spe": 129,
+          "spa": 121,
+          "spd": 140
+        },
+        "types": [
+          "Fire",
+          "Ghost"
+        ],
+        "ability_ids": [
+          169,
+          169,
+          169
+        ],
+        "species_record_sha256": "4c30cc36173a51a4db709a62d5785df2a02c3db6b9ff7c79e41bfc7a977891df",
+        "name_bytes_hex": "07750d782dffffffffffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5682080,
+            "data_offset": 26604580,
+            "compressed_bytes": 1510,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "6901b2ff380be98d498fee54318d17412bfbbb8c0115c743d626b642ed0becf0"
+          },
+          "back": {
+            "table_entry_offset": 5580820,
+            "data_offset": 27700456,
+            "compressed_bytes": 1510,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "6901b2ff380be98d498fee54318d17412bfbbb8c0115c743d626b642ed0becf0"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5599468,
+            "data_offset": 27768568,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "a4b736035552e3dd875c981838d314d36ed790efc4ab147fe951f53a71c6bfcb"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5618116,
+            "data_offset": 27821872,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "a4b736035552e3dd875c981838d314d36ed790efc4ab147fe951f53a71c6bfcb"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6050312,
+        "stats": {
+          "hp": 83,
+          "atk": 67,
+          "def": 90,
+          "spe": 129,
+          "spa": 121,
+          "spd": 140
+        },
+        "types": [
+          "Fire",
+          "Ghost"
+        ],
+        "ability_ids": [
+          169,
+          169,
+          169
+        ],
+        "species_record_sha256": "4c30cc36173a51a4db709a62d5785df2a02c3db6b9ff7c79e41bfc7a977891df",
+        "name_bytes_hex": "c8dde2d9e8d5e0d9e72dff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5700660,
+            "data_offset": 26923532,
+            "compressed_bytes": 1510,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "6901b2ff380be98d498fee54318d17412bfbbb8c0115c743d626b642ed0becf0"
+          },
+          "back": {
+            "table_entry_offset": 5599400,
+            "data_offset": 28019408,
+            "compressed_bytes": 1510,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "6901b2ff380be98d498fee54318d17412bfbbb8c0115c743d626b642ed0becf0"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5618048,
+            "data_offset": 28087520,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "a4b736035552e3dd875c981838d314d36ed790efc4ab147fe951f53a71c6bfcb"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5636696,
+            "data_offset": 28140824,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "a4b736035552e3dd875c981838d314d36ed790efc4ab147fe951f53a71c6bfcb"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Pelaje Recio",
+        "Pelaje Recio",
+        "Pelaje Recio"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/ninetales-front_default.png",
+          "url": "/rocket-art/ninetales-front_default.png",
+          "sha256": "d5a757bec24c90585f1700a9cbc236eb2c19a04dd7b166c3fc0967b81e1fbe78",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/ninetales-front_shiny.png",
+          "url": "/rocket-art/ninetales-front_shiny.png",
+          "sha256": "d5a757bec24c90585f1700a9cbc236eb2c19a04dd7b166c3fc0967b81e1fbe78",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/ninetales-back_default.png",
+          "url": "/rocket-art/ninetales-back_default.png",
+          "sha256": "d5a757bec24c90585f1700a9cbc236eb2c19a04dd7b166c3fc0967b81e1fbe78",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/ninetales-back_shiny.png",
+          "url": "/rocket-art/ninetales-back_shiny.png",
+          "sha256": "d5a757bec24c90585f1700a9cbc236eb2c19a04dd7b166c3fc0967b81e1fbe78",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:crobat-protagonist",
+      "name": "Crobat Protagonist",
+      "species_id": 1305,
+      "author_rom_name": "Crobat♂-&",
+      "user_rom": {
+        "species_offset": 6029032,
+        "stats": {
+          "hp": 95,
+          "atk": 120,
+          "def": 95,
+          "spe": 160,
+          "spa": 85,
+          "spd": 105
+        },
+        "types": [
+          "Poison",
+          "Flying"
+        ],
+        "ability_ids": [
+          14,
+          0,
+          14
+        ],
+        "species_record_sha256": "19d5cf70c578e949f55a2cc0bb3cfeba472af704f79de8d417cf8f0dde0950cb",
+        "name_bytes_hex": "020a110e1c67b52dffffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5681480,
+            "data_offset": 26530636,
+            "compressed_bytes": 873,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "451bf2f96b67d5865547a9f6c87e15e224f353d8fa68b0005b796d726db37a56"
+          },
+          "back": {
+            "table_entry_offset": 5580220,
+            "data_offset": 27637680,
+            "compressed_bytes": 647,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "a558a51f7c6feb0832fe766d50035323ae8a7fd1f39576e6805c0a2208d3829e"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5598868,
+            "data_offset": 27765596,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "4eb4f01fb2b10022646610f9cbf9d4bf4870f512fd120a8a421380f9edd13b8b"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5617516,
+            "data_offset": 27818900,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "4eb4f01fb2b10022646610f9cbf9d4bf4870f512fd120a8a421380f9edd13b8b"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6047612,
+        "stats": {
+          "hp": 95,
+          "atk": 120,
+          "def": 95,
+          "spe": 160,
+          "spa": 85,
+          "spd": 105
+        },
+        "types": [
+          "Poison",
+          "Flying"
+        ],
+        "ability_ids": [
+          14,
+          0,
+          14
+        ],
+        "species_record_sha256": "19d5cf70c578e949f55a2cc0bb3cfeba472af704f79de8d417cf8f0dde0950cb",
+        "name_bytes_hex": "bde6e3d6d5e8b5ae2dff00",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5700060,
+            "data_offset": 26849588,
+            "compressed_bytes": 873,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "451bf2f96b67d5865547a9f6c87e15e224f353d8fa68b0005b796d726db37a56"
+          },
+          "back": {
+            "table_entry_offset": 5598800,
+            "data_offset": 27956632,
+            "compressed_bytes": 647,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "a558a51f7c6feb0832fe766d50035323ae8a7fd1f39576e6805c0a2208d3829e"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5617448,
+            "data_offset": 28084548,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "4eb4f01fb2b10022646610f9cbf9d4bf4870f512fd120a8a421380f9edd13b8b"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5636096,
+            "data_offset": 28137852,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "4eb4f01fb2b10022646610f9cbf9d4bf4870f512fd120a8a421380f9edd13b8b"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Ojocompuesto",
+        "-------",
+        "Ojocompuesto"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/crobat-protagonist-front_default.png",
+          "url": "/rocket-art/crobat-protagonist-front_default.png",
+          "sha256": "2dba12384688c77a2ee5d34b1091d8625e899a14d20db7736ee088dfee25821e",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/crobat-protagonist-front_shiny.png",
+          "url": "/rocket-art/crobat-protagonist-front_shiny.png",
+          "sha256": "2dba12384688c77a2ee5d34b1091d8625e899a14d20db7736ee088dfee25821e",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/crobat-protagonist-back_default.png",
+          "url": "/rocket-art/crobat-protagonist-back_default.png",
+          "sha256": "a36ee97f239fc2e109f485753fc15b0d4bc47bdeed0c0e66b850da6c1791b211",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/crobat-protagonist-back_shiny.png",
+          "url": "/rocket-art/crobat-protagonist-back_shiny.png",
+          "sha256": "a36ee97f239fc2e109f485753fc15b0d4bc47bdeed0c0e66b850da6c1791b211",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:crobat-andra",
+      "name": "Crobat Andra",
+      "species_id": 1306,
+      "author_rom_name": "Crobat♀-&",
+      "user_rom": {
+        "species_offset": 6029068,
+        "stats": {
+          "hp": 95,
+          "atk": 160,
+          "def": 115,
+          "spe": 120,
+          "spa": 85,
+          "spd": 85
+        },
+        "types": [
+          "Poison",
+          "Steel"
+        ],
+        "ability_ids": [
+          26,
+          26,
+          26
+        ],
+        "species_record_sha256": "f17605e4bdacf1cb539f73553208c5db9cc2c88101acae2250786d67093139d6",
+        "name_bytes_hex": "020a110e1c67b62dffffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5681488,
+            "data_offset": 26531512,
+            "compressed_bytes": 1319,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "666c459fbe532a69d00de9c77db3a0abc22c8efa6e156cb7749183b343694256"
+          },
+          "back": {
+            "table_entry_offset": 5580228,
+            "data_offset": 27638328,
+            "compressed_bytes": 1081,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "b15376392d5186b3bee4a0064b5ca3d926a3a97746a301e595edce5cfd0dcfdd"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5598876,
+            "data_offset": 27765636,
+            "compressed_bytes": 35,
+            "decoded_bytes": 32,
+            "decoded_sha256": "0bd68cdd1dd1c9a819394f0231737d2c6a87945a3f3aaef9b7f7341a8c7d58c5"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5617524,
+            "data_offset": 27818940,
+            "compressed_bytes": 35,
+            "decoded_bytes": 32,
+            "decoded_sha256": "0bd68cdd1dd1c9a819394f0231737d2c6a87945a3f3aaef9b7f7341a8c7d58c5"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6047648,
+        "stats": {
+          "hp": 95,
+          "atk": 160,
+          "def": 115,
+          "spe": 120,
+          "spa": 85,
+          "spd": 85
+        },
+        "types": [
+          "Poison",
+          "Steel"
+        ],
+        "ability_ids": [
+          26,
+          26,
+          26
+        ],
+        "species_record_sha256": "f17605e4bdacf1cb539f73553208c5db9cc2c88101acae2250786d67093139d6",
+        "name_bytes_hex": "bde6e3d6d5e8b6ae2dff00",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5700068,
+            "data_offset": 26850464,
+            "compressed_bytes": 1319,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "666c459fbe532a69d00de9c77db3a0abc22c8efa6e156cb7749183b343694256"
+          },
+          "back": {
+            "table_entry_offset": 5598808,
+            "data_offset": 27957280,
+            "compressed_bytes": 1081,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "b15376392d5186b3bee4a0064b5ca3d926a3a97746a301e595edce5cfd0dcfdd"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5617456,
+            "data_offset": 28084588,
+            "compressed_bytes": 35,
+            "decoded_bytes": 32,
+            "decoded_sha256": "0bd68cdd1dd1c9a819394f0231737d2c6a87945a3f3aaef9b7f7341a8c7d58c5"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5636104,
+            "data_offset": 28137892,
+            "compressed_bytes": 35,
+            "decoded_bytes": 32,
+            "decoded_sha256": "0bd68cdd1dd1c9a819394f0231737d2c6a87945a3f3aaef9b7f7341a8c7d58c5"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Levitación",
+        "Levitación",
+        "Levitación"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/crobat-andra-front_default.png",
+          "url": "/rocket-art/crobat-andra-front_default.png",
+          "sha256": "4ad1685f24736fc0fa2169290bd61b38e58c303b4ba64b34d25d5ecc1652c58c",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/crobat-andra-front_shiny.png",
+          "url": "/rocket-art/crobat-andra-front_shiny.png",
+          "sha256": "4ad1685f24736fc0fa2169290bd61b38e58c303b4ba64b34d25d5ecc1652c58c",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/crobat-andra-back_default.png",
+          "url": "/rocket-art/crobat-andra-back_default.png",
+          "sha256": "5894786009ca3cb68b9dedd7e18daaf207f25cb7bfde1b4269585794c7c98e63",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/crobat-andra-back_shiny.png",
+          "url": "/rocket-art/crobat-andra-back_shiny.png",
+          "sha256": "5894786009ca3cb68b9dedd7e18daaf207f25cb7bfde1b4269585794c7c98e63",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:volcarona",
+      "name": "Volcarona",
+      "species_id": 945,
+      "author_rom_name": "Volcarona&",
+      "user_rom": {
+        "species_offset": 6016072,
+        "stats": {
+          "hp": 95,
+          "atk": 50,
+          "def": 75,
+          "spe": 130,
+          "spa": 190,
+          "spd": 135
+        },
+        "types": [
+          "Bug",
+          "Fire"
+        ],
+        "ability_ids": [
+          98,
+          98,
+          98
+        ],
+        "species_record_sha256": "01a98867f6d0153828e0033a86ef9c9ba5f7c80270928489ac3f1b204a09cfc2",
+        "name_bytes_hex": "057d0bcf038f2dffffffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5678600,
+            "data_offset": 26180076,
+            "compressed_bytes": 1326,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "0846d1d3e35a74e72363e686797f0596ed4968b91c28b8a0ce7d5ee6650e4a70"
+          },
+          "back": {
+            "table_entry_offset": 5577340,
+            "data_offset": 27385124,
+            "compressed_bytes": 1326,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "0846d1d3e35a74e72363e686797f0596ed4968b91c28b8a0ce7d5ee6650e4a70"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5595988,
+            "data_offset": 27753204,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "c344f277af486fa876c70ac0b356d9e6fb845faf7eb9a907396afd3b893891f4"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5614636,
+            "data_offset": 27806720,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "c344f277af486fa876c70ac0b356d9e6fb845faf7eb9a907396afd3b893891f4"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6034652,
+        "stats": {
+          "hp": 95,
+          "atk": 50,
+          "def": 75,
+          "spe": 130,
+          "spa": 190,
+          "spd": 135
+        },
+        "types": [
+          "Bug",
+          "Fire"
+        ],
+        "ability_ids": [
+          98,
+          98,
+          98
+        ],
+        "species_record_sha256": "01a98867f6d0153828e0033a86ef9c9ba5f7c80270928489ac3f1b204a09cfc2",
+        "name_bytes_hex": "d0e3e0d7d5e6e3e2d52dff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5697180,
+            "data_offset": 26499028,
+            "compressed_bytes": 1326,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "0846d1d3e35a74e72363e686797f0596ed4968b91c28b8a0ce7d5ee6650e4a70"
+          },
+          "back": {
+            "table_entry_offset": 5595920,
+            "data_offset": 27704076,
+            "compressed_bytes": 1326,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "0846d1d3e35a74e72363e686797f0596ed4968b91c28b8a0ce7d5ee6650e4a70"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5614568,
+            "data_offset": 28072156,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "c344f277af486fa876c70ac0b356d9e6fb845faf7eb9a907396afd3b893891f4"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5633216,
+            "data_offset": 28125672,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "c344f277af486fa876c70ac0b356d9e6fb845faf7eb9a907396afd3b893891f4"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Muro Mágico",
+        "Muro Mágico",
+        "Muro Mágico"
+      ],
+      "document_differences": {
+        "stats": {
+          "document": {
+            "hp": 95,
+            "atk": 50,
+            "def": 75,
+            "spa": 190,
+            "spd": 130,
+            "spe": 135
+          },
+          "rom": {
+            "hp": 95,
+            "atk": 50,
+            "def": 75,
+            "spe": 130,
+            "spa": 190,
+            "spd": 135
+          }
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/volcarona-front_default.png",
+          "url": "/rocket-art/volcarona-front_default.png",
+          "sha256": "b6af752be20dfbb42cba2c2f96630d94ddd7d36077e07e91b3ac1732353f2d61",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/volcarona-front_shiny.png",
+          "url": "/rocket-art/volcarona-front_shiny.png",
+          "sha256": "b6af752be20dfbb42cba2c2f96630d94ddd7d36077e07e91b3ac1732353f2d61",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/volcarona-back_default.png",
+          "url": "/rocket-art/volcarona-back_default.png",
+          "sha256": "b6af752be20dfbb42cba2c2f96630d94ddd7d36077e07e91b3ac1732353f2d61",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/volcarona-back_shiny.png",
+          "url": "/rocket-art/volcarona-back_shiny.png",
+          "sha256": "b6af752be20dfbb42cba2c2f96630d94ddd7d36077e07e91b3ac1732353f2d61",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:milotic",
+      "name": "Milotic",
+      "species_id": 1392,
+      "author_rom_name": "Milotic&",
+      "user_rom": {
+        "species_offset": 6032164,
+        "stats": {
+          "hp": 115,
+          "atk": 65,
+          "def": 79,
+          "spe": 91,
+          "spa": 150,
+          "spd": 195
+        },
+        "types": [
+          "Water",
+          "Psychic"
+        ],
+        "ability_ids": [
+          10,
+          10,
+          10
+        ],
+        "species_record_sha256": "fdc5d262efa20685a35c50bfe9e80624c29d94810a8d826bbffaa7eddd7b2234",
+        "name_bytes_hex": "095809bf0c5c2dffffffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5682176,
+            "data_offset": 26619220,
+            "compressed_bytes": 1668,
+            "decoded_bytes": 4096,
+            "decoded_sha256": "731437ed5e00ad82393c5a8e055a4fd150d2838ad5a152c1313f741cb7ff9907"
+          },
+          "back": {
+            "table_entry_offset": 5580916,
+            "data_offset": 27712432,
+            "compressed_bytes": 1228,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "a9c66683799344ae2a4df5f3dd6673cec6475a8e30c09bf1d9003e117be9b5ef"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5599564,
+            "data_offset": 27769044,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "c9a0b677420df33f76fde418635908235c84e1628386b47943ca6b76171abd6d"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5618212,
+            "data_offset": 27822348,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "c9a0b677420df33f76fde418635908235c84e1628386b47943ca6b76171abd6d"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6050744,
+        "stats": {
+          "hp": 115,
+          "atk": 65,
+          "def": 79,
+          "spe": 91,
+          "spa": 150,
+          "spd": 195
+        },
+        "types": [
+          "Water",
+          "Psychic"
+        ],
+        "ability_ids": [
+          10,
+          10,
+          10
+        ],
+        "species_record_sha256": "fdc5d262efa20685a35c50bfe9e80624c29d94810a8d826bbffaa7eddd7b2234",
+        "name_bytes_hex": "c7dde0e3e8ddd72dff0000",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5700756,
+            "data_offset": 26938172,
+            "compressed_bytes": 1668,
+            "decoded_bytes": 4096,
+            "decoded_sha256": "731437ed5e00ad82393c5a8e055a4fd150d2838ad5a152c1313f741cb7ff9907"
+          },
+          "back": {
+            "table_entry_offset": 5599496,
+            "data_offset": 28031384,
+            "compressed_bytes": 1228,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "a9c66683799344ae2a4df5f3dd6673cec6475a8e30c09bf1d9003e117be9b5ef"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5618144,
+            "data_offset": 28087996,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "c9a0b677420df33f76fde418635908235c84e1628386b47943ca6b76171abd6d"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5636792,
+            "data_offset": 28141300,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "c9a0b677420df33f76fde418635908235c84e1628386b47943ca6b76171abd6d"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Absorbe Elec",
+        "Absorbe Elec",
+        "Absorbe Elec"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/milotic-front_default.png",
+          "url": "/rocket-art/milotic-front_default.png",
+          "sha256": "db220aedf9e655d102ba1e692b06f154121d89eb57681be6814dc913c5f9c74f",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 2
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/milotic-front_shiny.png",
+          "url": "/rocket-art/milotic-front_shiny.png",
+          "sha256": "db220aedf9e655d102ba1e692b06f154121d89eb57681be6814dc913c5f9c74f",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 2
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/milotic-back_default.png",
+          "url": "/rocket-art/milotic-back_default.png",
+          "sha256": "7bb7a613c0f1c1fdadf02b102428c6dcd86669d6ad08657c163eef5d5c5c4a44",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/milotic-back_shiny.png",
+          "url": "/rocket-art/milotic-back_shiny.png",
+          "sha256": "7bb7a613c0f1c1fdadf02b102428c6dcd86669d6ad08657c163eef5d5c5c4a44",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:goodra",
+      "name": "Goodra",
+      "species_id": 946,
+      "author_rom_name": "Goodra&",
+      "user_rom": {
+        "species_offset": 6016108,
+        "stats": {
+          "hp": 100,
+          "atk": 125,
+          "def": 125,
+          "spe": 25,
+          "spa": 150,
+          "spd": 200
+        },
+        "types": [
+          "Dragon",
+          "Poison"
+        ],
+        "ability_ids": [
+          126,
+          126,
+          126
+        ],
+        "species_record_sha256": "62361652e68765655651a24b8889eececb5bc7d903eaac15b3665dd5488cc1e9",
+        "name_bytes_hex": "1a56095808cd2dffffffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5678608,
+            "data_offset": 26181404,
+            "compressed_bytes": 1150,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "6b14f4a249bab0d5cdfa73aabcb084b7e4a468b88fb92ae5e7b6334525470c90"
+          },
+          "back": {
+            "table_entry_offset": 5577348,
+            "data_offset": 27386452,
+            "compressed_bytes": 1150,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "6b14f4a249bab0d5cdfa73aabcb084b7e4a468b88fb92ae5e7b6334525470c90"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5595996,
+            "data_offset": 27753244,
+            "compressed_bytes": 38,
+            "decoded_bytes": 32,
+            "decoded_sha256": "e2f9b94bd0d169f25ae40deac5d1f1fecad7ca5a3056b006bbd66b5cf690c27d"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5614644,
+            "data_offset": 27806760,
+            "compressed_bytes": 38,
+            "decoded_bytes": 32,
+            "decoded_sha256": "e2f9b94bd0d169f25ae40deac5d1f1fecad7ca5a3056b006bbd66b5cf690c27d"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6034688,
+        "stats": {
+          "hp": 100,
+          "atk": 125,
+          "def": 125,
+          "spe": 25,
+          "spa": 150,
+          "spd": 200
+        },
+        "types": [
+          "Dragon",
+          "Poison"
+        ],
+        "ability_ids": [
+          126,
+          126,
+          126
+        ],
+        "species_record_sha256": "62361652e68765655651a24b8889eececb5bc7d903eaac15b3665dd5488cc1e9",
+        "name_bytes_hex": "c1e3e3d8e6d52dff000000",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5697188,
+            "data_offset": 26500356,
+            "compressed_bytes": 1150,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "6b14f4a249bab0d5cdfa73aabcb084b7e4a468b88fb92ae5e7b6334525470c90"
+          },
+          "back": {
+            "table_entry_offset": 5595928,
+            "data_offset": 27705404,
+            "compressed_bytes": 1150,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "6b14f4a249bab0d5cdfa73aabcb084b7e4a468b88fb92ae5e7b6334525470c90"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5614576,
+            "data_offset": 28072196,
+            "compressed_bytes": 38,
+            "decoded_bytes": 32,
+            "decoded_sha256": "e2f9b94bd0d169f25ae40deac5d1f1fecad7ca5a3056b006bbd66b5cf690c27d"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5633224,
+            "data_offset": 28125712,
+            "compressed_bytes": 38,
+            "decoded_bytes": 32,
+            "decoded_sha256": "e2f9b94bd0d169f25ae40deac5d1f1fecad7ca5a3056b006bbd66b5cf690c27d"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Respondón",
+        "Respondón",
+        "Respondón"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/goodra-front_default.png",
+          "url": "/rocket-art/goodra-front_default.png",
+          "sha256": "080ad73b7b17a5016a5723e69542209a9bf459e01dc97547b612915d6208a5e2",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/goodra-front_shiny.png",
+          "url": "/rocket-art/goodra-front_shiny.png",
+          "sha256": "080ad73b7b17a5016a5723e69542209a9bf459e01dc97547b612915d6208a5e2",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/goodra-back_default.png",
+          "url": "/rocket-art/goodra-back_default.png",
+          "sha256": "080ad73b7b17a5016a5723e69542209a9bf459e01dc97547b612915d6208a5e2",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/goodra-back_shiny.png",
+          "url": "/rocket-art/goodra-back_shiny.png",
+          "sha256": "080ad73b7b17a5016a5723e69542209a9bf459e01dc97547b612915d6208a5e2",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:dragonite",
+      "name": "Dragonite",
+      "species_id": 948,
+      "author_rom_name": "Dragonite&",
+      "user_rom": {
+        "species_offset": 6016180,
+        "stats": {
+          "hp": 101,
+          "atk": 91,
+          "def": 115,
+          "spe": 110,
+          "spa": 154,
+          "spd": 154
+        },
+        "types": [
+          "Dragon",
+          "Fairy"
+        ],
+        "ability_ids": [
+          99,
+          99,
+          99
+        ],
+        "species_record_sha256": "a5e780ae0a7ae62612e9b244e57360bb08454c14e2f74a67eeba10f1af5a5114",
+        "name_bytes_hex": "080308cd2dffffffffffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5678624,
+            "data_offset": 26183848,
+            "compressed_bytes": 1249,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "4dc9d9621d96458a8bbcb7748f612f451146180b26a883b6d1a6295cf1fe3fbd"
+          },
+          "back": {
+            "table_entry_offset": 5577364,
+            "data_offset": 27388404,
+            "compressed_bytes": 1249,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "4dc9d9621d96458a8bbcb7748f612f451146180b26a883b6d1a6295cf1fe3fbd"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5596012,
+            "data_offset": 27753324,
+            "compressed_bytes": 38,
+            "decoded_bytes": 32,
+            "decoded_sha256": "4de8961aec1e98c16924b9e2991e387740ca8e0b1c6b4edadd51919db4f3fbbb"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5614660,
+            "data_offset": 27806840,
+            "compressed_bytes": 38,
+            "decoded_bytes": 32,
+            "decoded_sha256": "4de8961aec1e98c16924b9e2991e387740ca8e0b1c6b4edadd51919db4f3fbbb"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6034760,
+        "stats": {
+          "hp": 101,
+          "atk": 91,
+          "def": 115,
+          "spe": 110,
+          "spa": 154,
+          "spd": 154
+        },
+        "types": [
+          "Dragon",
+          "Fairy"
+        ],
+        "ability_ids": [
+          99,
+          99,
+          99
+        ],
+        "species_record_sha256": "a5e780ae0a7ae62612e9b244e57360bb08454c14e2f74a67eeba10f1af5a5114",
+        "name_bytes_hex": "bee6d5dbe3e2dde8d92dff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5697204,
+            "data_offset": 26502800,
+            "compressed_bytes": 1249,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "4dc9d9621d96458a8bbcb7748f612f451146180b26a883b6d1a6295cf1fe3fbd"
+          },
+          "back": {
+            "table_entry_offset": 5595944,
+            "data_offset": 27707356,
+            "compressed_bytes": 1249,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "4dc9d9621d96458a8bbcb7748f612f451146180b26a883b6d1a6295cf1fe3fbd"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5614592,
+            "data_offset": 28072276,
+            "compressed_bytes": 38,
+            "decoded_bytes": 32,
+            "decoded_sha256": "4de8961aec1e98c16924b9e2991e387740ca8e0b1c6b4edadd51919db4f3fbbb"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5633240,
+            "data_offset": 28125792,
+            "compressed_bytes": 38,
+            "decoded_bytes": 32,
+            "decoded_sha256": "4de8961aec1e98c16924b9e2991e387740ca8e0b1c6b4edadd51919db4f3fbbb"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Indefenso",
+        "Indefenso",
+        "Indefenso"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/dragonite-front_default.png",
+          "url": "/rocket-art/dragonite-front_default.png",
+          "sha256": "4058f7c58c98fa69b3b095faf9dbe15253b44f800f9a42e908d6586949a66eb9",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/dragonite-front_shiny.png",
+          "url": "/rocket-art/dragonite-front_shiny.png",
+          "sha256": "4058f7c58c98fa69b3b095faf9dbe15253b44f800f9a42e908d6586949a66eb9",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/dragonite-back_default.png",
+          "url": "/rocket-art/dragonite-back_default.png",
+          "sha256": "4058f7c58c98fa69b3b095faf9dbe15253b44f800f9a42e908d6586949a66eb9",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/dragonite-back_shiny.png",
+          "url": "/rocket-art/dragonite-back_shiny.png",
+          "sha256": "4058f7c58c98fa69b3b095faf9dbe15253b44f800f9a42e908d6586949a66eb9",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:jirachi",
+      "name": "Jirachi",
+      "species_id": 1040,
+      "author_rom_name": "Jirachi-&",
+      "user_rom": {
+        "species_offset": 6019492,
+        "stats": {
+          "hp": 110,
+          "atk": 50,
+          "def": 155,
+          "spe": 100,
+          "spa": 155,
+          "spd": 155
+        },
+        "types": [
+          "Steel",
+          "Fairy"
+        ],
+        "ability_ids": [
+          26,
+          26,
+          0
+        ],
+        "species_record_sha256": "beaa149eb7412dcdbf52266272668246e6cbdd6c7a3e865eca7cb58cb8c96cf1",
+        "name_bytes_hex": "058608220aa82dffffffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5679360,
+            "data_offset": 26295600,
+            "compressed_bytes": 1938,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "aad1a4e87468cd7fa0c356ad5ae3ea3828ef6e5b5c21ccff5bfebd28be0a9815"
+          },
+          "back": {
+            "table_entry_offset": 5578100,
+            "data_offset": 27480604,
+            "compressed_bytes": 1757,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "49ba80ff66ed90b87e0edcc706743fb69945558217fe69797131b0d42111a5c0"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5596748,
+            "data_offset": 27756904,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "34cc269fb06bae15474aa0a6eb30109ad661f8cbc89cb0df39571621eeca1d76"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5615396,
+            "data_offset": 27810408,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "34cc269fb06bae15474aa0a6eb30109ad661f8cbc89cb0df39571621eeca1d76"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6038072,
+        "stats": {
+          "hp": 110,
+          "atk": 50,
+          "def": 155,
+          "spe": 100,
+          "spa": 155,
+          "spd": 155
+        },
+        "types": [
+          "Steel",
+          "Fairy"
+        ],
+        "ability_ids": [
+          26,
+          26,
+          0
+        ],
+        "species_record_sha256": "beaa149eb7412dcdbf52266272668246e6cbdd6c7a3e865eca7cb58cb8c96cf1",
+        "name_bytes_hex": "c4dde6d5d7dcddae2dff00",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5697940,
+            "data_offset": 26614552,
+            "compressed_bytes": 1938,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "aad1a4e87468cd7fa0c356ad5ae3ea3828ef6e5b5c21ccff5bfebd28be0a9815"
+          },
+          "back": {
+            "table_entry_offset": 5596680,
+            "data_offset": 27799556,
+            "compressed_bytes": 1757,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "49ba80ff66ed90b87e0edcc706743fb69945558217fe69797131b0d42111a5c0"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5615328,
+            "data_offset": 28075856,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "34cc269fb06bae15474aa0a6eb30109ad661f8cbc89cb0df39571621eeca1d76"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5633976,
+            "data_offset": 28129360,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "34cc269fb06bae15474aa0a6eb30109ad661f8cbc89cb0df39571621eeca1d76"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Levitación",
+        "Levitación",
+        "-------"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/jirachi-front_default.png",
+          "url": "/rocket-art/jirachi-front_default.png",
+          "sha256": "72c27ed1b2925ab8cf924305afb6da0b94789e28741d25fd689489d360c2eca9",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/jirachi-front_shiny.png",
+          "url": "/rocket-art/jirachi-front_shiny.png",
+          "sha256": "72c27ed1b2925ab8cf924305afb6da0b94789e28741d25fd689489d360c2eca9",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/jirachi-back_default.png",
+          "url": "/rocket-art/jirachi-back_default.png",
+          "sha256": "62effe35855c112706ff598a25c148a04e61f9c73698d8906b1fd7d874bd2990",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/jirachi-back_shiny.png",
+          "url": "/rocket-art/jirachi-back_shiny.png",
+          "sha256": "62effe35855c112706ff598a25c148a04e61f9c73698d8906b1fd7d874bd2990",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    },
+    {
+      "entry_id": "dex:omni:rocket-bond:sacred-dragon-dun",
+      "name": "Sacred Dragon Dun",
+      "species_id": 973,
+      "author_rom_name": "Dun-O",
+      "user_rom": {
+        "species_offset": 6017080,
+        "stats": {
+          "hp": 163,
+          "atk": 2,
+          "def": 103,
+          "spe": 109,
+          "spa": 157,
+          "spd": 193
+        },
+        "types": [
+          "Dragon",
+          "Psychic"
+        ],
+        "ability_ids": [
+          227,
+          227,
+          227
+        ],
+        "species_record_sha256": "0337db786af0cd3449e5b6014216f74d14d509ba6c55b04d1a88b7415e4987a9",
+        "name_bytes_hex": "0bcf0be1107f08cdffffff",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5678824,
+            "data_offset": 26211332,
+            "compressed_bytes": 1655,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "57a4d4d786a4fe38bbf2b2d9249ee08d08619516c23fea3102ec4eb368404089"
+          },
+          "back": {
+            "table_entry_offset": 5577564,
+            "data_offset": 27413404,
+            "compressed_bytes": 1655,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "57a4d4d786a4fe38bbf2b2d9249ee08d08619516c23fea3102ec4eb368404089"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5596212,
+            "data_offset": 27754240,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "e2b29525234447e03043b4c24bebbeecfa863be119e22b98744005ad979a9d97"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5614860,
+            "data_offset": 27807744,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "e2b29525234447e03043b4c24bebbeecfa863be119e22b98744005ad979a9d97"
+          }
+        }
+      },
+      "author_rom": {
+        "species_offset": 6035660,
+        "stats": {
+          "hp": 163,
+          "atk": 2,
+          "def": 103,
+          "spe": 109,
+          "spa": 157,
+          "spd": 193
+        },
+        "types": [
+          "Dragon",
+          "Psychic"
+        ],
+        "ability_ids": [
+          227,
+          227,
+          227
+        ],
+        "species_record_sha256": "0337db786af0cd3449e5b6014216f74d14d509ba6c55b04d1a88b7415e4987a9",
+        "name_bytes_hex": "bee9e2aec9ff0000000000",
+        "assets": {
+          "front": {
+            "table_entry_offset": 5697404,
+            "data_offset": 26530284,
+            "compressed_bytes": 1655,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "57a4d4d786a4fe38bbf2b2d9249ee08d08619516c23fea3102ec4eb368404089"
+          },
+          "back": {
+            "table_entry_offset": 5596144,
+            "data_offset": 27732356,
+            "compressed_bytes": 1655,
+            "decoded_bytes": 2048,
+            "decoded_sha256": "57a4d4d786a4fe38bbf2b2d9249ee08d08619516c23fea3102ec4eb368404089"
+          },
+          "normal_palette": {
+            "table_entry_offset": 5614792,
+            "data_offset": 28073192,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "e2b29525234447e03043b4c24bebbeecfa863be119e22b98744005ad979a9d97"
+          },
+          "shiny_palette": {
+            "table_entry_offset": 5633440,
+            "data_offset": 28126696,
+            "compressed_bytes": 40,
+            "decoded_bytes": 32,
+            "decoded_sha256": "e2b29525234447e03043b4c24bebbeecfa863be119e22b98744005ad979a9d97"
+          }
+        }
+      },
+      "author_matches_user": true,
+      "author_ability_names": [
+        "Psicogénesis",
+        "Psicogénesis",
+        "Psicogénesis"
+      ],
+      "document_differences": {},
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/sacred-dragon-dun-front_default.png",
+          "url": "/rocket-art/sacred-dragon-dun-front_default.png",
+          "sha256": "635ffd93bcccf3ef833dcea205bbbde656d42797273ed4c87073e25019d2da52",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "front_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/sacred-dragon-dun-front_shiny.png",
+          "url": "/rocket-art/sacred-dragon-dun-front_shiny.png",
+          "sha256": "635ffd93bcccf3ef833dcea205bbbde656d42797273ed4c87073e25019d2da52",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_default": {
+          "path": "assets/imported/rocket-user/bond-sprites/sacred-dragon-dun-back_default.png",
+          "url": "/rocket-art/sacred-dragon-dun-back_default.png",
+          "sha256": "635ffd93bcccf3ef833dcea205bbbde656d42797273ed4c87073e25019d2da52",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        },
+        "back_shiny": {
+          "path": "assets/imported/rocket-user/bond-sprites/sacred-dragon-dun-back_shiny.png",
+          "url": "/rocket-art/sacred-dragon-dun-back_shiny.png",
+          "sha256": "635ffd93bcccf3ef833dcea205bbbde656d42797273ed4c87073e25019d2da52",
+          "width": 64,
+          "height": 64,
+          "frame_index": 0,
+          "frame_count": 1
+        }
+      }
+    }
+  ]
+}

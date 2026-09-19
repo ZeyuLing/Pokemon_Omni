@@ -138,6 +138,26 @@ for(const row of read('assets/source/bond-concepts/manifest.json').records){
  assert(!entry.art_reference.variants.front_default,'Generated art must not silently replace a reference image');
  entry.art_reference={status:'ai_original_concept',source:null,variants:{front_default:row.url},asset_path:row.path,sha256:row.sha256,tool:'built-in image_gen',not_source_game_appearance:true};
 }
+// ROM reference art supersedes illustrations and proposals, which remain archived.
+const rocketRom=read('content/bond/rom-reference.json');
+for(const row of rocketRom.records){
+ const entry=entries.find(e=>e.entry_id===row.entry_id);assert(entry?.author_evidence);
+ assert(row.author_matches_user);assert.equal(row.user_rom.species_record_sha256,row.author_rom.species_record_sha256);
+ const documentedAbility=Dex.abilities.get(entry.abilities[0].id);
+ assert.equal(documentedAbility.num,row.user_rom.ability_ids[0]);
+ entry.alternative_art_references=entry.art_reference.variants.front_default?[entry.art_reference]:[];
+ entry.stats=Object.fromEntries(['hp','atk','def','spa','spd','spe'].map(k=>[k,row.user_rom.stats[k]]));
+ entry.types=row.user_rom.types;entry.stats_status='two_roms_agree';entry.ability_status='author_document_and_two_roms_agree';
+ entry.reference_status='游戏内数据 · 两份 ROM 一致';
+ entry.rom_evidence={user_rom_sha256:rocketRom.user_rom_sha256,author_rom_sha256:rocketRom.author_rom_sha256,species_id:row.species_id,author_rom_name:row.author_rom_name,ability_ids:row.user_rom.ability_ids,document_differences:row.document_differences,version_status:rocketRom.version_status};
+ entry.mechanic_note='形态图片、种族值、属性与特性编号已从你提供的 ROM 提取，并与作者发布包交叉核对。原版具体版本号、招式来源、羁绊触发逻辑及 Omni 战斗适配仍待核验。';
+ for(const asset of Object.values(row.variants)){
+  assert(asset.path.startsWith('assets/imported/rocket-user/bond-sprites/'));
+  const file=path.join(root,asset.path);
+  if(fs.existsSync(file))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'),asset.sha256);
+ }
+ entry.art_reference={status:'rom_extracted',source:null,variants:Object.fromEntries(Object.entries(row.variants).map(([k,v])=>[k,v.url])),assets:row.variants,local_only:true,normal_shiny_identical:row.user_rom.assets.normal_palette.decoded_sha256===row.user_rom.assets.shiny_palette.decoded_sha256};
+}
 json('content/pokedex/form-source-audit.json',{source:'PokeAPI CSV SHA-256 snapshot',records:reference.audit});
 for(const p of Object.values(movePools))for(const id of Object.keys(p))if(!moves[id]) {
  const m=Dex.moves.get(id);moves[id]={name_en:m.name,name_zh:l.moves[m.num]||m.name,type:m.type,category:m.category,power:m.basePower,accuracy:m.accuracy,pp:m.pp};
