@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-21",
+  "character": "ash",
+  "status": "design_brief_only",
+  "runtime_sprite": "temporary_red_overworld",
+  "runtime_age_switching": false,
+  "stages": [
+    {
+      "id": "ash.kanto.young",
+      "age_range": [
+        10,
+        12
+      ],
+      "phase": "first_journey",
+      "status": "proposed"
+    },
+    {
+      "id": "ash.travel.adolescent",
+      "age_range": [
+        15,
+        17
+      ],
+      "phase": "later_time_skip",
+      "status": "proposed"
+    },
+    {
+      "id": "ash.crisis.young_adult",
+      "age_range": [
+        21,
+        23
+      ],
+      "phase": "later_time_skip",
+      "status": "proposed"
+    }
+  ],
+  "generation": {
+    "mode": "built-in image_gen",
+    "status": "blocked",
+    "attempts": [
+      {
+        "request_id": "a8685c46-61a8-45b0-8d18-1f3abf0bc49a",
+        "result": "moderation_blocked",
+        "category": "other"
+      },
+      {
+        "request_id": "6a3fc99d-3103-479f-b458-434d543edaab",
+        "result": "moderation_blocked",
+        "category": "other",
+        "prompt": "Create a clean anime character design reference sheet for a Pokemon fan game. Show Ash Ketchum at three life stages side by side: his familiar young Kanto self in the classic red and white cap, blue vest, white short sleeves, jeans and green gloves; an older teenage traveler with the same recognizable face, cap and blue clothing; and a young adult traveler with a slightly longer blue jacket and the same visual identity. Natural age-appropriate proportions, fully clothed practical adventure outfits, friendly to thoughtful expressions, head-to-toe front three-quarter views, shoes fully visible. Each stage has a small back view beside it. White background, consistent crisp cel shading, useful clothing details for a future game artist. No extra characters, no text, no logo or watermark. This is a single age-progression concept sheet, not a sprite sheet."
+      }
+    ],
+    "outputs": []
+  },
+  "brief": "docs/23-ash-age-design.md"
+}

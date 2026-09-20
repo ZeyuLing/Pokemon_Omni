@@ -21,6 +21,6 @@ try {
  if ($LASTEXITCODE) { throw 'Pallet GBA link failed' }
  & $Zig objcopy -O binary build/pallet/omni-pallet.elf build/pallet/omni-pallet.gba
  if ($LASTEXITCODE) { throw 'Pallet ROM export failed' }
- & $Python tools/finalize_gba.py --rom build/pallet/omni-pallet.gba --title 'OMNI PALLET' --code OMPL --scope 'Playable Pallet Town opening with integrated Pokedex; limited starter practice rules.' --asset build/pallet/world.bin
+ & $Python tools/finalize_gba.py --rom build/pallet/omni-pallet.gba --title 'OMNI PALLET' --code OMPL --scope 'Kanto opening: Pallet, Route 1, Viridian Center and Mart, Pikachu, early encounters and parcel quest. Full first journey not yet complete.' --asset build/pallet/world.bin
  if ($LASTEXITCODE) { throw 'Pallet header verification failed' }
 } finally { Pop-Location }

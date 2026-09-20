@@ -23,15 +23,15 @@
 #define DEX_DEBUG_ACCESS 0
 #endif
 enum {A=1,B=2,SELECT=4,START=8,RIGHT=16,LEFT=32,UP=64,DOWN=128,R=256,L=512};
-enum {TITLE,WORLD,MENU,TEAM,BAG,TRAINER,DEX,DIALOG,CHALLENGE,STARTER,BATTLE,BATTLE_LOG,NEW_CONFIRM};
-enum {AFTER_WORLD,AFTER_CHALLENGE,AFTER_MENU,AFTER_BAG};
+enum {TITLE,WORLD,MENU,TEAM,BAG,TRAINER,DEX,DIALOG,CHALLENGE,STARTER,BATTLE,BATTLE_LOG,NEW_CONFIRM,SHOP};
+enum {AFTER_WORLD,AFTER_CHALLENGE,AFTER_MENU,AFTER_BAG,AFTER_SHOP};
 static OmniAdventure game;
 static OmniPractice battle;
 static OmniPracticeTurn turn;
 static uint8_t dex_flags[OMNI_CATALOG_ENTRY_COUNT],scratch_flags[OMNI_CATALOG_ENTRY_COUNT];
 static OmniDexState dex_state={dex_flags,OMNI_CATALOG_ENTRY_COUNT};
 static uint8_t px=6,py=6,direction,screen,menu_cursor,choice,after_dialog,has_save,dirty=1;
-static uint8_t dex_wait_release;
+static uint8_t dex_wait_release,party_cursor,challenge_kind,capture_failed,encounter_cooldown;
 static uint8_t moving,move_dx,move_dy,walk_phase,menu_return,log_index,practice_result;
 static int anim_x,anim_y,camera_x,camera_y,origin_x,origin_y;
 static uint16_t old_keys,frame_count;
@@ -41,7 +41,7 @@ static const char *dialogue,*next_page;
 static char buffer[512];
 static const char save_signature[] __attribute__((used))="SRAM_V113";
 /* Passive emulator observability. No write/cheat commands are exposed. */
-volatile uint32_t omni_pallet_probe[16];
+volatile uint32_t omni_pallet_probe[20];
 
 void *memset(void *d,int v,size_t n){uint8_t *p=d;while(n--)*p++=(uint8_t)v;return d;}
 void *memcpy(void *d,const void *s,size_t n){uint8_t *p=d;const uint8_t *q=s;while(n--)*p++=*q++;return d;}
@@ -53,10 +53,10 @@ static uint32_t hash(const uint8_t *p,unsigned n){uint32_t h=2166136261u;while(n
 static uint32_t get32(const uint8_t *p){return p[0]|((uint32_t)p[1]<<8)|((uint32_t)p[2]<<16)|((uint32_t)p[3]<<24);}
 static void put32(uint8_t *p,uint32_t v){unsigned i;for(i=0;i<4;++i)p[i]=(uint8_t)(v>>(i*8));}
 static const PalletMap *map(void){return &pallet_maps[game.location-1];}
-static int actor_visible(const PalletActor *a){return !a->starter||!game.starter||(a->starter!=game.starter&&a->starter!=game.starter%3+1);}
+static int actor_visible(const PalletActor *a){return !a->starter||!game.starter;}
 static int actor_at(int x,int y){unsigned i;const PalletMap *m=map();for(i=m->actors;i<m->actors+m->actor_count;++i)if(pallet_actors[i].x==x&&pallet_actors[i].y==y&&actor_visible(&pallet_actors[i]))return (int)i;return -1;}
 static const PalletWarp *warp_at(int x,int y){unsigned i;const PalletMap *m=map();for(i=m->warps;i<m->warps+m->warp_count;++i)if(pallet_warps[i].x==x&&pallet_warps[i].y==y)return &pallet_warps[i];return 0;}
-static int position_valid(unsigned location,unsigned x,unsigned y){const PalletMap *m;if(location<1||location>5)return 0;m=&pallet_maps[location-1];return x<m->w&&y<m->h&&!pallet_world_blob[m->collision+y*m->w+x];}
+static int position_valid(unsigned location,unsigned x,unsigned y){const PalletMap *m;if(location<1||location>9)return 0;m=&pallet_maps[location-1];return x<m->w&&y<m->h&&!pallet_world_blob[m->collision+y*m->w+x];}
 static void message(const char *s,unsigned after){dialogue=s;next_page=s;after_dialog=(uint8_t)after;screen=DIALOG;dirty=1;}
 static void panel(int x,int y,int w,int h){box(x,y,w,h,INK);box(x+2,y+2,w-4,h-4,RGB(20,23,27));box(x+4,y+4,w-8,h-8,PAPER);}
 static void heading(const char *s){box(0,0,240,23,BLUE);text(7,3,s,PAPER,237);}
@@ -78,15 +78,15 @@ static void draw_world(void){
 static unsigned dex_index(uint16_t species){unsigned i;for(i=0;i<omni_pokedex_catalog.count;++i)if(omni_pokedex_catalog.entries[i].national==species&&omni_pokedex_catalog.entries[i].category==1)return i;return 0;}
 static void draw_title(void){box(0,0,240,160,RGB(5,12,17));box(0,115,240,45,RGB(7,17,17));text(34,18,"POKEMON OMNI",PAPER,237);text(53,45,"真新镇 · 启程",GOLD,237);omni_gba_picture(dex_index(1),4,62);omni_gba_picture(dex_index(4),87,62);omni_gba_picture(dex_index(7),170,62);text(72,120,has_save?(menu_cursor?"  继续冒险":"> 继续冒险"):"",PAPER,236);text(72,139,has_save?(menu_cursor?"> 新的冒险":"  新的冒险"):"> 新的冒险",PAPER,237);}
 static void draw_menu(void){static const char *items[]={"图鉴","宝可梦","背包","训练家","保存","返回"};unsigned i;draw_world();panel(118,3,120,151);for(i=0;i<6;++i){if(menu_cursor==i)box(125,10+(int)i*22,105,21,RGB(25,28,29));text(129,12+(int)i*22,items[i],(i<2&&!game.starter)?MUTED:INK,234);}text(8,139,map()->name,PAPER,115);}
-static void draw_team(void){unsigned i;static const char *stats[]={"HP","攻击","防御","特攻","特防","速度"};const OmniPartner *mon=&game.party[0];const OmniStarter *spec=omni_partner_species(mon->species);box(0,0,240,160,PAPER);heading("同行的伙伴");if(!spec){text(12,50,"还没有宝可梦伙伴。",INK,237);return;}omni_gba_picture(dex_index(mon->species),8,29);text(84,28,spec->name,INK,237);text(84,48,"Lv.",MUTED,124);num(112,48,mon->level,INK);text(153,48,spec->ability,BLUE,236);num(84,68,mon->hp,INK);text(111,68,"/",MUTED,128);num(123,68,omni_partner_stat(mon,0),INK);for(i=0;i<6;++i){int x=(i%3)*80,y=91+(int)(i/3)*17;text(x+4,y,stats[i],MUTED,x+40);num(x+42,y,omni_partner_stat(mon,(uint8_t)i),INK);}for(i=0;i<2;++i){text(6+(int)i*120,126,omni_practice_move_name(spec->moves[i]),INK,110+(int)i*120);num(80+(int)i*120,126,mon->pp[i],BLUE);}text(7,144,"A查看图鉴  B返回",BLUE,237);}
+static void draw_team(void){unsigned i;static const char *stats[]={"HP","攻击","防御","特攻","特防","速度"};const OmniPartner *mon=&game.party[party_cursor];const OmniStarter *spec=omni_partner_species(mon->species);box(0,0,240,160,PAPER);heading("同行的伙伴");if(!spec){text(12,50,"还没有宝可梦伙伴。",INK,237);return;}omni_gba_picture(dex_index(mon->species),8,29);text(84,28,spec->name,INK,237);text(84,48,"Lv.",MUTED,124);num(112,48,mon->level,INK);text(153,48,spec->ability,BLUE,236);num(84,68,mon->hp,INK);text(111,68,"/",MUTED,128);num(123,68,omni_partner_stat(mon,0),INK);for(i=0;i<6;++i){int x=(i%3)*80,y=91+(int)(i/3)*17;text(x+4,y,stats[i],MUTED,x+40);num(x+42,y,omni_partner_stat(mon,(uint8_t)i),INK);}for(i=0;i<2;++i){text(6+(int)i*120,126,omni_practice_move_name(spec->moves[i]),INK,110+(int)i*120);num(80+(int)i*120,126,mon->pp[i],BLUE);}text(7,144,"左右选  L领队 A图鉴 B返回",BLUE,237);num(219,28,party_cursor+1,BLUE);}
 static void draw_bag(void){box(0,0,240,160,PAPER);heading("背包 · 道具");text(12,39,"伤药",INK,130);num(193,39,game.potions,INK);text(12,62,"恢复一只宝可梦 20 HP。",MUTED,237);text(12,91,"精灵球",INK,145);num(193,91,game.balls,INK);text(12,114,"钱：",MUTED,70);num(64,114,game.money,INK);text(12,140,"A使用伤药  B返回",BLUE,237);}
-static void draw_trainer(void){box(0,0,240,160,PAPER);heading("训练家卡片");text(12,34,"赤红",INK,238);text(12,55,map()->name,BLUE,237);text(12,79,"练习战胜场",MUTED,183);num(194,79,game.battles_won,INK);text(12,101,"图鉴已捕获",MUTED,183);num(194,101,omni_dex_count(&omni_pokedex_catalog,&dex_state,OMNI_DEX_REGISTERED,0),INK);text(12,126,game.chapter<2?"目标：领取第一位伙伴":game.chapter<3?"目标：和小茂完成练习战":"真新镇开场已完成",BLUE,237);text(12,144,"B返回",MUTED,237);}
-static void draw_starter(void){const OmniStarter *s=&omni_starters[choice-1];box(0,0,240,160,PAPER);heading("选择你的第一位伙伴");omni_gba_picture(dex_index(s->species),12,39);text(95,39,s->name,INK,237);text(95,62,choice==1?"草 / 毒":choice==2?"火":"水",BLUE,237);text(95,84,s->ability,MUTED,237);text(12,116,"要和这位伙伴一起出发吗？",INK,237);text(12,140,"A确认选择  B再想想",BLUE,237);}
+static void draw_trainer(void){box(0,0,240,160,PAPER);heading("训练家卡片");text(12,34,"小智 · 少年",INK,238);text(12,55,map()->name,BLUE,237);text(12,79,"对战胜场",MUTED,183);num(194,79,game.battles_won,INK);text(12,101,"图鉴已捕获",MUTED,183);num(194,101,omni_dex_count(&omni_pokedex_catalog,&dex_state,OMNI_DEX_REGISTERED,0),INK);paragraph(omni_adventure_objective(&game),12,119,2);text(12,144,"B返回",MUTED,237);}
+static void draw_starter(void){const OmniStarter *s=&omni_starters[choice-1];box(0,0,240,160,PAPER);heading("选择你的第一位伙伴");omni_gba_picture(dex_index(s->species),12,39);text(95,39,s->name,INK,237);text(95,62,choice==1?"草 / 毒":choice==2?"火":choice==4?"电":"水",BLUE,237);text(95,84,s->ability,MUTED,237);text(12,116,"要和这位伙伴一起出发吗？",INK,237);text(12,140,"A确认选择  B再想想",BLUE,237);}
 static void hp_bar(int x,int y,const OmniPartner *m){unsigned max=omni_partner_stat(m,0),width=max?m->hp*70/max:0;box(x,y,74,7,INK);box(x+2,y+2,70,3,RGB(23,24,24));box(x+2,y+2,(int)width,3,m->hp*3<max?RGB(27,7,7):RGB(5,23,10));}
-static void battle_sprite(unsigned species,int back,int x,int y){unsigned index=species==1?0:species==4?1:2,row,col;const uint16_t *p=(const uint16_t*)(pallet_world_blob+pallet_battle_sprites[index*2+back]);for(row=0;row<64;++row)for(col=0;col<64;++col)if(!(p[row*64+col]&0x8000))box(x+(int)col,y+(int)row,1,1,p[row*64+col]);}
-static void draw_battle(void){unsigned i;const OmniStarter *p=omni_partner_species(battle.mons[0].species),*e=omni_partner_species(battle.mons[1].species);box(0,0,240,160,RGB(27,30,25));box(141,69,86,8,RGB(20,25,18));box(10,132,91,9,RGB(20,25,18));battle_sprite(e->species,0,159,8);battle_sprite(p->species,1,17,73);text(9,7,e->name,INK,151);text(9,27,"小茂  Lv.5",MUTED,151);hp_bar(12,49,&battle.mons[1]);text(121,78,p->name,INK,239);text(121,98,"Lv.5",MUTED,239);hp_bar(124,119,&battle.mons[0]);num(201,115,battle.mons[0].hp,INK);
- if(screen==BATTLE_LOG)text_box(dialogue);else{panel(2,132,236,28);for(i=0;i<2;++i){text(9+(int)i*118,137,omni_practice_move_name(p->moves[i]),menu_cursor==i?BLUE:MUTED,91+(int)i*118);num(84+(int)i*118,137,battle.mons[0].pp[i],menu_cursor==i?BLUE:MUTED);}if(!battle.mons[0].pp[0]&&!battle.mons[0].pp[1])text(9,137,"A：挣扎",BLUE,236);}}
-static void draw(void){switch(screen){case TITLE:draw_title();break;case WORLD:draw_world();break;case MENU:draw_menu();break;case TEAM:draw_team();break;case BAG:draw_bag();break;case TRAINER:draw_trainer();break;case STARTER:draw_starter();break;case BATTLE:case BATTLE_LOG:draw_battle();break;case DIALOG:draw_world();text_box(dialogue);break;case CHALLENGE:draw_world();panel(14,93,212,66);text(26,102,"和小茂进行练习战？",INK,233);text(30,128,menu_cursor?"  是的":"> 是的",INK,118);text(140,128,menu_cursor?"> 下次":"  下次",INK,237);break;case NEW_CONFIRM:draw_title();panel(4,69,232,72);text(12,77,"新冒险会替换游戏存档。",INK,236);text(12,99,"A确认  B保留并返回",INK,236);break;default:break;}dirty=0;}
+static void battle_sprite(unsigned species,int back,int x,int y){unsigned index=0,row,col;while(index<6&&omni_starters[index].species!=species)++index;const uint16_t *p=(const uint16_t*)(pallet_world_blob+pallet_battle_sprites[index*2+back]);for(row=0;row<64;++row)for(col=0;col<64;++col)if(!(p[row*64+col]&0x8000))box(x+(int)col,y+(int)row,1,1,p[row*64+col]);}
+static void draw_battle(void){unsigned i;const OmniStarter *p=omni_partner_species(battle.mons[0].species),*e=omni_partner_species(battle.mons[1].species);box(0,0,240,160,RGB(27,30,25));box(141,69,86,8,RGB(20,25,18));box(10,132,91,9,RGB(20,25,18));battle_sprite(e->species,0,159,8);battle_sprite(p->species,1,17,73);text(9,7,e->name,INK,151);text(9,27,battle.kind==1?"野生":battle.kind==2?"火箭队":"小茂",MUTED,81);num(96,27,battle.mons[1].level,INK);hp_bar(12,49,&battle.mons[1]);text(121,78,p->name,INK,239);text(121,98,"Lv.",MUTED,162);num(150,98,battle.mons[0].level,INK);text(176,97,battle.mons[0].status?"麻痹":"",GOLD,239);hp_bar(124,119,&battle.mons[0]);num(201,115,battle.mons[0].hp,INK);
+ if(screen==BATTLE_LOG)text_box(dialogue);else{text(8,59,"L球 B逃 R换",BLUE,151);panel(2,132,236,28);for(i=0;i<2;++i){text(9+(int)i*118,137,omni_practice_move_name(p->moves[i]),menu_cursor==i?BLUE:MUTED,91+(int)i*118);num(84+(int)i*118,137,battle.mons[0].pp[i],menu_cursor==i?BLUE:MUTED);}if(!battle.mons[0].pp[0]&&!battle.mons[0].pp[1])text(9,137,"A：挣扎",BLUE,236);}}
+static void draw(void){switch(screen){case TITLE:draw_title();break;case WORLD:draw_world();break;case MENU:draw_menu();break;case TEAM:draw_team();break;case BAG:draw_bag();break;case TRAINER:draw_trainer();break;case STARTER:draw_starter();break;case BATTLE:case BATTLE_LOG:draw_battle();break;case DIALOG:draw_world();text_box(dialogue);break;case SHOP:box(0,0,240,160,PAPER);heading("友好商店");text(12,40,menu_cursor?"  精灵球 200 元":"> 精灵球 200 元",INK,238);text(12,70,menu_cursor?"> 伤药   300 元":"  伤药   300 元",INK,238);text(12,101,"余额",MUTED,82);num(93,101,game.money,INK);text(12,139,"上下选择  A购买  B离开",BLUE,238);break;case CHALLENGE:draw_world();panel(14,93,212,66);text(26,102,challenge_kind==2?"阻止火箭队的行动？":"和小茂进行练习战？",INK,233);text(30,128,menu_cursor?"  是的":"> 是的",INK,118);text(140,128,menu_cursor?"> 下次":"  下次",INK,237);break;case NEW_CONFIRM:draw_title();panel(4,69,232,72);text(12,77,"新冒险会替换游戏存档。",INK,236);text(12,99,"A确认  B保留并返回",INK,236);break;default:break;}dirty=0;}
 
 static int save_game(void){
  unsigned i,target=save_slot==0?1:0;size_t n=0,dex_n=0;uint8_t head[20];volatile uint8_t *s=(volatile uint8_t*)(uintptr_t)(0x0e000000u+target*16384u);
@@ -102,16 +102,44 @@ static int read_slot(unsigned slot,uint32_t *sequence,int apply){
  *sequence=get32(header+4);if(apply){game=temp;memcpy(dex_flags,scratch_flags,sizeof(dex_flags));px=save_bytes[9];py=save_bytes[10];direction=save_bytes[11];}return 1;
 }
 static int load_game(void){uint32_t a=0,b=0;int va=read_slot(0,&a,0),vb=read_slot(1,&b,0);unsigned first=(vb&&(!va||(int32_t)(b-a)>0))?1:0;uint32_t seq;if(!va&&!vb)return 0;if(read_slot(first,&seq,1)){save_slot=(int)first;save_seq=seq;return 1;}return 0;}
-static void begin_new(void){omni_adventure_new(&game);memset(dex_flags,0,sizeof(dex_flags));px=6;py=6;direction=0;moving=0;anim_x=anim_y=0;save_game();message("今天，是旅程开始的日子。\n先下楼和妈妈打个招呼，\n再去东边的大木研究所吧。",AFTER_WORLD);}
-static void interact(void){
- static const int dx[]={0,0,-1,1},dy[]={1,-1,0,0};int x=px+dx[direction],y=py+dy[direction],index=actor_at(x,y);unsigned i;uint8_t talk;const PalletMap *m=map();
- if(index>=0){const PalletActor *a=&pallet_actors[index];if(a->starter){if(game.starter)message("已经拥有自己的伙伴了。\n好好照顾它吧。",AFTER_WORLD);else if(!game.chapter)message("先和大木博士打个招呼吧。",AFTER_WORLD);else{choice=a->starter;screen=STARTER;dirty=1;}return;}talk=omni_adventure_interact(&game,a->person);message(omni_adventure_dialogue(talk),talk==OMNI_TALK_RIVAL_BATTLE?AFTER_CHALLENGE:AFTER_WORLD);if(talk==OMNI_TALK_HEALED)save_game();return;}
- for(i=m->signs;i<m->signs+m->sign_count;++i)if(pallet_signs[i].x==x&&pallet_signs[i].y==y){const PalletSign *s=&pallet_signs[i];if(s->person){talk=omni_adventure_interact(&game,s->person);message(omni_adventure_dialogue(talk),AFTER_WORLD);if(talk==OMNI_TALK_PC_POTION)save_game();}else message(s->text,AFTER_WORLD);return;}
+static void begin_new(void){omni_adventure_new(&game);memset(dex_flags,0,sizeof(dex_flags));px=6;py=6;direction=0;moving=0;anim_x=anim_y=0;save_game();message("小智醒来时，已经迟到了！\n今天要领取第一只宝可梦。\n先和妈妈告别，去研究所吧。",AFTER_WORLD);}
+static void talk_person(uint8_t person){
+ const char *custom;uint8_t talk;
+ if(person==OMNI_ROCKET){if(!(game.events&OMNI_EVENT_CENTER)){message("武藏：别挡着我们。\n先照顾你的皮卡丘去吧！",AFTER_WORLD);return;}challenge_kind=OMNI_BATTLE_ROCKET;message((game.events&OMNI_EVENT_ROCKET)?"小次郎：这次换个战术！\n想再较量一次吗？":"武藏、小次郎和喵喵出现了！\n他们想夺走中心的宝可梦。\n小智决定保护大家。",AFTER_CHALLENGE);return;}
+ custom=omni_adventure_visit(&game,person);if(custom){save_game();if(person==OMNI_CLERK){menu_cursor=0;message(custom,AFTER_SHOP);}else message(custom,AFTER_WORLD);return;}
+ if(person==OMNI_RIVAL&&game.starter==4){message("小茂：你终于拿到伙伴了。\n我先去挑战道馆！\n下次相遇时，可别输得太快。",AFTER_WORLD);return;}
+ talk=omni_adventure_interact(&game,person);challenge_kind=0;message(omni_adventure_dialogue(talk),talk==OMNI_TALK_RIVAL_BATTLE?AFTER_CHALLENGE:AFTER_WORLD);if(talk==OMNI_TALK_HEALED||talk==OMNI_TALK_PC_POTION)save_game();
 }
-static void finish_step(void){const PalletWarp *w=warp_at(px,py);moving=0;anim_x=anim_y=0;++walk_phase;if(w){uint8_t from=(uint8_t)game.location;omni_adventure_enter(&game,w->dest_map);px=w->dest_x;py=w->dest_y;if(w->dest_map==OMNI_PALLET){++py;direction=0;}else if(from==OMNI_PALLET){--py;direction=1;}else{++py;direction=0;}if(!position_valid(game.location,px,py)){px=w->dest_x;py=w->dest_y;}dirty=1;}}
-static void start_step(unsigned dir,unsigned run){static const int dx[]={0,0,-1,1},dy[]={1,-1,0,0};int x=px+dx[dir],y=py+dy[dir];const PalletMap *m=map();direction=(uint8_t)dir;dirty=1;if(x<0||y<0||x>=m->w||y>=m->h){message(game.starter?"通往其他地区的道路还在准备。\n现在可以在真新镇继续探索。":"独自离开镇子太危险了。\n先去研究所领取宝可梦伙伴吧。",AFTER_WORLD);return;}if(actor_at(x,y)>=0)return;if(!warp_at(x,y)&&pallet_world_blob[m->collision+y*m->w+x])return;px=(uint8_t)x;py=(uint8_t)y;anim_x=-dx[dir]*16;anim_y=-dy[dir]*16;move_dx=(uint8_t)(dx[dir]+1);move_dy=(uint8_t)(dy[dir]+1);moving=(uint8_t)(run?2:1);}
-static void battle_log(unsigned index){const OmniPracticeAction *a=&turn.actions[index];buffer[0]=0;append(a->actor?"小茂的":"你的");append(omni_partner_species(battle.mons[a->actor].species)->name);append("\n使用了");append(omni_practice_move_name(a->move));append("！");if(a->critical)append("\n击中了要害！");else if(a->status==1)append(a->move==45?"\n对手的攻击降低了。":"\n对手的防御降低了。");else if(a->status==2)append("\n能力已经不能再降低了。");dialogue=buffer;screen=BATTLE_LOG;dirty=1;}
-static void probe(void){omni_pallet_probe[0]=0x50414c54u;omni_pallet_probe[1]=0x4f4d4e49u;omni_pallet_probe[2]=screen;omni_pallet_probe[3]=game.location;omni_pallet_probe[4]=px;omni_pallet_probe[5]=py;omni_pallet_probe[6]=direction;omni_pallet_probe[7]=game.chapter;omni_pallet_probe[8]=game.starter;omni_pallet_probe[9]=menu_cursor;omni_pallet_probe[10]=moving;omni_pallet_probe[11]=battle.mons[0].hp;omni_pallet_probe[12]=battle.mons[1].hp;omni_pallet_probe[13]=battle.turns;omni_pallet_probe[14]=game.potions;omni_pallet_probe[15]=game.battles_played;}
+static void interact(void){
+ static const int dx[]={0,0,-1,1},dy[]={1,-1,0,0};int x=px+dx[direction],y=py+dy[direction],index=actor_at(x,y);unsigned i;const PalletMap *m=map();
+ if(index>=0){const PalletActor *a=&pallet_actors[index];if(a->starter){if(game.starter)message("已经拥有自己的伙伴了。",AFTER_WORLD);else if(!game.chapter)message("先和大木博士打个招呼吧。",AFTER_WORLD);else{choice=a->starter;screen=STARTER;dirty=1;}return;}talk_person(a->person);return;}
+ for(i=m->signs;i<m->signs+m->sign_count;++i)if(pallet_signs[i].x==x&&pallet_signs[i].y==y){const PalletSign *t=&pallet_signs[i];if(t->person)talk_person(t->person);else message(t->text,AFTER_WORLD);return;}
+}
+static int outdoors(unsigned id){return id==1||id==6||id==7;}
+static int connection(int x,int y){unsigned dest=0;int nx=x,ny=y;
+ if(game.location==1&&y<0){dest=6;ny=39;}
+ else if(game.location==6&&y>=40){dest=1;ny=0;}
+ else if(game.location==6&&y<0){dest=7;nx=x+12;ny=39;}
+ else if(game.location==7&&y>=40&&x>=12&&x<36){dest=6;nx=x-12;ny=0;}
+ if(!dest)return 0;if(!game.starter){message("先去大木研究所领取伙伴吧。",AFTER_WORLD);return 1;}
+ if(position_valid(dest,(unsigned)nx,(unsigned)ny)){omni_adventure_enter(&game,(uint16_t)dest);px=(uint8_t)nx;py=(uint8_t)ny;encounter_cooldown=6;save_game();}return 1;
+}
+static void finish_step(void){const PalletWarp *w=warp_at(px,py);moving=0;anim_x=anim_y=0;++walk_phase;if(w){uint8_t from=(uint8_t)game.location;omni_adventure_enter(&game,w->dest_map);px=w->dest_x;py=w->dest_y;if(outdoors(w->dest_map)){++py;direction=0;}else if(outdoors(from)){--py;direction=1;}else{++py;direction=0;}if(!position_valid(game.location,px,py)){px=w->dest_x;py=w->dest_y;}encounter_cooldown=6;dirty=1;save_game();}
+ else if(encounter_cooldown)--encounter_cooldown;
+ else if(omni_adventure_step(&game,pallet_world_blob[map()->grass+py*map()->w+px])&&!omni_adventure_battle(&game,&battle,OMNI_BATTLE_WILD,&omni_pokedex_catalog,&dex_state)){menu_cursor=0;capture_failed=0;screen=BATTLE;dirty=1;}
+}
+static void start_step(unsigned dir,unsigned run){static const int dx[]={0,0,-1,1},dy[]={1,-1,0,0};int x=px+dx[dir],y=py+dy[dir];const PalletMap *m=map();direction=(uint8_t)dir;dirty=1;if(x<0||y<0||x>=m->w||y>=m->h){if(connection(x,y))return;message(game.starter?"常青森林与后续道馆正在开发。\n可以先完成中心与博士的任务。":"独自离开镇子太危险了。\n先去研究所领取宝可梦伙伴吧。",AFTER_WORLD);return;}if(actor_at(x,y)>=0)return;if(!warp_at(x,y)&&pallet_world_blob[m->collision+y*m->w+x])return;px=(uint8_t)x;py=(uint8_t)y;anim_x=-dx[dir]*16;anim_y=-dy[dir]*16;move_dx=(uint8_t)(dx[dir]+1);move_dy=(uint8_t)(dy[dir]+1);moving=(uint8_t)(run?2:1);}
+static void battle_log(unsigned index){const OmniPracticeAction *a=&turn.actions[index];buffer[0]=0;if(capture_failed){append("没有抓住！\n");capture_failed=0;}append(a->actor?(battle.kind==1?"野生的":battle.kind==2?"火箭队的":"小茂的"):"你的");append(omni_partner_species(battle.mons[a->actor].species)->name);append("\n使用了");append(omni_practice_move_name(a->move));append("！");if(a->miss)append("\n因麻痹而无法行动。");else if(a->status==3)append("\n对手麻痹了！");else if(a->critical)append("\n击中了要害！");else if(a->status==1)append(a->move==45?"\n对手的攻击降低了。":"\n对手的防御降低了。");else if(a->status==2)append("\n能力已经不能再降低了。");dialogue=buffer;screen=BATTLE_LOG;dirty=1;}
+static void finish_battle(void){unsigned i,first=!(game.events&OMNI_EVENT_ROCKET),kind=battle.kind,outcome=battle.outcome,level=battle.mons[0].level;
+ if(outcome==2&&kind){for(i=0;i<game.party_count;++i)if(i!=battle.party_slot&&game.party[i].hp){omni_adventure_switch(&game,&battle,(uint8_t)i);dialogue="伙伴倒下了，下一位接替！";log_index=255;screen=BATTLE_LOG;dirty=1;return;}}
+ omni_practice_finish(&game,&battle);if(game.location==OMNI_HOME&&kind&&(outcome==2||outcome==3)){px=6;py=6;direction=0;}save_game();encounter_cooldown=8;buffer[0]=0;
+ append(outcome==4?"成功捕获！新伙伴加入队伍。":outcome==5?"顺利离开了战斗。":outcome==1?"你赢得了对战！":"伙伴需要休息，回家恢复了体力。");
+ if(kind==0)append("\n双方的体力和 PP 已恢复。");
+ if(kind&&outcome==1){append("\n伙伴获得了经验。");if(game.party[battle.party_slot].level>level)append("\n伙伴的等级提升了！");}
+ if(kind==2&&outcome==1&&first)append("\n火箭队的行动被阻止了！\n得到400元。再去商店看看吧。");
+ message(buffer,AFTER_WORLD);
+}
+static void probe(void){omni_pallet_probe[0]=0x50414c54u;omni_pallet_probe[1]=0x4f4d4e49u;omni_pallet_probe[2]=screen;omni_pallet_probe[3]=game.location;omni_pallet_probe[4]=px;omni_pallet_probe[5]=py;omni_pallet_probe[6]=direction;omni_pallet_probe[7]=game.chapter;omni_pallet_probe[8]=game.starter;omni_pallet_probe[9]=menu_cursor;omni_pallet_probe[10]=moving;omni_pallet_probe[11]=battle.mons[0].hp;omni_pallet_probe[12]=battle.mons[1].hp;omni_pallet_probe[13]=battle.turns;omni_pallet_probe[14]=game.potions;omni_pallet_probe[15]=game.battles_played;omni_pallet_probe[16]=game.party_count;omni_pallet_probe[17]=game.events;omni_pallet_probe[18]=game.balls;omni_pallet_probe[19]=game.party[0].level;}
 static void tick(uint16_t keys){
  uint16_t pressed=keys&~old_keys;old_keys=keys;++frame_count;if(pressed&A){REG16(0x04000068)=0xa0b4;REG16(0x0400006c)=0xc6b8;}
  if(screen==DEX){if(dex_wait_release){if(keys&A)return;dex_wait_release=0;}omni_game_dex_tick(keys);if(!omni_game_dex_is_open()){screen=menu_return;dirty=1;}return;}
@@ -121,15 +149,21 @@ static void tick(uint16_t keys){
  switch(screen){
  case TITLE:if(has_save&&(pressed&(UP|DOWN)))menu_cursor^=1;if(pressed&(A|START)){if(has_save&&!menu_cursor){load_game();screen=WORLD;}else if(has_save)screen=NEW_CONFIRM;else begin_new();}break;
  case NEW_CONFIRM:if(pressed&A)begin_new();if(pressed&B)screen=TITLE;break;
- case DIALOG:if(pressed&(A|B)){if(*next_page)dialogue=next_page;else{screen=after_dialog==AFTER_CHALLENGE?CHALLENGE:after_dialog==AFTER_MENU?MENU:after_dialog==AFTER_BAG?BAG:WORLD;if(screen==CHALLENGE)menu_cursor=0;}}break;
- case MENU:if(pressed&UP)menu_cursor=(menu_cursor+5)%6;if(pressed&DOWN)menu_cursor=(menu_cursor+1)%6;if(pressed&(B|START))screen=WORLD;if(pressed&A){switch(menu_cursor){case 0:if(DEX_DEBUG_ACCESS||game.starter){omni_game_dex_open();omni_game_dex_tick(0);menu_return=MENU;screen=DEX;dex_wait_release=1;}else message("先在研究所领取伙伴和图鉴。",AFTER_MENU);break;case 1:screen=TEAM;break;case 2:screen=BAG;break;case 3:screen=TRAINER;break;case 4:message(save_game()?"冒险记录已保存。\n下次可以从这里继续。":"保存失败，请重试。",AFTER_MENU);break;default:screen=WORLD;break;}}break;
- case TEAM:if(pressed&B)screen=MENU;if((pressed&A)&&game.starter){unsigned i=dex_index(game.party[0].species);omni_game_dex_open_entry(omni_pokedex_catalog.entries[i].id);omni_game_dex_tick(0);menu_return=TEAM;screen=DEX;dex_wait_release=1;}break;
+ case DIALOG:if(pressed&(A|B)){if(*next_page)dialogue=next_page;else{screen=after_dialog==AFTER_CHALLENGE?CHALLENGE:after_dialog==AFTER_MENU?MENU:after_dialog==AFTER_BAG?BAG:after_dialog==AFTER_SHOP?SHOP:WORLD;if(screen==CHALLENGE)menu_cursor=0;}}break;
+ case MENU:if(pressed&UP)menu_cursor=(menu_cursor+5)%6;if(pressed&DOWN)menu_cursor=(menu_cursor+1)%6;if(pressed&(B|START))screen=WORLD;if(pressed&A){switch(menu_cursor){case 0:if(DEX_DEBUG_ACCESS||game.starter){omni_game_dex_open();omni_game_dex_tick(0);menu_return=MENU;screen=DEX;dex_wait_release=1;}else message("先在研究所领取伙伴和图鉴。",AFTER_MENU);break;case 1:party_cursor=0;screen=TEAM;break;case 2:screen=BAG;break;case 3:screen=TRAINER;break;case 4:message(save_game()?"冒险记录已保存。\n下次可以从这里继续。":"保存失败，请重试。",AFTER_MENU);break;default:screen=WORLD;break;}}break;
+ case TEAM:if(pressed&B)screen=MENU;if(game.party_count){if(pressed&RIGHT)party_cursor=(party_cursor+1)%game.party_count;if(pressed&LEFT)party_cursor=(party_cursor+game.party_count-1)%game.party_count;if(pressed&L){if(!omni_adventure_lead(&game,party_cursor)){party_cursor=0;save_game();}}if(pressed&A){unsigned i=dex_index(game.party[party_cursor].species);omni_game_dex_open_entry(omni_pokedex_catalog.entries[i].id);omni_game_dex_tick(0);menu_return=TEAM;screen=DEX;dex_wait_release=1;}}break;
  case BAG:if(pressed&B)screen=MENU;if(pressed&A){int result=omni_adventure_potion(&game,0);message(!result?"使用了伤药。\n伙伴的体力恢复了。":!game.starter?"还没有可以使用道具的伙伴。":!game.potions?"背包里没有伤药了。":"现在不需要使用伤药。",AFTER_BAG);if(!result)save_game();}break;
  case TRAINER:if(pressed&B)screen=MENU;break;
- case STARTER:if(pressed&B)screen=WORLD;if(pressed&A){if(!omni_adventure_choose(&game,choice,&omni_pokedex_catalog,&dex_state)){buffer[0]=0;append("你选择了");append(omni_starters[choice-1].name);append("！\n获得图鉴和三瓶伤药。\n和小茂聊聊，试一次练习战吧。");save_game();message(buffer,AFTER_WORLD);}else message("暂时不能领取这只宝可梦。",AFTER_WORLD);}break;
- case CHALLENGE:if(pressed&(LEFT|RIGHT|UP|DOWN))menu_cursor^=1;if(pressed&B)screen=WORLD;if(pressed&A){if(menu_cursor)screen=WORLD;else if(!omni_practice_begin(&game,&battle,&omni_pokedex_catalog,&dex_state)){menu_cursor=0;screen=BATTLE;practice_result=0;}else message("伙伴需要休息。\n先回家找妈妈恢复体力吧。",AFTER_WORLD);}break;
- case BATTLE:if(pressed&(LEFT|RIGHT|UP|DOWN))menu_cursor^=1;if(pressed&A){if(!omni_practice_turn(&battle,menu_cursor,&turn)){log_index=0;battle_log(0);}else{dialogue="这个招式的 PP 用完了。\n请选择另一个招式。";screen=BATTLE_LOG;log_index=255;}}break;
- case BATTLE_LOG:if(pressed&(A|B)){if(*next_page){dialogue=next_page;break;}if(log_index==255){screen=BATTLE;break;}if(++log_index<turn.count)battle_log(log_index);else if(battle.outcome){unsigned first=game.chapter==2;practice_result=battle.outcome;omni_practice_finish(&game,&battle);save_game();buffer[0]=0;append(practice_result==1?"你赢得了练习战！":"这次没能获胜，没关系。");append("\n博士恢复了双方体力和 PP。");if(first)append("\n首次练习获得了100元。");append("\n之后可以主动找小茂再战。");message(buffer,AFTER_WORLD);}else screen=BATTLE;}break;
+ case STARTER:if(pressed&B)screen=WORLD;if(pressed&A){if(!omni_adventure_choose(&game,choice,&omni_pokedex_catalog,&dex_state)){buffer[0]=0;append("你选择了");append(omni_starters[choice-1].name);append("！\n获得图鉴、五个精灵球和伤药。\n皮卡丘还不太愿意进球。\n一起沿北边道路去常青市吧。");save_game();message(buffer,AFTER_WORLD);}else message("暂时不能领取这只宝可梦。",AFTER_WORLD);}break;
+ case CHALLENGE:if(pressed&(LEFT|RIGHT|UP|DOWN))menu_cursor^=1;if(pressed&B)screen=WORLD;if(pressed&A){if(menu_cursor)screen=WORLD;else if(!(challenge_kind==2?omni_adventure_battle(&game,&battle,2,&omni_pokedex_catalog,&dex_state):omni_practice_begin(&game,&battle,&omni_pokedex_catalog,&dex_state))){menu_cursor=0;screen=BATTLE;practice_result=0;}else message("伙伴需要休息。\n先回家找妈妈恢复体力吧。",AFTER_WORLD);}break;
+ case SHOP:if(pressed&(UP|DOWN))menu_cursor^=1;if(pressed&B)screen=WORLD;if(pressed&A){int result=omni_adventure_buy(&game,menu_cursor);if(!result)save_game();message(result?"余额不足，或道具已满。":"购买成功，已放入背包。",AFTER_SHOP);}break;
+ case BATTLE:
+ if(pressed&(LEFT|RIGHT|UP|DOWN))menu_cursor^=1;
+ if(pressed&B){if(!omni_adventure_escape(&game,&battle))finish_battle();else{dialogue="训练师对战不能逃走。";log_index=255;screen=BATTLE_LOG;}}
+ else if(pressed&L){int result=omni_adventure_capture(&game,&battle,&omni_pokedex_catalog,&dex_state);if(!result)finish_battle();else if(result==OMNI_ADVENTURE_ALREADY){capture_failed=1;omni_practice_wait(&battle,&turn);log_index=0;battle_log(0);}else{dialogue=game.party_count>=6?"队伍已满，暂时没有寄存功能。":"不能投球：检查精灵球与对手。";log_index=255;screen=BATTLE_LOG;}}
+ else if(pressed&R){unsigned i;for(i=1;i<game.party_count;++i){uint8_t slot=(uint8_t)((battle.party_slot+i)%game.party_count);if(!omni_adventure_switch(&game,&battle,slot)){omni_practice_wait(&battle,&turn);log_index=0;battle_log(0);break;}}}
+ else if(pressed&A){if(!omni_practice_turn(&battle,menu_cursor,&turn)){log_index=0;battle_log(0);}else{dialogue="这个招式的 PP 用完了。\n请选择另一个招式。";screen=BATTLE_LOG;log_index=255;}}break;
+ case BATTLE_LOG:if(pressed&(A|B)){if(*next_page){dialogue=next_page;break;}if(log_index==255){screen=BATTLE;break;}if(++log_index<turn.count)battle_log(log_index);else if(battle.outcome)finish_battle();else screen=BATTLE;}break;
  default:break;
  }
 }

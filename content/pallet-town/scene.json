@@ -1,28 +1,290 @@
 {
   "schema_version": 1,
-  "scope": "Playable Pallet Town opening; original Chinese dialogue and a limited starter practice battle",
+  "scope": "Kanto departure: Pikachu, Route 1, Viridian Center and parcel return; early battle prototype",
   "maps": [
-    {"id": 1, "key": "kanto.pallet_town", "source": "PalletTown", "name": "真新镇", "actors": [
-      {"x": 3, "y": 10, "sprite": "woman_1", "person": 4, "direction": 0},
-      {"x": 13, "y": 17, "sprite": "fat_man", "person": 5, "direction": 2}
-    ], "signs": [
-      {"x": 16,"y":16,"text":"大木宝可梦研究所。\n新的相遇，从这里开始。"},
-      {"x":4,"y":7,"text":"赤红的家。"},
-      {"x":13,"y":7,"text":"小茂与奈奈美的家。"},
-      {"x":9,"y":11,"text":"真新镇\n纯白的起点，等待你写下故事。"},
-      {"x":5,"y":14,"text":"训练家提示\nSTART 打开菜单，A 调查，B 跑步。"}
-    ]},
-    {"id":2,"key":"kanto.pallet_town.player_home.1f","source":"PalletTown_PlayersHouse_1F","name":"赤红的家 · 一楼","actors":[{"x":8,"y":4,"sprite":"mom","person":2,"direction":2}],"signs":[{"x":6,"y":1,"text":"电视正在介绍宝可梦。\n广阔的世界，正在等待新的训练家。"}]},
-    {"id":3,"key":"kanto.pallet_town.player_home.2f","source":"PalletTown_PlayersHouse_2F","name":"赤红的房间","actors":[],"signs":[{"x":1,"y":1,"person":8,"text":""},{"x":6,"y":5,"text":"先关掉游戏机吧。\n今天要去拜访大木博士。"},{"x":11,"y":1,"text":"旅行备忘\n先去研究所，见一见大木博士。"}]},
-    {"id":4,"key":"kanto.pallet_town.rival_home","source":"PalletTown_RivalsHouse","name":"小茂的家","actors":[{"x":10,"y":6,"sprite":"daisy","person":6,"direction":0}],"signs":[]},
-    {"id":5,"key":"kanto.pallet_town.oak_lab","source":"PalletTown_ProfessorOaksLab","name":"大木研究所","actors":[
-      {"x":6,"y":3,"sprite":"prof_oak","person":1,"direction":0},
-      {"x":5,"y":4,"sprite":"blue","person":3,"direction":0},
-      {"x":3,"y":11,"sprite":"scientist","person":7,"direction":0},
-      {"x":11,"y":10,"sprite":"scientist","person":7,"direction":2},
-      {"x":8,"y":4,"sprite":"item_ball","starter":1,"direction":0},
-      {"x":9,"y":4,"sprite":"item_ball","starter":3,"direction":0},
-      {"x":10,"y":4,"sprite":"item_ball","starter":2,"direction":0}
-    ],"signs":[{"x":2,"y":1,"text":"研究所的电脑。\n记录着来自各地的宝可梦资料。"},{"x":3,"y":1,"text":"研究笔记\n资料记录与实际捕获进度分开保存。"}]}
+    {
+      "id": 1,
+      "key": "kanto.pallet_town",
+      "source": "PalletTown",
+      "name": "真新镇",
+      "actors": [
+        {
+          "x": 3,
+          "y": 10,
+          "sprite": "woman_1",
+          "person": 4,
+          "direction": 0
+        },
+        {
+          "x": 13,
+          "y": 17,
+          "sprite": "fat_man",
+          "person": 5,
+          "direction": 2
+        }
+      ],
+      "signs": [
+        {
+          "x": 16,
+          "y": 16,
+          "text": "大木宝可梦研究所。\n新的相遇，从这里开始。"
+        },
+        {
+          "x": 4,
+          "y": 7,
+          "text": "小智的家。"
+        },
+        {
+          "x": 13,
+          "y": 7,
+          "text": "小茂与奈奈美的家。"
+        },
+        {
+          "x": 9,
+          "y": 11,
+          "text": "真新镇\n纯白的起点，等待你写下故事。"
+        },
+        {
+          "x": 5,
+          "y": 14,
+          "text": "训练家提示\nSTART 打开菜单，A 调查，B 跑步。"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "key": "kanto.pallet_town.player_home.1f",
+      "source": "PalletTown_PlayersHouse_1F",
+      "name": "小智的家 · 一楼",
+      "actors": [
+        {
+          "x": 8,
+          "y": 4,
+          "sprite": "mom",
+          "person": 2,
+          "direction": 2
+        }
+      ],
+      "signs": [
+        {
+          "x": 6,
+          "y": 1,
+          "text": "电视正在介绍宝可梦。\n广阔的世界，正在等待新的训练家。"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "key": "kanto.pallet_town.player_home.2f",
+      "source": "PalletTown_PlayersHouse_2F",
+      "name": "小智的房间",
+      "actors": [],
+      "signs": [
+        {
+          "x": 1,
+          "y": 1,
+          "person": 8,
+          "text": ""
+        },
+        {
+          "x": 6,
+          "y": 5,
+          "text": "先关掉游戏机吧。\n今天要去拜访大木博士。"
+        },
+        {
+          "x": 11,
+          "y": 1,
+          "text": "旅行备忘\n先去研究所，见一见大木博士。"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "key": "kanto.pallet_town.rival_home",
+      "source": "PalletTown_RivalsHouse",
+      "name": "小茂的家",
+      "actors": [
+        {
+          "x": 10,
+          "y": 6,
+          "sprite": "daisy",
+          "person": 6,
+          "direction": 0
+        }
+      ],
+      "signs": []
+    },
+    {
+      "id": 5,
+      "key": "kanto.pallet_town.oak_lab",
+      "source": "PalletTown_ProfessorOaksLab",
+      "name": "大木研究所",
+      "actors": [
+        {
+          "x": 6,
+          "y": 3,
+          "sprite": "prof_oak",
+          "person": 1,
+          "direction": 0
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "sprite": "blue",
+          "person": 3,
+          "direction": 0
+        },
+        {
+          "x": 3,
+          "y": 11,
+          "sprite": "scientist",
+          "person": 7,
+          "direction": 0
+        },
+        {
+          "x": 11,
+          "y": 10,
+          "sprite": "scientist",
+          "person": 7,
+          "direction": 2
+        },
+        {
+          "x": 8,
+          "y": 4,
+          "sprite": "pikachu",
+          "person": 9,
+          "starter": 4,
+          "direction": 0
+        }
+      ],
+      "signs": [
+        {
+          "x": 2,
+          "y": 1,
+          "text": "研究所的电脑。\n记录着来自各地的宝可梦资料。"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "text": "研究笔记\n资料记录与实际捕获进度分开保存。"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "key": "kanto.route1",
+      "source": "Route1",
+      "name": "一号道路",
+      "actors": [
+        {
+          "x": 11,
+          "y": 25,
+          "sprite": "fat_man",
+          "person": 13,
+          "direction": 0
+        }
+      ],
+      "signs": [
+        {
+          "x": 13,
+          "y": 37,
+          "text": "一号道路\n北：常青市　南：真新镇"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "key": "kanto.viridian_city",
+      "source": "ViridianCity",
+      "name": "常青市",
+      "actors": [],
+      "signs": [
+        {
+          "x": 27,
+          "y": 26,
+          "text": "宝可梦中心\n旅途中的伙伴可以在这里休息。"
+        },
+        {
+          "x": 37,
+          "y": 19,
+          "text": "友好商店\n精灵球与伤药。"
+        },
+        {
+          "x": 36,
+          "y": 10,
+          "text": "道馆现在没有开放。\n馆主不在。"
+        },
+        {
+          "x": 25,
+          "y": 11,
+          "text": "这户人家暂时不在。"
+        },
+        {
+          "x": 25,
+          "y": 18,
+          "text": "学校尚未开放。"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "key": "kanto.viridian_city.center",
+      "source": "ViridianCity_PokemonCenter_1F",
+      "name": "常青宝可梦中心",
+      "actors": [
+        {
+          "x": 6,
+          "y": 1,
+          "sprite": "nurse",
+          "person": 10,
+          "direction": 0
+        },
+        {
+          "x": 11,
+          "y": 5,
+          "sprite": "rocket_m",
+          "person": 11,
+          "direction": 2
+        },
+        {
+          "x": 11,
+          "y": 3,
+          "sprite": "rocket_f",
+          "person": 11,
+          "direction": 0
+        }
+      ],
+      "signs": [
+        {
+          "x": 6,
+          "y": 3,
+          "person": 10,
+          "text": ""
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "key": "kanto.viridian_city.mart",
+      "source": "ViridianCity_Mart",
+      "name": "常青友好商店",
+      "actors": [
+        {
+          "x": 2,
+          "y": 3,
+          "sprite": "scientist",
+          "person": 12,
+          "direction": 3
+        }
+      ],
+      "signs": [
+        {
+          "x": 3,
+          "y": 3,
+          "person": 12,
+          "text": ""
+        }
+      ]
+    }
   ]
 }
