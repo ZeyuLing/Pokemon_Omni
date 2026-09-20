@@ -118,6 +118,183 @@
       "reason": "User and author ROMs agree on species records and decoded art; release number, custom learnsets, transition logic and Omni rules remain unverified."
     }
   ],
+  "source_variant_rules": [
+    {
+      "entry_id": "dex:omni:ultra58:1076",
+      "name": "小智皮卡丘 · 神战版",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:431",
+      "name": "飞行皮卡丘",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:425",
+      "name": "尼多王 X",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:427",
+      "name": "尼多王 Y",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:434",
+      "name": "超级九尾",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:424",
+      "name": "化石骨龙",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:1097",
+      "name": "铠甲超梦",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:1118",
+      "name": "全装甲超梦",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:413",
+      "name": "黯影超梦 X",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:432",
+      "name": "黯影超梦",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:1079",
+      "name": "暗黑洛奇亚",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:1383",
+      "name": "洛奇亚 · 光之石形态",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:1384",
+      "name": "凤王 · 火之石形态",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:1106",
+      "name": "沙漠蜻蜓 · 神战超进化",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:415",
+      "name": "美纳斯 Z",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:416",
+      "name": "烈焰猴 X",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:423",
+      "name": "帝王拿波 X",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:421",
+      "name": "电击魔兽 X",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:426",
+      "name": "鸭嘴炎兽 Y",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:1336",
+      "name": "阿尔宙斯 · 光之石形态",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:1337",
+      "name": "阿尔宙斯 · 暗之石形态",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:430",
+      "name": "超级君主蛇",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:414",
+      "name": "索罗亚克 Z",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:422",
+      "name": "超级战斧龙",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:433",
+      "name": "灭世魔龙",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:1119",
+      "name": "合众酋雷姆",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:428",
+      "name": "小智忍蛙 · 神战版",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:429",
+      "name": "超级音波龙",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:418",
+      "name": "超级假面喵",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:419",
+      "name": "骨纹巨声鳄 · 永久进化",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:420",
+      "name": "超级浪舞鸭",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:990",
+      "name": "化石雷鸟",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:991",
+      "name": "化石巨龙",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:992",
+      "name": "化石鳃鱼",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    },
+    {
+      "entry_id": "dex:omni:ultra58:993",
+      "name": "化石海兽",
+      "reason": "Hash-locked user ROM stats/types/art and active ability IDs extracted; source learnsets, scripts, ability effects, persistence/reversion and Omni battle rules pending."
+    }
+  ],
   "rom_document_differences": [
     {
       "entry_id": "dex:omni:rocket-bond:butterfree",

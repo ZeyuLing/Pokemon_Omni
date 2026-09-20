@@ -46,5 +46,7 @@
     "Story acquisition gates unconfigured",
     "Training references not Omni battle-approved",
     "23 bond entries remain research-only"
-  ]
+  ],
+  "historical_report": true,
+  "superseded_by": "research/in-game-dex-validation.json"
 }

@@ -94,5 +94,10 @@
     "Bilibili pages and Quark share could not be inspected with the web reader; browser research pages timed out.",
     "Public API verifies titles, publishers and pinned URLs, not the files behind a share link.",
     "No additional 5.8 form imported or declared complete during this research."
-  ]
+  ],
+  "user_supplied_follow_up": {
+    "manifest": "assets/source/ultra-emerald-user-rom.json",
+    "sha256": "cb93af4a51809e4ef4fb5e7356e029e009a026bf20148fa7618e0731bb91edac",
+    "notes": "35 source forms extracted from supplied file. Share bytes still not compared; above web research is retained as historical evidence."
+  }
 }

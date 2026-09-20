@@ -1,0 +1,4287 @@
+{
+  "schema_version": 1,
+  "source_rom_sha256": "cb93af4a51809e4ef4fb5e7356e029e009a026bf20148fa7618e0731bb91edac",
+  "source_rom_path": "assets/imported/ultra-emerald-5.8-user/ultra-emerald-5.8-final-permanent-mega.gba",
+  "source_edition": "User-supplied 5.8 神战最终版 + 永久超进化 + PC cheat variant",
+  "charmap_source": {
+    "url": "https://raw.githubusercontent.com/GoldenCaterpie/pokeemerald-ch/c8b4aed68d8ff0af6b2992f54253a0e3cc379bdb/charmap.txt",
+    "sha256": "3b6797670938e2a94df78b8bfeaecff5ff7f5848c8eafce83771cbf742245fcb"
+  },
+  "tables": {
+    "stats": 16897792,
+    "names": 17056460,
+    "front": 16966140,
+    "back": 16985668,
+    "normal_palette": 17005196,
+    "shiny_palette": 17024724,
+    "abilities": 24772608,
+    "ability_names": 30421096,
+    "evolution": 17135708,
+    "items": 16526460
+  },
+  "reviewed_species_range": [
+    1,
+    1385
+  ],
+  "records": [
+    {
+      "source_sid": 413,
+      "source_name": "黯影超梦x",
+      "name_bytes_hex": "1e550f5e022e0966ecff00",
+      "stats_offset": 16909356,
+      "record_sha256": "dd5febb4519dd013c90023b69aae158899ad306f4d636de0b9200ea1a280210f",
+      "record_hex": "6ebe6e875a6e0111e13d040100000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 110,
+        "atk": 190,
+        "def": 110,
+        "spe": 135,
+        "spa": 90,
+        "spd": 110
+      },
+      "type_ids": [
+        1,
+        17
+      ],
+      "types": [
+        "Fighting",
+        "Dark"
+      ],
+      "ability_ids": [
+        89,
+        89,
+        89
+      ],
+      "ability_table_offset": 24775086,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:413",
+      "national_number": 150,
+      "display_name": "黯影超梦 X",
+      "parent_source_sid": 432,
+      "assets": {
+        "front": {
+          "table_offset": 16969444,
+          "data_offset": 14779508,
+          "compressed_bytes": 1494,
+          "decoded_bytes": 4096,
+          "decoded_sha256": "232b648e574ac560595dcfc58fe8eee6cd783dd98b572bc476f5012e9184091e",
+          "table_record_hex": "7484e10800089d01"
+        },
+        "back": {
+          "table_offset": 16988972,
+          "data_offset": 14781004,
+          "compressed_bytes": 929,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "e3041fa8d2c01399daaa92615ee85095c2c198d8e40203a10bed4b289e69c414",
+          "table_record_hex": "4c8ae10800089d01"
+        },
+        "normal_palette": {
+          "table_offset": 17008500,
+          "data_offset": 14781936,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "285871b276d4695a199ebe41d5abcbda97b38f825e96858eb6a02a8047c8ab63",
+          "table_record_hex": "f08de1089d010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028028,
+          "data_offset": 14781976,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "2b211890e3baf7d7d6708cbc2a093f59a42ceb0048c74559faed255453cdfc98",
+          "table_record_hex": "188ee10891030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/413-front_default.png",
+          "url": "/ultra-art/413-front_default.png",
+          "sha256": "6d9a2015db8c7ea7c87f6c5beef495e8c4e0d3637b471fb05d7fca28159bc671"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/413-back_default.png",
+          "url": "/ultra-art/413-back_default.png",
+          "sha256": "5bfa829e2e466d87ccb3efc8372e613bac4292e858ac84ef07937a32598ebae6"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/413-front_shiny.png",
+          "url": "/ultra-art/413-front_shiny.png",
+          "sha256": "57845ce00377eabca1c56799a225b1c6a3f1859c28a0c737710de99abde41b5d"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/413-back_shiny.png",
+          "url": "/ultra-art/413-back_shiny.png",
+          "sha256": "db293e9a65abca24957c384730a4b8614bb0fbb17dc87c625fba783e0acb5d9b"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17152988,
+          "method_raw": 7,
+          "parameter": 100,
+          "target_sid": 413,
+          "padding": 0,
+          "source_sid": 432,
+          "source_name": "黯影超梦",
+          "item_name": "暗之石"
+        }
+      ],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 89,
+          "name": "铁拳",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 89,
+          "name": "铁拳",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 89,
+          "name": "铁拳",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 414,
+      "source_name": "索罗亚克z",
+      "name_bytes_hex": "0c9a09180eb007d9eeff00",
+      "stats_offset": 16909384,
+      "record_sha256": "12912c29d2731c295d577aec35a2c6f98640f34e5464636ae0083bcfdbd711ae",
+      "record_hex": "6496649150641111e13d040100000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 100,
+        "atk": 150,
+        "def": 100,
+        "spe": 145,
+        "spa": 80,
+        "spd": 100
+      },
+      "type_ids": [
+        17,
+        17
+      ],
+      "types": [
+        "Dark"
+      ],
+      "ability_ids": [
+        80,
+        80,
+        80
+      ],
+      "ability_table_offset": 24775092,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:414",
+      "national_number": 571,
+      "display_name": "索罗亚克 Z",
+      "parent_source_sid": 624,
+      "assets": {
+        "front": {
+          "table_offset": 16969452,
+          "data_offset": 16744480,
+          "compressed_bytes": 1531,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "5194f41aa7a6f97ad45b94e9eec578a3e0092b0524951143a240a399c2359464",
+          "table_record_hex": "2080ff0800089e01"
+        },
+        "back": {
+          "table_offset": 16988980,
+          "data_offset": 16746012,
+          "compressed_bytes": 1192,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "ed51aed97d40d1c13af4ba81f32e7bd8a09259f1004ca096942e7288898937ce",
+          "table_record_hex": "1c86ff0800089e01"
+        },
+        "normal_palette": {
+          "table_offset": 17008508,
+          "data_offset": 16747204,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "276a0c8ae40f184cfd4905aa37fbcaa6615a69d2cce785b9dfc3b1d913bd7c50",
+          "table_record_hex": "c48aff089e010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028036,
+          "data_offset": 16747244,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "b44483dbeefc62f8ced69e3d718b1eb94384637ed38392b843bf187ca9455814",
+          "table_record_hex": "ec8aff0892030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/414-front_default.png",
+          "url": "/ultra-art/414-front_default.png",
+          "sha256": "b0258432664666e5094ab5293d30d665c4b41b59b4421c16c70f7d3388bd6ccb"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/414-back_default.png",
+          "url": "/ultra-art/414-back_default.png",
+          "sha256": "a277f323f587bf4c9d155ffa88feec4963ceb9bdbda4aa5c26868e3d2c5e89c6"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/414-front_shiny.png",
+          "url": "/ultra-art/414-front_shiny.png",
+          "sha256": "dadda9a6f6783e1e746a12928fb273b587d1ba6775132daa8660373c29bb1dfe"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/414-back_shiny.png",
+          "url": "/ultra-art/414-back_shiny.png",
+          "sha256": "6d29b7455658b071d6752cedef4f9a53a6616864a3da4dd514f2f7221a1c7738"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17160668,
+          "method_raw": 7,
+          "parameter": 102,
+          "target_sid": 414,
+          "padding": 0,
+          "source_sid": 624,
+          "source_name": "索罗亚克",
+          "item_name": "觉醒之石"
+        }
+      ],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 80,
+          "name": "变幻自如",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 80,
+          "name": "变幻自如",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 80,
+          "name": "变幻自如",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 415,
+      "source_name": "美纳斯z",
+      "name_bytes_hex": "095809bf0c5ceeff000000",
+      "stats_offset": 16909412,
+      "record_sha256": "40dcc0c7d05facfe39d4531d8a86abc31037d8e03c075a0e41051f2e168c588a",
+      "record_hex": "9148625196730b17e13d040100000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 145,
+        "atk": 72,
+        "def": 98,
+        "spe": 81,
+        "spa": 150,
+        "spd": 115
+      },
+      "type_ids": [
+        11,
+        23
+      ],
+      "types": [
+        "Water",
+        "Fairy"
+      ],
+      "ability_ids": [
+        74,
+        74,
+        74
+      ],
+      "ability_table_offset": 24775098,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:415",
+      "national_number": 350,
+      "display_name": "美纳斯 Z",
+      "parent_source_sid": 329,
+      "assets": {
+        "front": {
+          "table_offset": 16969460,
+          "data_offset": 16747288,
+          "compressed_bytes": 1668,
+          "decoded_bytes": 4096,
+          "decoded_sha256": "e801e5f6295a40e8c2f7f66863dbd3a70aafb929eb74c71e529eaaee49228632",
+          "table_record_hex": "188bff0800089f01"
+        },
+        "back": {
+          "table_offset": 16988988,
+          "data_offset": 16748956,
+          "compressed_bytes": 1228,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "32a840ffbff0cc0b764e9fe001ebab7abf2fe66b25d07fc8a7d686ba79cc053e",
+          "table_record_hex": "9c91ff0800089f01"
+        },
+        "normal_palette": {
+          "table_offset": 17008516,
+          "data_offset": 16750184,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "b2e7ce9dd7f8151a9799dd28662235abe6e8418010adfd7ae2a8c84a7c9315d1",
+          "table_record_hex": "6896ff089f010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028044,
+          "data_offset": 16750224,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "b2e7ce9dd7f8151a9799dd28662235abe6e8418010adfd7ae2a8c84a7c9315d1",
+          "table_record_hex": "9096ff0893030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/415-front_default.png",
+          "url": "/ultra-art/415-front_default.png",
+          "sha256": "db220aedf9e655d102ba1e692b06f154121d89eb57681be6814dc913c5f9c74f"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/415-back_default.png",
+          "url": "/ultra-art/415-back_default.png",
+          "sha256": "7bb7a613c0f1c1fdadf02b102428c6dcd86669d6ad08657c163eef5d5c5c4a44"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/415-front_shiny.png",
+          "url": "/ultra-art/415-front_shiny.png",
+          "sha256": "db220aedf9e655d102ba1e692b06f154121d89eb57681be6814dc913c5f9c74f"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/415-back_shiny.png",
+          "url": "/ultra-art/415-back_shiny.png",
+          "sha256": "7bb7a613c0f1c1fdadf02b102428c6dcd86669d6ad08657c163eef5d5c5c4a44"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17148868,
+          "method_raw": 7,
+          "parameter": 97,
+          "target_sid": 415,
+          "padding": 0,
+          "source_sid": 329,
+          "source_name": "美纳斯",
+          "item_name": "水之石"
+        }
+      ],
+      "normal_shiny_identical": true,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 74,
+          "name": "薄雾制造者",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 74,
+          "name": "薄雾制造者",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 74,
+          "name": "薄雾制造者",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 416,
+      "source_name": "烈焰猴x",
+      "name_bytes_hex": "08a50ecf051eecff000000",
+      "stats_offset": 16909440,
+      "record_sha256": "ad67ece66bc1bdcb9bf4a4a123362cc18e9b89cd7f880cbfb331e8024349e4fc",
+      "record_hex": "6490648a4864010ae13d040100000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 100,
+        "atk": 144,
+        "def": 100,
+        "spe": 138,
+        "spa": 72,
+        "spd": 100
+      },
+      "type_ids": [
+        1,
+        10
+      ],
+      "types": [
+        "Fighting",
+        "Fire"
+      ],
+      "ability_ids": [
+        126,
+        126,
+        126
+      ],
+      "ability_table_offset": 24775104,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:416",
+      "national_number": 392,
+      "display_name": "烈焰猴 X",
+      "parent_source_sid": 445,
+      "assets": {
+        "front": {
+          "table_offset": 16969468,
+          "data_offset": 17547552,
+          "compressed_bytes": 1906,
+          "decoded_bytes": 4096,
+          "decoded_sha256": "149b09e9693a358b0570e1233bf6d56107d2b4ffbdc0c3591fc6bcb8e66e96b1",
+          "table_record_hex": "20c10b090008a001"
+        },
+        "back": {
+          "table_offset": 16988996,
+          "data_offset": 17549460,
+          "compressed_bytes": 1457,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "e3d9e46b8cff1f785e105c06d5db98a78d5818214acdab5b995d9788bb5eed2b",
+          "table_record_hex": "94c80b090008a001"
+        },
+        "normal_palette": {
+          "table_offset": 17008524,
+          "data_offset": 17550920,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "6db5e8912712032f4dfc6ac10c49eb86eed303bcbb59fd67519830b43277bf44",
+          "table_record_hex": "48ce0b09a0010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028052,
+          "data_offset": 17550960,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "1cedfa2a795a0ee6e4dddfadcc84887edb4b0914a3e512d54aced25bb88b7dbb",
+          "table_record_hex": "70ce0b0994030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/416-front_default.png",
+          "url": "/ultra-art/416-front_default.png",
+          "sha256": "fc63e3cc966cc5f17f08d24ad6658088f0ed3cefe5fe35851d7c5ef17892037d"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/416-back_default.png",
+          "url": "/ultra-art/416-back_default.png",
+          "sha256": "192225ce2f8a0ea82c27094a4986744f3191d698c8ebda6c73bb5783e959512a"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/416-front_shiny.png",
+          "url": "/ultra-art/416-front_shiny.png",
+          "sha256": "441384221d8bef92817f3018aab5e84ac667fe2e25c87db6367abd53c791cf92"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/416-back_shiny.png",
+          "url": "/ultra-art/416-back_shiny.png",
+          "sha256": "f00b791f7df5d22d0f9201b7524268236f76e395faea94d00f8cf37a8ddc8086"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17153508,
+          "method_raw": 7,
+          "parameter": 95,
+          "target_sid": 416,
+          "padding": 0,
+          "source_sid": 445,
+          "source_name": "烈焰猴",
+          "item_name": "火之石"
+        }
+      ],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 126,
+          "name": "唱反调",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 126,
+          "name": "唱反调",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 126,
+          "name": "唱反调",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 418,
+      "source_name": "超级假面喵",
+      "name_bytes_hex": "022e05a105c4097e1435ff",
+      "stats_offset": 16909496,
+      "record_sha256": "dd510ee5e410ba02610f23ffaf515ea3d790103d91dce459be9115452fe58b98",
+      "record_hex": "6491648746640c11e13d040100000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 100,
+        "atk": 145,
+        "def": 100,
+        "spe": 135,
+        "spa": 70,
+        "spd": 100
+      },
+      "type_ids": [
+        12,
+        17
+      ],
+      "types": [
+        "Grass",
+        "Dark"
+      ],
+      "ability_ids": [
+        80,
+        80,
+        80
+      ],
+      "ability_table_offset": 24775116,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:418",
+      "national_number": 908,
+      "display_name": "超级假面喵",
+      "parent_source_sid": 1201,
+      "assets": {
+        "front": {
+          "table_offset": 16969484,
+          "data_offset": 33117668,
+          "compressed_bytes": 1366,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "5d2db0387ed089b948d7a5f6526e0c04e911766f02c287b2fcaecf1c144864f1",
+          "table_record_hex": "e455f9090008a201"
+        },
+        "back": {
+          "table_offset": 16989012,
+          "data_offset": 33119036,
+          "compressed_bytes": 1086,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "0e2a46812a4a4bcf28496b84eaf59a3a2d001bfeac7e8457f6c4a39b6d2b1223",
+          "table_record_hex": "3c5bf9090008a201"
+        },
+        "normal_palette": {
+          "table_offset": 17008540,
+          "data_offset": 33120124,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "7ab0e6fbbd23674bb837e9f66d2b17c3ec623ffb4ed918bd7e7d7105507bb3c3",
+          "table_record_hex": "7c5ff909a2010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028068,
+          "data_offset": 33120164,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "26b95e0d91d9ba93ca832f201bfca89a60b8298373360423f9d5c0a30ec8bfad",
+          "table_record_hex": "a45ff90996030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/418-front_default.png",
+          "url": "/ultra-art/418-front_default.png",
+          "sha256": "40c77ab3d6dd5a5bc84eaba96f74280bc7d2e5eaae472b33048de9ea390dc2c9"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/418-back_default.png",
+          "url": "/ultra-art/418-back_default.png",
+          "sha256": "31889d84c5bec8db89987106ab908e5b138b3d16fd170f5109227bfe0ed6bf71"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/418-front_shiny.png",
+          "url": "/ultra-art/418-front_shiny.png",
+          "sha256": "72293042352e98f8f903e46ae38982cdab33b18dea98e28d8b032c00edb2a690"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/418-back_shiny.png",
+          "url": "/ultra-art/418-back_shiny.png",
+          "sha256": "2724cbab3a0cbaeb0ed980acfd2d132ca215b460723f3e48038b53678fe4942c"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17183748,
+          "method_raw": 7,
+          "parameter": 98,
+          "target_sid": 418,
+          "padding": 0,
+          "source_sid": 1201,
+          "source_name": "魔幻假面喵",
+          "item_name": "叶之石"
+        }
+      ],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 80,
+          "name": "变幻自如",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 80,
+          "name": "变幻自如",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 80,
+          "name": "变幻自如",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 419,
+      "source_name": "骨纹巨声鳄",
+      "name_bytes_hex": "048f0d8c078e0bd71df1ff",
+      "stats_offset": 16909524,
+      "record_sha256": "7eceaebaddf524d2ddcee5d602de3224cc9f658bb2fdea54fa015504699508d2",
+      "record_hex": "8248645896640a07e13d040100000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 130,
+        "atk": 72,
+        "def": 100,
+        "spe": 88,
+        "spa": 150,
+        "spd": 100
+      },
+      "type_ids": [
+        10,
+        7
+      ],
+      "types": [
+        "Fire",
+        "Ghost"
+      ],
+      "ability_ids": [
+        109,
+        109,
+        109
+      ],
+      "ability_table_offset": 24775122,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:419",
+      "national_number": 911,
+      "display_name": "骨纹巨声鳄 · 永久进化",
+      "parent_source_sid": 1204,
+      "assets": {
+        "front": {
+          "table_offset": 16969492,
+          "data_offset": 33111520,
+          "compressed_bytes": 1621,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "d3900f10cc444d959ae59ea94fee314dc2181f03135bbe59a1a23718529efeef",
+          "table_record_hex": "e03df9090008a301"
+        },
+        "back": {
+          "table_offset": 16989020,
+          "data_offset": 33113144,
+          "compressed_bytes": 1232,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "d61090cb0195038c711f27b2318cb603b1023882dcb928ed11c94e02c05a6395",
+          "table_record_hex": "3844f9090008a301"
+        },
+        "normal_palette": {
+          "table_offset": 17008548,
+          "data_offset": 33114376,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "56b5dbb2decac6cb2743bb9270065319d51e788da32f3f85c2bd9afec440a0ca",
+          "table_record_hex": "0849f909a3010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028076,
+          "data_offset": 33114416,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "b20d1d773155fc8ff22b4358fccc69ae7c48a38d08fcd914a0ddea403cf1c3e4",
+          "table_record_hex": "3049f90997030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/419-front_default.png",
+          "url": "/ultra-art/419-front_default.png",
+          "sha256": "991c80ffe87e787a95f1433857c7afd8d0ef70dadf1ebe3640c705e72bb4b83b"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/419-back_default.png",
+          "url": "/ultra-art/419-back_default.png",
+          "sha256": "5027544569087386ee6c6e61515f4e2b4de6cfca2a860f6db6903d25ad23cb31"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/419-front_shiny.png",
+          "url": "/ultra-art/419-front_shiny.png",
+          "sha256": "15d5db3715ca287b1642c0639502811650357caacb25f0a21e6b9009076424c3"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/419-back_shiny.png",
+          "url": "/ultra-art/419-back_shiny.png",
+          "sha256": "d571f7f9692ee0a195c2c3df7cec896f300b6d09736c8efc788d7778c8ca8799"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17183868,
+          "method_raw": 7,
+          "parameter": 95,
+          "target_sid": 419,
+          "padding": 0,
+          "source_sid": 1204,
+          "source_name": "骨纹巨声鳄",
+          "item_name": "火之石"
+        }
+      ],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 109,
+          "name": "纯朴",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 109,
+          "name": "纯朴",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 109,
+          "name": "纯朴",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 420,
+      "source_name": "超级浪舞鸭",
+      "name_bytes_hex": "022e05a108400dae0ea5ff",
+      "stats_offset": 16909552,
+      "record_sha256": "8a60c0685b2b40b7e09f3b15f6c0d2c18a61aa8ed2e7c98e6e11ea29b2de8293",
+      "record_hex": "6491646448640b01e13d040100000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 100,
+        "atk": 145,
+        "def": 100,
+        "spe": 100,
+        "spa": 72,
+        "spd": 100
+      },
+      "type_ids": [
+        11,
+        1
+      ],
+      "types": [
+        "Water",
+        "Fighting"
+      ],
+      "ability_ids": [
+        78,
+        78,
+        78
+      ],
+      "ability_table_offset": 24775128,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:420",
+      "national_number": 914,
+      "display_name": "超级浪舞鸭",
+      "parent_source_sid": 1207,
+      "assets": {
+        "front": {
+          "table_offset": 16969500,
+          "data_offset": 33114460,
+          "compressed_bytes": 1775,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "ccc11319dedf7f200c27959fd788d76746c208e500fa5afd0512396c0d5b01e9",
+          "table_record_hex": "5c49f9090008a401"
+        },
+        "back": {
+          "table_offset": 16989028,
+          "data_offset": 33116236,
+          "compressed_bytes": 1346,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "e5168e43c5ae6db15989957fb8a8faa556ab9dfeb86c28b8b5212095fb4f5585",
+          "table_record_hex": "4c50f9090008a401"
+        },
+        "normal_palette": {
+          "table_offset": 17008556,
+          "data_offset": 33117584,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "86d95a00c8445f9c64e37ea05c9bc563e241d68a153467cf35f2ab053c08abe8",
+          "table_record_hex": "9055f909a4010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028084,
+          "data_offset": 33117624,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "cb3c79e8f632c8894226556602edc16c23314f0d9ee3ea831c34a6331aa337a0",
+          "table_record_hex": "b855f90998030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/420-front_default.png",
+          "url": "/ultra-art/420-front_default.png",
+          "sha256": "064ebb0c71c0b4f91141c5b6deb244cde04b6c560e4e370443953b53a217c020"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/420-back_default.png",
+          "url": "/ultra-art/420-back_default.png",
+          "sha256": "93ed8599a335645ab2d4eefa89d4a8101e968454e1e6f1633c2853f09aa8574f"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/420-front_shiny.png",
+          "url": "/ultra-art/420-front_shiny.png",
+          "sha256": "6688e80df94c4c185b325738000adc75eb2fc941940baf89eac7dc0f16bf08e3"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/420-back_shiny.png",
+          "url": "/ultra-art/420-back_shiny.png",
+          "sha256": "af5d8dc5762cd6cf796926911f0dea5e1c930fe942b0a81cf5d1e37cec6a7f3c"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17183988,
+          "method_raw": 7,
+          "parameter": 97,
+          "target_sid": 420,
+          "padding": 0,
+          "source_sid": 1207,
+          "source_name": "狂欢浪舞鸭",
+          "item_name": "水之石"
+        }
+      ],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 78,
+          "name": "自信过度",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 78,
+          "name": "自信过度",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 78,
+          "name": "自信过度",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 421,
+      "source_name": "电击魔兽x",
+      "name_bytes_hex": "032e0584099d0c23ecff00",
+      "stats_offset": 16909580,
+      "record_sha256": "023090b3a0de1b501bd780aa1a3e6298388442e3c63e2f6726824a4ac1d19f06",
+      "record_hex": "6496646e64640d11e13d040100000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 100,
+        "atk": 150,
+        "def": 100,
+        "spe": 110,
+        "spa": 100,
+        "spd": 100
+      },
+      "type_ids": [
+        13,
+        17
+      ],
+      "types": [
+        "Electric",
+        "Dark"
+      ],
+      "ability_ids": [
+        164,
+        164,
+        164
+      ],
+      "ability_table_offset": 24775134,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:421",
+      "national_number": 466,
+      "display_name": "电击魔兽 X",
+      "parent_source_sid": 519,
+      "assets": {
+        "front": {
+          "table_offset": 16969508,
+          "data_offset": 17518520,
+          "compressed_bytes": 1390,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "2403d871f5aeb59993674971edffc9602d75257798c4d9a4676ef3aafb620681",
+          "table_record_hex": "b84f0b090008a501"
+        },
+        "back": {
+          "table_offset": 16989036,
+          "data_offset": 17520084,
+          "compressed_bytes": 871,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "212132ba3e59dd8c60a2678a10fd115daee912a24abd5abad366e0228ee868ae",
+          "table_record_hex": "d4550b090008a501"
+        },
+        "normal_palette": {
+          "table_offset": 17008564,
+          "data_offset": 17521368,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "05cd5f794c6bb39966dc115c3c43ee87522289a013a0157abbe3d759b7e82f4d",
+          "table_record_hex": "d85a0b09a5010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028092,
+          "data_offset": 17521408,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "05cd5f794c6bb39966dc115c3c43ee87522289a013a0157abbe3d759b7e82f4d",
+          "table_record_hex": "005b0b0999030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/421-front_default.png",
+          "url": "/ultra-art/421-front_default.png",
+          "sha256": "5401a0320724c23581f0fd5d60276f0c064ecff97115e1433f02b78e3f6b5da9"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/421-back_default.png",
+          "url": "/ultra-art/421-back_default.png",
+          "sha256": "63dee7f5668643ecd9b09a1131c14ef0b93b11a86a3f08cb0ca0f273386a1ab9"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/421-front_shiny.png",
+          "url": "/ultra-art/421-front_shiny.png",
+          "sha256": "5401a0320724c23581f0fd5d60276f0c064ecff97115e1433f02b78e3f6b5da9"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/421-back_shiny.png",
+          "url": "/ultra-art/421-back_shiny.png",
+          "sha256": "63dee7f5668643ecd9b09a1131c14ef0b93b11a86a3f08cb0ca0f273386a1ab9"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17156468,
+          "method_raw": 7,
+          "parameter": 96,
+          "target_sid": 421,
+          "padding": 0,
+          "source_sid": 519,
+          "source_name": "电击魔兽",
+          "item_name": "雷之石"
+        }
+      ],
+      "normal_shiny_identical": true,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 164,
+          "name": "电气制造者",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 164,
+          "name": "电气制造者",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 164,
+          "name": "电气制造者",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 422,
+      "source_name": "超级战斧龙",
+      "name_bytes_hex": "022e05a11030041508cdff",
+      "stats_offset": 16909608,
+      "record_sha256": "b5f148c48ded51c09f1f41a74555e8f6b902a042993b7b36e57d676b49ac1827",
+      "record_hex": "6496646448641001e13d040100000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 100,
+        "atk": 150,
+        "def": 100,
+        "spe": 100,
+        "spa": 72,
+        "spd": 100
+      },
+      "type_ids": [
+        16,
+        1
+      ],
+      "types": [
+        "Dragon",
+        "Fighting"
+      ],
+      "ability_ids": [
+        78,
+        78,
+        78
+      ],
+      "ability_table_offset": 24775140,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:422",
+      "national_number": 612,
+      "display_name": "超级战斧龙",
+      "parent_source_sid": 665,
+      "assets": {
+        "front": {
+          "table_offset": 16969516,
+          "data_offset": 12198032,
+          "compressed_bytes": 1320,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "fe14815ad4092c47a8bc60dab9f27406d5acb5b1ba6ac59f22a460b4d124f72c",
+          "table_record_hex": "9020ba080008a601"
+        },
+        "back": {
+          "table_offset": 16989044,
+          "data_offset": 12199352,
+          "compressed_bytes": 865,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "be0fed5198abb6e5febd098c546ac40945c470bccd2b7789a93eedaa87fdb348",
+          "table_record_hex": "b825ba080008a601"
+        },
+        "normal_palette": {
+          "table_offset": 17008572,
+          "data_offset": 12200220,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "18c51c2002caa7267ab2e075b507fe598b6e6102aa86371ae257b4231c264ac9",
+          "table_record_hex": "1c29ba08a6010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028100,
+          "data_offset": 12200260,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "18c51c2002caa7267ab2e075b507fe598b6e6102aa86371ae257b4231c264ac9",
+          "table_record_hex": "4429ba089a030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/422-front_default.png",
+          "url": "/ultra-art/422-front_default.png",
+          "sha256": "e2148ad93d07b97127e8f69f418bee8afd6e8d1de40d7b8931fd3360b59c1ba2"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/422-back_default.png",
+          "url": "/ultra-art/422-back_default.png",
+          "sha256": "12ac1e87c7301483c28adff7fdc090f1ebedfe8e3db80ad26d7ee7954971b336"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/422-front_shiny.png",
+          "url": "/ultra-art/422-front_shiny.png",
+          "sha256": "e2148ad93d07b97127e8f69f418bee8afd6e8d1de40d7b8931fd3360b59c1ba2"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/422-back_shiny.png",
+          "url": "/ultra-art/422-back_shiny.png",
+          "sha256": "12ac1e87c7301483c28adff7fdc090f1ebedfe8e3db80ad26d7ee7954971b336"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17162308,
+          "method_raw": 6,
+          "parameter": 216,
+          "target_sid": 422,
+          "padding": 0,
+          "source_sid": 665,
+          "source_name": "双斧战龙",
+          "item_name": "龙之牙"
+        }
+      ],
+      "normal_shiny_identical": true,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 78,
+          "name": "自信过度",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 78,
+          "name": "自信过度",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 78,
+          "name": "自信过度",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 423,
+      "source_name": "帝王拿波x",
+      "name_bytes_hex": "03220d5d09b901c3ecff00",
+      "stats_offset": 16909636,
+      "record_sha256": "b5e98f0e4aa3cbd770b3b1291cb90b30b654bc7578b40236718e5fbc0c70d778",
+      "record_hex": "64918c37486e0b08e13d040100000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 100,
+        "atk": 145,
+        "def": 140,
+        "spe": 55,
+        "spa": 72,
+        "spd": 110
+      },
+      "type_ids": [
+        11,
+        8
+      ],
+      "types": [
+        "Water",
+        "Steel"
+      ],
+      "ability_ids": [
+        86,
+        86,
+        86
+      ],
+      "ability_table_offset": 24775146,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:423",
+      "national_number": 395,
+      "display_name": "帝王拿波 X",
+      "parent_source_sid": 448,
+      "assets": {
+        "front": {
+          "table_offset": 16969524,
+          "data_offset": 12172740,
+          "compressed_bytes": 1372,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "f948cca2d58c56c6f2be2cea853890992e2a9d637e2c24107c4a19e24487881e",
+          "table_record_hex": "c4bdb9080008a701"
+        },
+        "back": {
+          "table_offset": 16989052,
+          "data_offset": 12174112,
+          "compressed_bytes": 719,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "6e4d02b4d7bc569e78ebe76db044caabe222f2cb982ef4ff2af76d9162413027",
+          "table_record_hex": "20c3b9080008a701"
+        },
+        "normal_palette": {
+          "table_offset": 17008580,
+          "data_offset": 12174832,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "97502aa021ff432fdca39fa0a6ade21c92c00cf7f363d8452b884e8e492c8eeb",
+          "table_record_hex": "f0c5b908a7010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028108,
+          "data_offset": 12174872,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "97502aa021ff432fdca39fa0a6ade21c92c00cf7f363d8452b884e8e492c8eeb",
+          "table_record_hex": "18c6b9089b030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/423-front_default.png",
+          "url": "/ultra-art/423-front_default.png",
+          "sha256": "212afb9e35c81c67757b830451b73c94592645173886e51309fc4c7ad68072dc"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/423-back_default.png",
+          "url": "/ultra-art/423-back_default.png",
+          "sha256": "22861fe7b9e8afee577f5bfca6e41dcb0875c4256b06cd262232f0a4fc85e0a7"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/423-front_shiny.png",
+          "url": "/ultra-art/423-front_shiny.png",
+          "sha256": "212afb9e35c81c67757b830451b73c94592645173886e51309fc4c7ad68072dc"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/423-back_shiny.png",
+          "url": "/ultra-art/423-back_shiny.png",
+          "sha256": "22861fe7b9e8afee577f5bfca6e41dcb0875c4256b06cd262232f0a4fc85e0a7"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17153628,
+          "method_raw": 7,
+          "parameter": 97,
+          "target_sid": 423,
+          "padding": 0,
+          "source_sid": 448,
+          "source_name": "帝王拿波",
+          "item_name": "水之石"
+        }
+      ],
+      "normal_shiny_identical": true,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 86,
+          "name": "单纯",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 86,
+          "name": "单纯",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 86,
+          "name": "单纯",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 424,
+      "source_name": "化石骨龙",
+      "name_bytes_hex": "053c0beb048f08cdff0000",
+      "stats_offset": 16909664,
+      "record_sha256": "25398db95125fa8b4fabb340f28a0c4bded4d7f4747c0214e550a120e031aaed",
+      "record_hex": "645a649196640507e13d040100000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 100,
+        "atk": 90,
+        "def": 100,
+        "spe": 145,
+        "spa": 150,
+        "spd": 100
+      },
+      "type_ids": [
+        5,
+        7
+      ],
+      "types": [
+        "Rock",
+        "Ghost"
+      ],
+      "ability_ids": [
+        26,
+        26,
+        26
+      ],
+      "ability_table_offset": 24775152,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:424",
+      "national_number": 142,
+      "display_name": "化石骨龙",
+      "parent_source_sid": 142,
+      "assets": {
+        "front": {
+          "table_offset": 16969532,
+          "data_offset": 11942876,
+          "compressed_bytes": 1174,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "59c5151fc6df23aa53196dc358c29dc85a09157450a1910d075d66d2d17457a6",
+          "table_record_hex": "dc3bb6080008a801"
+        },
+        "back": {
+          "table_offset": 16989060,
+          "data_offset": 11944052,
+          "compressed_bytes": 854,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "d5ca2cbcf25bd1fde698295bdc149f42e12773ccced49b07261fa40f7f8276ec",
+          "table_record_hex": "7440b6080008a801"
+        },
+        "normal_palette": {
+          "table_offset": 17008588,
+          "data_offset": 11944908,
+          "compressed_bytes": 27,
+          "decoded_bytes": 32,
+          "decoded_sha256": "fa47cc12bddbf17e71809747d1d0305c2832c97bed4ed893b8359f9d131b6ed5",
+          "table_record_hex": "cc43b608a8010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028116,
+          "data_offset": 11944936,
+          "compressed_bytes": 27,
+          "decoded_bytes": 32,
+          "decoded_sha256": "5a17d123f78fdc5195c058d1955ef46da4f5aab94e574e757bd94868493d5df9",
+          "table_record_hex": "e843b6089c030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/424-front_default.png",
+          "url": "/ultra-art/424-front_default.png",
+          "sha256": "50a2e27c1449ded7c61b8e0e417f82dc48c35dd9a844d9653df315dd2bb655f0"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/424-back_default.png",
+          "url": "/ultra-art/424-back_default.png",
+          "sha256": "27136f99288249ab4b8cf9e884f75118a4c3dc1fd8ffa49ba235fb522b747be2"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/424-front_shiny.png",
+          "url": "/ultra-art/424-front_shiny.png",
+          "sha256": "4443aee8d283ecee77f1ffcc4cd2ae76522f88d7a4504138a06bc40258d590a2"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/424-back_shiny.png",
+          "url": "/ultra-art/424-back_shiny.png",
+          "sha256": "6fe30e3862fd368309548edaf302f8b157343f3adec620192dfc52750cfb8877"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17141396,
+          "method_raw": 6,
+          "parameter": 204,
+          "target_sid": 424,
+          "padding": 0,
+          "source_sid": 142,
+          "source_name": "化石翼龙",
+          "item_name": "硬石头"
+        }
+      ],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 26,
+          "name": "飘浮",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 26,
+          "name": "飘浮",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 26,
+          "name": "飘浮",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 425,
+      "source_name": "尼多王x",
+      "name_bytes_hex": "09d703850d5decff000000",
+      "stats_offset": 16909692,
+      "record_sha256": "898058f86b5c595854085039e40de293fbedaa26bab78137ae1baafd20070f40",
+      "record_hex": "649664785a640304e13d040100000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 100,
+        "atk": 150,
+        "def": 100,
+        "spe": 120,
+        "spa": 90,
+        "spd": 100
+      },
+      "type_ids": [
+        3,
+        4
+      ],
+      "types": [
+        "Poison",
+        "Ground"
+      ],
+      "ability_ids": [
+        125,
+        125,
+        125
+      ],
+      "ability_table_offset": 24775158,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:425",
+      "national_number": 34,
+      "display_name": "尼多王 X",
+      "parent_source_sid": 34,
+      "assets": {
+        "front": {
+          "table_offset": 16969540,
+          "data_offset": 17521452,
+          "compressed_bytes": 1485,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "c58ad4c79058bb20cd5b08f9c0420e9424fa2444063c9a27eff1b9732cb77158",
+          "table_record_hex": "2c5b0b090008a901"
+        },
+        "back": {
+          "table_offset": 16989068,
+          "data_offset": 17522940,
+          "compressed_bytes": 952,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "243bf1845d863fdef58755aa3d53dfe7f2b40efb2cb18622c0382d86daa6151a",
+          "table_record_hex": "fc600b090008a901"
+        },
+        "normal_palette": {
+          "table_offset": 17008596,
+          "data_offset": 17523892,
+          "compressed_bytes": 38,
+          "decoded_bytes": 32,
+          "decoded_sha256": "07af7a35c346229f9f81b94052e045246b4a5524d20f605f617cd3a0844182fb",
+          "table_record_hex": "b4640b09a9010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028124,
+          "data_offset": 17523932,
+          "compressed_bytes": 38,
+          "decoded_bytes": 32,
+          "decoded_sha256": "07af7a35c346229f9f81b94052e045246b4a5524d20f605f617cd3a0844182fb",
+          "table_record_hex": "dc640b099d030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/425-front_default.png",
+          "url": "/ultra-art/425-front_default.png",
+          "sha256": "f1a94ee76e45f2b4eace66aab35a8dc7131e2fafe7a2d87cdba19b90cfa441da"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/425-back_default.png",
+          "url": "/ultra-art/425-back_default.png",
+          "sha256": "fa9376790e6946d43487e9dde367011bb4e564442d01b02030e869a478909b67"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/425-front_shiny.png",
+          "url": "/ultra-art/425-front_shiny.png",
+          "sha256": "f1a94ee76e45f2b4eace66aab35a8dc7131e2fafe7a2d87cdba19b90cfa441da"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/425-back_shiny.png",
+          "url": "/ultra-art/425-back_shiny.png",
+          "sha256": "fa9376790e6946d43487e9dde367011bb4e564442d01b02030e869a478909b67"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17137068,
+          "method_raw": 7,
+          "parameter": 94,
+          "target_sid": 425,
+          "padding": 0,
+          "source_sid": 34,
+          "source_name": "尼多王",
+          "item_name": "月之石"
+        }
+      ],
+      "normal_shiny_identical": true,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 125,
+          "name": "强行",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 125,
+          "name": "强行",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 125,
+          "name": "强行",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 426,
+      "source_name": "鸭嘴炎兽Y",
+      "name_bytes_hex": "0ea511240ec00c23d3ff00",
+      "stats_offset": 16909720,
+      "record_sha256": "8b021865248e2da75a5c7f83f0c26a3d000dfaea7e37ea018d5188729e9b57cb",
+      "record_hex": "64486464967d0a0ae13d040100000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 100,
+        "atk": 72,
+        "def": 100,
+        "spe": 100,
+        "spa": 150,
+        "spd": 125
+      },
+      "type_ids": [
+        10,
+        10
+      ],
+      "types": [
+        "Fire"
+      ],
+      "ability_ids": [
+        26,
+        26,
+        26
+      ],
+      "ability_table_offset": 24775164,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:426",
+      "national_number": 467,
+      "display_name": "鸭嘴炎兽 Y",
+      "parent_source_sid": 520,
+      "assets": {
+        "front": {
+          "table_offset": 16969548,
+          "data_offset": 12224500,
+          "compressed_bytes": 1353,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "9a6b84499d98c9a727fd885c9a0abb5cdcf8342935758b2cfca9f3cffeb1ce08",
+          "table_record_hex": "f487ba080008aa01"
+        },
+        "back": {
+          "table_offset": 16989076,
+          "data_offset": 12225856,
+          "compressed_bytes": 802,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "259d75a94265f41f8b04607364612581d21a6081c13216ea9bdf376778d68b16",
+          "table_record_hex": "408dba080008aa01"
+        },
+        "normal_palette": {
+          "table_offset": 17008604,
+          "data_offset": 12226660,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "4e0c675b6e1fe1bd472206e467d7a2b5bc962111e4efd171602fb27f39c1adf6",
+          "table_record_hex": "6490ba08aa010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028132,
+          "data_offset": 12226700,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "4e0c675b6e1fe1bd472206e467d7a2b5bc962111e4efd171602fb27f39c1adf6",
+          "table_record_hex": "8c90ba089e030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/426-front_default.png",
+          "url": "/ultra-art/426-front_default.png",
+          "sha256": "3c57bc351cb90c987732a93e38d7adf933965c716d99f73be75b1854df370637"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/426-back_default.png",
+          "url": "/ultra-art/426-back_default.png",
+          "sha256": "35c09ab64ed4775f3e70964bffce2e06a9e6716adac9859ac0e5058427505bc3"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/426-front_shiny.png",
+          "url": "/ultra-art/426-front_shiny.png",
+          "sha256": "3c57bc351cb90c987732a93e38d7adf933965c716d99f73be75b1854df370637"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/426-back_shiny.png",
+          "url": "/ultra-art/426-back_shiny.png",
+          "sha256": "35c09ab64ed4775f3e70964bffce2e06a9e6716adac9859ac0e5058427505bc3"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17156508,
+          "method_raw": 7,
+          "parameter": 95,
+          "target_sid": 426,
+          "padding": 0,
+          "source_sid": 520,
+          "source_name": "鸭嘴炎兽",
+          "item_name": "火之石"
+        }
+      ],
+      "normal_shiny_identical": true,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 26,
+          "name": "飘浮",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 26,
+          "name": "飘浮",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 26,
+          "name": "飘浮",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 427,
+      "source_name": "尼多王Y",
+      "name_bytes_hex": "09d703850d5dd3ff000000",
+      "stats_offset": 16909748,
+      "record_sha256": "6952614207383f932b391714377eec5d801ecba9a9b4a296b2a7c79fdd495bbf",
+      "record_hex": "644664789164040de13d040100000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 100,
+        "atk": 70,
+        "def": 100,
+        "spe": 120,
+        "spa": 145,
+        "spd": 100
+      },
+      "type_ids": [
+        4,
+        13
+      ],
+      "types": [
+        "Ground",
+        "Electric"
+      ],
+      "ability_ids": [
+        125,
+        125,
+        125
+      ],
+      "ability_table_offset": 24775170,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:427",
+      "national_number": 34,
+      "display_name": "尼多王 Y",
+      "parent_source_sid": 34,
+      "assets": {
+        "front": {
+          "table_offset": 16969556,
+          "data_offset": 12263396,
+          "compressed_bytes": 1298,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "af39fab54e2614eca3e11dceb30a1bb58e564dad7e47b4d988ce02836e244371",
+          "table_record_hex": "e41fbb080008ab01"
+        },
+        "back": {
+          "table_offset": 16989084,
+          "data_offset": 12264696,
+          "compressed_bytes": 1056,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "4065a13468682ab285571b5f95d2da036fb6f8ad4548a0178b5b2c056b0b63e2",
+          "table_record_hex": "f824bb080008ab01"
+        },
+        "normal_palette": {
+          "table_offset": 17008612,
+          "data_offset": 12265752,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "b87f5cca30cd488187f9895dea703df179f2286b19c06258010ee3b8cc0acfa5",
+          "table_record_hex": "1829bb08ab010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028140,
+          "data_offset": 12265792,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "0b737a0f0cd7f34a4ca309d77878d7761763a437393f8e80513ca18f59908aae",
+          "table_record_hex": "4029bb089f030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/427-front_default.png",
+          "url": "/ultra-art/427-front_default.png",
+          "sha256": "68b9a7e827dfd0fca17d0ff58f7397a4987a1ad475aad8bbb6464cdec790adaa"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/427-back_default.png",
+          "url": "/ultra-art/427-back_default.png",
+          "sha256": "ffa0694f3a303cca8f3f37c8ab07b8f6634145aa0928aacc7e8700025abc582b"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/427-front_shiny.png",
+          "url": "/ultra-art/427-front_shiny.png",
+          "sha256": "ce168911f58b0715a2c692abd077b6d8973e155ed1a86cc3946764bb8bcc0a23"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/427-back_shiny.png",
+          "url": "/ultra-art/427-back_shiny.png",
+          "sha256": "832a783001000e90c4a257628551393b67fc5ef18817dc3a777e1fe9dadabab2"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17137076,
+          "method_raw": 7,
+          "parameter": 96,
+          "target_sid": 427,
+          "padding": 0,
+          "source_sid": 34,
+          "source_name": "尼多王",
+          "item_name": "雷之石"
+        }
+      ],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 125,
+          "name": "强行",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 125,
+          "name": "强行",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 125,
+          "name": "强行",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 428,
+      "source_name": "小智忍蛙",
+      "name_bytes_hex": "0e2c10980b4c0d44ff0000",
+      "stats_offset": 16909776,
+      "record_sha256": "0d9ff5c441f2cee45430fa3f1bcf4a4808197d5d5b1eb6926b2822a47fbb11f9",
+      "record_hex": "5264508499500b11e13d040100000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 82,
+        "atk": 100,
+        "def": 80,
+        "spe": 132,
+        "spa": 153,
+        "spd": 80
+      },
+      "type_ids": [
+        11,
+        17
+      ],
+      "types": [
+        "Water",
+        "Dark"
+      ],
+      "ability_ids": [
+        80,
+        80,
+        80
+      ],
+      "ability_table_offset": 24775176,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:428",
+      "national_number": 658,
+      "display_name": "小智忍蛙 · 神战版",
+      "parent_source_sid": 711,
+      "assets": {
+        "front": {
+          "table_offset": 16969564,
+          "data_offset": 33126352,
+          "compressed_bytes": 1853,
+          "decoded_bytes": 4096,
+          "decoded_sha256": "a625155d6624344b9f8aab45d97acc4c5cf40f25ae31790b31e44de7ac129da5",
+          "table_record_hex": "d077f9090008ac01"
+        },
+        "back": {
+          "table_offset": 16989092,
+          "data_offset": 33128208,
+          "compressed_bytes": 929,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "15b0f8b7037f2b8a68927449fd52b08dc34e9e1d5705af2559706a951376e8cc",
+          "table_record_hex": "107ff9090008ac01"
+        },
+        "normal_palette": {
+          "table_offset": 17008620,
+          "data_offset": 33129140,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "9f2ae21445152253972d300eea68b1c71303395a703a22b53e724234fc35c98a",
+          "table_record_hex": "b482f909ac010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028148,
+          "data_offset": 33129180,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "4c941b67e4c23d6e7e2241d3479f1bc003c635c588e0b71eea916a6e1fa45e03",
+          "table_record_hex": "dc82f909a0030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/428-front_default.png",
+          "url": "/ultra-art/428-front_default.png",
+          "sha256": "24ff9bc8326d6781b939315b3f834971bf31c121f8c4ecceecc1f87385563722"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/428-back_default.png",
+          "url": "/ultra-art/428-back_default.png",
+          "sha256": "8fbcd42bedf3e0f69c9264f22a0ea7b563a236edb36ee26a87842d459291e530"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/428-front_shiny.png",
+          "url": "/ultra-art/428-front_shiny.png",
+          "sha256": "0b210f510a5ed591ac1c1033319b2e575ab81ab3151cffefb12b9cba823f4ffa"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/428-back_shiny.png",
+          "url": "/ultra-art/428-back_shiny.png",
+          "sha256": "3f7f60384c7cb3b64e9736d9ec9e7f22a80f94885695ef4bad65dac42def5962"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17164156,
+          "method_raw": 1,
+          "parameter": 0,
+          "target_sid": 428,
+          "padding": 0,
+          "source_sid": 711,
+          "source_name": "甲贺忍蛙",
+          "item_name": null
+        }
+      ],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 80,
+          "name": "变幻自如",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 80,
+          "name": "变幻自如",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 80,
+          "name": "变幻自如",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 429,
+      "source_name": "超级音波龙",
+      "name_bytes_hex": "022e05a10f4401c308cdff",
+      "stats_offset": 16909804,
+      "record_sha256": "620c50ad58d212aec7fa65f0e6286de121161fe3bac764e3c59db2af9bbf4a16",
+      "record_hex": "6948648f7f641002e13d040100000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 105,
+        "atk": 72,
+        "def": 100,
+        "spe": 143,
+        "spa": 127,
+        "spd": 100
+      },
+      "type_ids": [
+        16,
+        2
+      ],
+      "types": [
+        "Dragon",
+        "Flying"
+      ],
+      "ability_ids": [
+        184,
+        184,
+        184
+      ],
+      "ability_table_offset": 24775182,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:429",
+      "national_number": 715,
+      "display_name": "超级音波龙",
+      "parent_source_sid": 768,
+      "assets": {
+        "front": {
+          "table_offset": 16969572,
+          "data_offset": 16774044,
+          "compressed_bytes": 1299,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "2addd21173a9bc1f03e934fc35324af686aff2dfa4df9230501ab6078b5d2157",
+          "table_record_hex": "9cf3ff080008ad01"
+        },
+        "back": {
+          "table_offset": 16989100,
+          "data_offset": 16775344,
+          "compressed_bytes": 1127,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "38289e27672d794b034d55c338d3780ffdc87cc19b71e81a17755a1191ccdfea",
+          "table_record_hex": "b0f8ff080008ad01"
+        },
+        "normal_palette": {
+          "table_offset": 17008628,
+          "data_offset": 16776472,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "e74018e5b97b9f46dc9c93e0dab7ff5996a8b65879f7a92f143488d4323e47c1",
+          "table_record_hex": "18fdff08ad010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028156,
+          "data_offset": 16776512,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "e74018e5b97b9f46dc9c93e0dab7ff5996a8b65879f7a92f143488d4323e47c1",
+          "table_record_hex": "40fdff08a1030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/429-front_default.png",
+          "url": "/ultra-art/429-front_default.png",
+          "sha256": "016e3bf322d0eebd1b861338189a263bb7609c5f26ad767710b2437d49bbbf80"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/429-back_default.png",
+          "url": "/ultra-art/429-back_default.png",
+          "sha256": "1ddd9b5a58454f12ebf8a600d3c15ce8ac4a742288fd32b0ac90aa3a027d11d1"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/429-front_shiny.png",
+          "url": "/ultra-art/429-front_shiny.png",
+          "sha256": "016e3bf322d0eebd1b861338189a263bb7609c5f26ad767710b2437d49bbbf80"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/429-back_shiny.png",
+          "url": "/ultra-art/429-back_shiny.png",
+          "sha256": "1ddd9b5a58454f12ebf8a600d3c15ce8ac4a742288fd32b0ac90aa3a027d11d1"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17166428,
+          "method_raw": 6,
+          "parameter": 216,
+          "target_sid": 429,
+          "padding": 0,
+          "source_sid": 768,
+          "source_name": "音波龙",
+          "item_name": "龙之牙"
+        }
+      ],
+      "normal_shiny_identical": true,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 184,
+          "name": "飞行皮肤",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 184,
+          "name": "飞行皮肤",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 184,
+          "name": "飞行皮肤",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 430,
+      "source_name": "超级君主蛇",
+      "name_bytes_hex": "022e05a107ad10c80bbdff",
+      "stats_offset": 16909832,
+      "record_sha256": "8e90c5a428930c11961e3fdefbb687ebebfae5b7e014ddb82c372faf8c050f02",
+      "record_hex": "554b698569690c10e13d040100000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 85,
+        "atk": 75,
+        "def": 105,
+        "spe": 133,
+        "spa": 105,
+        "spd": 105
+      },
+      "type_ids": [
+        12,
+        16
+      ],
+      "types": [
+        "Grass",
+        "Dragon"
+      ],
+      "ability_ids": [
+        126,
+        126,
+        126
+      ],
+      "ability_table_offset": 24775188,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:430",
+      "national_number": 497,
+      "display_name": "超级君主蛇",
+      "parent_source_sid": 550,
+      "assets": {
+        "front": {
+          "table_offset": 16969580,
+          "data_offset": 33129224,
+          "compressed_bytes": 1706,
+          "decoded_bytes": 4096,
+          "decoded_sha256": "211106820d8bd1cf51aead045c48ea65e736d5b4abf9933e416428d072c176c8",
+          "table_record_hex": "0883f9090008ae01"
+        },
+        "back": {
+          "table_offset": 16989108,
+          "data_offset": 33130932,
+          "compressed_bytes": 866,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "f5e11fe54f10f700b5dc21770c2acb31c520cf9feef17675b1e36b8c4c19a915",
+          "table_record_hex": "b489f9090008ae01"
+        },
+        "normal_palette": {
+          "table_offset": 17008636,
+          "data_offset": 33131800,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "8e2d5cc81c7a443e63dfa448026ac911b60b971461be7545a9ff12cfcaef32c0",
+          "table_record_hex": "188df909ae010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028164,
+          "data_offset": 33131840,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "a01b084a82b0ae54033be3a8b16bc14c330dbaa73ec70e59446d04d41bdcac62",
+          "table_record_hex": "408df909a2030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/430-front_default.png",
+          "url": "/ultra-art/430-front_default.png",
+          "sha256": "68e9912976b70bfe90d3850e2caa1d0a4de089ce1f958a648f1c2150635518d2"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/430-back_default.png",
+          "url": "/ultra-art/430-back_default.png",
+          "sha256": "801060b623241ca8762ac2fcaf1d991d5c66d8bc66cedd7852d4e5e77087961b"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/430-front_shiny.png",
+          "url": "/ultra-art/430-front_shiny.png",
+          "sha256": "681be7bc490fa37f628b15e530eb45a4efdb8f4ca9a582160f68c98f0e0219f2"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/430-back_shiny.png",
+          "url": "/ultra-art/430-back_shiny.png",
+          "sha256": "a3f711efdebe77ca8e5fb69cb672653c8854dac6b34ac45000a1255734cdf39d"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17157708,
+          "method_raw": 7,
+          "parameter": 98,
+          "target_sid": 430,
+          "padding": 0,
+          "source_sid": 550,
+          "source_name": "君主蛇",
+          "item_name": "叶之石"
+        }
+      ],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 126,
+          "name": "唱反调",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 126,
+          "name": "唱反调",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 126,
+          "name": "唱反调",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 431,
+      "source_name": "飞行皮卡丘",
+      "name_bytes_hex": "03cc0e5b0a5f07b60b12ff",
+      "stats_offset": 16909860,
+      "record_sha256": "e2141f42baec3660e1fef7c30b4666372500d8ce3fe4c6211b96a20e06b5e0e7",
+      "record_hex": "466e509648640d02e13d040100000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 70,
+        "atk": 110,
+        "def": 80,
+        "spe": 150,
+        "spa": 72,
+        "spd": 100
+      },
+      "type_ids": [
+        13,
+        2
+      ],
+      "types": [
+        "Electric",
+        "Flying"
+      ],
+      "ability_ids": [
+        31,
+        9,
+        206
+      ],
+      "ability_table_offset": 24775194,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:431",
+      "national_number": 25,
+      "display_name": "飞行皮卡丘",
+      "parent_source_sid": 25,
+      "assets": {
+        "front": {
+          "table_offset": 16969588,
+          "data_offset": 33131884,
+          "compressed_bytes": 1232,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "0ea1f856994f9c71b1f751fcf317d3af6ad33a93a3a56af9352b69ca8d90c82d",
+          "table_record_hex": "6c8df9090008af01"
+        },
+        "back": {
+          "table_offset": 16989116,
+          "data_offset": 33133116,
+          "compressed_bytes": 1221,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "bb0d34374122970f9f9c19054e446eef204d74e966ad349db662b2eee3230539",
+          "table_record_hex": "3c92f9090008af01"
+        },
+        "normal_palette": {
+          "table_offset": 17008644,
+          "data_offset": 33134340,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "f26cbc9de12fdfc12b3d8ff867198d3cfe3fd40ab5d4383599b9ed718ef23c05",
+          "table_record_hex": "0497f909af010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028172,
+          "data_offset": 33134380,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "b9e26d4844aaacea206b46805f3b93f0e90f5577d6e21dd59053f3502f23df49",
+          "table_record_hex": "2c97f909a3030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/431-front_default.png",
+          "url": "/ultra-art/431-front_default.png",
+          "sha256": "09932d119cf766cb95a44be887d3e1d68235baa95d7626abbb45e596fdd5c26c"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/431-back_default.png",
+          "url": "/ultra-art/431-back_default.png",
+          "sha256": "5042f134d1b3b253ca10979565f11a683fdb80cce86b4b83f02715a675182c33"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/431-front_shiny.png",
+          "url": "/ultra-art/431-front_shiny.png",
+          "sha256": "85dd37e55f8464601f99c47e92c2001bb83b4b3f30ae668c8ab8d90c7cc424ac"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/431-back_shiny.png",
+          "url": "/ultra-art/431-back_shiny.png",
+          "sha256": "b5066d7ef667d34c914fad8fcd71930fc6bd753310341fbfaf0e132fad91dd59"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17136708,
+          "method_raw": 6,
+          "parameter": 96,
+          "target_sid": 431,
+          "padding": 0,
+          "source_sid": 25,
+          "source_name": "皮卡丘",
+          "item_name": "雷之石"
+        }
+      ],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 31,
+          "name": "避雷针",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 9,
+          "name": "静电",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 206,
+          "name": "电气皮肤",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 432,
+      "source_name": "黯影超梦",
+      "name_bytes_hex": "1e550f5e022e0966ff0000",
+      "stats_offset": 16909888,
+      "record_sha256": "a1e53ce40442a6a4e2999351c8d46f29fdfe36d3ee0f2f0cb72aa40f45c47a3f",
+      "record_hex": "6a9a64825a640111e13d0c0300000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 106,
+        "atk": 154,
+        "def": 100,
+        "spe": 130,
+        "spa": 90,
+        "spd": 100
+      },
+      "type_ids": [
+        1,
+        17
+      ],
+      "types": [
+        "Fighting",
+        "Dark"
+      ],
+      "ability_ids": [
+        186,
+        186,
+        186
+      ],
+      "ability_table_offset": 24775200,
+      "evolutions": [
+        {
+          "offset": 17152988,
+          "method_raw": 7,
+          "parameter": 100,
+          "target_sid": 413,
+          "padding": 0
+        }
+      ],
+      "entry_id": "dex:omni:ultra58:432",
+      "national_number": 150,
+      "display_name": "黯影超梦",
+      "parent_source_sid": null,
+      "assets": {
+        "front": {
+          "table_offset": 16969596,
+          "data_offset": 14032260,
+          "compressed_bytes": 1548,
+          "decoded_bytes": 4096,
+          "decoded_sha256": "244a40c9bb86f03e95ab461c6edb5be26f5049e9c941c3e2a27388d4c66d6839",
+          "table_record_hex": "841dd6080008b001"
+        },
+        "back": {
+          "table_offset": 16989124,
+          "data_offset": 14033808,
+          "compressed_bytes": 899,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "0ad57d2879a4aa2cb00aee4a59c4827a50e014014c97a40a0d874dac4dabc158",
+          "table_record_hex": "9023d6080008b001"
+        },
+        "normal_palette": {
+          "table_offset": 17008652,
+          "data_offset": 14034708,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "7689d4ddd7eae9f370b62c29fa0a95f0f3880c0b311fcebd81374568b435f349",
+          "table_record_hex": "1427d608b0010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028180,
+          "data_offset": 14034748,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "bf94c3b598780a859ec2b7ec718714d4f84ae352e66bde9505cb28003e851a54",
+          "table_record_hex": "3c27d608a4030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/432-front_default.png",
+          "url": "/ultra-art/432-front_default.png",
+          "sha256": "d588bc7f60ae0a54a19118348d437cc7c27ee8083596fd8d346dd2ae0cdfc6e5"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/432-back_default.png",
+          "url": "/ultra-art/432-back_default.png",
+          "sha256": "9f7de14e664b40c8431c63d67c1c87dc9926cbe231b3d746c64f4f6fb4bb0a73"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/432-front_shiny.png",
+          "url": "/ultra-art/432-front_shiny.png",
+          "sha256": "351dd9937b47bf820fd6d1566bd4659b5efd7605dc5ad26bfb9b0fa91f73cc02"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/432-back_shiny.png",
+          "url": "/ultra-art/432-back_shiny.png",
+          "sha256": "8ad57b64aca45611bf02174d5536d5210816fb6f67096f2356c678c4fcd73e4e"
+        }
+      },
+      "incoming_evolutions": [],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 186,
+          "name": "暗黑气场",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 186,
+          "name": "暗黑气场",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 186,
+          "name": "暗黑气场",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 433,
+      "source_name": "灭世魔龙",
+      "name_bytes_hex": "09880c05099d08cdff0000",
+      "stats_offset": 16909916,
+      "record_sha256": "828fd00c67968c9df121417f19fc35174806684179e817e0a53dafedbd74c388",
+      "record_hex": "6496787d3c781011e13d040100000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 100,
+        "atk": 150,
+        "def": 120,
+        "spe": 125,
+        "spa": 60,
+        "spd": 120
+      },
+      "type_ids": [
+        16,
+        17
+      ],
+      "types": [
+        "Dragon",
+        "Dark"
+      ],
+      "ability_ids": [
+        104,
+        186,
+        80
+      ],
+      "ability_table_offset": 24775206,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:433",
+      "national_number": 621,
+      "display_name": "灭世魔龙",
+      "parent_source_sid": 674,
+      "assets": {
+        "front": {
+          "table_offset": 16969604,
+          "data_offset": 11841808,
+          "compressed_bytes": 999,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "a76ca88f001a65e281f5a6ba9a415cd51a1b09c9ec9ed01712d3c885eeeee305",
+          "table_record_hex": "10b1b4080008b101"
+        },
+        "back": {
+          "table_offset": 16989132,
+          "data_offset": 11842808,
+          "compressed_bytes": 838,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "89ba836bc9f3de88de836cf8a37a90ca333f64b639fef85d5f883e45d12b9c6d",
+          "table_record_hex": "f8b4b4080008b101"
+        },
+        "normal_palette": {
+          "table_offset": 17008660,
+          "data_offset": 11843648,
+          "compressed_bytes": 34,
+          "decoded_bytes": 32,
+          "decoded_sha256": "6924636c6fc00db5a7294e9d00abf0a6dad9f13a975c062ba4bcc11450517a96",
+          "table_record_hex": "40b8b408b1010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028188,
+          "data_offset": 11843684,
+          "compressed_bytes": 31,
+          "decoded_bytes": 32,
+          "decoded_sha256": "1c62aced064459eaf292ee28844185a78107195a1861453e346836dd14344994",
+          "table_record_hex": "64b8b408a5030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/433-front_default.png",
+          "url": "/ultra-art/433-front_default.png",
+          "sha256": "241afe31d79cc65d8e67b12039364be85c452539359f43042972fc157aee080d"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/433-back_default.png",
+          "url": "/ultra-art/433-back_default.png",
+          "sha256": "66128c2420f2401c1a68294b2c3d5f81e7078f7c590dc22a2ddf3d0d944826f0"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/433-front_shiny.png",
+          "url": "/ultra-art/433-front_shiny.png",
+          "sha256": "2b098ab11fbc38736913a60a98d85f5481ee1e3c932bf7655e615a3a69237708"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/433-back_shiny.png",
+          "url": "/ultra-art/433-back_shiny.png",
+          "sha256": "b4075f2766f24be2e671c7c2109c33946272c76829a23d6beb142888791c4213"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17162668,
+          "method_raw": 6,
+          "parameter": 100,
+          "target_sid": 433,
+          "padding": 0,
+          "source_sid": 674,
+          "source_name": "赤面龙",
+          "item_name": "暗之石"
+        }
+      ],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 104,
+          "name": "破格",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 186,
+          "name": "暗黑气场",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 80,
+          "name": "变幻自如",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 434,
+      "source_name": "超级九尾",
+      "name_bytes_hex": "022e05a107750d78ff0000",
+      "stats_offset": 16909944,
+      "record_sha256": "0ee58618b44afa50c61c884cc3796c558f3c94dc1a93f64cddb6b1ba83842b2d",
+      "record_hex": "5d485f7879780a17e13d040100000000ff2846000f0f1a1a00001a00",
+      "stats": {
+        "hp": 93,
+        "atk": 72,
+        "def": 95,
+        "spe": 120,
+        "spa": 121,
+        "spd": 120
+      },
+      "type_ids": [
+        10,
+        23
+      ],
+      "types": [
+        "Fire",
+        "Fairy"
+      ],
+      "ability_ids": [
+        70,
+        70,
+        70
+      ],
+      "ability_table_offset": 24775212,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:434",
+      "national_number": 38,
+      "display_name": "超级九尾",
+      "parent_source_sid": 38,
+      "assets": {
+        "front": {
+          "table_offset": 16969612,
+          "data_offset": 33134424,
+          "compressed_bytes": 1510,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "4d3b32a15cdc6d6370a764e4a5c433689147def6e602b5136edceb18770188ae",
+          "table_record_hex": "5897f9090008b201"
+        },
+        "back": {
+          "table_offset": 16989140,
+          "data_offset": 33135936,
+          "compressed_bytes": 1510,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "4d3b32a15cdc6d6370a764e4a5c433689147def6e602b5136edceb18770188ae",
+          "table_record_hex": "409df9090008b201"
+        },
+        "normal_palette": {
+          "table_offset": 17008668,
+          "data_offset": 33137448,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "11a57fbae8d0be76350d2718803784c287bbe6fbfbc9537fc6f1e5086b872ffe",
+          "table_record_hex": "28a3f909b2010000"
+        },
+        "shiny_palette": {
+          "table_offset": 17028196,
+          "data_offset": 33137488,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "11a57fbae8d0be76350d2718803784c287bbe6fbfbc9537fc6f1e5086b872ffe",
+          "table_record_hex": "50a3f909a6030000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/434-front_default.png",
+          "url": "/ultra-art/434-front_default.png",
+          "sha256": "d5a757bec24c90585f1700a9cbc236eb2c19a04dd7b166c3fc0967b81e1fbe78"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/434-back_default.png",
+          "url": "/ultra-art/434-back_default.png",
+          "sha256": "d5a757bec24c90585f1700a9cbc236eb2c19a04dd7b166c3fc0967b81e1fbe78"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/434-front_shiny.png",
+          "url": "/ultra-art/434-front_shiny.png",
+          "sha256": "d5a757bec24c90585f1700a9cbc236eb2c19a04dd7b166c3fc0967b81e1fbe78"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/434-back_shiny.png",
+          "url": "/ultra-art/434-back_shiny.png",
+          "sha256": "d5a757bec24c90585f1700a9cbc236eb2c19a04dd7b166c3fc0967b81e1fbe78"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17137228,
+          "method_raw": 7,
+          "parameter": 94,
+          "target_sid": 434,
+          "padding": 0,
+          "source_sid": 38,
+          "source_name": "九尾",
+          "item_name": "月之石"
+        }
+      ],
+      "normal_shiny_identical": true,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 70,
+          "name": "日照",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 70,
+          "name": "日照",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 70,
+          "name": "日照",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 990,
+      "source_name": "化石雷鸟",
+      "name_bytes_hex": "053c0beb084c09e7ff0000",
+      "stats_offset": 16925512,
+      "record_sha256": "4d74bc77b24f723b9eb07663f35045c60f31bddb200974a14eb7cd62a5465488",
+      "record_hex": "5a645a5f50320d052db1080000000000ff2346050f0f090900030900",
+      "stats": {
+        "hp": 90,
+        "atk": 100,
+        "def": 90,
+        "spe": 95,
+        "spa": 80,
+        "spd": 50
+      },
+      "type_ids": [
+        13,
+        5
+      ],
+      "types": [
+        "Electric",
+        "Rock"
+      ],
+      "ability_ids": [
+        10,
+        9,
+        206
+      ],
+      "ability_table_offset": 24778548,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:990",
+      "national_number": 0,
+      "display_name": "化石雷鸟",
+      "parent_source_sid": null,
+      "assets": {
+        "front": {
+          "table_offset": 16974060,
+          "data_offset": 22860488,
+          "compressed_bytes": 1218,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "4e53d259569b0c1c40f0308fd4d2ce9d9f80a3dfb61ce7ee728a17f55ea6a888",
+          "table_record_hex": "c8d25c0900080100"
+        },
+        "back": {
+          "table_offset": 16993588,
+          "data_offset": 22861712,
+          "compressed_bytes": 828,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "107b61cc6a847fac37bc5337f512c04bc5c6fe7e1a19c3bfeab3cdcda69d9901",
+          "table_record_hex": "90d75c0900080100"
+        },
+        "normal_palette": {
+          "table_offset": 17013116,
+          "data_offset": 22862548,
+          "compressed_bytes": 33,
+          "decoded_bytes": 32,
+          "decoded_sha256": "7841776a0e17bc4998ca5db11a26808cf433d479346671cbb83a4042456a4155",
+          "table_record_hex": "d4da5c0901000000"
+        },
+        "shiny_palette": {
+          "table_offset": 17032644,
+          "data_offset": 22862584,
+          "compressed_bytes": 33,
+          "decoded_bytes": 32,
+          "decoded_sha256": "bffc9b89a973b078e3c29e422e53c51ce2b8a8eb31a76ec4f6c38b3f027909ec",
+          "table_record_hex": "f8da5c09f5010000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/990-front_default.png",
+          "url": "/ultra-art/990-front_default.png",
+          "sha256": "a4c4f3b7079eda882abeddf0ea937f746c3b113931281fcd922e03829fdcd49e"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/990-back_default.png",
+          "url": "/ultra-art/990-back_default.png",
+          "sha256": "02fadbba2d86d18d31290d6bf13e6f2f9d9fc8889984afb9779ceff00e066280"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/990-front_shiny.png",
+          "url": "/ultra-art/990-front_shiny.png",
+          "sha256": "f7f0e5c4293c9f056d26acd3d3855a784ca03f816423d3e22e99471cc584c7a9"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/990-back_shiny.png",
+          "url": "/ultra-art/990-back_shiny.png",
+          "sha256": "5f7c50e2ac82d3ab287baa0d5d9cde8c071e364ff38739bfb25249c6b55b4f19"
+        }
+      },
+      "incoming_evolutions": [],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 10,
+          "name": "蓄电",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 9,
+          "name": "静电",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 206,
+          "name": "电气皮肤",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 991,
+      "source_name": "化石巨龙",
+      "name_bytes_hex": "053c0beb078e08cdff0000",
+      "stats_offset": 16925540,
+      "record_sha256": "ec2eac44a209a7ed99dbfea15d71b2da24ddacba6b76dca1adc6587ab5162f7b",
+      "record_hex": "6464504b465010052db1050000000000ff1446050f0f090900030900",
+      "stats": {
+        "hp": 100,
+        "atk": 100,
+        "def": 80,
+        "spe": 75,
+        "spa": 70,
+        "spd": 80
+      },
+      "type_ids": [
+        16,
+        5
+      ],
+      "types": [
+        "Dragon",
+        "Rock"
+      ],
+      "ability_ids": [
+        24,
+        55,
+        146
+      ],
+      "ability_table_offset": 24778554,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:991",
+      "national_number": 0,
+      "display_name": "化石巨龙",
+      "parent_source_sid": null,
+      "assets": {
+        "front": {
+          "table_offset": 16974068,
+          "data_offset": 22862620,
+          "compressed_bytes": 1297,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "e5fd137f1329f1c007ff4cfcf80e9778d637492eb27e22f562ab8fd2b09265da",
+          "table_record_hex": "1cdb5c0900080100"
+        },
+        "back": {
+          "table_offset": 16993596,
+          "data_offset": 22863920,
+          "compressed_bytes": 1221,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "99594a7c60e4bee287c56cbb8e55f656e9d0f1f4902f283f74497cd92d3dcb89",
+          "table_record_hex": "30e05c0900080100"
+        },
+        "normal_palette": {
+          "table_offset": 17013124,
+          "data_offset": 22865144,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "942ba498a710eeeb9f737065548fa948a9bd9e3a2fe1a20670e4051c8f2dff52",
+          "table_record_hex": "f8e45c0901000000"
+        },
+        "shiny_palette": {
+          "table_offset": 17032652,
+          "data_offset": 22865184,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "bbaa3fb82d8e8ec4efaf2cb99f5e069881c522dfb7eb4bec58a03e469aa3ce88",
+          "table_record_hex": "20e55c09f5010000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/991-front_default.png",
+          "url": "/ultra-art/991-front_default.png",
+          "sha256": "8d48696e60eaba5a43efbf60e869dff482c48bec4425e4b9ff12923d5d9012a4"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/991-back_default.png",
+          "url": "/ultra-art/991-back_default.png",
+          "sha256": "3dce14b274feafbfb28a19cc63244f0e5c59a184cc2b95eb2f0c24e17b8a5980"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/991-front_shiny.png",
+          "url": "/ultra-art/991-front_shiny.png",
+          "sha256": "c33d41fd3ffc037ad2ddfc32d812501367b91c9339155f30d159b123fa55f17e"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/991-back_shiny.png",
+          "url": "/ultra-art/991-back_shiny.png",
+          "sha256": "24322fe079355f6bba784b476ec230707159cfec88f5d6a676186836a4659a2f"
+        }
+      },
+      "incoming_evolutions": [],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 24,
+          "name": "粗糙皮肤",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 55,
+          "name": "活力",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 146,
+          "name": "拨沙",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 992,
+      "source_name": "化石鳃鱼",
+      "name_bytes_hex": "053c0beb0b7a0f91ff0000",
+      "stats_offset": 16925568,
+      "record_sha256": "cae67e17f3169e6f917ec9b50d881aee6c62c00c71dcf0873315f2e5188e467b",
+      "record_hex": "5a5a644150500b052db1200000000000ff2346050f0f090900030900",
+      "stats": {
+        "hp": 90,
+        "atk": 90,
+        "def": 100,
+        "spe": 65,
+        "spa": 80,
+        "spd": 80
+      },
+      "type_ids": [
+        11,
+        5
+      ],
+      "types": [
+        "Water",
+        "Rock"
+      ],
+      "ability_ids": [
+        11,
+        173,
+        93
+      ],
+      "ability_table_offset": 24778560,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:992",
+      "national_number": 0,
+      "display_name": "化石鳃鱼",
+      "parent_source_sid": null,
+      "assets": {
+        "front": {
+          "table_offset": 16974076,
+          "data_offset": 19835276,
+          "compressed_bytes": 1219,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "d27a9e111e4710420017e6cd0d5fa1b8afdc5c374c0997fe09b69c46047cf31c",
+          "table_record_hex": "8ca92e0900080100"
+        },
+        "back": {
+          "table_offset": 16993604,
+          "data_offset": 19836500,
+          "compressed_bytes": 813,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "6cbd7424e08da26010b2071367fedae0d789a14c6c96f924d53b85076eab9e64",
+          "table_record_hex": "54ae2e0900080100"
+        },
+        "normal_palette": {
+          "table_offset": 17013132,
+          "data_offset": 19837320,
+          "compressed_bytes": 38,
+          "decoded_bytes": 32,
+          "decoded_sha256": "6d27e892cf80a8b0b16f51180f4f57ac3270d443a06bb39e686676493475c2e3",
+          "table_record_hex": "88b12e0901000000"
+        },
+        "shiny_palette": {
+          "table_offset": 17032660,
+          "data_offset": 19837364,
+          "compressed_bytes": 38,
+          "decoded_bytes": 32,
+          "decoded_sha256": "d53da8a3954e1669ec7daeabe64222a908809a1d14619ff4fe7946689ed9a8df",
+          "table_record_hex": "b4b12e09f5010000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/992-front_default.png",
+          "url": "/ultra-art/992-front_default.png",
+          "sha256": "9804fa1f39be15ce5f82bcb0575bbf0769f6be05db3fb48280f266d1c2506b9d"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/992-back_default.png",
+          "url": "/ultra-art/992-back_default.png",
+          "sha256": "9ced72414b2c8f0005f8428595cc7f8f44baa36fc6d4570f55471a0764b18d2c"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/992-front_shiny.png",
+          "url": "/ultra-art/992-front_shiny.png",
+          "sha256": "b63308ec14d1c039af0680412d22a097e5a87ebd924bc9d5dfb267ae00b74ebc"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/992-back_shiny.png",
+          "url": "/ultra-art/992-back_shiny.png",
+          "sha256": "f21c0d80fd2f9f14a3696be150bd0d3d53f8453ecb7aa0984621020100a9b1b1"
+        }
+      },
+      "incoming_evolutions": [],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 11,
+          "name": "储水",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 173,
+          "name": "强壮之颚",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 93,
+          "name": "湿润之躯",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 993,
+      "source_name": "化石海兽",
+      "name_bytes_hex": "053c0beb04c90c23ff0000",
+      "stats_offset": 16925596,
+      "record_sha256": "5fc2c6481b94be5d4aaddec03c1b2ed69e1a9a9454f92951d7e1b29fe6ddb873",
+      "record_hex": "6e505a37505a0f052db1020000000000ff2346050f0f090900030900",
+      "stats": {
+        "hp": 110,
+        "atk": 80,
+        "def": 90,
+        "spe": 55,
+        "spa": 80,
+        "spd": 90
+      },
+      "type_ids": [
+        15,
+        5
+      ],
+      "types": [
+        "Ice",
+        "Rock"
+      ],
+      "ability_ids": [
+        47,
+        115,
+        202
+      ],
+      "ability_table_offset": 24778566,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:993",
+      "national_number": 0,
+      "display_name": "化石海兽",
+      "parent_source_sid": null,
+      "assets": {
+        "front": {
+          "table_offset": 16974084,
+          "data_offset": 22865224,
+          "compressed_bytes": 1186,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "88c5b9ec660cd6cdb710142e593167317c3222312bed90fd380f513591be287f",
+          "table_record_hex": "48e55c0900080100"
+        },
+        "back": {
+          "table_offset": 16993612,
+          "data_offset": 22866416,
+          "compressed_bytes": 842,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "0c89e6208ccd7679d08e89776e41dc6afa6f64c0c47eba2cac224619cde10544",
+          "table_record_hex": "f0e95c0900080100"
+        },
+        "normal_palette": {
+          "table_offset": 17013140,
+          "data_offset": 22867260,
+          "compressed_bytes": 38,
+          "decoded_bytes": 32,
+          "decoded_sha256": "15ae829e5421a0e1d8664b62036ab3a3df50951c461876474959355e6bac5167",
+          "table_record_hex": "3ced5c0901000000"
+        },
+        "shiny_palette": {
+          "table_offset": 17032668,
+          "data_offset": 22867304,
+          "compressed_bytes": 38,
+          "decoded_bytes": 32,
+          "decoded_sha256": "e73b4816efc68c8ce48354923f1cc82251a52cd9962c18ba5977441e2311364b",
+          "table_record_hex": "68ed5c09f5010000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/993-front_default.png",
+          "url": "/ultra-art/993-front_default.png",
+          "sha256": "2844548593f3f9d715ad179aea7d773d3b322e228167f8fa143a67f7671100af"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/993-back_default.png",
+          "url": "/ultra-art/993-back_default.png",
+          "sha256": "093da10bcb2780b4e5014e82244120f2ca7b8c50dded8a38ee58c6f0f72bf3b8"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/993-front_shiny.png",
+          "url": "/ultra-art/993-front_shiny.png",
+          "sha256": "98d589a9a25b675de937acfa2b9f5f4d70fd128e40277239656aa8d777027361"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/993-back_shiny.png",
+          "url": "/ultra-art/993-back_shiny.png",
+          "sha256": "29ca77a536591932123963cf5c13269e189e2375a14fa2c70b9cffc3daed92d1"
+        }
+      },
+      "incoming_evolutions": [],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 47,
+          "name": "厚脂肪",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 115,
+          "name": "冰冻之躯",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 202,
+          "name": "拨雪",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 1076,
+      "source_name": "小智皮卡丘",
+      "name_bytes_hex": "0e2c10980a5f07b60b12ff",
+      "stats_offset": 16927920,
+      "record_sha256": "0979029d01cd11648c875acb8e375351779e7cd249fb4f09f5d70f02d349f37e",
+      "record_hex": "5a505a784b5a0d0dbe528000ca000000001446000f0f090906020900",
+      "stats": {
+        "hp": 90,
+        "atk": 80,
+        "def": 90,
+        "spe": 120,
+        "spa": 75,
+        "spd": 90
+      },
+      "type_ids": [
+        13,
+        13
+      ],
+      "types": [
+        "Electric"
+      ],
+      "ability_ids": [
+        9,
+        9,
+        31
+      ],
+      "ability_table_offset": 24779064,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:1076",
+      "national_number": 25,
+      "display_name": "小智皮卡丘 · 神战版",
+      "parent_source_sid": null,
+      "assets": {
+        "front": {
+          "table_offset": 16974748,
+          "data_offset": 22867348,
+          "compressed_bytes": 819,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "8caf060506b355bc3f48a418555af12ae9ec164169b259c83b6f2d2763ca1ea6",
+          "table_record_hex": "94ed5c0900080000"
+        },
+        "back": {
+          "table_offset": 16994276,
+          "data_offset": 22868168,
+          "compressed_bytes": 885,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "78f9b868c3f92f25844ae4b318c2fe1bcc54d96e5fe5ee230a4dfc35bcf10adf",
+          "table_record_hex": "c8f05c0900080000"
+        },
+        "normal_palette": {
+          "table_offset": 17013804,
+          "data_offset": 22869056,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "952ee295671ad01a6a2febb02659e62ca9adf058ab98c35dc9dbf272539821c9",
+          "table_record_hex": "40f45c0900000000"
+        },
+        "shiny_palette": {
+          "table_offset": 17033332,
+          "data_offset": 22869100,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "ecbb4e454bbe680c0f5e9699d78dfefa2bccbf6a016d85bfaba5fb0c7ec3334d",
+          "table_record_hex": "6cf45c09f4010000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1076-front_default.png",
+          "url": "/ultra-art/1076-front_default.png",
+          "sha256": "be361dab7dd357d0930c01b2e97dd825fdcbd8b7ad7e08567ddd0887f8b575e3"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1076-back_default.png",
+          "url": "/ultra-art/1076-back_default.png",
+          "sha256": "e6de78b046e98c128f4a9207801ed660c79a83180448c15167b286d2d76c3241"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1076-front_shiny.png",
+          "url": "/ultra-art/1076-front_shiny.png",
+          "sha256": "abeef351142665ccbcfd46f63d37bbbe921f85455eeb8a2c7dd74c7dd8331dd5"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1076-back_shiny.png",
+          "url": "/ultra-art/1076-back_shiny.png",
+          "sha256": "095e843a96cc3d72677ae654607b6d1eff99192599238807c2b636333f26c177"
+        }
+      },
+      "incoming_evolutions": [],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 9,
+          "name": "静电",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 9,
+          "name": "静电",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 31,
+          "name": "避雷针",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 1079,
+      "source_name": "暗黑洛奇亚",
+      "name_bytes_hex": "01140509091f0aa10eb0ff",
+      "stats_offset": 16928004,
+      "record_sha256": "3ed8f9535e7e571d3dc9b72496695fb8d77ff74644d1e8796f998a844c3b44c5",
+      "record_hex": "6a825a6e9a5a11021edc0c0300000000ff7800050f0fbaba00048c00",
+      "stats": {
+        "hp": 106,
+        "atk": 130,
+        "def": 90,
+        "spe": 110,
+        "spa": 154,
+        "spd": 90
+      },
+      "type_ids": [
+        17,
+        2
+      ],
+      "types": [
+        "Dark",
+        "Flying"
+      ],
+      "ability_ids": [
+        136,
+        186,
+        136
+      ],
+      "ability_table_offset": 24779082,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:1079",
+      "national_number": 249,
+      "display_name": "暗黑洛奇亚",
+      "parent_source_sid": null,
+      "assets": {
+        "front": {
+          "table_offset": 16974772,
+          "data_offset": 22472432,
+          "compressed_bytes": 1082,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "8864b27b894e6301543dd14997b49ec41e9a712194043c18a3ac2eed919436c0",
+          "table_record_hex": "f0e6560900080000"
+        },
+        "back": {
+          "table_offset": 16994300,
+          "data_offset": 22473520,
+          "compressed_bytes": 912,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "d9f898b0c2891e1544ef661ff61be8ba61cf3896ae75e1e588aa73f8e27ecadd",
+          "table_record_hex": "30eb560900080000"
+        },
+        "normal_palette": {
+          "table_offset": 17013828,
+          "data_offset": 22474436,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "0f7337d8519fe68641f30449055231f3f890ca002be3e0340e6b3e772bd223e0",
+          "table_record_hex": "c4ee560900000000"
+        },
+        "shiny_palette": {
+          "table_offset": 17033356,
+          "data_offset": 22474480,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "1ea54b482dee9feb25d099a965dbf90376ee494bda7c43b1445b8f0cb5a82a5a",
+          "table_record_hex": "f0ee5609f4010000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1079-front_default.png",
+          "url": "/ultra-art/1079-front_default.png",
+          "sha256": "75adba3047c08be2a6986c95915b290c2c66416e3b06235d5acc4116ac2184c0"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1079-back_default.png",
+          "url": "/ultra-art/1079-back_default.png",
+          "sha256": "c3ac53b87a768f1f6205348d32ed9e418a04d145855588da41c9702580c490c7"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1079-front_shiny.png",
+          "url": "/ultra-art/1079-front_shiny.png",
+          "sha256": "2f5b6e7186b7445f13942f2b43b992ff3d351c2e6c487ef759a44dd5b90a8a67"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1079-back_shiny.png",
+          "url": "/ultra-art/1079-back_shiny.png",
+          "sha256": "15a0c0e2a9ebf4b49a83fa3202b9ba2f6084ac23b343300fef74f26baf60e260"
+        }
+      },
+      "incoming_evolutions": [],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 136,
+          "name": "多重鳞片",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 186,
+          "name": "暗黑气场",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 136,
+          "name": "多重鳞片",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 1097,
+      "source_name": "铠甲超梦",
+      "name_bytes_hex": "19e505c2022e0966ff0000",
+      "stats_offset": 16928508,
+      "record_sha256": "803604e6a2623bd50797072009625f9cc81eba157373e048e0e424da55ed0076",
+      "record_hex": "6a8e8a505b7b0e080fdc000cb302b302ff7800050f0f04850006e800",
+      "stats": {
+        "hp": 106,
+        "atk": 142,
+        "def": 138,
+        "spe": 80,
+        "spa": 91,
+        "spd": 123
+      },
+      "type_ids": [
+        14,
+        8
+      ],
+      "types": [
+        "Psychic",
+        "Steel"
+      ],
+      "ability_ids": [
+        4,
+        133,
+        232
+      ],
+      "ability_table_offset": 24779190,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:1097",
+      "national_number": 150,
+      "display_name": "铠甲超梦",
+      "parent_source_sid": null,
+      "assets": {
+        "front": {
+          "table_offset": 16974916,
+          "data_offset": 21652264,
+          "compressed_bytes": 1291,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "19ee91a9f50b643cf7b2659621793885b35cc90e5de16e6da72298db2ca59588",
+          "table_record_hex": "28634a0900080000"
+        },
+        "back": {
+          "table_offset": 16994444,
+          "data_offset": 21653560,
+          "compressed_bytes": 1260,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "fa91d5cea605700e6e2c024ad707d7888c8f66e76e902ae086e0906c65588735",
+          "table_record_hex": "38684a0900080000"
+        },
+        "normal_palette": {
+          "table_offset": 17013972,
+          "data_offset": 21654824,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "7a6f9373d89869a83a6896c48b1dab9328051b0e62068fdca365717156cfe663",
+          "table_record_hex": "286d4a0900000000"
+        },
+        "shiny_palette": {
+          "table_offset": 17033500,
+          "data_offset": 21654864,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "e9da343cb4f71da1e98fe4e2168e06bb98a841ce9e7043a6b105d2ba7987646d",
+          "table_record_hex": "506d4a09f4010000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1097-front_default.png",
+          "url": "/ultra-art/1097-front_default.png",
+          "sha256": "e0abed0e4d4d79187b167bb7a437ac9034a960946f7836c73ae57677aff610e7"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1097-back_default.png",
+          "url": "/ultra-art/1097-back_default.png",
+          "sha256": "7c274bf957ce0b10e5c0b55b9d65299506f63c66fd6f7e8e1cc5fb2957e4559d"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1097-front_shiny.png",
+          "url": "/ultra-art/1097-front_shiny.png",
+          "sha256": "36a1c9227ee30958f6a9a8ef2f45358a0d2ae4cfe4732c97e75c9dfc7a910175"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1097-back_shiny.png",
+          "url": "/ultra-art/1097-back_shiny.png",
+          "sha256": "1f01c5c317364360bb61c6cfd07d347159741805ba02c205f2982ce91d3606bd"
+        }
+      },
+      "incoming_evolutions": [],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 4,
+          "name": "战斗盔甲",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 133,
+          "name": "碎裂铠甲",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 232,
+          "name": "棱镜装甲",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 1106,
+      "source_name": "沙漠蜻蜓",
+      "name_bytes_hex": "0b9109a41c561c48ff0000",
+      "stats_offset": 16928760,
+      "record_sha256": "d5cd6234ef9ff0bf7b499672d972d4bc77cd82eb8c45a42fdc9a51f3c2df0b1f",
+      "record_hex": "50606c78924604062dc50003000000007f7846030f0f030300030300",
+      "stats": {
+        "hp": 80,
+        "atk": 96,
+        "def": 108,
+        "spe": 120,
+        "spa": 146,
+        "spd": 70
+      },
+      "type_ids": [
+        4,
+        6
+      ],
+      "types": [
+        "Ground",
+        "Bug"
+      ],
+      "ability_ids": [
+        3,
+        3,
+        3
+      ],
+      "ability_table_offset": 24779244,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:1106",
+      "national_number": 330,
+      "display_name": "沙漠蜻蜓 · 神战超进化",
+      "parent_source_sid": 334,
+      "assets": {
+        "front": {
+          "table_offset": 16974988,
+          "data_offset": 21123352,
+          "compressed_bytes": 1391,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "7c3ad44a217d39437d3d89f7a6a87fda5d7b39f689508bbbb6374d16f8832f26",
+          "table_record_hex": "1851420900080000"
+        },
+        "back": {
+          "table_offset": 16994516,
+          "data_offset": 21124748,
+          "compressed_bytes": 1236,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "0f49b8e0c717a0c14882ee9eb4ef68a66340ee34ebdc14c3e27e820a77274fe3",
+          "table_record_hex": "8c56420900080000"
+        },
+        "normal_palette": {
+          "table_offset": 17014044,
+          "data_offset": 21125988,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "62660540a33889f0a22f199a712f549574e3442b67673a9c892ba09a0c3ad8bf",
+          "table_record_hex": "645b420900000000"
+        },
+        "shiny_palette": {
+          "table_offset": 17033572,
+          "data_offset": 21126028,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "b05ee504b08031aee125b97a4d4c6d1c017997c569e58b7499197c389aa35c88",
+          "table_record_hex": "8c5b4209f4010000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1106-front_default.png",
+          "url": "/ultra-art/1106-front_default.png",
+          "sha256": "580741bcd42e884d6b20f156fef875c75f6ccba875175b74f45448e1636536fe"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1106-back_default.png",
+          "url": "/ultra-art/1106-back_default.png",
+          "sha256": "96b23a6e92e28a7ec3021546ac5a45e41f1be4c7f091872b975a7a7c780aca79"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1106-front_shiny.png",
+          "url": "/ultra-art/1106-front_shiny.png",
+          "sha256": "9e0dbb424484cf5cfe1c6155e98eb31ade45e423c7e18e33e82f1fff21b646c4"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1106-back_shiny.png",
+          "url": "/ultra-art/1106-back_shiny.png",
+          "sha256": "84faa06326586f002285513dbd9e86ba0dca1a37efbc38ce79f99544f59ea7e6"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17149068,
+          "method_raw": 251,
+          "parameter": 700,
+          "target_sid": 1106,
+          "padding": 0,
+          "source_sid": 334,
+          "source_name": "沙漠蜻蜓",
+          "item_name": "沙漠蜻蜓石"
+        }
+      ],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 3,
+          "name": "加速",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 3,
+          "name": "加速",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 3,
+          "name": "加速",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 1118,
+      "source_name": "全装甲超梦",
+      "name_bytes_hex": "0b2b10df05c2022e0966ff",
+      "stats_offset": 16929096,
+      "record_sha256": "383cd68f775d71c3260a4cb8ba520dc494d6d6d44c12943d179baa7ff9cf18f6",
+      "record_hex": "6a5b7b508e8a110800dc3000bf02bf02ff7800050f0f04850006e800",
+      "stats": {
+        "hp": 106,
+        "atk": 91,
+        "def": 123,
+        "spe": 80,
+        "spa": 142,
+        "spd": 138
+      },
+      "type_ids": [
+        17,
+        8
+      ],
+      "types": [
+        "Dark",
+        "Steel"
+      ],
+      "ability_ids": [
+        4,
+        133,
+        232
+      ],
+      "ability_table_offset": 24779316,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:1118",
+      "national_number": 150,
+      "display_name": "全装甲超梦",
+      "parent_source_sid": null,
+      "assets": {
+        "front": {
+          "table_offset": 16975084,
+          "data_offset": 20093276,
+          "compressed_bytes": 1571,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "4c8f2e49d8dad8062c708bf1d3dd393fee4bce630a9034b09c22ac06939d6004",
+          "table_record_hex": "5c99320900080000"
+        },
+        "back": {
+          "table_offset": 16994612,
+          "data_offset": 20094852,
+          "compressed_bytes": 1491,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "ee2c811bfc0567eb1d1b0a7ed5c1dfefa3aa7489bd5faf3c0656d8331451ba95",
+          "table_record_hex": "849f320900080000"
+        },
+        "normal_palette": {
+          "table_offset": 17014140,
+          "data_offset": 20096348,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "8dc093fc41c4e624757926ae4120f8d7830d439955284c15c7d1f8946649e4a6",
+          "table_record_hex": "5ca5320900000000"
+        },
+        "shiny_palette": {
+          "table_offset": 17033668,
+          "data_offset": 20096388,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "5841d48608ad97f597e4f9a8c26a253cab15d6d481b5ad76c4d849fb42f507e3",
+          "table_record_hex": "84a53209f4010000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1118-front_default.png",
+          "url": "/ultra-art/1118-front_default.png",
+          "sha256": "13137786386087ec03f2d24c6dfcbe0917c5faca129b4ea6056632bfd9327580"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1118-back_default.png",
+          "url": "/ultra-art/1118-back_default.png",
+          "sha256": "19de4b6cb09c2eb68b83573cf06008c587b0a317ff71d6127777062cba7cabd0"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1118-front_shiny.png",
+          "url": "/ultra-art/1118-front_shiny.png",
+          "sha256": "e9d7e49894251ff3288ab3f35e1e766872b90f639de6fc291bcb9bd997e0e378"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1118-back_shiny.png",
+          "url": "/ultra-art/1118-back_shiny.png",
+          "sha256": "5801036cb93262d12128d35b239a2c35e914c21d2e387c567a7bb55561971789"
+        }
+      },
+      "incoming_evolutions": [],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 4,
+          "name": "战斗盔甲",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 133,
+          "name": "碎裂铠甲",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 232,
+          "name": "棱镜装甲",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 1119,
+      "source_name": "合众酋雷姆",
+      "name_bytes_hex": "04f510ab0b17084c09adff",
+      "stats_offset": 16929124,
+      "record_sha256": "40f66f9f25eb8020eb155b7e2402fc82eb0a2b6e30301590208ab8d19df1fc3e",
+      "record_hex": "7daa645faa64100f00daff0f00000000ff7800050f0fa4a300076800",
+      "stats": {
+        "hp": 125,
+        "atk": 170,
+        "def": 100,
+        "spe": 95,
+        "spa": 170,
+        "spd": 100
+      },
+      "type_ids": [
+        16,
+        15
+      ],
+      "types": [
+        "Dragon",
+        "Ice"
+      ],
+      "ability_ids": [
+        335,
+        79,
+        104
+      ],
+      "ability_table_offset": 24779322,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:1119",
+      "national_number": 646,
+      "display_name": "合众酋雷姆",
+      "parent_source_sid": null,
+      "assets": {
+        "front": {
+          "table_offset": 16975092,
+          "data_offset": 21835364,
+          "compressed_bytes": 1808,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "373b9c79e94fc1c399fe9786c0f9eea19801e9c5f30776b5deb1f528c4d3be66",
+          "table_record_hex": "642e4d0900080000"
+        },
+        "back": {
+          "table_offset": 16994620,
+          "data_offset": 21837172,
+          "compressed_bytes": 1497,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "09076c364819368404c768adb4558161602a71ace1a8c863f9e5292f73b321a1",
+          "table_record_hex": "74354d0900080000"
+        },
+        "normal_palette": {
+          "table_offset": 17014148,
+          "data_offset": 21838672,
+          "compressed_bytes": 41,
+          "decoded_bytes": 32,
+          "decoded_sha256": "800e3ad363bd49dd52f13eeddd4e3cf6ffc80906425d00ec2419c01655d92e60",
+          "table_record_hex": "503b4d0900000000"
+        },
+        "shiny_palette": {
+          "table_offset": 17033676,
+          "data_offset": 21838716,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "6e63843259516b9f72459644ba4142f5058a6779aff745a2834b31355d08ca81",
+          "table_record_hex": "7c3b4d09f4010000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1119-front_default.png",
+          "url": "/ultra-art/1119-front_default.png",
+          "sha256": "b200b9ab3f0fb6d1dc4771377569977a48d0fc0d812f9d0c07a7d973ceb53166"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1119-back_default.png",
+          "url": "/ultra-art/1119-back_default.png",
+          "sha256": "bd6f8bbdb97397f8b6128fbceeac0b3360cd73e706f6f57e9af88d8d19a5b9ec"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1119-front_shiny.png",
+          "url": "/ultra-art/1119-front_shiny.png",
+          "sha256": "d5cede9dad73cef068668d07687f100c15cef7524f6b3ad7552b5f6b238bb930"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1119-back_shiny.png",
+          "url": "/ultra-art/1119-back_shiny.png",
+          "sha256": "5c14ded2d8d5cba7b5862948cbadc3afeb0492836fcd6712c1862e7469a539be"
+        }
+      },
+      "incoming_evolutions": [],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 335,
+          "name": null,
+          "name_verified": false
+        },
+        {
+          "slot": "1",
+          "source_id": 79,
+          "name": "锋锐",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 104,
+          "name": "破格",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 1336,
+      "source_name": "阿尔宙斯",
+      "name_bytes_hex": "010103a010b70c5cff0000",
+      "stats_offset": 16935200,
+      "record_sha256": "59f7c4dd690dda7ba1f43cbb7ed3549bd5451d136de7dfee38b737bc966bcc4b",
+      "record_hex": "787878879b7817002d40000100000000ff1446030f0f424100032200",
+      "stats": {
+        "hp": 120,
+        "atk": 120,
+        "def": 120,
+        "spe": 135,
+        "spa": 155,
+        "spd": 120
+      },
+      "type_ids": [
+        23,
+        0
+      ],
+      "types": [
+        "Fairy",
+        "Normal"
+      ],
+      "ability_ids": [
+        121,
+        80,
+        80
+      ],
+      "ability_table_offset": 24780624,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:1336",
+      "national_number": 493,
+      "display_name": "阿尔宙斯 · 光之石形态",
+      "parent_source_sid": 546,
+      "assets": {
+        "front": {
+          "table_offset": 16976828,
+          "data_offset": 17459988,
+          "compressed_bytes": 2446,
+          "decoded_bytes": 4096,
+          "decoded_sha256": "997230afbbb8bf650b134e53e7bd650303dc83bc9e5b05cbd4c2ecf4b3704c41",
+          "table_record_hex": "146b0a0900080100"
+        },
+        "back": {
+          "table_offset": 16996356,
+          "data_offset": 17462436,
+          "compressed_bytes": 1158,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "5d9036146915586ce2ffd72b3993d33e05253c9ec761efeb7e71fc2a95b7e5b4",
+          "table_record_hex": "a4740a0900080100"
+        },
+        "normal_palette": {
+          "table_offset": 17015884,
+          "data_offset": 17463596,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "54ccef0260b3cae2d92d91724d9f3598291ae24e2245dc4119744111dba0c48a",
+          "table_record_hex": "2c790a0901000000"
+        },
+        "shiny_palette": {
+          "table_offset": 17035412,
+          "data_offset": 17463636,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "ad642fd52078369ecc9310d768c6441efec11d84754cde0e1093364803dfeeb7",
+          "table_record_hex": "54790a09f5010000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1336-front_default.png",
+          "url": "/ultra-art/1336-front_default.png",
+          "sha256": "1e80bc8a28092d3b7f5de37707610ee0baf8f3e7b08c00efc387c7f5e6e1647f"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1336-back_default.png",
+          "url": "/ultra-art/1336-back_default.png",
+          "sha256": "6e5bd4f97096f665432dbaf4087a865d4298ada8eebff41088916ec0f200c38a"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1336-front_shiny.png",
+          "url": "/ultra-art/1336-front_shiny.png",
+          "sha256": "de869c1ad577a3e58082d32cf361fe46c6d0296a6349363588cb714507132129"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1336-back_shiny.png",
+          "url": "/ultra-art/1336-back_shiny.png",
+          "sha256": "cb6fa79a90d52d3f59c78a0f6fe01ba69c3cb642a06f0b819a6d4d31ea7fc609"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17157556,
+          "method_raw": 7,
+          "parameter": 99,
+          "target_sid": 1336,
+          "padding": 0,
+          "source_sid": 546,
+          "source_name": "阿尔宙斯",
+          "item_name": "光之石"
+        }
+      ],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 121,
+          "name": "多属性",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 80,
+          "name": "变幻自如",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 80,
+          "name": "变幻自如",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 1337,
+      "source_name": "阿尔宙斯",
+      "name_bytes_hex": "010103a010b70c5cff0000",
+      "stats_offset": 16935228,
+      "record_sha256": "54fa9bd4190f9915d8fa143560aa3ed72920dff42d2c6d6003a2379c3bf11fff",
+      "record_hex": "787878879b7807002d400001000000007f1446030107424100032200",
+      "stats": {
+        "hp": 120,
+        "atk": 120,
+        "def": 120,
+        "spe": 135,
+        "spa": 155,
+        "spd": 120
+      },
+      "type_ids": [
+        7,
+        0
+      ],
+      "types": [
+        "Ghost",
+        "Normal"
+      ],
+      "ability_ids": [
+        80,
+        80,
+        80
+      ],
+      "ability_table_offset": 24780630,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:1337",
+      "national_number": 493,
+      "display_name": "阿尔宙斯 · 暗之石形态",
+      "parent_source_sid": 546,
+      "assets": {
+        "front": {
+          "table_offset": 16976836,
+          "data_offset": 17464704,
+          "compressed_bytes": 2752,
+          "decoded_bytes": 4096,
+          "decoded_sha256": "fa25b733a13fe01b8eb97cd0eac74b1d037953503a9f0255048685bffd1d6d85",
+          "table_record_hex": "807d0a0900080100"
+        },
+        "back": {
+          "table_offset": 16996364,
+          "data_offset": 17467456,
+          "compressed_bytes": 1167,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "96fc9a1f6abeb4fa790ecccd52cb658a4e7a08adbfb196dd38f55a6a22c685cd",
+          "table_record_hex": "40880a0900080100"
+        },
+        "normal_palette": {
+          "table_offset": 17015892,
+          "data_offset": 17468624,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "3af00cff552aa8fbaf6c54363482a22078d9c69389114648dd00fe671709c816",
+          "table_record_hex": "d08c0a0901000000"
+        },
+        "shiny_palette": {
+          "table_offset": 17035420,
+          "data_offset": 17468664,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "c3589aae56f838b46ea965e11d7d79631a1dfa35c7cfe9e9b655d261cfe4b646",
+          "table_record_hex": "f88c0a09f5010000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1337-front_default.png",
+          "url": "/ultra-art/1337-front_default.png",
+          "sha256": "56a367aa66c33a6c0a0a25f285f0fe813a965b7e8bcc0e71c28d77ec8ca15574"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1337-back_default.png",
+          "url": "/ultra-art/1337-back_default.png",
+          "sha256": "511324ce475c96567c9e1595bfb21eab70e6df9a8f1120e361cd2a28d4f1bd7b"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1337-front_shiny.png",
+          "url": "/ultra-art/1337-front_shiny.png",
+          "sha256": "ce33e2c016f730495fa8d78862726ee2083817da9f792abc9243daa18b55b2e2"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1337-back_shiny.png",
+          "url": "/ultra-art/1337-back_shiny.png",
+          "sha256": "9bc96c659dcbcab6394a0714a00405a3dda96aebf9448b32ba8f8414b863bee9"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17157548,
+          "method_raw": 7,
+          "parameter": 100,
+          "target_sid": 1337,
+          "padding": 0,
+          "source_sid": 546,
+          "source_name": "阿尔宙斯",
+          "item_name": "暗之石"
+        }
+      ],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 80,
+          "name": "变幻自如",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 80,
+          "name": "变幻自如",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 80,
+          "name": "变幻自如",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 1383,
+      "source_name": "洛奇亚",
+      "name_bytes_hex": "091f0aa10eb0ff00000000",
+      "stats_offset": 16936516,
+      "record_sha256": "fee50e2c20ebb68c6621cd3e6526540480d343837632f0a6675840fd85a7e95e",
+      "record_hex": "6464647d9164020e2d40000100000000ff1446030f0f424100032200",
+      "stats": {
+        "hp": 100,
+        "atk": 100,
+        "def": 100,
+        "spe": 125,
+        "spa": 145,
+        "spd": 100
+      },
+      "type_ids": [
+        2,
+        14
+      ],
+      "types": [
+        "Flying",
+        "Psychic"
+      ],
+      "ability_ids": [
+        220,
+        220,
+        220
+      ],
+      "ability_table_offset": 24780906,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:1383",
+      "national_number": 249,
+      "display_name": "洛奇亚 · 光之石形态",
+      "parent_source_sid": 249,
+      "assets": {
+        "front": {
+          "table_offset": 16977204,
+          "data_offset": 12226904,
+          "compressed_bytes": 1443,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "2adc967687155415cae87755c05cf7e287269c4f9d2ea01517ff668afd7606e9",
+          "table_record_hex": "5891ba0800080100"
+        },
+        "back": {
+          "table_offset": 16996732,
+          "data_offset": 12228348,
+          "compressed_bytes": 898,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "6f78e31cb6543dff5b6df4152fe42be685810f7d870ef6e27941711b223f638f",
+          "table_record_hex": "fc96ba0800080100"
+        },
+        "normal_palette": {
+          "table_offset": 17016260,
+          "data_offset": 12229248,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "84e9f0ec2afe801676f7c3dfe9d67a0e342a35f448bda21062edf7a91b511fe2",
+          "table_record_hex": "809aba0801000000"
+        },
+        "shiny_palette": {
+          "table_offset": 17035788,
+          "data_offset": 12229288,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "fc2491c37d8de58481996d63a12af9415c7b42e44b5339046fe69c21efd7d3d3",
+          "table_record_hex": "a89aba08f5010000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1383-front_default.png",
+          "url": "/ultra-art/1383-front_default.png",
+          "sha256": "c4a93a4ba73ef5c931c133a94d8b9e21c97333749b77b1bba5c2064920dd9fcf"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1383-back_default.png",
+          "url": "/ultra-art/1383-back_default.png",
+          "sha256": "ae461f043f93a651c5d0b8e7c43358d68fa099fe7408c99d1c6e59eed0ac5c3e"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1383-front_shiny.png",
+          "url": "/ultra-art/1383-front_shiny.png",
+          "sha256": "b52ffd115991c8b19e825157b7cf4800840fa95287175ca8675cccc8a71aeb5a"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1383-back_shiny.png",
+          "url": "/ultra-art/1383-back_shiny.png",
+          "sha256": "db5b1289f4604a774f7032498fad45fd5136f1de19d845666a88e669db7dde87"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17145668,
+          "method_raw": 7,
+          "parameter": 99,
+          "target_sid": 1383,
+          "padding": 0,
+          "source_sid": 249,
+          "source_name": "洛奇亚",
+          "item_name": "光之石"
+        }
+      ],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 220,
+          "name": "魂心",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 220,
+          "name": "魂心",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 220,
+          "name": "魂心",
+          "name_verified": true
+        }
+      ]
+    },
+    {
+      "source_sid": 1384,
+      "source_name": "凤王",
+      "name_bytes_hex": "03f20d5dff000000000000",
+      "stats_offset": 16936544,
+      "record_sha256": "2cc9fe37da7f0506834fe6e0f5f9e79f911868aef36fc8afd3f79114ccdbec09",
+      "record_hex": "6491647d6464020a2d40000100000000ff1446030f0f424100032200",
+      "stats": {
+        "hp": 100,
+        "atk": 145,
+        "def": 100,
+        "spe": 125,
+        "spa": 100,
+        "spd": 100
+      },
+      "type_ids": [
+        2,
+        10
+      ],
+      "types": [
+        "Flying",
+        "Fire"
+      ],
+      "ability_ids": [
+        184,
+        184,
+        184
+      ],
+      "ability_table_offset": 24780912,
+      "evolutions": [],
+      "entry_id": "dex:omni:ultra58:1384",
+      "national_number": 250,
+      "display_name": "凤王 · 火之石形态",
+      "parent_source_sid": 250,
+      "assets": {
+        "front": {
+          "table_offset": 16977212,
+          "data_offset": 17469732,
+          "compressed_bytes": 1725,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "6f92a80862e2f4bac77f99ee9d5b422e5ad95554db0b14218a9dcef1a6ae4062",
+          "table_record_hex": "24910a09ffffffff"
+        },
+        "back": {
+          "table_offset": 16996740,
+          "data_offset": 17471460,
+          "compressed_bytes": 1068,
+          "decoded_bytes": 2048,
+          "decoded_sha256": "aa2b2abaab3d25d933ff7537d92bc9481c088038bbabca33f1c9b52ff119e144",
+          "table_record_hex": "e4970a0900080100"
+        },
+        "normal_palette": {
+          "table_offset": 17016268,
+          "data_offset": 17472528,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "f9892c81c17314355366ba85d1732f8026a748f0a8ee2baf54ea854ee74929e4",
+          "table_record_hex": "109c0a0901000000"
+        },
+        "shiny_palette": {
+          "table_offset": 17035796,
+          "data_offset": 17472568,
+          "compressed_bytes": 40,
+          "decoded_bytes": 32,
+          "decoded_sha256": "d862470e4616464159104b696312a326005a1c6d1caff8fa970a38dda0afab45",
+          "table_record_hex": "389c0a09f5010000"
+        }
+      },
+      "variants": {
+        "front_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1384-front_default.png",
+          "url": "/ultra-art/1384-front_default.png",
+          "sha256": "be8c959086348e58e20111be9b4ff839702ca0f5bd4c8a4ff2772b713f2d789a"
+        },
+        "back_default": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1384-back_default.png",
+          "url": "/ultra-art/1384-back_default.png",
+          "sha256": "e993123e34ef68c5f493d45d0586cace23d16a65870c6ac21f845ed8b60e6538"
+        },
+        "front_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1384-front_shiny.png",
+          "url": "/ultra-art/1384-front_shiny.png",
+          "sha256": "c86267a938823ca0ff514cc647313493bf0b40958a22b7ea84c3efb0eb5c35d7"
+        },
+        "back_shiny": {
+          "path": "assets/imported/ultra-emerald-5.8-user/form-sprites/1384-back_shiny.png",
+          "url": "/ultra-art/1384-back_shiny.png",
+          "sha256": "abcbb65f19d2c9f4cab421f505e0930257891d76a5f3f0f9103db2cadb6c4b36"
+        }
+      },
+      "incoming_evolutions": [
+        {
+          "offset": 17145708,
+          "method_raw": 7,
+          "parameter": 95,
+          "target_sid": 1384,
+          "padding": 0,
+          "source_sid": 250,
+          "source_name": "凤王",
+          "item_name": "火之石"
+        }
+      ],
+      "normal_shiny_identical": false,
+      "abilities": [
+        {
+          "slot": "0",
+          "source_id": 184,
+          "name": "飞行皮肤",
+          "name_verified": true
+        },
+        {
+          "slot": "1",
+          "source_id": 184,
+          "name": "飞行皮肤",
+          "name_verified": true
+        },
+        {
+          "slot": "H",
+          "source_id": 184,
+          "name": "飞行皮肤",
+          "name_verified": true
+        }
+      ]
+    }
+  ],
+  "classification": "Source-scoped custom/variant references. Not a list of newly official species.",
+  "exclusions": {
+    "placeholder_sids": [
+      201,
+      412,
+      417
+    ],
+    "unown_source_overrides": [
+      435,
+      436,
+      437,
+      438,
+      439
+    ],
+    "reserved_table_space": "Header pointer spacing reserves 2441 slots; after 1385 records are overwritten/unused, not 2441 verified species."
+  },
+  "limitations": [
+    "Only first sprite animation frame exported; decoded full stream hashes retained.",
+    "Source names may be shortened; display suffixes distinguish duplicate source names.",
+    "Evolution table decoded; script encounters, runtime persistence, held-item privileges and reversion hooks not fully verified.",
+    "Extended ability names >=255 not decoded; source IDs preserved without assigning official ability identities.",
+    "Source learnsets and Omni battle/quest implementation remain pending.",
+    "Existing official forms and their values are not overwritten by this reference pack."
+  ]
+}

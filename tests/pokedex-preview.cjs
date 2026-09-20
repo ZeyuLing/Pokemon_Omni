@@ -134,6 +134,20 @@ let activeBrowser;
  await hpPage.unroute('**'+dunArt);
  await hpPage.getByRole('button',{name:'重试图片',exact:true}).click();
  await hpPage.locator('.portrait img').waitFor();
+ for(const e of catalog.entries.filter(e=>e.category==='source_variant')){
+  await visit(e);await hpPage.locator('.portrait img').waitFor();
+  assert.equal(await hpPage.locator('.portrait img').getAttribute('src'),e.art_reference.variants.front_default);
+  assert((await hpPage.locator('.art-controls').textContent()).includes('究极绿宝石用户版本'));
+  assert(await hpPage.getByRole('button',{name:'登记形态',exact:true}).isDisabled());
+ }
+ await visit(catalog.entries.find(e=>e.entry_id==='dex:omni:ultra58:1336'));
+ assert((await hpPage.locator('#detail').textContent()).includes('使用光之石'));
+ await hpPage.screenshot({path:'build/pokedex/ultra-arceus-desktop.png',fullPage:true});
+ await hpPage.setViewportSize({width:320,height:740});
+ assert(await hpPage.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+ await hpPage.locator('#category').selectOption('18');
+ assert((await hpPage.locator('#result-count').textContent()).includes('35'));
+ assert.equal((await hpPage.request.get('http://127.0.0.1:4173/assets/imported/ultra-emerald-5.8-user/ultra-emerald-5.8-final-permanent-mega.gba')).status(),404);
  assert.deepEqual(errors,[]);await browser.close();
  console.log('PASS: desktop/tablet/mobile/320px rendered; Chinese search; independent Mega registration + reload; research protection; empty state; invalid import preserves records; keyboard focus; offline sprite fallback; dependency error/retry; no page errors');
 })().catch(async e=>{console.error(e);if(activeBrowser)await activeBrowser.close();process.exitCode=1;});

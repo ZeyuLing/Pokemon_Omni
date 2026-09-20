@@ -1,0 +1,97 @@
+{
+  "validated_on": "2026-09-20",
+  "source_rom_sha256": "cb93af4a51809e4ef4fb5e7356e029e009a026bf20148fa7618e0731bb91edac",
+  "catalog_sha256": "ac54a190c71d6b4c81dd74fa56a754ea6dd97eabd4d7e69c3084d1d5e0696b62",
+  "source_variants": 35,
+  "source_god_variants": 10,
+  "source_image_variants": 140,
+  "raw_inventory_rows": 1385,
+  "visible_entries": 1598,
+  "hidden_dynamax_records": 821,
+  "research_only": 58,
+  "game_build": {
+    "rom": "build/pallet/omni-pallet.gba",
+    "bytes": 25165824,
+    "sha256": "3ac5612ef2c18534eaabe9d4865be3e0b45aeb0bc634391b8649f8d9c9cdc715",
+    "header_checksum_valid": true,
+    "scope": "Playable Pallet Town opening with integrated Pokedex; limited starter practice rules."
+  },
+  "game_emulator": {
+    "rom_sha256": "3ac5612ef2c18534eaabe9d4865be3e0b45aeb0bc634391b8649f8d9c9cdc715",
+    "dex_pages": {
+      "page_directory": true,
+      "long_text_to_end": true,
+      "evolution": true,
+      "move_effect_and_decoded_sources": true,
+      "held_item_and_strategy": true,
+      "front_back_shiny_pixels": true,
+      "hp_calculator_controls": true,
+      "ultra_source_forms": 35,
+      "ultra_source_images_pixel_checked": 140
+    },
+    "emulator": "@wasm-gaming/mgba-wasm@0.1.1",
+    "maps_visited": 5,
+    "normal_button_inputs": 574,
+    "starter_acquisition": true,
+    "debug_dex_direct_boot": true,
+    "debug_menu_dex_without_partner": true,
+    "party_and_integrated_dex": true,
+    "practice_battle": true,
+    "save_continue": true,
+    "corrupt_newest_slot_fallback": true
+  },
+  "standalone_build": {
+    "rom": "build/gba/omni-dex.gba",
+    "bytes": 25165824,
+    "sha256": "ffc960040f0728d887ad5abce3d61d1c2b43bdda13d90b314c04e69881867f80",
+    "header_checksum_valid": true,
+    "scope": "Standalone GBA Pokedex integration cartridge, not the full world game."
+  },
+  "standalone_emulator": {
+    "emulator": "@wasm-gaming/mgba-wasm@0.1.1",
+    "rom_sha256": "ffc960040f0728d887ad5abce3d61d1c2b43bdda13d90b314c04e69881867f80",
+    "boot": true,
+    "navigation": true,
+    "capture_save": true,
+    "reload": true,
+    "corrupt_newest_slot_fallback": true,
+    "training_and_form_pages": true,
+    "close_and_reopen": true,
+    "frames": 732
+  },
+  "assets": {
+    "unique_images": 7960,
+    "art_bytes": 16587980,
+    "glyph_count": 1962,
+    "small_glyph_count": 1961,
+    "missing_images": 0
+  },
+  "checks_passed": [
+    "tools/extract_ultra_emerald_rom.py: exact SHA, hook bytes, pointers, Chinese anchors, evolution items, bounded image decode",
+    "tests/ultra-rom-content.cjs: 35 source-scoped variants; no official overwrite; unknown abilities retained",
+    "tests/pokedex-content.cjs",
+    "tests/pokedex-wasm.cjs: all IDs/stats/abilities, query order, progress and old IDs",
+    "tests/pokedex-preview.cjs: 35 source forms, 320px layout, source ROM URL denied",
+    "tests/pokedex-features.cjs",
+    "tools/build_pallet.ps1: shared C adventure tests and real ARM link",
+    "tools/build_gba.ps1: C host tests and real ARM link",
+    "tests/pallet-smoke.cjs: 35 source forms and 140 image variants pixel checked through actual cartridge buttons",
+    "tests/gba-smoke.cjs",
+    "tests/gba-assets.py: 7960 unique RGB555 payloads checked",
+    "tests/gba-font-pixels.py",
+    "tests/pallet-browser.cjs"
+  ],
+  "visual_checks": [
+    "Decoded source-form contact sheet inspected",
+    "Actual ARM Arceus source form profile screenshot inspected"
+  ],
+  "limitations": [
+    "Only first sprite animation frame exported; decoded full stream hashes retained.",
+    "Source names may be shortened; display suffixes distinguish duplicate source names.",
+    "Evolution table decoded; script encounters, runtime persistence, held-item privileges and reversion hooks not fully verified.",
+    "Extended ability names >=255 not decoded; source IDs preserved without assigning official ability identities.",
+    "Source learnsets and Omni battle/quest implementation remain pending.",
+    "Existing official forms and their values are not overwritten by this reference pack.",
+    "Physical GBA hardware not tested; full battle rules remain unimplemented."
+  ]
+}

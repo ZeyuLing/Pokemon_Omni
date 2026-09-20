@@ -47,6 +47,8 @@ def main():
         target = CACHE / (hashlib.sha256(url.encode()).hexdigest() + '.img')
         if url.startswith('/rocket-art/'):
             data = (ROOT / 'assets/imported/rocket-user/bond-sprites' / url.split('/')[-1]).read_bytes()
+        elif url.startswith('/ultra-art/'):
+            data = (ROOT / 'assets/imported/ultra-emerald-5.8-user/form-sprites' / url.split('/')[-1]).read_bytes()
         elif target.exists():
             data = target.read_bytes()
         else:
@@ -156,7 +158,7 @@ def main():
         infos.append('{'+','.join([str(portrait_offsets[e['art_reference']['variants']['front_default']])+'u',str(start),str(len(pools)),str(pstart),str(len(indexes)-pstart),ctext('/'.join(type_names[t] for t in e['types'])),ctext(abilities),ctext(catalog['categories'][e['category_id']-1]['name']),ctext(list_name)])+'}')
         variants.append('{'+','.join(str(offsets.get(e['art_reference']['variants'].get(k),0xffffffff))+'u' for k in VARIANTS)+'}')
         ability_text = '\n'.join(('隐藏特性：' if a['slot']=='H' else '特性：')+catalog['abilities'][a['id']]['name_zh']+'\n'+(descriptions['abilities'].get(a['id']) or '本参考库没有对应的效果说明。') for a in e['abilities'])
-        ability_text += '\n效果为固定第九世代参考原文；形态是否采用该特性，以本项目审核为准。'
+        ability_text += '\n特性名称来自用户版本；独立编号，效果尚待核实。' if e.get('source_rom_evidence') else '\n效果为固定第九世代参考原文；形态是否采用该特性，以本项目审核为准。'
         evolution = []
         if e.get('prevo'):
             pre = by_name.get(e['prevo']); evolution.append('进化前：'+(pre['name_zh_hans'] if pre else e['prevo']))
@@ -175,6 +177,8 @@ def main():
         facts=e.get('species_facts') or {}
         if facts: identity += ['捕获率参数：'+str(facts.get('capture_rate','未知')), '孵化周期参数：'+str(facts.get('egg_cycles','未知')), '性别比例参数：'+str(facts.get('gender_rate','未知'))+'（-1无性别，0全雄，8全雌，其余为雌性占八分之几）']
         evidence = identity+['种族值状态：'+e.get('stats_status','未知'), '招式表状态：'+e.get('move_pool_status','未知'), '特性状态：'+e.get('ability_status','未知'), '战斗数据：尚未正式审定', '来源招式是跨世代并集；不代表可以同时携带。','羁绊条目：双 ROM 的图像与数值核对不等于已完成触发规则核验。' if e['research_only'] else '图鉴资料与游戏捕捉进度独立。']
+        if e.get('source_rom_evidence'):
+            evidence[-1]='究极绿宝石用户版：单份 ROM 提取；获取、招式、永久保持与战斗规则仍待核实。'
         extras.append('{'+','.join(ctext('\n'.join(v) if isinstance(v,list) else v) for v in (ability_text,evolution,transition,acquisition,evidence))+'}')
     # Include all authored GBA UI literals in the font subset.
     for file in (ROOT / 'adapters/gba').glob('*.[ch]'):

@@ -3,12 +3,12 @@
   "game_build": {
     "rom": "build/pallet/omni-pallet.gba",
     "bytes": 25165824,
-    "sha256": "f0535c6c52dde42d473e21cdb2c6847583673fb796830f545c1f41a3ea67d34f",
+    "sha256": "3ac5612ef2c18534eaabe9d4865be3e0b45aeb0bc634391b8649f8d9c9cdc715",
     "header_checksum_valid": true,
     "scope": "Playable Pallet Town opening with integrated Pokedex; limited starter practice rules."
   },
   "game_emulator": {
-    "rom_sha256": "f0535c6c52dde42d473e21cdb2c6847583673fb796830f545c1f41a3ea67d34f",
+    "rom_sha256": "3ac5612ef2c18534eaabe9d4865be3e0b45aeb0bc634391b8649f8d9c9cdc715",
     "dex_pages": {
       "page_directory": true,
       "long_text_to_end": true,
@@ -16,11 +16,13 @@
       "move_effect_and_decoded_sources": true,
       "held_item_and_strategy": true,
       "front_back_shiny_pixels": true,
-      "hp_calculator_controls": true
+      "hp_calculator_controls": true,
+      "ultra_source_forms": 35,
+      "ultra_source_images_pixel_checked": 140
     },
     "emulator": "@wasm-gaming/mgba-wasm@0.1.1",
     "maps_visited": 5,
-    "normal_button_inputs": 372,
+    "normal_button_inputs": 574,
     "starter_acquisition": true,
     "debug_dex_direct_boot": true,
     "debug_menu_dex_without_partner": true,
@@ -31,14 +33,14 @@
   },
   "standalone_build": {
     "rom": "build/gba/omni-dex.gba",
-    "bytes": 24117248,
-    "sha256": "1cc36d7bbbc902dd4fc9ee5bcea06b3a84bb06304e76ff4771d1a5eb39138be5",
+    "bytes": 25165824,
+    "sha256": "ffc960040f0728d887ad5abce3d61d1c2b43bdda13d90b314c04e69881867f80",
     "header_checksum_valid": true,
     "scope": "Standalone GBA Pokedex integration cartridge, not the full world game."
   },
   "standalone_emulator": {
     "emulator": "@wasm-gaming/mgba-wasm@0.1.1",
-    "rom_sha256": "1cc36d7bbbc902dd4fc9ee5bcea06b3a84bb06304e76ff4771d1a5eb39138be5",
+    "rom_sha256": "ffc960040f0728d887ad5abce3d61d1c2b43bdda13d90b314c04e69881867f80",
     "boot": true,
     "navigation": true,
     "capture_save": true,
@@ -49,13 +51,13 @@
     "frames": 732
   },
   "assets": {
-    "unique_images": 7808,
-    "art_bytes": 15914568,
-    "glyph_count": 1959,
-    "small_glyph_count": 1958,
+    "unique_images": 7960,
+    "art_bytes": 16587980,
+    "glyph_count": 1962,
+    "small_glyph_count": 1961,
     "missing_images": 0
   },
-  "source_image_count": 6628,
+  "source_image_count": 6768,
   "checks": [
     "tests/gba-assets.py: all unique RGB555 images compared with pinned source",
     "tests/gba-host-wasm.cjs: same C host contract tests",
@@ -67,22 +69,23 @@
     "Bond activation and move rules remain unverified",
     "Only the three initial partners have implemented acquisition information",
     "No physical hardware validation",
-    "GBA favorites, comparison and Chinese text input not implemented"
+    "GBA favorites, comparison and Chinese text input not implemented",
+    "35 Ultra Emerald source forms: learnsets, ability effects, persistence/reversion and Omni acquisition pending"
   ],
   "visual_checks": [
     "Actual local Rocket ROM list/detail reference",
     "12px BDF font pixel test in actual ARM ROM",
-    "7808 image payloads independently compared",
-    "Actual IAB preview refreshed and visually verified",
-    "Existing world/dialogue 16px font retained"
+    "7960 image payloads independently compared",
+    "Existing world/dialogue 16px font retained",
+    "Actual ARM Arceus source-form profile inspected"
   ],
   "browsing": {
-    "visible": 1563,
+    "visible": 1598,
     "base_first": 1025,
-    "other_forms": 538,
+    "other_forms": 573,
     "hidden_normal_dynamax": 821,
-    "stable_catalog_records": 2384,
-    "research_only": 23,
+    "stable_catalog_records": 2419,
+    "research_only": 58,
     "legacy_ids_preserved": true,
     "hidden_progress_excluded": true,
     "web_old_links_redirect": true
@@ -93,6 +96,6 @@
     "tests/pokedex-preview.cjs: Charizard four entries, old Dynamax links redirect, HP tool retained on eligible base form",
     "tests/gba-smoke.cjs and tests/pallet-smoke.cjs: saves, navigation, actual ARM ROM",
     "tests/pokedex-features.cjs and tests/pallet-browser.cjs: browser functions and game player",
-    "IAB /play reloaded and screenshot verified: first six base species, total 1563"
+    "35 source variants and all 140 image variants through actual ARM cartridge buttons"
   ]
 }

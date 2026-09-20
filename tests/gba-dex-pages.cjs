@@ -24,6 +24,19 @@ module.exports=function checkDex(m,press,shot){
  page(10);assert(state().lines>6);readToEnd();shot('dex-strategy');
  page(11);readToEnd();page(12);readToEnd();
  // Restore starting page/entry so surrounding game tests retain their flow.
- for(let i=0;i<2;i++)press(512);page(0);m._free(ptr);
- return {page_directory:true,long_text_to_end:true,evolution:true,move_effect_and_decoded_sources:true,held_item_and_strategy:true,front_back_shiny_pixels:true,hp_calculator_controls:true};
+ for(let i=0;i<2;i++)press(512);page(0);
+ // Enter the new source category using ordinary buttons; verify every image in
+ // the actual cartridge, including entries beyond the first screenful.
+ press(2);press(4);press(128);press(32);press(1);press(1);
+ const variants=catalog.entries.filter(e=>e.category==='source_variant');assert.equal(variants.length,35);
+ page(13);
+ for(const e of variants){
+  assert.equal(catalog.entries[state().entry].entry_id,e.entry_id);
+  for(const [i,v] of ['front_default','back_default','front_shiny','back_shiny'].entries()){if(i)press(128);pixels(v);}
+  if(e.entry_id==='dex:omni:ultra58:1336'){press(64);press(64);press(64);shot('dex-ultra-arceus');page(0);shot('dex-ultra-arceus-stats');page(8);readToEnd();page(13);}
+  press(256);
+ }
+ press(2);press(4);press(8);press(64);press(1);press(1);assert.equal(state().entry,0);assert.equal(state().page,0);
+ m._free(ptr);
+ return {page_directory:true,long_text_to_end:true,evolution:true,move_effect_and_decoded_sources:true,held_item_and_strategy:true,front_back_shiny_pixels:true,hp_calculator_controls:true,ultra_source_forms:35,ultra_source_images_pixel_checked:140};
 };

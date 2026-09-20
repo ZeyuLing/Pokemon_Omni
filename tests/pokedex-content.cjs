@@ -17,7 +17,7 @@ for(const source of evidence.sources)for(const id of source.form_ids){
 }
 assert.equal(evidence.sources.find(s=>s.key==='mega_classic').form_ids.length,48);
 assert.equal(evidence.sources.flatMap(s=>s.form_ids).length,131);
-for(const e of catalog.entries.filter(e=>e.research_only))assert(e.author_evidence&&e.stats);
+for(const e of catalog.entries.filter(e=>e.research_only))assert((e.author_evidence||e.source_rom_evidence)&&e.stats);
 assert(byForm('dragonitemega').identity_evidence);
 assert.equal(byForm('dragonitemega').stats_status,'two_reference_sources_agree');
 assert.equal(byForm('dragonitemega').battle_data_approved,false,'Reference data must not approve project battle rules');

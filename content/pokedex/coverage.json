@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "content_sha256": "fdb69498b3820b1649cb2a93ce90a527b640d574ffe2d5b0e783c53a20489baa",
-  "entries": 2384,
+  "content_sha256": "ac54a190c71d6b4c81dd74fa56a754ea6dd97eabd4d7e69c3084d1d5e0696b62",
+  "entries": 2419,
   "base_species": 1025,
   "localized_base_species": 1025,
   "official_named_forms": 283,
@@ -19,7 +19,7 @@
     "special_form": 37
   },
   "reference_browsable": 2361,
-  "research_only": 23,
+  "research_only": 58,
   "categories": {
     "base": 1025,
     "mega": 97,
@@ -36,22 +36,25 @@
     "gender_form": 7,
     "size_form": 16,
     "type_form": 38,
-    "special_form": 43
+    "special_form": 43,
+    "source_variant": 35
   },
   "source_form_rows": 1579,
   "source_form_rows_accounted_for": 1579,
-  "six_stats_available": 2384,
+  "six_stats_available": 2419,
   "six_stats_crosschecked": 1536,
   "author_bond_records": 23,
   "official_species_identity": 1025,
   "ability_scope_differences": 22,
   "ability_second_source_missing": 9,
-  "front_art_metadata_mapped": 2384,
+  "front_art_metadata_mapped": 2419,
   "front_art_head_confirmed": 2360,
   "original_concept_art": 0,
-  "artwork_presentation_available": 2384,
+  "artwork_presentation_available": 2419,
   "rom_extracted_bond_art": 23,
   "rom_verified_bond_records": 23,
+  "source_rom_variant_records": 35,
+  "source_rom_variant_art": 35,
   "alcremie_appearance_combinations": 63,
   "limitations": [
     "Reference catalog coverage is complete against the two pinned source inventories, not a claim that every fact is officially certified.",

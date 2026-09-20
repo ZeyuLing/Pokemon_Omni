@@ -7,6 +7,10 @@ for(const row of JSON.parse(fs.readFileSync(path.join(root,'content/bond/rom-ref
  paths[asset.url]=[asset.path,'image/png'];
 }
 paths['/features.js']=['adapters/pokedex-preview/features.js','text/javascript; charset=utf-8'];
+for(const row of JSON.parse(fs.readFileSync(path.join(root,'content/source-variants/ultra-emerald-5.8.json'),'utf8')).records)for(const asset of Object.values(row.variants)){
+ if(!asset.path.startsWith('assets/imported/ultra-emerald-5.8-user/form-sprites/')||asset.path.includes('..')||!asset.url.startsWith('/ultra-art/'))throw Error('Invalid source artwork path');
+ paths[asset.url]=[asset.path,'image/png'];
+}
 paths['/plans.json']=['content/training/plans.json','application/json; charset=utf-8'];
 for(const [url,file,mime] of [['/gba','adapters/pokedex-preview/gba.html','text/html; charset=utf-8'],['/gba-player.js','adapters/pokedex-preview/gba-player.js','text/javascript; charset=utf-8'],['/emulator/mgba.js','.cache/toolchains/mgba-wasm/dist/mgba/mgba.js','text/javascript; charset=utf-8'],['/emulator/mgba.wasm','.cache/toolchains/mgba-wasm/dist/mgba/mgba.wasm','application/wasm'],['/omni-dex.gba','build/gba/omni-dex.gba','application/octet-stream']])paths[url]=[file,mime];
 paths['/gba-save.js']=['adapters/pokedex-preview/gba-save.js','text/javascript; charset=utf-8'];

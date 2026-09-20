@@ -369,6 +369,566 @@
       "source_sha256": "b6af752be20dfbb42cba2c2f96630d94ddd7d36077e07e91b3ac1732353f2d61"
     },
     {
+      "url": "/ultra-art/1076-back_default.png",
+      "source_sha256": "e6de78b046e98c128f4a9207801ed660c79a83180448c15167b286d2d76c3241"
+    },
+    {
+      "url": "/ultra-art/1076-back_shiny.png",
+      "source_sha256": "095e843a96cc3d72677ae654607b6d1eff99192599238807c2b636333f26c177"
+    },
+    {
+      "url": "/ultra-art/1076-front_default.png",
+      "source_sha256": "be361dab7dd357d0930c01b2e97dd825fdcbd8b7ad7e08567ddd0887f8b575e3"
+    },
+    {
+      "url": "/ultra-art/1076-front_shiny.png",
+      "source_sha256": "abeef351142665ccbcfd46f63d37bbbe921f85455eeb8a2c7dd74c7dd8331dd5"
+    },
+    {
+      "url": "/ultra-art/1079-back_default.png",
+      "source_sha256": "c3ac53b87a768f1f6205348d32ed9e418a04d145855588da41c9702580c490c7"
+    },
+    {
+      "url": "/ultra-art/1079-back_shiny.png",
+      "source_sha256": "15a0c0e2a9ebf4b49a83fa3202b9ba2f6084ac23b343300fef74f26baf60e260"
+    },
+    {
+      "url": "/ultra-art/1079-front_default.png",
+      "source_sha256": "75adba3047c08be2a6986c95915b290c2c66416e3b06235d5acc4116ac2184c0"
+    },
+    {
+      "url": "/ultra-art/1079-front_shiny.png",
+      "source_sha256": "2f5b6e7186b7445f13942f2b43b992ff3d351c2e6c487ef759a44dd5b90a8a67"
+    },
+    {
+      "url": "/ultra-art/1097-back_default.png",
+      "source_sha256": "7c274bf957ce0b10e5c0b55b9d65299506f63c66fd6f7e8e1cc5fb2957e4559d"
+    },
+    {
+      "url": "/ultra-art/1097-back_shiny.png",
+      "source_sha256": "1f01c5c317364360bb61c6cfd07d347159741805ba02c205f2982ce91d3606bd"
+    },
+    {
+      "url": "/ultra-art/1097-front_default.png",
+      "source_sha256": "e0abed0e4d4d79187b167bb7a437ac9034a960946f7836c73ae57677aff610e7"
+    },
+    {
+      "url": "/ultra-art/1097-front_shiny.png",
+      "source_sha256": "36a1c9227ee30958f6a9a8ef2f45358a0d2ae4cfe4732c97e75c9dfc7a910175"
+    },
+    {
+      "url": "/ultra-art/1106-back_default.png",
+      "source_sha256": "96b23a6e92e28a7ec3021546ac5a45e41f1be4c7f091872b975a7a7c780aca79"
+    },
+    {
+      "url": "/ultra-art/1106-back_shiny.png",
+      "source_sha256": "84faa06326586f002285513dbd9e86ba0dca1a37efbc38ce79f99544f59ea7e6"
+    },
+    {
+      "url": "/ultra-art/1106-front_default.png",
+      "source_sha256": "580741bcd42e884d6b20f156fef875c75f6ccba875175b74f45448e1636536fe"
+    },
+    {
+      "url": "/ultra-art/1106-front_shiny.png",
+      "source_sha256": "9e0dbb424484cf5cfe1c6155e98eb31ade45e423c7e18e33e82f1fff21b646c4"
+    },
+    {
+      "url": "/ultra-art/1118-back_default.png",
+      "source_sha256": "19de4b6cb09c2eb68b83573cf06008c587b0a317ff71d6127777062cba7cabd0"
+    },
+    {
+      "url": "/ultra-art/1118-back_shiny.png",
+      "source_sha256": "5801036cb93262d12128d35b239a2c35e914c21d2e387c567a7bb55561971789"
+    },
+    {
+      "url": "/ultra-art/1118-front_default.png",
+      "source_sha256": "13137786386087ec03f2d24c6dfcbe0917c5faca129b4ea6056632bfd9327580"
+    },
+    {
+      "url": "/ultra-art/1118-front_shiny.png",
+      "source_sha256": "e9d7e49894251ff3288ab3f35e1e766872b90f639de6fc291bcb9bd997e0e378"
+    },
+    {
+      "url": "/ultra-art/1119-back_default.png",
+      "source_sha256": "bd6f8bbdb97397f8b6128fbceeac0b3360cd73e706f6f57e9af88d8d19a5b9ec"
+    },
+    {
+      "url": "/ultra-art/1119-back_shiny.png",
+      "source_sha256": "5c14ded2d8d5cba7b5862948cbadc3afeb0492836fcd6712c1862e7469a539be"
+    },
+    {
+      "url": "/ultra-art/1119-front_default.png",
+      "source_sha256": "b200b9ab3f0fb6d1dc4771377569977a48d0fc0d812f9d0c07a7d973ceb53166"
+    },
+    {
+      "url": "/ultra-art/1119-front_shiny.png",
+      "source_sha256": "d5cede9dad73cef068668d07687f100c15cef7524f6b3ad7552b5f6b238bb930"
+    },
+    {
+      "url": "/ultra-art/1336-back_default.png",
+      "source_sha256": "6e5bd4f97096f665432dbaf4087a865d4298ada8eebff41088916ec0f200c38a"
+    },
+    {
+      "url": "/ultra-art/1336-back_shiny.png",
+      "source_sha256": "cb6fa79a90d52d3f59c78a0f6fe01ba69c3cb642a06f0b819a6d4d31ea7fc609"
+    },
+    {
+      "url": "/ultra-art/1336-front_default.png",
+      "source_sha256": "1e80bc8a28092d3b7f5de37707610ee0baf8f3e7b08c00efc387c7f5e6e1647f"
+    },
+    {
+      "url": "/ultra-art/1336-front_shiny.png",
+      "source_sha256": "de869c1ad577a3e58082d32cf361fe46c6d0296a6349363588cb714507132129"
+    },
+    {
+      "url": "/ultra-art/1337-back_default.png",
+      "source_sha256": "511324ce475c96567c9e1595bfb21eab70e6df9a8f1120e361cd2a28d4f1bd7b"
+    },
+    {
+      "url": "/ultra-art/1337-back_shiny.png",
+      "source_sha256": "9bc96c659dcbcab6394a0714a00405a3dda96aebf9448b32ba8f8414b863bee9"
+    },
+    {
+      "url": "/ultra-art/1337-front_default.png",
+      "source_sha256": "56a367aa66c33a6c0a0a25f285f0fe813a965b7e8bcc0e71c28d77ec8ca15574"
+    },
+    {
+      "url": "/ultra-art/1337-front_shiny.png",
+      "source_sha256": "ce33e2c016f730495fa8d78862726ee2083817da9f792abc9243daa18b55b2e2"
+    },
+    {
+      "url": "/ultra-art/1383-back_default.png",
+      "source_sha256": "ae461f043f93a651c5d0b8e7c43358d68fa099fe7408c99d1c6e59eed0ac5c3e"
+    },
+    {
+      "url": "/ultra-art/1383-back_shiny.png",
+      "source_sha256": "db5b1289f4604a774f7032498fad45fd5136f1de19d845666a88e669db7dde87"
+    },
+    {
+      "url": "/ultra-art/1383-front_default.png",
+      "source_sha256": "c4a93a4ba73ef5c931c133a94d8b9e21c97333749b77b1bba5c2064920dd9fcf"
+    },
+    {
+      "url": "/ultra-art/1383-front_shiny.png",
+      "source_sha256": "b52ffd115991c8b19e825157b7cf4800840fa95287175ca8675cccc8a71aeb5a"
+    },
+    {
+      "url": "/ultra-art/1384-back_default.png",
+      "source_sha256": "e993123e34ef68c5f493d45d0586cace23d16a65870c6ac21f845ed8b60e6538"
+    },
+    {
+      "url": "/ultra-art/1384-back_shiny.png",
+      "source_sha256": "abcbb65f19d2c9f4cab421f505e0930257891d76a5f3f0f9103db2cadb6c4b36"
+    },
+    {
+      "url": "/ultra-art/1384-front_default.png",
+      "source_sha256": "be8c959086348e58e20111be9b4ff839702ca0f5bd4c8a4ff2772b713f2d789a"
+    },
+    {
+      "url": "/ultra-art/1384-front_shiny.png",
+      "source_sha256": "c86267a938823ca0ff514cc647313493bf0b40958a22b7ea84c3efb0eb5c35d7"
+    },
+    {
+      "url": "/ultra-art/413-back_default.png",
+      "source_sha256": "5bfa829e2e466d87ccb3efc8372e613bac4292e858ac84ef07937a32598ebae6"
+    },
+    {
+      "url": "/ultra-art/413-back_shiny.png",
+      "source_sha256": "db293e9a65abca24957c384730a4b8614bb0fbb17dc87c625fba783e0acb5d9b"
+    },
+    {
+      "url": "/ultra-art/413-front_default.png",
+      "source_sha256": "6d9a2015db8c7ea7c87f6c5beef495e8c4e0d3637b471fb05d7fca28159bc671"
+    },
+    {
+      "url": "/ultra-art/413-front_shiny.png",
+      "source_sha256": "57845ce00377eabca1c56799a225b1c6a3f1859c28a0c737710de99abde41b5d"
+    },
+    {
+      "url": "/ultra-art/414-back_default.png",
+      "source_sha256": "a277f323f587bf4c9d155ffa88feec4963ceb9bdbda4aa5c26868e3d2c5e89c6"
+    },
+    {
+      "url": "/ultra-art/414-back_shiny.png",
+      "source_sha256": "6d29b7455658b071d6752cedef4f9a53a6616864a3da4dd514f2f7221a1c7738"
+    },
+    {
+      "url": "/ultra-art/414-front_default.png",
+      "source_sha256": "b0258432664666e5094ab5293d30d665c4b41b59b4421c16c70f7d3388bd6ccb"
+    },
+    {
+      "url": "/ultra-art/414-front_shiny.png",
+      "source_sha256": "dadda9a6f6783e1e746a12928fb273b587d1ba6775132daa8660373c29bb1dfe"
+    },
+    {
+      "url": "/ultra-art/415-back_default.png",
+      "source_sha256": "7bb7a613c0f1c1fdadf02b102428c6dcd86669d6ad08657c163eef5d5c5c4a44"
+    },
+    {
+      "url": "/ultra-art/415-back_shiny.png",
+      "source_sha256": "7bb7a613c0f1c1fdadf02b102428c6dcd86669d6ad08657c163eef5d5c5c4a44"
+    },
+    {
+      "url": "/ultra-art/415-front_default.png",
+      "source_sha256": "db220aedf9e655d102ba1e692b06f154121d89eb57681be6814dc913c5f9c74f"
+    },
+    {
+      "url": "/ultra-art/415-front_shiny.png",
+      "source_sha256": "db220aedf9e655d102ba1e692b06f154121d89eb57681be6814dc913c5f9c74f"
+    },
+    {
+      "url": "/ultra-art/416-back_default.png",
+      "source_sha256": "192225ce2f8a0ea82c27094a4986744f3191d698c8ebda6c73bb5783e959512a"
+    },
+    {
+      "url": "/ultra-art/416-back_shiny.png",
+      "source_sha256": "f00b791f7df5d22d0f9201b7524268236f76e395faea94d00f8cf37a8ddc8086"
+    },
+    {
+      "url": "/ultra-art/416-front_default.png",
+      "source_sha256": "fc63e3cc966cc5f17f08d24ad6658088f0ed3cefe5fe35851d7c5ef17892037d"
+    },
+    {
+      "url": "/ultra-art/416-front_shiny.png",
+      "source_sha256": "441384221d8bef92817f3018aab5e84ac667fe2e25c87db6367abd53c791cf92"
+    },
+    {
+      "url": "/ultra-art/418-back_default.png",
+      "source_sha256": "31889d84c5bec8db89987106ab908e5b138b3d16fd170f5109227bfe0ed6bf71"
+    },
+    {
+      "url": "/ultra-art/418-back_shiny.png",
+      "source_sha256": "2724cbab3a0cbaeb0ed980acfd2d132ca215b460723f3e48038b53678fe4942c"
+    },
+    {
+      "url": "/ultra-art/418-front_default.png",
+      "source_sha256": "40c77ab3d6dd5a5bc84eaba96f74280bc7d2e5eaae472b33048de9ea390dc2c9"
+    },
+    {
+      "url": "/ultra-art/418-front_shiny.png",
+      "source_sha256": "72293042352e98f8f903e46ae38982cdab33b18dea98e28d8b032c00edb2a690"
+    },
+    {
+      "url": "/ultra-art/419-back_default.png",
+      "source_sha256": "5027544569087386ee6c6e61515f4e2b4de6cfca2a860f6db6903d25ad23cb31"
+    },
+    {
+      "url": "/ultra-art/419-back_shiny.png",
+      "source_sha256": "d571f7f9692ee0a195c2c3df7cec896f300b6d09736c8efc788d7778c8ca8799"
+    },
+    {
+      "url": "/ultra-art/419-front_default.png",
+      "source_sha256": "991c80ffe87e787a95f1433857c7afd8d0ef70dadf1ebe3640c705e72bb4b83b"
+    },
+    {
+      "url": "/ultra-art/419-front_shiny.png",
+      "source_sha256": "15d5db3715ca287b1642c0639502811650357caacb25f0a21e6b9009076424c3"
+    },
+    {
+      "url": "/ultra-art/420-back_default.png",
+      "source_sha256": "93ed8599a335645ab2d4eefa89d4a8101e968454e1e6f1633c2853f09aa8574f"
+    },
+    {
+      "url": "/ultra-art/420-back_shiny.png",
+      "source_sha256": "af5d8dc5762cd6cf796926911f0dea5e1c930fe942b0a81cf5d1e37cec6a7f3c"
+    },
+    {
+      "url": "/ultra-art/420-front_default.png",
+      "source_sha256": "064ebb0c71c0b4f91141c5b6deb244cde04b6c560e4e370443953b53a217c020"
+    },
+    {
+      "url": "/ultra-art/420-front_shiny.png",
+      "source_sha256": "6688e80df94c4c185b325738000adc75eb2fc941940baf89eac7dc0f16bf08e3"
+    },
+    {
+      "url": "/ultra-art/421-back_default.png",
+      "source_sha256": "63dee7f5668643ecd9b09a1131c14ef0b93b11a86a3f08cb0ca0f273386a1ab9"
+    },
+    {
+      "url": "/ultra-art/421-back_shiny.png",
+      "source_sha256": "63dee7f5668643ecd9b09a1131c14ef0b93b11a86a3f08cb0ca0f273386a1ab9"
+    },
+    {
+      "url": "/ultra-art/421-front_default.png",
+      "source_sha256": "5401a0320724c23581f0fd5d60276f0c064ecff97115e1433f02b78e3f6b5da9"
+    },
+    {
+      "url": "/ultra-art/421-front_shiny.png",
+      "source_sha256": "5401a0320724c23581f0fd5d60276f0c064ecff97115e1433f02b78e3f6b5da9"
+    },
+    {
+      "url": "/ultra-art/422-back_default.png",
+      "source_sha256": "12ac1e87c7301483c28adff7fdc090f1ebedfe8e3db80ad26d7ee7954971b336"
+    },
+    {
+      "url": "/ultra-art/422-back_shiny.png",
+      "source_sha256": "12ac1e87c7301483c28adff7fdc090f1ebedfe8e3db80ad26d7ee7954971b336"
+    },
+    {
+      "url": "/ultra-art/422-front_default.png",
+      "source_sha256": "e2148ad93d07b97127e8f69f418bee8afd6e8d1de40d7b8931fd3360b59c1ba2"
+    },
+    {
+      "url": "/ultra-art/422-front_shiny.png",
+      "source_sha256": "e2148ad93d07b97127e8f69f418bee8afd6e8d1de40d7b8931fd3360b59c1ba2"
+    },
+    {
+      "url": "/ultra-art/423-back_default.png",
+      "source_sha256": "22861fe7b9e8afee577f5bfca6e41dcb0875c4256b06cd262232f0a4fc85e0a7"
+    },
+    {
+      "url": "/ultra-art/423-back_shiny.png",
+      "source_sha256": "22861fe7b9e8afee577f5bfca6e41dcb0875c4256b06cd262232f0a4fc85e0a7"
+    },
+    {
+      "url": "/ultra-art/423-front_default.png",
+      "source_sha256": "212afb9e35c81c67757b830451b73c94592645173886e51309fc4c7ad68072dc"
+    },
+    {
+      "url": "/ultra-art/423-front_shiny.png",
+      "source_sha256": "212afb9e35c81c67757b830451b73c94592645173886e51309fc4c7ad68072dc"
+    },
+    {
+      "url": "/ultra-art/424-back_default.png",
+      "source_sha256": "27136f99288249ab4b8cf9e884f75118a4c3dc1fd8ffa49ba235fb522b747be2"
+    },
+    {
+      "url": "/ultra-art/424-back_shiny.png",
+      "source_sha256": "6fe30e3862fd368309548edaf302f8b157343f3adec620192dfc52750cfb8877"
+    },
+    {
+      "url": "/ultra-art/424-front_default.png",
+      "source_sha256": "50a2e27c1449ded7c61b8e0e417f82dc48c35dd9a844d9653df315dd2bb655f0"
+    },
+    {
+      "url": "/ultra-art/424-front_shiny.png",
+      "source_sha256": "4443aee8d283ecee77f1ffcc4cd2ae76522f88d7a4504138a06bc40258d590a2"
+    },
+    {
+      "url": "/ultra-art/425-back_default.png",
+      "source_sha256": "fa9376790e6946d43487e9dde367011bb4e564442d01b02030e869a478909b67"
+    },
+    {
+      "url": "/ultra-art/425-back_shiny.png",
+      "source_sha256": "fa9376790e6946d43487e9dde367011bb4e564442d01b02030e869a478909b67"
+    },
+    {
+      "url": "/ultra-art/425-front_default.png",
+      "source_sha256": "f1a94ee76e45f2b4eace66aab35a8dc7131e2fafe7a2d87cdba19b90cfa441da"
+    },
+    {
+      "url": "/ultra-art/425-front_shiny.png",
+      "source_sha256": "f1a94ee76e45f2b4eace66aab35a8dc7131e2fafe7a2d87cdba19b90cfa441da"
+    },
+    {
+      "url": "/ultra-art/426-back_default.png",
+      "source_sha256": "35c09ab64ed4775f3e70964bffce2e06a9e6716adac9859ac0e5058427505bc3"
+    },
+    {
+      "url": "/ultra-art/426-back_shiny.png",
+      "source_sha256": "35c09ab64ed4775f3e70964bffce2e06a9e6716adac9859ac0e5058427505bc3"
+    },
+    {
+      "url": "/ultra-art/426-front_default.png",
+      "source_sha256": "3c57bc351cb90c987732a93e38d7adf933965c716d99f73be75b1854df370637"
+    },
+    {
+      "url": "/ultra-art/426-front_shiny.png",
+      "source_sha256": "3c57bc351cb90c987732a93e38d7adf933965c716d99f73be75b1854df370637"
+    },
+    {
+      "url": "/ultra-art/427-back_default.png",
+      "source_sha256": "ffa0694f3a303cca8f3f37c8ab07b8f6634145aa0928aacc7e8700025abc582b"
+    },
+    {
+      "url": "/ultra-art/427-back_shiny.png",
+      "source_sha256": "832a783001000e90c4a257628551393b67fc5ef18817dc3a777e1fe9dadabab2"
+    },
+    {
+      "url": "/ultra-art/427-front_default.png",
+      "source_sha256": "68b9a7e827dfd0fca17d0ff58f7397a4987a1ad475aad8bbb6464cdec790adaa"
+    },
+    {
+      "url": "/ultra-art/427-front_shiny.png",
+      "source_sha256": "ce168911f58b0715a2c692abd077b6d8973e155ed1a86cc3946764bb8bcc0a23"
+    },
+    {
+      "url": "/ultra-art/428-back_default.png",
+      "source_sha256": "8fbcd42bedf3e0f69c9264f22a0ea7b563a236edb36ee26a87842d459291e530"
+    },
+    {
+      "url": "/ultra-art/428-back_shiny.png",
+      "source_sha256": "3f7f60384c7cb3b64e9736d9ec9e7f22a80f94885695ef4bad65dac42def5962"
+    },
+    {
+      "url": "/ultra-art/428-front_default.png",
+      "source_sha256": "24ff9bc8326d6781b939315b3f834971bf31c121f8c4ecceecc1f87385563722"
+    },
+    {
+      "url": "/ultra-art/428-front_shiny.png",
+      "source_sha256": "0b210f510a5ed591ac1c1033319b2e575ab81ab3151cffefb12b9cba823f4ffa"
+    },
+    {
+      "url": "/ultra-art/429-back_default.png",
+      "source_sha256": "1ddd9b5a58454f12ebf8a600d3c15ce8ac4a742288fd32b0ac90aa3a027d11d1"
+    },
+    {
+      "url": "/ultra-art/429-back_shiny.png",
+      "source_sha256": "1ddd9b5a58454f12ebf8a600d3c15ce8ac4a742288fd32b0ac90aa3a027d11d1"
+    },
+    {
+      "url": "/ultra-art/429-front_default.png",
+      "source_sha256": "016e3bf322d0eebd1b861338189a263bb7609c5f26ad767710b2437d49bbbf80"
+    },
+    {
+      "url": "/ultra-art/429-front_shiny.png",
+      "source_sha256": "016e3bf322d0eebd1b861338189a263bb7609c5f26ad767710b2437d49bbbf80"
+    },
+    {
+      "url": "/ultra-art/430-back_default.png",
+      "source_sha256": "801060b623241ca8762ac2fcaf1d991d5c66d8bc66cedd7852d4e5e77087961b"
+    },
+    {
+      "url": "/ultra-art/430-back_shiny.png",
+      "source_sha256": "a3f711efdebe77ca8e5fb69cb672653c8854dac6b34ac45000a1255734cdf39d"
+    },
+    {
+      "url": "/ultra-art/430-front_default.png",
+      "source_sha256": "68e9912976b70bfe90d3850e2caa1d0a4de089ce1f958a648f1c2150635518d2"
+    },
+    {
+      "url": "/ultra-art/430-front_shiny.png",
+      "source_sha256": "681be7bc490fa37f628b15e530eb45a4efdb8f4ca9a582160f68c98f0e0219f2"
+    },
+    {
+      "url": "/ultra-art/431-back_default.png",
+      "source_sha256": "5042f134d1b3b253ca10979565f11a683fdb80cce86b4b83f02715a675182c33"
+    },
+    {
+      "url": "/ultra-art/431-back_shiny.png",
+      "source_sha256": "b5066d7ef667d34c914fad8fcd71930fc6bd753310341fbfaf0e132fad91dd59"
+    },
+    {
+      "url": "/ultra-art/431-front_default.png",
+      "source_sha256": "09932d119cf766cb95a44be887d3e1d68235baa95d7626abbb45e596fdd5c26c"
+    },
+    {
+      "url": "/ultra-art/431-front_shiny.png",
+      "source_sha256": "85dd37e55f8464601f99c47e92c2001bb83b4b3f30ae668c8ab8d90c7cc424ac"
+    },
+    {
+      "url": "/ultra-art/432-back_default.png",
+      "source_sha256": "9f7de14e664b40c8431c63d67c1c87dc9926cbe231b3d746c64f4f6fb4bb0a73"
+    },
+    {
+      "url": "/ultra-art/432-back_shiny.png",
+      "source_sha256": "8ad57b64aca45611bf02174d5536d5210816fb6f67096f2356c678c4fcd73e4e"
+    },
+    {
+      "url": "/ultra-art/432-front_default.png",
+      "source_sha256": "d588bc7f60ae0a54a19118348d437cc7c27ee8083596fd8d346dd2ae0cdfc6e5"
+    },
+    {
+      "url": "/ultra-art/432-front_shiny.png",
+      "source_sha256": "351dd9937b47bf820fd6d1566bd4659b5efd7605dc5ad26bfb9b0fa91f73cc02"
+    },
+    {
+      "url": "/ultra-art/433-back_default.png",
+      "source_sha256": "66128c2420f2401c1a68294b2c3d5f81e7078f7c590dc22a2ddf3d0d944826f0"
+    },
+    {
+      "url": "/ultra-art/433-back_shiny.png",
+      "source_sha256": "b4075f2766f24be2e671c7c2109c33946272c76829a23d6beb142888791c4213"
+    },
+    {
+      "url": "/ultra-art/433-front_default.png",
+      "source_sha256": "241afe31d79cc65d8e67b12039364be85c452539359f43042972fc157aee080d"
+    },
+    {
+      "url": "/ultra-art/433-front_shiny.png",
+      "source_sha256": "2b098ab11fbc38736913a60a98d85f5481ee1e3c932bf7655e615a3a69237708"
+    },
+    {
+      "url": "/ultra-art/434-back_default.png",
+      "source_sha256": "d5a757bec24c90585f1700a9cbc236eb2c19a04dd7b166c3fc0967b81e1fbe78"
+    },
+    {
+      "url": "/ultra-art/434-back_shiny.png",
+      "source_sha256": "d5a757bec24c90585f1700a9cbc236eb2c19a04dd7b166c3fc0967b81e1fbe78"
+    },
+    {
+      "url": "/ultra-art/434-front_default.png",
+      "source_sha256": "d5a757bec24c90585f1700a9cbc236eb2c19a04dd7b166c3fc0967b81e1fbe78"
+    },
+    {
+      "url": "/ultra-art/434-front_shiny.png",
+      "source_sha256": "d5a757bec24c90585f1700a9cbc236eb2c19a04dd7b166c3fc0967b81e1fbe78"
+    },
+    {
+      "url": "/ultra-art/990-back_default.png",
+      "source_sha256": "02fadbba2d86d18d31290d6bf13e6f2f9d9fc8889984afb9779ceff00e066280"
+    },
+    {
+      "url": "/ultra-art/990-back_shiny.png",
+      "source_sha256": "5f7c50e2ac82d3ab287baa0d5d9cde8c071e364ff38739bfb25249c6b55b4f19"
+    },
+    {
+      "url": "/ultra-art/990-front_default.png",
+      "source_sha256": "a4c4f3b7079eda882abeddf0ea937f746c3b113931281fcd922e03829fdcd49e"
+    },
+    {
+      "url": "/ultra-art/990-front_shiny.png",
+      "source_sha256": "f7f0e5c4293c9f056d26acd3d3855a784ca03f816423d3e22e99471cc584c7a9"
+    },
+    {
+      "url": "/ultra-art/991-back_default.png",
+      "source_sha256": "3dce14b274feafbfb28a19cc63244f0e5c59a184cc2b95eb2f0c24e17b8a5980"
+    },
+    {
+      "url": "/ultra-art/991-back_shiny.png",
+      "source_sha256": "24322fe079355f6bba784b476ec230707159cfec88f5d6a676186836a4659a2f"
+    },
+    {
+      "url": "/ultra-art/991-front_default.png",
+      "source_sha256": "8d48696e60eaba5a43efbf60e869dff482c48bec4425e4b9ff12923d5d9012a4"
+    },
+    {
+      "url": "/ultra-art/991-front_shiny.png",
+      "source_sha256": "c33d41fd3ffc037ad2ddfc32d812501367b91c9339155f30d159b123fa55f17e"
+    },
+    {
+      "url": "/ultra-art/992-back_default.png",
+      "source_sha256": "9ced72414b2c8f0005f8428595cc7f8f44baa36fc6d4570f55471a0764b18d2c"
+    },
+    {
+      "url": "/ultra-art/992-back_shiny.png",
+      "source_sha256": "f21c0d80fd2f9f14a3696be150bd0d3d53f8453ecb7aa0984621020100a9b1b1"
+    },
+    {
+      "url": "/ultra-art/992-front_default.png",
+      "source_sha256": "9804fa1f39be15ce5f82bcb0575bbf0769f6be05db3fb48280f266d1c2506b9d"
+    },
+    {
+      "url": "/ultra-art/992-front_shiny.png",
+      "source_sha256": "b63308ec14d1c039af0680412d22a097e5a87ebd924bc9d5dfb267ae00b74ebc"
+    },
+    {
+      "url": "/ultra-art/993-back_default.png",
+      "source_sha256": "093da10bcb2780b4e5014e82244120f2ca7b8c50dded8a38ee58c6f0f72bf3b8"
+    },
+    {
+      "url": "/ultra-art/993-back_shiny.png",
+      "source_sha256": "29ca77a536591932123963cf5c13269e189e2375a14fa2c70b9cffc3daed92d1"
+    },
+    {
+      "url": "/ultra-art/993-front_default.png",
+      "source_sha256": "2844548593f3f9d715ad179aea7d773d3b322e228167f8fa143a67f7671100af"
+    },
+    {
+      "url": "/ultra-art/993-front_shiny.png",
+      "source_sha256": "98d589a9a25b675de937acfa2b9f5f4d70fd128e40277239656aa8d777027361"
+    },
+    {
       "url": "https://raw.githubusercontent.com/PokeAPI/sprites/1dce80ceb372675e9fc7e9f101b71845ef587de2/sprites/pokemon/1.png",
       "source_sha256": "7307265558511ea080add119ab7e86b9f87aaab4cedef76df2a13290ca5ad8c9"
     },

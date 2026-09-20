@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-20",
+  "source": "user-provided",
+  "original_filename": "口袋妖怪究极绿宝石5.8神战最终版+永久超进化（电脑仓库有作弊器）(1).gba",
+  "local_path": "assets/imported/ultra-emerald-5.8-user/ultra-emerald-5.8-final-permanent-mega.gba",
+  "bytes": 33554432,
+  "sha256": "cb93af4a51809e4ef4fb5e7356e029e009a026bf20148fa7618e0731bb91edac",
+  "copy_verified": true,
+  "header": {
+    "title": "POKEMON EMER",
+    "game_code": "BPEE",
+    "revision_byte": 0,
+    "checksum_valid": true
+  },
+  "version_status": "User and filename identify 5.8 神战最终版 + 永久超进化 + PC cheat; upstream release identity is not byte-verified.",
+  "storage_policy": "ROM and decoded sprites are local-only, git ignored. No private source path or ROM payload in this manifest.",
+  "extracted_records": "content/source-variants/ultra-emerald-5.8.json",
+  "raw_inventory": "content/source-variants/ultra-emerald-5.8-inventory.json",
+  "limitations": [
+    "Only first sprite animation frame exported; decoded full stream hashes retained.",
+    "Source names may be shortened; display suffixes distinguish duplicate source names.",
+    "Evolution table decoded; script encounters, runtime persistence, held-item privileges and reversion hooks not fully verified.",
+    "Extended ability names >=255 not decoded; source IDs preserved without assigning official ability identities.",
+    "Source learnsets and Omni battle/quest implementation remain pending.",
+    "Existing official forms and their values are not overwritten by this reference pack."
+  ]
+}

@@ -28,7 +28,7 @@ for row in report['images']+report.get('portraits',[]):
             assert n > 0 and len(values)+n <= 4096
             values.extend([color]*n)
     url = row['url']
-    source = ROOT / 'assets/imported/rocket-user/bond-sprites' / url.split('/')[-1] if url.startswith('/rocket-art/') else ROOT / '.cache/gba-art' / (hashlib.sha256(url.encode()).hexdigest()+'.img')
+    source = ROOT / 'assets/imported/rocket-user/bond-sprites' / url.split('/')[-1] if url.startswith('/rocket-art/') else ROOT / 'assets/imported/ultra-emerald-5.8-user/form-sprites' / url.split('/')[-1] if url.startswith('/ultra-art/') else ROOT / '.cache/gba-art' / (hashlib.sha256(url.encode()).hexdigest()+'.img')
     data = source.read_bytes()
     assert hashlib.sha256(data).hexdigest() == row['source_sha256']
     image = Image.open(io.BytesIO(data)).convert('RGBA')
