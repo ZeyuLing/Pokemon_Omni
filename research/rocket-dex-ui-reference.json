@@ -1,0 +1,15 @@
+{
+  "rom_sha256": "033235cdd389c4c8cb1aa6d68a93954a55fd681c92a1a554ebc63431117b4eaf",
+  "method": "Actual mGBA render; isolated temporary state opens Dex and marks seen solely for UI reference. Original ROM and user saves unchanged.",
+  "scope": "Layout, palette, typography and visual hierarchy; no gameplay/data verification inferred from temporary state",
+  "screenshots": [
+    {
+      "file": "assets/imported/rocket-user/ui-reference/list.png",
+      "sha256": "9f2193a3ed646026a2dcd0c81349fa63d7965ec957ce7dd9044a1d944b193649"
+    },
+    {
+      "file": "assets/imported/rocket-user/ui-reference/detail.png",
+      "sha256": "fd504f18a02cbca4c1e9bce32b86e300748dfbc0ec947620e8d155c040897e5e"
+    }
+  ]
+}

@@ -2,13 +2,13 @@
   "validated_on": "2026-09-20",
   "build": {
     "rom": "build/pallet/omni-pallet.gba",
-    "bytes": 20971520,
-    "sha256": "e7119804eb32859d579c434c0e0e273a6f1444d37747a1ab1ba5f35e7e74363d",
+    "bytes": 25165824,
+    "sha256": "2fe716a65c402d5a439121adc725ec417d92789962f917ae4a18dce04afa8f4b",
     "header_checksum_valid": true,
     "scope": "Playable Pallet Town opening with integrated Pokedex; limited starter practice rules."
   },
   "emulator": {
-    "rom_sha256": "e7119804eb32859d579c434c0e0e273a6f1444d37747a1ab1ba5f35e7e74363d",
+    "rom_sha256": "2fe716a65c402d5a439121adc725ec417d92789962f917ae4a18dce04afa8f4b",
     "dex_pages": {
       "page_directory": true,
       "long_text_to_end": true,
@@ -20,7 +20,7 @@
     },
     "emulator": "@wasm-gaming/mgba-wasm@0.1.1",
     "maps_visited": 5,
-    "normal_button_inputs": 377,
+    "normal_button_inputs": 366,
     "starter_acquisition": true,
     "debug_dex_direct_boot": true,
     "debug_menu_dex_without_partner": true,

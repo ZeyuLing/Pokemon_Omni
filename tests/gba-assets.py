@@ -11,7 +11,7 @@ report = json.loads((ROOT / 'build/gba/asset-report.json').read_text(encoding='u
 atlas = (ROOT / 'build/gba/art.bin').read_bytes()
 assert report['missing_images'] == 0
 checked = set()
-for row in report['images']:
+for row in report['images']+report.get('portraits',[]):
     offset = row['offset']
     if offset in checked:
         continue
@@ -32,7 +32,12 @@ for row in report['images']:
     data = source.read_bytes()
     assert hashlib.sha256(data).hexdigest() == row['source_sha256']
     image = Image.open(io.BytesIO(data)).convert('RGBA')
-    image.thumbnail((64,64), Image.Resampling.LANCZOS if image.width>128 else Image.Resampling.NEAREST)
+    if row.get('kind') == 'portrait':
+        bounds = image.getchannel('A').point(lambda a:255 if a>=96 else 0).getbbox()
+        if bounds: image = image.crop(bounds)
+        image.thumbnail((56,56), Image.Resampling.NEAREST)
+    else:
+        image.thumbnail((64,64), Image.Resampling.LANCZOS if image.width>128 else Image.Resampling.NEAREST)
     expected = Image.new('RGBA',(64,64))
     expected.alpha_composite(image,((64-image.width)//2,(64-image.height)//2))
     for actual,(r,g,b,a) in zip(values,expected.get_flattened_data()):

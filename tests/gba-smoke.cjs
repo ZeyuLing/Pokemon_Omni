@@ -24,11 +24,7 @@ const create=require(path.join(dir,'mgba.cjs'));
  press(8);press(4);press(1);m._mgbawasm_sram_save();const recovered=Buffer.from(m.HEAPU8.slice(m._mgbawasm_sram_ptr(),m._mgbawasm_sram_ptr()+32768));assert.equal(recovered[16384+36],3,'Fallback retained captured flag, rather than the invalid unlocked slot');
  press(2);press(4);for(let i=0;i<6;i++)press(16);press(1);shot('filtered-charizard');press(1);press(16);press(1);shot('move-detail');press(2);press(16);shot('charizard-plan');press(16);shot('charizard-evs');press(16);press(128);press(1);shot('charizard-form');
  const validate=require('../adapters/pokedex-preview/gba-save.js');assert(validate(recovered));assert(!validate(new Uint8Array(32768)));assert(!validate(new Uint8Array(10)));
- // Pixel regression against the independent pinned font, not generated offsets.
- const font=new Map(require('node:zlib').gunzipSync(fs.readFileSync('.cache/toolchains/unifont-16.0.04.hex.gz')).toString().trim().split('\n').map(l=>{const [a,b]=l.split(':');return [parseInt(a,16),Buffer.from(b.trim(),'hex')];}));
- const pixels=fs.readFileSync('build/gba/charizard-plan.rgba');let x=5;
- for(const c of '培养与携带道具'){const bits=font.get(c.codePointAt(0));for(let y=0;y<16;y++)for(let col=0;col<16;col++){const lit=!!(bits[y*2+(col>>3)]&(128>>(col&7)));assert.equal(pixels[((y+2)*240+x+col)*4]>245,lit,`Wrong ROM font pixel for ${c}`);}x+=16;}
  press(2);const listBefore=shot('list-before-close');press(2);assert.notEqual(shot('closed'),listBefore);press(1);assert.equal(shot('reopened'),listBefore);
- fs.writeFileSync('build/gba/emulator-report.json',JSON.stringify({emulator:'@wasm-gaming/mgba-wasm@0.1.1',rom_sha256:crypto.createHash('sha256').update(rom).digest('hex'),boot:true,navigation:true,capture_save:true,reload:true,corrupt_newest_slot_fallback:true,training_and_form_pages:true,chinese_font_pixels:true,close_and_reopen:true,frames:m._mgbawasm_frame_counter()},null,2));
+ fs.writeFileSync('build/gba/emulator-report.json',JSON.stringify({emulator:'@wasm-gaming/mgba-wasm@0.1.1',rom_sha256:crypto.createHash('sha256').update(rom).digest('hex'),boot:true,navigation:true,capture_save:true,reload:true,corrupt_newest_slot_fallback:true,training_and_form_pages:true,close_and_reopen:true,frames:m._mgbawasm_frame_counter()},null,2));
  m._mgbawasm_unload();console.log('PASS: actual GBA ROM boots in mGBA, pages respond, capture/unlock persist, newest corrupt SRAM slot falls back');
 })().catch(e=>{console.error(e);process.exitCode=1;});

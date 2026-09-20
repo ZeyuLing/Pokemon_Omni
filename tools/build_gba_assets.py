@@ -7,8 +7,10 @@ import json
 from pathlib import Path
 import struct
 import subprocess
+import unicodedata
 import urllib.request
 from PIL import Image
+from gba_pixel_font import load_pixel_glyphs
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'build/gba'
@@ -40,6 +42,7 @@ def main():
     plans = json.loads((ROOT / 'content/training/plans.json').read_text(encoding='utf-8'))['records']
     descriptions = json.loads(subprocess.check_output(['node', str(ROOT / 'tools/legality-reference/dex-descriptions.cjs')], cwd=ROOT))
     urls = sorted({v for e in catalog['entries'] for k,v in e['art_reference']['variants'].items() if k in VARIANTS and v})
+    front_urls = {e['art_reference']['variants']['front_default'] for e in catalog['entries']}
     def fetch(url):
         target = CACHE / (hashlib.sha256(url.encode()).hexdigest() + '.img')
         if url.startswith('/rocket-art/'):
@@ -58,15 +61,25 @@ def main():
                 except Exception as error:
                     last = error
             else:
-                return url, None, str(last)
+                return url, None, str(last), None
         image = Image.open(io.BytesIO(data)).convert('RGBA')
+        portrait_pixels = None
+        if url in front_urls:
+            # Source sheets contain wide transparent margins. The main Dex
+            # portrait uses the original sprite pixels before fitting the frame.
+            bounds = image.getchannel('A').point(lambda a:255 if a>=96 else 0).getbbox()
+            portrait = image.crop(bounds) if bounds else image.copy()
+            portrait.thumbnail((56,56), Image.Resampling.NEAREST)
+            portrait_canvas = Image.new('RGBA',(64,64))
+            portrait_canvas.alpha_composite(portrait,((64-portrait.width)//2,(64-portrait.height)//2))
+            portrait_pixels = b''.join(struct.pack('<H',0x8000 if a<96 else (r>>3)|((g>>3)<<5)|((b>>3)<<10)) for r,g,b,a in portrait_canvas.get_flattened_data())
         image.thumbnail((64, 64), Image.Resampling.LANCZOS if image.width > 128 else Image.Resampling.NEAREST)
         canvas = Image.new('RGBA', (64, 64))
         canvas.alpha_composite(image, ((64 - image.width) // 2, (64 - image.height) // 2))
         pixels = bytearray()
         for r, g, b, a in canvas.get_flattened_data():
             pixels += struct.pack('<H', 0x8000 if a < 96 else (r >> 3) | ((g >> 3) << 5) | ((b >> 3) << 10))
-        return url, bytes(pixels), hashlib.sha256(data).hexdigest()
+        return url, bytes(pixels), hashlib.sha256(data).hexdigest(), portrait_pixels
     fetched = {}
     with concurrent.futures.ThreadPoolExecutor(max_workers=16) as pool:
         for i, result in enumerate(pool.map(fetch, urls)):
@@ -75,7 +88,7 @@ def main():
                 print(f'Images {i + 1}/{len(urls)}', flush=True)
     art = bytearray(); offsets = {}; seen = {}; audit = []
     for url in urls:
-        _, image, sha = fetched[url]
+        _, image, sha, _ = fetched[url]
         if image is None:
             offsets[url] = 0xFFFFFFFF
         else:
@@ -84,6 +97,17 @@ def main():
                 seen[key] = len(art); art += pack_image(image)
             offsets[url] = seen[key]
         audit.append({'url': url, 'source_sha256': sha if image else None, 'offset': offsets[url], 'error': None if image else sha})
+    portrait_offsets = {}; portrait_audit = []
+    for url in sorted(front_urls):
+        _,_,sha,pixels = fetched[url]
+        if pixels is None:
+            portrait_offsets[url] = 0xffffffff
+            continue
+        key=hashlib.sha256(pixels).hexdigest()
+        if key not in seen:
+            seen[key]=len(art); art+=pack_image(pixels)
+        portrait_offsets[url]=seen[key]
+        portrait_audit.append({'url':url,'source_sha256':sha,'offset':seen[key],'kind':'portrait'})
     (OUT / 'art.bin').write_bytes(art)
     manifest_path=ROOT / 'assets/source/gba-reference-images.json'
     if manifest_path.exists():
@@ -94,7 +118,7 @@ def main():
     manifest_path.write_text(json.dumps({'records':[{k:r[k] for k in ('url','source_sha256')} for r in audit]},indent=2)+'\n',encoding='utf-8')
     strings = set('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 -/:+.,()%?[]')
     def ctext(text):
-        text = str(text or '')
+        text = unicodedata.normalize('NFC', str(text or ''))
         strings.update(text)
         return json.dumps(text, ensure_ascii=False)
     type_names = {t['id']: t['name'] for t in catalog['types']}
@@ -117,7 +141,8 @@ def main():
     by_name = {e['name_reference']:e for e in catalog['entries']}
     indexes = []
     for e in catalog['entries']:
-        strings.update(e['name_zh_hans']); strings.update(e['name_reference'])
+        strings.update(unicodedata.normalize('NFC', e['name_zh_hans']))
+        strings.update(unicodedata.normalize('NFC', e['name_reference']))
         pools = sorted(set(m for pool in e['move_pool_ids'] for m in catalog['move_pools'][pool] if m in move_idx))
         start = len(learnsets); learnsets.extend(move_idx[m] for m in pools)
         for m in pools:
@@ -127,7 +152,8 @@ def main():
             decoded_sources.append(ctext('\n'.join(f'第{s[0]}世代 '+methods.get(s[1:2],'来源代码 ')+ (s[2:] if s[1:2] in ('L','S') else '' if s[1:2] in methods else s) for s in codes)))
         pstart = len(indexes); indexes.extend(plan_indexes.get(e['entry_id'], []))
         abilities = ' / '.join(dict.fromkeys(catalog['abilities'][a['id']]['name_zh'] for a in e['abilities']))
-        infos.append('{'+','.join([str(offsets[e['art_reference']['variants']['front_default']])+'u',str(start),str(len(pools)),str(pstart),str(len(indexes)-pstart),ctext('/'.join(type_names[t] for t in e['types'])),ctext(abilities),ctext(catalog['categories'][e['category_id']-1]['name'])])+'}')
+        list_name=e['name_zh_hans'].replace(' · ','·').replace('超极巨化','超巨').replace('超级进化','Mega').replace('极巨化','极巨')
+        infos.append('{'+','.join([str(portrait_offsets[e['art_reference']['variants']['front_default']])+'u',str(start),str(len(pools)),str(pstart),str(len(indexes)-pstart),ctext('/'.join(type_names[t] for t in e['types'])),ctext(abilities),ctext(catalog['categories'][e['category_id']-1]['name']),ctext(list_name)])+'}')
         variants.append('{'+','.join(str(offsets.get(e['art_reference']['variants'].get(k),0xffffffff))+'u' for k in VARIANTS)+'}')
         ability_text = '\n'.join(('隐藏特性：' if a['slot']=='H' else '特性：')+catalog['abilities'][a['id']]['name_zh']+'\n'+(descriptions['abilities'].get(a['id']) or '本参考库没有对应的效果说明。') for a in e['abilities'])
         ability_text += '\n效果为固定第九世代参考原文；形态是否采用该特性，以本项目审核为准。'
@@ -170,11 +196,15 @@ def main():
     font=bytearray(); glyph_lines=[]
     for code,bits in sorted(glyphs.items()):
         glyph_lines.append('{'+f'{code},{len(font)},{8 if len(bits)==16 else 16}'+'}');font+=bits
+    small_glyphs = load_pixel_glyphs(ROOT, strings)
+    small_lines = []
+    for code,(width,bits) in sorted(small_glyphs.items()):
+        small_lines.append('{'+f'{code},{len(font)},{width}'+'}'); font += bits
     (OUT / 'font.bin').write_bytes(font)
     header='''#ifndef OMNI_GBA_DATA_H
 #define OMNI_GBA_DATA_H
 #include <stdint.h>
-typedef struct {uint32_t art,move_start;uint16_t move_count,plan_start,plan_count;const char *types,*abilities,*category;} GbaInfo;
+typedef struct {uint32_t art,move_start;uint16_t move_count,plan_start,plan_count;const char *types,*abilities,*category,*list_name;} GbaInfo;
 typedef struct {const char *name,*kind;uint16_t power,accuracy,pp;const char *effect;} GbaMove;
 typedef struct {const char *role,*format,*item,*ability,*nature,*moves[4],*item_detail,*strategy;} GbaPlanText;
 typedef struct {const char *abilities,*evolution,*transition,*acquisition,*evidence;} GbaExtra;
@@ -189,12 +219,14 @@ extern const char *const gba_move_sources[];
 extern const char *const gba_move_sources_readable[];
 extern const unsigned char gba_art[],gba_font[];
 extern const GbaGlyph gba_glyphs[];
+extern const GbaGlyph gba_small_glyphs[];
 extern const unsigned gba_glyph_count;
+extern const unsigned gba_small_glyph_count;
 #endif
 '''
     (OUT / 'gba_data.h').write_text(header)
     source='#include "gba_data.h"\n'
-    for declaration,rows in [('GbaInfo gba_info',infos),('GbaMove gba_moves',move_lines),('GbaPlanText gba_plan_text',plan_lines),('GbaExtra gba_extra',extras),('GbaGlyph gba_glyphs',glyph_lines)]:
+    for declaration,rows in [('GbaInfo gba_info',infos),('GbaMove gba_moves',move_lines),('GbaPlanText gba_plan_text',plan_lines),('GbaExtra gba_extra',extras),('GbaGlyph gba_glyphs',glyph_lines),('GbaGlyph gba_small_glyphs',small_lines)]:
         source+=f'const {declaration}[]={{\n'+',\n'.join(rows)+'\n};\n'
     source+='const uint16_t gba_learnsets[]={'+','.join(map(str,learnsets))+'};\n'
     source+='const char *const gba_move_sources[]={'+','.join(move_sources)+'};\n'
@@ -202,12 +234,13 @@ extern const unsigned gba_glyph_count;
     source+='const uint32_t gba_variants[][8]={'+','.join(variants)+'};\n'
     source+='const uint16_t gba_plan_indexes[]={'+','.join(map(str,indexes))+'};\n'
     source+=f'const unsigned gba_glyph_count={len(glyphs)};\n'
+    source+=f'const unsigned gba_small_glyph_count={len(small_glyphs)};\n'
     (OUT / 'gba_data.c').write_text(source,encoding='utf-8')
     # Zig's assembly cache does not track .incbin inputs. Bind its cache key to
     # BOTH embedded payloads so a changed font subset cannot reuse old bytes.
     blob_hash=hashlib.sha256(art+font).hexdigest()
     (OUT / 'blobs.s').write_text(f'/* Embedded payload SHA-256: {blob_hash} */\n'+'.section .rodata\n.balign 4\n.global gba_art\ngba_art:\n.incbin "build/gba/art.bin"\n.balign 4\n.global gba_font\ngba_font:\n.incbin "build/gba/font.bin"\n')
-    (OUT / 'asset-report.json').write_text(json.dumps({'images':audit,'unique_images':len(seen),'art_bytes':len(art),'glyph_count':len(glyphs),'missing_images':sum(x['error'] is not None for x in audit)},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (OUT / 'asset-report.json').write_text(json.dumps({'images':audit,'portraits':portrait_audit,'unique_images':len(seen),'art_bytes':len(art),'glyph_count':len(glyphs),'small_glyph_count':len(small_glyphs),'missing_images':sum(x['error'] is not None for x in audit)},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(f'GBA art {len(art)} bytes; glyphs {len(glyphs)}; missing images {sum(x[1] is None for x in fetched.values())}',flush=True)
 
 
