@@ -1,11 +1,14 @@
 param(
  [string]$Zig=(Join-Path $PSScriptRoot '../.cache/toolchains/ziglang/zig.exe'),
- [string]$Python='C:/Users/13758/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe'
+ [string]$Python='C:/Users/13758/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe',
+ [switch]$StoryStart
 )
 $ErrorActionPreference='Stop'
 $root=Split-Path -Parent $PSScriptRoot
 Push-Location $root
 try {
+ [string[]]$debugFlags = @()
+ if (!$StoryStart) { $debugFlags += '-DOMNI_DEBUG_DEX' }
  & $Python tools/build_pallet_assets.py
  if ($LASTEXITCODE) { throw 'Pallet map compilation failed' }
  & $Python tools/build_gba_assets.py
@@ -14,7 +17,7 @@ try {
  if ($LASTEXITCODE) { throw 'Adventure core test build failed' }
  node tests/adventure-wasm.cjs
  if ($LASTEXITCODE) { throw 'Adventure core tests failed' }
- & $Zig cc -target arm-freestanding-eabi -mcpu=arm7tdmi -mthumb -std=c99 -O2 -ffreestanding -fno-builtin -fno-unwind-tables -fno-asynchronous-unwind-tables -nostdlib -Icore/include -Icontent/pokedex/generated -Icontent/training/generated -Ibuild/gba -Ibuild/pallet -Iadapters/gba adapters/gba/start.s adapters/gba/pallet_game.c adapters/gba/pokedex_game.c core/src/adventure.c core/src/pokedex.c core/src/training.c core/src/battle_stats.c content/pokedex/generated/catalog.c content/training/generated/plans.c build/gba/gba_data.c build/gba/blobs.s build/pallet/world_data.c build/pallet/world_blobs.s '-Wl,-T,adapters/gba/rom.ld' -o build/pallet/omni-pallet.elf
+ & $Zig cc @debugFlags -target arm-freestanding-eabi -mcpu=arm7tdmi -mthumb -std=c99 -O2 -ffreestanding -fno-builtin -fno-unwind-tables -fno-asynchronous-unwind-tables -nostdlib -Icore/include -Icontent/pokedex/generated -Icontent/training/generated -Ibuild/gba -Ibuild/pallet -Iadapters/gba adapters/gba/start.s adapters/gba/pallet_game.c adapters/gba/pokedex_game.c core/src/adventure.c core/src/pokedex.c core/src/training.c core/src/battle_stats.c content/pokedex/generated/catalog.c content/training/generated/plans.c build/gba/gba_data.c build/gba/blobs.s build/pallet/world_data.c build/pallet/world_blobs.s '-Wl,-T,adapters/gba/rom.ld' -o build/pallet/omni-pallet.elf
  if ($LASTEXITCODE) { throw 'Pallet GBA link failed' }
  & $Zig objcopy -O binary build/pallet/omni-pallet.elf build/pallet/omni-pallet.gba
  if ($LASTEXITCODE) { throw 'Pallet ROM export failed' }

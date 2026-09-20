@@ -24,9 +24,9 @@ const scenes=require('../build/pallet/scene-audit.json');
  }
  function face(dir){const keys=[128,64,32,16];const before=state();m._mgbawasm_set_keys(keys[dir]);for(let i=0;i<10&&state().direction!==dir;i++)frames(1);m._mgbawasm_set_keys(0);frames(4);assert.equal(state().x,before.x);assert.equal(state().y,before.y);}
  function talkAt(x,y,dir){walk(x,y);face(dir);press(1);}
- frames(90);assert.equal(state().screen,0);shot('title');press(1);shot('intro');dismiss();assert.equal(state().map,3);shot('bedroom');
- // Open the real menu before receiving the Dex; its gate must hold.
- press(8);press(1);assert.equal(state().screen,7);dismiss();press(2);assert.equal(state().screen,1);
+ frames(90);assert.equal(state().screen,6,'Debug boot opens the embedded Dex directly');assert.equal(state().starter,0);shot('debug-dex-boot');press(1);press(2);press(2);assert.equal(state().screen,0);shot('title');press(1);shot('intro');dismiss();assert.equal(state().map,3);shot('bedroom');
+ // Debug menu must also allow the Dex before receiving a partner.
+ press(8);press(1);assert.equal(state().screen,6);assert.equal(state().starter,0);press(2);press(2);assert.equal(state().screen,1);
  talkAt(1,2,1);dismiss();assert.equal(state().potions,1);press(1);dismiss();assert.equal(state().potions,1,'PC reward cannot be repeated');
  walk(10,2);assert.equal(state().map,2);shot('home');talkAt(8,5,1);assert.equal(state().screen,7);dismiss();
  walk(4,8);assert.equal(state().map,1);shot('town');walk(16,13);assert.equal(state().map,5);shot('lab');
@@ -39,11 +39,11 @@ const scenes=require('../build/pallet/scene-audit.json');
  press(8);for(let i=0;i<4;i++)press(128);press(1);assert.equal(state().screen,7);dismiss();press(2);
  m._mgbawasm_sram_save();const saved=Buffer.from(m.HEAPU8.slice(m._mgbawasm_sram_ptr(),m._mgbawasm_sram_ptr()+32768));fs.writeFileSync('build/pallet/test-game.sav',saved);
  const validGame=require('../adapters/pokedex-preview/pallet-save.js');assert(validGame(saved,scenes));assert(!validGame(Buffer.alloc(32768),scenes));assert(!require('../adapters/pokedex-preview/gba-save.js')(saved));
- m._mgbawasm_reset();probeOffset=-1;frames(90);assert.equal(state().screen,0);press(1);assert.equal(state().map,5);assert.equal(state().chapter,3);assert.equal(state().starter,1);assert.equal(state().battles,1);shot('continued');
+ m._mgbawasm_reset();probeOffset=-1;frames(90);assert.equal(state().screen,6);press(2);assert.equal(state().screen,0);press(1);assert.equal(state().map,5);assert.equal(state().chapter,3);assert.equal(state().starter,1);assert.equal(state().battles,1);shot('continued');
  // Return outdoors, enter the rival home, then home and upstairs; all warps work.
  walk(6,12);assert.equal(state().map,1);walk(15,7);assert.equal(state().map,4);shot('rival-home');talkAt(10,7,1);dismiss();walk(4,8);assert.equal(state().map,1);walk(6,7);assert.equal(state().map,2);walk(10,2);assert.equal(state().map,3);
  // Latest committed slot corrupted -> previous real game checkpoint remains usable.
- const latest=saved.readUInt32LE(4)>saved.readUInt32LE(16388)?0:16384;saved[latest+60]^=255;const sv=m._malloc(saved.length);m.HEAPU8.set(saved,sv);m._mgbawasm_sram_load(sv,saved.length);m._free(sv);m._mgbawasm_reset();probeOffset=-1;frames(90);press(1);assert.equal(state().starter,1);assert.equal(state().chapter,3);
- const report={rom_sha256:crypto.createHash('sha256').update(rom).digest('hex'),dex_pages:dexPages,emulator:'@wasm-gaming/mgba-wasm@0.1.1',maps_visited:5,normal_button_inputs:buttons,starter_acquisition:true,menu_dex_gate:true,party_and_integrated_dex:true,practice_battle:true,save_continue:true,corrupt_newest_slot_fallback:true};
+ const latest=saved.readUInt32LE(4)>saved.readUInt32LE(16388)?0:16384;saved[latest+60]^=255;const sv=m._malloc(saved.length);m.HEAPU8.set(saved,sv);m._mgbawasm_sram_load(sv,saved.length);m._free(sv);m._mgbawasm_reset();probeOffset=-1;frames(90);assert.equal(state().screen,6);press(2);press(1);assert.equal(state().starter,1);assert.equal(state().chapter,3);
+ const report={rom_sha256:crypto.createHash('sha256').update(rom).digest('hex'),dex_pages:dexPages,emulator:'@wasm-gaming/mgba-wasm@0.1.1',maps_visited:5,normal_button_inputs:buttons,starter_acquisition:true,debug_dex_direct_boot:true,debug_menu_dex_without_partner:true,party_and_integrated_dex:true,practice_battle:true,save_continue:true,corrupt_newest_slot_fallback:true};
  fs.writeFileSync('build/pallet/emulator-report.json',JSON.stringify(report,null,2)+'\n');console.log('PASS: playable Pallet opening, five maps/warps, NPCs, starter, party + in-game Dex, battle, save/continue and corrupt-slot fallback');m._mgbawasm_unload();
 })().catch(e=>{console.error(e);process.exitCode=1;});

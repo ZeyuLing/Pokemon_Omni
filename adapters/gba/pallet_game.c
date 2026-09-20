@@ -17,6 +17,11 @@
 #define box(...) omni_gba_box(__VA_ARGS__)
 #define text(...) omni_gba_text(__VA_ARGS__)
 #define num(...) omni_gba_num(__VA_ARGS__)
+#ifdef OMNI_DEBUG_DEX
+#define DEX_DEBUG_ACCESS 1
+#else
+#define DEX_DEBUG_ACCESS 0
+#endif
 enum {A=1,B=2,SELECT=4,START=8,RIGHT=16,LEFT=32,UP=64,DOWN=128,R=256,L=512};
 enum {TITLE,WORLD,MENU,TEAM,BAG,TRAINER,DEX,DIALOG,CHALLENGE,STARTER,BATTLE,BATTLE_LOG,NEW_CONFIRM};
 enum {AFTER_WORLD,AFTER_CHALLENGE,AFTER_MENU,AFTER_BAG};
@@ -117,7 +122,7 @@ static void tick(uint16_t keys){
  case TITLE:if(has_save&&(pressed&(UP|DOWN)))menu_cursor^=1;if(pressed&(A|START)){if(has_save&&!menu_cursor){load_game();screen=WORLD;}else if(has_save)screen=NEW_CONFIRM;else begin_new();}break;
  case NEW_CONFIRM:if(pressed&A)begin_new();if(pressed&B)screen=TITLE;break;
  case DIALOG:if(pressed&(A|B)){if(*next_page)dialogue=next_page;else{screen=after_dialog==AFTER_CHALLENGE?CHALLENGE:after_dialog==AFTER_MENU?MENU:after_dialog==AFTER_BAG?BAG:WORLD;if(screen==CHALLENGE)menu_cursor=0;}}break;
- case MENU:if(pressed&UP)menu_cursor=(menu_cursor+5)%6;if(pressed&DOWN)menu_cursor=(menu_cursor+1)%6;if(pressed&(B|START))screen=WORLD;if(pressed&A){switch(menu_cursor){case 0:if(game.starter){omni_game_dex_open();omni_game_dex_tick(0);menu_return=MENU;screen=DEX;dex_wait_release=1;}else message("先在研究所领取伙伴和图鉴。",AFTER_MENU);break;case 1:screen=TEAM;break;case 2:screen=BAG;break;case 3:screen=TRAINER;break;case 4:message(save_game()?"冒险记录已保存。\n下次可以从这里继续。":"保存失败，请重试。",AFTER_MENU);break;default:screen=WORLD;break;}}break;
+ case MENU:if(pressed&UP)menu_cursor=(menu_cursor+5)%6;if(pressed&DOWN)menu_cursor=(menu_cursor+1)%6;if(pressed&(B|START))screen=WORLD;if(pressed&A){switch(menu_cursor){case 0:if(DEX_DEBUG_ACCESS||game.starter){omni_game_dex_open();omni_game_dex_tick(0);menu_return=MENU;screen=DEX;dex_wait_release=1;}else message("先在研究所领取伙伴和图鉴。",AFTER_MENU);break;case 1:screen=TEAM;break;case 2:screen=BAG;break;case 3:screen=TRAINER;break;case 4:message(save_game()?"冒险记录已保存。\n下次可以从这里继续。":"保存失败，请重试。",AFTER_MENU);break;default:screen=WORLD;break;}}break;
  case TEAM:if(pressed&B)screen=MENU;if((pressed&A)&&game.starter){unsigned i=dex_index(game.party[0].species);omni_game_dex_open_entry(omni_pokedex_catalog.entries[i].id);omni_game_dex_tick(0);menu_return=TEAM;screen=DEX;dex_wait_release=1;}break;
  case BAG:if(pressed&B)screen=MENU;if(pressed&A){int result=omni_adventure_potion(&game,0);message(!result?"使用了伤药。\n伙伴的体力恢复了。":!game.starter?"还没有可以使用道具的伙伴。":!game.potions?"背包里没有伤药了。":"现在不需要使用伤药。",AFTER_BAG);if(!result)save_game();}break;
  case TRAINER:if(pressed&B)screen=MENU;break;
@@ -128,4 +133,4 @@ static void tick(uint16_t keys){
  default:break;
  }
 }
-int main(void){REG16(0x04000000)=0x0403;REG16(0x04000204)=0x4317;REG16(0x04000084)=0x80;REG16(0x04000080)=0x2277;REG16(0x04000082)=2;(void)save_signature;omni_adventure_new(&game);omni_game_dex_bind(dex_state,host_save,0);has_save=(uint8_t)load_game();screen=TITLE;for(;;){while(REG16(0x04000006)>=160){}while(REG16(0x04000006)<160){}tick((uint16_t)(~REG16(0x04000130)&1023));if(dirty&&screen!=DEX)draw();probe();}}
+int main(void){REG16(0x04000000)=0x0403;REG16(0x04000204)=0x4317;REG16(0x04000084)=0x80;REG16(0x04000080)=0x2277;REG16(0x04000082)=2;(void)save_signature;omni_adventure_new(&game);omni_game_dex_bind(dex_state,host_save,0);has_save=(uint8_t)load_game();screen=TITLE;if(DEX_DEBUG_ACCESS){omni_game_dex_open();menu_return=TITLE;screen=DEX;}for(;;){while(REG16(0x04000006)>=160){}while(REG16(0x04000006)<160){}tick((uint16_t)(~REG16(0x04000130)&1023));if(dirty&&screen!=DEX)draw();probe();}}
