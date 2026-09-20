@@ -1,0 +1,2 @@
+const fs=require('node:fs'),assert=require('node:assert/strict');
+(async()=>{const {instance}=await WebAssembly.instantiate(fs.readFileSync('build/gba/test_host.wasm'),{});try{assert.equal(instance.exports.omni_gba_host_test(),0);}catch(e){throw Error(`GBA host contract assertion failed at line ${instance.exports.test_failure_line()}: ${e.message}`);}console.log('PASS: same C host contract tests in Wasm: owned state, save callback, corrupt import, save retry and research gate');})().catch(e=>{console.error(e);process.exitCode=1;});

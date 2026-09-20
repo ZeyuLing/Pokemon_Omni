@@ -1,9 +1,17 @@
 #ifdef NDEBUG
 #undef NDEBUG
 #endif
+#ifdef OMNI_TEST_WASM
+static unsigned failure_line;
+unsigned test_failure_line(void){return failure_line;}
+#define assert(condition) do { if(!(condition)){failure_line=__LINE__;__builtin_trap();} } while(0)
+#define puts(...) ((void)0)
+#define main omni_gba_host_test
+#else
 #include <assert.h>
 #include <stdio.h>
-#include <string.h>
+#endif
+#include "omni/memory.h"
 #include "pokedex_game.h"
 #include "catalog.h"
 #include "gba_data.h"
@@ -11,8 +19,11 @@
 const GbaInfo gba_info[1]={{0}};
 const GbaMove gba_moves[1]={{0}};
 const GbaPlanText gba_plan_text[1]={{0}};
+const GbaExtra gba_extra[1]={{0}};
+const uint32_t gba_variants[1][8]={{0}};
 const uint16_t gba_learnsets[1]={0},gba_plan_indexes[1]={0};
 const char *const gba_move_sources[1]={""};
+const char *const gba_move_sources_readable[1]={""};
 const unsigned char gba_art[1]={0},gba_font[1]={0};
 const GbaGlyph gba_glyphs[1]={{0}};
 const unsigned gba_glyph_count=0;

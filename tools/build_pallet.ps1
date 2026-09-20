@@ -14,7 +14,7 @@ try {
  if ($LASTEXITCODE) { throw 'Adventure core test build failed' }
  node tests/adventure-wasm.cjs
  if ($LASTEXITCODE) { throw 'Adventure core tests failed' }
- & $Zig cc -target arm-freestanding-eabi -mcpu=arm7tdmi -mthumb -std=c99 -O2 -ffreestanding -fno-builtin -fno-unwind-tables -fno-asynchronous-unwind-tables -nostdlib -Icore/include -Icontent/pokedex/generated -Icontent/training/generated -Ibuild/gba -Ibuild/pallet -Iadapters/gba adapters/gba/start.s adapters/gba/pallet_game.c adapters/gba/pokedex_game.c core/src/adventure.c core/src/pokedex.c core/src/training.c content/pokedex/generated/catalog.c content/training/generated/plans.c build/gba/gba_data.c build/gba/blobs.s build/pallet/world_data.c build/pallet/world_blobs.s '-Wl,-T,adapters/gba/rom.ld' -o build/pallet/omni-pallet.elf
+ & $Zig cc -target arm-freestanding-eabi -mcpu=arm7tdmi -mthumb -std=c99 -O2 -ffreestanding -fno-builtin -fno-unwind-tables -fno-asynchronous-unwind-tables -nostdlib -Icore/include -Icontent/pokedex/generated -Icontent/training/generated -Ibuild/gba -Ibuild/pallet -Iadapters/gba adapters/gba/start.s adapters/gba/pallet_game.c adapters/gba/pokedex_game.c core/src/adventure.c core/src/pokedex.c core/src/training.c core/src/battle_stats.c content/pokedex/generated/catalog.c content/training/generated/plans.c build/gba/gba_data.c build/gba/blobs.s build/pallet/world_data.c build/pallet/world_blobs.s '-Wl,-T,adapters/gba/rom.ld' -o build/pallet/omni-pallet.elf
  if ($LASTEXITCODE) { throw 'Pallet GBA link failed' }
  & $Zig objcopy -O binary build/pallet/omni-pallet.elf build/pallet/omni-pallet.gba
  if ($LASTEXITCODE) { throw 'Pallet ROM export failed' }

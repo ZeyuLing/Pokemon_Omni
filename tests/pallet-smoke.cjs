@@ -31,7 +31,7 @@ const scenes=require('../build/pallet/scene-audit.json');
  walk(10,2);assert.equal(state().map,2);shot('home');talkAt(8,5,1);assert.equal(state().screen,7);dismiss();
  walk(4,8);assert.equal(state().map,1);shot('town');walk(16,13);assert.equal(state().map,5);shot('lab');
  talkAt(6,4,1);assert.equal(state().chapter,1);dismiss();talkAt(8,5,1);assert.equal(state().screen,9);shot('starter-choice');press(1);assert.equal(state().starter,1);assert.equal(state().potions,4);dismiss();
- press(8);press(128);press(1);assert.equal(state().screen,3);shot('party');press(1);assert.equal(state().screen,6);shot('in-game-dex');press(2);press(2);assert.equal(state().screen,3);press(2);press(2);
+ press(8);press(128);press(1);assert.equal(state().screen,3);shot('party');press(1);assert.equal(state().screen,6);shot('in-game-dex');const dexPages=require('./gba-dex-pages.cjs')(m,press,shot);press(2);press(2);assert.equal(state().screen,3);press(2);press(2);
  talkAt(5,5,1);dismiss();assert.equal(state().screen,8);press(1);assert.equal(state().screen,10);shot('battle');
  for(let i=0;i<30&&state().battles===0;i++){if(state().screen===10)press(1);while(state().screen===11)press(1);}
  assert.equal(state().battles,1);assert.equal(state().chapter,3);shot('battle-result');dismiss();
@@ -44,6 +44,6 @@ const scenes=require('../build/pallet/scene-audit.json');
  walk(6,12);assert.equal(state().map,1);walk(15,7);assert.equal(state().map,4);shot('rival-home');talkAt(10,7,1);dismiss();walk(4,8);assert.equal(state().map,1);walk(6,7);assert.equal(state().map,2);walk(10,2);assert.equal(state().map,3);
  // Latest committed slot corrupted -> previous real game checkpoint remains usable.
  const latest=saved.readUInt32LE(4)>saved.readUInt32LE(16388)?0:16384;saved[latest+60]^=255;const sv=m._malloc(saved.length);m.HEAPU8.set(saved,sv);m._mgbawasm_sram_load(sv,saved.length);m._free(sv);m._mgbawasm_reset();probeOffset=-1;frames(90);press(1);assert.equal(state().starter,1);assert.equal(state().chapter,3);
- const report={rom_sha256:crypto.createHash('sha256').update(rom).digest('hex'),emulator:'@wasm-gaming/mgba-wasm@0.1.1',maps_visited:5,normal_button_inputs:buttons,starter_acquisition:true,menu_dex_gate:true,party_and_integrated_dex:true,practice_battle:true,save_continue:true,corrupt_newest_slot_fallback:true};
+ const report={rom_sha256:crypto.createHash('sha256').update(rom).digest('hex'),dex_pages:dexPages,emulator:'@wasm-gaming/mgba-wasm@0.1.1',maps_visited:5,normal_button_inputs:buttons,starter_acquisition:true,menu_dex_gate:true,party_and_integrated_dex:true,practice_battle:true,save_continue:true,corrupt_newest_slot_fallback:true};
  fs.writeFileSync('build/pallet/emulator-report.json',JSON.stringify(report,null,2)+'\n');console.log('PASS: playable Pallet opening, five maps/warps, NPCs, starter, party + in-game Dex, battle, save/continue and corrupt-slot fallback');m._mgbawasm_unload();
 })().catch(e=>{console.error(e);process.exitCode=1;});

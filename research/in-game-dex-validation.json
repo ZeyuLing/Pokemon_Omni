@@ -1,0 +1,71 @@
+{
+  "validated_on": "2026-09-20",
+  "game_build": {
+    "rom": "build/pallet/omni-pallet.gba",
+    "bytes": 20971520,
+    "sha256": "cb5fce09948565919037ba6ad5724286d816e7f920ec2c0465ffd1686835089d",
+    "header_checksum_valid": true,
+    "scope": "Playable Pallet Town opening with integrated Pokedex; limited starter practice rules."
+  },
+  "game_emulator": {
+    "rom_sha256": "cb5fce09948565919037ba6ad5724286d816e7f920ec2c0465ffd1686835089d",
+    "dex_pages": {
+      "page_directory": true,
+      "long_text_to_end": true,
+      "evolution": true,
+      "move_effect_and_decoded_sources": true,
+      "held_item_and_strategy": true,
+      "front_back_shiny_pixels": true,
+      "hp_calculator_controls": true
+    },
+    "emulator": "@wasm-gaming/mgba-wasm@0.1.1",
+    "maps_visited": 5,
+    "normal_button_inputs": 372,
+    "starter_acquisition": true,
+    "menu_dex_gate": true,
+    "party_and_integrated_dex": true,
+    "practice_battle": true,
+    "save_continue": true,
+    "corrupt_newest_slot_fallback": true
+  },
+  "standalone_build": {
+    "rom": "build/gba/omni-dex.gba",
+    "bytes": 19922944,
+    "sha256": "8c7e408683562c465f271cac2c52d7a415c76d92162c465a9860281f9c1650db",
+    "header_checksum_valid": true,
+    "scope": "Standalone GBA Pokedex integration cartridge, not the full world game."
+  },
+  "standalone_emulator": {
+    "emulator": "@wasm-gaming/mgba-wasm@0.1.1",
+    "rom_sha256": "8c7e408683562c465f271cac2c52d7a415c76d92162c465a9860281f9c1650db",
+    "boot": true,
+    "navigation": true,
+    "capture_save": true,
+    "reload": true,
+    "corrupt_newest_slot_fallback": true,
+    "training_and_form_pages": true,
+    "chinese_font_pixels": true,
+    "close_and_reopen": true,
+    "frames": 732
+  },
+  "assets": {
+    "unique_images": 6279,
+    "art_bytes": 11793750,
+    "glyph_count": 1959,
+    "missing_images": 0
+  },
+  "source_image_count": 6628,
+  "checks": [
+    "tests/gba-assets.py: all unique RGB555 images compared with pinned source",
+    "tests/gba-host-wasm.cjs: same C host contract tests",
+    "tests/pallet-browser.cjs: real ROM browser checks"
+  ],
+  "limitations": [
+    "Detailed move and ability descriptions remain reference English",
+    "987 plans cover 324 exact forms, not all entries",
+    "Bond activation and move rules remain unverified",
+    "Only the three initial partners have implemented acquisition information",
+    "No physical hardware validation",
+    "GBA favorites, comparison and Chinese text input not implemented"
+  ]
+}
