@@ -1,0 +1,346 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-09-20",
+  "scope": "First research pass for narrative style and independent-continuity design; not an exhaustive game-playthrough or anime-viewing audit.",
+  "latest_user_decision": "Prefer recognizable existing characters such as Ash; appearance may be retained while characterization and biography are rewritten.",
+  "sources": [
+    {
+      "id": "R01",
+      "title": "Dragonsden author release thread",
+      "url": "https://whackahack.com/foro/threads/31-12-2024-pokemon-edicion-team-rocket-4-regiones-kanto-archi7-johto-y-hoenn.65493/",
+      "authority": "author_primary",
+      "access_status": "relevant release sections read",
+      "supports": [
+        "Rocket recruit perspective",
+        "separate project from Colonelsalt",
+        "regional scope and future work"
+      ],
+      "limits": [
+        "Release description is not a full plot transcript."
+      ]
+    },
+    {
+      "id": "R02",
+      "title": "Rocket project catalog",
+      "url": "https://whackahack.com/juegos/pokemon-edicion-team-rocket/",
+      "authority": "community_host_catalog",
+      "access_status": "catalog description read",
+      "supports": [
+        "v2.1 catalog label"
+      ],
+      "limits": [
+        "Completion label does not prove every planned story arc is finished."
+      ]
+    },
+    {
+      "id": "R03",
+      "title": "Dragonsden interview",
+      "url": "https://whackahack.com/noticia/entrevista-a-dragonsden-creador-de-pokemon-edicion-team-rocket",
+      "authority": "author_interview_primary",
+      "access_status": "interview text read",
+      "supports": [
+        "Intent to develop events outside the conventional hero perspective"
+      ],
+      "limits": [
+        "Early interview is not evidence for every later plot twist."
+      ]
+    },
+    {
+      "id": "R04",
+      "title": "Author-linked reference archive",
+      "url": "https://www.mediafire.com/file/jagpq55gx21rv8d/Pkmn_Edicion_Team_Rocket_-_Dragonsden_-_.zip/file",
+      "authority": "author_packaged_primary",
+      "access_status": "local FAQ, main encounters and sidequest guide read",
+      "supports": [
+        "Encounter order",
+        "named task dependencies",
+        "cross-region sidequest returns"
+      ],
+      "limits": [
+        "See rocket-author-documents.json for exact members and coverage.",
+        "Boss lists cannot establish full motives or endings."
+      ]
+    },
+    {
+      "id": "E01",
+      "title": "漆黑的魅影 5.0EX release thread lead",
+      "url": "https://www.pmcenter.cn/thread-55086-1-1.html",
+      "authority": "original_release_lead",
+      "access_status": "search result only; page access failed",
+      "supports": [
+        "Location of original release discussion"
+      ],
+      "limits": [
+        "Full original author material not read; do not use as verified plot source."
+      ]
+    },
+    {
+      "id": "E02",
+      "title": "时代的遗珠—漆黑的魅影",
+      "url": "https://www.bilibili.com/opus/249390282525624363",
+      "authority": "player_review_secondary",
+      "access_status": "review text read",
+      "supports": [
+        "Reported multi-world and memory framing"
+      ],
+      "limits": [
+        "Secondary interpretation; exact scenes and author quotations not independently verified."
+      ]
+    },
+    {
+      "id": "E03",
+      "title": "漆黑的魅影 walkthrough supplementary page",
+      "url": "https://www.3dmgame.com/gl/3706409_6.html",
+      "authority": "walkthrough_secondary",
+      "access_status": "opened; no useful text cross-check obtained",
+      "supports": [],
+      "limits": [
+        "Not used to confirm the review plot claims."
+      ]
+    },
+    {
+      "id": "U01",
+      "title": "靖宇rainy 究极绿宝石 5.5 guide",
+      "url": "https://www.bilibili.com/video/BV1Aa4y1k7RK/",
+      "authority": "player_walkthrough_metadata",
+      "access_status": "page and unauthenticated public API read; 58 part titles recorded",
+      "supports": [
+        "Sequence of labeled regional, faction, collection and training content"
+      ],
+      "limits": [
+        "Videos not watched in full.",
+        "Part count is not story chapter count.",
+        "Not a 5.8 plot verification."
+      ]
+    },
+    {
+      "id": "U02",
+      "title": "究极绿宝石 5.8 prior source audit",
+      "url": "../../research/ultra-emerald-5.8-sources.json",
+      "authority": "project_source_audit",
+      "access_status": "existing project artifact",
+      "supports": [
+        "Branch separation and release leads"
+      ],
+      "limits": [
+        "ROM form extraction does not prove story coverage."
+      ]
+    },
+    {
+      "id": "A01",
+      "title": "EP048 episode guide",
+      "url": "https://bulbapedia.bulbagarden.net/wiki/EP048",
+      "authority": "fan_encyclopedia_secondary",
+      "access_status": "relevant plot/blurb text read",
+      "supports": [
+        "Family inheritance and marriage pressures around James"
+      ],
+      "limits": [
+        "Not a direct viewing record.",
+        "Omni character motives and institutional roles are original proposals."
+      ]
+    },
+    {
+      "id": "A02",
+      "title": "EP070 episode guide",
+      "url": "https://bulbapedia.bulbagarden.net/wiki/EP070",
+      "authority": "fan_encyclopedia_secondary",
+      "access_status": "relevant plot/blurb text read",
+      "supports": [
+        "Meowth language-learning history and belonging"
+      ],
+      "limits": [
+        "Not a direct viewing record.",
+        "Omni character motives and institutional roles are original proposals."
+      ]
+    },
+    {
+      "id": "A03",
+      "title": "AG006 episode guide",
+      "url": "https://bulbapedia.bulbagarden.net/wiki/AG006",
+      "authority": "fan_encyclopedia_secondary",
+      "access_status": "relevant plot/blurb text read",
+      "supports": [
+        "Arbok and Weezing protect threatened peers"
+      ],
+      "limits": [
+        "Not a direct viewing record.",
+        "Omni character motives and institutional roles are original proposals."
+      ]
+    },
+    {
+      "id": "A04",
+      "title": "AG097 episode guide",
+      "url": "https://bulbapedia.bulbagarden.net/wiki/AG097",
+      "authority": "fan_encyclopedia_secondary",
+      "access_status": "relevant plot/blurb text read",
+      "supports": [
+        "Magma/Aqua captivity, exchange and infiltration"
+      ],
+      "limits": [
+        "Not a direct viewing record.",
+        "Omni character motives and institutional roles are original proposals."
+      ]
+    },
+    {
+      "id": "A05",
+      "title": "DP054 episode guide",
+      "url": "https://bulbapedia.bulbagarden.net/wiki/DP054",
+      "authority": "fan_encyclopedia_secondary",
+      "access_status": "relevant plot/blurb text read",
+      "supports": [
+        "James leaves Cacnea with Gardenia for training"
+      ],
+      "limits": [
+        "Not a direct viewing record.",
+        "Omni character motives and institutional roles are original proposals."
+      ]
+    },
+    {
+      "id": "A06",
+      "title": "DP151 episode guide",
+      "url": "https://bulbapedia.bulbagarden.net/wiki/DP151",
+      "authority": "fan_encyclopedia_secondary",
+      "access_status": "relevant plot/blurb text read",
+      "supports": [
+        "Galactic commissions Hunter J to capture lake Pokemon"
+      ],
+      "limits": [
+        "Not a direct viewing record.",
+        "Omni character motives and institutional roles are original proposals."
+      ]
+    },
+    {
+      "id": "A07",
+      "title": "BW122 episode guide",
+      "url": "https://bulbapedia.bulbagarden.net/wiki/BW122",
+      "authority": "fan_encyclopedia_secondary",
+      "access_status": "relevant plot/blurb text read",
+      "supports": [
+        "Temporary cooperation against Plasma"
+      ],
+      "limits": [
+        "Not a direct viewing record.",
+        "Omni character motives and institutional roles are original proposals."
+      ]
+    },
+    {
+      "id": "A08",
+      "title": "XY132 episode guide",
+      "url": "https://bulbapedia.bulbagarden.net/wiki/XY132",
+      "authority": "fan_encyclopedia_secondary",
+      "access_status": "relevant plot/blurb text read",
+      "supports": [
+        "Alain and Lysandre relationship revealed; trio reports events"
+      ],
+      "limits": [
+        "Not a direct viewing record.",
+        "Omni character motives and institutional roles are original proposals."
+      ]
+    },
+    {
+      "id": "A09",
+      "title": "XY134 episode guide",
+      "url": "https://bulbapedia.bulbagarden.net/wiki/XY134",
+      "authority": "fan_encyclopedia_secondary",
+      "access_status": "relevant plot/blurb text read",
+      "supports": [
+        "Battle, technical intervention and rescue across several actors"
+      ],
+      "limits": [
+        "Not a direct viewing record.",
+        "Omni character motives and institutional roles are original proposals."
+      ]
+    },
+    {
+      "id": "A10",
+      "title": "SM049 episode guide",
+      "url": "https://bulbapedia.bulbagarden.net/wiki/SM049",
+      "authority": "fan_encyclopedia_secondary",
+      "access_status": "relevant plot/blurb text read",
+      "supports": [
+        "Faba invokes false orders; trio refuses to bring Lillie"
+      ],
+      "limits": [
+        "Not a direct viewing record.",
+        "Omni character motives and institutional roles are original proposals."
+      ]
+    },
+    {
+      "id": "A11",
+      "title": "JN045 episode guide",
+      "url": "https://bulbapedia.bulbagarden.net/wiki/JN045",
+      "authority": "fan_encyclopedia_secondary",
+      "access_status": "relevant plot/blurb text read",
+      "supports": [
+        "Rose energy objective and Eternatus crisis"
+      ],
+      "limits": [
+        "Not a direct viewing record.",
+        "Omni character motives and institutional roles are original proposals."
+      ]
+    },
+    {
+      "id": "A12",
+      "title": "AG006 official Pokemon TV video",
+      "url": "https://www.youtube.com/watch?v=to3DRMm5L8g",
+      "authority": "official_video_entry",
+      "access_status": "page metadata located; full episode not watched",
+      "supports": [
+        "Official viewing entry for subsequent scene audit"
+      ],
+      "limits": [
+        "No claim of full direct viewing."
+      ]
+    },
+    {
+      "id": "A13",
+      "title": "Charles Goodshow character guide",
+      "url": "https://bulbapedia.bulbagarden.net/wiki/Charles_Goodshow",
+      "authority": "fan_encyclopedia_secondary",
+      "access_status": "role description read",
+      "supports": [
+        "League Competition Committee role"
+      ],
+      "limits": [
+        "Does not establish global sovereignty or villain status."
+      ]
+    },
+    {
+      "id": "D01",
+      "title": "大明王朝1566 第一集：财政会议",
+      "url": "https://www.thetvdb.com/series/300635/episodes/5334203",
+      "authority": "episode_synopsis_secondary",
+      "access_status": "synopsis read",
+      "supports": [
+        "Fiscal pressure and policy decision as dramatic setup"
+      ],
+      "limits": [
+        "Not a Ming history source; creative inference is separately labeled."
+      ]
+    },
+    {
+      "id": "D02",
+      "title": "大明王朝1566 第二集：改稻为桑",
+      "url": "https://www.thetvdb.com/series/300635-show/episodes/5334204",
+      "authority": "episode_synopsis_secondary",
+      "access_status": "synopsis read",
+      "supports": [
+        "Central/local conflict in policy implementation"
+      ],
+      "limits": [
+        "Not a direct full-episode viewing record."
+      ]
+    }
+  ],
+  "rejected_evidence_categories": [
+    "Fan-fiction transcripts mistaken for official anime",
+    "SEO guides with contradictory or implausible Pokemon information",
+    "Boss encounter names used as proof of motives",
+    "Video titles treated as full scene viewing"
+  ],
+  "drafts": [
+    "docs/19-narrative-direction.md",
+    "docs/20-cast-and-opening.md"
+  ]
+}

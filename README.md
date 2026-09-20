@@ -18,6 +18,8 @@ node tools/serve_pokedex.cjs
 
 用户提供的究极绿宝石 5.8 神战永久超进化版已本地归档。35 个来源形态及 140 张原始像素图已接入网站与实际 GBA 图鉴，包含 10 个神兽形态记录；数据提取依据、原版进化条件和未完成的战斗规则见 [5.8 形态接入](docs/18-ultra-emerald-source-forms.md)。
 
+剧情进入独立改编世界线的设计阶段：优先以小智等熟悉角色为主角，组织与跨地区政治冲突贯穿旅程。已形成 [剧情方向 v0.1](docs/19-narrative-direction.md)、[人物与真新镇开场](docs/20-cast-and-opening.md) 和 [第一轮来源研究](research/narrative/2026-09-20-source-review.md)。这些是研究与创作提案，尚未实现到当前 ROM；没有声称已通关全部参考改版或看完全部动画。
+
 ## 阅读入口
 
 1. [调研结论与证据边界](docs/01-research.md)：引擎选型、硬件限制、版本核实。
@@ -25,7 +27,7 @@ node tools/serve_pokedex.cjs
 3. [工程架构](docs/03-architecture.md)：引擎、世界、数据、存档、中文和容量设计。
 4. [公平对战、AI 与难度](docs/04-battle-ai.md)：信息隔离、AI 研究和验收方案。
 5. [羁绊进化设计](docs/05-bond.md)：火箭队名单核对状态和后续设计边界。
-6. [地区与剧情覆盖](docs/06-world.md)：经典剧情整合、时代冲突与开放世界降维。
+6. [地区与剧情覆盖](docs/06-world.md)：独立世界线改编、经典素材覆盖与开放世界降维。
 7. [里程碑与验收](docs/07-roadmap.md)：先做可验证的双地区垂直切片，再扩大内容。
 8. [开发环境与当前状态](docs/08-development.md)：可复现步骤、未完成事项。
 9. [来源索引](research/sources.md)、[待核实问题](research/open-questions.md)。

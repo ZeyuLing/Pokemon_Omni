@@ -1,0 +1,77 @@
+{
+  "checked_on": "2026-09-20",
+  "source_url": "https://www.mediafire.com/file/jagpq55gx21rv8d/Pkmn_Edicion_Team_Rocket_-_Dragonsden_-_.zip/file",
+  "local_archive": ".cache/rocket-author.zip",
+  "archive_sha256": "311c6aebcc34fd9b2a6fb1c59be1d95c2822c2ebe2e4a463b43b09f4614a8224",
+  "version_limit": "Author-linked archive; exact equivalence to the user Chinese modified ROM or a numbered v2.1 release is not established.",
+  "archive_path_encoding": "archive_member retains the ZIP reader filename verbatim, including mojibake; not a normalized Spanish filename.",
+  "reading": {
+    "faq": "text read",
+    "main_boss_lists": "text read, sequence and encounters only; not full dialogue",
+    "sidequest_pdf": "all 10 pages text extracted and read; pages 1 and 6 rendered and visually inspected",
+    "other_side_boss_lists": "extracted; no comprehensive scene audit"
+  },
+  "members": [
+    {
+      "archive_member": "Pkmn Edicion Team Rocket - Dragonsden - /INFORMACIO╠üN U╠üTIL/Preguntas Frecuentes.txt",
+      "path": "assets/imported/rocket-author/story/0.txt",
+      "sha256": "49a5a05c581d6cb92e97c931d99e566034de847988544f83daa9e570c18cdbe0"
+    },
+    {
+      "archive_member": "Pkmn Edicion Team Rocket - Dragonsden - /INFORMACIO╠üN U╠üTIL/SECUNDARIAS TRE.pdf",
+      "path": "assets/imported/rocket-author/story/1.pdf",
+      "sha256": "78a60e786278ecf6817dee1cc20bd0664303ed1115acf9e027f415765a0b76d5",
+      "pages": 10
+    },
+    {
+      "archive_member": "Pkmn Edicion Team Rocket - Dragonsden - /INFORMACIO╠üN U╠üTIL/ COMBATES DE JEFE/MISIONES SECUNDARIAS/DLC.txt",
+      "path": "assets/imported/rocket-author/story/2.txt",
+      "sha256": "1e44d1b61785d50eafd9f85369fa7589d4c3c0fd4cca36c0f20e84e5b7a39211"
+    },
+    {
+      "archive_member": "Pkmn Edicion Team Rocket - Dragonsden - /INFORMACIO╠üN U╠üTIL/ COMBATES DE JEFE/MISIONES SECUNDARIAS/JOHTO.txt",
+      "path": "assets/imported/rocket-author/story/3.txt",
+      "sha256": "866d214bdbf6a765b3ee522ee5c788dfb11a1446f47fd1fc1a27268fabaae35f"
+    },
+    {
+      "archive_member": "Pkmn Edicion Team Rocket - Dragonsden - /INFORMACIO╠üN U╠üTIL/ COMBATES DE JEFE/MISIONES SECUNDARIAS/KANTO.txt",
+      "path": "assets/imported/rocket-author/story/4.txt",
+      "sha256": "c73368c52188252adcb5e3c2d1c6545aad95c8e83203fd4a2973328672d6fdc4"
+    },
+    {
+      "archive_member": "Pkmn Edicion Team Rocket - Dragonsden - /INFORMACIO╠üN U╠üTIL/ COMBATES DE JEFE/MISIONES SECUNDARIAS/HOENN.txt",
+      "path": "assets/imported/rocket-author/story/5.txt",
+      "sha256": "4b430d70dbafb6b37cdc2e8ea5b54b78945278c320663011636b6688f4c41a32"
+    },
+    {
+      "archive_member": "Pkmn Edicion Team Rocket - Dragonsden - /INFORMACIO╠üN U╠üTIL/ COMBATES DE JEFE/MISIONES SECUNDARIAS/ARCHI7.txt",
+      "path": "assets/imported/rocket-author/story/6.txt",
+      "sha256": "e667387683efd702d01525e2c86ceb2e0bb0b20443e0ef4af99e61c78931b60f"
+    },
+    {
+      "archive_member": "Pkmn Edicion Team Rocket - Dragonsden - /INFORMACIO╠üN U╠üTIL/ COMBATES DE JEFE/COMBATES PRINCIPALES/T3 - JOHTO.txt",
+      "path": "assets/imported/rocket-author/story/7.txt",
+      "sha256": "3979d2d4dcfdf4959a002ba7ec9a02e12408f56f37e6278dcc8f3ac4c0453e5a"
+    },
+    {
+      "archive_member": "Pkmn Edicion Team Rocket - Dragonsden - /INFORMACIO╠üN U╠üTIL/ COMBATES DE JEFE/COMBATES PRINCIPALES/T2 - ARCHI7.txt",
+      "path": "assets/imported/rocket-author/story/8.txt",
+      "sha256": "14efe097018c4fdbe69ed4dd2c540ea5b31dfc36a64053f12dc9b360f861c203"
+    },
+    {
+      "archive_member": "Pkmn Edicion Team Rocket - Dragonsden - /INFORMACIO╠üN U╠üTIL/ COMBATES DE JEFE/COMBATES PRINCIPALES/T4 - DLC.txt",
+      "path": "assets/imported/rocket-author/story/9.txt",
+      "sha256": "199c401186bfce81d5d8592175f77b442e694e3e2600f2780feec03aae774ef1"
+    },
+    {
+      "archive_member": "Pkmn Edicion Team Rocket - Dragonsden - /INFORMACIO╠üN U╠üTIL/ COMBATES DE JEFE/COMBATES PRINCIPALES/T5 - HOENN.txt",
+      "path": "assets/imported/rocket-author/story/10.txt",
+      "sha256": "2133f371eb6fb00addc81bcb97190a81477a179d6f50bf435be10152ce4f2562"
+    },
+    {
+      "archive_member": "Pkmn Edicion Team Rocket - Dragonsden - /INFORMACIO╠üN U╠üTIL/ COMBATES DE JEFE/COMBATES PRINCIPALES/T1 - KANTO.txt",
+      "path": "assets/imported/rocket-author/story/11.txt",
+      "sha256": "6d64615ce50c41a7b3926d6ea5814bed9dbeecf993a133b36cc2f270be2681f4"
+    }
+  ]
+}
