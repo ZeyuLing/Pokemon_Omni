@@ -6,7 +6,7 @@ function notice(message,error=false){$('notice').textContent=message;$('notice')
 function input(bytes){new Uint8Array(core.memory.buffer,core.dex_input_ptr(),65536).fill(0);new Uint8Array(core.memory.buffer,core.dex_input_ptr(),bytes.length).set(bytes);}
 function saveBytes(){const n=core.dex_save();if(!n)throw Error('无法保存当前记录。');return new Uint8Array(core.memory.buffer,core.dex_input_ptr(),n).slice();}
 function persist(){try{const bytes=saveBytes();localStorage.setItem(key,btoa(String.fromCharCode(...bytes)));return true;}catch(e){notice('记录仍在本次预览中，但浏览器未能保存。请导出记录备份。',true);return false;}}
-function metrics(){const all=data.entries.length,seen=core.dex_total(1),registered=core.dex_total(2);$('totals').innerHTML=`<div class="metric"><strong>${all.toLocaleString()}</strong><span>档案条目 · 含待核实</span></div><div class="metric"><strong>${seen}</strong><span>已见过</span></div><div class="metric"><strong>${registered}</strong><span>已登记</span></div>`;}
+function metrics(){const all=data.entries.filter(e=>e.category!=='dynamax').length,seen=core.dex_total(1),registered=core.dex_total(2);$('totals').innerHTML=`<div class="metric"><strong>${all.toLocaleString()}</strong><span>档案条目 · 含待核实</span></div><div class="metric"><strong>${seen}</strong><span>已见过</span></div><div class="metric"><strong>${registered}</strong><span>已登记</span></div>`;}
 function query(){
  const text=$('search').value.trim();const numeric=/^#?\d{1,4}$/.test(text)?Number(text.replace('#','')):0;
  input(encoder.encode(numeric?'':text));
@@ -23,12 +23,13 @@ function query(){
 function categoryName(e){return data.categories[e.category_id-1]?.name||'其他形态';}
 function typeName(id){return data.types.find(t=>t.id===id)?.name||id;}
 function select(index){
+ if(data.entries[index].category==='dynamax'){const parent=data.entries[index].transition.parent_entry_ids[0];index=data.entries.findIndex(e=>e.entry_id===parent);if(index<0)index=0;notice('普通极巨化已移出图鉴，现显示对应形态；HP 变化可在战斗状态说明中查看。');}
  selected=index;moveLimit=15;const e=data.entries[index];history.replaceState(null,'','#'+encodeURIComponent(e.entry_id));
  for(const b of $('entries').querySelectorAll('button'))b.setAttribute('aria-pressed',String(+b.dataset.index===index));
  const identity=e.identity_evidence||e.species_identity_evidence;
  const abilities=e.abilities.map(a=>`${escape(data.abilities[a.id]?.name_zh||a.id)}${a.slot==='H'?'〔隐藏〕':''}`).join(' / ')||'待核实';
  const stats=e.stats?Object.entries(e.stats).map(([s,v])=>`<div class="stat"><span>${{hp:'HP',atk:'攻击',def:'防御',spa:'特攻',spd:'特防',spe:'速度'}[s]}</span><b>${v}</b><span class="bar"><i style="width:${Math.min(100,v/255*100)}%"></i></span></div>`).join(''):'<p class="muted">该形态数值尚未核实。</p>';
- const related=data.entries.map((v,i)=>({v,i})).filter(({v})=>e.species_id&&v.species_id===e.species_id);
+ const related=data.entries.map((v,i)=>({v,i})).filter(({v})=>v.category!=='dynamax'&&e.species_id&&v.species_id===e.species_id);
  const relatedHtml=related.map(({v,i})=>`<button data-related="${i}" aria-pressed="${i===index}">${escape(v.name_zh_hans)}</button>`).join('');
  const evol=e.evolutions.map(name=>{const target=data.entries.find(v=>v.name_reference===name);return escape(target?.name_zh_hans||name);}).join('、');
  const prevo=data.entries.find(v=>v.name_reference===e.prevo);
@@ -82,7 +83,7 @@ function renderArt(e){
  img.onerror=()=>{clearTimeout(timer);fallback();};img.src=url;
 }
 function hpPanel(e){
- if(!e.stats||!['dynamax','gigantamax'].includes(e.category))return '';
+ if(!e.stats||!(e.category==='gigantamax'||data.entries.some(v=>v.category==='dynamax'&&v.transition.parent_entry_ids.includes(e.entry_id))))return '';
  return `<section class="hp-panel" aria-label="极巨化前后实战 HP 对比"><h3>实战 HP 上限 · 极巨化前后</h3><p class="facts">极巨化／超极巨化不改变种族值。HP 上限按个体培养和极巨化等级计算；其他五项能力不会因极巨化本身提升。</p><div class="hp-inputs"><label>宝可梦等级<input id="hp-level" type="number" min="1" max="100" step="1" value="50"></label><label>HP 个体值<input id="hp-iv" type="number" min="0" max="31" step="1" value="31"></label><label>HP 努力值<input id="hp-ev" type="number" min="0" max="252" step="1" value="0"></label><label>极巨化等级<input id="hp-dynamax" type="number" min="0" max="10" step="1" value="10"></label></div><output id="hp-comparison" aria-live="polite"></output><p class="facts">这是满 HP 上限的计算示例，不会改动个体数据或恢复当前 HP。一般倍率为 1.5＋0.05×极巨化等级，结果向下取整；脱壳忍者维持 1 HP。</p><details><summary>数值依据</summary><p class="facts"><a href="https://www.pokemon.com/uk/features/dynamax-pokemon-battle-strategies-for-pokemon-sword-and-pokemon-shield" target="_blank" rel="noopener">官方战术说明：提升当前 HP 与 HP 上限</a>。官方攻略以翻倍场景说明；0–10 等级公式、取整与脱壳忍者例外按固定 Showdown 0.11.11 的实现交叉核对，未冒充官方网页逐项给出的公式。</p></details></section>`;
 }
 function updateHp(){
@@ -102,7 +103,7 @@ async function init(){
  if(core.dex_count()!==data.entries.length||data.entries.some((e,i)=>(core.dex_id(i)>>>0)!==e.numeric_id))throw Error('资料与图鉴核心版本不一致，请重新构建');
  OmniFeatures.init({catalog:data,plans:await responses[2].json(),core,query:()=>{offset=0;query();},notice,select});
  $('announced-list').innerHTML=data.announced.records.map(r=>`<li><a href="${escape(r.source_zh||data.announced.source)}" target="_blank" rel="noopener">${escape(r.name_zh||r.name_en)}</a>${r.types?' · '+r.types.map(typeName).join('／'):' · 已公布角色外观，尚未确认玩法形态'}${r.ability?' · '+escape(data.abilities[r.ability.toLowerCase()]?.name_zh||r.ability):''}</li>`).join('');
- data.categories.forEach((c,i)=>$('category').add(new Option(c.name,i+1)));data.types.forEach((t,i)=>$('type').add(new Option(t.name,i+1)));for(let i=1;i<=9;i++)$('generation').add(new Option(`第 ${i} 世代`,i));
+ data.categories.forEach((c,i)=>{if(i+1!==11)$('category').add(new Option(c.name,i+1));});data.types.forEach((t,i)=>$('type').add(new Option(t.name,i+1)));for(let i=1;i<=9;i++)$('generation').add(new Option(`第 ${i} 世代`,i));
  try{const stored=localStorage.getItem(key);if(stored){const bytes=Uint8Array.from(atob(stored),c=>c.charCodeAt(0));if(bytes.length>65536)throw Error();input(bytes);if(core.dex_load(bytes.length))throw Error();}}catch{notice('本机旧记录未能读取，未覆盖原记录。可以导入已有备份恢复。',true);}
  for(const id of ['search','category','type','generation','progress','research'])$(id).addEventListener(id==='search'?'input':'change',()=>{offset=0;query();});
  $('clear').onclick=()=>{$('search').value='';for(const id of ['category','type','generation','progress'])$(id).value='0';$('research').checked=true;$('favorite-only').checked=false;$('sort').value='catalog';offset=0;query();$('search').focus();};

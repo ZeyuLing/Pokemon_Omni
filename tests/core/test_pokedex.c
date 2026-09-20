@@ -33,8 +33,8 @@ int main(void) {
  assert(!omni_hp_stat(78,0,31,0,0)&&!omni_hp_stat(78,50,32,0,0)&&!omni_hp_stat(78,50,31,253,0));
  assert(!omni_dynamax_max_hp(153,11,0)&&!omni_dynamax_max_hp(65535,10,0));
  assert(omni_dex_validate(&d)==OMNI_DEX_OK);
- assert(omni_dex_query(&d,&s,&f,0,out,2)==3 && out[0]==0 && out[1]==1);
- assert(omni_dex_query(&d,&s,&f,2,out,2)==3 && out[0]==3);
+ assert(omni_dex_query(&d,&s,&f,0,out,2)==3 && out[0]==0 && out[1]==3);
+ assert(omni_dex_query(&d,&s,&f,2,out,2)==3 && out[0]==1);
  f.include_research=1;assert(omni_dex_query(&d,&s,&f,0,out,2)==4);
  f.text="喷火龙";assert(omni_dex_query(&d,&s,&f,0,out,2)==2);
  f.text="cHaRiZaRd";assert(omni_dex_query(&d,&s,&f,0,out,2)==2);

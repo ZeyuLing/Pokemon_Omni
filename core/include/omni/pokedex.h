@@ -33,8 +33,12 @@ enum { OMNI_DEX_OK, OMNI_DEX_ARGUMENT, OMNI_DEX_UNKNOWN, OMNI_DEX_RESEARCH,
 
 int omni_dex_validate(const OmniDex *dex);
 int32_t omni_dex_find(const OmniDex *dex, uint32_t id);
+/* Normal Dynamax is a battle state, not a separately browsable Dex form.
+ * Immutable catalog indexes and historical save IDs remain stable. */
+int omni_dex_visible(const OmniDexEntry *entry);
 int omni_dex_matches(const OmniDexEntry *entry, uint8_t flags, const OmniDexFilter *filter);
-/* Returns full result count; writes at most capacity indices after offset. */
+/* Base entries first, then other forms; stable catalog order within each group.
+ * Returns full visible result count; writes at most capacity indices after offset. */
 uint16_t omni_dex_query(const OmniDex *dex, const OmniDexState *state, const OmniDexFilter *filter,
     uint16_t offset, uint16_t *indices, uint16_t capacity);
 int omni_dex_record(const OmniDex *dex, OmniDexState *state, uint32_t id, uint8_t event);

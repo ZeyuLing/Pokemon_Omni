@@ -9,6 +9,10 @@ module.exports=function checkDex(m,press,shot){
  const report=require('../build/gba/asset-report.json'),atlas=fs.readFileSync('build/gba/art.bin'),catalog=require('../content/pokedex/catalog.json');
  function pixels(variant){const s=state(),url=catalog.entries[s.entry].art_reference.variants[variant];assert(url);const row=report.images.find(r=>r.url===url);let at=row.offset,mode=atlas.readUInt16LE(at);at+=2;const values=[];while(values.length<4096){let n=1;if(mode){n=atlas.readUInt16LE(at);at+=2;}const c=atlas.readUInt16LE(at);at+=2;for(let i=0;i<n;i++)values.push(c);}const v=m._mgbawasm_video_ptr();for(let i=0;i<4096;i++){const c=values[i]&0x8000?31|(31<<5)|(30<<10):values[i],p=v+((44+(i>>6))*240+88+i%64)*4;assert.equal(m.HEAPU8[p]>>3,c&31);assert.equal(m.HEAPU8[p+1]>>3,(c>>5)&31);assert.equal(m.HEAPU8[p+2]>>3,(c>>10)&31);}}
  assert.equal(state().page,0);assert.equal(state().entry,0);
+ // No normal Dynamax in same-species forms, and R follows the visible order.
+ page(4);press(128);press(1);assert.equal(state().entry,0);
+ press(256);assert.equal(catalog.entries[state().entry].entry_id,'dex:ivysaur:base');
+ press(512);assert.equal(state().entry,0);
  page(7);shot('dex-evolution');readToEnd();
  page(6);assert(state().lines>6);readToEnd();shot('dex-ability-end');
  page(1);press(1);assert.equal(state().move,1);press(1);assert.equal(state().move,2);readToEnd();press(1);assert.equal(state().move,3);readToEnd();shot('dex-learning-sources');press(2);
@@ -16,10 +20,10 @@ module.exports=function checkDex(m,press,shot){
  page(14);press(1);press(8);shot('dex-hp');
  // Venusaur is the first source-validated plan in national order.
  const venusaur=catalog.entries.findIndex(e=>e.entry_id==='dex:venusaur:base');
- page(9);for(let i=0;i<venusaur;i++)press(256);assert.equal(state().entry,venusaur);assert(state().lines>1);readToEnd();shot('dex-held-item');
+ page(9);for(let i=0;i<2;i++)press(256);assert.equal(state().entry,venusaur);assert(state().lines>1);readToEnd();shot('dex-held-item');
  page(10);assert(state().lines>6);readToEnd();shot('dex-strategy');
  page(11);readToEnd();page(12);readToEnd();
  // Restore starting page/entry so surrounding game tests retain their flow.
- for(let i=0;i<venusaur;i++)press(512);page(0);m._free(ptr);
+ for(let i=0;i<2;i++)press(512);page(0);m._free(ptr);
  return {page_directory:true,long_text_to_end:true,evolution:true,move_effect_and_decoded_sources:true,held_item_and_strategy:true,front_back_shiny_pixels:true,hp_calculator_controls:true};
 };

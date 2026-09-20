@@ -39,9 +39,10 @@ int32_t omni_dex_find(const OmniDex *d,uint32_t id) {
     for(i=0;i<d->count;++i) if(d->entries[i].id==id) return i;
     return -1;
 }
+int omni_dex_visible(const OmniDexEntry *e) { return e && e->category!=11; }
 int omni_dex_matches(const OmniDexEntry *e,uint8_t flags,const OmniDexFilter *f) {
     uint32_t mask;
-    if(!e||!f||f->type>18||f->progress>4||f->include_research>1) return 0;
+    if(!omni_dex_visible(e)||!f||f->type>18||f->progress>4||f->include_research>1) return 0;
     if((e->research_only&&!f->include_research)||(f->national&&e->national!=f->national)
        ||(f->category&&e->category!=f->category)||(f->generation&&e->generation!=f->generation)) return 0;
     mask=(uint32_t)e->type_mask|((uint32_t)e->type_mask_hi<<16);
@@ -52,9 +53,10 @@ int omni_dex_matches(const OmniDexEntry *e,uint8_t flags,const OmniDexFilter *f)
 }
 uint16_t omni_dex_query(const OmniDex *d,const OmniDexState *s,const OmniDexFilter *f,
     uint16_t offset,uint16_t *out,uint16_t capacity) {
-    uint16_t i,total=0,written=0;
+    uint16_t i,total=0,written=0;uint8_t group;
     if(!state_ok(d,s)||!f||(capacity&&!out)) return 0;
-    for(i=0;i<d->count;++i) if(omni_dex_matches(&d->entries[i],s->flags[i],f)) {
+    for(group=0;group<2;++group) for(i=0;i<d->count;++i)
+      if((d->entries[i].category==1?0:1)==group && omni_dex_matches(&d->entries[i],s->flags[i],f)) {
         if(total>=offset&&written<capacity) out[written++]=i;
         ++total;
     }
@@ -73,7 +75,7 @@ int omni_dex_record(const OmniDex *d,OmniDexState *s,uint32_t id,uint8_t event) 
 uint16_t omni_dex_count(const OmniDex *d,const OmniDexState *s,uint8_t flag,uint8_t research) {
     uint16_t i,n=0;
     if(!state_ok(d,s)||research>1||(flag!=0&&flag!=1&&flag!=2&&flag!=4)) return 0;
-    for(i=0;i<d->count;++i) if((research||!d->entries[i].research_only)&&(!flag||(s->flags[i]&flag))) ++n;
+    for(i=0;i<d->count;++i) if(omni_dex_visible(&d->entries[i])&&(research||!d->entries[i].research_only)&&(!flag||(s->flags[i]&flag))) ++n;
     return n;
 }
 static void put32(uint8_t *p,uint32_t n) { uint8_t i; for(i=0;i<4;++i)p[i]=(uint8_t)(n>>(8*i)); }

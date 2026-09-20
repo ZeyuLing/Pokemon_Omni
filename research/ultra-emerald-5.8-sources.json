@@ -1,0 +1,98 @@
+{
+  "checked_on": "2026-09-20",
+  "method": "Unauthenticated Bilibili public view and reply APIs; pinned comment owner IDs checked against video owner IDs.",
+  "branch_policy": "Community continuation / subsequent modification; no assertion that this is the original Ultra Emerald team release.",
+  "sources": [
+    {
+      "url": "https://www.bilibili.com/video/BV1F9eq6hEHK/",
+      "bvid": "BV1F9eq6hEHK",
+      "aid": 117302452292643,
+      "publisher": "骚木口袋妖怪",
+      "publisher_id": 678206641,
+      "published_at": "2026-09-20T08:37:12.000Z",
+      "title": "口袋妖怪究极绿宝石5.8神战版，那些添加的特殊精灵该如何进化获得？#宝可梦 #口袋妖怪 #怀旧游戏 #口袋妖怪改版",
+      "pinned_by_publisher": null
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1QKe16vEsp/",
+      "bvid": "BV1QKe16vEsp",
+      "aid": 117291211621285,
+      "publisher": "骚木口袋妖怪",
+      "publisher_id": 678206641,
+      "published_at": "2026-09-18T09:02:49.000Z",
+      "title": "口袋妖怪究极绿宝石5.8神战1.0版本更新！优化了不足的地方，补全了野外九世代精灵，同时也加强了神兽和天王阵容#口袋妖怪 #宝可梦 #怀旧游戏 #口袋妖怪改版",
+      "pinned_by_publisher": {
+        "comment_id": 318034524832,
+        "text": "企鹅游戏群：1079571577"
+      }
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1FHen6EEoy/",
+      "bvid": "BV1FHen6EEoy",
+      "aid": 117274384010458,
+      "publisher": "骚木口袋妖怪",
+      "publisher_id": 678206641,
+      "published_at": "2026-09-15T09:42:33.000Z",
+      "title": "口袋妖怪究极绿宝石5.8最终神战版更新！这是该系列最后一个版本，再冠军之路添加了大量的一级神和二级神#口袋妖怪 #宝可梦 #怀旧游戏 #口袋妖怪改版",
+      "pinned_by_publisher": {
+        "comment_id": 318034472128,
+        "text": "企鹅游戏群：1079571577"
+      }
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1Rye46dEyy/",
+      "bvid": "BV1Rye46dEyy",
+      "aid": 117295892400294,
+      "publisher": "在下暗夜翼z",
+      "publisher_id": 1942528309,
+      "published_at": "2026-09-19T04:51:23.000Z",
+      "title": "究极绿宝石5.8神战最终版 永久超进化补全进化石 自带魔法和电脑便利道具",
+      "pinned_by_publisher": {
+        "comment_id": 317912136832,
+        "text": "我用夸克网盘给你分享了「口袋妖怪究极绿宝...）(1)」，点击链接或复制整段内容，打开「夸克APP」即可获取。\n亝咧咧闭已并诶轶卡并冉忛\n/~1ecf3ayJ2A~:/\n链接：https://pan.quark.cn/s/fcb4317bef30"
+      }
+    }
+  ],
+  "download_candidates": [
+    {
+      "url": "https://pan.quark.cn/s/fcb4317bef30",
+      "source_video": "BV1Rye46dEyy",
+      "source_comment_id": 317912136832,
+      "kind": "Third-party modification / sharing edition",
+      "label": "5.8 神战最终版；视频注明永久超进化、补全进化石及内置便利功能",
+      "status": "Link confirmed in publisher pinned comment. Share file listing and ROM contents not verified; no download or hash yet."
+    }
+  ],
+  "form_leads": [
+    {
+      "names": [
+        "黑暗超梦",
+        "超级烈焰猴"
+      ],
+      "source": "https://jingxuan.douyin.com/m/video/7682735816355439002",
+      "evidence": "5.8.2 video title visible in the publisher related-video list. Target page timed out.",
+      "status": "Names only; sprites, stats, abilities, learnsets and evolution rules unverified."
+    },
+    {
+      "source": "https://jingxuan.douyin.com/m/video/7683503599255558490",
+      "evidence": "5.8.4 update title claims ZA Mega coverage and permanent Mega.",
+      "status": "Publisher claim, not a verified roster."
+    },
+    {
+      "source": "https://jingxuan.douyin.com/m/video/7684211176858880074",
+      "evidence": "5.8.6 update title claims six additional Mega forms.",
+      "status": "Exact six names and data unverified."
+    }
+  ],
+  "next_steps": [
+    "Obtain exact ROM/patch and hash, then identify base branch and changes.",
+    "Extract sprites, base stats, types, abilities, learnsets and form conditions into source-scoped reference records.",
+    "Map to existing identities; same artwork or nickname alone is insufficient identity evidence.",
+    "Only approve Omni battle data after cross-checking values and rules."
+  ],
+  "limitations": [
+    "Bilibili pages and Quark share could not be inspected with the web reader; browser research pages timed out.",
+    "Public API verifies titles, publishers and pinned URLs, not the files behind a share link.",
+    "No additional 5.8 form imported or declared complete during this research."
+  ]
+}

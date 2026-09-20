@@ -5,7 +5,7 @@ window.OmniFeatures=(()=>{
  let api,store={favorites:[],compare:[]},planByEntry=new Map(),active,allPlans;
  const $=id=>document.getElementById(id);
  function save(){try{localStorage.setItem(key,JSON.stringify(store));return true;}catch{api.notice('本机空间不足：本次收藏修改尚未保存。',true);return false;}}
- function normalize(value){if(!value||!Array.isArray(value.favorites)||!Array.isArray(value.compare))throw Error('收藏文件格式不正确');const ids=new Set(api.catalog.entries.map(e=>e.entry_id));return {favorites:[...new Set(value.favorites)].filter(id=>ids.has(id)),compare:[...new Set(value.compare)].filter(id=>ids.has(id)).slice(0,4)};}
+ function normalize(value){if(!value||!Array.isArray(value.favorites)||!Array.isArray(value.compare))throw Error('收藏文件格式不正确');const ids=new Set(api.catalog.entries.filter(e=>e.category!=='dynamax').map(e=>e.entry_id));return {favorites:[...new Set(value.favorites)].filter(id=>ids.has(id)),compare:[...new Set(value.compare)].filter(id=>ids.has(id)).slice(0,4)};}
  function init(options){
   api=options;allPlans=options.plans;
   if(allPlans.records.length!==api.core.training_count()||(api.core.training_hash()>>>0)!==parseInt(allPlans.content_sha256.slice(0,8),16))throw Error('培养方案与核心版本不一致，请重新构建并刷新');
