@@ -2,7 +2,7 @@
   "schema_version": 1,
   "checked_on": "2026-09-20",
   "scope": "First research pass for narrative style and independent-continuity design; not an exhaustive game-playthrough or anime-viewing audit.",
-  "latest_user_decision": "Prefer recognizable existing characters such as Ash; appearance may be retained while characterization and biography are rewritten.",
+  "latest_user_decision": "Begin with young Ash in Pallet Town and preserve recognizable classic storylines; advance multiple years across later story cycles into adulthood; government and consequential political struggle must be explicit. The youth-assistant and relief-truck opening are retired.",
   "sources": [
     {
       "id": "R01",
@@ -331,6 +331,145 @@
       "limits": [
         "Not a direct full-episode viewing record."
       ]
+    },
+    {
+      "id": "A14",
+      "title": "EP001 departure and first partner",
+      "url": "https://bulbapedia.bulbagarden.net/wiki/EP001",
+      "authority": "fan_encyclopedia_secondary",
+      "access_status": "blurb and relevant plot sections read",
+      "supports": [
+        "Ash age ten at departure",
+        "Oversleeping, Gary, Oak and first meeting with Pikachu",
+        "Initial trust established during the journey"
+      ],
+      "limits": [
+        "Not a new full-video viewing record.",
+        "Does not establish Omni age progression or a combined FireRed story."
+      ]
+    },
+    {
+      "id": "A15",
+      "title": "EP002 Viridian and first Rocket encounter",
+      "url": "https://bulbapedia.bulbagarden.net/wiki/EP002",
+      "authority": "fan_encyclopedia_secondary",
+      "access_status": "blurb and relevant plot sections read",
+      "supports": [
+        "Pikachu taken to Viridian Center",
+        "Trio theft attempt and later interest in Pikachu"
+      ],
+      "limits": [
+        "Political interference after this event is an Omni proposal, not an episode fact."
+      ]
+    },
+    {
+      "id": "A16",
+      "title": "Official traveling companions retrospective",
+      "url": "https://www.pokemon.com/us/news/ash-ketchums-10-most-iconic-traveling-companions",
+      "authority": "official_article_search_excerpt",
+      "access_status": "search excerpt read; opened page returned shell only",
+      "supports": [
+        "Misty meets Ash during escape from Spearow"
+      ],
+      "limits": [
+        "Full article not read; corroboration limited to visible search text."
+      ]
+    },
+    {
+      "id": "K01",
+      "title": "Official Team Rocket quiz",
+      "url": "https://www.pokemon.com/uk/pokemon-news/test-your-team-rocket-knowledge-with-this-quiz",
+      "authority": "official_article_search_excerpt",
+      "access_status": "search excerpt read; opened page returned shell only",
+      "supports": [
+        "Giovanni final Gym Leader in Red/Blue and FireRed/LeafGreen"
+      ],
+      "limits": [
+        "Does not establish corruption of other officials or appointment procedures."
+      ]
+    },
+    {
+      "id": "K02",
+      "title": "Team Rocket core-series activities",
+      "url": "https://bulbapedia.bulbagarden.net/wiki/Team_Rocket",
+      "authority": "fan_encyclopedia_secondary",
+      "access_status": "relevant core-series section read",
+      "supports": [
+        "Fossils for sale in Mt Moon",
+        "Celadon Game Corner and underground hideout"
+      ],
+      "limits": [
+        "Manga and animation sections are separate continuities; do not transfer identities without an explicit adaptation decision."
+      ]
+    },
+    {
+      "id": "K03",
+      "title": "Pokemon Tower core-series events",
+      "url": "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Tower",
+      "authority": "fan_encyclopedia_secondary",
+      "access_status": "relevant core-series section read",
+      "supports": [
+        "Marowak killed by Team Rocket while protecting Cubone",
+        "Silph Scope reveals ghosts"
+      ],
+      "limits": [
+        "Police, court and government response proposed by Omni is not established here."
+      ]
+    },
+    {
+      "id": "K04",
+      "title": "Silph Co core-series occupation",
+      "url": "https://bulbapedia.bulbagarden.net/wiki/Silph_Co.",
+      "authority": "fan_encyclopedia_secondary",
+      "access_status": "core-series headquarters section read",
+      "supports": [
+        "Giovanni confrontation and Master Ball objective",
+        "Rocket withdrawal after defeat in game sequence"
+      ],
+      "limits": [
+        "Origins and manga variants on the same page are not identical to the game sequence.",
+        "Does not prove government sponsorship of the occupation."
+      ]
+    },
+    {
+      "id": "K05",
+      "title": "Lt Surge versioned dialogue",
+      "url": "https://bulbapedia.bulbagarden.net/wiki/Lt._Surge/Quotes",
+      "authority": "game_text_transcription_secondary_host",
+      "access_status": "Red/Blue and FireRed/LeafGreen relevant quotes read",
+      "supports": [
+        "Character refers to wartime experience and Electric Pokemon"
+      ],
+      "limits": [
+        "No confirmed war name, dates, combatants or connection to Omni proposed history."
+      ]
+    },
+    {
+      "id": "H01",
+      "title": "Meiji Restoration teaching overview",
+      "url": "https://afe.easia.columbia.edu/special/japan_1750_meiji.htm",
+      "authority": "university_educational_secondary",
+      "access_status": "relevant consolidation and domain-reform passages read",
+      "supports": [
+        "Central military/economic authority developed from an alliance with powerful domains",
+        "Domains replaced by prefectures in 1871"
+      ],
+      "limits": [
+        "Narrative analogy only; not a complete historical survey or direct worldbuilding prescription."
+      ]
+    },
+    {
+      "id": "H02",
+      "title": "Charter Oath 1868",
+      "url": "https://afe.easia.columbia.edu/main_pop/ps/ps_japan-charter-oath-1868.htm",
+      "authority": "primary_historical_text_in_university_translation",
+      "access_status": "introduction and translated oath read",
+      "supports": [
+        "Public deliberative commitments in the oath"
+      ],
+      "limits": [
+        "Translation with editorial introduction; do not infer full later implementation from the public text alone."
+      ]
     }
   ],
   "rejected_evidence_categories": [
@@ -341,6 +480,8 @@
   ],
   "drafts": [
     "docs/19-narrative-direction.md",
-    "docs/20-cast-and-opening.md"
-  ]
+    "docs/20-cast-and-opening.md",
+    "docs/21-era-and-political-arc.md"
+  ],
+  "revision": "0.2"
 }
