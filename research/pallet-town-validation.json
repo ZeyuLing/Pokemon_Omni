@@ -1,0 +1,45 @@
+{
+  "validated_on": "2026-09-20",
+  "build": {
+    "rom": "build/pallet/omni-pallet.gba",
+    "bytes": 15728640,
+    "sha256": "8f5d95326fdb257a18d89f2fa817cea33931c8c978b23e62cae49c2f7cfd0607",
+    "header_checksum_valid": true,
+    "scope": "Playable Pallet Town opening with integrated Pokedex; limited starter practice rules."
+  },
+  "emulator": {
+    "rom_sha256": "8f5d95326fdb257a18d89f2fa817cea33931c8c978b23e62cae49c2f7cfd0607",
+    "emulator": "@wasm-gaming/mgba-wasm@0.1.1",
+    "maps_visited": 5,
+    "normal_button_inputs": 184,
+    "starter_acquisition": true,
+    "menu_dex_gate": true,
+    "party_and_integrated_dex": true,
+    "practice_battle": true,
+    "save_continue": true,
+    "corrupt_newest_slot_fallback": true
+  },
+  "shared_C_test_rounds": 1255,
+  "source_commit": "c75f352304d529f6ba92d4f74b9cf8b5c3810788",
+  "source_files": 82,
+  "world_asset_bytes": 911884,
+  "browser_checks": [
+    "actual ROM boot and menu",
+    "game SRAM import/export and wrong-format isolation",
+    "invalid import preserves current state",
+    "audio toggle",
+    "820/390/320 layouts without horizontal overflow"
+  ],
+  "regressions": [
+    "tests/pokedex-features.cjs",
+    "tests/gba-smoke.cjs"
+  ],
+  "limitations": [
+    "No physical hardware validation",
+    "Pallet Town only",
+    "Three level-5 starters and five supported practice moves",
+    "Full battle mechanics, difficulties, AI, wild capture and growth not integrated",
+    "Background music and full animation not implemented"
+  ],
+  "native_test_note": "Initial native C tests passed; Windows application control later blocked the regenerated EXE. Final build runs the same C test source as Wasm plus actual ARM ROM in mGBA."
+}

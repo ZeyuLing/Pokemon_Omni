@@ -1,7 +1,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #ifndef OMNI_GBA_STANDALONE
-#include <string.h>
+#include "omni/memory.h"
 #endif
 #include "omni/pokedex.h"
 #include "omni/training.h"
@@ -82,6 +82,11 @@ static void draw_help(void){title("图鉴操作与范围");text(4,24,"方向键�
 static void draw_events(void){title("事件联调  非剧情奖励");text(4,25,omni_pokedex_catalog.entries[entry].name_zh,INK,238);text(4,47,"A模拟见过 R模拟捕捉",INK,238);text(4,68,"L模拟形态解锁",INK,238);text(4,89,"只读羁绊拒绝登记",MUTED,238);text(4,114,message,TEAL,238);footer("B返回；自动双槽保存");}
 static void draw(void){box(0,0,240,160,PAPER);switch(screen){case LIST:draw_list();break;case DETAIL:if(page==0)draw_profile();else if(page==1)draw_moves();else if(page==2)draw_plan();else if(page==3)draw_plan_stats();else if(page==4)draw_forms();else draw_identity();break;case FILTER:draw_filter();break;case SEARCH:draw_search();break;case HELP:draw_help();break;case EVENTS:draw_events();break;}dirty=0;}
 uint8_t omni_game_dex_is_open(void){return opened;}
+void omni_gba_box(int x,int y,int w,int h,uint16_t c){box(x,y,w,h,c);}
+void omni_gba_text(int x,int y,const char *s,uint16_t c,int end){text(x,y,s,c,end);}
+void omni_gba_num(int x,int y,unsigned n,uint16_t c){num(x,y,n,c);}
+void omni_gba_picture(unsigned index,int x,int y){picture(index,x,y);}
+void omni_game_dex_open_entry(uint32_t id){int32_t found=omni_dex_find(&omni_pokedex_catalog,id);omni_game_dex_open();if(found>=0){entry=(uint16_t)found;screen=DETAIL;page=scroll=plan_cursor=0;move_detail=0;}}
 void omni_game_dex_open(void){opened=1;screen=LIST;query();dirty=1;}
 void omni_game_dex_tick(uint16_t keys){uint16_t pressed=keys&~old_keys;unsigned max;old_keys=keys;if(!opened)return;if(keys){++held_frames;if(held_frames>20&&(held_frames%5)==0)pressed|=keys&(UP|DOWN|LEFT|RIGHT);}else held_frames=0;
  if(pressed){dirty=1;

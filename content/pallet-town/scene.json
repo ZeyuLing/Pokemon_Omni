@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "scope": "Playable Pallet Town opening; original Chinese dialogue and a limited starter practice battle",
+  "maps": [
+    {"id": 1, "key": "kanto.pallet_town", "source": "PalletTown", "name": "真新镇", "actors": [
+      {"x": 3, "y": 10, "sprite": "woman_1", "person": 4, "direction": 0},
+      {"x": 13, "y": 17, "sprite": "fat_man", "person": 5, "direction": 2}
+    ], "signs": [
+      {"x": 16,"y":16,"text":"大木宝可梦研究所。\n新的相遇，从这里开始。"},
+      {"x":4,"y":7,"text":"赤红的家。"},
+      {"x":13,"y":7,"text":"小茂与奈奈美的家。"},
+      {"x":9,"y":11,"text":"真新镇\n纯白的起点，等待你写下故事。"},
+      {"x":5,"y":14,"text":"训练家提示\nSTART 打开菜单，A 调查，B 跑步。"}
+    ]},
+    {"id":2,"key":"kanto.pallet_town.player_home.1f","source":"PalletTown_PlayersHouse_1F","name":"赤红的家 · 一楼","actors":[{"x":8,"y":4,"sprite":"mom","person":2,"direction":2}],"signs":[{"x":6,"y":1,"text":"电视正在介绍宝可梦。\n广阔的世界，正在等待新的训练家。"}]},
+    {"id":3,"key":"kanto.pallet_town.player_home.2f","source":"PalletTown_PlayersHouse_2F","name":"赤红的房间","actors":[],"signs":[{"x":1,"y":1,"person":8,"text":""},{"x":6,"y":5,"text":"先关掉游戏机吧。\n今天要去拜访大木博士。"},{"x":11,"y":1,"text":"旅行备忘\n先去研究所，见一见大木博士。"}]},
+    {"id":4,"key":"kanto.pallet_town.rival_home","source":"PalletTown_RivalsHouse","name":"小茂的家","actors":[{"x":10,"y":6,"sprite":"daisy","person":6,"direction":0}],"signs":[]},
+    {"id":5,"key":"kanto.pallet_town.oak_lab","source":"PalletTown_ProfessorOaksLab","name":"大木研究所","actors":[
+      {"x":6,"y":3,"sprite":"prof_oak","person":1,"direction":0},
+      {"x":5,"y":4,"sprite":"blue","person":3,"direction":0},
+      {"x":3,"y":11,"sprite":"scientist","person":7,"direction":0},
+      {"x":11,"y":10,"sprite":"scientist","person":7,"direction":2},
+      {"x":8,"y":4,"sprite":"item_ball","starter":1,"direction":0},
+      {"x":9,"y":4,"sprite":"item_ball","starter":3,"direction":0},
+      {"x":10,"y":4,"sprite":"item_ball","starter":2,"direction":0}
+    ],"signs":[{"x":2,"y":1,"text":"研究所的电脑。\n记录着来自各地的宝可梦资料。"},{"x":3,"y":1,"text":"研究笔记\n资料记录与实际捕获进度分开保存。"}]}
+  ]
+}

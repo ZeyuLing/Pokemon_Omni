@@ -1,0 +1,2 @@
+const fs=require('node:fs'),assert=require('node:assert/strict');
+(async()=>{const {instance}=await WebAssembly.instantiate(fs.readFileSync('build/pallet/test_adventure.wasm'),{});try{assert.equal(instance.exports.omni_adventure_test(),0);}catch(e){throw Error(`Adventure C assertion failed at line ${instance.exports.test_failure_line()}: ${e.message}`);}console.log(`PASS: shared C adventure tests in Wasm; story/reward/save/PP/stages and ${instance.exports.test_rounds_checked()} deterministic battle rounds`);})().catch(e=>{console.error(e);process.exitCode=1;});

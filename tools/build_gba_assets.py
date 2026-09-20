@@ -103,6 +103,10 @@ def main():
     # Include all authored GBA UI literals in the font subset.
     for file in (ROOT / 'adapters/gba').glob('*.[ch]'):
         strings.update(file.read_text(encoding='utf-8'))
+    for file in (ROOT / 'core/src').glob('adventure.c'):
+        strings.update(file.read_text(encoding='utf-8'))
+    for file in (ROOT / 'content/pallet-town').glob('*.json'):
+        strings.update(file.read_text(encoding='utf-8'))
     font_path=ROOT / '.cache/toolchains/unifont-16.0.04.hex.gz'
     assert hashlib.sha256(font_path.read_bytes()).hexdigest() == 'f9c8c7802453f47be02677176aeac2342ee96d354fad7a26cedcce48e68e1d9f'
     glyphs={}
