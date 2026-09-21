@@ -31,16 +31,17 @@ const scenes=require('../build/pallet/scene-audit.json');
  walk(10,2);assert.equal(state().map,2);talkAt(8,5,1);dismiss();walk(4,8);assert.equal(state().map,1);walk(16,13);assert.equal(state().map,5);
  talkAt(6,4,1);dismiss();talkAt(8,5,1);assert.equal(state().screen,9);shot('pikachu-choice');press(1);dismiss();assert.equal(state().starter,4);assert.equal(state().party,1);assert.equal(state().balls,5);shot('pikachu-lab');
  press(8);press(128);press(1);assert.equal(state().screen,3);shot('pikachu-party');press(1);assert.equal(state().screen,6);press(2);press(2);assert.equal(state().screen,3);press(2);press(2);
+ press(8);press(128);press(128);press(1);assert.equal(state().screen,4);shot('bag-items');press(16);shot('bag-balls');press(16);shot('bag-key-empty');press(2);press(2);
  walk(6,12);walk(12,0);press(64);assert.equal(state().map,6);shot('route1');
  const route=scenes[5];let pair;
  for(let y=1;y<route.height-1&&!pair;y++)for(let x=1;x<route.width-2;x++)if(route.grass[y*route.width+x]&&route.grass[y*route.width+x+1]&&!route.collision[y*route.width+x]&&!route.collision[y*route.width+x+1]){pair=[[x,y],[x+1,y]];break;}
  assert(pair);stopOnEncounter=true;
- for(let i=0;i<150&&state().screen!==10;i++)walk(...pair[i%2]);assert.equal(state().screen,10);shot('wild-battle');
+ for(let i=0;i<150&&state().screen!==10;i++)walk(...pair[i%2]);assert.equal(state().screen,10);shot('wild-battle');press(1);shot('battle-moves');press(2);press(16);press(1);assert.equal(state().screen,4);shot('battle-bag');press(1);while(state().screen===11)press(1);if(state().screen===7)dismiss();
  for(let i=0;i<5&&state().party===1;i++){press(512);while(state().screen===11)press(1);if(state().screen===7)dismiss();}
  assert.equal(state().party,2,'Capture adds a second partner');shot('caught');stopOnEncounter=false;
  walk(12,0);press(64);assert.equal(state().map,7);shot('viridian');walk(26,26);assert.equal(state().map,8);shot('center');
  talkAt(6,4,1);dismiss();assert(state().events&1);talkAt(10,5,3);dismiss();assert.equal(state().screen,8);press(1);assert.equal(state().screen,10);shot('rocket-battle');
- press(512);assert.equal(state().screen,11,'Trainer capture rejected');press(1);assert.equal(state().screen,10);
+ press(128);press(1);shot('battle-party');press(2);press(128);press(16);press(1);assert.equal(state().screen,4);press(1);assert.equal(state().screen,11,'Trainer capture rejected');press(1);assert.equal(state().screen,10);press(32);
  for(let attempt=0;attempt<4&&!(state().events&2);attempt++){
   for(let t=0;t<90&&(state().screen===10||state().screen===11);t++)press(1);
   if(state().screen===7)dismiss();
@@ -56,6 +57,6 @@ const scenes=require('../build/pallet/scene-audit.json');
  const latest=saved.readUInt32LE(4)>saved.readUInt32LE(16388)?0:16384;saved[latest+60]^=255;const sv=m._malloc(saved.length);m.HEAPU8.set(saved,sv);m._mgbawasm_sram_load(sv,saved.length);m._free(sv);m._mgbawasm_reset();probeOffset=-1;frames(90);press(2);press(1);assert.equal(state().events,15,'Corrupt newest slot falls back');
  let legacy=false;const oldPath='.cache/pallet-before-kanto.sav';
  if(fs.existsSync(oldPath)){const old=fs.readFileSync(oldPath),ver=old.readUInt32LE(40);if(ver===1){assert(validGame(old,scenes));const ptr=m._malloc(old.length);m.HEAPU8.set(old,ptr);m._mgbawasm_sram_load(ptr,old.length);m._free(ptr);m._mgbawasm_reset();probeOffset=-1;frames(90);press(2);press(1);assert(state().starter>=1&&state().starter<=3);assert.equal(state().party,1);legacy=true;}}
- const report={rom_sha256:crypto.createHash('sha256').update(rom).digest('hex'),emulator:'@wasm-gaming/mgba-wasm@0.1.1',maps_visited:8,normal_button_inputs:buttons,pikachu:true,route_connections:true,wild_capture:true,rocket_encounter:true,trainer_capture_rejected:true,shop:true,parcel_once:true,party_and_dex:true,save_continue:true,corrupt_slot_fallback:true,legacy_v1_import:legacy,scope:'Opening through Viridian and parcel return; not the completed Kanto first journey'};
+ const report={rom_sha256:crypto.createHash('sha256').update(rom).digest('hex'),emulator:'@wasm-gaming/mgba-wasm@0.1.1',maps_visited:8,normal_button_inputs:buttons,pikachu:true,route_connections:true,wild_capture:true,rocket_encounter:true,trainer_capture_rejected:true,shop:true,parcel_once:true,party_and_dex:true,native_battle_commands:true,bag_pockets:true,party_selection:true,save_continue:true,corrupt_slot_fallback:true,legacy_v1_import:legacy,scope:'Opening through Viridian and parcel return; not the completed Kanto first journey'};
  fs.writeFileSync('build/pallet/emulator-report.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));m._mgbawasm_unload();
 })().catch(e=>{console.error(e);process.exitCode=1;});

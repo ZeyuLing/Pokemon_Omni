@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "rom_path": "assets/imported/rocket-user/rocket-user-modifier.gba",
+  "rom_sha256": "033235cdd389c4c8cb1aa6d68a93954a55fd681c92a1a554ebc63431117b4eaf",
+  "scope": "Actual Rocket ROM UI pixels; portable core is unchanged. Not a port of the source menu engine.",
+  "terrain_table_offset": "0x5a6368",
+  "reference_commit": "5eff78649e7170a877b961ef0b3da13b81a16038",
+  "sources": {
+    "grass_tiles": {
+      "offset": "0x1c347c4",
+      "encoding": "lz10",
+      "encoded_bytes": 1394,
+      "decoded_bytes": 3328,
+      "encoded_sha256": "9d59a39b6a67a26de4eb87f2f90722f7804276f8cf560fba62e9e6e15d204b13",
+      "decoded_sha256": "606d35069d923571f6689d5656c683abee4058e371115c453d80b630ea0688d8",
+      "structural_reference": "https://github.com/pret/pokeemerald/blob/5eff78649e7170a877b961ef0b3da13b81a16038/src/data/graphics/battle_environment.h"
+    },
+    "grass_map": {
+      "offset": "0x1c34d84",
+      "encoding": "lz10",
+      "encoded_bytes": 703,
+      "decoded_bytes": 4096,
+      "encoded_sha256": "ec46c9f905f2c2cf5a1262c952b35cc44aef974e31a18f65e117cf08a51806b7",
+      "decoded_sha256": "52313ec6a4ff47ff805c69a4cbd05a5fd38dc4459998f84c5d10a045e0daf451"
+    },
+    "grass_palette": {
+      "offset": "0x1c34d38",
+      "encoding": "lz10",
+      "encoded_bytes": 74,
+      "decoded_bytes": 96,
+      "encoded_sha256": "e3b081d43e0473d4bca6a1aeac7d42c1e916337cdba9d99a0776b65e77a13549",
+      "decoded_sha256": "e8d82a94709e05473c9b303eccd5cedbe0dda3e2ef501573208a7c7b41d36c5f"
+    },
+    "building_tiles": {
+      "offset": "0x1c38590",
+      "encoding": "lz10",
+      "encoded_bytes": 834,
+      "decoded_bytes": 2560,
+      "encoded_sha256": "7b3c19766414286704b32a7d3bf02bb5cab5ae9365da5fce06f22352d578be05",
+      "decoded_sha256": "c93a949926f1dc6e3e463e067329e8db7ecfbe2d7441b2fd23ae78b9ea164029",
+      "structural_reference": "https://github.com/pret/pokeemerald/blob/5eff78649e7170a877b961ef0b3da13b81a16038/src/data/graphics/battle_environment.h"
+    },
+    "building_map": {
+      "offset": "0x1c38910",
+      "encoding": "lz10",
+      "encoded_bytes": 674,
+      "decoded_bytes": 4096,
+      "encoded_sha256": "91abcd9fac1a6309f40b9f1bd8fad7373d412c16d61c065eb5ed334ed408977e",
+      "decoded_sha256": "b3aa7db1dd6d4973b20f4934dc1215b7c442228414b145fe5de7014778d5aef0"
+    },
+    "building_palette": {
+      "offset": "0x1c39d90",
+      "encoding": "lz10",
+      "encoded_bytes": 68,
+      "decoded_bytes": 96,
+      "encoded_sha256": "cdfd12431946cd662beeb8a1b05add3533fc213d3b42eed40c47f7088655d482",
+      "decoded_sha256": "9f925048a261424f27b755120e43a30e8e75477cef265aa0e107a834e1af2d41"
+    },
+    "textbox_tiles": {
+      "offset": "0x177376c",
+      "encoding": "lz10",
+      "encoded_bytes": 1247,
+      "decoded_bytes": 8192,
+      "encoded_sha256": "916ee65046cc0a1f57d28651bb71c8bca0520db5129cf34e5db99a340b782376",
+      "decoded_sha256": "4d33e7b1b602978117aec11f95fe43f22bc5ac0ed833abba64d4c388fe5448eb",
+      "structural_reference": "https://github.com/pret/pokeemerald/blob/5eff78649e7170a877b961ef0b3da13b81a16038/graphics/battle_interface/textbox.png"
+    },
+    "textbox_map": {
+      "offset": "0x1773c90",
+      "encoding": "lz10",
+      "encoded_bytes": 555,
+      "decoded_bytes": 4096,
+      "encoded_sha256": "90496cc6668d32609ffdf51c216edd9996e8ba9d21ccdb3b489da7f1a8249e2a",
+      "decoded_sha256": "469a866fe10af029afea67a23f5ab0c0102c675d6a16115089712d1717550d2d"
+    },
+    "textbox_palette": {
+      "offset": "0x1773c4c",
+      "encoding": "lz10",
+      "encoded_bytes": 67,
+      "decoded_bytes": 64,
+      "encoded_sha256": "b14eba2299b7dfb45ce7d149d9289e294e77c8b7163d16a1d0940286f846abe1",
+      "decoded_sha256": "80d9187ff118e5a72684f5fb6db05693ac58607916f16977709dc62b2830b5e8"
+    },
+    "healthbox_palette": {
+      "offset": "0x1793248",
+      "encoding": "raw",
+      "encoded_bytes": 32,
+      "decoded_bytes": 32,
+      "encoded_sha256": "c63004c46286a62180ab7f707a3ac8553daeacb39f39852093f6f7dc27fc02c9",
+      "decoded_sha256": "c63004c46286a62180ab7f707a3ac8553daeacb39f39852093f6f7dc27fc02c9"
+    },
+    "healthbox_player": {
+      "offset": "0x17a0874",
+      "encoding": "lz10",
+      "encoded_bytes": 675,
+      "decoded_bytes": 4096,
+      "encoded_sha256": "0a2d87e07e345e90c8a03e5e9b9965ad4d40be507b0430d9dd92a9e910b94df8",
+      "decoded_sha256": "f0f991f3e94fc7c2a9c5c5f7a30919b79fc47769339b1f9163643f8ea8ed09c0",
+      "structural_reference": "https://github.com/pret/pokeemerald/blob/5eff78649e7170a877b961ef0b3da13b81a16038/graphics/battle_interface/healthbox_singles_player.png"
+    },
+    "healthbox_opponent": {
+      "offset": "0x17a0b18",
+      "encoding": "lz10",
+      "encoded_bytes": 377,
+      "decoded_bytes": 2048,
+      "encoded_sha256": "17aae2639d86204bbc9b767c1ad7e9fc43a1d97d5c4ffe126e5e0973a03027ea",
+      "decoded_sha256": "82511973566441c022776e6991a2542b9b74ac8cc6ad5dce686fdf8e6e02d104",
+      "structural_reference": "https://github.com/pret/pokeemerald/blob/5eff78649e7170a877b961ef0b3da13b81a16038/graphics/battle_interface/healthbox_singles_opponent.png"
+    },
+    "hp_elements": {
+      "offset": "0x1793288",
+      "encoding": "raw",
+      "encoded_bytes": 384,
+      "decoded_bytes": 384,
+      "encoded_sha256": "2579ad4683a8fc5834429e59eb9aceec41a9eada58d9c1eb054b61aaf8e7196e",
+      "decoded_sha256": "2579ad4683a8fc5834429e59eb9aceec41a9eada58d9c1eb054b61aaf8e7196e"
+    },
+    "hp_palette": {
+      "offset": "0x1793268",
+      "encoding": "raw",
+      "encoded_bytes": 32,
+      "decoded_bytes": 32,
+      "encoded_sha256": "8f22f0c1ba86759427ec51fbd30682db9a3a847434d3b822476281085c960680",
+      "decoded_sha256": "8f22f0c1ba86759427ec51fbd30682db9a3a847434d3b822476281085c960680"
+    },
+    "exp_elements": {
+      "offset": "0x1793408",
+      "encoding": "raw",
+      "encoded_bytes": 288,
+      "decoded_bytes": 288,
+      "encoded_sha256": "0ae531e8b1a917f3558bb514a4095126fef18bbce6bf79dc701cc9c24352d7ce",
+      "decoded_sha256": "0ae531e8b1a917f3558bb514a4095126fef18bbce6bf79dc701cc9c24352d7ce"
+    },
+    "bag_background_palette": {
+      "offset": "0x1c7a320",
+      "encoding": "lz10",
+      "encoded_bytes": 74,
+      "decoded_bytes": 64,
+      "encoded_sha256": "50ac480f2ce08d5b3ff2a22dcfd21a13fed792f3084acda086ad412f6447a2c1",
+      "decoded_sha256": "0f9f3caaf12293a636658053662502649de2ba9999c608bbbe5665a9f96d973d"
+    },
+    "bag_background_tiles": {
+      "offset": "0x1c7a3b8",
+      "encoding": "lz10",
+      "encoded_bytes": 620,
+      "decoded_bytes": 1696,
+      "encoded_sha256": "6b8c511a7323089080cfcbaf9745651fe58f2d137c6035471bde657456b138e9",
+      "decoded_sha256": "c728c7a96430ea65c9c8597b5476367b9303fa34396905ff7e08f6712480d00d"
+    },
+    "bag_background_map": {
+      "offset": "0x1c7a624",
+      "encoding": "lz10",
+      "encoded_bytes": 349,
+      "decoded_bytes": 2048,
+      "encoded_sha256": "e9e95fd759387e720845e55c6a54db6261cd7ce6319773bd4d0ba074410a4ee6",
+      "decoded_sha256": "13c94db483c8b287298b8a1747e8501b219002a8abe19de9b2b31e3ee1c05f29"
+    },
+    "bag_sprite_tiles": {
+      "offset": "0x1c78c1c",
+      "encoding": "lz10",
+      "encoded_bytes": 2939,
+      "decoded_bytes": 12288,
+      "encoded_sha256": "e191194ec9c1c8a77b897f4918c5dfa88906db0c1c706e2d55efce80ba943e2a",
+      "decoded_sha256": "c1bfaad62a2d92ce1ceb99d784e7e490055ca8282fccd44cc2c058de6ad536a0",
+      "structural_reference": "https://github.com/pret/pokeemerald/blob/5eff78649e7170a877b961ef0b3da13b81a16038/graphics/bag/bag_male.png"
+    },
+    "bag_sprite_palette": {
+      "offset": "0x1c7a2f8",
+      "encoding": "lz10",
+      "encoded_bytes": 40,
+      "decoded_bytes": 32,
+      "encoded_sha256": "0c8d7f0f871ef630f604ec1a43c0d2064969d7c80cb6df94cb792e91261adba1",
+      "decoded_sha256": "4ffbe9b8c9418723d95cc381f3cc6800af5a7da7640b81923876984261423edd"
+    },
+    "potion_tiles": {
+      "offset": "0x1c8f2a0",
+      "encoding": "lz10",
+      "encoded_bytes": 197,
+      "decoded_bytes": 288,
+      "encoded_sha256": "90f0879c8eb90e6c4196008bc6993cf364c6f187c645e50dbb291d07bcde55ca",
+      "decoded_sha256": "faab8e7ecbd9f9ffc46ce5155d1d8ab0fe9c36ee68a1ac363c6eedef750f822b"
+    },
+    "potion_palette": {
+      "offset": "0x1c8f368",
+      "encoding": "lz10",
+      "encoded_bytes": 36,
+      "decoded_bytes": 32,
+      "encoded_sha256": "6953dd6d36b9fd75c72bc50070a0bbf4ebe0b463e2b6b3988913be2354d844e8",
+      "decoded_sha256": "1eeb387fffb3afdc8d82d3487deefb63005cea2e1d1a32eff04314dfdcb2810a"
+    },
+    "pokeball_tiles": {
+      "offset": "0x1c8da20",
+      "encoding": "lz10",
+      "encoded_bytes": 173,
+      "decoded_bytes": 288,
+      "encoded_sha256": "44b90e9672f97f0887905647fdb1dcc686919bc59973230d37a6d05663eed47b",
+      "decoded_sha256": "52760c0ee6757adaf6395e82c4f41cf240bf6a1b57a758376cc7c797c1c263a7"
+    },
+    "pokeball_palette": {
+      "offset": "0x1c8dad0",
+      "encoding": "lz10",
+      "encoded_bytes": 36,
+      "decoded_bytes": 32,
+      "encoded_sha256": "a8aba6c765467fd9bc38f2596798561e99f7dcb7577cdfa993dfd74e7e217424",
+      "decoded_sha256": "52b14064937cd7175506cf7666f19fd47e63455fc59d2539094b58d5ad8b0003"
+    },
+    "window_tiles": {
+      "offset": "0xb68b38",
+      "encoding": "raw",
+      "encoded_bytes": 288,
+      "decoded_bytes": 288,
+      "encoded_sha256": "0b614c9b63b5a4f690bf58cb67136da7505c2e840a5911db6470f8aaabdf3171",
+      "decoded_sha256": "0b614c9b63b5a4f690bf58cb67136da7505c2e840a5911db6470f8aaabdf3171",
+      "structural_reference": "https://github.com/pret/pokeemerald/blob/5eff78649e7170a877b961ef0b3da13b81a16038/graphics/text_window/1.png"
+    },
+    "window_palette": {
+      "offset": "0xb6a1b8",
+      "encoding": "raw",
+      "encoded_bytes": 32,
+      "decoded_bytes": 32,
+      "encoded_sha256": "2b0dda5808937b690ecf820b6a159da7c2f54963f41d56f7fd56fef79a137f96",
+      "decoded_sha256": "2b0dda5808937b690ecf820b6a159da7c2f54963f41d56f7fd56fef79a137f96"
+    }
+  },
+  "images": {
+    "battle_grass": {
+      "width": 240,
+      "height": 112,
+      "offset": 0,
+      "pixel_sha256": "0d39fe4fe3297ff7a47426112b3373619f7714856c18f65b9516fc151e7bb0c7"
+    },
+    "battle_building": {
+      "width": 240,
+      "height": 112,
+      "offset": 53760,
+      "pixel_sha256": "0e39a094c6405c38dad941eabfa05910cfaf1de7277a332e1ed18e9cf87dcccd"
+    },
+    "battle_textbox": {
+      "width": 240,
+      "height": 48,
+      "offset": 107520,
+      "pixel_sha256": "9b75cf97ad957b7bbe057bfed17103f1cf09693092a59c863ce14044d08128b1"
+    },
+    "battle_commands": {
+      "width": 240,
+      "height": 48,
+      "offset": 130560,
+      "pixel_sha256": "794f2ce64b84759663120726cfff2bfc93e549c3c45cfb82a30987b12f86d660"
+    },
+    "battle_moves": {
+      "width": 240,
+      "height": 48,
+      "offset": 153600,
+      "pixel_sha256": "63549a7fc35350e2cc2df310042aacfd9021f59e8abdb9449a8f286b5c1e8419"
+    },
+    "healthbox_player": {
+      "width": 128,
+      "height": 64,
+      "offset": 176640,
+      "pixel_sha256": "c53ba2666b687a94350ae32ddf3e9a1c8dd4f232a2c573a16ec66248410d758e"
+    },
+    "healthbox_opponent": {
+      "width": 128,
+      "height": 32,
+      "offset": 193024,
+      "pixel_sha256": "5ec5104a9fbeaf87ef1e056dbded05af1168d47a66e3f4e85be0078319929b05"
+    },
+    "hp_elements": {
+      "width": 96,
+      "height": 8,
+      "offset": 201216,
+      "pixel_sha256": "0df046772d15291e1b0f825dedf5adcabd7e6a75f66dfa5c2c909546b638ffa7"
+    },
+    "exp_elements": {
+      "width": 72,
+      "height": 8,
+      "offset": 202752,
+      "pixel_sha256": "4da7216e7f153ba44df8a884a816da45c4e49780bcca4dace9eeb6bf54a04ed2"
+    },
+    "bag_background": {
+      "width": 240,
+      "height": 160,
+      "offset": 203904,
+      "pixel_sha256": "6687d20776b8a2e1022de0910dccffd0f788eac84214f34745e54c6c93f532df"
+    },
+    "bag_items": {
+      "width": 64,
+      "height": 64,
+      "offset": 280704,
+      "pixel_sha256": "192550330aaf9b8a5b390fc6fc8caa15f8094a602fe67e26e6d5ed0e01ecee69"
+    },
+    "bag_key": {
+      "width": 64,
+      "height": 64,
+      "offset": 288896,
+      "pixel_sha256": "c90079ff2726813fbbc6029c1308f5baea06d9db9f8a1d1d603276da4079e1e0"
+    },
+    "bag_balls": {
+      "width": 64,
+      "height": 64,
+      "offset": 297088,
+      "pixel_sha256": "de032902dc063bdee6bfc2189a5a588bdebb6aab692efc2e1d684f502745b63f"
+    },
+    "potion": {
+      "width": 24,
+      "height": 24,
+      "offset": 305280,
+      "pixel_sha256": "65716441207beb9caf968255f69ade5188dabb3d0d2e84adc734125fda4e172f"
+    },
+    "pokeball": {
+      "width": 24,
+      "height": 24,
+      "offset": 306432,
+      "pixel_sha256": "bdf3a7a0e25d0749f5571674711f166283b26e99aed7aa6579bd0dc2be42751d"
+    },
+    "window": {
+      "width": 24,
+      "height": 24,
+      "offset": 307584,
+      "pixel_sha256": "7aedf0f0ff262ba10cf50a4c401c9b7bbf0bd95c74f27b3516732d770ab79010"
+    }
+  },
+  "blob_bytes": 308736,
+  "blob_sha256": "bb892ed66562c9821796603c71b4ba39677dff413f0d69010ebf3603d919e324"
+}

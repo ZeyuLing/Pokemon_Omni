@@ -149,6 +149,7 @@ static void draw(void){box(0,0,240,160,PAPER);switch(screen){case LIST:draw_list
 uint8_t omni_game_dex_is_open(void){return opened;}
 void omni_gba_box(int x,int y,int w,int h,uint16_t c){box(x,y,w,h,c);}
 void omni_gba_text(int x,int y,const char *s,uint16_t c,int end){text_large(x,y,s,c,end);}
+void omni_gba_small_text(int x,int y,const char *s,uint16_t c,int end){text(x,y,s,c,end);}
 void omni_gba_num(int x,int y,unsigned n,uint16_t c){char out[12],rev[12];unsigned i=0,j=0;do{rev[i++]=(char)(48+n%10);n/=10;}while(n);while(i)out[j++]=rev[--i];out[j]=0;text_large(x,y,out,c,240);}
 void omni_gba_picture(unsigned index,int x,int y){picture(index,x,y);}
 void omni_game_dex_open_entry(uint32_t id){int32_t found=omni_dex_find(&omni_pokedex_catalog,id);if(found>=0&&!omni_dex_visible(&omni_pokedex_catalog.entries[found]))found=omni_dex_find(&omni_pokedex_catalog,omni_pokedex_profiles[found].parent_id);omni_game_dex_open();if(found>=0){entry=(uint16_t)found;screen=DETAIL;page=scroll=plan_cursor=text_scroll=0;move_detail=image_variant=0;}}
