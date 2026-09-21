@@ -204,6 +204,40 @@
       "encoded_sha256": "a8aba6c765467fd9bc38f2596798561e99f7dcb7577cdfa993dfd74e7e217424",
       "decoded_sha256": "52b14064937cd7175506cf7666f19fd47e63455fc59d2539094b58d5ad8b0003"
     },
+    "bag_return_tiles": {
+      "offset": "0x1c8d980",
+      "encoding": "lz10",
+      "encoded_bytes": 136,
+      "decoded_bytes": 288,
+      "encoded_sha256": "3d1f1650207c60c65865c64464f0a05dc0b3c35f4e1b759f9566afac0a92363f",
+      "decoded_sha256": "1baea3b767dfb689e557980afdfd1de0d62b47692f3be0ba3af5032fdf1f3c54"
+    },
+    "bag_return_palette": {
+      "offset": "0x1c8da08",
+      "encoding": "lz10",
+      "encoded_bytes": 22,
+      "decoded_bytes": 32,
+      "encoded_sha256": "a2e7f3e188a4e361195773d0f756a395b5a83518e5f6cdbe76d8c64b56b12cdd",
+      "decoded_sha256": "7df6b048bf2893fbea59ea4b3c1411744ca70829c28daefdcf6ab3902855670a"
+    },
+    "scroll_arrow_tiles": {
+      "offset": "0xcf6198",
+      "encoding": "lz10",
+      "encoded_bytes": 110,
+      "decoded_bytes": 256,
+      "encoded_sha256": "bbb39fc0d8de07519a749cf1caeb4d75cb4181d68fb0a2732d81b58d68cb0860",
+      "decoded_sha256": "a7daf7be479f3796061a840f1a29a8364e9862829407d3188ff69d69a69548c8",
+      "structural_reference": "https://github.com/pret/pokeemerald/blob/5eff78649e7170a877b961ef0b3da13b81a16038/graphics/interface/scroll_indicator.png"
+    },
+    "scroll_arrow_palette": {
+      "offset": "0xcf6178",
+      "encoding": "raw",
+      "encoded_bytes": 32,
+      "decoded_bytes": 32,
+      "encoded_sha256": "183efbbb58b356a9b203c9ced9ca9e5169c91dfea449b1b65ca4eccc619f783a",
+      "decoded_sha256": "183efbbb58b356a9b203c9ced9ca9e5169c91dfea449b1b65ca4eccc619f783a",
+      "structural_reference": "https://github.com/pret/pokeemerald/blob/5eff78649e7170a877b961ef0b3da13b81a16038/graphics/interface/red.pal"
+    },
     "window_tiles": {
       "offset": "0xb68b38",
       "encoding": "raw",
@@ -283,43 +317,85 @@
       "offset": 203904,
       "pixel_sha256": "6687d20776b8a2e1022de0910dccffd0f788eac84214f34745e54c6c93f532df"
     },
+    "bag_indicator_idle": {
+      "width": 8,
+      "height": 8,
+      "offset": 280704,
+      "pixel_sha256": "a18798dd1424cef365079466eb349bc8afbf1ce399ef3d480941c8dbecc5a104"
+    },
+    "bag_indicator_active": {
+      "width": 8,
+      "height": 8,
+      "offset": 280832,
+      "pixel_sha256": "676837af84c710d18e10bf7dd4ed0bdfb91011fea732dc863196cdd3281c8a33"
+    },
     "bag_items": {
       "width": 64,
       "height": 64,
-      "offset": 280704,
+      "offset": 280960,
       "pixel_sha256": "192550330aaf9b8a5b390fc6fc8caa15f8094a602fe67e26e6d5ed0e01ecee69"
     },
     "bag_key": {
       "width": 64,
       "height": 64,
-      "offset": 288896,
+      "offset": 289152,
       "pixel_sha256": "c90079ff2726813fbbc6029c1308f5baea06d9db9f8a1d1d603276da4079e1e0"
     },
     "bag_balls": {
       "width": 64,
       "height": 64,
-      "offset": 297088,
+      "offset": 297344,
       "pixel_sha256": "de032902dc063bdee6bfc2189a5a588bdebb6aab692efc2e1d684f502745b63f"
+    },
+    "bag_tms": {
+      "width": 64,
+      "height": 64,
+      "offset": 305536,
+      "pixel_sha256": "9c8f2b42b335689f2334ad879bb207c1ce05386b762f8f32ff4346093c0bc322"
+    },
+    "bag_berries": {
+      "width": 64,
+      "height": 64,
+      "offset": 313728,
+      "pixel_sha256": "7fe5c78006840e80863d9953a2a5cc07867ea729016a5bd2af9ca6f7d1ec2beb"
     },
     "potion": {
       "width": 24,
       "height": 24,
-      "offset": 305280,
+      "offset": 321920,
       "pixel_sha256": "65716441207beb9caf968255f69ade5188dabb3d0d2e84adc734125fda4e172f"
     },
     "pokeball": {
       "width": 24,
       "height": 24,
-      "offset": 306432,
+      "offset": 323072,
       "pixel_sha256": "bdf3a7a0e25d0749f5571674711f166283b26e99aed7aa6579bd0dc2be42751d"
+    },
+    "bag_return": {
+      "width": 24,
+      "height": 24,
+      "offset": 324224,
+      "pixel_sha256": "c3c04065abc1d7335fcdd85e63effdbe2b5f85212ec19a7d2a57f56b3e4e9bb6"
+    },
+    "bag_arrow_left": {
+      "width": 16,
+      "height": 16,
+      "offset": 325376,
+      "pixel_sha256": "3973f62717d0985ec0358ced0aad80ec36d12969a3da9d7b650e523a3a360ea4"
+    },
+    "bag_arrow_right": {
+      "width": 16,
+      "height": 16,
+      "offset": 325888,
+      "pixel_sha256": "cc7e1863ee07684223354ea9dc45d49f7182315654da8c41cb1c5ea27729fac7"
     },
     "window": {
       "width": 24,
       "height": 24,
-      "offset": 307584,
+      "offset": 326400,
       "pixel_sha256": "7aedf0f0ff262ba10cf50a4c401c9b7bbf0bd95c74f27b3516732d770ab79010"
     }
   },
-  "blob_bytes": 308736,
-  "blob_sha256": "bb892ed66562c9821796603c71b4ba39677dff413f0d69010ebf3603d919e324"
+  "blob_bytes": 327552,
+  "blob_sha256": "3b7966d292d619d7a75da1ffdd0d6cf8a2aa6430c068598ba7d1df89e27780a8"
 }

@@ -31,7 +31,7 @@ const scenes=require('../build/pallet/scene-audit.json');
  walk(10,2);assert.equal(state().map,2);talkAt(8,5,1);dismiss();walk(4,8);assert.equal(state().map,1);walk(16,13);assert.equal(state().map,5);
  talkAt(6,4,1);dismiss();talkAt(8,5,1);assert.equal(state().screen,9);shot('pikachu-choice');press(1);dismiss();assert.equal(state().starter,4);assert.equal(state().party,1);assert.equal(state().balls,5);shot('pikachu-lab');
  press(8);press(128);press(1);assert.equal(state().screen,3);shot('pikachu-party');press(1);assert.equal(state().screen,6);press(2);press(2);assert.equal(state().screen,3);press(2);press(2);
- press(8);press(128);press(128);press(1);assert.equal(state().screen,4);shot('bag-items');press(16);shot('bag-balls');press(16);shot('bag-key-empty');press(2);press(2);
+ press(8);press(128);press(128);press(1);assert.equal(state().screen,4);shot('bag-items');press(16);shot('bag-balls');press(16);shot('bag-tms-empty');press(16);shot('bag-berries-empty');press(16);shot('bag-key-empty');press(2);press(2);
  walk(6,12);walk(12,0);press(64);assert.equal(state().map,6);shot('route1');
  const route=scenes[5];let pair;
  for(let y=1;y<route.height-1&&!pair;y++)for(let x=1;x<route.width-2;x++)if(route.grass[y*route.width+x]&&route.grass[y*route.width+x+1]&&!route.collision[y*route.width+x]&&!route.collision[y*route.width+x+1]){pair=[[x,y],[x+1,y]];break;}

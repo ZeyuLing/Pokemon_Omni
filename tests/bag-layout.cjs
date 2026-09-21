@@ -35,7 +35,10 @@ function fixture(quantity,parcel){
   checkBag(quantity);
   shot(`bag-layout-items-${quantity}`);
   if(quantity){press(128);shot(`bag-layout-close-${quantity}`);press(64);}
-  press(16);shot(`bag-layout-balls-${quantity}`);press(16);shot(`bag-layout-key-${quantity}`);
+  press(16);shot(`bag-layout-balls-${quantity}`);
+  press(16);shot(`bag-layout-tms-${quantity}`);press(16);shot(`bag-layout-berries-${quantity}`);
+  press(16);shot(`bag-layout-key-${quantity}`);
+  press(16);shot(`bag-layout-wrap-${quantity}`);press(32);shot(`bag-layout-back-${quantity}`);
  }
- m._mgbawasm_unload();console.log('PASS: bag layout fixtures rendered in real ROM (0/9/99/999, 999999 money, parcel and close selection)');
+ m._mgbawasm_unload();console.log('PASS: bag layout fixtures rendered in real ROM (0/9/99/999, five pockets, wrap/back, parcel, close; balance must remain invisible)');
 })().catch(e=>{console.error(e);process.exitCode=1;});

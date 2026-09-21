@@ -104,13 +104,21 @@ def main():
                                        colors(read('hp_palette', 24719976, 32)))
     pictures['exp_elements'] = tile_image(read('exp_elements', 24720392, 288), 72, 8, health_pal)
     bag_pal = colors(read('bag_background_palette', 29860640))
-    pictures['bag_background'] = tilemap_image(read('bag_background_tiles', 29860792), read('bag_background_map', 29861412), bag_pal).crop((0, 0, 240, 160))
+    bag_bg_tiles = read('bag_background_tiles', 29860792)
+    pictures['bag_background'] = tilemap_image(bag_bg_tiles, read('bag_background_map', 29861412), bag_pal).crop((0, 0, 240, 160))
+    # item_menu.c: DrawPocketIndicatorSquare uses palette 1, tiles 0x17/0x2b.
+    for name, tile in [('idle', 0x17), ('active', 0x2b)]:
+        pictures['bag_indicator_'+name] = tile_image(bag_bg_tiles[tile*32:(tile+1)*32], 8, 8, bag_pal[16:], transparent=False)
     bag_tiles = read('bag_sprite_tiles', 29854748, reference='graphics/bag/bag_male.png')
     bag_pal = colors(read('bag_sprite_palette', 29860600))
-    for name, frame in [('items', 1), ('key', 2), ('balls', 3)]:
+    for name, frame in [('items', 1), ('key', 2), ('balls', 3), ('tms', 4), ('berries', 5)]:
         pictures['bag_'+name] = tile_image(bag_tiles[frame*2048:(frame+1)*2048], 64, 64, bag_pal)
-    for name, gfx, pal in [('potion', 29946528, 29946728), ('pokeball', 29940256, 29940432)]:
+    for name, gfx, pal in [('potion', 29946528, 29946728), ('pokeball', 29940256, 29940432), ('bag_return', 29940096, 29940232)]:
         pictures[name] = tile_image(read(name+'_tiles', gfx), 24, 24, colors(read(name+'_palette', pal)))
+    arrows = tile_image(read('scroll_arrow_tiles', 13590936, reference='graphics/interface/scroll_indicator.png'), 16, 32,
+                        colors(read('scroll_arrow_palette', 13590904, 32, 'graphics/interface/red.pal')))
+    pictures['bag_arrow_left'] = arrows.crop((0, 0, 16, 16))
+    pictures['bag_arrow_right'] = pictures['bag_arrow_left'].transpose(Image.Transpose.FLIP_LEFT_RIGHT)
     pictures['window'] = tile_image(read('window_tiles', 11963192, 288, 'graphics/text_window/1.png'), 24, 24,
                                     colors(read('window_palette', 11968952, 32)), transparent=False)
 
@@ -124,7 +132,9 @@ def main():
         images[name] = {'width': im.width, 'height': im.height, 'offset': offset, 'pixel_sha256': sha(blob[offset:])}
     (OUT/'game_ui.bin').write_bytes(blob)
     (OUT/'game_ui.h').write_text('#ifndef OMNI_GAME_UI_H\n#define OMNI_GAME_UI_H\nextern const unsigned char omni_game_ui_blob[];\n'+'\n'.join(declarations)+'\n#endif\n', 'utf-8')
-    (OUT/'game_ui.s').write_text('.section .rodata\n.balign 4\n.global omni_game_ui_blob\nomni_game_ui_blob:\n.incbin "build/pallet/game_ui.bin"\n', 'utf-8')
+    # Zig's assembler cache does not track .incbin contents; make changes to
+    # the payload change the assembly source as well as the generated offsets.
+    (OUT/'game_ui.s').write_text(f'/* Embedded UI SHA-256: {sha(blob)} */\n'+'.section .rodata\n.balign 4\n.global omni_game_ui_blob\nomni_game_ui_blob:\n.incbin "build/pallet/game_ui.bin"\n', 'utf-8')
     manifest = {'schema_version': 1, 'rom_path': str(ROM_PATH.relative_to(ROOT)).replace('\\', '/'), 'rom_sha256': USER_SHA,
                 'scope': 'Actual Rocket ROM UI pixels; portable core is unchanged. Not a port of the source menu engine.',
                 'terrain_table_offset': '0x5a6368', 'reference_commit': REFERENCE_COMMIT, 'sources': sources, 'images': images,
