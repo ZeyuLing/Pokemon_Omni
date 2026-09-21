@@ -63,6 +63,35 @@ class SourceInterfaceTests(unittest.TestCase):
                         actual = (r >> 3) | ((g >> 3) << 5) | ((b >> 3) << 10)
                         self.assertEqual(actual, expected, (screenshot, x, y))
 
+    def test_bag_text_stays_in_rows_and_inside_frames(self):
+        # Read final framebuffer pixels, so this catches misplaced draw calls
+        # even when every source image and every button still works correctly.
+        for quantity in (0, 9, 99, 999):
+            for pocket in ('items', 'balls', 'key'):
+                name = f'bag-layout-{pocket}-{quantity}'
+                rgba = (ROOT/f'build/pallet/{name}.rgba').read_bytes()
+                def ink(left, top, right, bottom):
+                    return [(x, y) for y in range(top, bottom) for x in range(left, right)
+                            if tuple(c >> 3 for c in rgba[(y*240+x)*4:(y*240+x)*4+3]) == (5, 7, 10)]
+                with self.subTest(screen=name):
+                    self.assertTrue(ink(122, 16, 194, 28), 'First row must contain item or close label')
+                    self.assertFalse(ink(122, 28, 228, 32), 'Rows require a clear gap')
+                    self.assertEqual(bool(ink(122, 32, 194, 44)), bool(quantity), 'Close follows the item by one row')
+                    self.assertFalse(ink(112, 44, 232, 125), 'No floating quantity, header or displaced close row')
+                    self.assertFalse(ink(112, 139, 232, 151), 'Footer must not touch bottom frame')
+                    self.assertFalse(ink(102, 103, 106, 151), 'Description cannot cross its right edge')
+                    title = ink(35, 10, 94, 22)
+                    self.assertTrue(title)
+                    self.assertLessEqual(abs((min(x for x, _ in title)+max(x for x, _ in title))/2-63.5), 2)
+                    if quantity and pocket != 'key':
+                        count = ink(198, 16, 228, 28)
+                        self.assertTrue(count, 'Quantity must share the item row')
+                        self.assertEqual(max(x for x, _ in count), 226, 'Digit group must align to the same right edge')
+                        columns = sorted(set(x for x, _ in count))
+                        self.assertLessEqual(max(b-a for a, b in zip(columns, columns[1:])), 7, 'Multiplier must stay beside its number')
+                    else:
+                        self.assertFalse(ink(198, 16, 228, 28), 'Empty/key pockets must not display a quantity')
+
 
 if __name__ == '__main__':
     unittest.main()
