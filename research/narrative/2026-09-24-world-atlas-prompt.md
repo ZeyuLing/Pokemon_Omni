@@ -1,0 +1,16 @@
+# Omni 世界地图生成记录
+
+生成日期：2026-09-24。工具：内置 image_gen，通过 imagegen 技能；未使用 CLI 或用户 API 密钥。
+
+成品：`assets/concepts/omni-world-atlas-v1.png`。用途：世界设定概念图；不是官方世界地图、可玩的 GBA 地图或精确地形数据。
+
+生成提示词如下。生成图中额外出现的海域名称、装饰建筑与海岸形状也属于生成的概念设计，不构成已确认世界设定。
+
+```text
+Create a polished, beautiful hand-painted fantasy atlas for the video game POKÉMON OMNI, a geopolitical world-building reference, NOT a UI screenshot and NOT an official Pokémon map. Wide landscape, approximately 3:2 or 16:10, high resolution, readable simplified Chinese typography. Art: elegant illustrated game atlas, rich jade and pine terrain, warm ivory cartographic labels, deep blue ocean with delicate coastal contour lines, mountains, forests, subtle architectural city symbols, thin brass frame, no characters, no Pokémon illustrations, no real-world flags. Accurate readable map information is more important than decorative detail.
+Top title exactly "POKÉMON OMNI" and subtitle "世界地理提案 · 1943". Bottom clearly readable notice exactly "跨地区方位、距离与航路为 Omni 原创布局；非官方世界地图".
+MAP COMPOSITION: Show nine modern regions with distinct land shapes, arranged with generous water space and clean labels. Center of image is one connected irregular east-west landmass, LEFT half labeled "城都 JOHTO", RIGHT half labeled "关都 KANTO". These two regions MUST SHARE A LAND BORDER, a dashed north-south boundary along a mountain range, with a small label "城都—关都边界". Do NOT separate these two by water. Their shared northern mountain area has "石英高原". North of them across a narrow sea is a mountainous snowy region labeled "神奥 SINNOH". Southwest of the central landmass is a green volcanic maritime region labeled "丰缘 HOENN", with a coastal city "卡那兹市 · 得文". Western portion: upper-left island labeled "伽勒尔 GALAR"; below it separate mainland "卡洛斯 KALOS"; southwest of that a peninsula labeled "帕底亚 PALDEA". Far right: mainland coast region "合众 UNOVA" with cosmopolitan city symbols. Lower-right: a tropical archipelago labeled "阿罗拉 ALOLA" with FOUR major natural islands and a small artificial island. Keep the nine region labels unobscured, no duplicates.
+CENTRAL STORY ANCHORS: In Johto, a traditional tower city in northern interior labeled "圆朱市 · 铃铛塔"; in Kanto interior to east of border, "金黄市 · 希尔弗"; on Kanto southwest shore "真新镇"; a separate volcanic island SOUTH of Pallet labeled "红莲岛"; a smaller island pair EAST of Cinnabar labeled "双子岛". Near Cinnabar a small red diamond labeled "红莲事件海域（原创）". Do not name a real official legendary habitat here. Thin gold dotted maritime route proposals connect Hoenn to the central archipelago and onward to the distant regions, unobtrusive and no attack arrows.
+LOWER LEFT INSET CARD occupying no more than 20% image: heading "洗翠 HISUI", smaller subtitle "古代神奥 · 历史层". A small sepia version of the Sinnoh land shape with a mountaintop, connected only by a subtle temporal annotation, NOT a tenth modern island. Near card clear legend: "实线：海岸    虚线：拟议边界与航路    红菱：原创事件".
+No latitude/longitude grid or numeric distance scale; this is a non-scale authored geography proposal. Preserve clear hierarchy and let central Kanto-Johto occupy enough area for five story labels. No cut-off text, no text on mountains, no duplicated Sinnoh in modern layer.
+```

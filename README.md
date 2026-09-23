@@ -26,6 +26,8 @@ node tools/serve_pokedex.cjs
 
 故事编写入口：[人物年龄与主时间线](docs/26-master-timeline.md)、[前史《虹羽之约》](docs/25-rainbow-covenant-prologue.md)、[关都联盟的清洗／红莲事件提纲](docs/27-kanto-purge-outline.md)。这些是故事文档，尚未编入可玩剧情；新增前史日期和制度补充均标明提案状态。
 
+2026-09-24 新增：[世界地图概念图与地理依据](docs/28-world-atlas.md)、[X／Y／Z／A／B 前史选角](docs/29-prehistory-cast.md)。地图含九地区与洗翠历史附图；全球布局、人物新经历与年龄方案均按原创提案标识。
+
 1. [调研结论与证据边界](docs/01-research.md)：引擎选型、硬件限制、版本核实。
 2. [素材与工具目录](docs/02-resources.md)：来源、用途、适配成本和署名要求。
 3. [工程架构](docs/03-architecture.md)：引擎、世界、数据、存档、中文和容量设计。
