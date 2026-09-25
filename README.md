@@ -24,9 +24,9 @@ node tools/serve_pokedex.cjs
 
 ## 阅读入口
 
-故事编写入口：[人物年龄与主时间线](docs/26-master-timeline.md)、[前史《虹羽之约》](docs/25-rainbow-covenant-prologue.md)、[关都联盟的清洗／红莲事件提纲](docs/27-kanto-purge-outline.md)。这些是故事文档，尚未编入可玩剧情；新增前史日期和制度补充均标明提案状态。
+故事编写入口：[人物年龄与主时间线](docs/26-master-timeline.md)、[前史《虹羽之约》](docs/25-rainbow-covenant-prologue.md)、[《红莲事件》修订正文](docs/30-cinnabar-incident.md)。2026-09-25 已按用户同意的方向落实人物选角及事件因果；这些是故事文档，尚未编入可玩剧情。公历、师承、政治职务及新经历属于本作设定。原 [工作提纲](docs/27-kanto-purge-outline.md) 留作研究记录。
 
-2026-09-24 新增：[世界地图概念图与地理依据](docs/28-world-atlas.md)、[X／Y／Z／A／B 前史选角](docs/29-prehistory-cast.md)。地图含九地区与洗翠历史附图；全球布局、人物新经历与年龄方案均按原创提案标识。
+地图制作依据：[世界地图审计与来源核对](docs/28-world-atlas.md)。**旧世界概念图已撤回，禁止用作游戏地图底图。** 当前新增《火红》固定版本的关都格位图、南部八张地图连接记录和来源哈希；这不是完成的全球地图。人物参考见 [已采用的前史选角与原作差异](docs/29-prehistory-cast.md)。
 
 1. [调研结论与证据边界](docs/01-research.md)：引擎选型、硬件限制、版本核实。
 2. [素材与工具目录](docs/02-resources.md)：来源、用途、适配成本和署名要求。
