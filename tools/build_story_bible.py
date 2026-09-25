@@ -6,6 +6,7 @@ ignored build output; hashes and original source URLs are committed separately.
 import argparse
 import hashlib
 import json
+import math
 import re
 import shutil
 import ssl
@@ -56,7 +57,13 @@ def validate(world, people, atlas, media):
     for obj in people+world['events']:
         assert all((ROOT/p).is_file() for p in obj['source_docs']), 'Missing source document'
     for r in atlas['regions']:
-        assert r['global_coordinates'] is None, 'Global coordinates need independent evidence review'
+        if r['global_coordinates'] is not None:
+            xy=r['global_coordinates']; review=r.get('placement_review',{})
+            assert isinstance(xy,list) and len(xy)==2 and all(type(v) in (int,float) and math.isfinite(v) for v in xy), 'Global coordinates must be a finite 2D position'
+            assert review.get('status')=='reviewed' and review.get('basis')=='omni_authored', 'Global coordinates need a documented compatibility review'
+            document=review.get('document','')
+            path=(ROOT/document).resolve()
+            assert document and path.is_relative_to(ROOT) and path.is_file(), 'Missing placement review document'
         assert r['media_id'] in media_ids
     assert set(r['id'] for r in atlas['regions'])=={'kanto','johto','hoenn','sinnoh','unova','kalos','alola','galar','paldea','hisui'}
     assert all(x['text'] is None for x in world['unwritten']), 'Unwritten event silently filled'
@@ -103,7 +110,9 @@ def portrait(m,prefix=''):
 def render(world,people,atlas,media):
     mm={m['id']:m for m in media}; cc={c['id']:c for c in people}
     outputs={}
-    body='<p class="eyebrow">World atlas / 原作地区图册</p><h1>我们将要走过的世界</h1><p class="intro">九个现代地区，及神奥的古代时代——洗翠。每幅保留来源地图的地貌与构图，点击地图查看原尺寸参考。各幅独立比例，按世代排列；版面位置不代表全球方位。</p><p class="notice"><strong>统一大陆地图尚未定稿。</strong> 本页是全目标地区的分幅图册，不是 1943 年政治版图，也不证明全部场景已经可玩。</p><div class="relations"><span><strong>城都（西） ↔ 关都（东）</strong>　原作陆路相连</span><span><strong>洗翠 → 神奥</strong>　同一地区的不同时代</span><span>其余跨地区距离与全球落位：未定</span></div><div class="atlas" id="atlas-grid">'
+    body='<p class="eyebrow">World atlas / 原作地区图册</p><h1>我们将要走过的世界</h1><p class="intro">九个现代地区，及神奥的古代时代——洗翠。每幅保留来源地图的地貌与构图，点击地图查看原尺寸参考。各幅独立比例，按世代排列；版面位置不代表全球方位。</p><p class="notice"><strong>统一大陆地图尚未定稿。</strong> 本页是全目标地区的分幅图册，不是 1943 年政治版图，也不证明全部场景已经可玩。</p><div class="relations"><span><strong>城都（西） ↔ 关都（东）</strong>　原作陆路相连</span><span><strong>洗翠 → 神奥</strong>　同一地区的不同时代</span><span>其余全球落位：由 Omni 设计，保留已知地区地形</span></div><div class="atlas" id="atlas-grid">'
+    policy=atlas['geography_policy']
+    body=body.replace('<div class="atlas" id="atlas-grid">', '<section aria-labelledby="geography-policy"><h2 id="geography-policy">世界拼接规则：已知地理不冲突，未知区域可创作</h2><ul>'+''.join(f'<li>{h(rule)}</li>' for rule in policy['rules'])+'</ul><p>以下仍是制作底图使用的地区参考，统一地图正在按这些规则设计；本轮未完成全球落位。</p></section><div class="atlas" id="atlas-grid">')
     def map_panel(r,index):
         m=mm[r['media_id']]
         provenance='官方网站' if m['evidence']=='official' else '原作地图 · 社区转载'

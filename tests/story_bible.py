@@ -57,5 +57,21 @@ class ContinuityTests(unittest.TestCase):
                 with self.assertRaisesRegex(AssertionError,'Reference changed'):bible.fetch_media([m])
         finally:bible.OUT=old
 
+    def test_authored_position_needs_compatibility_not_official_coordinates(self):
+        with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
+            doc=Path(tmp)/'review.md'
+            doc.write_text('Fixture: local terrain compatibility reviewed.',encoding='utf-8')
+            r=self.atlas['regions'][0]
+            r['global_coordinates']=[12,30]
+            r['placement_review']={'status':'reviewed','basis':'omni_authored','document':doc.relative_to(ROOT).as_posix()}
+            self.validate()
+            doc.unlink()
+            with self.assertRaisesRegex(AssertionError,'Missing placement'):self.validate()
+
+    def test_invalid_global_coordinate(self):
+        for xy in ([True,20],[float('nan'),20],[1,2,3]):
+            self.atlas['regions'][0]['global_coordinates']=xy
+            with self.assertRaisesRegex(AssertionError,'finite 2D'):self.validate()
+
 
 if __name__=='__main__':unittest.main()
