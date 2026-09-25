@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "purpose": "local story and map reference, not distributable game art",
+  "media": [
+    {
+      "id": "map-kanto",
+      "type": "map",
+      "label": "关都地区原图",
+      "page_url": "https://pokemonletsgo.pokemon.com/en-us/kanto-region/",
+      "image_url": "https://pokemonletsgo.pokemon.com/assets/img/kanto-region/reigon-map.jpg",
+      "evidence": "official",
+      "version": "Let’s Go 地区插画；游戏格位以火红为准",
+      "sha256": "4a8cc0f9ce373b855e4289974c2c5ad6c0610063d7baa593ed024a990c370144",
+      "local_name": "map-kanto.jpg"
+    },
+    {
+      "id": "map-johto",
+      "type": "map",
+      "label": "城都地区原图",
+      "page_url": "https://www.wikidex.net/wiki/Archivo:Johto_HGSS.png",
+      "image_url": "https://images.wikidexcdn.net/mwuploads/wikidex/f/fe/latest/20260731235359/Johto_HGSS.png",
+      "evidence": "community_hosted_game_art",
+      "version": "心金／魂银",
+      "sha256": "ada98474addd9e2348f63d70759d7674faa69f6ab944c5b3aeddb819adfd578f",
+      "local_name": "map-johto.png"
+    },
+    {
+      "id": "map-hoenn",
+      "type": "map",
+      "label": "丰缘地区原图",
+      "page_url": "https://www.pokemon.co.jp/ex/oras/feature/02.html",
+      "image_url": "https://www.pokemon.co.jp/ex/oras/feature/img/page02_img_01.png",
+      "evidence": "official",
+      "version": "ORAS 地区插画；主线以绿宝石为基准",
+      "sha256": "6b7b4aea1cfac7a6cfe1da72add7021e525ebdd61f14ff80aa71abe7f5afcab7",
+      "local_name": "map-hoenn.png"
+    },
+    {
+      "id": "map-sinnoh",
+      "type": "map",
+      "label": "神奥地区原图",
+      "page_url": "https://diamondpearl.pokemon.com/en-us/story/",
+      "image_url": "https://diamondpearl.pokemon.com/assets/story/map.jpg",
+      "evidence": "official",
+      "version": "晶灿钻石／明亮珍珠",
+      "sha256": "94273a42799c96d823b72ed63aa997d42c854c06973c24ab20f9cb281ffe5bc7",
+      "local_name": "map-sinnoh.jpg"
+    },
+    {
+      "id": "map-unova",
+      "type": "map",
+      "label": "合众地区原图",
+      "page_url": "https://www.pokemon.co.jp/series/bw/",
+      "image_url": "https://www.pokemon.co.jp/series/bw/story/story01.items/resources/01_image2.jpg",
+      "evidence": "official",
+      "version": "黑／白；续作差异另记",
+      "sha256": "04a6e083dd5208df8c96ee150a0343dfa295e2b4ae478b56ab1bf072af86963e",
+      "local_name": "map-unova.jpg"
+    },
+    {
+      "id": "map-kalos",
+      "type": "map",
+      "label": "卡洛斯地区原图",
+      "page_url": "https://www.pokemon.co.jp/ex/xy/story/01.html",
+      "image_url": "https://www.pokemon.co.jp/ex/xy/story/images/img_story_01_01.jpg",
+      "evidence": "official",
+      "version": "X／Y；Z-A 城市时代另记",
+      "sha256": "907054a7e4e92cba0c364e26d7b9d6a812571dc6cb3f60a19ff4f4f1a4c432d4",
+      "local_name": "map-kalos.jpg"
+    },
+    {
+      "id": "map-alola",
+      "type": "map",
+      "label": "阿罗拉地区原图",
+      "page_url": "https://www.pokemon.co.jp/ex/sun_moon/world/160701_01.html",
+      "image_url": "https://www.pokemon.co.jp/ex/sun_moon/common/images/world/01/pc/banner.png",
+      "evidence": "official",
+      "version": "太阳／月亮",
+      "sha256": "9d18f8adfffb0632d2cee617b9f717274906689e0f4973e865480770704b8c46",
+      "local_name": "map-alola.png"
+    },
+    {
+      "id": "map-galar",
+      "type": "map",
+      "label": "伽勒尔地区原图",
+      "page_url": "https://www.pokemon.co.jp/ex/sword_shield/story/190605_01.html",
+      "image_url": "https://www.pokemon.co.jp/ex/sword_shield/assets/img_story-map01.jpg",
+      "evidence": "official",
+      "version": "剑／盾；扩展地区另图",
+      "sha256": "82603acae65fb62c4118e316c5fe58d180087a488ecd2b375266243e79bd5230",
+      "local_name": "map-galar.jpg"
+    },
+    {
+      "id": "map-paldea",
+      "type": "map",
+      "label": "帕底亚地区原图",
+      "page_url": "https://www.pokemon.co.jp/ex/sv/ja/story/220803_02/",
+      "image_url": "https://www.pokemon.co.jp/ex/sv/assets/img/story/ja/220803_02/story_img_01.jpg",
+      "evidence": "official",
+      "version": "朱／紫；DLC 地区另图",
+      "sha256": "6c557a746e63cd83a3125eb57da29a53bd8350d32e54562a0a189ccb55325a73",
+      "local_name": "map-paldea.jpg"
+    },
+    {
+      "id": "map-hisui",
+      "type": "map",
+      "label": "洗翠地区原图",
+      "page_url": "https://legends.arceus.pokemon.com/en-us/story/",
+      "image_url": "https://legends.arceus.pokemon.com/assets/story/story_region_3.jpg",
+      "evidence": "official",
+      "version": "神奥的古代时代层",
+      "sha256": "824cc42d175b61bd5dc9460ba3dbeb06ef16b9ad6604a57a8c4463d1adbe730b",
+      "local_name": "map-hisui.jpg"
+    },
+    {
+      "id": "portrait-ash",
+      "type": "portrait",
+      "label": "小智／皮卡丘",
+      "page_url": "https://www.tv-tokyo.co.jp/anime/pocketmonster/chara/",
+      "image_url": "https://www.tv-tokyo.co.jp/anime/pocketmonster/images/chara/chara01.png",
+      "evidence": "official_anime",
+      "version": "官方动画人物页；不是所有人的初代服装",
+      "sha256": "7117a255dedd8ac5f144619f9f431c4f4b2abf155707bd1981c8eebc58ab7e37",
+      "local_name": "portrait-ash.png"
+    },
+    {
+      "id": "portrait-misty",
+      "type": "portrait",
+      "label": "小霞／可达鸭",
+      "page_url": "https://www.tv-tokyo.co.jp/anime/pocketmonster/chara/",
+      "image_url": "https://www.tv-tokyo.co.jp/anime/pocketmonster/images/chara/chara06.png",
+      "evidence": "official_anime",
+      "version": "官方动画人物页；不是所有人的初代服装",
+      "sha256": "27ace2e8ef440ed81a34d249e583374f8d7421935208441e8a33e1cf2a7f5ff8",
+      "local_name": "portrait-misty.png"
+    },
+    {
+      "id": "portrait-brock",
+      "type": "portrait",
+      "label": "小刚／不良蛙",
+      "page_url": "https://www.tv-tokyo.co.jp/anime/pocketmonster/chara/",
+      "image_url": "https://www.tv-tokyo.co.jp/anime/pocketmonster/images/chara/chara07.png",
+      "evidence": "official_anime",
+      "version": "官方动画人物页；不是所有人的初代服装",
+      "sha256": "79b3b3a5557583efe4c189e43856cb58341c23164b7ecf902943a4bcc0b597a9",
+      "local_name": "portrait-brock.png"
+    },
+    {
+      "id": "portrait-oak-gary",
+      "type": "portrait",
+      "label": "大木／小茂",
+      "page_url": "https://www.tv-tokyo.co.jp/anime/pocketmonster/chara/",
+      "image_url": "https://www.tv-tokyo.co.jp/anime/pocketmonster/images/chara/chara08.png",
+      "evidence": "official_anime",
+      "version": "官方动画人物页；不是所有人的初代服装",
+      "sha256": "26ae70009714cdf131b0d5b014044d24f6f219a86a5a83ab4de407ff4fb6599f",
+      "local_name": "portrait-oak-gary.png"
+    },
+    {
+      "id": "portrait-rocket",
+      "type": "portrait",
+      "label": "武藏／小次郎／喵喵",
+      "page_url": "https://www.tv-tokyo.co.jp/anime/pocketmonster/chara/",
+      "image_url": "https://www.tv-tokyo.co.jp/anime/pocketmonster/images/chara/chara05.png",
+      "evidence": "official_anime",
+      "version": "官方动画人物页；不是所有人的初代服装",
+      "sha256": "c41469fb04fb956f908aab4cceae7cb9512416c78674ca27595e036c25f3f8a5",
+      "local_name": "portrait-rocket.png"
+    },
+    {
+      "id": "portrait-westwood",
+      "type": "portrait",
+      "label": "西野森五世",
+      "page_url": "https://www.wikidex.net/wiki/Profesor_Westwood_V",
+      "image_url": "https://images.wikidexcdn.net/mwuploads/wikidex/b/be/latest/20250420235547/EP068_Profesor_Westwood_V.png",
+      "evidence": "community_hosted_anime_frame",
+      "version": "动画／电影画面；转载来源，未核对完整剧集",
+      "sha256": "776aabc1652b37670e3006273e850d93913ace62dd7132955960db2527ba30d0",
+      "local_name": "portrait-westwood.png"
+    },
+    {
+      "id": "portrait-goodshow",
+      "type": "portrait",
+      "label": "达马岚其",
+      "page_url": "https://www.wikidex.net/wiki/Charles_Goodshow",
+      "image_url": "https://images.wikidexcdn.net/mwuploads/wikidex/2/2e/latest/20100626004755/EP402_Charles_Goodshow.png",
+      "evidence": "community_hosted_anime_frame",
+      "version": "动画／电影画面；转载来源，未核对完整剧集",
+      "sha256": "495b242fd809c7d8daf3ca4e990f867802be02f486e373a9e705a26c018a3ced",
+      "local_name": "portrait-goodshow.png"
+    },
+    {
+      "id": "portrait-juan",
+      "type": "portrait",
+      "label": "亚当",
+      "page_url": "https://www.serebii.net/anime/characters/juan.shtml",
+      "image_url": "https://www.serebii.net/anime/pictures/houen/388/AG99.jpg",
+      "evidence": "community_hosted_anime_frame",
+      "version": "动画／电影画面；转载来源，未核对完整剧集",
+      "sha256": "85ae87940f0b7cac696b39cec88bdfd455f946fd340213a796255ea64e57d00f",
+      "local_name": "portrait-juan.jpg"
+    },
+    {
+      "id": "portrait-agatha",
+      "type": "portrait",
+      "label": "菊子",
+      "page_url": "https://www.serebii.net/anime/characters/agatha.shtml",
+      "image_url": "https://www.serebii.net/anime/pictures/houen/409/AG219.jpg",
+      "evidence": "community_hosted_anime_frame",
+      "version": "动画／电影画面；转载来源，未核对完整剧集",
+      "sha256": "7866b8158a9c6d0552a7fac49da654a135dd9001d1e66a046de5339f2b399762",
+      "local_name": "portrait-agatha.jpg"
+    },
+    {
+      "id": "portrait-blaine",
+      "type": "portrait",
+      "label": "夏伯",
+      "page_url": "https://www.serebii.net/anime/characters/blaine.shtml",
+      "image_url": "https://www.serebii.net/anime/pictures/indigo/058/I308.jpg",
+      "evidence": "community_hosted_anime_frame",
+      "version": "动画／电影画面；转载来源，未核对完整剧集",
+      "sha256": "3cd1489879d6b2c254a7f1d36f089c82907a46eca1bd3a3179fbecea2b39cef4",
+      "local_name": "portrait-blaine.jpg"
+    },
+    {
+      "id": "portrait-giovanni",
+      "type": "portrait",
+      "label": "坂木",
+      "page_url": "https://www.serebii.net/anime/characters/giovanni.shtml",
+      "image_url": "https://www.serebii.net/anime/pictures/houen/409/AG54.jpg",
+      "evidence": "community_hosted_anime_frame",
+      "version": "动画／电影画面；转载来源，未核对完整剧集",
+      "sha256": "90ffa6f576aa5a97cf18b617fc97de0b11ab3bb418cce203c46c9412ae3b17fe",
+      "local_name": "portrait-giovanni.jpg"
+    },
+    {
+      "id": "portrait-namba",
+      "type": "portrait",
+      "label": "南波",
+      "page_url": "https://www.wikidex.net/wiki/Profesor_Namba",
+      "image_url": "https://images.wikidexcdn.net/mwuploads/wikidex/4/42/latest/20111210164109/EH08_Profesor_Namba.png",
+      "evidence": "community_hosted_anime_frame",
+      "version": "动画／电影画面；转载来源，未核对完整剧集",
+      "sha256": "8e1cf1302c6c10875a8b1ad0d73aef446ab53ff2cc26159356e8c02e4d569597",
+      "local_name": "portrait-namba.png"
+    },
+    {
+      "id": "portrait-fuji",
+      "type": "portrait",
+      "label": "富士",
+      "page_url": "https://www.wikidex.net/wiki/Doctor_Fuji",
+      "image_url": "https://images.wikidexcdn.net/mwuploads/wikidex/thumb/a/ac/latest/20210604220009/P01_Dr_Fuji_01.jpg/200px-P01_Dr_Fuji_01.jpg",
+      "evidence": "community_hosted_anime_frame",
+      "version": "动画／电影画面；转载来源，未核对完整剧集",
+      "sha256": "fd8a9b5035fd59972252c624adb2b4270eaa593de4f739afb328dcc0fc86f3a2",
+      "local_name": "portrait-fuji.jpg"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "status": "regional_atlas_not_global_geographic_final",
+  "layout": "panels ordered by generation, never world coordinates",
+  "regions": [
+    {
+      "id": "kanto",
+      "name": "关都",
+      "version": "Let’s Go 地区插画；游戏格位以火红为准",
+      "media_id": "map-kanto",
+      "global_coordinates": null,
+      "era": "source_game_modern"
+    },
+    {
+      "id": "johto",
+      "name": "城都",
+      "version": "心金／魂银",
+      "media_id": "map-johto",
+      "global_coordinates": null,
+      "era": "source_game_modern"
+    },
+    {
+      "id": "hoenn",
+      "name": "丰缘",
+      "version": "ORAS 地区插画；主线以绿宝石为基准",
+      "media_id": "map-hoenn",
+      "global_coordinates": null,
+      "era": "source_game_modern"
+    },
+    {
+      "id": "sinnoh",
+      "name": "神奥",
+      "version": "晶灿钻石／明亮珍珠",
+      "media_id": "map-sinnoh",
+      "global_coordinates": null,
+      "era": "source_game_modern"
+    },
+    {
+      "id": "unova",
+      "name": "合众",
+      "version": "黑／白；续作差异另记",
+      "media_id": "map-unova",
+      "global_coordinates": null,
+      "era": "source_game_modern"
+    },
+    {
+      "id": "kalos",
+      "name": "卡洛斯",
+      "version": "X／Y；Z-A 城市时代另记",
+      "media_id": "map-kalos",
+      "global_coordinates": null,
+      "era": "source_game_modern"
+    },
+    {
+      "id": "alola",
+      "name": "阿罗拉",
+      "version": "太阳／月亮",
+      "media_id": "map-alola",
+      "global_coordinates": null,
+      "era": "source_game_modern"
+    },
+    {
+      "id": "galar",
+      "name": "伽勒尔",
+      "version": "剑／盾；扩展地区另图",
+      "media_id": "map-galar",
+      "global_coordinates": null,
+      "era": "source_game_modern"
+    },
+    {
+      "id": "paldea",
+      "name": "帕底亚",
+      "version": "朱／紫；DLC 地区另图",
+      "media_id": "map-paldea",
+      "global_coordinates": null,
+      "era": "source_game_modern"
+    },
+    {
+      "id": "hisui",
+      "name": "洗翠",
+      "version": "神奥的古代时代层",
+      "media_id": "map-hisui",
+      "global_coordinates": null,
+      "era": "historical"
+    }
+  ],
+  "relationships": [
+    {
+      "from": "johto",
+      "to": "kanto",
+      "type": "land_adjacency",
+      "direction": "west_to_east",
+      "source": "https://bulbapedia.bulbagarden.net/wiki/Johto",
+      "verification": "original game relationship, exact connector maps pending"
+    },
+    {
+      "from": "hisui",
+      "to": "sinnoh",
+      "type": "historical_same_region",
+      "source": "https://legends.arceus.pokemon.com/en-us/story/",
+      "verification": "official"
+    }
+  ],
+  "extensions": [
+    "sevii",
+    "kitakami",
+    "blueberry",
+    "isle_of_armor",
+    "crown_tundra"
+  ],
+  "unresolved": [
+    "统一全球坐标与地区间真实距离",
+    "各地区与本作 1943／1967 年代的设施差异",
+    "全部扩展地区的地图分幅",
+    "可玩场景与交通解锁条件"
+  ]
+}

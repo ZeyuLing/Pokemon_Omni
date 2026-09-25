@@ -1,0 +1,30 @@
+const assert=require('node:assert/strict'),path=require('node:path');
+const {pathToFileURL}=require('node:url');
+const {chromium}=require(process.env.OMNI_PLAYWRIGHT_PATH||'C:/Users/13758/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const root=path.resolve('build/story-bible');
+(async()=>{const browser=await chromium.launch({headless:true,channel:'msedge'});try{
+ const page=await browser.newPage({viewport:{width:1500,height:1000}}),errors=[];
+ page.on('pageerror',e=>errors.push(e.message));
+ await page.goto(pathToFileURL(path.join(root,'index.html')).href);
+ assert.equal(await page.locator('.map').count(),10);
+ assert(await page.locator('img').evaluateAll(images=>images.every(i=>i.complete&&i.naturalWidth>0)),'All ten actual map images must load');
+ await page.screenshot({path:path.join(root,'world-atlas.png'),fullPage:true});
+ await page.getByRole('link',{name:'放大关都地图'}).click();assert(page.url().endsWith('map-kanto.jpg'));await page.goBack();
+ for(const width of [820,390,320]){await page.setViewportSize({width,height:900});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));}
+ await page.goto(pathToFileURL(path.join(root,'characters.html')).href);
+ await page.getByLabel('查找姓名或职责').fill('坂木');assert.equal(await page.locator('.person-link:visible').count(),5); // Includes the elder and keeper whose roles mention Giovanni.
+ await page.getByLabel('查找姓名或职责').fill('无此人物');await page.getByText('没有匹配的角色。可以清空关键词或选择全部状态。').waitFor();
+ await page.getByLabel('查找姓名或职责').fill('');await page.getByLabel('创作状态').selectOption('candidate');assert.equal(await page.locator('.person-link:visible').count(),22);
+ await page.getByLabel('创作状态').selectOption('');await page.getByLabel('查找姓名或职责').fill('亚当');
+ await page.getByRole('link',{name:'亚当 已采用 丰缘迁居关都的水战专家；天王',exact:true}).click();
+ await page.getByRole('heading',{name:'已写生平',exact:true}).waitFor();assert(await page.locator('body').innerText().then(s=>s.includes('1943 年 5 月 15 日')));
+ assert(await page.locator('td[aria-label="尚未创作"]').count()>0,'Unwritten life stages remain blank');
+ assert(await page.locator('img').evaluateAll(images=>images.every(i=>i.complete&&i.naturalWidth>0)));
+ await page.setViewportSize({width:1280,height:960});await page.screenshot({path:path.join(root,'juan-dossier.png'),fullPage:true});
+ await page.goto(pathToFileURL(path.join(root,'timeline.html')).href);assert.equal(await page.locator('.event').count(),14);
+ await page.setViewportSize({width:390,height:900});await page.screenshot({path:path.join(root,'timeline-mobile.png'),fullPage:true});
+ assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+ await page.keyboard.press('Control+Home');await page.keyboard.press('Tab');assert(await page.locator(':focus').count()===1);
+ await page.addStyleTag({content:'html{font-size:200%}body{font-size:24px}'});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+ assert.deepEqual(errors,[]);console.log('PASS: 10 maps, original-image links, 60-person search and 22 candidates, blank biography fields, timeline, keyboard, narrow/reflow layouts');
+}finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

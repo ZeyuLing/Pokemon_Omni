@@ -1,0 +1,1889 @@
+{
+  "schema_version": 1,
+  "status": "authoring_registry_not_runtime",
+  "characters": [
+    {
+      "id": "giovanni",
+      "name": "坂木",
+      "kind": "human",
+      "status": "adopted",
+      "role": "冠军训练家；火箭队创立者",
+      "birth_year": 1922,
+      "birth_basis": "Omni 工作年；非官方生日",
+      "death_event": null,
+      "appearance": {
+        "reference_media": "portrait-giovanni",
+        "anime_identity": "动画的短棕发、棱角分明的脸与眉眼；图为成年形象。1942 年 20 岁的发型、衣着及体态另行设计，不直接缩放成年西装立绘。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": "1942 年以前已是关都知名冠军训练家，与大木在多个赛季反复争夺冠军。叉字蝠在他获得第一枚徽章以前就已陪伴；捕获及历次进化的具体日期尚未写。",
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md",
+        "docs/26-master-timeline.md",
+        "docs/25-rainbow-covenant-prologue.md"
+      ],
+      "relationships": [
+        {
+          "other": "oak",
+          "relationship": "冠军对手与研究合作者"
+        },
+        {
+          "other": "crobat",
+          "relationship": "训练家与伙伴"
+        },
+        {
+          "other": "persian",
+          "relationship": "训练家与伙伴"
+        }
+      ],
+      "runtime_bindings": []
+    },
+    {
+      "id": "oak",
+      "name": "大木博士",
+      "kind": "human",
+      "status": "adopted",
+      "role": "冠军、希尔弗研究院首席科学家",
+      "birth_year": 1917,
+      "birth_basis": "Omni 工作年；非官方生日",
+      "death_event": null,
+      "appearance": {
+        "reference_media": "portrait-oak-gary",
+        "anime_identity": "保留动画的面部轮廓和研究者辨识度；灰白发、皱纹属于年长阶段。1942 年青年形象尚未定稿。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": "青年时在大学研究宝可梦培育与对战理论，博士毕业后选择在真新镇独立研究，没有接受留校及企业聘请；具体就读与毕业日期尚未写。西野森五世是本作新增的博士导师。",
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md",
+        "docs/26-master-timeline.md",
+        "docs/25-rainbow-covenant-prologue.md"
+      ],
+      "relationships": [
+        {
+          "other": "gary",
+          "relationship": "祖孙"
+        },
+        {
+          "other": "westwood",
+          "relationship": "本作师生"
+        },
+        {
+          "other": "giovanni",
+          "relationship": "冠军对手与研究合作者"
+        }
+      ],
+      "runtime_bindings": [
+        {
+          "scene": "kanto.pallet_town.oak_lab",
+          "actor_index": 0,
+          "person_id": 1,
+          "status": "prototype_sprite_not_final_animation_design"
+        }
+      ]
+    },
+    {
+      "id": "silph",
+      "name": "希尔弗社长",
+      "kind": "human",
+      "status": "adopted",
+      "role": "出资人；希尔弗公司掌权者",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "用户原创的具名财阀角色；未确认可直接对应的动画人物设计。形象留空，不把任一动画老者当作希尔弗本人。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": "1942 年时已经营希尔弗公司二十余年，业务遍及关都医疗、港口、通信与训练家用品；个人童年、公司精确成立日期与发家过程尚未写。",
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/25-rainbow-covenant-prologue.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "westwood",
+      "name": "西野森五世",
+      "kind": "human",
+      "status": "adopted",
+      "role": "大木与南波的导师；代理冠军",
+      "birth_year": 1883,
+      "birth_basis": "Omni 工作年；非官方生日",
+      "death_event": null,
+      "appearance": {
+        "reference_media": "portrait-westwood",
+        "anime_identity": "动画的秃顶、两侧蓝灰发束、粗眉、大鼻与白大褂；前史正式场合服饰尚未设计。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": "曾在大学任教，指导大木和南波；1942 年接受代理冠军之前已从大学退职，具体履历和竞技经历未展开。",
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md",
+        "docs/29-prehistory-cast.md"
+      ],
+      "relationships": [
+        {
+          "other": "oak",
+          "relationship": "本作师生"
+        },
+        {
+          "other": "namba",
+          "relationship": "本作师生"
+        }
+      ],
+      "runtime_bindings": []
+    },
+    {
+      "id": "goodshow",
+      "name": "达马岚其",
+      "kind": "human",
+      "status": "adopted",
+      "role": "关都首相；清除行动策划者",
+      "birth_year": 1895,
+      "birth_basis": "Omni 工作年；非官方生日",
+      "death_event": null,
+      "appearance": {
+        "reference_media": "portrait-goodshow",
+        "anime_identity": "动画矮壮轮廓、显著白眉白须与帽子是辨识参照；1943 年 48 岁形象不能原样套用老年会长外观。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md",
+        "docs/29-prehistory-cast.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "agatha",
+      "name": "菊子",
+      "kind": "human",
+      "status": "adopted",
+      "role": "关都四天王；大木旧日对手",
+      "birth_year": 1915,
+      "birth_basis": "Omni 工作年；非官方生日",
+      "death_event": null,
+      "appearance": {
+        "reference_media": "portrait-agatha",
+        "anime_identity": "动画发束轮廓与锐利神态作为参照；1943 年 28 岁版本需重新设计，不能直接使用老年形象。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": "年轻时与大木有对战竞争关系；1942 年已任天王，具体晋升时间未写。",
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md",
+        "docs/29-prehistory-cast.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "juan",
+      "name": "亚当",
+      "kind": "human",
+      "status": "adopted",
+      "role": "丰缘迁居关都的水战专家；天王",
+      "birth_year": 1905,
+      "birth_basis": "Omni 工作年；非官方生日",
+      "death_event": "cinnabar-betrayal",
+      "appearance": {
+        "reference_media": "portrait-juan",
+        "anime_identity": "动画高耸的银白发束、细胡须、高领蓝色服装与颈饰；本作前史外观年龄按 38 岁校订。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": "地区间人员交流尚较便利时，由丰缘迁居关都，凭借水上对战声望受聘进入天王席位；多次未能击败大木与坂木。迁居、受聘及指导米可利的具体年份尚未创作。",
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": "1943 年 5 月 15 日死于红莲事件；不安排假死或主线复活。"
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md",
+        "docs/29-prehistory-cast.md"
+      ],
+      "relationships": [
+        {
+          "other": "juan-milotic",
+          "relationship": "训练家与伙伴"
+        }
+      ],
+      "runtime_bindings": []
+    },
+    {
+      "id": "namba",
+      "name": "南波博士",
+      "kind": "human",
+      "status": "adopted",
+      "role": "研究人员；西野森学生、富士导师",
+      "birth_year": 1903,
+      "birth_basis": "Omni 工作年；非官方生日",
+      "death_event": null,
+      "appearance": {
+        "reference_media": "portrait-namba",
+        "anime_identity": "动画外扩的橙褐发束、胡须、白大褂和深色内搭；1943 年 40 岁的年龄版本待设计。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": "在本作师承关系中受教于西野森五世，随后指导富士；研究院时期已参与虹羽相关科研。求学、入职的具体时间尚未写。",
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md",
+        "docs/29-prehistory-cast.md"
+      ],
+      "relationships": [
+        {
+          "other": "westwood",
+          "relationship": "本作师生"
+        },
+        {
+          "other": "fuji",
+          "relationship": "本作师生"
+        }
+      ],
+      "runtime_bindings": []
+    },
+    {
+      "id": "fuji",
+      "name": "富士博士",
+      "kind": "human",
+      "status": "adopted",
+      "role": "大木的研究助手；南波学生",
+      "birth_year": 1919,
+      "birth_basis": "Omni 工作年；非官方生日",
+      "death_event": null,
+      "appearance": {
+        "reference_media": "portrait-fuji",
+        "anime_identity": "以 1998 电影二维版的黑发、瘦长脸、眉眼与白大褂为参考；青年助手服饰待定，不混用《起源》老人或 3D 重制设计。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": "在本作受教于南波，进入大木领导的研究院从事科研；女儿与超梦项目的原作背景尚未写入 Omni 生平。",
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md",
+        "docs/29-prehistory-cast.md"
+      ],
+      "relationships": [
+        {
+          "other": "namba",
+          "relationship": "本作师生"
+        }
+      ],
+      "runtime_bindings": []
+    },
+    {
+      "id": "blaine",
+      "name": "夏伯",
+      "kind": "human",
+      "status": "adopted",
+      "role": "红莲火系训练与海岸事务负责人",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": "portrait-blaine",
+        "anime_identity": "以动画未伪装时的秃顶、侧发、胡须为辨识基础；假发墨镜伪装另记，不将游戏立绘直接称作动画设计。1943 年年龄留空。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "ash",
+      "name": "小智",
+      "kind": "human",
+      "status": "adopted",
+      "role": "从真新镇出发的主角",
+      "birth_year": 1957,
+      "birth_basis": "Omni 工作年；非官方生日",
+      "death_event": null,
+      "appearance": {
+        "reference_media": "portrait-ash",
+        "anime_identity": "保留动画黑发、脸颊标记、帽子与皮卡丘搭档关系。参考图为后期动画服装；本作少年开场采用初代方向，16 岁和 21 岁属于待创作的年龄设计。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md",
+        "docs/26-master-timeline.md"
+      ],
+      "relationships": [
+        {
+          "other": "delia",
+          "relationship": "母子"
+        },
+        {
+          "other": "pikachu",
+          "relationship": "训练家与伙伴"
+        }
+      ],
+      "runtime_bindings": []
+    },
+    {
+      "id": "gary",
+      "name": "小茂",
+      "kind": "human",
+      "status": "adopted",
+      "role": "大木的孙子；小智的劲敌",
+      "birth_year": 1957,
+      "birth_basis": "Omni 暂按与小智同龄换算；非官方确切年龄",
+      "death_event": null,
+      "appearance": {
+        "reference_media": "portrait-oak-gary",
+        "anime_identity": "动画棕色刺状发型与自信神态；图中服装为后期参考，少年出发服饰另核对。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md",
+        "docs/26-master-timeline.md"
+      ],
+      "relationships": [
+        {
+          "other": "oak",
+          "relationship": "祖孙"
+        }
+      ],
+      "runtime_bindings": [
+        {
+          "scene": "kanto.pallet_town.oak_lab",
+          "actor_index": 1,
+          "person_id": 3,
+          "status": "prototype_sprite_not_final_animation_design"
+        }
+      ]
+    },
+    {
+      "id": "delia",
+      "name": "花子",
+      "kind": "human",
+      "status": "adopted",
+      "role": "小智的母亲",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "动画身份已选；具体色板、发型与服装参考图待归档，不用现有通用妈妈像素宣称完成动画还原。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [
+        {
+          "other": "ash",
+          "relationship": "母子"
+        }
+      ],
+      "runtime_bindings": [
+        {
+          "scene": "kanto.pallet_town.player_home.1f",
+          "actor_index": 0,
+          "person_id": 2,
+          "status": "prototype_sprite_not_final_animation_design"
+        }
+      ]
+    },
+    {
+      "id": "daisy-oak",
+      "name": "奈奈美",
+      "kind": "human",
+      "status": "adopted",
+      "role": "小茂家中的角色；游戏来源",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "当前来源为游戏中的大木奈奈美；不能误用华蓝市樱花（英文同名 Daisy）的动画形象。是否采用新的动画风格设计尚未决定。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "core/src/adventure.c"
+      ],
+      "relationships": [],
+      "runtime_bindings": [
+        {
+          "scene": "kanto.pallet_town.rival_home",
+          "actor_index": 0,
+          "person_id": 6,
+          "status": "prototype_sprite_not_final_animation_design"
+        }
+      ]
+    },
+    {
+      "id": "jessie",
+      "name": "武藏",
+      "kind": "human",
+      "status": "adopted",
+      "role": "火箭队三人组；劲敌与剧情推动者",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": "portrait-rocket",
+        "anime_identity": "动画向后延展的洋红长发、白色 R 制服、黑色长靴与手套；伪装和后续年龄形象单独建版本。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [
+        {
+          "scene": "kanto.viridian_city.center",
+          "actor_index": 2,
+          "person_id": 11,
+          "status": "prototype_sprite_not_final_animation_design"
+        }
+      ]
+    },
+    {
+      "id": "james",
+      "name": "小次郎",
+      "kind": "human",
+      "status": "adopted",
+      "role": "火箭队三人组；劲敌与剧情推动者",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": "portrait-rocket",
+        "anime_identity": "动画紫色中长发、白色 R 制服与黑色手套、靴子；家族礼服和多年后版本待设计。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [
+        {
+          "scene": "kanto.viridian_city.center",
+          "actor_index": 1,
+          "person_id": 11,
+          "status": "prototype_sprite_not_final_animation_design"
+        }
+      ]
+    },
+    {
+      "id": "meowth",
+      "name": "喵喵",
+      "kind": "pokemon_individual",
+      "status": "adopted",
+      "role": "火箭队三人组的独立行动者",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": "portrait-rocket",
+        "anime_identity": "动画奶油色身体、额头金币、胡须和卷尾；保留直立交流的辨识，不以种族模板替代这一个体的经历。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "pikachu",
+      "name": "小智的皮卡丘",
+      "kind": "pokemon_individual",
+      "status": "adopted",
+      "role": "小智的初始伙伴",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": "portrait-ash",
+        "anime_identity": "动画黄色身体、黑色耳尖、红色脸颊与闪电形尾巴；具体像素和模型另验收。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "core/src/adventure.c"
+      ],
+      "relationships": [
+        {
+          "other": "ash",
+          "relationship": "训练家与伙伴"
+        }
+      ],
+      "runtime_bindings": [
+        {
+          "scene": "kanto.pallet_town.oak_lab",
+          "actor_index": 4,
+          "person_id": 9,
+          "status": "prototype_sprite_not_final_animation_design"
+        }
+      ]
+    },
+    {
+      "id": "crobat",
+      "name": "坂木的叉字蝠",
+      "kind": "pokemon_individual",
+      "status": "adopted",
+      "role": "虹羽事件与羁绊研究的起点",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "物种基础形象参考动画；这个体及羁绊形态为 Omni 改编，形态原画留空。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": "获得第一枚徽章以前已陪伴坂木，在洞穴为他引路、守护营火。成为叉字蝠的具体过程尚未写。",
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/25-rainbow-covenant-prologue.md"
+      ],
+      "relationships": [
+        {
+          "other": "giovanni",
+          "relationship": "训练家与伙伴"
+        }
+      ],
+      "runtime_bindings": []
+    },
+    {
+      "id": "persian",
+      "name": "坂木的猫老大",
+      "kind": "pokemon_individual",
+      "status": "adopted",
+      "role": "红莲事件中的救援伙伴",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "参考动画坂木猫老大的浅色体型、额头红色宝石与胡须；青年时期个体设计未定。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md"
+      ],
+      "relationships": [
+        {
+          "other": "giovanni",
+          "relationship": "训练家与伙伴"
+        }
+      ],
+      "runtime_bindings": []
+    },
+    {
+      "id": "ho-oh",
+      "name": "凤王",
+      "kind": "pokemon_individual",
+      "status": "adopted",
+      "role": "虹羽事件中的传说宝可梦",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "动画物种外观作为参考；本作没有确认其赠羽是否有主观意图。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/25-rainbow-covenant-prologue.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "juan-gyarados",
+      "name": "亚当的暴鲤龙",
+      "kind": "pokemon_individual",
+      "status": "adopted",
+      "role": "红莲洞窟袭击的参战伙伴",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "动画物种设计待图像归档；本作个体配队是原创，不称为亚当动画原队。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "juan-milotic",
+      "name": "亚当的美纳斯",
+      "kind": "pokemon_individual",
+      "status": "adopted",
+      "role": "海岸撤离时的伙伴",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "以亚当动画美纳斯为参照；该事件后的生死尚未写明，不能随主人死亡自动判死。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md"
+      ],
+      "relationships": [
+        {
+          "other": "juan",
+          "relationship": "训练家与伙伴"
+        }
+      ],
+      "runtime_bindings": []
+    },
+    {
+      "id": "joy-viridian",
+      "name": "常青市乔伊",
+      "kind": "human",
+      "status": "adopted",
+      "role": "常青宝可梦中心医护人员",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "参考动画乔伊形象；必须与其他城市同名医护人员分开登记。参考图尚未归档。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "core/src/adventure.c"
+      ],
+      "relationships": [],
+      "runtime_bindings": [
+        {
+          "scene": "kanto.viridian_city.center",
+          "actor_index": 0,
+          "person_id": 10,
+          "status": "prototype_sprite_not_final_animation_design"
+        }
+      ]
+    },
+    {
+      "id": "jenny-kanto",
+      "name": "君莎（辖区待定）",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "希尔弗事件后场景中的警务人员",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "动画君莎为参考方向；具体辖区、个体身份与造型待定。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "elder",
+      "name": "寻医途中长者",
+      "kind": "human",
+      "status": "adopted",
+      "role": "告诉坂木凤王复生传说",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/25-rainbow-covenant-prologue.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "physician",
+      "name": "冠军战后的值班医师",
+      "kind": "human",
+      "status": "adopted",
+      "role": "治疗叉字蝠",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/25-rainbow-covenant-prologue.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "tower-keeper",
+      "name": "铃铛塔守塔人",
+      "kind": "human",
+      "status": "adopted",
+      "role": "接待前来寻医的坂木",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/25-rainbow-covenant-prologue.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "navy-minister",
+      "name": "海军大臣",
+      "kind": "human",
+      "status": "adopted",
+      "role": "知悉红莲清除计划",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "elite-fourth",
+      "name": "前史第四位天王",
+      "kind": "human",
+      "status": "placeholder",
+      "role": "身份待定",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "elite-successor",
+      "name": "秘密天王继任候选",
+      "kind": "human",
+      "status": "placeholder",
+      "role": "达马岚其另觅的人选",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "inquiry-officer",
+      "name": "联盟调查官",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "希尔弗事件后移交场景中的角色",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "neighbor",
+      "name": "真新镇邻居",
+      "kind": "human",
+      "status": "adopted",
+      "role": "介绍交互操作的路人",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "core/src/adventure.c"
+      ],
+      "relationships": [],
+      "runtime_bindings": [
+        {
+          "scene": "kanto.pallet_town",
+          "actor_index": 0,
+          "person_id": 4,
+          "status": "prototype_sprite_not_final_animation_design"
+        }
+      ]
+    },
+    {
+      "id": "walker",
+      "name": "真新镇散步者",
+      "kind": "human",
+      "status": "adopted",
+      "role": "介绍跑步和南侧水域的路人",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "core/src/adventure.c"
+      ],
+      "relationships": [],
+      "runtime_bindings": [
+        {
+          "scene": "kanto.pallet_town",
+          "actor_index": 1,
+          "person_id": 5,
+          "status": "prototype_sprite_not_final_animation_design"
+        }
+      ]
+    },
+    {
+      "id": "aide-1",
+      "name": "研究所助手甲",
+      "kind": "human",
+      "status": "adopted",
+      "role": "开场教学 NPC",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "core/src/adventure.c"
+      ],
+      "relationships": [],
+      "runtime_bindings": [
+        {
+          "scene": "kanto.pallet_town.oak_lab",
+          "actor_index": 2,
+          "person_id": 7,
+          "status": "prototype_sprite_not_final_animation_design"
+        }
+      ]
+    },
+    {
+      "id": "aide-2",
+      "name": "研究所助手乙",
+      "kind": "human",
+      "status": "adopted",
+      "role": "开场教学 NPC",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "core/src/adventure.c"
+      ],
+      "relationships": [],
+      "runtime_bindings": [
+        {
+          "scene": "kanto.pallet_town.oak_lab",
+          "actor_index": 3,
+          "person_id": 7,
+          "status": "prototype_sprite_not_final_animation_design"
+        }
+      ]
+    },
+    {
+      "id": "clerk",
+      "name": "常青商店店员",
+      "kind": "human",
+      "status": "adopted",
+      "role": "交付博士包裹、售卖物品",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "core/src/adventure.c"
+      ],
+      "relationships": [],
+      "runtime_bindings": [
+        {
+          "scene": "kanto.viridian_city.mart",
+          "actor_index": 0,
+          "person_id": 12,
+          "status": "prototype_sprite_not_final_animation_design"
+        }
+      ]
+    },
+    {
+      "id": "route-guide",
+      "name": "一号道路向导",
+      "kind": "human",
+      "status": "adopted",
+      "role": "介绍野生对战与捕获",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "core/src/adventure.c"
+      ],
+      "relationships": [],
+      "runtime_bindings": [
+        {
+          "scene": "kanto.route1",
+          "actor_index": 0,
+          "person_id": 13,
+          "status": "prototype_sprite_not_final_animation_design"
+        }
+      ]
+    },
+    {
+      "id": "brock",
+      "name": "小刚",
+      "kind": "human",
+      "status": "candidate",
+      "role": "道馆、家庭责任与后续医疗方向",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": "portrait-brock",
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "misty",
+      "name": "小霞",
+      "kind": "human",
+      "status": "candidate",
+      "role": "道馆、水域与地方社区",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": "portrait-misty",
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "lance",
+      "name": "渡",
+      "kind": "human",
+      "status": "candidate",
+      "role": "安全与跨地区协作",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "looker",
+      "name": "帅哥",
+      "kind": "human",
+      "status": "candidate",
+      "role": "调查与证据",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "steven",
+      "name": "大吾",
+      "kind": "human",
+      "status": "candidate",
+      "role": "家族产业与公共职责",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "may",
+      "name": "小遥",
+      "kind": "human",
+      "status": "candidate",
+      "role": "地方文化网络",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "dawn",
+      "name": "小光",
+      "kind": "human",
+      "status": "candidate",
+      "role": "记录与传播",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "serena",
+      "name": "莎莉娜",
+      "kind": "human",
+      "status": "candidate",
+      "role": "公众表达",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "cynthia",
+      "name": "竹兰",
+      "kind": "human",
+      "status": "candidate",
+      "role": "历史与研究边界",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "iris",
+      "name": "艾莉丝",
+      "kind": "human",
+      "status": "candidate",
+      "role": "地方经验与宝可梦关系",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "n",
+      "name": "N",
+      "kind": "human",
+      "status": "candidate",
+      "role": "宝可梦意愿与政治诉求",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "alain",
+      "name": "艾岚",
+      "kind": "human",
+      "status": "candidate",
+      "role": "受资助的战斗人员",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "clemont",
+      "name": "希特隆",
+      "kind": "human",
+      "status": "candidate",
+      "role": "工程与替代供给",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "lillie",
+      "name": "莉莉艾",
+      "kind": "human",
+      "status": "candidate",
+      "role": "研究机构与家庭线",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "gladion",
+      "name": "格拉吉欧",
+      "kind": "human",
+      "status": "candidate",
+      "role": "研究机构与家庭线",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "leon",
+      "name": "丹帝",
+      "kind": "human",
+      "status": "candidate",
+      "role": "冠军公众声望",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "sonia",
+      "name": "索妮亚",
+      "kind": "human",
+      "status": "candidate",
+      "role": "研究与公共解释",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "nemona",
+      "name": "妮莫",
+      "kind": "human",
+      "status": "candidate",
+      "role": "帕底亚竞技线",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "游戏人物来源已登记；动画版本尚未核对，不用游戏立绘冒充已核实的动画形象。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "arven",
+      "name": "派帕",
+      "kind": "human",
+      "status": "candidate",
+      "role": "帕底亚研究家庭线",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "游戏人物来源已登记；动画版本尚未核对，不用游戏立绘冒充已核实的动画形象。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "penny",
+      "name": "牡丹",
+      "kind": "human",
+      "status": "candidate",
+      "role": "信息系统候选线",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "游戏人物来源已登记；动画版本尚未核对，不用游戏立绘冒充已核实的动画形象。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/20-cast-and-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "rose",
+      "name": "洛兹",
+      "kind": "human",
+      "status": "candidate",
+      "role": "伽勒尔能源资本线",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/19-narrative-direction.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "wallace",
+      "name": "米可利",
+      "kind": "human",
+      "status": "candidate",
+      "role": "亚当死亡后的琉璃馆主人选方向",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    }
+  ]
+}

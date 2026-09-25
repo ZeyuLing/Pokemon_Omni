@@ -7,3 +7,11 @@
 - Record actual validation and content limitations honestly. A compiled ARM object is not a playable GBA ROM, and a reference form record is not official per-species verification.
 - Keep shared gameplay logic in portable C; platform presentation belongs in adapters. Prefer the same core for GBA and host preview.
 - Basic in-game UI must follow the archived Rocket ROM's actual running screens and verified layout data. Do not invent or relocate information panels (for example, money does not appear in its normal bag). Reuse source assets, verify text and sprite placement in the built ROM, and distinguish remaining prototype screens from faithfully aligned screens.
+
+# Story continuity maintenance
+
+- When writing or changing story/quest content, update the relevant prose and `content/story/worldline.json` / `characters.json` together. Register every named or anonymous narrative actor and each implemented NPC instance; distinguish candidates, written history, and prototype content.
+- Keep unwritten biography fields `null` (blank in generated dossiers). Do not fill gaps from unrelated anime/game continuities or invent births, deaths, betrayals, future actions, or final outcomes merely to complete a profile.
+- Character appearance must identify the anime design reference, source version and age-stage adaptation. A game illustration is not an anime reference. Original or unverified identities remain explicitly unassigned; reference images are not finished game sprites or 3D models.
+- Update `content/story/CHANGELOG.md`, regenerate with `python tools/build_story_bible.py`, then run `python tools/build_story_bible.py --check` and the relevant story checks. Do not hand-edit generated `docs/story/characters/*.md` or `docs/story/worldline.md`.
+- Use `content/story/atlas.json` for atlas references. Panel positions are not global geography. Do not restore the withdrawn world atlas or invent global coordinates without documented review.

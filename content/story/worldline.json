@@ -1,0 +1,303 @@
+{
+  "schema_version": 1,
+  "revision": "2026-09-25.1",
+  "status": "authoring_registry_not_runtime",
+  "calendar": {
+    "epoch_year": 1967,
+    "epoch": "小智 10 岁从真新镇出发",
+    "official_calendar": false
+  },
+  "events": [
+    {
+      "id": "championship-injury",
+      "date": "1942-03",
+      "title": "冠军战与叉字蝠重伤",
+      "location": "关都联盟",
+      "status": "written",
+      "summary": "坂木与大木争夺冠军，叉字蝠受到常规治疗无法解决的重伤。",
+      "participants": {
+        "giovanni": "在冠军战后带伙伴求医。",
+        "oak": "与坂木共同送医，随后联系医师和学者。",
+        "crobat": "比赛中重伤，治疗停止后生命体征再次衰弱。",
+        "physician": "说明治疗仍无法使叉字蝠稳定康复。"
+      },
+      "source_docs": [
+        "docs/25-rainbow-covenant-prologue.md"
+      ]
+    },
+    {
+      "id": "rainbow-feather",
+      "date": "1942-03",
+      "title": "坂木寻医与虹羽事件",
+      "location": "城都·缘朱市／铃铛塔周边",
+      "status": "written",
+      "summary": "长者指引坂木前往城都；凤王掠过后留下的羽毛救活叉字蝠，并引出羁绊形态。",
+      "participants": {
+        "giovanni": "跨地区寻医，目睹伙伴康复与新形态。",
+        "crobat": "在羽毛光芒中康复，随后出现羁绊形态。",
+        "ho-oh": "飞过林地，未停留；其留下羽毛的动机未知。",
+        "elder": "向坂木讲述复生传说并建议前往铃铛塔。",
+        "tower-keeper": "接待坂木，但不能召来凤王。"
+      },
+      "source_docs": [
+        "docs/25-rainbow-covenant-prologue.md"
+      ]
+    },
+    {
+      "id": "silph-agreement",
+      "date": "1942-04-02",
+      "title": "希尔弗会谈",
+      "location": "关都·金黄市",
+      "status": "written",
+      "summary": "坂木、大木寻求资助；希尔弗提出研究院与独立武装组织的合作安排。",
+      "participants": {
+        "giovanni": "争取招募与接受委托的自主权，坚持不把居民与宝可梦当报酬。",
+        "oak": "提出研究来源可追查、停止实验与公开医疗成果等条件。",
+        "silph": "同意资助，同时要求商业权益与服务企业事业。"
+      },
+      "source_docs": [
+        "docs/25-rainbow-covenant-prologue.md"
+      ]
+    },
+    {
+      "id": "institute-rocket-founded",
+      "date": "1942",
+      "title": "研究院与火箭队筹建",
+      "location": "关都",
+      "status": "written",
+      "summary": "春季成立组织，具体各自注册日期未写；ROCKET 初始全称为地区生命保护、科研探索与救护组织。",
+      "participants": {
+        "giovanni": "创立火箭队并领导招募。",
+        "oak": "出任希尔弗首席科学家，开展公开医疗研究与秘密虹羽研究。",
+        "silph": "通过基金捐助与护送委托支持火箭队，避免明面上的公司私军关系。"
+      },
+      "source_docs": [
+        "docs/25-rainbow-covenant-prologue.md"
+      ]
+    },
+    {
+      "id": "oak-resigns",
+      "date": "1942",
+      "title": "大木卸任与代理冠军",
+      "location": "关都联盟",
+      "status": "written",
+      "summary": "夏季大木退出冠军职位，西野森五世代理冠军，等待正式资格战。",
+      "participants": {
+        "oak": "把主要精力转入科研。",
+        "westwood": "接受代理冠军任命。",
+        "goodshow": "以稳定联盟为由支持代理安排。",
+        "agatha": "未出席告别，致信表达对大木放下对战的不满。"
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md"
+      ]
+    },
+    {
+      "id": "relic-surveys",
+      "date": null,
+      "title": "虹羽研究与遗迹调查",
+      "location": "关都多处遗迹",
+      "status": "written",
+      "summary": "1942 年夏至 1943 年初；研究成果尚是假说，地方政府从组织规模与活动记录逐渐产生警惕。",
+      "participants": {
+        "oak": "坚持先验证测量，不把相似信号直接视为神兽存在证明。",
+        "fuji": "记录误差和不符合假说的结果。",
+        "namba": "希望更快刺激样本、展开实验。",
+        "giovanni": "带领队伍进行调查。"
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md"
+      ]
+    },
+    {
+      "id": "expanded-cabinet",
+      "date": "1943-04",
+      "title": "内阁扩大会议",
+      "location": "关都·会议地点未定",
+      "status": "written",
+      "summary": "达马岚其公开强调团结，私下施压学术网络；委员对坂木的目的判断不同。",
+      "participants": {
+        "goodshow": "以政府经费及学生前途向西野森施压。",
+        "westwood": "同意联系研究院说明公共风险，未被写成已盗取资料。",
+        "agatha": "指出带领强者调查不能直接证明谋反。",
+        "juan": "主张遗迹许可与成果备案。"
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md"
+      ]
+    },
+    {
+      "id": "assassination-orders",
+      "date": "1943-04",
+      "title": "暗杀委托与双重清除",
+      "location": "关都·秘密洽谈",
+      "status": "written",
+      "summary": "达马岚其伪造目击报告，以冠军继任支持诱使亚当动手，又安排将亚当灭口。",
+      "participants": {
+        "goodshow": "策划清除坂木与亚当。",
+        "juan": "理解任务意味着杀人后仍接受。",
+        "navy-minister": "指出无正式目击报告，随后听到灭口安排。",
+        "blaine": "会后收到包括两个人身份的行动命令，知情参与。"
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md"
+      ]
+    },
+    {
+      "id": "cinnabar-attack",
+      "date": "1943-05-15",
+      "title": "红莲洞窟袭击",
+      "location": "红莲近岸·原创洞窟待选址",
+      "status": "written",
+      "summary": "坂木抵达后发现线索虚假；亚当追问研究，被拒后袭击。",
+      "participants": {
+        "giovanni": "赴联合调查，留队员在接应点；遇袭后失去立足处。",
+        "juan": "指挥暴鲤龙在狭窄水道发起袭击。",
+        "juan-gyarados": "发动潮旋。",
+        "crobat": "挡住坠石受伤，被坂木收回球中。"
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md"
+      ]
+    },
+    {
+      "id": "cinnabar-betrayal",
+      "date": "1943-05-15",
+      "title": "海岸封锁与亚当死亡",
+      "location": "红莲近岸",
+      "status": "written",
+      "summary": "支援部队转而封锁亚当撤离；夏伯的队伍在岸边参与清除。",
+      "participants": {
+        "juan": "发现承诺落空，在局部灾难中死亡。",
+        "juan-milotic": "带亚当躲避浪涌并向岸边撤离；之后结局未写。",
+        "blaine": "在海岸行动中知情参与，不能在后文抹去责任。"
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md"
+      ]
+    },
+    {
+      "id": "giovanni-rescued",
+      "date": "1943-05-15",
+      "title": "猫老大救援",
+      "location": "红莲近岸·浅滩待选址",
+      "status": "written",
+      "summary": "水流把坂木带至近岸；猫老大咬住衣领将他拖离浪边。",
+      "participants": {
+        "giovanni": "获救后确认叉字蝠的精灵球；尚不知道亚当已死和达马岚其的交易。",
+        "persian": "借浅水和漂浮物救出坂木，没有新增冲浪招式。"
+      },
+      "source_docs": [
+        "docs/30-cinnabar-incident.md"
+      ]
+    },
+    {
+      "id": "ash-departure",
+      "date": "1967",
+      "title": "少年小智领取皮卡丘",
+      "location": "真新镇",
+      "status": "prototype",
+      "summary": "现有开场原型：小智到研究所，与皮卡丘相识，获得出发条件。",
+      "participants": {
+        "ash": "开始旅程，后续人生仍由未写篇章与玩家选择决定。",
+        "oak": "把皮卡丘交给小智，指导他前往常青市。",
+        "pikachu": "成为小智初始伙伴。",
+        "gary": "在研究所等待并可发起练习战。",
+        "delia": "叮嘱小智并提供返家休息。",
+        "daisy-oak": "鼓励小智与小茂互相帮助。",
+        "neighbor": "介绍镇内交互。",
+        "walker": "介绍跑步与南侧水域。",
+        "aide-1": "介绍图鉴和菜单。",
+        "aide-2": "介绍图鉴和菜单。"
+      },
+      "source_docs": [
+        "core/src/adventure.c"
+      ]
+    },
+    {
+      "id": "viridian-center",
+      "date": "1967",
+      "title": "常青中心冲突",
+      "location": "常青市·宝可梦中心",
+      "status": "prototype",
+      "summary": "现有原型以通用男女火箭队像素表示三人组冲突；喵喵尚无独立场景实体。",
+      "participants": {
+        "ash": "保护中心并与火箭队对战。",
+        "joy-viridian": "治疗伙伴并提醒可疑人物。",
+        "jessie": "原型以女队员表示；完整个人演出尚未实现。",
+        "james": "原型以男队员表示；完整个人演出尚未实现。",
+        "meowth": "开场剧情方向要求参与；未独立实现。"
+      },
+      "source_docs": [
+        "docs/22-kanto-first-journey.md"
+      ]
+    },
+    {
+      "id": "parcel-return",
+      "date": "1967",
+      "title": "博士包裹",
+      "location": "常青商店→真新镇研究所",
+      "status": "prototype",
+      "summary": "当前可玩开场的任务：领取包裹并交还大木。",
+      "participants": {
+        "ash": "把包裹送回研究所。",
+        "clerk": "委托小智带回包裹。",
+        "oak": "接收包裹并给予奖励。",
+        "route-guide": "在道路介绍野生对战与捕获。"
+      },
+      "source_docs": [
+        "core/src/adventure.c"
+      ]
+    }
+  ],
+  "unwritten": [
+    {
+      "id": "civil-war",
+      "date": null,
+      "candidate_year": 1945,
+      "text": null,
+      "label": "全面内战节点"
+    },
+    {
+      "id": "oak-leaves-institute",
+      "date": null,
+      "text": null,
+      "label": "大木退出希尔弗体系"
+    },
+    {
+      "id": "rocket-silph-split",
+      "date": null,
+      "text": null,
+      "label": "火箭队与希尔弗关系转变"
+    },
+    {
+      "id": "mewtwo-project",
+      "date": null,
+      "text": null,
+      "label": "超梦研究计划"
+    },
+    {
+      "id": "ash-young-adult",
+      "date": null,
+      "age_anchor_year": 1973,
+      "text": null,
+      "label": "少年后期／青年过渡"
+    },
+    {
+      "id": "ash-adult",
+      "date": null,
+      "age_anchor_year": 1978,
+      "text": null,
+      "label": "青年小智阶段"
+    }
+  ],
+  "continuity_rules": [
+    "人物按同一日历同步成长；未知出生年保持 null。",
+    "原作剧情不自动进入 Omni 生平；写入事件需要本作正文或原型来源。",
+    "亚当 1943 年死亡；不得在 1967 年主线仍以活人馆主出现。",
+    "富士未被确定为泄密者；不能由师承推断其叛变。",
+    "神兽目击报告在红莲事件中是伪造；不能把水君、洛奇亚登记为在洞窟真实出现。",
+    "作者知道的阴谋与人物当时掌握的信息分开；坂木获救时尚不知双重清除。",
+    "洗翠与神奥是时代关系；地图分幅顺序不是全球经纬度。"
+  ]
+}
