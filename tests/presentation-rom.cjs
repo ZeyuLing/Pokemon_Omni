@@ -8,7 +8,31 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
  const rom=fs.readFileSync(storyMode?'build/pallet/omni-story.gba':'build/pallet/omni-pallet.gba'),p=m._malloc(rom.length);m.HEAPU8.set(rom,p);assert(m._mgbawasm_load(p,rom.length,0,0,0,0,1));m._free(p);
  const n=m._mgbawasm_state_size(),sp=m._malloc(n),ap=m._malloc(8192);let go=-1,po=-1;
  function state(){assert(m._mgbawasm_state_save(sp));const b=Buffer.from(m.HEAPU8.buffer,sp,n);if(go<0)go=b.indexOf(Buffer.from('544c4150494e4d4f','hex'));if(po<0)po=b.indexOf(Buffer.from('53455250494e4d4f','hex'));assert(go>=0&&po>=0);return {screen:b.readUInt32LE(go+8),x:b.readUInt32LE(go+16),speed:b.readUInt32LE(po+8),scene:b.readUInt32LE(po+12),ticks:b.readUInt32LE(po+16),music:b.readUInt32LE(po+20),clock:b.readUInt32LE(po+28),cast:b.readUInt32LE(po+32),track:b.readUInt32LE(po+40),block:b.readUInt32LE(po+44),loops:b.readUInt32LE(po+48),chapter:b.readUInt32LE(po+52),letters:b.readUInt32LE(po+56),revealed:b.readUInt32LE(po+60)};}
- const chunks=[];function frames(count,record=false){while(count--){m._mgbawasm_run_frame();let size;while((size=m._mgbawasm_read_audio(ap,2048))>0)if(record)chunks.push(Buffer.from(m.HEAPU8.slice(ap,ap+size*4)));}}
+ let auditing=false,walkFrames=0,lastAudio=null;const observedWalks=new Set(),blockingSamples=[],soundBridges=[];
+ const grids=require('../build/pallet/opening-collision.json');
+ function auditBlocking(){
+  state();const b=Buffer.from(m.HEAPU8.buffer,sp,n),cueIndex=b.readUInt32LE(po+104),cue=cues[cueIndex];
+  if(!cue)return;const grid=grids[cue.stage],count=b.readUInt32LE(po+68);
+  const currentAudio={chapter:cue.chapter,track:b.readUInt32LE(po+40),block:b.readUInt32LE(po+44),loops:b.readUInt32LE(po+48)};
+  if(lastAudio&&lastAudio.chapter!==cue.chapter&&cue.chapter<=3){
+   assert.equal(currentAudio.track,4,'Meeting music must bridge the cut');
+   assert(currentAudio.loops>lastAudio.loops||currentAudio.block>=lastAudio.block,'Music restarted at a room cut');
+   soundBridges.push({before:lastAudio,after:currentAudio});
+  }
+  lastAudio=currentAudio;
+  assert.equal(b.readUInt32LE(po+64),0,`Runtime blocked actor at cue ${cueIndex}`);
+  const positions=[];
+  for(let i=0;i<count;i++){
+   const x=b.readInt32LE(po+72+i*8),y=b.readInt32LE(po+76+i*8);positions.push([x,y]);
+   for(const [fx,fy] of [[x+2,y-12],[x+13,y-12],[x+2,y-1],[x+13,y-1]]){
+    assert(fx>=0&&fy>=0&&fx<grid.width*16&&fy<grid.height*16,'Actor out of source room');
+    assert.equal(grid.cells[Math.floor(fy/16)*grid.width+Math.floor(fx/16)],0,`Furniture overlap: cue ${cueIndex}, actor ${i}, (${x},${y})`);
+   }
+  }
+  for(let i=0;i<count;i++)for(let j=i+1;j<count;j++)assert(Math.abs(positions[i][0]-positions[j][0])>=12||Math.abs(positions[i][1]-positions[j][1])>=12,'Actors overlap');
+  if(cue.movement){walkFrames++;observedWalks.add(cueIndex);if(walkFrames%8===0)blockingSamples.push({cue:cueIndex,ticks:b.readUInt32LE(po+108),positions});}
+ }
+ const chunks=[];function frames(count,record=false){while(count--){m._mgbawasm_run_frame();let size;while((size=m._mgbawasm_read_audio(ap,2048))>0)if(record)chunks.push(Buffer.from(m.HEAPU8.slice(ap,ap+size*4)));if(auditing)auditBlocking();}}
  function press(k){m._mgbawasm_set_keys(k);frames(4);m._mgbawasm_set_keys(0);frames(12);}
  function shot(name){fs.writeFileSync(`build/pallet/${prefix}${name}.rgba`,Buffer.from(m.HEAPU8.slice(m._mgbawasm_video_ptr(),m._mgbawasm_video_ptr()+153600)));}
  function sram(){m._mgbawasm_sram_save();return Buffer.from(m.HEAPU8.slice(m._mgbawasm_sram_ptr(),m._mgbawasm_sram_ptr()+32768));}
@@ -16,7 +40,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
  const cues=require('../build/pallet/presentation-report.json').cues;
  const script=require('../content/opening/prologue.json');
  const before=sram();press(512);assert.equal(state().screen,14);
- let reveals=0,actions=0;const chapters=new Set();
+ let reveals=0,actions=0;const chapters=new Set();auditing=true;
  for(const cue of cues){
   assert.equal(state().scene,cue.cue,`Missing cue ${cue.cue}`);
   if(cue.dialogue){
@@ -30,7 +54,11 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
    assert(safety>0,`Stuck action ${cue.cue}`);
   }
  }
- assert.equal(chapters.size,6);assert(reveals>30&&actions>10);assert.equal(state().screen,0);assert(before.equals(sram()),'Replay must not write SRAM');
+ auditing=false;
+ assert.equal(chapters.size,script.scenes.length);assert(reveals>30&&actions>10);assert.equal(state().screen,0);assert(before.equals(sram()),'Replay must not write SRAM');
+ assert.equal(observedWalks.size,cues.filter(c=>c.movement).length,'Every walking/camera cue observed in actual ROM');
+ assert.equal(soundBridges.length,3,'Three continuous musical scene transitions');
+ fs.writeFileSync(`build/pallet/${prefix}opening-blocking-samples.json`,JSON.stringify({walkFrames,cues:[...observedWalks],soundBridges,samples:blockingSamples},null,2));
  press(512);press(8);assert.equal(state().screen,15);const paused=state().ticks;frames(100);assert.equal(state().ticks,paused);press(2);frames(12);assert.equal(state().screen,14,JSON.stringify(state()));press(8);press(1);assert.equal(state().screen,0);
  press(256);assert.equal(state().screen,16);const count=require('../assets/characters/manifest.json').portraits.length;const unique=new Set();
  for(let i=0;i<count;i++){assert.equal(state().cast,i);shot('cast-'+i);unique.add(crypto.createHash('sha256').update(Buffer.from(m.HEAPU8.slice(m._mgbawasm_video_ptr(),m._mgbawasm_video_ptr()+153600))).digest('hex'));press(16);}

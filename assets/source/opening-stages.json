@@ -10,10 +10,16 @@
       "bytes": 158096
     },
     {
-      "path": "data/maps/ViridianCity_PokemonCenter_1F/map.json",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/maps/ViridianCity_PokemonCenter_1F/map.json",
-      "sha256": "3edeace4baf5a6bce3fa0ab2dcfd3691f2ee2d7de0645f9df3e5f31c649f657d",
-      "bytes": 2824
+      "path": "data/maps/SilphCo_6F/map.json",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/maps/SilphCo_6F/map.json",
+      "sha256": "c0663bfddabda69315c48f7a1945641aa61f18d0d84db215f3e1d10f5ab78659",
+      "bytes": 6470
+    },
+    {
+      "path": "src/data/tilesets/graphics.h",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/src/data/tilesets/graphics.h",
+      "sha256": "63ca2a6588d938adcc4d4bf325578f23b7b1e2b622a3e27ffeccae2ac6133f61",
+      "bytes": 83873
     },
     {
       "path": "data/tilesets/primary/building/tiles.png",
@@ -34,22 +40,22 @@
       "bytes": 2560
     },
     {
-      "path": "data/tilesets/secondary/pokemon_center/tiles.png",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/pokemon_center/tiles.png",
-      "sha256": "6aeb12ed0248b4b241ec687cb06dd37ab9a89c3f7804413668bcf4e6c6ef1774",
-      "bytes": 3390
+      "path": "data/tilesets/secondary/condominiums/tiles.png",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/condominiums/tiles.png",
+      "sha256": "6a41ec8c2a5a1612ce7f76b5a1325e0c40e5f2dd3f8a351f9d1f19960cf96b34",
+      "bytes": 3737
     },
     {
-      "path": "data/tilesets/secondary/pokemon_center/metatiles.bin",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/pokemon_center/metatiles.bin",
-      "sha256": "032e59dca08e16d5ff1c92b9720e3172005984b9e587436dd98d3bb468650e21",
-      "bytes": 4080
+      "path": "data/tilesets/secondary/silph_co/metatiles.bin",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/silph_co/metatiles.bin",
+      "sha256": "5a78fdcaa65412cea7e9a344f33027ec859b0284689d486bd2fd6cc9b1efc9d0",
+      "bytes": 6048
     },
     {
-      "path": "data/tilesets/secondary/pokemon_center/metatile_attributes.bin",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/pokemon_center/metatile_attributes.bin",
-      "sha256": "3e078fe415ef46509d1eb873a3545badbacfc7e9eddd44aa29b995f254bd6d24",
-      "bytes": 1020
+      "path": "data/tilesets/secondary/silph_co/metatile_attributes.bin",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/silph_co/metatile_attributes.bin",
+      "sha256": "3b088c293fedcc88cc15b25f544e7c6c92a23b361674a096d516ca2202c971d9",
+      "bytes": 1512
     },
     {
       "path": "data/tilesets/primary/building/palettes/00.pal",
@@ -94,144 +100,6 @@
       "bytes": 138
     },
     {
-      "path": "data/tilesets/secondary/pokemon_center/palettes/07.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/pokemon_center/palettes/07.pal",
-      "sha256": "dccad3840b7d480a5595f95e227164e5c4a9229d4a7255f20594bb8225055a7d",
-      "bytes": 222
-    },
-    {
-      "path": "data/tilesets/secondary/pokemon_center/palettes/08.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/pokemon_center/palettes/08.pal",
-      "sha256": "5a243e0c4ce4fa5b8a6147abf6071e1eb6d387f6911bfc9d347112701c888be0",
-      "bytes": 219
-    },
-    {
-      "path": "data/tilesets/secondary/pokemon_center/palettes/09.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/pokemon_center/palettes/09.pal",
-      "sha256": "5cddd6c069f9e170ab5d9bbadd6577b6ffe309932c0aed9604dbdc387d6892cb",
-      "bytes": 216
-    },
-    {
-      "path": "data/tilesets/secondary/pokemon_center/palettes/10.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/pokemon_center/palettes/10.pal",
-      "sha256": "70cc704ffd2ddb17edf92e0e8173d7b9ab742ae30ce49294d07a6d6adbbceeee",
-      "bytes": 212
-    },
-    {
-      "path": "data/tilesets/secondary/pokemon_center/palettes/11.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/pokemon_center/palettes/11.pal",
-      "sha256": "df3d41b2d4bbd781d1ec2154b5bf23bf69795d5688d3e653bf8b3bd6407efada",
-      "bytes": 208
-    },
-    {
-      "path": "data/tilesets/secondary/pokemon_center/palettes/12.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/pokemon_center/palettes/12.pal",
-      "sha256": "82de120d77d734b1a8d0ab409e529d0a2b3dd7ddd463123a72e9658db306db13",
-      "bytes": 220
-    },
-    {
-      "path": "data/layouts/PokemonCenter_1F/map.bin",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/layouts/PokemonCenter_1F/map.bin",
-      "sha256": "32a6f854088ca261ed410ebff549e73d7e732aa1143223377e8f290e8df52e0d",
-      "bytes": 300
-    },
-    {
-      "path": "data/maps/PokemonLeague_LancesRoom/map.json",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/maps/PokemonLeague_LancesRoom/map.json",
-      "sha256": "866bbf1d4635541c2c83794af4948f0383bf4cef639225b0383be3f079254575",
-      "bytes": 1313
-    },
-    {
-      "path": "data/tilesets/secondary/pokemon_league/tiles.png",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/pokemon_league/tiles.png",
-      "sha256": "5ed883050c657047965a53cef030913adc3ce6cbbb9e51b1cdcc108b92d62fa3",
-      "bytes": 3165
-    },
-    {
-      "path": "data/tilesets/secondary/pokemon_league/metatiles.bin",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/pokemon_league/metatiles.bin",
-      "sha256": "8a82b00fd81cd88c32f31838cb6b45d1d85d0e3e9571dbbf063df71ca8d0cd1e",
-      "bytes": 6144
-    },
-    {
-      "path": "data/tilesets/secondary/pokemon_league/metatile_attributes.bin",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/pokemon_league/metatile_attributes.bin",
-      "sha256": "4207d5a9d10b9a759e5bde89e9ff574a9a9882aafe1e4e4e3954e638fcc7de0d",
-      "bytes": 1536
-    },
-    {
-      "path": "data/tilesets/secondary/pokemon_league/palettes/07.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/pokemon_league/palettes/07.pal",
-      "sha256": "4c6544157d7017644b33283db5fbad0af7cb474d5ce1dcb5a86033da9dfcbc5e",
-      "bytes": 201
-    },
-    {
-      "path": "data/tilesets/secondary/pokemon_league/palettes/08.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/pokemon_league/palettes/08.pal",
-      "sha256": "ad4b6149d69822174a98f76b7c79a47a209a8ad8e0730b7564bdda022dc6c03d",
-      "bytes": 223
-    },
-    {
-      "path": "data/tilesets/secondary/pokemon_league/palettes/09.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/pokemon_league/palettes/09.pal",
-      "sha256": "3d27718785165dfd6e9d970215b1e3eb000469045e981d95db088c3f640ba781",
-      "bytes": 225
-    },
-    {
-      "path": "data/tilesets/secondary/pokemon_league/palettes/10.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/pokemon_league/palettes/10.pal",
-      "sha256": "92b320c09818ea4eb23938e69e8d666b8c05e3aa99829746f8d434d2c3da4673",
-      "bytes": 223
-    },
-    {
-      "path": "data/tilesets/secondary/pokemon_league/palettes/11.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/pokemon_league/palettes/11.pal",
-      "sha256": "583a6dab4a205859d0921775ed3e399438cdd85af4a037816528da7f37faece5",
-      "bytes": 221
-    },
-    {
-      "path": "data/tilesets/secondary/pokemon_league/palettes/12.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/pokemon_league/palettes/12.pal",
-      "sha256": "1f2c436ac0909664f36b97dd4ecb25bca95c2145f0f5a6e49926056e6b7fa738",
-      "bytes": 209
-    },
-    {
-      "path": "data/layouts/PokemonLeague_LancesRoom/map.bin",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/layouts/PokemonLeague_LancesRoom/map.bin",
-      "sha256": "394091147c200f000dd341477ad0ba59c59b35f451d6d95ecc0754c11d527ad2",
-      "bytes": 1344
-    },
-    {
-      "path": "data/maps/SilphCo_11F/map.json",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/maps/SilphCo_11F/map.json",
-      "sha256": "04b6985ab83eb0d0cd98a4c325a75e27bb1b1b67ded28e99b607aced72ccac69",
-      "bytes": 5148
-    },
-    {
-      "path": "src/data/tilesets/graphics.h",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/src/data/tilesets/graphics.h",
-      "sha256": "63ca2a6588d938adcc4d4bf325578f23b7b1e2b622a3e27ffeccae2ac6133f61",
-      "bytes": 83873
-    },
-    {
-      "path": "data/tilesets/secondary/condominiums/tiles.png",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/condominiums/tiles.png",
-      "sha256": "6a41ec8c2a5a1612ce7f76b5a1325e0c40e5f2dd3f8a351f9d1f19960cf96b34",
-      "bytes": 3737
-    },
-    {
-      "path": "data/tilesets/secondary/silph_co/metatiles.bin",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/silph_co/metatiles.bin",
-      "sha256": "5a78fdcaa65412cea7e9a344f33027ec859b0284689d486bd2fd6cc9b1efc9d0",
-      "bytes": 6048
-    },
-    {
-      "path": "data/tilesets/secondary/silph_co/metatile_attributes.bin",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/silph_co/metatile_attributes.bin",
-      "sha256": "3b088c293fedcc88cc15b25f544e7c6c92a23b361674a096d516ca2202c971d9",
-      "bytes": 1512
-    },
-    {
       "path": "data/tilesets/secondary/condominiums/palettes/07.pal",
       "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/condominiums/palettes/07.pal",
       "sha256": "85369fad676d96f96064e2ac6e26f716b90edfdf5b6f5785ec2784736615d72d",
@@ -268,22 +136,34 @@
       "bytes": 221
     },
     {
+      "path": "data/layouts/SilphCo_6F/map.bin",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/layouts/SilphCo_6F/map.bin",
+      "sha256": "5f40589bb71226816c1046176f4988b2435ccaab3e1f2f7537d01224a45d3763",
+      "bytes": 1178
+    },
+    {
+      "path": "data/maps/SilphCo_11F/map.json",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/maps/SilphCo_11F/map.json",
+      "sha256": "04b6985ab83eb0d0cd98a4c325a75e27bb1b1b67ded28e99b607aced72ccac69",
+      "bytes": 5148
+    },
+    {
       "path": "data/layouts/SilphCo_11F/map.bin",
       "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/layouts/SilphCo_11F/map.bin",
       "sha256": "5f0783f5f2acc9e6a89a93681ab9c7d50d6708fae7e1931f51399d760e9876a1",
       "bytes": 680
     },
     {
-      "path": "data/maps/RocketHideout_B4F/map.json",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/maps/RocketHideout_B4F/map.json",
-      "sha256": "2a40922d464585b7fdf3d6bfaaf54458586488ade634303953a8339168148235",
-      "bytes": 5493
+      "path": "data/maps/RocketHideout_B1F/map.json",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/maps/RocketHideout_B1F/map.json",
+      "sha256": "29ba997e9bc1a96276c8988c14a3d51f7746ca1ed7b202f360b7d61ac9cd4f59",
+      "bytes": 4711
     },
     {
-      "path": "data/layouts/RocketHideout_B4F/map.bin",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/layouts/RocketHideout_B4F/map.bin",
-      "sha256": "6d6ac7bcbe1b244904c656c77b209c35241d0d249991d40af815dfb860d2e2bb",
-      "bytes": 1248
+      "path": "data/layouts/RocketHideout_B1F/map.bin",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/layouts/RocketHideout_B1F/map.bin",
+      "sha256": "0f178fada61e1e58f1e8c58ca72322feb4ff4293593158fc7b22ff1e4ad7f233",
+      "bytes": 1904
     },
     {
       "path": "data/maps/PalletTown_ProfessorOaksLab/map.json",

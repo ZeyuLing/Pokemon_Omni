@@ -31,7 +31,7 @@ def rgba555(im,tone=0):
         if tone==2:r=r*3//5;g=g*5//8;b=min(31,b*7//8+2)
         data+=struct.pack('<H',0x8000 if a<128 else r|(g<<5)|(b<<10))
     return data
-def render(layout):
+def render(layout, with_collision=False):
     names={'gTileset_General':'primary/general','gTileset_Building':'primary/building','gTileset_PalletTown':'secondary/pallet_town','gTileset_GenericBuilding1':'secondary/generic_building_1','gTileset_GenericBuilding2':'secondary/generic_building_2','gTileset_Lab':'secondary/lab','gTileset_ViridianCity':'secondary/viridian_city','gTileset_PokemonCenter':'secondary/pokemon_center','gTileset_Mart':'secondary/mart','gTileset_SilphCo':'secondary/silph_co','gTileset_PokemonLeague':'secondary/pokemon_league'}
     dirs=[f'data/tilesets/{names[layout[k]]}' for k in ['primary_tileset','secondary_tileset']]
     tiles=[];metas=[];attrs=[]
@@ -45,9 +45,11 @@ def render(layout):
     palettes=[]
     for i in range(13):palettes.append([tuple(map(int,line.split())) for line in get(gfxdirs[0 if i<7 else 1]+f'/palettes/{i:02d}.pal').decode().splitlines()[3:19]])
     w,h=layout['width'],layout['height'];blocks=[a[0] for a in struct.iter_unpack('<H',get(layout['blockdata_filepath']))]
-    bg=Image.new('RGB',(w*16,h*16),palettes[0][0]);mask=Image.new('L',bg.size)
+    bg=Image.new('RGB',(w*16,h*16),palettes[0][0]);mask=Image.new('L',bg.size);collision=[]
     for cell,block in enumerate(blocks):
         mid=block&1023;bank=mid>=640;idx=mid-640 if bank else mid;layer=(attrs[bank][idx]>>29)&3
+        behavior=attrs[bank][idx]&511
+        collision.append(int(bool(block&0xc00 or behavior in range(0x10,0x16))))
         for part,tile in enumerate(metas[bank][idx]):
             tileid=tile&1023;tb=tileid>=640;ti=tileid-640 if tb else tileid;pixels=tiles[tb][ti];pal=palettes[tile>>12]
             ox=(cell%w)*16+(part%2)*8;oy=(cell//w)*16+((part%4)//2)*8
@@ -57,20 +59,25 @@ def render(layout):
                     if part>=4 and not p:continue
                     bg.putpixel((ox+x,oy+y),pal[p])
                     if part>=4 and p and layer!=1:mask.putpixel((ox+x,oy+y),1)
-    return bg,mask
+    return (bg,mask,collision) if with_collision else (bg,mask)
 def main():
     opening=json.loads((ROOT/'content/opening/prologue.json').read_text('utf-8'))
     layouts={l.get('id'):l for l in json.loads(get('data/layouts/layouts.json'))['layouts']}
-    blob=bytearray();stages=[];sprites=[]
+    blob=bytearray();stages=[];sprites=[];grids={}
     (OUT/'stages').mkdir(parents=True,exist_ok=True)
     for s in opening['stages']:
-        meta=json.loads(get(f'data/maps/{s["source"]}/map.json'));bg,mask=render(layouts[meta['layout']]);bg.save(OUT/'stages'/f'{s["id"]}-full.png')
+        meta=json.loads(get(f'data/maps/{s["source"]}/map.json'));layout=layouts[meta['layout']]
+        bg,mask,cells=render(layout,True);bg.save(OUT/'stages'/f'{s["id"]}-full.png')
         x,y,w,h=s['crop'];assert x>=0 and y>=0 and x+w<=bg.width and y+h<=bg.height
+        assert all(v%16==0 for v in (x,y,w,h)), 'Stage crops must preserve source collision tiles'
         bg=bg.crop((x,y,x+w,y+h));mask=mask.crop((x,y,x+w,y+h));art=len(blob)
         tone=next(c['tone'] for c in opening['scenes'] if c['stage']==s['id'])
         blob+=rgba555(bg,tone);mk=len(blob);blob+=mask.tobytes()
+        grid=[cells[ty*layout['width']+tx] for ty in range(y//16,(y+h)//16) for tx in range(x//16,(x+w)//16)]
+        co=len(blob);blob+=bytes(grid)
         while len(blob)%4:blob.append(0)
-        stages.append('{'+','.join(map(str,[w,h,art,mk]))+'}');bg.save(OUT/'stages'/f'{s["id"]}.png')
+        stages.append('{'+','.join(map(str,[w,h,art,mk,co]))+'}');bg.save(OUT/'stages'/f'{s["id"]}.png')
+        grids[s['id']]={'width':w//16,'height':h//16,'cells':grid,'source':s['source'],'crop':s['crop']}
     for name in opening['sprites']:
         im=Image.open(io.BytesIO(get('graphics/object_events/pics/people/'+name+'.png'))).convert('RGBA')
         # Indexed source transparency is color index zero, not PNG metadata.
@@ -85,11 +92,11 @@ def main():
             blob+=rgba555(canvas)
         sprites.append('{'+','.join(map(str,[offset,count]))+'}')
     (OUT/'opening_stage.bin').write_bytes(blob)
-    (OUT/'opening_stage.s').write_text('.section .rodata\n.balign 4\n.global omni_opening_stage_blob\nomni_opening_stage_blob:\n.incbin "build/pallet/opening_stage.bin"\n')
+    (OUT/'opening_stage.s').write_text(f'/* SHA256 {hashlib.sha256(blob).hexdigest()} */\n'+'.section .rodata\n.balign 4\n.global omni_opening_stage_blob\nomni_opening_stage_blob:\n.incbin "build/pallet/opening_stage.bin"\n')
     (OUT/'opening_stage.h').write_text('''#ifndef OMNI_OPENING_STAGE_H
 #define OMNI_OPENING_STAGE_H
 #include <stdint.h>
-typedef struct {uint16_t w,h;uint32_t art,mask;} OmniStage;
+typedef struct {uint16_t w,h;uint32_t art,mask,collision;} OmniStage;
 typedef struct {uint32_t offset;uint8_t frames;} OmniStageSprite;
 extern const OmniStage omni_stages[];
 extern const OmniStageSprite omni_stage_sprites[];
@@ -97,6 +104,7 @@ extern const unsigned char omni_opening_stage_blob[];
 #endif
 ''')
     (OUT/'opening_stage.c').write_text('#include "opening_stage.h"\nconst OmniStage omni_stages[]={'+','.join(stages)+'};\nconst OmniStageSprite omni_stage_sprites[]={'+','.join(sprites)+'};\n')
+    (OUT/'opening-collision.json').write_text(json.dumps(grids,indent=2)+'\n')
     MANIFEST.write_text(json.dumps({'repository':'https://github.com/pret/pokefirered','commit':REV,'scope':'Native tiles/layouts and animated object sprites, used as Omni stage adaptations; no source event scripts','files':list(records.values())},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(f'Opening stages: {len(stages)}, sprites: {len(sprites)}, bytes: {len(blob)}')
 if __name__=='__main__':main()

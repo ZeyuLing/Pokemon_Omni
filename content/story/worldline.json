@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "revision": "2026-09-26.7",
+  "revision": "2026-09-26.8",
   "status": "authoring_registry_not_runtime",
   "calendar": {
     "epoch_year": null,
@@ -1288,22 +1288,25 @@
       "delia",
       "gary",
       "giovanni",
-      "joy-viridian",
       "lance",
       "oak",
-      "opening-dispatcher",
       "opening-league-liaison",
-      "opening-radio-reader",
       "opening-rocket-clerk",
       "opening-silph-representative",
       "opening-silph-secretary"
     ],
     "spoiler_boundary": "The game script contains no AI identity, synthetic body, model/prompt terminology or creation scene. Oak dialogue supports both ordinary training and later reinterpretation.",
     "historical_effect": "Dramatizes established opening conditions with new scene dialogue and anonymous supporting roles. Does not date or settle unwritten post-Cinnabar history.",
-    "version": 2,
-    "format": "acted_scenes",
-    "scene_count": 6,
+    "version": 3,
+    "format": "continuous_meeting_scenes",
+    "scene_count": 5,
     "source": "content/opening/prologue.json",
-    "scope": "既定大战末期背景的场景演绎；对白及六位匿名配角是本轮开场稿，未给中间历史、主线年份或候选人物阵营补定事实。"
+    "scope": "既定大战末期背景的五场连续演绎，以世界赛提案的权力、资格和下一代培养贯穿各方会议。所有新对白仍属开场稿；不为未写历史、主线年份或候选阵营补定事实。",
+    "direction": {
+      "throughline": "世界赛的权力、门槛与下一代的选择",
+      "sound_bridge": "联盟、希尔弗、火箭队及祖孙会面共用同一首原版希尔弗曲，不随切镜重启。大木独处开始实验室曲；清晨转真新镇。",
+      "room_continuity": "每场先交代人物和桌案位置；每次走位以来源地图地块和其他演员为障碍。",
+      "historical_boundary": "只演绎已定的大战末期状态；不补写红莲之后未定历史、日期、继承人阵营或最终结局。"
+    }
   }
 }

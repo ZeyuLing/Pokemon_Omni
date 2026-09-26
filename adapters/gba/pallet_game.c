@@ -9,6 +9,8 @@
 #include "omni/presentation.h"
 #include "presentation_data.h"
 #include "opening_stage.h"
+#include "rocket_text.h"
+#include "omni/stage.h"
 #include "music.h"
 
 #define REG16(a) (*(volatile uint16_t*)(a))
@@ -52,7 +54,7 @@ static char buffer[512];
 static const char save_signature[] __attribute__((used))="SRAM_V113";
 /* Passive emulator observability. No write/cheat commands are exposed. */
 volatile uint32_t omni_pallet_probe[20];
-volatile uint32_t omni_presentation_probe[16];
+volatile uint32_t omni_presentation_probe[28];
 
 void *memset(void *d,int v,size_t n){uint8_t *p=d;while(n--)*p++=(uint8_t)v;return d;}
 void *memcpy(void *d,const void *s,size_t n){uint8_t *p=d;const uint8_t *q=s;while(n--)*p++=*q++;return d;}
@@ -121,52 +123,88 @@ static uint16_t intro_color(uint16_t c,unsigned tone){
  if(tone==2){r=three_fifths[r];g=g*5/8;b=b*7/8+2;if(b>31)b=31;}
  return (uint16_t)RGB(r,g,b);
 }
+static unsigned rocket_code(const char **str){
+ const unsigned char *p=(const unsigned char*)*str;unsigned code=*p++;
+ if(code>=0xe0){code=((code&15)<<12)|((p[0]&63)<<6)|(p[1]&63);p+=2;}
+ else if(code>=0xc0){code=((code&31)<<6)|(p[0]&63);++p;}
+ *str=(const char*)p;return code;
+}
+static int rocket_text(int x,int y,const char *str,int end){
+ while(*str){
+  unsigned code=rocket_code(&str),lo=0,hi=OMNI_ROCKET_GLYPHS,row,col;
+  const OmniRocketGlyph *g;const uint16_t *data;
+  while(lo<hi){unsigned mid=(lo+hi)/2;if(omni_rocket_glyphs[mid].code<code)lo=mid+1;else hi=mid;}
+  if(lo==OMNI_ROCKET_GLYPHS||omni_rocket_glyphs[lo].code!=code)continue;
+  g=&omni_rocket_glyphs[lo];if(x+g->width>end)break;
+  data=(const uint16_t*)(omni_rocket_text_blob+g->offset);
+  for(row=0;row<16;++row)for(col=0;col<16;++col){
+   unsigned v=(data[(row/8*2+col/8)*8+row%8]>>(14-2*(col%8)))&3;
+   int dx=x+(int)col,dy=y+(int)row;
+   if((v==1||v==2)&&(unsigned)dx<240&&(unsigned)dy<160)
+    omni_gba_surface[dy*240+dx]=v==1?RGB(12,12,12):RGB(26,26,25);
+  }
+  x+=g->width;
+ }
+ return x;
+}
+static void rocket_bitmap(unsigned offset,int w,int h,int x,int y){
+ const uint16_t *p=(const uint16_t*)(omni_rocket_text_blob+offset);int row,col;
+ for(row=0;row<h;++row)for(col=0;col<w;++col){uint16_t c=p[row*w+col];int dx=x+col,dy=y+row;if(!(c&0x8000)&&(unsigned)dx<240&&(unsigned)dy<160)omni_gba_surface[dy*240+dx]=c;}
+}
 static void draw_intro(void){
  const OmniIntroScene *s=&omni_intro[presentation.scene];const OmniStage *m=&omni_stages[s->stage];
- unsigned row,col,i,j,order[4],fade=0;char line[128];
+ unsigned row,col,i,j,order[4],fade=0;char line[128];OmniWalkPoint positions[4];uint8_t faces[4];
+ OmniWalkGrid grid={omni_opening_stage_blob+m->collision,m->w/16,m->h/16};
  uint16_t ticks=presentation.scene_ticks;
  int cx=omni_presentation_lerp(s->cx,s->tx,ticks,s->duration),cy=omni_presentation_lerp(s->cy,s->ty,ticks,s->duration);
  int ox=m->w<240?(240-m->w)/2:0,width=m->w<240?m->w:240;
- int height=*s->speaker?104:160;if(height>m->h-cy)height=m->h-cy;
+ int height=160;if(height>m->h-cy)height=m->h-cy;
  unsigned letters=omni_presentation_letters(&presentation,s->letters);
  if(s->fade_in&&ticks<16)fade=16-ticks;
  if(s->fade_out&&s->duration-ticks<16)fade=16-(s->duration-ticks);
  omni_gba_surface=intro_frame;
  if(ox){box(0,0,ox,160,RGB(3,5,7));box(ox+width,0,240-ox-width,160,RGB(3,5,7));}
- if(height<(*s->speaker?104:160))box(ox,height,width,(*s->speaker?104:160)-height,RGB(3,5,7));
+ if(height<160)box(ox,height,width,160-height,RGB(3,5,7));
  for(row=0;row<(unsigned)height;++row)dma_row((const uint16_t*)(omni_opening_stage_blob+m->art)+(row+cy)*m->w+cx,omni_gba_surface+row*240+ox,(unsigned)width);
  /* Practical props stay in the corresponding source room. */
- if(s->stage==4){
-  int x=33-cx+ox,y=18-cy;
+ if(s->monitor_x>=0){
+  int x=s->monitor_x-cx+ox,y=s->monitor_y-cy;
   if(y>=0){box(x,y,12,8,s->monitor?RGB(4,14,13):RGB(3,5,7));if(s->monitor){box(x+2,y+2,5+(ticks/12)%4,1,RGB(15,26,18));box(x+2,y+5,7,1,RGB(8,20,17));}}
  }
  if(s->effect==1&&((ticks/12)&1))for(i=0;i<3;++i)box(83+(int)i*5+ox-cx,26-cy,3,2,RGB(31,20,14));
  if(s->effect==2&&((ticks/8)&1))box(120+ox-cx,20-cy,11,5,RGB(21,26,27));
- if(s->effect==3){box(108+ox-cx,73-cy,10,6,PAPER);box(110+ox-cx,75-cy,5,1,MUTED);}
- for(i=0;i<s->actor_count;++i)order[i]=i;
- for(i=0;i<s->actor_count;++i)for(j=i+1;j<s->actor_count;++j)if(s->actors[order[j]].ty<s->actors[order[i]].ty){unsigned t=order[i];order[i]=order[j];order[j]=t;}
+ if(s->document_x>=0){int x=s->document_x+ox-cx,y=s->document_y-cy;box(x+1,y+1,12,8,RGB(12,12,12));box(x,y,12,8,RGB(31,31,29));box(x+2,y+2,7,1,MUTED);box(x+2,y+4,7,1,MUTED);box(x+2,y+6,4,1,s->effect==3?RGB(22,5,5):MUTED);}
+ omni_presentation_probe[16]=0;omni_presentation_probe[17]=s->actor_count;
+ for(i=0;i<s->actor_count;++i){
+  const OmniIntroActor *a=&s->actors[i];faces[i]=a->face;
+  if(!omni_walk_sample(&grid,omni_intro_paths+a->path,a->count,ticks,s->duration,&positions[i],&faces[i]))omni_presentation_probe[16]|=1u<<i;
+  omni_presentation_probe[18+i*2]=(uint32_t)positions[i].x;omni_presentation_probe[19+i*2]=(uint32_t)positions[i].y;order[i]=i;
+ }
+ omni_presentation_probe[26]=presentation.scene;omni_presentation_probe[27]=ticks;
+ for(i=0;i<s->actor_count;++i)for(j=i+1;j<s->actor_count;++j)if(positions[order[j]].y<positions[order[i]].y){unsigned t=order[i];order[i]=order[j];order[j]=t;}
  for(j=0;j<s->actor_count;++j){
   const OmniIntroActor *a=&s->actors[order[j]];const OmniStageSprite *sp=&omni_stage_sprites[a->sprite];
-  int wx=omni_presentation_lerp(a->x,a->tx,ticks,s->duration),wy=omni_presentation_lerp(a->y,a->ty,ticks,s->duration);
-  unsigned frame=a->face==0?0:a->face==1?1:2;int walking=(a->x!=a->tx||a->y!=a->ty)&&ticks<s->duration;
+  int wx=positions[order[j]].x,wy=positions[order[j]].y;unsigned face=faces[order[j]];
+  unsigned frame=face==0?0:face==1?1:2;int walking=a->count>1&&ticks<s->duration;
   const uint16_t *pixels;
-  if(walking&&(ticks/6)%2)frame=(a->face==0?3:a->face==1?5:7)+((ticks/12)&1);
+  if(walking&&(ticks/6)%2)frame=(face==0?3:face==1?5:7)+((ticks/12)&1);
   pixels=(const uint16_t*)(omni_opening_stage_blob+sp->offset)+(frame%sp->frames)*512;
   for(row=0;row<32;++row)for(col=0;col<16;++col){
    int x=wx+(int)col,y=wy-32+(int)row,dx=x-cx+ox,dy=y-cy;
-   uint16_t c=pixels[row*16+(a->face==3?15-col:col)];
+   uint16_t c=pixels[row*16+(face==3?15-col:col)];
    if(dx<0||dx>=240||dy<0||dy>=height||(c&0x8000))continue;
    if(x>=0&&x<m->w&&y>=0&&y<m->h&&omni_opening_stage_blob[m->mask+y*m->w+x])continue;
    omni_gba_surface[dy*240+dx]=intro_color(c,s->tone);
   }
   if(a->emote&&wy-cy>43&&wy-cy<height+24){int x=wx-cx+ox,y=wy-cy-43;panel(x-1,y,18,12);box(x+3,y+6,2,2,INK);box(x+7,y+6,2,2,INK);box(x+11,y+6,2,2,INK);}
  }
- if(s->fade_in&&ticks<96){panel(2,2,236,23);text(11,7,s->title,INK,236);}
+ if(s->location_title&&ticks<80&&!*s->speaker){panel(2,2,236,23);rocket_text(11,4,s->title,236);}
  if(*s->speaker){
-  unsigned used;panel(0,104,240,56);text(10,112,s->speaker,BLUE,229);
-  used=text_prefix(s->line1,letters,line);text(10,125,line,INK,230);
-  text_prefix(s->line2,letters-used,line);text(10,139,line,INK,230);
-  if(letters==s->letters&&((ticks/16)&1))text(222,112,"A",MUTED,236);
+  unsigned used;int end;
+  rocket_bitmap(OMNI_ROCKET_FRAME,240,48,0,112);
+  used=text_prefix(s->line1,letters,line);end=rocket_text(16,121,line,220);
+  text_prefix(s->line2,letters-used,line);if(*s->line2)end=rocket_text(16,135,line,220);
+  if(letters==s->letters)rocket_bitmap(OMNI_ROCKET_ARROW,8,16,end+2,(*s->line2?135:121)+(int)((ticks/16)%3));
  }
  if(screen==INTRO_SKIP){panel(15,47,210,61);text(27,56,"跳过这段开场？",INK,225);text(27,80,"A跳过  B继续",INK,225);}
  /* Never expose the background clear, partial actors or half-written text.

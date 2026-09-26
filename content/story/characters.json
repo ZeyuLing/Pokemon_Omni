@@ -79,7 +79,7 @@
           "final_anime_design": false
         }
       },
-      "opening_scene_note": "火箭队开场稿：得知前冠军履历仍在、合法报名却受阻，要求继续寻找凤王与洛奇亚，并让年轻训练家照常培养。未恢复身份，未指定下一代人选。"
+      "opening_scene_note": "基地内部议事开场稿：听到战绩保留、合法身份仍受阻，绕过桌案走向成员，质问谁有权把书面定性写成真相；继续寻找凤王和洛奇亚、培养下一代。未恢复身份，未指定下一代的人选或结局。"
     },
     {
       "id": "oak",
@@ -145,7 +145,7 @@
       "presentation_bindings": [
         {
           "sequence": "first-journey-opening",
-          "scene": "oak",
+          "scene": "lab",
           "mode": "acted_sprite",
           "sprite": "prof_oak"
         }
@@ -165,7 +165,7 @@
           "final_anime_design": false
         }
       },
-      "opening_scene_note": "研究所开场稿：深夜查看对战推演；小茂来访时先关闭显示，再离开终端交谈。小茂离开后返回屏幕，最后结束当晚测试。画面没有说明测试对象，小茂不知其秘密。"
+      "opening_scene_note": "研究所开场稿：先与小茂谈自主选择伙伴、八枚徽章和下一步。小茂离开后，才独自开启对战推演终端，并思考为何而战。屏幕不标出测试对象；小茂没有看见测试，也不知秘密。"
     },
     {
       "id": "silph",
@@ -574,8 +574,7 @@
         {
           "sequence": "first-journey-opening",
           "scene": "dawn",
-          "mode": "diegetic_voice",
-          "sprite": null
+          "mode": "diegetic_voice"
         }
       ],
       "game_assets": {
@@ -587,7 +586,7 @@
         "battle_back": null,
         "model_3d": null
       },
-      "opening_scene_note": "清晨开场稿：在真新镇屋内回应妈妈的催促，担忧迟到领不到第一只伙伴。这里使用屋内声音，随后衔接现有醒来与领取皮卡丘流程；身份仍为秘密。"
+      "opening_scene_note": "清晨开场稿：屋内回应花子的催促，担忧迟到领不到第一只伙伴；接回现有醒来、告别和领取皮卡丘流程，身份仍是秘密。"
     },
     {
       "id": "gary",
@@ -661,7 +660,7 @@
       "presentation_bindings": [
         {
           "sequence": "first-journey-opening",
-          "scene": "oak",
+          "scene": "lab",
           "mode": "acted_sprite",
           "sprite": "blue"
         }
@@ -681,7 +680,7 @@
           "final_anime_design": false
         }
       },
-      "opening_scene_note": "研究所开场稿：来访询问第二天领取伙伴的安排，与爷爷普通交谈后离开。大木提前关闭了测试画面；这不确认小茂知晓秘密或效忠大木的政治路线。"
+      "opening_scene_note": "研究所开场稿：由自己选择伙伴问起，谈世界赛资格和小智的起点，与爷爷道别后离开。屏幕测试在其离开后才开始；不确认其效忠大木政治路线或知道秘密。"
     },
     {
       "id": "delia",
@@ -729,11 +728,10 @@
         {
           "sequence": "first-journey-opening",
           "scene": "dawn",
-          "mode": "diegetic_voice",
-          "sprite": null
+          "mode": "diegetic_voice"
         }
       ],
-      "opening_scene_note": "清晨开场稿：在屋内催小智起床，衔接经典迟到开局。没有表现她知道小智的秘密。"
+      "opening_scene_note": "清晨开场稿：屋内催小智起床；与研究所熄灯后的时间转场衔接。不表现她知道小智的身份。"
     },
     {
       "id": "daisy-oak",
@@ -1111,15 +1109,8 @@
           "status": "prototype_sprite_not_final_animation_design"
         }
       ],
-      "presentation_bindings": [
-        {
-          "sequence": "first-journey-opening",
-          "scene": "center",
-          "mode": "acted_sprite",
-          "sprite": "nurse"
-        }
-      ],
-      "opening_scene_note": "常青市中心开场稿：面对接回伙伴的调运员，坚持它们仍需要休息；听见世界赛广播后，将注意力放回眼前的伙伴。未新增其战时履历。"
+      "presentation_bindings": [],
+      "opening_scene_note": "此前开场中的战时中心会面已撤下，保留开发记录；乔伊仍是正常探索中的中心 NPC。当前序章通过联盟会议中的伤情汇总体现战争消耗，不新增她的战时经历。"
     },
     {
       "id": "jenny-kanto",
@@ -1684,7 +1675,7 @@
           "final_anime_design": false
         }
       },
-      "opening_scene_note": "联盟开场稿：接受参赛训练家材料，反问“忠于谁”，表明亲自参赛、培养下一代与统一地区的意图。联络员为匿名配角，未指定师徒或政治继承者。"
+      "opening_scene_note": "联盟议事室开场稿：接下伤情册，让联络官读世界赛提案，确认自己参赛，并要求继续培养暂未取得资格的年轻人。他质疑地区各自发号施令的现状，未指定政治继承者或内阁人员。"
     },
     {
       "id": "looker",
@@ -3312,7 +3303,7 @@
       "name": "传令员",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "奉命到宝可梦中心接回伙伴，与乔伊围绕恢复与返战发生争执。",
+      "role": "已撤下的早期开场配角；保留候选与开发档案。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3334,22 +3325,15 @@
       ],
       "relationships": [],
       "runtime_bindings": [],
-      "opening_scene_note": "在可播放序章《未竟的和平》中参与大战末期 · 常青市场景。具体动作与对白见开场剧本；这是当前演出稿，不补写红莲事件后的未定历史。",
-      "presentation_bindings": [
-        {
-          "sequence": "first-journey-opening",
-          "scene": "center",
-          "mode": "acted_sprite",
-          "sprite": "policeman"
-        }
-      ]
+      "opening_scene_note": "此前常青中心会面的传令员已从当前序章撤下。保留候选配角档案，不继续作为已出场角色，不补写生平。",
+      "presentation_bindings": []
     },
     {
       "id": "opening-radio-reader",
       "name": "世界赛消息播报员",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "通过广播传达正在讨论的世界大赛提案；不代表倡议地区已经确定。",
+      "role": "已撤下的早期开场配角；保留候选与开发档案。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3371,22 +3355,15 @@
       ],
       "relationships": [],
       "runtime_bindings": [],
-      "opening_scene_note": "在可播放序章《未竟的和平》中参与大战末期 · 常青市场景。具体动作与对白见开场剧本；这是当前演出稿，不补写红莲事件后的未定历史。",
-      "presentation_bindings": [
-        {
-          "sequence": "first-journey-opening",
-          "scene": "center",
-          "mode": "diegetic_voice",
-          "sprite": null
-        }
-      ]
+      "opening_scene_note": "此前世界赛广播声音已从当前序章撤下。提案改由联盟联络官在议事室宣读；保留开发档案，不补写生平。",
+      "presentation_bindings": []
     },
     {
       "id": "opening-league-liaison",
       "name": "联盟联络官",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "向渡报告参赛人选商议情况，听取其本人参赛与培养下一代的要求。",
+      "role": "议事室中向渡呈交伤情汇总与世界赛提案，讨论资格、行政权力及下一代培养。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3408,7 +3385,7 @@
       ],
       "relationships": [],
       "runtime_bindings": [],
-      "opening_scene_note": "在可播放序章《未竟的和平》中参与关都联盟场景。具体动作与对白见开场剧本；这是当前演出稿，不补写红莲事件后的未定历史。",
+      "opening_scene_note": "联盟议事室开场稿：送来各地中心伤情汇总、世界赛提案与年轻训练家资料，与渡讨论参赛资格和冠军应服从谁。无名临时演员，具体政治归属与生平待定。",
       "presentation_bindings": [
         {
           "sequence": "first-journey-opening",
@@ -3445,7 +3422,7 @@
       ],
       "relationships": [],
       "runtime_bindings": [],
-      "opening_scene_note": "在可播放序章《未竟的和平》中参与希尔弗公司场景。具体动作与对白见开场剧本；这是当前演出稿，不补写红莲事件后的未定历史。",
+      "opening_scene_note": "希尔弗会客议事室开场稿：与秘书讨论提前赞助年轻训练家、地区准入和多个席位的价值，要求核查合法身份。只是当代家族代表的匿名场景角色，不指定为家主或旧总裁。",
       "presentation_bindings": [
         {
           "sequence": "first-journey-opening",
@@ -3482,7 +3459,7 @@
       ],
       "relationships": [],
       "runtime_bindings": [],
-      "opening_scene_note": "在可播放序章《未竟的和平》中参与希尔弗公司场景。具体动作与对白见开场剧本；这是当前演出稿，不补写红莲事件后的未定历史。",
+      "opening_scene_note": "希尔弗会客议事室开场稿：沿桌边进入，与代表讨论未集齐徽章者的赞助成本和地区业务准入。无名临时演员，经历与未来留空。",
       "presentation_bindings": [
         {
           "sequence": "first-journey-opening",
@@ -3519,7 +3496,7 @@
       ],
       "relationships": [],
       "runtime_bindings": [],
-      "opening_scene_note": "在可播放序章《未竟的和平》中参与火箭队场景。具体动作与对白见开场剧本；这是当前演出稿，不补写红莲事件后的未定历史。",
+      "opening_scene_note": "基地内部议事开场稿：向坂木说明战绩与合法身份分离的障碍，询问神兽调查、年轻训练家培养和他们为何而战。未替坂木正式报名或恢复身份。",
       "presentation_bindings": [
         {
           "sequence": "first-journey-opening",

@@ -84,9 +84,9 @@
 | [真司](characters/paul.md) | 候选 | 神奥来访劲敌候选；渡的培养对象仅为原创提案 |
 | [彼特](characters/bede.md) | 候选 | 伽勒尔后续劲敌候选；推荐培养关系的原作范例 |
 | [序章旁白](characters/opening-narrator.md) | 场景提案 | 已撤下的第一版开场旁白；保留开发档案，不再出现在当前序章。 |
-| [传令员](characters/opening-dispatcher.md) | 场景提案 | 奉命到宝可梦中心接回伙伴，与乔伊围绕恢复与返战发生争执。 |
-| [世界赛消息播报员](characters/opening-radio-reader.md) | 场景提案 | 通过广播传达正在讨论的世界大赛提案；不代表倡议地区已经确定。 |
-| [联盟联络官](characters/opening-league-liaison.md) | 场景提案 | 向渡报告参赛人选商议情况，听取其本人参赛与培养下一代的要求。 |
+| [传令员](characters/opening-dispatcher.md) | 场景提案 | 已撤下的早期开场配角；保留候选与开发档案。 |
+| [世界赛消息播报员](characters/opening-radio-reader.md) | 场景提案 | 已撤下的早期开场配角；保留候选与开发档案。 |
+| [联盟联络官](characters/opening-league-liaison.md) | 场景提案 | 议事室中向渡呈交伤情汇总与世界赛提案，讨论资格、行政权力及下一代培养。 |
 | [希尔弗家族代表](characters/opening-silph-representative.md) | 场景提案 | 查看业务账目与训练家资料，讨论赞助与地区外市场。身份不等于当代家主，也不是1942年老社长。 |
 | [希尔弗秘书](characters/opening-silph-secretary.md) | 场景提案 | 递送账目与训练家资料，询问赞助名单及是否只依赖一个冠军。 |
 | [火箭队办事成员](characters/opening-rocket-clerk.md) | 场景提案 | 报告坂木正常报名受阻，询问神兽调查与年轻训练家的培养。 |

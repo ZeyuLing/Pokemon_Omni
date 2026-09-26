@@ -391,8 +391,9 @@ def render(world,people,atlas,media):
     md+='\n## 连续性约束\n\n'+''.join(f'- {r}\n' for r in world['continuity_rules'])
     opening=world.get('opening_presentation')
     if opening:
-        body+='<h2>已实装的开场演出</h2><p>《未竟的和平》：六场战争末期剧情，包含人物走位、对话、场景物件和镜头移动。日期未定；对白与匿名配角为开场稿，未补写红莲之后的空白历史。玩家脚本与编剧秘密独立维护。</p><p>'+source_link(opening['source_docs'][0])+' · <a href="http://127.0.0.1:4173/play?opening">在 GBA 运行器中观看</a></p>'
-        md+='\n## 已实装的开场演出\n\n《未竟的和平》：六场战争末期剧情，包含人物走位、对话、场景物件与镜头移动。日期未定；对白与匿名配角为开场稿，未补写红莲之后的空白历史。[逐场剧本](../37-acted-opening-screenplay.md)，[实现与验证](../36-playable-opening-and-cast.md)。玩家文本见 `content/opening/prologue.json`。\n'
+        summary=f'《未竟的和平》：{opening["scene_count"]} 场战争末期剧情，由世界赛提案、各方会议和下一代的选择连续展开。日期未定；对白与匿名配角为开场稿，未补写红莲之后的空白历史。玩家脚本与编剧秘密独立维护。'
+        body+='<h2>已实装的开场演出</h2><p>'+h(summary)+'</p><p>'+source_link(opening['source_docs'][0])+' · <a href="http://127.0.0.1:4173/play?opening">在 GBA 运行器中观看</a></p>'
+        md+='\n## 已实装的开场演出\n\n'+summary+'[逐场剧本](../37-acted-opening-screenplay.md)，[实现与验证](../36-playable-opening-and-cast.md)。玩家文本见 `content/opening/prologue.json`。\n'
     outputs[OUT/'timeline.html']=page('故事世界线',body,'timeline');outputs[DOCS/'worldline.md']=md
     body=f'<p class="eyebrow">People / 人物与伙伴</p><h1>人物档案</h1><p class="intro">{len(people)} 位已采用角色、无名角色与候选人物。包括有独立剧情作用的宝可梦个体。原作经历不会自动成为 Omni 生平；每一条已写经历都关联世界线事件。</p><div class="toolbar"><div><label for="query">查找姓名或职责</label><input id="query" type="search" placeholder="例如：坂木、研究、火箭队"></div><div><label for="status">创作状态</label><select id="status"><option value="">全部角色</option>'+''.join(f'<option value="{s}">{label}</option>' for s,label in STATUS.items())+'</select></div><p id="count" role="status" aria-live="polite"></p></div><div class="people">'
     for c in people:body+=f'<a class="person-link" data-status="{c["status"]}" href="people/{c["id"]}.html"><span class="name">{h(c["name"])}</span><span class="badge">{STATUS[c["status"]]}</span><span class="role">{h(c["role"])}</span></a>'
