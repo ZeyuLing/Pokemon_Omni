@@ -1,788 +1,858 @@
 {
-  "schema_version": 1,
-  "id": "war-front-map",
+  "schema_version": 2,
+  "id": "chimney-four-fronts",
   "size": [
     32,
     20
   ],
-  "scope": "Undated unnamed battlefield event stage. Native source art, authored terrain and routes; no world-map coordinates or winner.",
+  "scope": "Omni-authored four-region volcanic battle and later aftermath, late First World War. Date, campaign outcome, deaths and alliance history remain unassigned.",
   "tiles": {
-    ".": [
-      19,
-      0
-    ],
-    ",": [
-      20,
-      0
-    ],
-    ":": [
-      21,
-      3
-    ],
-    "#": [
-      0,
-      0
-    ],
-    "T": [
-      8,
-      0
-    ],
-    "~": [
-      13,
-      28
-    ],
-    "l": [
-      11,
-      28
-    ],
-    "r": [
-      16,
-      28
-    ],
-    "=": [
-      34,
-      7
-    ],
-    "A": [
-      8,
-      0
-    ],
-    "B": [
-      9,
-      0
-    ],
-    "C": [
-      8,
-      1
-    ],
-    "D": [
-      9,
-      1
-    ],
-    "|": [
-      11,
-      4
-    ]
+    ".": 625,
+    ",": 625,
+    ":": 618,
+    "#": 624,
+    "~": 701,
+    "^": 931,
+    "v": 617,
+    "<": 796,
+    ">": 649
   },
   "map": [
-    "##############l~~r##############",
-    "TTABABABAB..TTl~~r,.ABABABABAB.#",
-    "#,CDCDCDCD.,..l~~r..CDCDCDCDCD.#",
-    "#...,....,....l~~r.,....,....,.#",
-    "#.,....,....,.l~~r....,....,...#",
-    "#....:::::::::====:::::::::...,#",
-    "#..,....,....,l~~r,....,....,..#",
-    "#,..|||....,..l~~r...,...|||...#",
-    "#...,....,....l~~r.,....,....,.#",
-    "#.,....,....,.l~~r....,....,...#",
-    "#....,....,...l~~r..,....,....,#",
-    "#..,....,....,l~~r,....,....,..#",
-    "#,....,....,..l~~r...,....,....#",
-    "#...,:::::::::====:::::::::..,.#",
-    "#.,....,....,.l~~r....,....,...#",
-    "#....,....,...l~~r..,....,....,#",
-    "#..,....,....,l~~r,....,....,..#",
-    "#,ABABABAB.,..l~~r..ABABABABAB.#",
-    "TTCDCDCDCD..TTl~~r.,CDCDCDCDCD.#",
-    "##############l~~r##############"
+    "############<~~~~~~>############",
+    "#,...,...,..<~~~~~~>.,...,...,.#",
+    "#.,...,...,.<~~~~~~>..,...,...,#",
+    "#..,...,..^^^^^^^^^,...,...,...#",
+    "#...,...,...,.<~~>..,...,...,..#",
+    "#,...,...,...,...,...,...,...,.#",
+    "#.,...,...,...,...,...,...,...,#",
+    "#..,...,...,..<~~>.,...,...,...#",
+    "#...,...,...,.<~~>..,...,...,..#",
+    "#,...,...,...,<~~>...,...,...,.#",
+    "#.,...,...,...,...,...,...,...,#",
+    "#..,...,...,..<~~>.,...,...,...#",
+    "#...,...,...,.<~~>..,...,...,..#",
+    "#,...,...,...,...,...,...,...,.#",
+    "#.,...,...,...,...,...,...,...,#",
+    "#..,...,...,..<~~>.,...,...,...#",
+    "#...,...,...,.<~~>..,...,...,..#",
+    "#,...,...,...,<~~>...,...,...,.#",
+    "#.,...,...,...<~~>,vvvv...,...,#",
+    "################################"
   ],
   "sprites": [
     {
-      "name": "machoke",
-      "path": "graphics/object_events/pics/pokemon/machoke.png",
-      "frame": [
-        16,
-        16
-      ],
+      "name": "快龙",
+      "pmd": 149,
       "human": false
     },
     {
-      "name": "poliwrath",
-      "path": "graphics/object_events/pics/pokemon/poliwrath.png",
-      "frame": [
-        16,
-        16
-      ],
+      "name": "喷火龙",
+      "pmd": 6,
       "human": false
     },
     {
-      "name": "pikachu",
-      "path": "graphics/object_events/pics/pokemon/pikachu.png",
-      "frame": [
-        16,
-        16
-      ],
+      "name": "尼多王",
+      "pmd": 34,
       "human": false
     },
     {
-      "name": "nidorino",
-      "path": "graphics/object_events/pics/pokemon/nidorino.png",
-      "frame": [
-        16,
-        16
-      ],
+      "name": "暴飞龙",
+      "pmd": 373,
       "human": false
     },
     {
-      "name": "lapras",
-      "path": "graphics/object_events/pics/pokemon/lapras.png",
-      "frame": [
-        16,
-        16
-      ],
+      "name": "喷火驼",
+      "pmd": 323,
       "human": false
     },
     {
-      "name": "pidgeot",
-      "path": "graphics/object_events/pics/pokemon/pidgeot.png",
-      "frame": [
-        16,
-        16
-      ],
+      "name": "波士可多拉",
+      "pmd": 306,
       "human": false
     },
     {
-      "name": "chansey",
-      "path": "graphics/object_events/pics/pokemon/chansey.png",
-      "frame": [
-        16,
-        16
-      ],
+      "name": "烈焰猴",
+      "pmd": 392,
       "human": false
     },
     {
-      "name": "policeman",
-      "path": "graphics/object_events/pics/people/policeman.png",
-      "frame": [
-        16,
-        32
-      ],
+      "name": "伦琴猫",
+      "pmd": 405,
+      "human": false
+    },
+    {
+      "name": "烈咬陆鲨",
+      "pmd": 445,
+      "human": false
+    },
+    {
+      "name": "哥德小姐",
+      "pmd": 576,
+      "human": false
+    },
+    {
+      "name": "劈斩司令",
+      "pmd": 625,
+      "human": false
+    },
+    {
+      "name": "龙头地鼠",
+      "pmd": 530,
+      "human": false
+    },
+    {
+      "name": "lance-war",
+      "atlas_column": 0,
       "human": true
     },
     {
-      "name": "cooltrainer_m",
+      "name": "drake-war",
+      "atlas_column": 1,
+      "human": true
+    },
+    {
+      "name": "flint-war",
+      "atlas_column": 2,
+      "human": true
+    },
+    {
+      "name": "caitlin-war",
+      "atlas_column": 3,
+      "human": true
+    },
+    {
+      "name": "kanto-infantry",
       "path": "graphics/object_events/pics/people/cooltrainer_m.png",
       "frame": [
         16,
         32
       ],
-      "human": true
+      "human": true,
+      "uniform_team": 0,
+      "palette": {
+        "8": [
+          70,
+          86,
+          115
+        ],
+        "9": [
+          37,
+          49,
+          74
+        ],
+        "10": [
+          20,
+          28,
+          41
+        ]
+      }
     },
     {
-      "name": "nurse",
-      "path": "graphics/object_events/pics/people/nurse.png",
+      "name": "hoenn-infantry",
+      "path": "graphics/object_events/pics/people/cooltrainer_m.png",
       "frame": [
         16,
         32
       ],
-      "human": true
+      "human": true,
+      "uniform_team": 1,
+      "palette": {
+        "8": [
+          63,
+          139,
+          139
+        ],
+        "9": [
+          32,
+          82,
+          90
+        ],
+        "10": [
+          16,
+          41,
+          57
+        ]
+      }
     },
     {
-      "name": "worker_m",
-      "path": "graphics/object_events/pics/people/worker_m.png",
+      "name": "sinnoh-infantry",
+      "path": "graphics/object_events/pics/people/cooltrainer_m.png",
       "frame": [
         16,
         32
       ],
-      "human": true
+      "human": true,
+      "uniform_team": 2,
+      "palette": {
+        "8": [
+          164,
+          139,
+          65
+        ],
+        "9": [
+          90,
+          82,
+          57
+        ],
+        "10": [
+          41,
+          41,
+          41
+        ]
+      }
+    },
+    {
+      "name": "unova-infantry",
+      "path": "graphics/object_events/pics/people/cooltrainer_m.png",
+      "frame": [
+        16,
+        32
+      ],
+      "human": true,
+      "uniform_team": 3,
+      "palette": {
+        "8": [
+          131,
+          106,
+          164
+        ],
+        "9": [
+          82,
+          57,
+          123
+        ],
+        "10": [
+          41,
+          32,
+          65
+        ]
+      }
     }
   ],
   "actors": [
     {
       "id": "war-unit-01",
-      "name": "西岸第1组豪力",
+      "name": "关都快龙",
       "sprite": 0,
       "team": 0,
       "at": [
-        160,
-        96
+        176,
+        64
       ],
       "to": [
-        224,
-        96
+        208,
+        64
       ],
-      "layer": 0,
-      "attack": 3,
+      "layer": 2,
+      "attack": 6,
       "phase": 0,
-      "start": 48,
-      "duration": 192,
-      "role": 0,
-      "target": 1
+      "start": 64,
+      "duration": 128,
+      "role": 2,
+      "target": 5,
+      "stop": 65535
     },
     {
       "id": "war-unit-02",
-      "name": "东岸第1组豪力",
-      "sprite": 0,
-      "team": 1,
-      "at": [
-        336,
-        96
-      ],
-      "to": [
-        256,
-        96
-      ],
-      "layer": 0,
-      "attack": 3,
-      "phase": 120,
-      "start": 48,
-      "duration": 192,
-      "role": 0,
-      "target": 0
-    },
-    {
-      "id": "war-unit-03",
-      "name": "西岸第1组尼多力诺",
-      "sprite": 3,
+      "name": "关都喷火龙",
+      "sprite": 1,
       "team": 0,
       "at": [
-        128,
-        128
-      ],
-      "to": [
         144,
-        128
-      ],
-      "layer": 0,
-      "attack": 4,
-      "phase": 50,
-      "start": 48,
-      "duration": 192,
-      "role": 0,
-      "target": 3
-    },
-    {
-      "id": "war-unit-04",
-      "name": "东岸第1组尼多力诺",
-      "sprite": 3,
-      "team": 1,
-      "at": [
-        368,
-        128
-      ],
-      "to": [
-        352,
-        128
-      ],
-      "layer": 0,
-      "attack": 4,
-      "phase": 170,
-      "start": 48,
-      "duration": 192,
-      "role": 0,
-      "target": 2
-    },
-    {
-      "id": "war-unit-05",
-      "name": "西岸第2组皮卡丘",
-      "sprite": 2,
-      "team": 0,
-      "at": [
-        160,
-        160
+        96
       ],
       "to": [
         176,
-        160
+        96
+      ],
+      "layer": 2,
+      "attack": 1,
+      "phase": 43,
+      "start": 82,
+      "duration": 128,
+      "role": 0,
+      "target": 6,
+      "stop": 1600
+    },
+    {
+      "id": "war-unit-03",
+      "name": "关都尼多王",
+      "sprite": 2,
+      "team": 0,
+      "at": [
+        176,
+        128
+      ],
+      "to": [
+        208,
+        128
       ],
       "layer": 0,
-      "attack": 2,
-      "phase": 32,
-      "start": 48,
-      "duration": 192,
+      "attack": 4,
+      "phase": 86,
+      "start": 100,
+      "duration": 128,
       "role": 0,
-      "target": 5
+      "target": 7,
+      "stop": 65535
+    },
+    {
+      "id": "war-unit-04",
+      "name": "关都尼多王",
+      "sprite": 2,
+      "team": 0,
+      "at": [
+        112,
+        64
+      ],
+      "to": [
+        144,
+        64
+      ],
+      "layer": 0,
+      "attack": 4,
+      "phase": 129,
+      "start": 118,
+      "duration": 128,
+      "role": 0,
+      "target": 8,
+      "stop": 1600
+    },
+    {
+      "id": "war-unit-05",
+      "name": "关都喷火龙",
+      "sprite": 1,
+      "team": 0,
+      "at": [
+        112,
+        128
+      ],
+      "to": [
+        144,
+        128
+      ],
+      "layer": 2,
+      "attack": 1,
+      "phase": 172,
+      "start": 136,
+      "duration": 128,
+      "role": 0,
+      "target": 9,
+      "stop": 1600
     },
     {
       "id": "war-unit-06",
-      "name": "东岸第2组皮卡丘",
-      "sprite": 2,
+      "name": "丰缘暴飞龙",
+      "sprite": 3,
       "team": 1,
       "at": [
-        336,
-        160
+        320,
+        64
       ],
       "to": [
-        320,
-        160
+        288,
+        64
       ],
-      "layer": 0,
-      "attack": 2,
-      "phase": 152,
-      "start": 48,
-      "duration": 192,
-      "role": 0,
-      "target": 4
+      "layer": 2,
+      "attack": 6,
+      "phase": 215,
+      "start": 112,
+      "duration": 128,
+      "role": 2,
+      "target": 10,
+      "stop": 65535
     },
     {
       "id": "war-unit-07",
-      "name": "西岸第2组尼多力诺",
-      "sprite": 3,
-      "team": 0,
+      "name": "丰缘喷火驼",
+      "sprite": 4,
+      "team": 1,
       "at": [
-        128,
-        192
+        352,
+        96
       ],
       "to": [
-        144,
-        192
+        320,
+        96
       ],
       "layer": 0,
-      "attack": 4,
-      "phase": 82,
-      "start": 48,
-      "duration": 192,
+      "attack": 1,
+      "phase": 258,
+      "start": 130,
+      "duration": 128,
       "role": 0,
-      "target": 7
+      "target": 11,
+      "stop": 1600
     },
     {
       "id": "war-unit-08",
-      "name": "东岸第2组尼多力诺",
-      "sprite": 3,
+      "name": "丰缘波士可多拉",
+      "sprite": 5,
       "team": 1,
       "at": [
-        368,
-        192
+        320,
+        128
       ],
       "to": [
-        352,
-        192
+        288,
+        128
       ],
       "layer": 0,
-      "attack": 4,
-      "phase": 202,
-      "start": 48,
-      "duration": 192,
+      "attack": 3,
+      "phase": 301,
+      "start": 148,
+      "duration": 128,
       "role": 0,
-      "target": 6
+      "target": 12,
+      "stop": 65535
     },
     {
       "id": "war-unit-09",
-      "name": "西岸第3组蚊香泳士",
-      "sprite": 1,
-      "team": 0,
+      "name": "丰缘暴飞龙",
+      "sprite": 3,
+      "team": 1,
       "at": [
-        160,
-        224
+        384,
+        64
       ],
       "to": [
-        224,
-        224
+        352,
+        64
       ],
-      "layer": 0,
-      "attack": 1,
-      "phase": 64,
-      "start": 48,
-      "duration": 192,
+      "layer": 2,
+      "attack": 6,
+      "phase": 24,
+      "start": 166,
+      "duration": 128,
       "role": 0,
-      "target": 9
+      "target": 13,
+      "stop": 1600
     },
     {
       "id": "war-unit-10",
-      "name": "东岸第3组蚊香泳士",
-      "sprite": 1,
+      "name": "丰缘喷火驼",
+      "sprite": 4,
       "team": 1,
       "at": [
-        336,
-        224
+        384,
+        128
       ],
       "to": [
-        256,
-        224
+        352,
+        128
       ],
       "layer": 0,
       "attack": 1,
-      "phase": 184,
-      "start": 48,
-      "duration": 192,
+      "phase": 67,
+      "start": 184,
+      "duration": 128,
       "role": 0,
-      "target": 8
+      "target": 14,
+      "stop": 1600
     },
     {
       "id": "war-unit-11",
-      "name": "西岸第3组尼多力诺",
-      "sprite": 3,
-      "team": 0,
+      "name": "神奥烈焰猴",
+      "sprite": 6,
+      "team": 2,
       "at": [
-        128,
-        256
+        176,
+        192
       ],
       "to": [
-        144,
-        256
+        208,
+        192
       ],
       "layer": 0,
-      "attack": 4,
-      "phase": 114,
-      "start": 48,
-      "duration": 192,
-      "role": 1,
-      "target": 11
+      "attack": 1,
+      "phase": 110,
+      "start": 160,
+      "duration": 128,
+      "role": 2,
+      "target": 15,
+      "stop": 65535
     },
     {
       "id": "war-unit-12",
-      "name": "东岸第3组尼多力诺",
-      "sprite": 3,
-      "team": 1,
+      "name": "神奥伦琴猫",
+      "sprite": 7,
+      "team": 2,
       "at": [
-        368,
-        256
+        144,
+        224
       ],
       "to": [
-        352,
-        256
+        176,
+        224
       ],
       "layer": 0,
-      "attack": 4,
-      "phase": 234,
-      "start": 48,
-      "duration": 192,
-      "role": 1,
-      "target": 10
+      "attack": 2,
+      "phase": 153,
+      "start": 178,
+      "duration": 128,
+      "role": 0,
+      "target": 16,
+      "stop": 1600
     },
     {
       "id": "war-unit-13",
-      "name": "水面拉普拉斯",
-      "sprite": 4,
-      "team": 0,
+      "name": "神奥烈咬陆鲨",
+      "sprite": 8,
+      "team": 2,
       "at": [
-        240,
-        128
+        176,
+        272
       ],
       "to": [
-        240,
-        112
+        208,
+        272
       ],
-      "layer": 1,
-      "attack": 1,
-      "phase": 128,
-      "start": 48,
-      "duration": 192,
+      "layer": 0,
+      "attack": 3,
+      "phase": 196,
+      "start": 196,
+      "duration": 128,
       "role": 0,
-      "target": 13
+      "target": 17,
+      "stop": 65535
     },
     {
       "id": "war-unit-14",
-      "name": "水面拉普拉斯",
-      "sprite": 4,
-      "team": 1,
+      "name": "神奥伦琴猫",
+      "sprite": 7,
+      "team": 2,
       "at": [
-        256,
-        128
+        112,
+        192
       ],
       "to": [
-        256,
-        112
+        144,
+        192
       ],
-      "layer": 1,
-      "attack": 1,
-      "phase": 248,
-      "start": 48,
-      "duration": 192,
+      "layer": 0,
+      "attack": 2,
+      "phase": 239,
+      "start": 214,
+      "duration": 128,
       "role": 0,
-      "target": 12
+      "target": 18,
+      "stop": 1600
     },
     {
       "id": "war-unit-15",
-      "name": "水面拉普拉斯",
-      "sprite": 4,
-      "team": 0,
+      "name": "神奥烈焰猴",
+      "sprite": 6,
+      "team": 2,
       "at": [
-        240,
-        256
+        112,
+        272
       ],
       "to": [
-        240,
-        240
+        144,
+        272
       ],
-      "layer": 1,
+      "layer": 0,
       "attack": 1,
-      "phase": 256,
-      "start": 48,
-      "duration": 192,
+      "phase": 282,
+      "start": 232,
+      "duration": 128,
       "role": 0,
-      "target": 15
+      "target": 19,
+      "stop": 1600
     },
     {
       "id": "war-unit-16",
-      "name": "水面拉普拉斯",
-      "sprite": 4,
-      "team": 1,
+      "name": "合众哥德小姐",
+      "sprite": 9,
+      "team": 3,
       "at": [
-        256,
-        256
+        320,
+        192
       ],
       "to": [
-        256,
-        240
+        288,
+        192
       ],
-      "layer": 1,
-      "attack": 1,
-      "phase": 376,
-      "start": 48,
-      "duration": 192,
-      "role": 0,
-      "target": 14
+      "layer": 0,
+      "attack": 7,
+      "phase": 5,
+      "start": 208,
+      "duration": 128,
+      "role": 2,
+      "target": 0,
+      "stop": 65535
     },
     {
       "id": "war-unit-17",
-      "name": "空中大比鸟",
-      "sprite": 5,
-      "team": 0,
+      "name": "合众劈斩司令",
+      "sprite": 10,
+      "team": 3,
       "at": [
-        112,
-        48
+        352,
+        224
       ],
       "to": [
-        192,
-        48
+        320,
+        224
       ],
-      "layer": 2,
-      "attack": 5,
+      "layer": 0,
+      "attack": 3,
       "phase": 48,
-      "start": 48,
-      "duration": 192,
+      "start": 226,
+      "duration": 128,
       "role": 0,
-      "target": 17
+      "target": 1,
+      "stop": 1600
     },
     {
       "id": "war-unit-18",
-      "name": "空中大比鸟",
-      "sprite": 5,
-      "team": 1,
+      "name": "合众龙头地鼠",
+      "sprite": 11,
+      "team": 3,
       "at": [
-        384,
-        48
+        320,
+        272
       ],
       "to": [
-        304,
-        48
+        288,
+        272
       ],
-      "layer": 2,
-      "attack": 5,
-      "phase": 168,
-      "start": 48,
-      "duration": 192,
+      "layer": 0,
+      "attack": 3,
+      "phase": 91,
+      "start": 244,
+      "duration": 128,
       "role": 0,
-      "target": 16
+      "target": 2,
+      "stop": 65535
     },
     {
       "id": "war-unit-19",
-      "name": "空中大比鸟",
-      "sprite": 5,
-      "team": 0,
+      "name": "合众劈斩司令",
+      "sprite": 10,
+      "team": 3,
       "at": [
-        112,
-        288
+        384,
+        192
       ],
       "to": [
-        192,
-        288
+        352,
+        192
       ],
-      "layer": 2,
-      "attack": 5,
-      "phase": 288,
-      "start": 48,
-      "duration": 192,
+      "layer": 0,
+      "attack": 3,
+      "phase": 134,
+      "start": 262,
+      "duration": 128,
       "role": 0,
-      "target": 19
+      "target": 3,
+      "stop": 1600
     },
     {
       "id": "war-unit-20",
-      "name": "空中大比鸟",
-      "sprite": 5,
-      "team": 1,
+      "name": "合众龙头地鼠",
+      "sprite": 11,
+      "team": 3,
       "at": [
         384,
-        288
+        272
       ],
       "to": [
-        304,
-        288
+        352,
+        272
       ],
-      "layer": 2,
-      "attack": 5,
-      "phase": 408,
-      "start": 48,
-      "duration": 192,
+      "layer": 0,
+      "attack": 3,
+      "phase": 177,
+      "start": 280,
+      "duration": 128,
       "role": 0,
-      "target": 18
+      "target": 4,
+      "stop": 1600
     },
     {
       "id": "war-unit-21",
-      "name": "前线训练家",
-      "sprite": 8,
+      "name": "渡",
+      "sprite": 12,
       "team": 0,
       "at": [
-        80,
+        64,
         96
       ],
       "to": [
-        96,
+        64,
         96
       ],
       "layer": 0,
       "attack": 0,
       "phase": 0,
       "start": 0,
-      "duration": 96,
-      "role": 0,
-      "target": 20
+      "duration": 0,
+      "role": 2,
+      "target": 0,
+      "stop": 65535
     },
     {
       "id": "war-unit-22",
-      "name": "前线训练家",
-      "sprite": 8,
+      "name": "关都负伤训练家",
+      "sprite": 16,
       "team": 0,
       "at": [
-        80,
-        160
+        48,
+        64
       ],
       "to": [
-        96,
-        160
+        80,
+        64
       ],
       "layer": 0,
       "attack": 0,
       "phase": 0,
       "start": 0,
-      "duration": 96,
+      "duration": 128,
       "role": 0,
-      "target": 21
+      "target": 0,
+      "stop": 1600
     },
     {
       "id": "war-unit-23",
-      "name": "前线训练家",
-      "sprite": 8,
+      "name": "关都伙伴训练家",
+      "sprite": 16,
       "team": 0,
       "at": [
-        80,
-        224
+        64,
+        128
       ],
       "to": [
-        96,
-        224
+        80,
+        128
       ],
       "layer": 0,
       "attack": 0,
       "phase": 0,
       "start": 0,
-      "duration": 96,
-      "role": 0,
-      "target": 22
+      "duration": 128,
+      "role": 4,
+      "target": 0,
+      "stop": 65535
     },
     {
       "id": "war-unit-24",
-      "name": "战场指挥员",
-      "sprite": 7,
+      "name": "关都救护训练家",
+      "sprite": 16,
       "team": 0,
       "at": [
-        48,
-        144
+        64,
+        160
       ],
       "to": [
-        48,
-        144
+        96,
+        160
       ],
       "layer": 0,
       "attack": 0,
       "phase": 0,
-      "start": 48,
-      "duration": 192,
-      "role": 0,
-      "target": 23
+      "start": 1700,
+      "duration": 128,
+      "role": 3,
+      "target": 0,
+      "stop": 65535
     },
     {
       "id": "war-unit-25",
-      "name": "救护员",
-      "sprite": 9,
+      "name": "关都负伤喷火龙",
+      "sprite": 1,
       "team": 0,
       "at": [
         112,
-        176
+        144
       ],
       "to": [
         112,
-        240
+        144
       ],
       "layer": 0,
       "attack": 0,
       "phase": 0,
-      "start": 1280,
-      "duration": 128,
+      "start": 0,
+      "duration": 0,
       "role": 0,
-      "target": 24
+      "target": 0,
+      "stop": 1600
     },
     {
       "id": "war-unit-26",
-      "name": "救护吉利蛋",
-      "sprite": 6,
-      "team": 0,
+      "name": "源治",
+      "sprite": 13,
+      "team": 1,
       "at": [
-        80,
-        176
+        432,
+        96
       ],
       "to": [
-        80,
-        240
+        432,
+        96
       ],
       "layer": 0,
       "attack": 0,
       "phase": 0,
-      "start": 1280,
-      "duration": 128,
-      "role": 0,
-      "target": 25
+      "start": 0,
+      "duration": 0,
+      "role": 2,
+      "target": 0,
+      "stop": 65535
     },
     {
       "id": "war-unit-27",
-      "name": "前线传令员",
-      "sprite": 10,
-      "team": 0,
+      "name": "丰缘负伤训练家",
+      "sprite": 17,
+      "team": 1,
       "at": [
-        64,
-        256
+        448,
+        64
       ],
       "to": [
-        64,
-        176
+        416,
+        64
       ],
       "layer": 0,
       "attack": 0,
       "phase": 0,
-      "start": 1500,
-      "duration": 320,
+      "start": 0,
+      "duration": 128,
       "role": 0,
-      "target": 26
+      "target": 0,
+      "stop": 1600
     },
     {
       "id": "war-unit-28",
-      "name": "前线训练家",
-      "sprite": 8,
+      "name": "丰缘伙伴训练家",
+      "sprite": 17,
       "team": 1,
       "at": [
-        416,
-        96
+        432,
+        128
       ],
       "to": [
-        400,
-        96
+        416,
+        128
       ],
       "layer": 0,
       "attack": 0,
       "phase": 0,
       "start": 0,
-      "duration": 96,
-      "role": 0,
-      "target": 27
+      "duration": 128,
+      "role": 4,
+      "target": 0,
+      "stop": 65535
     },
     {
       "id": "war-unit-29",
-      "name": "前线训练家",
-      "sprite": 8,
+      "name": "丰缘救护训练家",
+      "sprite": 17,
       "team": 1,
       "at": [
-        416,
+        432,
         160
       ],
       "to": [
@@ -792,241 +862,320 @@
       "layer": 0,
       "attack": 0,
       "phase": 0,
-      "start": 0,
-      "duration": 96,
-      "role": 0,
-      "target": 28
+      "start": 1700,
+      "duration": 128,
+      "role": 3,
+      "target": 0,
+      "stop": 65535
     },
     {
       "id": "war-unit-30",
-      "name": "前线训练家",
-      "sprite": 8,
+      "name": "丰缘负伤喷火驼",
+      "sprite": 4,
       "team": 1,
       "at": [
-        416,
-        224
+        384,
+        144
       ],
       "to": [
-        400,
-        224
+        384,
+        144
       ],
       "layer": 0,
       "attack": 0,
       "phase": 0,
       "start": 0,
-      "duration": 96,
+      "duration": 0,
       "role": 0,
-      "target": 29
+      "target": 0,
+      "stop": 1600
     },
     {
       "id": "war-unit-31",
-      "name": "战场指挥员",
-      "sprite": 7,
-      "team": 1,
+      "name": "大叶",
+      "sprite": 14,
+      "team": 2,
       "at": [
-        448,
-        144
+        64,
+        240
       ],
       "to": [
-        448,
-        144
+        64,
+        240
       ],
       "layer": 0,
       "attack": 0,
       "phase": 0,
-      "start": 48,
-      "duration": 192,
-      "role": 0,
-      "target": 30
+      "start": 0,
+      "duration": 0,
+      "role": 2,
+      "target": 0,
+      "stop": 65535
     },
     {
       "id": "war-unit-32",
-      "name": "救护员",
-      "sprite": 9,
-      "team": 1,
+      "name": "神奥负伤训练家",
+      "sprite": 18,
+      "team": 2,
       "at": [
-        384,
-        176
+        48,
+        208
       ],
       "to": [
-        384,
-        240
+        80,
+        208
       ],
       "layer": 0,
       "attack": 0,
       "phase": 0,
-      "start": 1280,
+      "start": 0,
       "duration": 128,
       "role": 0,
-      "target": 31
+      "target": 0,
+      "stop": 1600
     },
     {
       "id": "war-unit-33",
-      "name": "救护吉利蛋",
-      "sprite": 6,
-      "team": 1,
+      "name": "神奥伙伴训练家",
+      "sprite": 18,
+      "team": 2,
       "at": [
-        416,
-        176
+        64,
+        272
       ],
       "to": [
-        416,
+        80,
+        272
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 0,
+      "duration": 128,
+      "role": 4,
+      "target": 0,
+      "stop": 65535
+    },
+    {
+      "id": "war-unit-34",
+      "name": "神奥救护训练家",
+      "sprite": 18,
+      "team": 2,
+      "at": [
+        64,
+        304
+      ],
+      "to": [
+        96,
+        304
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 1700,
+      "duration": 128,
+      "role": 3,
+      "target": 0,
+      "stop": 65535
+    },
+    {
+      "id": "war-unit-35",
+      "name": "神奥负伤伦琴猫",
+      "sprite": 7,
+      "team": 2,
+      "at": [
+        112,
+        288
+      ],
+      "to": [
+        112,
+        288
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 0,
+      "duration": 0,
+      "role": 0,
+      "target": 0,
+      "stop": 1600
+    },
+    {
+      "id": "war-unit-36",
+      "name": "嘉德丽雅",
+      "sprite": 15,
+      "team": 3,
+      "at": [
+        432,
+        240
+      ],
+      "to": [
+        432,
         240
       ],
       "layer": 0,
       "attack": 0,
       "phase": 0,
-      "start": 1280,
-      "duration": 128,
-      "role": 0,
-      "target": 32
-    },
-    {
-      "id": "war-unit-34",
-      "name": "前线传令员",
-      "sprite": 10,
-      "team": 1,
-      "at": [
-        432,
-        256
-      ],
-      "to": [
-        432,
-        176
-      ],
-      "layer": 0,
-      "attack": 0,
-      "phase": 0,
-      "start": 1500,
-      "duration": 320,
-      "role": 0,
-      "target": 33
-    },
-    {
-      "id": "war-unit-35",
-      "name": "前列支援训练家",
-      "sprite": 8,
-      "team": 0,
-      "at": [
-        128,
-        64
-      ],
-      "to": [
-        144,
-        64
-      ],
-      "layer": 0,
-      "attack": 0,
-      "phase": 0,
-      "start": 320,
-      "duration": 160,
-      "role": 0,
-      "target": 34
-    },
-    {
-      "id": "war-unit-36",
-      "name": "前列支援训练家",
-      "sprite": 8,
-      "team": 0,
-      "at": [
-        128,
-        144
-      ],
-      "to": [
-        144,
-        144
-      ],
-      "layer": 0,
-      "attack": 0,
-      "phase": 0,
-      "start": 320,
-      "duration": 160,
-      "role": 0,
-      "target": 35
+      "start": 0,
+      "duration": 0,
+      "role": 2,
+      "target": 0,
+      "stop": 65535
     },
     {
       "id": "war-unit-37",
-      "name": "前列支援训练家",
-      "sprite": 8,
-      "team": 0,
+      "name": "合众负伤训练家",
+      "sprite": 19,
+      "team": 3,
       "at": [
-        128,
+        448,
         208
       ],
       "to": [
-        144,
+        416,
         208
       ],
       "layer": 0,
       "attack": 0,
       "phase": 0,
-      "start": 320,
-      "duration": 160,
+      "start": 0,
+      "duration": 128,
       "role": 0,
-      "target": 36
+      "target": 0,
+      "stop": 1600
     },
     {
       "id": "war-unit-38",
-      "name": "前列支援训练家",
-      "sprite": 8,
-      "team": 1,
+      "name": "合众伙伴训练家",
+      "sprite": 19,
+      "team": 3,
       "at": [
-        368,
-        64
+        432,
+        272
       ],
       "to": [
-        352,
-        64
+        416,
+        272
       ],
       "layer": 0,
       "attack": 0,
       "phase": 0,
-      "start": 320,
-      "duration": 160,
-      "role": 0,
-      "target": 37
+      "start": 0,
+      "duration": 128,
+      "role": 4,
+      "target": 0,
+      "stop": 65535
     },
     {
       "id": "war-unit-39",
-      "name": "前列支援训练家",
-      "sprite": 8,
-      "team": 1,
+      "name": "合众救护训练家",
+      "sprite": 19,
+      "team": 3,
       "at": [
-        368,
-        144
+        432,
+        304
       ],
       "to": [
-        352,
-        144
+        400,
+        304
       ],
       "layer": 0,
       "attack": 0,
       "phase": 0,
-      "start": 320,
-      "duration": 160,
-      "role": 0,
-      "target": 38
+      "start": 1700,
+      "duration": 128,
+      "role": 3,
+      "target": 0,
+      "stop": 65535
     },
     {
       "id": "war-unit-40",
-      "name": "前列支援训练家",
-      "sprite": 8,
-      "team": 1,
+      "name": "合众负伤劈斩司令",
+      "sprite": 10,
+      "team": 3,
       "at": [
-        368,
-        208
+        384,
+        288
       ],
       "to": [
-        352,
-        208
+        384,
+        288
       ],
       "layer": 0,
       "attack": 0,
       "phase": 0,
-      "start": 320,
-      "duration": 160,
+      "start": 0,
+      "duration": 0,
       "role": 0,
-      "target": 39
+      "target": 0,
+      "stop": 1600
     }
+  ],
+  "factions": [
+    {
+      "id": "kanto",
+      "name": "关都",
+      "commander": "lance",
+      "uniform": "藏蓝战衣、红肩章与披风"
+    },
+    {
+      "id": "hoenn",
+      "name": "丰缘",
+      "commander": "drake",
+      "uniform": "深蓝海军战衣、青白肩章"
+    },
+    {
+      "id": "sinnoh",
+      "name": "神奥",
+      "commander": "flint",
+      "uniform": "炭灰防寒战衣、橙黄肩甲"
+    },
+    {
+      "id": "unova",
+      "name": "合众",
+      "commander": "caitlin",
+      "uniform": "紫黑长战衣、浅紫领章"
+    }
+  ],
+  "location": {
+    "region": "hoenn",
+    "area": "烟囱山火山区域",
+    "kind": "authored_local_battlefield",
+    "review": "借用原作火山地貌；局部战时舞台不改变烟囱山原有缆车、山路或海岸，不表示四地区接壤。军队如何到达留待战史。",
+    "date": null,
+    "outcome": null
+  },
+  "aftermath": {
+    "cut_start": 1536,
+    "begins": 1600,
+    "downed_ids": [
+      "war-unit-02",
+      "war-unit-04",
+      "war-unit-05",
+      "war-unit-07",
+      "war-unit-09",
+      "war-unit-10",
+      "war-unit-12",
+      "war-unit-14",
+      "war-unit-15",
+      "war-unit-17",
+      "war-unit-19",
+      "war-unit-20",
+      "war-unit-22",
+      "war-unit-25",
+      "war-unit-27",
+      "war-unit-30",
+      "war-unit-32",
+      "war-unit-35",
+      "war-unit-37",
+      "war-unit-40"
+    ],
+    "death_confirmed": false,
+    "survivors_keep_fighting": true
+  },
+  "rock_lighting": [
+    65,
+    56,
+    62
   ]
 }

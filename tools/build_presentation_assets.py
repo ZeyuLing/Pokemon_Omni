@@ -108,7 +108,8 @@ def compile_assets():
             fade_in=bi==0 and s['transition']['kind'] in ('fade_in','night_to_morning')
             fade_out=bi==len(s['beats'])-1 and (chapter==len(opening['scenes'])-1 or opening['scenes'][chapter+1]['transition']['kind']=='night_to_morning')
             document=s.get('props',{}).get('document',[-100,-100]);terminal=s.get('props',{}).get('monitor',[-100,-100])
-            values=[cs(s['title']),cs(speaker),cs(lines[0]),cs(lines[1]),str(duration),*map(str,[*camera,*end_camera,*document,*terminal,chapter,stage,s['tone'],music,len(poses),effect,monitor,int(fade_in),int(fade_out),int(bi==0 and s.get('show_title',True)),sum(map(len,lines)),speaker_actor]),'{'+','.join(actors)+'}']
+            war_time=sum(b['duration'] for b in beat_audit if b['stage']=='war') if s['stage']=='war' else 0
+            values=[cs(s['title']),cs(speaker),cs(lines[0]),cs(lines[1]),str(duration),str(war_time),*map(str,[*camera,*end_camera,*document,*terminal,chapter,stage,s['tone'],music,len(poses),effect,monitor,int(fade_in),int(fade_out),int(bi==0 and s.get('show_title',True)),sum(map(len,lines)),speaker_actor]),'{'+','.join(actors)+'}']
             scene_rows.append('{'+','.join(values)+'}')
             beat_audit.append({'cue':len(scene_rows)-1,'chapter':chapter,'scene':s['id'],'stage':s['stage'],'beat':bi,'duration':duration,'dialogue':bool(speaker),'speaker':speaker,'actor':beat.get('actor'),'movement':bool(beat.get('move') or beat.get('camera')),'paths':actor_paths,'music':music,'fade_in':bool(fade_in),'fade_out':bool(fade_out),'camera':[camera,end_camera]})
             camera=end_camera
@@ -119,7 +120,7 @@ def compile_assets():
 #include "omni/stage.h"
 typedef struct {const char *id,*name,*caption;uint32_t offset;} OmniCastPortrait;
 typedef struct {int16_t x,y,tx,ty;uint16_t path;uint8_t count,sprite,face,emote;} OmniIntroActor;
-typedef struct {const char *title,*speaker,*line1,*line2;uint16_t duration;int16_t cx,cy,tx,ty,document_x,document_y,monitor_x,monitor_y;uint8_t chapter,stage,tone,music,actor_count,effect,monitor,fade_in,fade_out,location_title,letters,speaker_actor;OmniIntroActor actors[4];} OmniIntroScene;
+typedef struct {const char *title,*speaker,*line1,*line2;uint16_t duration,war_time;int16_t cx,cy,tx,ty,document_x,document_y,monitor_x,monitor_y;uint8_t chapter,stage,tone,music,actor_count,effect,monitor,fade_in,fade_out,location_title,letters,speaker_actor;OmniIntroActor actors[4];} OmniIntroScene;
 extern const unsigned char omni_cast_blob[];
 extern const OmniCastPortrait omni_cast[];
 extern const OmniIntroScene omni_intro[];

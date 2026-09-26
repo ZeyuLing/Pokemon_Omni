@@ -1,10 +1,10 @@
-# 前列支援训练家 39
+# 合众救护训练家 · 战场实例
 
 <!-- GENERATED: edit content/story/characters.json and worldline.json -->
 
 ID：`war-unit-39`；状态：场景提案。
 
-无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。
+合众部队的独立地图事件实例；开场战斗及稍后伤情演出。
 
 出生工作年：。
 
@@ -12,13 +12,13 @@ ID：`war-unit-39`；状态：场景提案。
 
 
 
-年龄阶段设计：
+年龄阶段设计：紫黑长战衣、浅紫领章
 
-最终立绘／像素／3D 资产：复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。
+最终立绘／像素／3D 资产：火红行走帧基底，独立地区配色及肩章。
 
 ## 开场中的演绎
 
-在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。
+本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。
 
 [逐场剧本](../../37-acted-opening-screenplay.md)。
 
@@ -40,4 +40,4 @@ ID：`war-unit-39`；状态：场景提案。
 
 ## 创作依据
 
-- [39-map-war-opening.md](../../../docs/39-map-war-opening.md)
+- [40-volcanic-war-direction.md](../../../docs/40-volcanic-war-direction.md)

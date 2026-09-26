@@ -1281,16 +1281,19 @@
     "script": "docs/37-acted-opening-screenplay.md",
     "source_docs": [
       "docs/37-acted-opening-screenplay.md",
-      "docs/36-playable-opening-and-cast.md"
+      "docs/36-playable-opening-and-cast.md",
+      "docs/40-volcanic-war-direction.md"
     ],
     "actors": [
       "ash",
+      "caitlin",
       "delia",
+      "drake",
+      "flint",
       "gary",
       "giovanni",
       "lance",
       "oak",
-      "opening-frontline-radio",
       "opening-league-liaison",
       "opening-rocket-clerk",
       "opening-silph-representative",
@@ -1338,17 +1341,79 @@
     ],
     "spoiler_boundary": "The game script contains no AI identity, synthetic body, model/prompt terminology or creation scene. Oak dialogue supports both ordinary training and later reinterpretation.",
     "historical_effect": "Dramatizes established opening conditions with new scene dialogue and anonymous supporting roles. Does not date or settle unwritten post-Cinnabar history.",
-    "version": 5,
-    "format": "native_map_battle_to_meetings",
+    "version": 6,
+    "format": "volcanic_four_region_battle_aftermath_meetings",
     "scene_count": 6,
     "source": "content/opening/prologue.json",
-    "scope": "先以原生地图单位、训练家、招式与后撤演绎大战，再由传令衔接联盟会议。未规定战役名称、交战地区、日期或结果。",
+    "scope": "关都、丰缘、神奥、合众四地区在丰缘烟囱山火山区域混战；稍后切至倒地伤者与仍在交战的部队，再接入关都会议。具体日期、战役结局与个体死亡不定。",
     "direction": {
-      "throughline": "战场无法满足的增援请求与伤情，接续以赛代战提案背后的权力、资格和下一代选择。",
+      "throughline": "命令与混战 → 同地稍后倒地伤者、训练家呼唤伙伴与余部交火 → 伤情送入各方权力讨论。",
       "sound_bridge": "战场采用原版训练家对战曲；前线要求上报伤情时转希尔弗曲，连续进入联盟、希尔弗、火箭队及祖孙会面。大木独处转研究所曲，翌晨转真新镇。",
       "room_continuity": "每场先交代人物和桌案位置；每次走位以来源地图地块和其他演员为障碍。",
       "historical_boundary": "只演绎已定的大战末期状态；不补写红莲之后未定历史、日期、继承人阵营或最终结局。",
-      "battlefield": "512×320 原生地块地图，40 个独立单位，由共享 C 时间线驱动移动、施招和受击；GBA 绘制源精灵与招式粒子，静态战争插画已撤下。"
+      "battlefield": "512×320 烟囱山火山局部战时舞台，40 个独立单位；四指挥官、12 种地区宝可梦，切镜后 20 个单位倒地，仍有 8 只宝可梦交战。倒地非已定死亡。"
+    },
+    "battlefield_cast": [
+      {
+        "id": "kanto",
+        "name": "关都",
+        "commander": "lance",
+        "uniform": "藏蓝战衣、红肩章与披风"
+      },
+      {
+        "id": "hoenn",
+        "name": "丰缘",
+        "commander": "drake",
+        "uniform": "深蓝海军战衣、青白肩章"
+      },
+      {
+        "id": "sinnoh",
+        "name": "神奥",
+        "commander": "flint",
+        "uniform": "炭灰防寒战衣、橙黄肩甲"
+      },
+      {
+        "id": "unova",
+        "name": "合众",
+        "commander": "caitlin",
+        "uniform": "紫黑长战衣、浅紫领章"
+      }
+    ],
+    "aftermath": {
+      "cut_start": 1536,
+      "begins": 1600,
+      "downed_ids": [
+        "war-unit-02",
+        "war-unit-04",
+        "war-unit-05",
+        "war-unit-07",
+        "war-unit-09",
+        "war-unit-10",
+        "war-unit-12",
+        "war-unit-14",
+        "war-unit-15",
+        "war-unit-17",
+        "war-unit-19",
+        "war-unit-20",
+        "war-unit-22",
+        "war-unit-25",
+        "war-unit-27",
+        "war-unit-30",
+        "war-unit-32",
+        "war-unit-35",
+        "war-unit-37",
+        "war-unit-40"
+      ],
+      "death_confirmed": false,
+      "survivors_keep_fighting": true
+    },
+    "location_review": {
+      "region": "hoenn",
+      "area": "烟囱山火山区域",
+      "kind": "authored_local_battlefield",
+      "review": "借用原作火山地貌；局部战时舞台不改变烟囱山原有缆车、山路或海岸，不表示四地区接壤。军队如何到达留待战史。",
+      "date": null,
+      "outcome": null
     }
   }
 }

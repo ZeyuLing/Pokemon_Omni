@@ -1,10 +1,10 @@
-# 水面拉普拉斯 15
+# 神奥烈焰猴 · 战场实例
 
 <!-- GENERATED: edit content/story/characters.json and worldline.json -->
 
 ID：`war-unit-15`；状态：场景提案。
 
-无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。
+神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。
 
 出生工作年：。
 
@@ -14,11 +14,11 @@ ID：`war-unit-15`；状态：场景提案。
 
 年龄阶段设计：
 
-最终立绘／像素／3D 资产：复用火红原生地图素材 graphics/object_events/pics/pokemon/lapras.png。动画个体身份与年龄设计未分配；无新立绘或模型。
+最终立绘／像素／3D 资产：PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。
 
 ## 开场中的演绎
 
-在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。
+战后切镜后倒地且停止行动；未确定死亡。
 
 [逐场剧本](../../37-acted-opening-screenplay.md)。
 
@@ -40,4 +40,4 @@ ID：`war-unit-15`；状态：场景提案。
 
 ## 创作依据
 
-- [39-map-war-opening.md](../../../docs/39-map-war-opening.md)
+- [40-volcanic-war-direction.md](../../../docs/40-volcanic-war-direction.md)

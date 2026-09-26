@@ -1,186 +1,6 @@
 {
-  "scope": "Authored unnamed battlefield assembled from native FireRed tiles and object-event frames; not a copy of an official map or of Emerald event scripts. Procedural move effects are Omni authored.",
+  "scope": "Omni Mt Chimney front: Emerald volcanic tiles, PMD native animation frames with credits, FireRed human bases with runtime uniforms, generated commander atlas. No global geography or canonical war claims.",
   "files": [
-    {
-      "path": "data/layouts/layouts.json",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/layouts/layouts.json",
-      "sha256": "1e8fdf737b31d269d0b918d4ed88bec8c2701bc7b1cbae2b2e3938bdea3de394",
-      "bytes": 158096
-    },
-    {
-      "path": "data/maps/ViridianCity/map.json",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/maps/ViridianCity/map.json",
-      "sha256": "5ce922b65f76335556ace9a047feeb1968854b604c8469c39cbbd60985f61bc1",
-      "bytes": 7211
-    },
-    {
-      "path": "data/tilesets/primary/general/tiles.png",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/primary/general/tiles.png",
-      "sha256": "9ff889d1b9da5383a0cd0c85ac7b791812867804f3a38566b46172087419e0b9",
-      "bytes": 8671
-    },
-    {
-      "path": "data/tilesets/primary/general/metatiles.bin",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/primary/general/metatiles.bin",
-      "sha256": "8d950c1a1f151f5e1bded1ecee165b815c3a4d62b69a4a9cec4f676283f9041e",
-      "bytes": 10240
-    },
-    {
-      "path": "data/tilesets/primary/general/metatile_attributes.bin",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/primary/general/metatile_attributes.bin",
-      "sha256": "1f62a949da41adca90ad36ca3597754bee953a8f21781f32aedf6158922c89cb",
-      "bytes": 2560
-    },
-    {
-      "path": "data/tilesets/secondary/viridian_city/tiles.png",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/viridian_city/tiles.png",
-      "sha256": "5c5348d6cccf3bccb3c1bd8c28951ff84c2ecece8256e59273c966672ebc5451",
-      "bytes": 1268
-    },
-    {
-      "path": "data/tilesets/secondary/viridian_city/metatiles.bin",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/viridian_city/metatiles.bin",
-      "sha256": "8491038f93b038fd271a50821b51eaee2d3b3cf9aa99050632ed96306232f4e5",
-      "bytes": 1520
-    },
-    {
-      "path": "data/tilesets/secondary/viridian_city/metatile_attributes.bin",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/viridian_city/metatile_attributes.bin",
-      "sha256": "6e2643efb546a161feb0d3b0346fbd345f744997ddce4fe0d0379e9c51cf3d34",
-      "bytes": 380
-    },
-    {
-      "path": "data/tilesets/primary/general/palettes/00.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/primary/general/palettes/00.pal",
-      "sha256": "de073336bb3f0592b6075fb8e4497b8c2ecfdf86a9d29f8c88dbec8702ccc9fc",
-      "bytes": 205
-    },
-    {
-      "path": "data/tilesets/primary/general/palettes/01.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/primary/general/palettes/01.pal",
-      "sha256": "e5fa084be81a8b081a33de05c13a799778899c4ef750bbb2185f997f9d41dea4",
-      "bytes": 211
-    },
-    {
-      "path": "data/tilesets/primary/general/palettes/02.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/primary/general/palettes/02.pal",
-      "sha256": "5a45e240ddd7e5b5c9ef403b2f849b8fd4381d21661255ce49aae79ed991a49b",
-      "bytes": 211
-    },
-    {
-      "path": "data/tilesets/primary/general/palettes/03.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/primary/general/palettes/03.pal",
-      "sha256": "139eddfe3f2a2d1018a736a480efa505231260662cdbaf30e32c173b1d9a6b76",
-      "bytes": 214
-    },
-    {
-      "path": "data/tilesets/primary/general/palettes/04.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/primary/general/palettes/04.pal",
-      "sha256": "50925427da2fc947ae3915f2d1b1c63e115418e8ce12f374b31a3ed45e932c65",
-      "bytes": 218
-    },
-    {
-      "path": "data/tilesets/primary/general/palettes/05.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/primary/general/palettes/05.pal",
-      "sha256": "7ab8f3342c37f96f587bff026583e7a5431a10c9f590ac40705b9732a9348098",
-      "bytes": 217
-    },
-    {
-      "path": "data/tilesets/primary/general/palettes/06.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/primary/general/palettes/06.pal",
-      "sha256": "46af7d618b34a9f330fb154bb4933f171b1947a6d224f8fe9c8ea2a84f461a0d",
-      "bytes": 217
-    },
-    {
-      "path": "data/tilesets/secondary/viridian_city/palettes/07.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/viridian_city/palettes/07.pal",
-      "sha256": "d35b9cffa5d500d3504f83f44fc5d4b476b71a5b55f81171fd774674a1e6e885",
-      "bytes": 164
-    },
-    {
-      "path": "data/tilesets/secondary/viridian_city/palettes/08.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/viridian_city/palettes/08.pal",
-      "sha256": "33fcf96b6492d2920887c2487159240391146b77754c5d98dcc72c0701d2bb92",
-      "bytes": 209
-    },
-    {
-      "path": "data/tilesets/secondary/viridian_city/palettes/09.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/viridian_city/palettes/09.pal",
-      "sha256": "3f76ed39876d2afab0e04c6e25635c94c959627a0710066e98874cea28139d42",
-      "bytes": 216
-    },
-    {
-      "path": "data/tilesets/secondary/viridian_city/palettes/10.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/viridian_city/palettes/10.pal",
-      "sha256": "7c9cc9a66f4f37d14f823f7acae9b99a47e9cb5cbf9ea30c94f101735c721976",
-      "bytes": 209
-    },
-    {
-      "path": "data/tilesets/secondary/viridian_city/palettes/11.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/viridian_city/palettes/11.pal",
-      "sha256": "30aaecf57788416187d86b4d3f787849cbafa3ac4f222b5f86b1e73d6e366b18",
-      "bytes": 211
-    },
-    {
-      "path": "data/tilesets/secondary/viridian_city/palettes/12.pal",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/tilesets/secondary/viridian_city/palettes/12.pal",
-      "sha256": "50871c39dc5dd716f67e2db4409332bb5d7afe09faeb7a04513023e1a6f96c57",
-      "bytes": 214
-    },
-    {
-      "path": "data/layouts/ViridianCity/map.bin",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/data/layouts/ViridianCity/map.bin",
-      "sha256": "6cce51b3d3f6c2f0ac21d1de49935515134946b24b4dddf52d3d5c0b6bc76888",
-      "bytes": 3840
-    },
-    {
-      "path": "graphics/object_events/pics/pokemon/machoke.png",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/pokemon/machoke.png",
-      "sha256": "4455e72c8ba3f3a5078423ddad431c45135fd272f5f37fa76d836f37211494f6",
-      "bytes": 376
-    },
-    {
-      "path": "graphics/object_events/pics/pokemon/poliwrath.png",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/pokemon/poliwrath.png",
-      "sha256": "23d4f28ce8403cad7890c7181ea58b0ce9b65410dfe0b0327f0aea0c6fb97192",
-      "bytes": 339
-    },
-    {
-      "path": "graphics/object_events/pics/pokemon/pikachu.png",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/pokemon/pikachu.png",
-      "sha256": "2d7769d674b4a94c414ea6326ddbab9a8556ea68293d1979623c3a5b6006f292",
-      "bytes": 367
-    },
-    {
-      "path": "graphics/object_events/pics/pokemon/nidorino.png",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/pokemon/nidorino.png",
-      "sha256": "a76d65deea6edfe8fffe12d2deb7665878e6fae0c0589a206b4cbf748bc3ef98",
-      "bytes": 345
-    },
-    {
-      "path": "graphics/object_events/pics/pokemon/lapras.png",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/pokemon/lapras.png",
-      "sha256": "0d68372fb68353c82ddfbd1d48e23b5e994ee33b8c81a0b1805b79f37a1a16a6",
-      "bytes": 439
-    },
-    {
-      "path": "graphics/object_events/pics/pokemon/pidgeot.png",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/pokemon/pidgeot.png",
-      "sha256": "bae27b7cbff4746a201e93fefaf8eefa39d44d27668792feb4ccc682743eb426",
-      "bytes": 404
-    },
-    {
-      "path": "graphics/object_events/pics/pokemon/chansey.png",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/pokemon/chansey.png",
-      "sha256": "35791755f8af6826e20de62b7ad18c7c847635cc3b749798f76cad7ec288683e",
-      "bytes": 327
-    },
-    {
-      "path": "graphics/object_events/pics/people/policeman.png",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/people/policeman.png",
-      "sha256": "af93d001d8776aff93cf96c555a44c77335489329acd1a5c6b9786ac815842a9",
-      "bytes": 678
-    },
     {
       "path": "graphics/object_events/pics/people/cooltrainer_m.png",
       "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/people/cooltrainer_m.png",
@@ -188,18 +8,545 @@
       "bytes": 815
     },
     {
-      "path": "graphics/object_events/pics/people/nurse.png",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/people/nurse.png",
-      "sha256": "bdc75f7b4711bd12c8949cef034233914fbdabe431d752761f538b6d5616a94b",
-      "bytes": 551
+      "path": "emerald/data/tilesets/primary/general/tiles.png",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/data/tilesets/primary/general/tiles.png",
+      "sha256": "365ba5482e7564763e614a0009900d1c317790dcd9f7a06c4ab74c363a3ba2f5",
+      "bytes": 7622
     },
     {
-      "path": "graphics/object_events/pics/people/worker_m.png",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/people/worker_m.png",
-      "sha256": "2cea07c7b0e96fd2823415c65b7adec48a7daa2fdea707d7c5b8053ac0204366",
-      "bytes": 725
+      "path": "emerald/data/tilesets/primary/general/metatiles.bin",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/data/tilesets/primary/general/metatiles.bin",
+      "sha256": "17974b0ba1bb9d105d5ba255c69a3b80d8484a26ea0b8ff22c6c6567c6c22910",
+      "bytes": 8192
+    },
+    {
+      "path": "emerald/data/tilesets/secondary/lavaridge/tiles.png",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/data/tilesets/secondary/lavaridge/tiles.png",
+      "sha256": "fa144501b1ef85bd26f45480852bbb793433e88706b6a577bffb7974262dec4d",
+      "bytes": 4087
+    },
+    {
+      "path": "emerald/data/tilesets/secondary/lavaridge/metatiles.bin",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/data/tilesets/secondary/lavaridge/metatiles.bin",
+      "sha256": "a8302e5167fae8e69db4532a983f710f4cbfb669eb23aa1df59b5e2a39212e10",
+      "bytes": 7056
+    },
+    {
+      "path": "emerald/data/tilesets/primary/general/palettes/00.pal",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/data/tilesets/primary/general/palettes/00.pal",
+      "sha256": "424a32d1079a61b6b9b4f1e879dd68108708905e8312d18edd134af3918407fd",
+      "bytes": 198
+    },
+    {
+      "path": "emerald/data/tilesets/primary/general/palettes/01.pal",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/data/tilesets/primary/general/palettes/01.pal",
+      "sha256": "9b9d01878137cef9ea6006c3025a3ada5cdf37d9c251b25bc95f71963bd9a447",
+      "bytes": 195
+    },
+    {
+      "path": "emerald/data/tilesets/primary/general/palettes/02.pal",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/data/tilesets/primary/general/palettes/02.pal",
+      "sha256": "8a469b137e6fc97823ab46b903c0ab80c466212cd430340586ccde22afbee949",
+      "bytes": 187
+    },
+    {
+      "path": "emerald/data/tilesets/primary/general/palettes/03.pal",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/data/tilesets/primary/general/palettes/03.pal",
+      "sha256": "821f0a62f0ce995c96e9eaa0b4a32a1cd61e4db1f3216bfbe1fd588cf33b7583",
+      "bytes": 194
+    },
+    {
+      "path": "emerald/data/tilesets/primary/general/palettes/04.pal",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/data/tilesets/primary/general/palettes/04.pal",
+      "sha256": "f99602126046eed3f20545a34ddd46fa6e5fcb96f032b410fa8d5251c7450e22",
+      "bytes": 192
+    },
+    {
+      "path": "emerald/data/tilesets/primary/general/palettes/05.pal",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/data/tilesets/primary/general/palettes/05.pal",
+      "sha256": "53b599be1554c4e1a0684f2339409ee4032ac8507696dae1836a10152f925177",
+      "bytes": 197
+    },
+    {
+      "path": "emerald/data/tilesets/secondary/lavaridge/palettes/06.pal",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/data/tilesets/secondary/lavaridge/palettes/06.pal",
+      "sha256": "c5080fd03578edb794cb3fa113a8c40479fab4b4fb9ea62b0a0fff70756f8375",
+      "bytes": 180
+    },
+    {
+      "path": "emerald/data/tilesets/secondary/lavaridge/palettes/07.pal",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/data/tilesets/secondary/lavaridge/palettes/07.pal",
+      "sha256": "cf7c2af72852858fe0f449e5a2c08af86c034935400221bef0558cb95a9a148f",
+      "bytes": 196
+    },
+    {
+      "path": "emerald/data/tilesets/secondary/lavaridge/palettes/08.pal",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/data/tilesets/secondary/lavaridge/palettes/08.pal",
+      "sha256": "74a2d349779b5c9df74a65934cdadf1c7c7bf96855cf554f28b53cff072b3d99",
+      "bytes": 183
+    },
+    {
+      "path": "emerald/data/tilesets/secondary/lavaridge/palettes/09.pal",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/data/tilesets/secondary/lavaridge/palettes/09.pal",
+      "sha256": "3c8715f8f6d03854f84fd3079b8b867b9b516932787e2e36ba3876e61040d947",
+      "bytes": 174
+    },
+    {
+      "path": "emerald/data/tilesets/secondary/lavaridge/palettes/10.pal",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/data/tilesets/secondary/lavaridge/palettes/10.pal",
+      "sha256": "07de3297d87771bd020934abf615e772603724239eadf64f9d83e78bf0b74fce",
+      "bytes": 192
+    },
+    {
+      "path": "emerald/data/tilesets/secondary/lavaridge/palettes/11.pal",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/data/tilesets/secondary/lavaridge/palettes/11.pal",
+      "sha256": "70d6e31b33183da2d4bc57c16571a6b56866c108f4bf89ba72074a4d67ae8ca7",
+      "bytes": 182
+    },
+    {
+      "path": "emerald/data/tilesets/secondary/lavaridge/palettes/12.pal",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/data/tilesets/secondary/lavaridge/palettes/12.pal",
+      "sha256": "226f0ddc9a6d3b26b78e138333dfde67d39aa7ac95a257e9e53c766fb6035675",
+      "bytes": 113
+    },
+    {
+      "path": "pmd/sprite/0149/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0149/AnimData.xml",
+      "sha256": "0b1df18f52d8b807690246b178378ea3f5dc472779d27b26ba1b8c43ce084ac4",
+      "bytes": 6662
+    },
+    {
+      "path": "pmd/sprite/0149/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0149/credits.txt",
+      "sha256": "8d6fd3fcecdbbcbb447fc6d03cdc49512c2f86c78ec2b1efffe409c357de41a4",
+      "bytes": 360
+    },
+    {
+      "path": "pmd/sprite/0149/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0149/Walk-Anim.png",
+      "sha256": "04ae6ed9a69da739e09b2d8fca24905cb81c6f963865ee4e343dd82f25d06637",
+      "bytes": 13408
+    },
+    {
+      "path": "pmd/sprite/0149/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0149/Shoot-Anim.png",
+      "sha256": "fc5356fda5761c959d2b425f510e9088de3362283783897d7c8c68c83a454d85",
+      "bytes": 28980
+    },
+    {
+      "path": "pmd/sprite/0149/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0149/Hurt-Anim.png",
+      "sha256": "ee8e8a9a4a737d4e33347486d4677a0e23880fde92c043480dcbf734f1dd6054",
+      "bytes": 8129
+    },
+    {
+      "path": "pmd/sprite/0149/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0149/Sleep-Anim.png",
+      "sha256": "c4b96ff25742171b05e9781bc3dc688ca934acb2863b6dea5f271e196900e597",
+      "bytes": 1085
+    },
+    {
+      "path": "pmd/sprite/0006/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0006/AnimData.xml",
+      "sha256": "2501f5c474cc624f18840933f7df291808f302c8ba1a0b6e4c8c5a2f601bd145",
+      "bytes": 6549
+    },
+    {
+      "path": "pmd/sprite/0006/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0006/credits.txt",
+      "sha256": "3a275f456ec2bc3fa899ce4b84bd584f27daab8d5e04101435b2db5c39088088",
+      "bytes": 323
+    },
+    {
+      "path": "pmd/sprite/0006/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0006/Walk-Anim.png",
+      "sha256": "ceeb33e0db05817c2566e964d7b2264d0fb8fdecd480f7245faeafc864bc0d9b",
+      "bytes": 12077
+    },
+    {
+      "path": "pmd/sprite/0006/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0006/Shoot-Anim.png",
+      "sha256": "7064487ed8b43e2aa4d73872a1c40320fc883ad224c1a717057918f3eedf9a8a",
+      "bytes": 21959
+    },
+    {
+      "path": "pmd/sprite/0006/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0006/Hurt-Anim.png",
+      "sha256": "838924d5af02c21a3c67918807d8089afd09144a54a1898fcd02d977f4ad0aec",
+      "bytes": 7261
+    },
+    {
+      "path": "pmd/sprite/0006/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0006/Sleep-Anim.png",
+      "sha256": "1cc7789b48c1537bcf95c4f4342dba859706bbf4942ab320707b9bc09f2244b7",
+      "bytes": 891
+    },
+    {
+      "path": "pmd/sprite/0034/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0034/AnimData.xml",
+      "sha256": "de627a4b43c30dbcc3bfec20aba7df4f2100b0492a370e6fe546d399785a9401",
+      "bytes": 5402
+    },
+    {
+      "path": "pmd/sprite/0034/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0034/credits.txt",
+      "sha256": "928c290f10ae900e4cbeb220ada8745ec5ae92d13037caf5f69c57857aab7e84",
+      "bytes": 144
+    },
+    {
+      "path": "pmd/sprite/0034/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0034/Walk-Anim.png",
+      "sha256": "47e73a0dbadc870b3dba8ac816b1e43f0359aba2797bef2569883894793cef5c",
+      "bytes": 13128
+    },
+    {
+      "path": "pmd/sprite/0034/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0034/Shoot-Anim.png",
+      "sha256": "b96eef4504ea9e5dd6e85803c813c287abbee187213153dc5955b9f9de5e031c",
+      "bytes": 31667
+    },
+    {
+      "path": "pmd/sprite/0034/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0034/Hurt-Anim.png",
+      "sha256": "2c7b394b7eac41d61c26b7368ddc3b92c867f24e790d3fd7399e36eac68e82c2",
+      "bytes": 8554
+    },
+    {
+      "path": "pmd/sprite/0034/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0034/Sleep-Anim.png",
+      "sha256": "c7aaa2bbe1b5089d0a4278c9c28b1c80a31a2097ec1e17e4406032af8ae81eee",
+      "bytes": 1181
+    },
+    {
+      "path": "pmd/sprite/0373/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0373/AnimData.xml",
+      "sha256": "1932bcf10334ff015c0a6ae372a54c4b2d1ff5f5fb0f528763f939f9251a0d1b",
+      "bytes": 14363
+    },
+    {
+      "path": "pmd/sprite/0373/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0373/credits.txt",
+      "sha256": "1389b368cfbd21a6eca93d57a7e807aa974ae2790a9bd63f831a9408a29b3093",
+      "bytes": 354
+    },
+    {
+      "path": "pmd/sprite/0373/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0373/Walk-Anim.png",
+      "sha256": "5da192948813dd4421611210df06582d72e3536561b0272cba6e59bd984c3591",
+      "bytes": 17769
+    },
+    {
+      "path": "pmd/sprite/0373/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0373/Shoot-Anim.png",
+      "sha256": "a036e9ba4f0394b12610d3bc2cc27a61e904dfca4f3d45bebbbb6d3304ea13e5",
+      "bytes": 38673
+    },
+    {
+      "path": "pmd/sprite/0373/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0373/Hurt-Anim.png",
+      "sha256": "9d5c3b72070cf627374f385bca100cb5a545b0dc7a6948e089083d4f66308a77",
+      "bytes": 11586
+    },
+    {
+      "path": "pmd/sprite/0373/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0373/Sleep-Anim.png",
+      "sha256": "44c09552638580bb5d81780bcc327021acf38612a325f8fc53d7c2a34c12e7d4",
+      "bytes": 1227
+    },
+    {
+      "path": "pmd/sprite/0323/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0323/AnimData.xml",
+      "sha256": "12f8da348257ae14829620d278a639ee4263aa7a2b62de47948b071114f8f381",
+      "bytes": 5176
+    },
+    {
+      "path": "pmd/sprite/0323/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0323/credits.txt",
+      "sha256": "b03892c1c6a97b949bc4d55cbcc3826b1b43a6732bee82f78a3c8545a5c64f96",
+      "bytes": 138
+    },
+    {
+      "path": "pmd/sprite/0323/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0323/Walk-Anim.png",
+      "sha256": "3b0c7b2f71d974642cf4fed1c0a2e96db91e294c96eadb11572bb1941898dec4",
+      "bytes": 10344
+    },
+    {
+      "path": "pmd/sprite/0323/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0323/Shoot-Anim.png",
+      "sha256": "e7cac20d1075c04f71c9a35653bee821eb30069779f1908f9fd4a2cabc2740f7",
+      "bytes": 22379
+    },
+    {
+      "path": "pmd/sprite/0323/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0323/Hurt-Anim.png",
+      "sha256": "5288f1e55b8f03727e7d078837bd233234b77a4f8c39984aebc5ae0d9be6093b",
+      "bytes": 7364
+    },
+    {
+      "path": "pmd/sprite/0323/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0323/Sleep-Anim.png",
+      "sha256": "17819d54f8622c5635a3662b607e85ddd85d502f97766a9dbc5837e769fa95fa",
+      "bytes": 915
+    },
+    {
+      "path": "pmd/sprite/0306/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0306/AnimData.xml",
+      "sha256": "e2da1ffe6727e33035ec47d87b9f93fb2fd633160f529737459dc26b3a3a4cc2",
+      "bytes": 5273
+    },
+    {
+      "path": "pmd/sprite/0306/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0306/credits.txt",
+      "sha256": "4fb13c5c45c933c2ebd8a7b5da1b5246de16bebd8b6f4c60d724f0e4270cb698",
+      "bytes": 148
+    },
+    {
+      "path": "pmd/sprite/0306/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0306/Walk-Anim.png",
+      "sha256": "65266a7634d254f8c4dc38e214aa790635ae21c840c412c0ec0685a0956a48e5",
+      "bytes": 13415
+    },
+    {
+      "path": "pmd/sprite/0306/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0306/Shoot-Anim.png",
+      "sha256": "453a885c94f127e16555909f5d3ee1c40da90300dba8dd7c709d5d1d34a54858",
+      "bytes": 28480
+    },
+    {
+      "path": "pmd/sprite/0306/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0306/Hurt-Anim.png",
+      "sha256": "7886148dfedcd5f5220fb687ac5a7395f24a2966c9c21732d20a6bce6a5ae038",
+      "bytes": 9057
+    },
+    {
+      "path": "pmd/sprite/0306/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0306/Sleep-Anim.png",
+      "sha256": "a6ca80125d963a4bf47e2e5ad9b3a94b27ca75d2f7cddeeb762f8a7861a74ea5",
+      "bytes": 1319
+    },
+    {
+      "path": "pmd/sprite/0392/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0392/AnimData.xml",
+      "sha256": "0c9d6236bfacb79235f138afb9bd5530fe009c9fe18ddc91a4c93cdee4111f82",
+      "bytes": 8325
+    },
+    {
+      "path": "pmd/sprite/0392/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0392/credits.txt",
+      "sha256": "442ae876bbf0edeef23b9fb88f601eac3902773c3347956c26da775c13780ac5",
+      "bytes": 230
+    },
+    {
+      "path": "pmd/sprite/0392/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0392/Walk-Anim.png",
+      "sha256": "dc9e5cbdbeb3d1b766553d8d39385fed02cb7110d92d5d0ac832ab3a462096dd",
+      "bytes": 10214
+    },
+    {
+      "path": "pmd/sprite/0392/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0392/Shoot-Anim.png",
+      "sha256": "8021e55c08708730490094d8ff4324aa41279f218a21094c5b259da0a4ad3396",
+      "bytes": 15918
+    },
+    {
+      "path": "pmd/sprite/0392/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0392/Hurt-Anim.png",
+      "sha256": "86bba31113891d7f58375ab6fab83b9198a1f5f6725b08f3148f99901f596ce2",
+      "bytes": 6865
+    },
+    {
+      "path": "pmd/sprite/0392/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0392/Sleep-Anim.png",
+      "sha256": "97b5cc8a2fd95034ed530d68ea68e7c6bb1b6984cf48688caf9e2bbc55d3e837",
+      "bytes": 884
+    },
+    {
+      "path": "pmd/sprite/0405/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0405/AnimData.xml",
+      "sha256": "23223561a0beb251c380bfa5f71ae1792def39690c8b55d5325dbd41eb49ae58",
+      "bytes": 5340
+    },
+    {
+      "path": "pmd/sprite/0405/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0405/credits.txt",
+      "sha256": "48f76b007a002a82e13984e17b52372775c3c68153f4add396432b254043ce87",
+      "bytes": 139
+    },
+    {
+      "path": "pmd/sprite/0405/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0405/Walk-Anim.png",
+      "sha256": "bea3aca46894e47fc92591f1daadc32085d79335a521c72fbc7d5b8b96b26a7f",
+      "bytes": 11557
+    },
+    {
+      "path": "pmd/sprite/0405/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0405/Shoot-Anim.png",
+      "sha256": "006aa0e9175736aa356ad3572d3ffcfb94d4c49a61d8f8d328841c128b25b8dc",
+      "bytes": 21776
+    },
+    {
+      "path": "pmd/sprite/0405/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0405/Hurt-Anim.png",
+      "sha256": "8504312be1564d98d664d1d944a82f3997b768d305bc020b30e09e1480a99147",
+      "bytes": 8125
+    },
+    {
+      "path": "pmd/sprite/0405/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0405/Sleep-Anim.png",
+      "sha256": "ffef607409f9338f191466476e2ebb09697f44157312fb446f7e15b1a8eaecca",
+      "bytes": 1090
+    },
+    {
+      "path": "pmd/sprite/0445/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0445/AnimData.xml",
+      "sha256": "7d23726a290c97e3820a82d12cfbf194a22b2ba8da3f7ea8843bf6616191d591",
+      "bytes": 5615
+    },
+    {
+      "path": "pmd/sprite/0445/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0445/credits.txt",
+      "sha256": "8f71dd7ea11563317bbb1c70cf2a4e7874c1ecdffe5a552f6ac9b1a53dd2acb5",
+      "bytes": 140
+    },
+    {
+      "path": "pmd/sprite/0445/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0445/Walk-Anim.png",
+      "sha256": "f198f36fd9e1da36505db419e47f41c870d9a059928258267e93933e0d98b9f1",
+      "bytes": 13352
+    },
+    {
+      "path": "pmd/sprite/0445/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0445/Shoot-Anim.png",
+      "sha256": "dccef3eb88b2501f3f1b5bec3db9436ec68d3e85c39cef87c00234f833d9c871",
+      "bytes": 39899
+    },
+    {
+      "path": "pmd/sprite/0445/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0445/Hurt-Anim.png",
+      "sha256": "960a0f3d9085c536cc032107573bd1066e510ae817872e0c702e65ca7c32555a",
+      "bytes": 8434
+    },
+    {
+      "path": "pmd/sprite/0445/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0445/Sleep-Anim.png",
+      "sha256": "c8ef2ca7f87a33cc51442edf5790d1e766581195dbb55d89e536f9d7db74021c",
+      "bytes": 1069
+    },
+    {
+      "path": "pmd/sprite/0576/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0576/AnimData.xml",
+      "sha256": "446c72d7d29a27ad34afb84a9c6401a3ed7667eeaf56fb797ee94fda1678bb86",
+      "bytes": 5430
+    },
+    {
+      "path": "pmd/sprite/0576/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0576/credits.txt",
+      "sha256": "f53f4bee283258bd03f1cc3d08944d11dcbd928df10cadb5563094a316f5395c",
+      "bytes": 154
+    },
+    {
+      "path": "pmd/sprite/0576/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0576/Walk-Anim.png",
+      "sha256": "6dbc1db56decd9defa57b7eecdd428dca81e5606ce6585ee8a47f1ed144cdb52",
+      "bytes": 7804
+    },
+    {
+      "path": "pmd/sprite/0576/Charge-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0576/Charge-Anim.png",
+      "sha256": "32bdda4d7a3d3352743db57338eb44809fc2b00ffe8db280af0418fd199115bd",
+      "bytes": 7403
+    },
+    {
+      "path": "pmd/sprite/0576/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0576/Hurt-Anim.png",
+      "sha256": "78c0180dec02064d0be6a53ccecdee0e2576717661b3c0a1699577ba69110428",
+      "bytes": 6224
+    },
+    {
+      "path": "pmd/sprite/0576/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0576/Sleep-Anim.png",
+      "sha256": "79f3bb0e6c2e005cbf7fbd3ba5591095592eb9ddf2d1098bf233313a221ea0e5",
+      "bytes": 920
+    },
+    {
+      "path": "pmd/sprite/0625/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0625/AnimData.xml",
+      "sha256": "5dbc5c6da9e2c5d8b45590bea0ddf39776986469e5e87b075927e0b35ae67e59",
+      "bytes": 14661
+    },
+    {
+      "path": "pmd/sprite/0625/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0625/credits.txt",
+      "sha256": "3b8299ab0fb9b8a2ccc99b4e94987279c86db072534f0cbc4a49b2fc1e505660",
+      "bytes": 297
+    },
+    {
+      "path": "pmd/sprite/0625/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0625/Walk-Anim.png",
+      "sha256": "92dcb11902dd8d1a3274755e1479796720dfbfbec332d26a58db48feff6607e4",
+      "bytes": 7656
+    },
+    {
+      "path": "pmd/sprite/0625/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0625/Shoot-Anim.png",
+      "sha256": "2278d5e9ef3db5ccb5e5a048a944f805c9df46d600658d0d0ee000b42201d6c9",
+      "bytes": 14923
+    },
+    {
+      "path": "pmd/sprite/0625/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0625/Hurt-Anim.png",
+      "sha256": "5f3868adef949d563e92376d4f3aaad2e3ddc74d5f20995913f966260c0e3022",
+      "bytes": 5076
+    },
+    {
+      "path": "pmd/sprite/0625/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0625/Sleep-Anim.png",
+      "sha256": "374b049c29221b8aaa0a2f73837c24410c8596f3a9a4445884c02722348f09f5",
+      "bytes": 943
+    },
+    {
+      "path": "pmd/sprite/0530/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0530/AnimData.xml",
+      "sha256": "080fe74d055ff1a7411474df30c209979643b12546696e065447bd224b12e832",
+      "bytes": 6446
+    },
+    {
+      "path": "pmd/sprite/0530/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0530/credits.txt",
+      "sha256": "3628fb785fc369959188e6921ca118bbd6af72536f5104695481ebb1da8bc540",
+      "bytes": 384
+    },
+    {
+      "path": "pmd/sprite/0530/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0530/Walk-Anim.png",
+      "sha256": "6dd7e6aa13c8d288754cafdeeabc3257e9101ad4663f3212cca06829dd83411d",
+      "bytes": 9284
+    },
+    {
+      "path": "pmd/sprite/0530/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0530/Shoot-Anim.png",
+      "sha256": "89150349e5c054822a607c445a3e94b65d1a29a429482be10d6d806400af0e07",
+      "bytes": 23342
+    },
+    {
+      "path": "pmd/sprite/0530/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0530/Hurt-Anim.png",
+      "sha256": "1bd76bc7e708fb200f0ba136471daf9a236542f31ad1364267dd3e317c1996a0",
+      "bytes": 6925
+    },
+    {
+      "path": "pmd/sprite/0530/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0530/Sleep-Anim.png",
+      "sha256": "7b126825929c177a6a7c175bf169d225b31175db5a1ce4baec28c29d153ca9dd",
+      "bytes": 887
     }
   ],
   "actors": 40,
-  "sprite_bytes": 44544
+  "sprite_bytes": 136300,
+  "commander_atlas": {
+    "path": "assets/characters/war-commanders-v1.png",
+    "sha256": "76bea69ea5f9b0cc4d75622a2cd094166761b3f8135ad96cf4db413fe5d16548",
+    "runtime": "24x36, four directions, 15 colors + transparency"
+  }
 }

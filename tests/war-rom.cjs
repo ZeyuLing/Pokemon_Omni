@@ -11,8 +11,8 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
  function frame(audio){m._mgbawasm_run_frame();let count;while((count=m._mgbawasm_read_audio(ap,2048))>0)if(audio!==undefined)fs.writeSync(audio,Buffer.from(m.HEAPU8.slice(ap,ap+count*4)));}
  function frames(count){while(count--)frame();}
  function key(k){m._mgbawasm_set_keys(k);frames(4);m._mgbawasm_set_keys(0);frames(12);}
- frames(90);key(512);assert.equal(state().screen,14);
- const data=require('../build/pallet/war-terrain.json'),moves=new Set(),fires=new Set(),hit=new Set(),unique=new Set(),samples=[];
+ frames(90);key(2);assert.equal(state().screen,0);key(512);assert.equal(state().screen,14);
+ const data=require('../build/pallet/war-terrain.json'),moves=new Set(),fires=new Set(),hit=new Set(),unique=new Set(),samples=[],fallen=new Set();let aftermathFire=false;
  const vf=fs.openSync('build/pallet/war-playback.rgba','w'),af=fs.openSync('build/pallet/war-playback.pcm','w');let f=0,maxActive=0;
  while(state().chapter===0&&f<3600){
   frame(af);const s=state();if(f%4===0)fs.writeSync(vf,video());
@@ -22,6 +22,8 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
   for(let i=0;i<s.count;i++){
    const a=data.actors[i],x=s.b.readInt32LE(wp+32+i*16),y=s.b.readInt32LE(wp+36+i*16),action=s.b.readUInt32LE(wp+40+i*16),hurt=s.b.readUInt32LE(wp+44+i*16);
    positions.push([x,y]);if(x!==a.at[0]||y!==a.at[1])moves.add(i);if(action===3)fires.add(i);if(hurt)hit.add(i);
+   if(s.tick>=1600&&a.stop===1600){assert.equal(action,5,'Downed units must remain down');assert.equal(hurt,0,'Survivors must not attack the downed');fallen.add(i);}
+   if(s.tick>=1600&&action===3)aftermathFire=true;
    if(a.layer!==2)for(const [fx,fy] of [[x+2,y-12],[x+13,y-1]]){
     assert(fx>=0&&fy>=0&&fx<data.width*16&&fy<data.height*16);
     assert.equal(data.cells[Math.floor(fy/16)*data.width+Math.floor(fx/16)],a.layer===1?2:0,`Unit ${i} left traversable terrain at ${s.tick}`);
@@ -31,10 +33,10 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
   if(f%60===0){samples.push({frame:f,ticks:s.tick,active:s.active,hits:s.hits,positions});unique.add(require('node:crypto').createHash('sha256').update(video()).digest('hex'));}
   f++;
  }
- fs.closeSync(vf);fs.closeSync(af);assert(f<3600);assert(maxActive>=3,'Must have simultaneous attacks');assert.equal(fires.size,data.actors.filter(a=>a.attack).length);assert(hit.size>=16);assert(moves.size>=data.actors.filter(a=>a.at.join()!=a.to.join()).length);assert(unique.size>30);
+ fs.closeSync(vf);fs.closeSync(af);assert(f<3600);assert(maxActive>=3,'Must have simultaneous attacks');assert.equal(fires.size,data.actors.filter(a=>a.attack).length);assert(hit.size>=16);assert(moves.size>=data.actors.filter(a=>a.at.join()!=a.to.join()).length);assert(unique.size>30);assert.equal(fallen.size,20);assert(aftermathFire,'Battle must continue behind the wounded');
  // Repeat and pause at the same timeline; unit animation must also freeze.
  key(8);key(1);key(512);frames(240);key(8);assert.equal(state().screen,15);const paused=state().tick;frames(90);assert.equal(state().tick,paused);key(2);frames(20);assert(state().tick>paused);
- fs.writeFileSync('build/pallet/war-playback.json',JSON.stringify({frames:f,fps:59.727500569606/4,actors:data.actors.length,moving_units:moves.size,attackers:fires.size,hit_units:hit.size,max_simultaneous_attacks:maxActive,pause_freezes_units:true,source:'Actual GBA ROM in mGBA, no RAM mutation',samples},null,2));
+ fs.writeFileSync('build/pallet/war-playback.json',JSON.stringify({frames:f,fps:59.727500569606/4,actors:data.actors.length,moving_units:moves.size,attackers:fires.size,hit_units:hit.size,max_simultaneous_attacks:maxActive,downed_units:fallen.size,battle_continues_after_cut:aftermathFire,pause_freezes_units:true,source:'Actual GBA ROM in mGBA, no RAM mutation',samples},null,2));
  console.log(`PASS: ${data.actors.length} units, ${fires.size} attackers, ${hit.size} hit recipients, ${maxActive} simultaneous attacks; ${f} recorded frames, traversability, separation, pause`);
  m._mgbawasm_unload();
 })().catch(e=>{console.error(e);process.exitCode=1;});

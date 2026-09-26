@@ -20,7 +20,7 @@ ID：`lance`；状态：已采用。
 
 ## 开场中的演绎
 
-联盟议事室开场稿：接下伤情册，让联络官读世界赛提案，确认自己参赛，并要求继续培养暂未取得资格的年轻人。他质疑地区各自发号施令的现状，未指定政治继承者或内阁人员。
+烟囱山多地区混战的开场稿指挥官；参战和对白为 Omni 原创。具体日期、部队到达经过、战役结局及生死未定。另在稍后关都议事室讨论世界赛提案。
 
 [逐场剧本](../../37-acted-opening-screenplay.md)。
 
@@ -55,3 +55,4 @@ ID：`lance`；状态：已采用。
 - [35-kanto-rivals-and-succession.md](../../../docs/35-kanto-rivals-and-succession.md)
 - [36-playable-opening-and-cast.md](../../../docs/36-playable-opening-and-cast.md)
 - [37-acted-opening-screenplay.md](../../../docs/37-acted-opening-screenplay.md)
+- [40-volcanic-war-direction.md](../../../docs/40-volcanic-war-direction.md)

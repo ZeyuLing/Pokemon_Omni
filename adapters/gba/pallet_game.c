@@ -168,7 +168,7 @@ static void draw_intro(void){
  if(ox){box(0,0,ox,160,RGB(3,5,7));box(ox+width,0,240-ox-width,160,RGB(3,5,7));}
  if(height<160)box(ox,height,width,160-height,RGB(3,5,7));
  for(row=0;row<(unsigned)height;++row)dma_row((const uint16_t*)(omni_opening_stage_blob+m->art)+(row+cy)*m->w+cx,omni_gba_surface+row*240+ox,(unsigned)width);
- if(s->stage==0)omni_gba_war_draw(omni_gba_surface,cx,cy,war_ticks);
+ if(s->stage==0){war_ticks=s->war_time+ticks;omni_gba_war_draw(omni_gba_surface,cx,cy,war_ticks);}
  /* Practical props stay in the corresponding source room. */
  if(s->monitor_x>=0){
   int x=s->monitor_x-cx+ox,y=s->monitor_y-cy;
@@ -469,7 +469,6 @@ int main(void){
    play_clock_remainder+=(elapsed>128?128:elapsed);
    if(play_clock_remainder>=64){omni_adventure_elapsed(&game,play_clock_remainder/64);play_clock_remainder%=64;}
   }
-  if(screen==INTRO&&presentation.playing&&omni_intro[presentation.scene].stage==0)war_ticks+=elapsed>128?128:elapsed;
   omni_presentation_advance(&presentation,clock,presentation.playing?omni_intro[presentation.scene].duration:0);
   if(screen==INTRO&&!presentation.playing)end_intro();
   music=(screen==COVER||screen==FILE_MENU||screen==NEW_CONFIRM)?1:(screen==INTRO||screen==INTRO_SKIP)?omni_intro[presentation.scene].music:(screen==BATTLE||screen==BATTLE_LOG)?2:game.location==8?7:game.location==5?6:1;

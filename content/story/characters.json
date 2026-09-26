@@ -194,7 +194,8 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "westwood",
@@ -233,7 +234,8 @@
           "relationship": "本作师生"
         }
       ],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "goodshow",
@@ -263,7 +265,8 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "agatha",
@@ -293,7 +296,8 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "juan",
@@ -328,7 +332,8 @@
           "relationship": "训练家与伙伴"
         }
       ],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "namba",
@@ -367,7 +372,8 @@
           "relationship": "本作师生"
         }
       ],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "fuji",
@@ -402,7 +408,8 @@
           "relationship": "本作师生"
         }
       ],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "blaine",
@@ -431,7 +438,8 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "red",
@@ -494,7 +502,8 @@
         "overworld_animation": null,
         "battle_back": null,
         "model_3d": null
-      }
+      },
+      "presentation_bindings": []
     },
     {
       "id": "ash",
@@ -767,7 +776,8 @@
           "person_id": 6,
           "status": "prototype_sprite_not_final_animation_design"
         }
-      ]
+      ],
+      "presentation_bindings": []
     },
     {
       "id": "jessie",
@@ -803,7 +813,8 @@
           "person_id": 11,
           "status": "prototype_sprite_not_final_animation_design"
         }
-      ]
+      ],
+      "presentation_bindings": []
     },
     {
       "id": "james",
@@ -839,7 +850,8 @@
           "person_id": 11,
           "status": "prototype_sprite_not_final_animation_design"
         }
-      ]
+      ],
+      "presentation_bindings": []
     },
     {
       "id": "meowth",
@@ -868,7 +880,8 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "pikachu",
@@ -909,7 +922,8 @@
           "person_id": 9,
           "status": "prototype_sprite_not_final_animation_design"
         }
-      ]
+      ],
+      "presentation_bindings": []
     },
     {
       "id": "crobat",
@@ -943,7 +957,8 @@
           "relationship": "训练家与伙伴"
         }
       ],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "persian",
@@ -977,7 +992,8 @@
           "relationship": "训练家与伙伴"
         }
       ],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "ho-oh",
@@ -1008,7 +1024,8 @@
         "research/narrative/2026-09-26-life-giving-legendaries.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "juan-gyarados",
@@ -1037,7 +1054,8 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "juan-milotic",
@@ -1071,7 +1089,8 @@
           "relationship": "训练家与伙伴"
         }
       ],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "joy-viridian",
@@ -1138,7 +1157,8 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "elder",
@@ -1167,7 +1187,8 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "physician",
@@ -1196,7 +1217,8 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "tower-keeper",
@@ -1225,7 +1247,8 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "navy-minister",
@@ -1254,7 +1277,8 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "elite-fourth",
@@ -1282,7 +1306,8 @@
         "docs/30-cinnabar-incident.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "elite-successor",
@@ -1310,7 +1335,8 @@
         "docs/30-cinnabar-incident.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "inquiry-officer",
@@ -1338,7 +1364,8 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "neighbor",
@@ -1374,7 +1401,8 @@
           "person_id": 4,
           "status": "prototype_sprite_not_final_animation_design"
         }
-      ]
+      ],
+      "presentation_bindings": []
     },
     {
       "id": "walker",
@@ -1410,7 +1438,8 @@
           "person_id": 5,
           "status": "prototype_sprite_not_final_animation_design"
         }
-      ]
+      ],
+      "presentation_bindings": []
     },
     {
       "id": "aide-1",
@@ -1446,7 +1475,8 @@
           "person_id": 7,
           "status": "prototype_sprite_not_final_animation_design"
         }
-      ]
+      ],
+      "presentation_bindings": []
     },
     {
       "id": "aide-2",
@@ -1482,7 +1512,8 @@
           "person_id": 7,
           "status": "prototype_sprite_not_final_animation_design"
         }
-      ]
+      ],
+      "presentation_bindings": []
     },
     {
       "id": "clerk",
@@ -1518,7 +1549,8 @@
           "person_id": 12,
           "status": "prototype_sprite_not_final_animation_design"
         }
-      ]
+      ],
+      "presentation_bindings": []
     },
     {
       "id": "route-guide",
@@ -1554,7 +1586,8 @@
           "person_id": 13,
           "status": "prototype_sprite_not_final_animation_design"
         }
-      ]
+      ],
+      "presentation_bindings": []
     },
     {
       "id": "brock",
@@ -1582,7 +1615,8 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "misty",
@@ -1610,7 +1644,8 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "lance",
@@ -1625,7 +1660,8 @@
         "reference_media": "portrait-lance",
         "anime_identity": "参考电视动画《宝可梦》2022 年 7 月 8 日渡对卡露妮一集中的角色设计；仅借用外观，本作独裁者身份与经历为用户指定改编。主线时期的确切年龄、服饰调整待定。",
         "era_design": null,
-        "production_art": "已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。"
+        "production_art": "已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。",
+        "war_sprite": "assets/characters/war-commanders-v1.png；四向 GBA 战装初版，非 3D 模型。"
       },
       "biography": {
         "childhood": null,
@@ -1640,7 +1676,8 @@
         "docs/26-master-timeline.md",
         "docs/35-kanto-rivals-and-succession.md",
         "docs/36-playable-opening-and-cast.md",
-        "docs/37-acted-opening-screenplay.md"
+        "docs/37-acted-opening-screenplay.md",
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -1658,6 +1695,12 @@
           "scene": "lance",
           "mode": "acted_sprite",
           "sprite": "lance"
+        },
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "commander_identity",
+          "instance": "war-unit-21"
         }
       ],
       "game_assets": {
@@ -1675,7 +1718,7 @@
           "final_anime_design": false
         }
       },
-      "opening_scene_note": "联盟议事室开场稿：接下伤情册，让联络官读世界赛提案，确认自己参赛，并要求继续培养暂未取得资格的年轻人。他质疑地区各自发号施令的现状，未指定政治继承者或内阁人员。"
+      "opening_scene_note": "烟囱山多地区混战的开场稿指挥官；参战和对白为 Omni 原创。具体日期、部队到达经过、战役结局及生死未定。另在稍后关都议事室讨论世界赛提案。"
     },
     {
       "id": "looker",
@@ -1703,7 +1746,8 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "steven",
@@ -1731,7 +1775,8 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "may",
@@ -1759,7 +1804,8 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "dawn",
@@ -1787,7 +1833,8 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "serena",
@@ -1815,7 +1862,8 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "cynthia",
@@ -1843,7 +1891,8 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "iris",
@@ -1871,7 +1920,8 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "n",
@@ -1899,7 +1949,8 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "alain",
@@ -1964,7 +2015,8 @@
         "overworld_animation": null,
         "battle_back": null,
         "model_3d": null
-      }
+      },
+      "presentation_bindings": []
     },
     {
       "id": "clemont",
@@ -1992,7 +2044,8 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "lillie",
@@ -2020,7 +2073,8 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "gladion",
@@ -2048,7 +2102,8 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "leon",
@@ -2076,7 +2131,8 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "sonia",
@@ -2104,7 +2160,8 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "nemona",
@@ -2132,7 +2189,8 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "arven",
@@ -2160,7 +2218,8 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "penny",
@@ -2188,7 +2247,8 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "rose",
@@ -2216,7 +2276,8 @@
         "docs/19-narrative-direction.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "wallace",
@@ -2244,7 +2305,8 @@
         "docs/30-cinnabar-incident.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "xerneas",
@@ -2273,7 +2335,8 @@
         "research/narrative/2026-09-26-life-giving-legendaries.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "arceus",
@@ -2302,7 +2365,8 @@
         "research/narrative/2026-09-26-life-giving-legendaries.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "ash-life-giver",
@@ -2331,7 +2395,8 @@
         "research/narrative/2026-09-26-life-giving-legendaries.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "silver",
@@ -2396,7 +2461,8 @@
         "overworld_animation": null,
         "battle_back": null,
         "model_3d": null
-      }
+      },
+      "presentation_bindings": []
     },
     {
       "id": "janine",
@@ -2460,7 +2526,8 @@
         "overworld_animation": null,
         "battle_back": null,
         "model_3d": null
-      }
+      },
+      "presentation_bindings": []
     },
     {
       "id": "koga",
@@ -2523,7 +2590,8 @@
         "overworld_animation": null,
         "battle_back": null,
         "model_3d": null
-      }
+      },
+      "presentation_bindings": []
     },
     {
       "id": "ritchie",
@@ -2584,7 +2652,8 @@
         "overworld_animation": null,
         "battle_back": null,
         "model_3d": null
-      }
+      },
+      "presentation_bindings": []
     },
     {
       "id": "giselle",
@@ -2648,7 +2717,8 @@
         "overworld_animation": null,
         "battle_back": null,
         "model_3d": null
-      }
+      },
+      "presentation_bindings": []
     },
     {
       "id": "aj",
@@ -2709,7 +2779,8 @@
         "overworld_animation": null,
         "battle_back": null,
         "model_3d": null
-      }
+      },
+      "presentation_bindings": []
     },
     {
       "id": "leaf",
@@ -2771,7 +2842,8 @@
         "overworld_animation": null,
         "battle_back": null,
         "model_3d": null
-      }
+      },
+      "presentation_bindings": []
     },
     {
       "id": "green-lets-go",
@@ -2832,7 +2904,8 @@
         "overworld_animation": null,
         "battle_back": null,
         "model_3d": null
-      }
+      },
+      "presentation_bindings": []
     },
     {
       "id": "trace",
@@ -2894,7 +2967,8 @@
         "overworld_animation": null,
         "battle_back": null,
         "model_3d": null
-      }
+      },
+      "presentation_bindings": []
     },
     {
       "id": "elaine",
@@ -2956,7 +3030,8 @@
         "overworld_animation": null,
         "battle_back": null,
         "model_3d": null
-      }
+      },
+      "presentation_bindings": []
     },
     {
       "id": "chase",
@@ -3018,7 +3093,8 @@
         "overworld_animation": null,
         "battle_back": null,
         "model_3d": null
-      }
+      },
+      "presentation_bindings": []
     },
     {
       "id": "blue",
@@ -3080,7 +3156,8 @@
         "overworld_animation": null,
         "battle_back": null,
         "model_3d": null
-      }
+      },
+      "presentation_bindings": []
     },
     {
       "id": "clair",
@@ -3143,7 +3220,8 @@
         "overworld_animation": null,
         "battle_back": null,
         "model_3d": null
-      }
+      },
+      "presentation_bindings": []
     },
     {
       "id": "paul",
@@ -3207,7 +3285,8 @@
         "overworld_animation": null,
         "battle_back": null,
         "model_3d": null
-      }
+      },
+      "presentation_bindings": []
     },
     {
       "id": "bede",
@@ -3268,7 +3347,8 @@
         "overworld_animation": null,
         "battle_back": null,
         "model_3d": null
-      }
+      },
+      "presentation_bindings": []
     },
     {
       "id": "opening-narrator",
@@ -3296,7 +3376,8 @@
         "docs/36-playable-opening-and-cast.md"
       ],
       "relationships": [],
-      "runtime_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": []
     },
     {
       "id": "opening-dispatcher",
@@ -3563,21 +3644,15 @@
       ],
       "relationships": [],
       "runtime_bindings": [],
-      "opening_scene_note": "地图战争过场中报告桥头交锋，请水面部队掩护后撤，通知救护并让传令员把伤情送回联盟。未知履历、日期与归属留空。",
-      "presentation_bindings": [
-        {
-          "sequence": "first-journey-opening",
-          "scene": "war-front",
-          "mode": "offscreen_voice"
-        }
-      ]
+      "opening_scene_note": "本轮撤下无线电发言，由具名指挥官与身边训练家承担对白。保留旧档案，不参与当前演出。",
+      "presentation_bindings": []
     },
     {
       "id": "war-unit-01",
-      "name": "西岸第1组豪力 01",
+      "name": "关都快龙 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "关都部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3585,7 +3660,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/machoke.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -3595,7 +3670,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -3607,14 +3682,15 @@
           "instance": "war-unit-01"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。",
+      "faction": "kanto"
     },
     {
       "id": "war-unit-02",
-      "name": "东岸第1组豪力 02",
+      "name": "关都喷火龙 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "关都部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3622,7 +3698,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/machoke.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -3632,7 +3708,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -3644,14 +3720,15 @@
           "instance": "war-unit-02"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "战后切镜后倒地且停止行动；未确定死亡。",
+      "faction": "kanto"
     },
     {
       "id": "war-unit-03",
-      "name": "西岸第1组尼多力诺 03",
+      "name": "关都尼多王 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "关都部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3659,7 +3736,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/nidorino.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -3669,7 +3746,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -3681,14 +3758,15 @@
           "instance": "war-unit-03"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。",
+      "faction": "kanto"
     },
     {
       "id": "war-unit-04",
-      "name": "东岸第1组尼多力诺 04",
+      "name": "关都尼多王 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "关都部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3696,7 +3774,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/nidorino.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -3706,7 +3784,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -3718,14 +3796,15 @@
           "instance": "war-unit-04"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "战后切镜后倒地且停止行动；未确定死亡。",
+      "faction": "kanto"
     },
     {
       "id": "war-unit-05",
-      "name": "西岸第2组皮卡丘 05",
+      "name": "关都喷火龙 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "关都部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3733,7 +3812,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/pikachu.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -3743,7 +3822,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -3755,14 +3834,15 @@
           "instance": "war-unit-05"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "战后切镜后倒地且停止行动；未确定死亡。",
+      "faction": "kanto"
     },
     {
       "id": "war-unit-06",
-      "name": "东岸第2组皮卡丘 06",
+      "name": "丰缘暴飞龙 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "丰缘部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3770,7 +3850,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/pikachu.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -3780,7 +3860,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -3792,14 +3872,15 @@
           "instance": "war-unit-06"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。",
+      "faction": "hoenn"
     },
     {
       "id": "war-unit-07",
-      "name": "西岸第2组尼多力诺 07",
+      "name": "丰缘喷火驼 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "丰缘部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3807,7 +3888,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/nidorino.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -3817,7 +3898,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -3829,14 +3910,15 @@
           "instance": "war-unit-07"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "战后切镜后倒地且停止行动；未确定死亡。",
+      "faction": "hoenn"
     },
     {
       "id": "war-unit-08",
-      "name": "东岸第2组尼多力诺 08",
+      "name": "丰缘波士可多拉 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "丰缘部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3844,7 +3926,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/nidorino.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -3854,7 +3936,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -3866,14 +3948,15 @@
           "instance": "war-unit-08"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。",
+      "faction": "hoenn"
     },
     {
       "id": "war-unit-09",
-      "name": "西岸第3组蚊香泳士 09",
+      "name": "丰缘暴飞龙 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "丰缘部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3881,7 +3964,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/poliwrath.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -3891,7 +3974,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -3903,14 +3986,15 @@
           "instance": "war-unit-09"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "战后切镜后倒地且停止行动；未确定死亡。",
+      "faction": "hoenn"
     },
     {
       "id": "war-unit-10",
-      "name": "东岸第3组蚊香泳士 10",
+      "name": "丰缘喷火驼 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "丰缘部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3918,7 +4002,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/poliwrath.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -3928,7 +4012,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -3940,14 +4024,15 @@
           "instance": "war-unit-10"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "战后切镜后倒地且停止行动；未确定死亡。",
+      "faction": "hoenn"
     },
     {
       "id": "war-unit-11",
-      "name": "西岸第3组尼多力诺 11",
+      "name": "神奥烈焰猴 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3955,7 +4040,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/nidorino.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -3965,7 +4050,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -3977,14 +4062,15 @@
           "instance": "war-unit-11"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。",
+      "faction": "sinnoh"
     },
     {
       "id": "war-unit-12",
-      "name": "东岸第3组尼多力诺 12",
+      "name": "神奥伦琴猫 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3992,7 +4078,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/nidorino.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4002,7 +4088,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4014,14 +4100,15 @@
           "instance": "war-unit-12"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "战后切镜后倒地且停止行动；未确定死亡。",
+      "faction": "sinnoh"
     },
     {
       "id": "war-unit-13",
-      "name": "水面拉普拉斯 13",
+      "name": "神奥烈咬陆鲨 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4029,7 +4116,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/lapras.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4039,7 +4126,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4051,14 +4138,15 @@
           "instance": "war-unit-13"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。",
+      "faction": "sinnoh"
     },
     {
       "id": "war-unit-14",
-      "name": "水面拉普拉斯 14",
+      "name": "神奥伦琴猫 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4066,7 +4154,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/lapras.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4076,7 +4164,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4088,14 +4176,15 @@
           "instance": "war-unit-14"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "战后切镜后倒地且停止行动；未确定死亡。",
+      "faction": "sinnoh"
     },
     {
       "id": "war-unit-15",
-      "name": "水面拉普拉斯 15",
+      "name": "神奥烈焰猴 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4103,7 +4192,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/lapras.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4113,7 +4202,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4125,14 +4214,15 @@
           "instance": "war-unit-15"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "战后切镜后倒地且停止行动；未确定死亡。",
+      "faction": "sinnoh"
     },
     {
       "id": "war-unit-16",
-      "name": "水面拉普拉斯 16",
+      "name": "合众哥德小姐 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "合众部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4140,7 +4230,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/lapras.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4150,7 +4240,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4162,14 +4252,15 @@
           "instance": "war-unit-16"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。",
+      "faction": "unova"
     },
     {
       "id": "war-unit-17",
-      "name": "空中大比鸟 17",
+      "name": "合众劈斩司令 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "合众部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4177,7 +4268,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/pidgeot.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4187,7 +4278,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4199,14 +4290,15 @@
           "instance": "war-unit-17"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "战后切镜后倒地且停止行动；未确定死亡。",
+      "faction": "unova"
     },
     {
       "id": "war-unit-18",
-      "name": "空中大比鸟 18",
+      "name": "合众龙头地鼠 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "合众部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4214,7 +4306,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/pidgeot.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4224,7 +4316,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4236,14 +4328,15 @@
           "instance": "war-unit-18"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。",
+      "faction": "unova"
     },
     {
       "id": "war-unit-19",
-      "name": "空中大比鸟 19",
+      "name": "合众劈斩司令 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "合众部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4251,7 +4344,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/pidgeot.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4261,7 +4354,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4273,14 +4366,15 @@
           "instance": "war-unit-19"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "战后切镜后倒地且停止行动；未确定死亡。",
+      "faction": "unova"
     },
     {
       "id": "war-unit-20",
-      "name": "空中大比鸟 20",
+      "name": "合众龙头地鼠 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "合众部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4288,7 +4382,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/pidgeot.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4298,7 +4392,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4310,22 +4404,23 @@
           "instance": "war-unit-20"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "战后切镜后倒地且停止行动；未确定死亡。",
+      "faction": "unova"
     },
     {
       "id": "war-unit-21",
-      "name": "前线训练家 21",
+      "name": "渡 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "关都部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
       "appearance": {
         "reference_media": null,
         "anime_identity": null,
-        "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "era_design": "藏蓝战衣、红肩章与披风",
+        "production_art": "四向战争服装图集编译小人"
       },
       "biography": {
         "childhood": null,
@@ -4335,9 +4430,14 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
-      "relationships": [],
+      "relationships": [
+        {
+          "other": "lance",
+          "relationship": "同一人物的本场地图实例，不是新增同名角色"
+        }
+      ],
       "runtime_bindings": [],
       "presentation_bindings": [
         {
@@ -4347,22 +4447,24 @@
           "instance": "war-unit-21"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。",
+      "faction": "kanto",
+      "portrays": "lance"
     },
     {
       "id": "war-unit-22",
-      "name": "前线训练家 22",
+      "name": "关都负伤训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "关都部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
       "appearance": {
         "reference_media": null,
         "anime_identity": null,
-        "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "era_design": "藏蓝战衣、红肩章与披风",
+        "production_art": "火红行走帧基底，独立地区配色及肩章。"
       },
       "biography": {
         "childhood": null,
@@ -4372,7 +4474,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4384,22 +4486,23 @@
           "instance": "war-unit-22"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "战后切镜后倒地且停止行动；未确定死亡。",
+      "faction": "kanto"
     },
     {
       "id": "war-unit-23",
-      "name": "前线训练家 23",
+      "name": "关都伙伴训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "关都部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
       "appearance": {
         "reference_media": null,
         "anime_identity": null,
-        "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "era_design": "藏蓝战衣、红肩章与披风",
+        "production_art": "火红行走帧基底，独立地区配色及肩章。"
       },
       "biography": {
         "childhood": null,
@@ -4409,7 +4512,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4421,22 +4524,23 @@
           "instance": "war-unit-23"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。",
+      "faction": "kanto"
     },
     {
       "id": "war-unit-24",
-      "name": "战场指挥员 24",
+      "name": "关都救护训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "关都部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
       "appearance": {
         "reference_media": null,
         "anime_identity": null,
-        "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/policeman.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "era_design": "藏蓝战衣、红肩章与披风",
+        "production_art": "火红行走帧基底，独立地区配色及肩章。"
       },
       "biography": {
         "childhood": null,
@@ -4446,7 +4550,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4458,14 +4562,15 @@
           "instance": "war-unit-24"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。",
+      "faction": "kanto"
     },
     {
       "id": "war-unit-25",
-      "name": "救护员 25",
-      "kind": "human",
+      "name": "关都负伤喷火龙 · 战场实例",
+      "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "关都部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4473,7 +4578,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/nurse.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4483,7 +4588,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4495,22 +4600,23 @@
           "instance": "war-unit-25"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "战后切镜后倒地且停止行动；未确定死亡。",
+      "faction": "kanto"
     },
     {
       "id": "war-unit-26",
-      "name": "救护吉利蛋 26",
-      "kind": "pokemon",
+      "name": "源治 · 战场实例",
+      "kind": "human",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "丰缘部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
       "appearance": {
         "reference_media": null,
         "anime_identity": null,
-        "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/chansey.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "era_design": "深蓝海军战衣、青白肩章",
+        "production_art": "四向战争服装图集编译小人"
       },
       "biography": {
         "childhood": null,
@@ -4520,9 +4626,14 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
-      "relationships": [],
+      "relationships": [
+        {
+          "other": "drake",
+          "relationship": "同一人物的本场地图实例，不是新增同名角色"
+        }
+      ],
       "runtime_bindings": [],
       "presentation_bindings": [
         {
@@ -4532,22 +4643,24 @@
           "instance": "war-unit-26"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。",
+      "faction": "hoenn",
+      "portrays": "drake"
     },
     {
       "id": "war-unit-27",
-      "name": "前线传令员 27",
+      "name": "丰缘负伤训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "丰缘部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
       "appearance": {
         "reference_media": null,
         "anime_identity": null,
-        "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/worker_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "era_design": "深蓝海军战衣、青白肩章",
+        "production_art": "火红行走帧基底，独立地区配色及肩章。"
       },
       "biography": {
         "childhood": null,
@@ -4557,7 +4670,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4569,22 +4682,23 @@
           "instance": "war-unit-27"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "战后切镜后倒地且停止行动；未确定死亡。",
+      "faction": "hoenn"
     },
     {
       "id": "war-unit-28",
-      "name": "前线训练家 28",
+      "name": "丰缘伙伴训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "丰缘部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
       "appearance": {
         "reference_media": null,
         "anime_identity": null,
-        "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "era_design": "深蓝海军战衣、青白肩章",
+        "production_art": "火红行走帧基底，独立地区配色及肩章。"
       },
       "biography": {
         "childhood": null,
@@ -4594,7 +4708,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4606,22 +4720,23 @@
           "instance": "war-unit-28"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。",
+      "faction": "hoenn"
     },
     {
       "id": "war-unit-29",
-      "name": "前线训练家 29",
+      "name": "丰缘救护训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "丰缘部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
       "appearance": {
         "reference_media": null,
         "anime_identity": null,
-        "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "era_design": "深蓝海军战衣、青白肩章",
+        "production_art": "火红行走帧基底，独立地区配色及肩章。"
       },
       "biography": {
         "childhood": null,
@@ -4631,7 +4746,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4643,14 +4758,15 @@
           "instance": "war-unit-29"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。",
+      "faction": "hoenn"
     },
     {
       "id": "war-unit-30",
-      "name": "前线训练家 30",
-      "kind": "human",
+      "name": "丰缘负伤喷火驼 · 战场实例",
+      "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "丰缘部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4658,7 +4774,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4668,7 +4784,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4680,22 +4796,23 @@
           "instance": "war-unit-30"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "战后切镜后倒地且停止行动；未确定死亡。",
+      "faction": "hoenn"
     },
     {
       "id": "war-unit-31",
-      "name": "战场指挥员 31",
+      "name": "大叶 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
       "appearance": {
         "reference_media": null,
         "anime_identity": null,
-        "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/policeman.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "era_design": "炭灰防寒战衣、橙黄肩甲",
+        "production_art": "四向战争服装图集编译小人"
       },
       "biography": {
         "childhood": null,
@@ -4705,9 +4822,14 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
-      "relationships": [],
+      "relationships": [
+        {
+          "other": "flint",
+          "relationship": "同一人物的本场地图实例，不是新增同名角色"
+        }
+      ],
       "runtime_bindings": [],
       "presentation_bindings": [
         {
@@ -4717,22 +4839,24 @@
           "instance": "war-unit-31"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。",
+      "faction": "sinnoh",
+      "portrays": "flint"
     },
     {
       "id": "war-unit-32",
-      "name": "救护员 32",
+      "name": "神奥负伤训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
       "appearance": {
         "reference_media": null,
         "anime_identity": null,
-        "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/nurse.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "era_design": "炭灰防寒战衣、橙黄肩甲",
+        "production_art": "火红行走帧基底，独立地区配色及肩章。"
       },
       "biography": {
         "childhood": null,
@@ -4742,7 +4866,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4754,22 +4878,23 @@
           "instance": "war-unit-32"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "战后切镜后倒地且停止行动；未确定死亡。",
+      "faction": "sinnoh"
     },
     {
       "id": "war-unit-33",
-      "name": "救护吉利蛋 33",
-      "kind": "pokemon",
+      "name": "神奥伙伴训练家 · 战场实例",
+      "kind": "human",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
       "appearance": {
         "reference_media": null,
         "anime_identity": null,
-        "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/chansey.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "era_design": "炭灰防寒战衣、橙黄肩甲",
+        "production_art": "火红行走帧基底，独立地区配色及肩章。"
       },
       "biography": {
         "childhood": null,
@@ -4779,7 +4904,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4791,22 +4916,23 @@
           "instance": "war-unit-33"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。",
+      "faction": "sinnoh"
     },
     {
       "id": "war-unit-34",
-      "name": "前线传令员 34",
+      "name": "神奥救护训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
       "appearance": {
         "reference_media": null,
         "anime_identity": null,
-        "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/worker_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "era_design": "炭灰防寒战衣、橙黄肩甲",
+        "production_art": "火红行走帧基底，独立地区配色及肩章。"
       },
       "biography": {
         "childhood": null,
@@ -4816,7 +4942,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4828,14 +4954,15 @@
           "instance": "war-unit-34"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。",
+      "faction": "sinnoh"
     },
     {
       "id": "war-unit-35",
-      "name": "前列支援训练家 35",
-      "kind": "human",
+      "name": "神奥负伤伦琴猫 · 战场实例",
+      "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4843,7 +4970,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4853,7 +4980,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4865,22 +4992,23 @@
           "instance": "war-unit-35"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "战后切镜后倒地且停止行动；未确定死亡。",
+      "faction": "sinnoh"
     },
     {
       "id": "war-unit-36",
-      "name": "前列支援训练家 36",
+      "name": "嘉德丽雅 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "合众部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
       "appearance": {
         "reference_media": null,
         "anime_identity": null,
-        "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "era_design": "紫黑长战衣、浅紫领章",
+        "production_art": "四向战争服装图集编译小人"
       },
       "biography": {
         "childhood": null,
@@ -4890,9 +5018,14 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
-      "relationships": [],
+      "relationships": [
+        {
+          "other": "caitlin",
+          "relationship": "同一人物的本场地图实例，不是新增同名角色"
+        }
+      ],
       "runtime_bindings": [],
       "presentation_bindings": [
         {
@@ -4902,22 +5035,24 @@
           "instance": "war-unit-36"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。",
+      "faction": "unova",
+      "portrays": "caitlin"
     },
     {
       "id": "war-unit-37",
-      "name": "前列支援训练家 37",
+      "name": "合众负伤训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "合众部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
       "appearance": {
         "reference_media": null,
         "anime_identity": null,
-        "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "era_design": "紫黑长战衣、浅紫领章",
+        "production_art": "火红行走帧基底，独立地区配色及肩章。"
       },
       "biography": {
         "childhood": null,
@@ -4927,7 +5062,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4939,22 +5074,23 @@
           "instance": "war-unit-37"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "战后切镜后倒地且停止行动；未确定死亡。",
+      "faction": "unova"
     },
     {
       "id": "war-unit-38",
-      "name": "前列支援训练家 38",
+      "name": "合众伙伴训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "合众部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
       "appearance": {
         "reference_media": null,
         "anime_identity": null,
-        "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "era_design": "紫黑长战衣、浅紫领章",
+        "production_art": "火红行走帧基底，独立地区配色及肩章。"
       },
       "biography": {
         "childhood": null,
@@ -4964,7 +5100,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -4976,22 +5112,23 @@
           "instance": "war-unit-38"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。",
+      "faction": "unova"
     },
     {
       "id": "war-unit-39",
-      "name": "前列支援训练家 39",
+      "name": "合众救护训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "合众部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
       "appearance": {
         "reference_media": null,
         "anime_identity": null,
-        "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "era_design": "紫黑长战衣、浅紫领章",
+        "production_art": "火红行走帧基底，独立地区配色及肩章。"
       },
       "biography": {
         "childhood": null,
@@ -5001,7 +5138,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -5013,14 +5150,15 @@
           "instance": "war-unit-39"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。",
+      "faction": "unova"
     },
     {
       "id": "war-unit-40",
-      "name": "前列支援训练家 40",
-      "kind": "human",
+      "name": "合众负伤劈斩司令 · 战场实例",
+      "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "role": "合众部队的独立地图事件实例；开场战斗及稍后伤情演出。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -5028,7 +5166,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+        "production_art": "PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -5038,7 +5176,7 @@
         "ending": null
       },
       "source_docs": [
-        "docs/39-map-war-opening.md"
+        "docs/40-volcanic-war-direction.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -5050,7 +5188,155 @@
           "instance": "war-unit-40"
         }
       ],
-      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+      "opening_scene_note": "战后切镜后倒地且停止行动；未确定死亡。",
+      "faction": "unova"
+    },
+    {
+      "id": "drake",
+      "name": "源治",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "丰缘龙系四天王；Omni 烟囱山开场指挥官",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "电视动画《宝可梦 超世代》Vanity Affair 的白色船长帽、白须与深色船长外套；以成年动画形象适配战争服装，具体年龄不定。",
+        "era_design": "第一次世界大战末期战装；日期与年龄未定",
+        "production_art": "imagegen 原创战争服装图集，编译为 24×36 四向 GBA 小人；无行走专属帧，无 3D 模型。",
+        "war_sprite": "assets/characters/war-commanders-v1.png；四向 GBA 战装初版，非 3D 模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "commander_identity",
+          "instance": "war-unit-26"
+        }
+      ],
+      "source_identity": {
+        "continuity": "anime_design_and_regional_elite_four_reference",
+        "evidence_level": "official",
+        "facts": [
+          "丰缘龙系四天王"
+        ],
+        "sources": [
+          "https://www.pokemon.com/us/animation/seasons/24/episode-40-looking-out-for-number-two"
+        ],
+        "boundary": "地区身份与外观为原作参考；参战、军服、指挥对白为 Omni 开场稿。未补写其任职过程或生平。"
+      },
+      "opening_scene_note": "烟囱山多地区混战的开场稿指挥官；参战和对白为 Omni 原创。具体日期、部队到达经过、战役结局及生死未定。"
+    },
+    {
+      "id": "flint",
+      "name": "大叶",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "神奥火系四天王；Omni 烟囱山开场指挥官",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "电视动画《宝可梦 钻石与珍珠》Four Roads Diverged in a Pokémon Port! 的红色蓬松卷发、黄色背心；改为黄色防护背心与炭灰野战服，具体年龄不定。",
+        "era_design": "第一次世界大战末期战装；日期与年龄未定",
+        "production_art": "imagegen 原创战争服装图集，编译为 24×36 四向 GBA 小人；无行走专属帧，无 3D 模型。",
+        "war_sprite": "assets/characters/war-commanders-v1.png；四向 GBA 战装初版，非 3D 模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "commander_identity",
+          "instance": "war-unit-31"
+        }
+      ],
+      "source_identity": {
+        "continuity": "anime_design_and_regional_elite_four_reference",
+        "evidence_level": "official",
+        "facts": [
+          "神奥火系四天王"
+        ],
+        "sources": [
+          "https://www.pokemon.com/uk/animation/seasons/13/episode-23-four-roads-diverged-in-a-pokemon-port"
+        ],
+        "boundary": "地区身份与外观为原作参考；参战、军服、指挥对白为 Omni 开场稿。未补写其任职过程或生平。"
+      },
+      "opening_scene_note": "烟囱山多地区混战的开场稿指挥官；参战和对白为 Omni 原创。具体日期、部队到达经过、战役结局及生死未定。"
+    },
+    {
+      "id": "caitlin",
+      "name": "嘉德丽雅",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "合众超能力系四天王；Omni 烟囱山开场指挥官",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "电视动画《宝可梦 超级愿望》Jostling for the Junior Cup! 的长金发、浅色帽与裙装轮廓；适配紫黑战衣和浅紫披肩，成年设计，具体年龄不定。",
+        "era_design": "第一次世界大战末期战装；日期与年龄未定",
+        "production_art": "imagegen 原创战争服装图集，编译为 24×36 四向 GBA 小人；无行走专属帧，无 3D 模型。",
+        "war_sprite": "assets/characters/war-commanders-v1.png；四向 GBA 战装初版，非 3D 模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "commander_identity",
+          "instance": "war-unit-36"
+        }
+      ],
+      "source_identity": {
+        "continuity": "anime_design_and_regional_elite_four_reference",
+        "evidence_level": "secondary_episode_reference",
+        "facts": [
+          "合众超能力系四天王"
+        ],
+        "sources": [
+          "https://www.serebii.net/anime/characters/caitlin.shtml"
+        ],
+        "boundary": "地区身份与外观为原作参考；参战、军服、指挥对白为 Omni 开场稿。未补写其任职过程或生平。"
+      },
+      "opening_scene_note": "烟囱山多地区混战的开场稿指挥官；参战和对白为 Omni 原创。具体日期、部队到达经过、战役结局及生死未定。"
     }
   ],
   "revision": "2026-09-26.7"

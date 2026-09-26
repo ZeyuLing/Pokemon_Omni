@@ -1,0 +1,14 @@
+{
+  "tool": "built-in image_gen",
+  "image": "assets/characters/war-commanders-v1.png",
+  "sha256": "76bea69ea5f9b0cc4d75622a2cd094166761b3f8135ad96cf4db413fe5d16548",
+  "layout": "4 columns Lance/Drake/Flint/Caitlin; 4 rows south/north/west/east; proportional cells",
+  "production_status": "four_direction_overworld_first_pass_not_3d",
+  "generation_prompt": "Transparent 4x4 production atlas, GBA FireRed-style chunky top-down pixel art. Columns: Lance red spiky hair navy uniform crimson cape brass guards; Drake white peaked cap white moustache navy captain coat teal armband; Flint red afro yellow armored vest charcoal field suit orange armband; Caitlin long blonde hair cream beret violet coat lavender capelet. Rows south north west east. No labels scenery Pokemon or UI. Each sprite inside its cell. Full-body large-head short-leg GBA proportions. Approximately sixteen colors.",
+  "runtime": "24x36 pixels per direction, joint 15-color palette plus transparency; no dedicated walking frames",
+  "anime_sources": {
+    "drake": "https://www.pokemon.com/us/animation/seasons/24/episode-40-looking-out-for-number-two",
+    "flint": "https://www.pokemon.com/uk/animation/seasons/13/episode-23-four-roads-diverged-in-a-pokemon-port",
+    "caitlin": "https://www.serebii.net/anime/characters/caitlin.shtml"
+  }
+}

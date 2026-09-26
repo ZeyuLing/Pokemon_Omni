@@ -1,5 +1,5 @@
 {
-  "schema_version": 5,
+  "schema_version": 6,
   "id": "first-journey-opening",
   "title": "未竟的和平",
   "clock_hz": 64,
@@ -83,7 +83,7 @@
   "scenes": [
     {
       "id": "war-front",
-      "title": "第一次世界大战末期",
+      "title": "大战末期 · 烟囱山",
       "stage": "war",
       "tone": 0,
       "music": 2,
@@ -128,77 +128,179 @@
         "war-unit-38",
         "war-unit-39",
         "war-unit-40",
-        "opening-frontline-radio"
+        "lance",
+        "drake",
+        "flint",
+        "caitlin"
       ],
       "cast": [],
       "camera": [
-        80,
-        24
+        96,
+        0
       ],
       "show_title": false,
       "transition": {
         "kind": "fade_in",
-        "reason": "实际地图上的双方集结与交战；使用原生单位和招式事件，不显示战争插画。"
+        "reason": "火山前线，四地区交错交战；稍后切至同一地点的伤者与残存战斗。"
       },
       "beats": [
         {
           "ticks": 384,
           "camera": [
             112,
-            24
+            0
           ]
         },
         {
-          "speaker": "指挥员",
-          "actor": "war-unit-24",
-          "lines": [
-            "指挥员：守住桥头！",
-            "后排，掩护他们！"
-          ],
-          "ticks": 224
-        },
-        {
-          "ticks": 512,
+          "ticks": 160,
           "camera": [
-            176,
-            112
+            0,
+            0
+          ],
+          "actor": "lance",
+          "speaker": "渡",
+          "lines": [
+            "渡：关都突击队，压上去！",
+            "快龙，打穿前面的阵线！"
           ]
         },
         {
-          "ticks": 512,
+          "ticks": 128,
+          "camera": [
+            152,
+            0
+          ]
+        },
+        {
+          "ticks": 160,
+          "camera": [
+            272,
+            0
+          ],
+          "actor": "drake",
+          "speaker": "源治",
+          "lines": [
+            "源治：丰缘守军，稳住！",
+            "暴飞龙，截住空中的快龙！"
+          ]
+        },
+        {
+          "ticks": 128,
+          "camera": [
+            128,
+            80
+          ]
+        },
+        {
+          "ticks": 160,
+          "camera": [
+            0,
+            160
+          ],
+          "actor": "flint",
+          "speaker": "大叶",
+          "lines": [
+            "大叶：神奥队，别挤进裂谷！",
+            "烈焰猴，掩护侧翼！"
+          ]
+        },
+        {
+          "ticks": 160,
+          "camera": [
+            272,
+            160
+          ],
+          "actor": "caitlin",
+          "speaker": "嘉德丽雅",
+          "lines": [
+            "嘉德丽雅：合众队，散开！",
+            "哥德小姐，挡住侧面的攻击！"
+          ]
+        },
+        {
+          "ticks": 256,
           "camera": [
             144,
+            80
+          ]
+        },
+        {
+          "ticks": 64
+        },
+        {
+          "ticks": 256,
+          "camera": [
+            224,
+            48
+          ]
+        },
+        {
+          "ticks": 256,
+          "actor": "war-unit-28",
+          "speaker": "丰缘训练家",
+          "lines": [
+            "喷火驼，你醒一醒！",
+            "求你了……看看我啊！"
+          ]
+        },
+        {
+          "ticks": 192,
+          "camera": [
+            0,
             160
           ]
         },
         {
-          "speaker": "前线",
-          "actor": "opening-frontline-radio",
+          "ticks": 256,
+          "actor": "war-unit-33",
+          "speaker": "神奥训练家",
           "lines": [
-            "前线：两座桥都在交战！",
-            "水面部队，请掩护后撤！"
-          ],
-          "ticks": 256
-        },
-        {
-          "ticks": 320,
-          "camera": [
-            48,
-            112
+            "别睡！你听得见我吗？",
+            "我们还没有回家……"
           ]
         },
         {
-          "speaker": "前线",
-          "actor": "opening-frontline-radio",
-          "lines": [
-            "前线：救护队接住他们！",
-            "传令员，把伤情送回联盟！"
-          ],
-          "ticks": 256,
-          "music": 4
+          "ticks": 192,
+          "camera": [
+            64,
+            80
+          ]
         },
         {
-          "wait": 48
+          "ticks": 224,
+          "actor": "war-unit-23",
+          "speaker": "关都训练家",
+          "lines": [
+            "救护队！这里还有人！",
+            "别再往这边打了！"
+          ]
+        },
+        {
+          "ticks": 160,
+          "camera": [
+            272,
+            32
+          ],
+          "actor": "drake",
+          "speaker": "源治",
+          "lines": [
+            "源治：先把伤者带下去！",
+            "还能动的，掩护救护队！"
+          ]
+        },
+        {
+          "ticks": 160,
+          "camera": [
+            144,
+            48
+          ],
+          "actor": "lance",
+          "speaker": "渡",
+          "lines": [
+            "渡：把伤情送回联盟。",
+            "这里还没有停火。"
+          ],
+          "music": 4
         }
       ]
     },
@@ -240,7 +342,7 @@
       },
       "transition": {
         "kind": "sound_bridge",
-        "reason": "前线要求上报伤情，切到会议桌上的伤情汇总；尾句开始的希尔弗配乐继续播放。"
+        "reason": "伤情命令接入稍后的关都会议，省略返程；不宣布停战或设定具体日期。"
       },
       "beats": [
         {

@@ -84,7 +84,9 @@ class OpeningLayout(unittest.TestCase):
 
     def test_meeting_and_music_continuity(self):
         spoken=[c for c in REPORT['cues'] if c['dialogue']]
-        self.assertGreater(sum(c['scene'] in ('lance','silph','rocket') for c in spoken),len(spoken)*.6)
+        # The expanded war/aftermath now includes four commanders and cries;
+        # political meetings still carry a majority of spoken beats.
+        self.assertGreater(sum(c['scene'] in ('lance','silph','rocket') for c in spoken),len(spoken)*.5)
         self.assertEqual({c['music'] for c in REPORT['cues'] if c['scene'] in ('lance','silph','rocket')},{4})
         self.assertFalse(any(c['fade_in'] or c['fade_out'] for c in REPORT['cues'] if c['scene'] in ('silph','rocket')))
         lab=next(s for s in SCRIPT['scenes'] if s['stage']=='lab')['beats'];leave=next(i for i,b in enumerate(lab) if b.get('move',{}).get('gary')==[96,208])
