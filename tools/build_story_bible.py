@@ -46,26 +46,45 @@ def validate(world, people, atlas, media):
     ids(world['phases'])
     phases={p['id']:p['order'] for p in world['phases']}
     assert len(set(phases.values()))==len(phases), 'Duplicate phase order'
-    epoch=calendar_date(world['calendar']['epoch_date'])
-    assert world['calendar']['mainline_year_status']=='adopted_working_calendar'
-    assert epoch.year==world['calendar']['epoch_year'], 'Epoch year/date mismatch'
-    assert event_map['ash-departure']['date']==epoch.isoformat(), 'Departure/epoch date mismatch'
+    calendar=world['calendar']
+    assert calendar['mainline_year_status'] in ('undetermined','adopted_working_calendar')
+    epoch=calendar_date(calendar['epoch_date']) if calendar['epoch_date'] else None
+    if calendar['mainline_year_status']=='undetermined':
+        assert epoch is None and calendar['epoch_year'] is None, 'Undetermined mainline year was fixed'
+        assert all(e['date'] is None for e in world['events'] if e['phase']=='first-journey'), 'Undetermined mainline event was dated'
+    else:
+        assert epoch and epoch.year==calendar['epoch_year'], 'Epoch year/date mismatch'
+        assert event_map['ash-departure']['date']==epoch.isoformat(), 'Departure/epoch date mismatch'
     for e in world['events']:
         assert set(e['participants'])<=actors, 'Unregistered event participant'
         assert e['status'] in EVENT_STATUS
         assert e['phase'] in phases and e['visibility'] in ('authoring','author_only')
-        start=calendar_date(e['date']); end=calendar_date(e['end_date']) if e.get('end_date') else start
-        assert start<=end, 'Reversed event window'
+        assert e['date_status'] in ('assigned','undetermined')
+        if e['date_status']=='undetermined':
+            assert e['date'] is None and e.get('end_date') is None, 'Undetermined event was dated'
+        else:
+            start=calendar_date(e['date']); end=calendar_date(e['end_date']) if e.get('end_date') else start
+            assert start<=end, 'Reversed event window'
         assert e['date_role'] in ('event','window','snapshot','scheduled')
-    assert [e['date'] for e in world['events']]==sorted(e['date'] for e in world['events']), 'Events not in date order'
+    # Editorial display order is not a chronology. Only adopted prerequisites
+    # constrain undated events; do not derive dates from their list positions.
+    successors={id:[] for id in event_ids}
     for constraint in world['chronology_constraints']:
         assert constraint['earlier'] in event_ids and constraint['later'] in event_ids, 'Unknown chronology reference'
         assert constraint['relation']=='ends_before_or_same_day'
         earlier=event_map[constraint['earlier']]; later=event_map[constraint['later']]
-        assert (earlier.get('end_date') or earlier['date'])<=later['date'], 'Chronology prerequisite violated'
-    war_start=calendar_date(event_map['first-world-war-begins']['date'])
-    war_end=calendar_date(event_map['first-world-war-ends']['date'])
-    assert war_start<epoch<war_end and epoch.year==war_end.year, 'Opening must be in the final war year'
+        assert phases[earlier['phase']]<=phases[later['phase']], 'Chronology phase prerequisite violated'
+        if earlier['date'] and later['date']:
+            assert (earlier.get('end_date') or earlier['date'])<=later['date'], 'Chronology prerequisite violated'
+        successors[earlier['id']].append(later['id'])
+    visiting=set(); visited=set()
+    def visit(id):
+        assert id not in visiting, 'Chronology cycle'
+        if id in visited:return
+        visiting.add(id)
+        for later in successors[id]:visit(later)
+        visiting.remove(id);visited.add(id)
+    for id in event_ids:visit(id)
     for c in people:
         assert c['status'] in STATUS
         assert c['appearance']['reference_media'] is None or c['appearance']['reference_media'] in media_ids
@@ -88,7 +107,10 @@ def validate(world, people, atlas, media):
             assert c['birth_year'] is None, 'AI appearance silently became biological birth year'
             activation=c['activation_event']
             assert activation in event_ids and c['id'] in event_map[activation]['participants'], 'Missing AI activation event'
-            assert calendar_date(event_map[activation]['date'])<epoch, 'AI activation must precede opening'
+            if event_map[activation]['date'] and epoch:
+                assert calendar_date(event_map[activation]['date'])<epoch, 'AI activation must precede opening'
+    ash=next(c for c in people if c['id']=='ash')
+    assert ash['body_profile']['aging']=='does_not_grow_up' and ash['body_profile']['ordinary_human_function'], 'Ash body baseline drift'
     ids(world['secrets']); ids(world['factions'])
     for secret in world['secrets']:
         assert set(secret['known_by'])<=actors and secret['subject'] in actors, 'Unregistered secret knower'
@@ -101,24 +123,31 @@ def validate(world, people, atlas, media):
     executive=world['institutions']['world_federation']['executive']
     assert executive['member_count']==4 and executive['includes_champion'], 'World executive includes champion within four members'
     federation=world['institutions']['world_federation']
+    assert federation['tournament_cycle_years']==4, 'Tournament cycle drift'
+    assert federation['calendar_status'] in ('undetermined','assigned')
+    if federation['calendar_status']=='undetermined':
+        fields=('proposal_date','enactment_date','qualification_deadline','first_tournament_date','first_tournament_end','first_executive_date','opening_edition')
+        assert all(federation[k] is None for k in fields) and not federation['tournament_schedule'] and not federation['calendar_events'], 'Undetermined institution calendar was fixed'
     for field,event_id in federation['calendar_events'].items():
         assert event_id in event_ids and federation[field]==event_map[event_id]['date'], 'Institution date drift'
-    assert federation['first_tournament_end']==event_map['first-world-tournament']['end_date'], 'Tournament end date drift'
     previous=None
     for edition in federation['tournament_schedule']:
         begin=calendar_date(edition['start']); end=calendar_date(edition['end']); taking_office=calendar_date(edition['executive_start'])
         assert begin<=end<taking_office, 'Tournament/office date order'
         if previous:
             assert edition['edition']==previous['edition']+1, 'Tournament edition sequence'
-            assert begin==calendar_date(previous['start']).replace(year=calendar_date(previous['start']).year+federation['tournament_cycle_years']), 'Tournament cycle drift'
-            assert taking_office==calendar_date(previous['executive_start']).replace(year=calendar_date(previous['executive_start']).year+executive['term_years']), 'Executive term drift'
+            assert begin.year==calendar_date(previous['start']).year+federation['tournament_cycle_years'], 'Tournament cycle drift'
+            if executive['term_years'] is not None:
+                assert taking_office.year==calendar_date(previous['executive_start']).year+executive['term_years'], 'Executive term drift'
         else:
-            assert edition['edition']==federation['opening_edition']==1
+            assert edition['edition']==1
             assert edition['start']==federation['first_tournament_date'] and edition['end']==federation['first_tournament_end'] and edition['executive_start']==federation['first_executive_date'], 'First tournament schedule drift'
         previous=edition
-    assert calendar_date(federation['enactment_date'])<epoch<calendar_date(federation['qualification_deadline'])<calendar_date(federation['first_tournament_date']), 'Framework/qualification/season order'
+    ids(world['unwritten'])
     for item in world['unwritten']:
         assert set(item['anchor_events'])<=event_ids, 'Unknown unwritten event anchor'
+        assert item['date'] is None, 'Unwritten history was dated'
+        assert isinstance(item['questions'],list) and all(isinstance(q,str) for q in item['questions'])
     for obj in people+world['events']:
         assert all((ROOT/p).is_file() for p in obj['source_docs']), 'Missing source document'
     for r in atlas['regions']:
@@ -173,7 +202,7 @@ def portrait(m,prefix=''):
 
 
 def event_date(e):
-    return e['date']+(' 至 '+e['end_date'] if e.get('end_date') else '')+('（开场状态）' if e.get('date_role')=='snapshot' else '')
+    return (e['date'] or e.get('time_label','日期未定'))+(' 至 '+e['end_date'] if e.get('end_date') else '')+('（开场状态）' if e.get('date_role')=='snapshot' else '')
 
 
 def secret_badge(e):
@@ -188,6 +217,8 @@ def institution_summary(federation):
 
 
 def institution_calendar(federation):
+    if federation['calendar_status']=='undetermined':
+        return '倡议日期、制度生效、赛事届次、资格截止、比赛与就职日期均未定。四年比赛周期不自动决定行政任期；倡议地区、谈判经过、席位公式与赛果留空。'
     return (f'方案提出：{federation["proposal_date"]}；过渡框架生效：{federation["enactment_date"]}；'
             f'首届资格截止：{federation["qualification_deadline"]}；首届比赛：{federation["first_tournament_date"]} 至 {federation["first_tournament_end"]}；'
             f'首届行政就职：{federation["first_executive_date"]}。常规任期 {federation["executive"]["term_years"]} 年。倡议地区、谈判经过、席位公式与赛果留空。')
@@ -206,9 +237,11 @@ def render(world,people,atlas,media):
     for i,r in enumerate(atlas['regions'][:9],1): body+=map_panel(r,i)
     body+='</div><h2>历史时代 · 洗翠</h2><p>它后来被称为神奥，不是第十块现代大陆；历史时期设施与现代地貌分别核对。</p><div class="historical">'+map_panel(atlas['regions'][9],10)+'</div><h2>扩展地区</h2><p>七之岛、北上乡、蓝莓学园、铠之孤岛和冠之雪原仍保留在项目范围内；完整分幅与连接尚待补入。</p><h2>进入游戏前的地图依据</h2><p>原作地区插画用于宏观对照；实际道路、洞窟、入口和碰撞由相应版本地图数据确认。关都当前以火红格位为准，不将 Let’s Go 插画直接当作火红关卡数据。游戏场景与图册须分别验收。</p>'
     outputs[OUT/'index.html']=page('世界地图',body,'atlas')
-    intro=world['calendar']['epoch']+'。'+world['calendar']['prehistory_dates']+' 已定日期与内容完成度分开记录；时间窗口不强制其中的可选任务按书写顺序完成。'
+    intro=world['calendar']['epoch']+'。'+world['calendar']['prehistory_dates']+' 未写历史不预定日期或内部顺序；列表位置不代表未定事件的精确先后。'
     body='<p class="eyebrow">Worldline / 编剧主线</p><h1>故事世界线</h1><p class="intro">'+h(intro)+'</p><p class="notice">含小智身份等核心剧透，仅供创作使用；事件中的参与者不等于知道事件全部真相。</p><p>当前一周目基线：'+source_link('docs/32-first-journey-world-premise.md')+'</p>'
     md='# 故事世界线\n\n由 content/story/worldline.json 生成。请修改源数据后运行构建器，不直接编辑本文件。\n\n'+intro+'\n\n**编剧档案，含核心剧透。参与事件不等于知晓全部真相。**\n'
+    body+='<p>小智身体与认知设定：'+source_link('docs/33-ash-ai-design.md')+'。身份与身体规则已采用，具体技术组合为研究提案。</p>'
+    md+='\n小智身体与认知：[AI 训练家设计提案](../33-ash-ai-design.md)。技术提案不自动成为生平。\n'
     federation_text=institution_summary(world['institutions']['world_federation'])
     season_text=institution_calendar(world['institutions']['world_federation'])
     body+='<h2>世界赛与联邦构想</h2><p>'+h(federation_text)+'</p><p class="meta">'+h(season_text)+'</p><h2>当代势力</h2><ul>'
@@ -230,14 +263,20 @@ def render(world,people,atlas,media):
         md+=f'\n## {date} · {e["title"]}\n\n状态：{EVENT_STATUS[e["status"]]}；地点：{e["location"]}。\n\n{e["summary"]}\n\n'
         if e['visibility']=='author_only':md+='**编剧秘密，非角色已知信息。**\n\n'
         for id,text in e['participants'].items():md+=f'- [{cc[id]["name"]}](characters/{id}.md)：{text}\n'
-    body+='</div><h2>尚未创作</h2><table class="blank-table"><caption>日期引用已定事件；正文空白表示经过仍未创作。</caption><tbody>'
-    md+='\n## 尚未创作\n\n| 节点 | 日期 | 事件正文 |\n|---|---|---|\n'
+    body+='</div><h2>尚未创作</h2><table class="blank-table"><caption>相关节点仅供查阅，不规定这些历史线的顺序与日期；正文保持空白。</caption><tbody>'
+    md+='\n## 尚未创作\n\n相关节点仅供查阅，不为留白定年或排序。\n\n| 节点 | 相关已知记录 | 事件正文 |\n|---|---|---|\n'
     for x in world['unwritten']:
         anchors=[next(e for e in world['events'] if e['id']==id) for id in x['anchor_events']]
-        links='；'.join(f'<a href="#{e["id"]}">{h(e["date"])}</a>' for e in anchors)
+        links='；'.join(f'<a href="#{e["id"]}">{h(e["title"])}</a>' for e in anchors)
         body+=f'<tr><th>{h(x["label"])}</th><td>{links}</td><td aria-label="尚未创作"></td></tr>'
-        md+=f'| {x["label"]} | '+ '；'.join(e['date'] for e in anchors)+' | |\n'
-    body+='</tbody></table><h2>连续性约束</h2><ul>'+''.join(f'<li>{h(r)}</li>' for r in world['continuity_rules'])+'</ul>'
+        md+=f'| {x["label"]} | '+ '；'.join(e['title'] for e in anchors)+' | |\n'
+    body+='</tbody></table><h2>待展开的历史线</h2><p>下面记录边界与创作问题，不是已经写出的事件经过。</p>'
+    md+='\n## 待展开的历史线\n\n边界与问题不是已写生平。\n'
+    for x in world['unwritten']:
+        if not x['established_boundary'] and not x['questions']:continue
+        body+=f'<section id="unwritten-{x["id"]}"><h3>{h(x["label"])}</h3><p>{h(x["established_boundary"] or "")}</p><ul>'+''.join(f'<li>{h(q)}</li>' for q in x['questions'])+'</ul></section>'
+        md+=f'\n### {x["label"]}\n\n{x["established_boundary"] or ""}\n\n'+''.join(f'- {q}\n' for q in x['questions'])
+    body+='<h2>连续性约束</h2><ul>'+''.join(f'<li>{h(r)}</li>' for r in world['continuity_rules'])+'</ul>'
     md+='\n## 连续性约束\n\n'+''.join(f'- {r}\n' for r in world['continuity_rules'])
     outputs[OUT/'timeline.html']=page('故事世界线',body,'timeline');outputs[DOCS/'worldline.md']=md
     body=f'<p class="eyebrow">People / 人物与伙伴</p><h1>人物档案</h1><p class="intro">{len(people)} 位已采用角色、无名角色与候选人物。包括有独立剧情作用的宝可梦个体。原作经历不会自动成为 Omni 生平；每一条已写经历都关联世界线事件。</p><div class="toolbar"><div><label for="query">查找姓名或职责</label><input id="query" type="search" placeholder="例如：坂木、研究、火箭队"></div><div><label for="status">创作状态</label><select id="status"><option value="">全部角色</option>'+''.join(f'<option value="{s}">{label}</option>' for s,label in STATUS.items())+'</select></div><p id="count" role="status" aria-live="polite"></p></div><div class="people">'
@@ -258,6 +297,10 @@ def render(world,people,atlas,media):
             design+=f'<tr><th>{label}</th><td aria-label="{label}">{h(a[key] or "")}</td></tr>'
         design+='</tbody></table>'
         body=body.replace('<h2>已写生平</h2>',design+'<h2>已写生平</h2>')
+        if c.get('body_profile'):
+            profile=c['body_profile']
+            body=body.replace('<h2>已写生平</h2>','<h2>身体设定</h2><p>'+h(profile['summary'])+'</p><p>身体实现机制与长期不长大如何被察觉尚未创作。</p><h2>已写生平</h2>')
+            md=md.replace('## 已写生平','## 身体设定\n\n'+profile['summary']+'身体实现机制与长期不长大如何被察觉尚未创作。\n\n## 已写生平')
         life=[e for e in world['events'] if c['id'] in e['participants']]
         if not life:body+='<div class="blank" aria-label="尚未创作生平"></div>'
         for e in life:

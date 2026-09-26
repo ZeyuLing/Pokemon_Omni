@@ -31,13 +31,21 @@ class ContinuityTests(unittest.TestCase):
         self.world['events'][-1]['participants']['juan']='Alive after Cinnabar'
         with self.assertRaisesRegex(AssertionError,'Post-death'):self.validate()
 
-    def test_epoch_year_matches_date(self):
+    def test_unknown_epoch_stays_unknown(self):
         self.world['calendar']['epoch_year']=1967
-        with self.assertRaisesRegex(AssertionError,'Epoch year/date'):self.validate()
+        with self.assertRaisesRegex(AssertionError,'Undetermined mainline'):self.validate()
 
-    def test_departure_cannot_drift_from_epoch(self):
+    def test_departure_does_not_receive_an_invented_date(self):
         next(e for e in self.world['events'] if e['id']=='ash-departure')['date']='1974-05-01'
-        with self.assertRaisesRegex(AssertionError,'Departure/epoch'):self.validate()
+        with self.assertRaisesRegex(AssertionError,'Undetermined mainline'):self.validate()
+
+    def test_unwritten_history_stays_undated(self):
+        self.world['unwritten'][0]['date']='1974-12-31'
+        with self.assertRaisesRegex(AssertionError,'Unwritten history was dated'):self.validate()
+
+    def test_established_outcome_is_not_a_date(self):
+        next(e for e in self.world['events'] if e['id']=='oak-leaves-institute')['date']='1944-03-31'
+        with self.assertRaisesRegex(AssertionError,'Undetermined event was dated'):self.validate()
 
     def test_invalid_calendar_date(self):
         self.world['events'][0]['date']='1942-02-30'
@@ -48,26 +56,64 @@ class ContinuityTests(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError,'Reversed event'):self.validate()
 
     def test_consequence_cannot_precede_cause(self):
-        next(e for e in self.world['events'] if e['id']=='rocket-outlawed')['date']='1943-05-01'
-        self.world['events'].sort(key=lambda e:e['date'])
+        event=next(e for e in self.world['events'] if e['id']=='rocket-outlawed')
+        event.update(date='1943-05-01',date_status='assigned')
         with self.assertRaisesRegex(AssertionError,'Chronology prerequisite'):self.validate()
 
-    def test_institution_dates_match_event_registry(self):
+    def test_institution_calendar_stays_open(self):
         self.world['institutions']['world_federation']['first_tournament_date']='1976-09-01'
-        with self.assertRaisesRegex(AssertionError,'Institution date drift'):self.validate()
+        with self.assertRaisesRegex(AssertionError,'Undetermined institution'):self.validate()
 
     def test_four_year_tournament_cycle(self):
-        self.world['institutions']['world_federation']['tournament_schedule'][1]['start']='1978-09-01'
+        self.world['institutions']['world_federation']['tournament_cycle_years']=3
         with self.assertRaisesRegex(AssertionError,'Tournament cycle drift'):self.validate()
 
-    def test_four_year_executive_terms(self):
-        self.world['institutions']['world_federation']['tournament_schedule'][1]['executive_start']='1980-10-01'
-        with self.assertRaisesRegex(AssertionError,'Executive term drift'):self.validate()
+    def test_cycle_does_not_invent_executive_term_or_schedule(self):
+        federation=self.world['institutions']['world_federation']
+        self.assertIsNone(federation['executive']['term_years'])
+        self.assertEqual(federation['tournament_schedule'],[])
+        self.assertIn('不自动决定行政任期',bible.institution_calendar(federation))
 
     def test_second_generation_cannot_precede_first(self):
-        next(e for e in self.world['events'] if e['id']=='ash-developed')['date']='1969-03-21'
-        self.world['events'].sort(key=lambda e:e['date'])
+        next(e for e in self.world['events'] if e['id']=='red-developed').update(date='1970-01-01',date_status='assigned')
+        next(e for e in self.world['events'] if e['id']=='ash-developed').update(date='1969-03-21',date_status='assigned')
         with self.assertRaisesRegex(AssertionError,'Chronology prerequisite'):self.validate()
+
+    def test_unknown_dates_do_not_allow_causal_cycles(self):
+        self.world['chronology_constraints'].append({'earlier':'ash-developed','later':'red-developed','relation':'ends_before_or_same_day'})
+        with self.assertRaisesRegex(AssertionError,'Chronology cycle'):self.validate()
+
+    def test_editorial_order_does_not_create_history(self):
+        self.world['events'].reverse()
+        self.validate()
+
+    def test_ash_does_not_grow_up(self):
+        next(c for c in self.people if c['id']=='ash')['body_profile']['aging']='normal'
+        with self.assertRaisesRegex(AssertionError,'Ash body baseline'):self.validate()
+
+    def test_withdrawn_adult_costumes_cannot_be_active(self):
+        art=bible.read('assets/source/ash-age-design.json')
+        self.assertEqual(art['body_growth'],'none')
+        self.assertTrue(all(s['status']=='withdrawn' for s in art['retired_age_stages']))
+        self.assertEqual([s['id'] for s in art['stages']],['ash.kanto.young'])
+
+    def test_nonaging_has_no_invented_mechanism(self):
+        ash=next(c for c in self.people if c['id']=='ash')
+        for field in ('implementation','longevity_limit','recognition_story'):
+            self.assertIsNone(ash['body_profile'][field])
+
+    def test_deferred_arcs_do_not_become_biography(self):
+        ids={x['id'] for x in self.world['unwritten']}
+        self.assertTrue({'old-kanto-government-fall','kanto-current-elites','silph-transformation','oak-departure-details','silph-split-details','oak-giovanni-evolution'}<=ids)
+        for id in ('oak','giovanni','lance'):
+            self.assertIsNone(next(c for c in self.people if c['id']==id)['biography']['unwritten_intervals'])
+
+    def test_render_preserves_unknown_dates_and_body_rule(self):
+        outputs=bible.render(self.world,self.people,self.atlas,self.media)
+        self.assertIn('具体间隔未定',outputs[bible.DOCS/'worldline.md'])
+        self.assertIn('身体设定',outputs[bible.DOCS/'characters/ash.md'])
+        self.assertIn('不会长大',outputs[bible.DOCS/'characters/ash.md'])
+        self.assertNotIn('1975-09-01',outputs[bible.DOCS/'worldline.md'])
 
     def test_secret_does_not_spread_to_other_characters(self):
         self.world['secrets'][0]['known_by'].append('delia')

@@ -33,7 +33,7 @@
       "relationships": [
         {
           "other": "oak",
-          "relationship": "昔日冠军对手与研究合作者；当代政治目标相近而力量路线分歧，当前合作未定"
+          "relationship": "昔日冠军对手与研究合作者；当代政治目标相近而力量路线分歧，当前合作未定；中间几十年的信任与关系变化需逐段创作，不能预设背叛或决裂"
         },
         {
           "other": "crobat",
@@ -85,7 +85,7 @@
         },
         {
           "other": "giovanni",
-          "relationship": "昔日冠军对手与研究合作者；当代同求和平联邦，但科技分析与神兽路线分歧，当前联络未定"
+          "relationship": "昔日冠军对手与研究合作者；当代同求和平联邦，但科技分析与神兽路线分歧，当前联络未定；中间几十年的信任与关系变化需逐段创作，不能预设背叛或决裂"
         },
         {
           "other": "ash",
@@ -378,7 +378,7 @@
       "status": "adopted",
       "role": "大木研发的第一代 AI 训练家；无语言功能及战斗外思想",
       "birth_year": null,
-      "birth_basis": "1970-10-04 为 AI 启用日，非生物出生日期；不据原作外观倒推年龄。",
+      "birth_basis": "第一代 AI；制造和启用日期尚未定，不由原作外观倒推出生年。小智的身体设定不自动套用给赤红。",
       "death_event": null,
       "appearance": {
         "reference_media": "portrait-red",
@@ -395,7 +395,8 @@
       },
       "source_docs": [
         "docs/32-first-journey-world-premise.md",
-        "docs/26-master-timeline.md"
+        "docs/26-master-timeline.md",
+        "docs/33-ash-ai-design.md"
       ],
       "relationships": [
         {
@@ -417,12 +418,12 @@
       "status": "adopted",
       "role": "少年外观的主角；第二代 AI 训练家（编剧秘密，本人不知）",
       "birth_year": null,
-      "birth_basis": "未设定生物出生年或载体性质；1973-03-21 为 AI 启用日，对外身份年龄和主观记忆仍未定。",
+      "birth_basis": "AI 制造／启用时间、对外身份年龄与主观经历均未定；不会长大，其余生活与生理表现如常人。",
       "death_event": null,
       "appearance": {
         "reference_media": "portrait-ash",
-        "anime_identity": "沿用动画小智的黑发、脸颊标记、帽子及少年轮廓；现图为后期动画服装。初代风格开场与未来青年外观属于设计方向，不代表已确定生物年龄或 AI 载体的变化方式。",
-        "era_design": null,
+        "anime_identity": "沿用动画小智的黑发、脸颊标记、帽子及少年轮廓；现图为后期动画服装。按本作设定身体不随年月长大；后续可改变服装装备与神态，不能自动使用成年体格。这是 Omni 设定，不是动画官方对年龄的解释。",
+        "era_design": "身体保持少年形态，跨年变化体现在服装、装备和经历；具体服装与表情组尚待制作。",
         "production_art": null
       },
       "biography": {
@@ -435,7 +436,8 @@
       "source_docs": [
         "docs/20-cast-and-opening.md",
         "docs/26-master-timeline.md",
-        "docs/32-first-journey-world-premise.md"
+        "docs/32-first-journey-world-premise.md",
+        "docs/33-ash-ai-design.md"
       ],
       "relationships": [
         {
@@ -456,7 +458,16 @@
         }
       ],
       "runtime_bindings": [],
-      "activation_event": "ash-developed"
+      "activation_event": "ash-developed",
+      "body_profile": {
+        "status": "user_established",
+        "aging": "does_not_grow_up",
+        "ordinary_human_function": true,
+        "summary": "除不会长大以外，小智与正常人没有区别：按常人的方式生活、感受、受伤和恢复。",
+        "implementation": null,
+        "longevity_limit": null,
+        "recognition_story": null
+      }
     },
     {
       "id": "gary",
@@ -465,7 +476,7 @@
       "status": "adopted",
       "role": "大木的孙子；小智的劲敌",
       "birth_year": null,
-      "birth_basis": "主线已定 1974 年，但本作小茂确切年龄未定；不自动恢复旧出生年或套用小智 AI 启用时间。",
+      "birth_basis": "主线年份及本作确切年龄未定；不由小智的外观、启用时间或不长大设定推定小茂年龄。",
       "death_event": null,
       "appearance": {
         "reference_media": "portrait-oak-gary",
@@ -1427,7 +1438,7 @@
       "death_event": null,
       "appearance": {
         "reference_media": "portrait-lance",
-        "anime_identity": "参考电视动画《宝可梦》2022 年 7 月 8 日渡对卡露妮一集中的角色设计；仅借用外观，本作独裁者身份与经历为用户指定改编。1974 年的确切年龄、服饰调整待定。",
+        "anime_identity": "参考电视动画《宝可梦》2022 年 7 月 8 日渡对卡露妮一集中的角色设计；仅借用外观，本作独裁者身份与经历为用户指定改编。主线时期的确切年龄、服饰调整待定。",
         "era_design": null,
         "production_art": null
       },
@@ -1979,5 +1990,5 @@
       "runtime_bindings": []
     }
   ],
-  "revision": "2026-09-26.2"
+  "revision": "2026-09-26.3"
 }
