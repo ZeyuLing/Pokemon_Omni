@@ -85,10 +85,33 @@ class OpeningLayout(unittest.TestCase):
     def test_meeting_and_music_continuity(self):
         spoken=[c for c in REPORT['cues'] if c['dialogue']]
         self.assertGreater(sum(c['scene'] in ('lance','silph','rocket') for c in spoken),len(spoken)*.6)
-        self.assertEqual({c['music'] for c in REPORT['cues'] if c['chapter']<3},{4})
-        self.assertFalse(any(c['fade_in'] or c['fade_out'] for c in REPORT['cues'] if c['chapter'] in (1,2)))
-        lab=SCRIPT['scenes'][3]['beats'];leave=next(i for i,b in enumerate(lab) if b.get('move',{}).get('gary')==[96,208])
+        self.assertEqual({c['music'] for c in REPORT['cues'] if c['scene'] in ('lance','silph','rocket')},{4})
+        self.assertFalse(any(c['fade_in'] or c['fade_out'] for c in REPORT['cues'] if c['scene'] in ('silph','rocket')))
+        lab=next(s for s in SCRIPT['scenes'] if s['stage']=='lab')['beats'];leave=next(i for i,b in enumerate(lab) if b.get('move',{}).get('gary')==[96,208])
         monitor=next(i for i,b in enumerate(lab) if b.get('effect')=='monitor')
         self.assertGreater(monitor,leave,'Private research must begin after Gary leaves')
+
+    def test_war_precedes_meetings_and_preserves_full_viewport(self):
+        scene=SCRIPT['scenes'][0]
+        self.assertEqual(scene['id'],'war-front')
+        self.assertEqual(scene['cast'],[])
+        self.assertGreaterEqual(scene['beats'][0]['ticks'],384)
+        self.assertNotIn('speaker',scene['beats'][0])
+        self.assertEqual(SCRIPT['scenes'][1]['id'],'lance')
+        self.assertTrue(all(GRIDS['war']['cells']),'Painted battlefield must not become walkable')
+        for cue in REPORT['cues']:
+            if cue['stage']!='war':continue
+            for x,y in cue['camera']:
+                self.assertTrue(0<=x<=48 and 0<=y<=32,'Camera exposes empty space')
+        # Evidence comes from actual ROM frames, not the high-resolution source.
+        selected=[REPORT['cues'][0],next(c for c in REPORT['cues'] if c['scene']=='war-front' and c['dialogue']),next(c for c in REPORT['cues'] if c['scene']=='lance' and c['dialogue'])]
+        proof=Image.new('RGB',(720,160))
+        for i,cue in enumerate(selected):
+            actual=shot(OUT/f'cue-{cue["cue"]}.rgba')
+            if i==0:
+                self.assertGreater(len(set(actual.get_flattened_data())),150)
+                actual.resize((720,480),Image.Resampling.NEAREST).save(OUT/'war-opening.png')
+            proof.paste(actual,(i*240,0))
+        proof.resize((1440,320),Image.Resampling.NEAREST).save(OUT/'war-to-meeting-proof.png')
 
 if __name__=='__main__':unittest.main()

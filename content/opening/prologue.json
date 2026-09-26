@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "id": "first-journey-opening",
   "title": "未竟的和平",
   "clock_hz": 64,
@@ -19,6 +19,17 @@
     "blue"
   ],
   "stages": [
+    {
+      "id": "war",
+      "kind": "illustration",
+      "manifest": "assets/opening/world-war-v1.json",
+      "crop": [
+        0,
+        0,
+        288,
+        192
+      ]
+    },
     {
       "id": "league",
       "source": "SilphCo_6F",
@@ -72,6 +83,58 @@
   ],
   "scenes": [
     {
+      "id": "war-front",
+      "title": "第一次世界大战末期",
+      "stage": "war",
+      "tone": 0,
+      "music": 2,
+      "actors": [
+        "opening-war-combatants",
+        "opening-frontline-radio"
+      ],
+      "cast": [],
+      "camera": [
+        0,
+        32
+      ],
+      "show_title": false,
+      "transition": {
+        "kind": "fade_in",
+        "reason": "先看见大规模宝可梦混战；无旁白，先留六秒战场镜头。"
+      },
+      "beats": [
+        {
+          "ticks": 384,
+          "camera": [
+            48,
+            0
+          ]
+        },
+        {
+          "speaker": "前线",
+          "actor": "opening-frontline-radio",
+          "lines": [
+            "前线：空中编队已经交战！",
+            "河岸两侧都在请求增援！"
+          ],
+          "ticks": 224
+        },
+        {
+          "speaker": "前线",
+          "actor": "opening-frontline-radio",
+          "lines": [
+            "前线：这里没有空闲的队伍了。",
+            "把伤情报回联盟。"
+          ],
+          "ticks": 224,
+          "music": 4
+        },
+        {
+          "wait": 32
+        }
+      ]
+    },
+    {
       "id": "lance",
       "title": "关都联盟 · 议事室",
       "stage": "league",
@@ -108,8 +171,8 @@
         ]
       },
       "transition": {
-        "kind": "fade_in",
-        "reason": "开场先立住议事室与伤情报告。"
+        "kind": "sound_bridge",
+        "reason": "前线要求上报伤情，切到会议桌上的伤情汇总；尾句开始的希尔弗配乐继续播放。"
       },
       "beats": [
         {
@@ -130,8 +193,8 @@
           "speaker": "联络官",
           "actor": "opening-league-liaison",
           "lines": [
-            "联络官：各地中心的伤情汇总。",
-            "药品和训练家都在告急。"
+            "联络官：前线刚送回伤情。",
+            "各地中心的药品都在告急。"
           ],
           "effect": "papers"
         },

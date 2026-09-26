@@ -90,3 +90,5 @@
 | [希尔弗家族代表](characters/opening-silph-representative.md) | 场景提案 | 查看业务账目与训练家资料，讨论赞助与地区外市场。身份不等于当代家主，也不是1942年老社长。 |
 | [希尔弗秘书](characters/opening-silph-secretary.md) | 场景提案 | 递送账目与训练家资料，询问赞助名单及是否只依赖一个冠军。 |
 | [火箭队办事成员](characters/opening-rocket-clerk.md) | 场景提案 | 报告坂木正常报名受阻，询问神兽调查与年轻训练家的培养。 |
+| [战争开场的无名宝可梦群像](characters/opening-war-combatants.md) | 场景提案 | 展示第一次世界大战末期多条交战线的匿名参战群体。 |
+| [前线无线电联络员](characters/opening-frontline-radio.md) | 场景提案 | 战争画面中的剧内无线电声音，报告交战与增援压力，要求上报伤情。 |

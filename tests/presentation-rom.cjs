@@ -13,8 +13,8 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
  function auditBlocking(){
   state();const b=Buffer.from(m.HEAPU8.buffer,sp,n),cueIndex=b.readUInt32LE(po+104),cue=cues[cueIndex];
   if(!cue)return;const grid=grids[cue.stage],count=b.readUInt32LE(po+68);
-  const currentAudio={chapter:cue.chapter,track:b.readUInt32LE(po+40),block:b.readUInt32LE(po+44),loops:b.readUInt32LE(po+48)};
-  if(lastAudio&&lastAudio.chapter!==cue.chapter&&cue.chapter<=3){
+  const currentAudio={chapter:cue.chapter,scene:cue.scene,track:b.readUInt32LE(po+40),block:b.readUInt32LE(po+44),loops:b.readUInt32LE(po+48)};
+  if(lastAudio&&lastAudio.chapter!==cue.chapter&&['silph','rocket','lab'].includes(cue.scene)){
    assert.equal(currentAudio.track,4,'Meeting music must bridge the cut');
    assert(currentAudio.loops>lastAudio.loops||currentAudio.block>=lastAudio.block,'Music restarted at a room cut');
    soundBridges.push({before:lastAudio,after:currentAudio});

@@ -70,6 +70,8 @@ def compile_assets():
         width,height=opening['stages'][stage]['crop'][2:]
         poses=copy.deepcopy(s['cast']);camera=s.get('camera',[0,0]);monitor=0;music=s['music']
         grid=grids[s['stage']]
+        if grid.get('kind')=='illustration':
+            assert not poses, 'Illustration stages cannot host walkable sprites'
         assert {a['actor'] for a in poses}<=set(s['actors'])
         for a in poses:route(grid,a['at'],a['at'],[b['at'] for b in poses if b is not a])
         for bi,beat in enumerate(s['beats']):
@@ -77,7 +79,8 @@ def compile_assets():
             assert len(lines)==2 and all(sum(glyph_width(c) for c in t)<=204 for t in lines),(s['id'],lines)
             if beat.get('actor'):assert beat['actor'] in s['actors']
             end_camera=beat.get('camera',camera);cx,cy=end_camera
-            assert 0<=cx<=max(0,width-240) and 0<=cy<=height-112,(s['id'],end_camera)
+            max_y=height-(160 if grid.get('kind')=='illustration' else 112)
+            assert 0<=cx<=max(0,width-240) and 0<=cy<=max_y,(s['id'],end_camera)
             duration=beat.get('ticks',beat.get('wait',192+sum(map(len,lines))*4))
             assert len(beat.get('move',{}))<=1, 'One moving actor per cue; other cast members reserve their tiles'
             actor_paths={a['actor']:route(grid,a['at'],beat.get('move',{}).get(a['actor'],a['at']),[b['at'] for b in poses if b is not a]) for a in poses}
@@ -105,7 +108,7 @@ def compile_assets():
             fade_in=bi==0 and s['transition']['kind'] in ('fade_in','night_to_morning')
             fade_out=bi==len(s['beats'])-1 and (chapter==len(opening['scenes'])-1 or opening['scenes'][chapter+1]['transition']['kind']=='night_to_morning')
             document=s.get('props',{}).get('document',[-100,-100]);terminal=s.get('props',{}).get('monitor',[-100,-100])
-            values=[cs(s['title']),cs(speaker),cs(lines[0]),cs(lines[1]),str(duration),*map(str,[*camera,*end_camera,*document,*terminal,chapter,stage,s['tone'],music,len(poses),effect,monitor,int(fade_in),int(fade_out),int(bi==0),sum(map(len,lines)),speaker_actor]),'{'+','.join(actors)+'}']
+            values=[cs(s['title']),cs(speaker),cs(lines[0]),cs(lines[1]),str(duration),*map(str,[*camera,*end_camera,*document,*terminal,chapter,stage,s['tone'],music,len(poses),effect,monitor,int(fade_in),int(fade_out),int(bi==0 and s.get('show_title',True)),sum(map(len,lines)),speaker_actor]),'{'+','.join(actors)+'}']
             scene_rows.append('{'+','.join(values)+'}')
             beat_audit.append({'cue':len(scene_rows)-1,'chapter':chapter,'scene':s['id'],'stage':s['stage'],'beat':bi,'duration':duration,'dialogue':bool(speaker),'speaker':speaker,'actor':beat.get('actor'),'movement':bool(beat.get('move') or beat.get('camera')),'paths':actor_paths,'music':music,'fade_in':bool(fade_in),'fade_out':bool(fade_out),'camera':[camera,end_camera]})
             camera=end_camera

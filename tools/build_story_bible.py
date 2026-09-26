@@ -391,7 +391,7 @@ def render(world,people,atlas,media):
     md+='\n## 连续性约束\n\n'+''.join(f'- {r}\n' for r in world['continuity_rules'])
     opening=world.get('opening_presentation')
     if opening:
-        summary=f'《未竟的和平》：{opening["scene_count"]} 场战争末期剧情，由世界赛提案、各方会议和下一代的选择连续展开。日期未定；对白与匿名配角为开场稿，未补写红莲之后的空白历史。玩家脚本与编剧秘密独立维护。'
+        summary=f'《未竟的和平》：{opening["scene_count"]} 场战争末期剧情，先展示大规模宝可梦混战，再由前线急报衔接世界赛提案、各方会议和下一代的选择。日期未定；战场群像、对白与匿名配角为开场稿，未补写红莲之后的空白历史。玩家脚本与编剧秘密独立维护。'
         body+='<h2>已实装的开场演出</h2><p>'+h(summary)+'</p><p>'+source_link(opening['source_docs'][0])+' · <a href="http://127.0.0.1:4173/play?opening">在 GBA 运行器中观看</a></p>'
         md+='\n## 已实装的开场演出\n\n'+summary+'[逐场剧本](../37-acted-opening-screenplay.md)，[实现与验证](../36-playable-opening-and-cast.md)。玩家文本见 `content/opening/prologue.json`。\n'
     outputs[OUT/'timeline.html']=page('故事世界线',body,'timeline');outputs[DOCS/'worldline.md']=md

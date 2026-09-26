@@ -3385,7 +3385,7 @@
       ],
       "relationships": [],
       "runtime_bindings": [],
-      "opening_scene_note": "联盟议事室开场稿：送来各地中心伤情汇总、世界赛提案与年轻训练家资料，与渡讨论参赛资格和冠军应服从谁。无名临时演员，具体政治归属与生平待定。",
+      "opening_scene_note": "接续战争开场的前线来讯，在议事室递交伤情和各地中心药品告急的汇总，再呈上世界赛提案与年轻训练家资料。与渡讨论参赛资格及冠军服从谁。匿名临时角色的具体政治归属与未知生平仍留空。",
       "presentation_bindings": [
         {
           "sequence": "first-journey-opening",
@@ -3503,6 +3503,78 @@
           "scene": "rocket",
           "mode": "acted_sprite",
           "sprite": "rocket_m"
+        }
+      ]
+    },
+    {
+      "id": "opening-war-combatants",
+      "name": "战争开场的无名宝可梦群像",
+      "kind": "pokemon_ensemble",
+      "status": "proposed_scene",
+      "role": "展示第一次世界大战末期多条交战线的匿名参战群体。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "生成战争插画中的匿名群像。可辨认主体为水箭龟、暴鲤龙、喷火龙、大比鸟、怪力、隆隆岩等；远景成员不逐一赋予身份。动画具体集数与个体设计参考未分配；插画不是经逐只设定稿核验的最终精灵资产。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/37-acted-opening-screenplay.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "opening_scene_note": "无名河谷战场中，空中、水面和地面同时交战。作为同一战争群像登记，未制作单独 NPC 实例。个体姓名、训练家、所属地区、战役日期和胜负均未确定；不推断任何成员死亡。",
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "illustrated_ensemble"
+        }
+      ]
+    },
+    {
+      "id": "opening-frontline-radio",
+      "name": "前线无线电联络员",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "战争画面中的剧内无线电声音，报告交战与增援压力，要求上报伤情。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "只作为剧内无线电声音出场；暂无头像、行走图或动画人物身份参考，外貌留空。当前为文字对白，未制作配音。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/37-acted-opening-screenplay.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "opening_scene_note": "在开场的混战画面中报告空中交战、两岸增援请求与人手不足，要求把伤情送回联盟。没有确立军衔、所属地区、性别、年龄、个人经历或结局。",
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "offscreen_voice"
         }
       ]
     }

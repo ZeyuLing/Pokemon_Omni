@@ -1,7 +1,7 @@
 {
   "repository": "https://github.com/pret/pokefirered",
   "commit": "c75f352304d529f6ba92d4f74b9cf8b5c3810788",
-  "scope": "Native tiles/layouts and animated object sprites, used as Omni stage adaptations; no source event scripts",
+  "scope": "Native room tiles/layouts and sprites plus separately credited generated cinematic illustrations; no source event scripts; illustrations do not define world geography",
   "files": [
     {
       "path": "data/layouts/layouts.json",
@@ -410,6 +410,18 @@
       "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/people/blue.png",
       "sha256": "2b66b767e56237d811ad83585f7b6a8732f73efd8d8406069e07322d36d791fb",
       "bytes": 727
+    }
+  ],
+  "illustrations": [
+    {
+      "stage": "war",
+      "manifest": "assets/opening/world-war-v1.json",
+      "image": "assets/opening/world-war-v1.png",
+      "sha256": "b660e319b66d36a77e7e97eab4252204a4ea5da69137d2cf869ccabc80d6e58b",
+      "runtime_size": [
+        288,
+        192
+      ]
     }
   ]
 }

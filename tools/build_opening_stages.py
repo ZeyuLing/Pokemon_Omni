@@ -1,7 +1,7 @@
-"""Compile source-layout stages and native walking sprites for the opening.
+"""Compile source-layout rooms, generated cinematic illustrations and sprites.
 
-No painted screenshots or inferred geography: the source tiles, palettes,
-block data and foreground masks remain independently reproducible.
+Illustrations are explicitly noninteractive stages; source-room collision and
+foreground masks remain independently reproducible.
 """
 import hashlib,io,json,struct,urllib.request
 from pathlib import Path
@@ -63,9 +63,27 @@ def render(layout, with_collision=False):
 def main():
     opening=json.loads((ROOT/'content/opening/prologue.json').read_text('utf-8'))
     layouts={l.get('id'):l for l in json.loads(get('data/layouts/layouts.json'))['layouts']}
-    blob=bytearray();stages=[];sprites=[];grids={}
+    blob=bytearray();stages=[];sprites=[];grids={};illustrations=[]
     (OUT/'stages').mkdir(parents=True,exist_ok=True)
     for s in opening['stages']:
+        if s.get('kind')=='illustration':
+            asset=json.loads((ROOT/s['manifest']).read_text('utf8'))
+            raw=(ROOT/asset['image']).read_bytes()
+            assert hashlib.sha256(raw).hexdigest()==asset['sha256'], 'Cinematic source hash changed'
+            x,y,w,h=s['crop'];assert x==y==0 and w%16==h%16==0
+            with Image.open(io.BytesIO(raw)) as source:
+                assert list(source.size)==asset['dimensions']
+                assert source.width*h==source.height*w, 'Do not stretch cinematic art'
+                bg=source.convert('RGB').resize((w,h),Image.Resampling.LANCZOS)
+            art=len(blob);blob+=rgba555(bg);mk=len(blob);blob+=bytes(w*h)
+            # All tiles blocked: this is an illustration, never a walkable map.
+            grid=[1]*(w//16*h//16);co=len(blob);blob+=bytes(grid)
+            while len(blob)%4:blob.append(0)
+            stages.append('{'+','.join(map(str,[w,h,art,mk,co]))+'}')
+            bg.save(OUT/'stages'/f'{s["id"]}.png')
+            grids[s['id']]={'width':w//16,'height':h//16,'cells':grid,'source':asset['image'],'crop':s['crop'],'kind':'illustration'}
+            illustrations.append({'stage':s['id'],'manifest':s['manifest'],'image':asset['image'],'sha256':asset['sha256'],'runtime_size':[w,h]})
+            continue
         meta=json.loads(get(f'data/maps/{s["source"]}/map.json'));layout=layouts[meta['layout']]
         bg,mask,cells=render(layout,True);bg.save(OUT/'stages'/f'{s["id"]}-full.png')
         x,y,w,h=s['crop'];assert x>=0 and y>=0 and x+w<=bg.width and y+h<=bg.height
@@ -105,6 +123,6 @@ extern const unsigned char omni_opening_stage_blob[];
 ''')
     (OUT/'opening_stage.c').write_text('#include "opening_stage.h"\nconst OmniStage omni_stages[]={'+','.join(stages)+'};\nconst OmniStageSprite omni_stage_sprites[]={'+','.join(sprites)+'};\n')
     (OUT/'opening-collision.json').write_text(json.dumps(grids,indent=2)+'\n')
-    MANIFEST.write_text(json.dumps({'repository':'https://github.com/pret/pokefirered','commit':REV,'scope':'Native tiles/layouts and animated object sprites, used as Omni stage adaptations; no source event scripts','files':list(records.values())},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    MANIFEST.write_text(json.dumps({'repository':'https://github.com/pret/pokefirered','commit':REV,'scope':'Native room tiles/layouts and sprites plus separately credited generated cinematic illustrations; no source event scripts; illustrations do not define world geography','files':list(records.values()),'illustrations':illustrations},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(f'Opening stages: {len(stages)}, sprites: {len(sprites)}, bytes: {len(blob)}')
 if __name__=='__main__':main()
