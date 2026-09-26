@@ -20,8 +20,8 @@ ID：`westwood`；状态：已采用。
 
 ## 已写生平
 
-- **1942 · 大木卸任与代理冠军**（正文已写）：接受代理冠军任命。 事件 ID：`oak-resigns`。
-- **1943-04 · 内阁扩大会议**（正文已写）：同意联系研究院说明公共风险，未被写成已盗取资料。 事件 ID：`expanded-cabinet`。
+- **1942-06-15 · 大木卸任与代理冠军**（正文已写）：接受代理冠军任命。 事件 ID：`oak-resigns`。
+- **1943-04-10 · 内阁扩大会议**（正文已写）：同意联系研究院说明公共风险，未被写成已盗取资料。 事件 ID：`expanded-cabinet`。
 
 ## 完整生平的留白
 
@@ -42,3 +42,4 @@ ID：`westwood`；状态：已采用。
 
 - [30-cinnabar-incident.md](../../../docs/30-cinnabar-incident.md)
 - [29-prehistory-cast.md](../../../docs/29-prehistory-cast.md)
+- [26-master-timeline.md](../../../docs/26-master-timeline.md)

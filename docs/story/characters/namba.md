@@ -20,7 +20,7 @@ ID：`namba`；状态：已采用。
 
 ## 已写生平
 
-- **1942 年夏至 1943 年初 · 虹羽研究与遗迹调查**（正文已写）：希望更快刺激样本、展开实验。 事件 ID：`relic-surveys`。
+- **1942-06-16 至 1943-03-31 · 虹羽研究与遗迹调查**（正文已写）：希望更快刺激样本、展开实验。 事件 ID：`relic-surveys`。
 
 ## 完整生平的留白
 
@@ -41,3 +41,4 @@ ID：`namba`；状态：已采用。
 
 - [30-cinnabar-incident.md](../../../docs/30-cinnabar-incident.md)
 - [29-prehistory-cast.md](../../../docs/29-prehistory-cast.md)
+- [26-master-timeline.md](../../../docs/26-master-timeline.md)

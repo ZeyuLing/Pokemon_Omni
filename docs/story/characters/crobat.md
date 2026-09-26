@@ -18,8 +18,8 @@ ID：`crobat`；状态：已采用。
 
 ## 已写生平
 
-- **1942-03 · 冠军战与叉字蝠重伤**（正文已写）：比赛中重伤，治疗停止后生命体征再次衰弱。 事件 ID：`championship-injury`。
-- **1942-03 · 坂木寻医与虹羽事件**（正文已写）：在羽毛光芒中康复，随后出现羁绊形态。 事件 ID：`rainbow-feather`。
+- **1942-03-02 · 冠军战与叉字蝠重伤**（正文已写）：比赛中重伤，治疗停止后生命体征再次衰弱。 事件 ID：`championship-injury`。
+- **1942-03-24 · 坂木寻医与虹羽事件**（正文已写）：在羽毛光芒中康复，随后出现羁绊形态。 事件 ID：`rainbow-feather`。
 - **1943-05-15 · 红莲洞窟袭击**（正文已写）：挡住坠石受伤，被坂木收回球中。 事件 ID：`cinnabar-attack`。
 
 ## 完整生平的留白
@@ -39,3 +39,4 @@ ID：`crobat`；状态：已采用。
 ## 创作依据
 
 - [25-rainbow-covenant-prologue.md](../../../docs/25-rainbow-covenant-prologue.md)
+- [26-master-timeline.md](../../../docs/26-master-timeline.md)

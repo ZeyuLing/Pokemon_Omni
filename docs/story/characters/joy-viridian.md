@@ -18,7 +18,7 @@ ID：`joy-viridian`；状态：已采用。
 
 ## 已写生平
 
-- **T=0 附近·具体年份未定 · 常青中心冲突**（原型已有／演出未完整）：治疗伙伴并提醒可疑人物。 事件 ID：`viridian-center`。
+- **1974-04-02 至 1974-04-05 · 常青中心冲突**（原型已有／演出未完整）：治疗伙伴并提醒可疑人物。 事件 ID：`viridian-center`。
 
 ## 完整生平的留白
 
@@ -36,3 +36,4 @@ ID：`joy-viridian`；状态：已采用。
 ## 创作依据
 
 - [adventure.c](../../../core/src/adventure.c)
+- [26-master-timeline.md](../../../docs/26-master-timeline.md)

@@ -18,7 +18,7 @@ ID：`elder`；状态：已采用。
 
 ## 已写生平
 
-- **1942-03 · 坂木寻医与虹羽事件**（正文已写）：向坂木讲述复生传说并建议前往铃铛塔。 事件 ID：`rainbow-feather`。
+- **1942-03-24 · 坂木寻医与虹羽事件**（正文已写）：向坂木讲述复生传说并建议前往铃铛塔。 事件 ID：`rainbow-feather`。
 
 ## 完整生平的留白
 
@@ -36,3 +36,4 @@ ID：`elder`；状态：已采用。
 ## 创作依据
 
 - [25-rainbow-covenant-prologue.md](../../../docs/25-rainbow-covenant-prologue.md)
+- [26-master-timeline.md](../../../docs/26-master-timeline.md)

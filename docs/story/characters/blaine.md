@@ -20,7 +20,7 @@ ID：`blaine`；状态：已采用。
 
 ## 已写生平
 
-- **1943-04 · 暗杀委托与双重清除**（正文已写）：会后收到包括两个人身份的行动命令，知情参与。 事件 ID：`assassination-orders`。
+- **1943-04-10 至 1943-04-12 · 暗杀委托与双重清除**（正文已写）：会后收到包括两个人身份的行动命令，知情参与。 事件 ID：`assassination-orders`。
 - **1943-05-15 · 海岸封锁与亚当死亡**（正文已写）：在海岸行动中知情参与，不能在后文抹去责任。 事件 ID：`cinnabar-betrayal`。
 
 ## 完整生平的留白
@@ -39,3 +39,4 @@ ID：`blaine`；状态：已采用。
 ## 创作依据
 
 - [30-cinnabar-incident.md](../../../docs/30-cinnabar-incident.md)
+- [26-master-timeline.md](../../../docs/26-master-timeline.md)

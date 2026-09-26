@@ -28,16 +28,46 @@ class ContinuityTests(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError,'Unregistered'):self.validate()
 
     def test_dead_character_cannot_reappear(self):
-        self.world['events'][-1]['participants']['juan']='Alive in the undated first journey'
+        self.world['events'][-1]['participants']['juan']='Alive after Cinnabar'
         with self.assertRaisesRegex(AssertionError,'Post-death'):self.validate()
 
-    def test_unknown_year_is_not_restored(self):
+    def test_epoch_year_matches_date(self):
         self.world['calendar']['epoch_year']=1967
-        with self.assertRaisesRegex(AssertionError,'Undetermined mainline'):self.validate()
+        with self.assertRaisesRegex(AssertionError,'Epoch year/date'):self.validate()
 
-    def test_mainline_event_cannot_invent_date(self):
-        self.world['events'][-1]['date']='1967'
-        with self.assertRaisesRegex(AssertionError,'Undetermined mainline'):self.validate()
+    def test_departure_cannot_drift_from_epoch(self):
+        next(e for e in self.world['events'] if e['id']=='ash-departure')['date']='1974-05-01'
+        with self.assertRaisesRegex(AssertionError,'Departure/epoch'):self.validate()
+
+    def test_invalid_calendar_date(self):
+        self.world['events'][0]['date']='1942-02-30'
+        with self.assertRaisesRegex(AssertionError,'Invalid calendar'):self.validate()
+
+    def test_reversed_window(self):
+        next(e for e in self.world['events'] if e['id']=='relic-surveys')['end_date']='1942-01-01'
+        with self.assertRaisesRegex(AssertionError,'Reversed event'):self.validate()
+
+    def test_consequence_cannot_precede_cause(self):
+        next(e for e in self.world['events'] if e['id']=='rocket-outlawed')['date']='1943-05-01'
+        self.world['events'].sort(key=lambda e:e['date'])
+        with self.assertRaisesRegex(AssertionError,'Chronology prerequisite'):self.validate()
+
+    def test_institution_dates_match_event_registry(self):
+        self.world['institutions']['world_federation']['first_tournament_date']='1976-09-01'
+        with self.assertRaisesRegex(AssertionError,'Institution date drift'):self.validate()
+
+    def test_four_year_tournament_cycle(self):
+        self.world['institutions']['world_federation']['tournament_schedule'][1]['start']='1978-09-01'
+        with self.assertRaisesRegex(AssertionError,'Tournament cycle drift'):self.validate()
+
+    def test_four_year_executive_terms(self):
+        self.world['institutions']['world_federation']['tournament_schedule'][1]['executive_start']='1980-10-01'
+        with self.assertRaisesRegex(AssertionError,'Executive term drift'):self.validate()
+
+    def test_second_generation_cannot_precede_first(self):
+        next(e for e in self.world['events'] if e['id']=='ash-developed')['date']='1969-03-21'
+        self.world['events'].sort(key=lambda e:e['date'])
+        with self.assertRaisesRegex(AssertionError,'Chronology prerequisite'):self.validate()
 
     def test_secret_does_not_spread_to_other_characters(self):
         self.world['secrets'][0]['known_by'].append('delia')

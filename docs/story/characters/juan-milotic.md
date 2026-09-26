@@ -37,3 +37,4 @@ ID：`juan-milotic`；状态：已采用。
 ## 创作依据
 
 - [30-cinnabar-incident.md](../../../docs/30-cinnabar-incident.md)
+- [26-master-timeline.md](../../../docs/26-master-timeline.md)

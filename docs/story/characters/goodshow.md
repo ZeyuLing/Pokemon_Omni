@@ -20,9 +20,9 @@ ID：`goodshow`；状态：已采用。
 
 ## 已写生平
 
-- **1942 · 大木卸任与代理冠军**（正文已写）：以稳定联盟为由支持代理安排。 事件 ID：`oak-resigns`。
-- **1943-04 · 内阁扩大会议**（正文已写）：以政府经费及学生前途向西野森施压。 事件 ID：`expanded-cabinet`。
-- **1943-04 · 暗杀委托与双重清除**（正文已写）：策划清除坂木与亚当。 事件 ID：`assassination-orders`。
+- **1942-06-15 · 大木卸任与代理冠军**（正文已写）：以稳定联盟为由支持代理安排。 事件 ID：`oak-resigns`。
+- **1943-04-10 · 内阁扩大会议**（正文已写）：以政府经费及学生前途向西野森施压。 事件 ID：`expanded-cabinet`。
+- **1943-04-10 至 1943-04-12 · 暗杀委托与双重清除**（正文已写）：策划清除坂木与亚当。 事件 ID：`assassination-orders`。
 
 ## 完整生平的留白
 
@@ -41,3 +41,4 @@ ID：`goodshow`；状态：已采用。
 
 - [30-cinnabar-incident.md](../../../docs/30-cinnabar-incident.md)
 - [29-prehistory-cast.md](../../../docs/29-prehistory-cast.md)
+- [26-master-timeline.md](../../../docs/26-master-timeline.md)

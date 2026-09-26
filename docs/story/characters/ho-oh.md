@@ -18,7 +18,7 @@ ID：`ho-oh`；状态：已采用。
 
 ## 已写生平
 
-- **1942-03 · 坂木寻医与虹羽事件**（正文已写）：飞过林地，未停留；其留下羽毛的动机未知。 事件 ID：`rainbow-feather`。
+- **1942-03-24 · 坂木寻医与虹羽事件**（正文已写）：飞过林地，未停留；其留下羽毛的动机未知。 事件 ID：`rainbow-feather`。
 
 ## 完整生平的留白
 
@@ -36,3 +36,4 @@ ID：`ho-oh`；状态：已采用。
 ## 创作依据
 
 - [25-rainbow-covenant-prologue.md](../../../docs/25-rainbow-covenant-prologue.md)
+- [26-master-timeline.md](../../../docs/26-master-timeline.md)

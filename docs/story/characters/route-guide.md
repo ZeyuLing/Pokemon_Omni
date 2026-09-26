@@ -18,7 +18,7 @@ ID：`route-guide`；状态：已采用。
 
 ## 已写生平
 
-- **T=0 附近·具体年份未定 · 博士包裹**（原型已有／演出未完整）：在道路介绍野生对战与捕获。 事件 ID：`parcel-return`。
+- **1974-04-02 至 1974-04-05 · 博士包裹**（原型已有／演出未完整）：在道路介绍野生对战与捕获。 事件 ID：`parcel-return`。
 
 ## 完整生平的留白
 
@@ -36,3 +36,4 @@ ID：`route-guide`；状态：已采用。
 ## 创作依据
 
 - [adventure.c](../../../core/src/adventure.c)
+- [26-master-timeline.md](../../../docs/26-master-timeline.md)

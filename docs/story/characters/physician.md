@@ -18,7 +18,7 @@ ID：`physician`；状态：已采用。
 
 ## 已写生平
 
-- **1942-03 · 冠军战与叉字蝠重伤**（正文已写）：说明治疗仍无法使叉字蝠稳定康复。 事件 ID：`championship-injury`。
+- **1942-03-02 · 冠军战与叉字蝠重伤**（正文已写）：说明治疗仍无法使叉字蝠稳定康复。 事件 ID：`championship-injury`。
 
 ## 完整生平的留白
 
@@ -36,3 +36,4 @@ ID：`physician`；状态：已采用。
 ## 创作依据
 
 - [25-rainbow-covenant-prologue.md](../../../docs/25-rainbow-covenant-prologue.md)
+- [26-master-timeline.md](../../../docs/26-master-timeline.md)

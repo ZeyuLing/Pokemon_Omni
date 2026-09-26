@@ -20,7 +20,7 @@ ID：`james`；状态：已采用。
 
 ## 已写生平
 
-- **T=0 附近·具体年份未定 · 常青中心冲突**（原型已有／演出未完整）：原型以男队员表示；完整个人演出尚未实现。 事件 ID：`viridian-center`。
+- **1974-04-02 至 1974-04-05 · 常青中心冲突**（原型已有／演出未完整）：原型以男队员表示；完整个人演出尚未实现。 事件 ID：`viridian-center`。
 
 ## 完整生平的留白
 
@@ -38,3 +38,4 @@ ID：`james`；状态：已采用。
 ## 创作依据
 
 - [20-cast-and-opening.md](../../../docs/20-cast-and-opening.md)
+- [26-master-timeline.md](../../../docs/26-master-timeline.md)

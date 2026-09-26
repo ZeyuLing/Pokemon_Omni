@@ -19,7 +19,7 @@ ID：`silph`；状态：已采用。
 ## 已写生平
 
 - **1942-04-02 · 希尔弗会谈**（正文已写）：同意资助，同时要求商业权益与服务企业事业。 事件 ID：`silph-agreement`。
-- **1942 · 研究院与火箭队筹建**（正文已写）：通过基金捐助与护送委托支持火箭队，避免明面上的公司私军关系。 事件 ID：`institute-rocket-founded`。
+- **1942-04-20 · 研究院与火箭队筹建**（正文已写）：通过基金捐助与护送委托支持火箭队，避免明面上的公司私军关系。 事件 ID：`institute-rocket-founded`。
 
 ## 完整生平的留白
 
@@ -37,3 +37,4 @@ ID：`silph`；状态：已采用。
 ## 创作依据
 
 - [25-rainbow-covenant-prologue.md](../../../docs/25-rainbow-covenant-prologue.md)
+- [26-master-timeline.md](../../../docs/26-master-timeline.md)

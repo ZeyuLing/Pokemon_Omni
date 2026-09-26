@@ -18,7 +18,7 @@ ID：`navy-minister`；状态：已采用。
 
 ## 已写生平
 
-- **1943-04 · 暗杀委托与双重清除**（正文已写）：指出无正式目击报告，随后听到灭口安排。 事件 ID：`assassination-orders`。
+- **1943-04-10 至 1943-04-12 · 暗杀委托与双重清除**（正文已写）：指出无正式目击报告，随后听到灭口安排。 事件 ID：`assassination-orders`。
 
 ## 完整生平的留白
 
@@ -36,3 +36,4 @@ ID：`navy-minister`；状态：已采用。
 ## 创作依据
 
 - [30-cinnabar-incident.md](../../../docs/30-cinnabar-incident.md)
+- [26-master-timeline.md](../../../docs/26-master-timeline.md)

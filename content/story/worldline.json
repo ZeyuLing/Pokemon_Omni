@@ -1,25 +1,28 @@
 {
-  "schema_version": 2,
-  "revision": "2026-09-26.1",
+  "schema_version": 3,
+  "revision": "2026-09-26.2",
   "status": "authoring_registry_not_runtime",
   "calendar": {
-    "epoch_year": null,
-    "epoch": "T=0：第一次宝可梦世界大战末期，小智从真新镇出发",
+    "epoch_year": 1974,
+    "epoch": "T=0：1974 年 4 月 1 日，小智从真新镇出发，第一次宝可梦世界大战进入最后一年",
     "official_calendar": false,
-    "mainline_year_status": "undetermined",
-    "prehistory_dates": "1942—1943 沿用已写前史的工作纪年；主线距红莲事件几十年，具体间隔未定",
+    "mainline_year_status": "adopted_working_calendar",
+    "prehistory_dates": "1942—1943 前史保留；1943-05-15 红莲事件至开场相隔 30 年 10 个月 17 天。全部日期为 Omni 创作纪年，不是官方或现实历史日期。",
     "age_policy": "人类年龄按已知出生年与实际年份计算；小智外观阶段、AI 启用时间与对外身份年龄分别记录，均不由动画十岁倒推出生年",
     "retired_assumptions": [
       "T=0 等于 1967",
       "小智及小茂出生于 1957",
       "主线大木固定 50 岁、坂木固定 45 岁",
       "1973／1978 为小智后续阶段的固定年份"
-    ]
+    ],
+    "epoch_date": "1974-04-01",
+    "authoring_authorization": "2026-09-26 用户授权按合适设定确定年份和明确时间节点；日期落定不等于事件过程已写。",
+    "progression_policy": "日历由剧情章节推进；挂机、重赛、读档不推进年份。开场可选任务共用时间窗口，不强制改变原型中的完成顺序。"
   },
   "events": [
     {
       "id": "championship-injury",
-      "date": "1942-03",
+      "date": "1942-03-02",
       "title": "冠军战与叉字蝠重伤",
       "location": "关都联盟",
       "status": "written",
@@ -31,14 +34,18 @@
         "physician": "说明治疗仍无法使叉字蝠稳定康复。"
       },
       "source_docs": [
-        "docs/25-rainbow-covenant-prologue.md"
+        "docs/25-rainbow-covenant-prologue.md",
+        "docs/26-master-timeline.md"
       ],
       "phase": "prehistory",
-      "visibility": "authoring"
+      "visibility": "authoring",
+      "end_date": null,
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "event"
     },
     {
       "id": "rainbow-feather",
-      "date": "1942-03",
+      "date": "1942-03-24",
       "title": "坂木寻医与虹羽事件",
       "location": "城都·缘朱市／铃铛塔周边",
       "status": "written",
@@ -51,10 +58,14 @@
         "tower-keeper": "接待坂木，但不能召来凤王。"
       },
       "source_docs": [
-        "docs/25-rainbow-covenant-prologue.md"
+        "docs/25-rainbow-covenant-prologue.md",
+        "docs/26-master-timeline.md"
       ],
       "phase": "prehistory",
-      "visibility": "authoring"
+      "visibility": "authoring",
+      "end_date": null,
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "event"
     },
     {
       "id": "silph-agreement",
@@ -69,32 +80,40 @@
         "silph": "同意资助，同时要求商业权益与服务企业事业。"
       },
       "source_docs": [
-        "docs/25-rainbow-covenant-prologue.md"
+        "docs/25-rainbow-covenant-prologue.md",
+        "docs/26-master-timeline.md"
       ],
       "phase": "prehistory",
-      "visibility": "authoring"
+      "visibility": "authoring",
+      "end_date": null,
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "event"
     },
     {
       "id": "institute-rocket-founded",
-      "date": "1942",
+      "date": "1942-04-20",
       "title": "研究院与火箭队筹建",
       "location": "关都",
       "status": "written",
-      "summary": "春季成立组织，具体各自注册日期未写；ROCKET 初始全称为地区生命保护、科研探索与救护组织。",
+      "summary": "4 月 20 日研究院与火箭队正式启动筹建，作为共同创立纪念节点；各自工商或组织登记手续未写。ROCKET 初始全称为地区生命保护、科研探索与救护组织。",
       "participants": {
         "giovanni": "创立火箭队并领导招募。",
         "oak": "出任希尔弗首席科学家，开展公开医疗研究与秘密虹羽研究。",
         "silph": "通过基金捐助与护送委托支持火箭队，避免明面上的公司私军关系。"
       },
       "source_docs": [
-        "docs/25-rainbow-covenant-prologue.md"
+        "docs/25-rainbow-covenant-prologue.md",
+        "docs/26-master-timeline.md"
       ],
       "phase": "prehistory",
-      "visibility": "authoring"
+      "visibility": "authoring",
+      "end_date": null,
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "event"
     },
     {
       "id": "oak-resigns",
-      "date": "1942",
+      "date": "1942-06-15",
       "title": "大木卸任与代理冠军",
       "location": "关都联盟",
       "status": "written",
@@ -106,18 +125,22 @@
         "agatha": "未出席告别，致信表达对大木放下对战的不满。"
       },
       "source_docs": [
-        "docs/30-cinnabar-incident.md"
+        "docs/30-cinnabar-incident.md",
+        "docs/26-master-timeline.md"
       ],
       "phase": "prehistory",
-      "visibility": "authoring"
+      "visibility": "authoring",
+      "end_date": null,
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "event"
     },
     {
       "id": "relic-surveys",
-      "date": null,
+      "date": "1942-06-16",
       "title": "虹羽研究与遗迹调查",
       "location": "关都多处遗迹",
       "status": "written",
-      "summary": "1942 年夏至 1943 年初；研究成果尚是假说，地方政府从组织规模与活动记录逐渐产生警惕。",
+      "summary": "1942 年 6 月 16 日至 1943 年 3 月 31 日的首轮遗迹调研期；成果尚是假说，地方政府从组织规模与活动逐渐产生警惕。",
       "participants": {
         "oak": "坚持先验证测量，不把相似信号直接视为神兽存在证明。",
         "fuji": "记录误差和不符合假说的结果。",
@@ -125,15 +148,18 @@
         "giovanni": "带领队伍进行调查。"
       },
       "source_docs": [
-        "docs/30-cinnabar-incident.md"
+        "docs/30-cinnabar-incident.md",
+        "docs/26-master-timeline.md"
       ],
       "phase": "prehistory",
       "visibility": "authoring",
-      "time_label": "1942 年夏至 1943 年初"
+      "end_date": "1943-03-31",
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "window"
     },
     {
       "id": "expanded-cabinet",
-      "date": "1943-04",
+      "date": "1943-04-10",
       "title": "内阁扩大会议",
       "location": "关都·会议地点未定",
       "status": "written",
@@ -145,14 +171,18 @@
         "juan": "主张遗迹许可与成果备案。"
       },
       "source_docs": [
-        "docs/30-cinnabar-incident.md"
+        "docs/30-cinnabar-incident.md",
+        "docs/26-master-timeline.md"
       ],
       "phase": "prehistory",
-      "visibility": "authoring"
+      "visibility": "authoring",
+      "end_date": null,
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "event"
     },
     {
       "id": "assassination-orders",
-      "date": "1943-04",
+      "date": "1943-04-10",
       "title": "暗杀委托与双重清除",
       "location": "关都·秘密洽谈",
       "status": "written",
@@ -164,10 +194,14 @@
         "blaine": "会后收到包括两个人身份的行动命令，知情参与。"
       },
       "source_docs": [
-        "docs/30-cinnabar-incident.md"
+        "docs/30-cinnabar-incident.md",
+        "docs/26-master-timeline.md"
       ],
       "phase": "prehistory",
-      "visibility": "authoring"
+      "visibility": "authoring",
+      "end_date": "1943-04-12",
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "window"
     },
     {
       "id": "cinnabar-attack",
@@ -183,10 +217,14 @@
         "crobat": "挡住坠石受伤，被坂木收回球中。"
       },
       "source_docs": [
-        "docs/30-cinnabar-incident.md"
+        "docs/30-cinnabar-incident.md",
+        "docs/26-master-timeline.md"
       ],
       "phase": "prehistory",
-      "visibility": "authoring"
+      "visibility": "authoring",
+      "end_date": null,
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "event"
     },
     {
       "id": "cinnabar-betrayal",
@@ -201,10 +239,14 @@
         "blaine": "在海岸行动中知情参与，不能在后文抹去责任。"
       },
       "source_docs": [
-        "docs/30-cinnabar-incident.md"
+        "docs/30-cinnabar-incident.md",
+        "docs/26-master-timeline.md"
       ],
       "phase": "prehistory",
-      "visibility": "authoring"
+      "visibility": "authoring",
+      "end_date": null,
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "event"
     },
     {
       "id": "giovanni-rescued",
@@ -218,15 +260,18 @@
         "persian": "借浅水和漂浮物救出坂木，没有新增冲浪招式。"
       },
       "source_docs": [
-        "docs/30-cinnabar-incident.md"
+        "docs/30-cinnabar-incident.md",
+        "docs/26-master-timeline.md"
       ],
       "phase": "prehistory",
-      "visibility": "authoring"
+      "visibility": "authoring",
+      "end_date": null,
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "event"
     },
     {
       "id": "rocket-outlawed",
-      "date": null,
-      "time_label": "红莲事件后·日期未定",
+      "date": "1943-06-01",
       "phase": "interlude",
       "title": "红莲事件被扭曲与火箭队非法化",
       "location": "关都",
@@ -237,113 +282,231 @@
         "giovanni": "其组织被定性为非法黑社会组织，主线时期在关都受到普遍敌视；不因此推定他已掌握全部幕后真相。"
       },
       "source_docs": [
-        "docs/32-first-journey-world-premise.md"
-      ]
-    },
-    {
-      "id": "oak-leaves-institute",
-      "date": null,
-      "time_label": "一周目开始前·日期未定",
-      "phase": "interlude",
-      "title": "大木离开希尔弗体系",
-      "location": "关都",
-      "status": "established",
-      "visibility": "authoring",
-      "summary": "大木已经离职，主线时期在宝可梦和人工智能研究上均有重要成果；离职原因、过程及现资金来源未写。",
-      "participants": {
-        "oak": "离开希尔弗；选择科学技术与战斗分析的路线，认为神兽力量高度不可控。"
-      },
-      "source_docs": [
-        "docs/32-first-journey-world-premise.md"
-      ]
+        "docs/32-first-journey-world-premise.md",
+        "docs/26-master-timeline.md"
+      ],
+      "end_date": null,
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "event"
     },
     {
       "id": "rocket-silph-split",
-      "date": null,
-      "time_label": "一周目开始前·日期未定",
+      "date": "1943-07-01",
       "phase": "interlude",
       "title": "火箭队脱离希尔弗并自行筹资",
       "location": "关都",
       "status": "established",
       "visibility": "authoring",
-      "summary": "火箭队与希尔弗已无合作、隶属关系；不确定与大木离职的先后。组织依靠包括宝可梦买卖在内的灰色业务自负盈亏。",
+      "summary": "7 月 1 日结束希尔弗资助及合作，此后组织自负盈亏；具体分离经过未写。宝可梦买卖等灰色业务逐渐出现，不把所有业务的起始日都等同于分离日。",
       "participants": {
-        "giovanni": "失去资助后自行筹措组织经费；多年追寻凤王、洛奇亚等神兽，愈发相信开发神兽力量的路线。"
+        "giovanni": "失去资助后自行筹措组织经费；此后多年追寻凤王、洛奇亚等神兽，至一周目愈发相信开发神兽力量的路线。"
       },
       "source_docs": [
+        "docs/32-first-journey-world-premise.md",
+        "docs/26-master-timeline.md"
+      ],
+      "end_date": null,
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "event"
+    },
+    {
+      "id": "oak-leaves-institute",
+      "date": "1944-03-31",
+      "phase": "interlude",
+      "title": "大木离开希尔弗体系",
+      "location": "关都",
+      "status": "established",
+      "visibility": "authoring",
+      "summary": "1944 年 3 月 31 日正式离开希尔弗；离职经过和后续资金来源未写。到 1974 年已形成科技与战斗分析路线。",
+      "participants": {
+        "oak": "离开希尔弗；选择科学技术与战斗分析的路线，认为神兽力量高度不可控。"
+      },
+      "source_docs": [
+        "docs/32-first-journey-world-premise.md",
+        "docs/26-master-timeline.md"
+      ],
+      "end_date": null,
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "event"
+    },
+    {
+      "id": "first-world-war-begins",
+      "date": "1962-09-01",
+      "end_date": null,
+      "date_role": "event",
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "phase": "interlude",
+      "title": "第一次宝可梦世界大战爆发",
+      "location": "跨地区／会址与参战范围待写",
+      "status": "established",
+      "visibility": "authoring",
+      "summary": "采用本日为地区冲突升级为第一次世界大战的纪年起点。1940 年代已有局部武装摩擦；不将那时的所有冲突视为连续世界大战。导火索、参战顺序和战役未写。",
+      "participants": {},
+      "source_docs": [
+        "docs/26-master-timeline.md",
+        "docs/32-first-journey-world-premise.md"
+      ]
+    },
+    {
+      "id": "oak-ai-project-start",
+      "date": "1963-01-15",
+      "end_date": null,
+      "date_role": "event",
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "phase": "interlude",
+      "title": "AI 训练家项目正式立项",
+      "location": "关都",
+      "status": "established",
+      "visibility": "author_only",
+      "summary": "本日为大木 AI 训练家项目的正式起点，不代表其此前没有人工智能研究基础。资金、团队与研究经过未写。",
+      "participants": {
+        "oak": "启动 AI 训练家项目，随后先后形成赤红与小智两代成果。"
+      },
+      "source_docs": [
+        "docs/26-master-timeline.md",
         "docs/32-first-journey-world-premise.md"
       ]
     },
     {
       "id": "red-developed",
-      "date": null,
-      "time_label": "小智研发之前·日期未定",
+      "date": "1970-10-04",
       "phase": "interlude",
       "title": "第一代 AI 训练家：赤红",
       "location": "关都",
       "status": "established",
       "visibility": "author_only",
-      "summary": "大木研发赤红，战斗能力强大，尚无语言功能和战斗外思想；当前所在及公开履历未定。",
+      "summary": "1970 年 10 月 4 日完成第一代 AI 赤红的可用版本并启用；没有语言功能和战斗外思想。不是公开出道或取得参赛资格的日期。",
       "participants": {
         "oak": "完成第一代 AI 训练家研究。",
         "red": "作为第一代成果具备强大战斗能力，未实现语言功能及战斗外思想。"
       },
       "source_docs": [
-        "docs/32-first-journey-world-premise.md"
-      ]
+        "docs/32-first-journey-world-premise.md",
+        "docs/26-master-timeline.md"
+      ],
+      "end_date": null,
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "event"
     },
     {
-      "id": "ash-developed",
-      "date": null,
-      "time_label": "赤红之后、出发之前·日期未定",
+      "id": "lance-takes-office",
+      "date": "1971-04-01",
+      "end_date": null,
+      "date_role": "event",
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
       "phase": "interlude",
-      "title": "第二代 AI 训练家：小智",
+      "title": "渡就任关都冠军",
       "location": "关都",
       "status": "established",
-      "visibility": "author_only",
-      "summary": "小智搭载视觉语言模型与战斗系统，能思考、交谈和战斗；通过提示词初始设定向往和平、忠于大木。",
+      "visibility": "authoring",
+      "summary": "确定就任时间；前任是谁、如何胜出和独裁统治的形成过程留空。",
       "participants": {
-        "oak": "研发小智并设置初始目标；世界内只有他知道小智的 AI 身份。",
-        "ash": "作为第二代成果具有类人的思考、对话与战斗能力，但不知道自己是 AI；载体、记忆与启用年份未定。"
+        "lance": "成为关都冠军；不把此日期自动等同于所有行政权力同时到手。"
       },
       "source_docs": [
-        "docs/32-first-journey-world-premise.md"
-      ]
-    },
-    {
-      "id": "first-world-war-late",
-      "date": null,
-      "time_label": "T=0 背景·具体年份未定",
-      "phase": "first-journey",
-      "title": "第一次世界大战末期的社会",
-      "location": "跨地区／具体地点未定",
-      "status": "established",
-      "visibility": "authoring",
-      "summary": "红莲事件已过去几十年，各地区经济遭战争重创、民生凋敝；中间战争史和战争结束日未写。",
-      "participants": {},
-      "source_docs": [
+        "docs/26-master-timeline.md",
         "docs/32-first-journey-world-premise.md"
       ]
     },
     {
       "id": "world-tournament-proposal",
-      "date": null,
-      "time_label": "大战末期的制度背景·倡议日期未定",
-      "phase": "first-journey",
+      "date": "1972-06-01",
+      "phase": "interlude",
       "title": "四年一届世界赛与联邦构想",
       "location": "跨地区／具体地点未定",
       "status": "established",
       "visibility": "authoring",
-      "summary": "未定地区提出世界赛选拔行政首领与四名常务委员的方案；设两院，冠军地区增加议员席位。制度是否已生效、首届与当前届次未定。",
+      "summary": "1972 年 6 月 1 日提出四年一届世界赛和联邦方案；倡议地区仍未选定。倡议日期不等于制度生效或首次比赛日期。",
       "participants": {},
       "source_docs": [
+        "docs/32-first-journey-world-premise.md",
+        "docs/26-master-timeline.md"
+      ],
+      "end_date": null,
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "event"
+    },
+    {
+      "id": "ash-developed",
+      "date": "1973-03-21",
+      "phase": "interlude",
+      "title": "第二代 AI 训练家：小智",
+      "location": "关都",
+      "status": "established",
+      "visibility": "author_only",
+      "summary": "1973 年 3 月 21 日完成第二代 AI 小智的可用版本并启用，初始向往和平、忠于大木；社会身份、记忆与载体尚未写。",
+      "participants": {
+        "oak": "研发小智并设置初始目标；世界内只有他知道小智的 AI 身份。",
+        "ash": "第二代成果于此日启用，具备类人的思考、对话与战斗能力；不知道自己是 AI。载体和记忆来源未写，不能据启用日期推断伪造童年的方式。"
+      },
+      "source_docs": [
+        "docs/32-first-journey-world-premise.md",
+        "docs/26-master-timeline.md"
+      ],
+      "end_date": null,
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "event"
+    },
+    {
+      "id": "federation-framework",
+      "date": "1973-10-01",
+      "end_date": null,
+      "date_role": "event",
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "phase": "interlude",
+      "title": "联邦竞赛过渡框架生效",
+      "location": "跨地区／会址与参战范围待写",
+      "status": "established",
+      "visibility": "authoring",
+      "summary": "确定赛果与未来行政任职的制度连接及首届时间表；首届常务委员会尚未产生。倡议地区、签署方、谈判经过与过渡管理安排仍待写。",
+      "participants": {},
+      "source_docs": [
+        "docs/26-master-timeline.md",
         "docs/32-first-journey-world-premise.md"
       ]
     },
     {
+      "id": "ash-qualification-plan",
+      "date": "1973-10-15",
+      "phase": "interlude",
+      "title": "大木安排小智取得世界赛资格",
+      "location": "关都",
+      "status": "established",
+      "visibility": "author_only",
+      "summary": "大木计划让小智取得八枚徽章、挑战关都联盟，再获得世界赛资格。这是目标，不是已完成结果；实际挑战仍需玩家完成。",
+      "participants": {
+        "oak": "认为强大、向往和平且忠于自己的小智适合争夺世界冠军，规划关都挑战路线。",
+        "ash": "是秘密计划的参赛人选；不知道 AI 身份，不自动知道大木计划全貌。"
+      },
+      "source_docs": [
+        "docs/32-first-journey-world-premise.md",
+        "docs/26-master-timeline.md"
+      ],
+      "end_date": null,
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "event"
+    },
+    {
+      "id": "first-world-war-late",
+      "date": "1974-04-01",
+      "phase": "first-journey",
+      "title": "第一次世界大战末期的社会",
+      "location": "跨地区／具体地点未定",
+      "status": "established",
+      "visibility": "authoring",
+      "summary": "1974 年 4 月 1 日的开场状态：红莲事件过去近 31 年，1962 年爆发的世界大战进入最后一年，各地区经济与民生受到重创。年末停战，开场尚未全面和平。",
+      "participants": {},
+      "source_docs": [
+        "docs/32-first-journey-world-premise.md",
+        "docs/26-master-timeline.md"
+      ],
+      "end_date": null,
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "snapshot"
+    },
+    {
       "id": "kanto-contenders",
-      "date": null,
-      "time_label": "一周目当下",
+      "date": "1974-04-01",
       "phase": "first-journey",
       "title": "关都内部的世界赛竞争",
       "location": "关都",
@@ -356,36 +519,22 @@
         "giovanni": "同样追求繁荣和平的联邦共和国，主张开发神兽力量；被定罪身份下的参赛方式未定。"
       },
       "source_docs": [
-        "docs/32-first-journey-world-premise.md"
-      ]
-    },
-    {
-      "id": "ash-qualification-plan",
-      "date": null,
-      "time_label": "一周目旅程的秘密目标",
-      "phase": "first-journey",
-      "title": "大木安排小智取得世界赛资格",
-      "location": "关都",
-      "status": "established",
-      "visibility": "author_only",
-      "summary": "大木计划让小智取得八枚徽章、挑战关都联盟，再获得世界赛资格。这是目标，不是已完成结果；实际挑战仍需玩家完成。",
-      "participants": {
-        "oak": "认为强大、向往和平且忠于自己的小智适合争夺世界冠军，规划关都挑战路线。",
-        "ash": "是秘密计划的参赛人选；不知道 AI 身份，不自动知道大木计划全貌。"
-      },
-      "source_docs": [
-        "docs/32-first-journey-world-premise.md"
-      ]
+        "docs/32-first-journey-world-premise.md",
+        "docs/26-master-timeline.md"
+      ],
+      "end_date": null,
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "snapshot"
     },
     {
       "id": "ash-departure",
-      "date": null,
+      "date": "1974-04-01",
       "title": "少年小智领取皮卡丘",
       "location": "真新镇",
       "status": "prototype",
       "summary": "现有开场原型：小智到研究所，与皮卡丘相识，获得出发条件。 新基线下为待改编原型，不证明小智的生物出生、真实童年或旁人知晓 AI 秘密。",
       "participants": {
-        "ash": "以少年训练家身份开始旅程；不知道自己是 AI，外部身份年龄及启用日期尚未写定。",
+        "ash": "1974 年 4 月 1 日以少年训练家身份出发；AI 已启用一年多但本人不知身份，对外身份年龄未定。",
         "oak": "把皮卡丘交给小智，指导他前往常青市。",
         "pikachu": "成为小智初始伙伴。",
         "gary": "在研究所等待并可发起练习战。",
@@ -398,19 +547,22 @@
       },
       "source_docs": [
         "core/src/adventure.c",
-        "docs/32-first-journey-world-premise.md"
+        "docs/32-first-journey-world-premise.md",
+        "docs/26-master-timeline.md"
       ],
       "phase": "first-journey",
       "visibility": "authoring",
-      "time_label": "T=0 附近·具体年份未定"
+      "end_date": null,
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "event"
     },
     {
       "id": "viridian-center",
-      "date": null,
+      "date": "1974-04-02",
       "title": "常青中心冲突",
       "location": "常青市·宝可梦中心",
       "status": "prototype",
-      "summary": "现有原型以通用男女火箭队像素表示三人组冲突；喵喵尚无独立场景实体。 新基线下为待改编原型，不证明小智的生物出生、真实童年或旁人知晓 AI 秘密。",
+      "summary": "编排在 4 月 2—5 日开场窗口；原型以通用男女火箭队像素表示三人组，喵喵未有独立实体。与商店包裹任务仍可按玩家选择调整先后，不自动证明新基线的所有经过已完成改编。",
       "participants": {
         "ash": "保护中心并与火箭队对战。",
         "joy-viridian": "治疗伙伴并提醒可疑人物。",
@@ -419,19 +571,22 @@
         "meowth": "开场剧情方向要求参与；未独立实现。"
       },
       "source_docs": [
-        "docs/22-kanto-first-journey.md"
+        "docs/22-kanto-first-journey.md",
+        "docs/26-master-timeline.md"
       ],
       "phase": "first-journey",
       "visibility": "authoring",
-      "time_label": "T=0 附近·具体年份未定"
+      "end_date": "1974-04-05",
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "window"
     },
     {
       "id": "parcel-return",
-      "date": null,
+      "date": "1974-04-02",
       "title": "博士包裹",
       "location": "常青商店→真新镇研究所",
       "status": "prototype",
-      "summary": "当前可玩开场的任务：领取包裹并交还大木。 新基线下为待改编原型，不证明小智的生物出生、真实童年或旁人知晓 AI 秘密。",
+      "summary": "编排在 4 月 2—5 日开场窗口；领取并交还博士包裹。与中心冲突不固定先后，领取早于交回的任务依赖保持。",
       "participants": {
         "ash": "把包裹送回研究所。",
         "clerk": "委托小智带回包裹。",
@@ -439,11 +594,104 @@
         "route-guide": "在道路介绍野生对战与捕获。"
       },
       "source_docs": [
-        "core/src/adventure.c"
+        "core/src/adventure.c",
+        "docs/26-master-timeline.md"
       ],
       "phase": "first-journey",
       "visibility": "authoring",
-      "time_label": "T=0 附近·具体年份未定"
+      "end_date": "1974-04-05",
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "date_role": "window"
+    },
+    {
+      "id": "first-world-war-ends",
+      "date": "1974-12-31",
+      "end_date": null,
+      "date_role": "scheduled",
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "phase": "future-schedule",
+      "title": "全面停战与第一次世界大战结束",
+      "location": "跨地区／会址与参战范围待写",
+      "status": "scheduled",
+      "visibility": "authoring",
+      "summary": "以全面停战作为本作第一次世界大战的结束节点；条约过程、地方残余冲突和政治责任未写，不等于一切暴力消失。",
+      "participants": {},
+      "source_docs": [
+        "docs/26-master-timeline.md",
+        "docs/32-first-journey-world-premise.md"
+      ]
+    },
+    {
+      "id": "first-world-qualification-deadline",
+      "date": "1975-06-30",
+      "end_date": null,
+      "date_role": "scheduled",
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "phase": "future-schedule",
+      "title": "首届世界赛资格审验截止",
+      "location": "跨地区／会址与参战范围待写",
+      "status": "scheduled",
+      "visibility": "authoring",
+      "summary": "首届世界赛的资格审验截止节点；具体提名、记录争议、犯罪与 AI 身份资格规则待写。该日期不保证小智已经合格。",
+      "participants": {},
+      "source_docs": [
+        "docs/26-master-timeline.md",
+        "docs/32-first-journey-world-premise.md"
+      ]
+    },
+    {
+      "id": "first-world-tournament",
+      "date": "1975-09-01",
+      "end_date": "1975-09-30",
+      "date_role": "scheduled",
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "phase": "future-schedule",
+      "title": "首届宝可梦世界大赛",
+      "location": "跨地区／会址与参战范围待写",
+      "status": "scheduled",
+      "visibility": "authoring",
+      "summary": "首届比赛窗口为 9 月 1—30 日；赛场、赛制细则、胜者与小智是否实际参赛留空。所属篇章未定。",
+      "participants": {},
+      "source_docs": [
+        "docs/26-master-timeline.md",
+        "docs/32-first-journey-world-premise.md"
+      ]
+    },
+    {
+      "id": "first-world-executive",
+      "date": "1975-10-01",
+      "end_date": null,
+      "date_role": "scheduled",
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "phase": "future-schedule",
+      "title": "首届联邦行政常务委员会就职",
+      "location": "跨地区／会址与参战范围待写",
+      "status": "scheduled",
+      "visibility": "authoring",
+      "summary": "首届世界赛前四名（含冠军）就职，冠军任行政首领。常规任期四年；谁当选、任期内事件与非常罢免程序未写。",
+      "participants": {},
+      "source_docs": [
+        "docs/26-master-timeline.md",
+        "docs/32-first-journey-world-premise.md"
+      ]
+    },
+    {
+      "id": "second-world-tournament",
+      "date": "1979-09-01",
+      "end_date": "1979-09-30",
+      "date_role": "scheduled",
+      "date_basis": "Omni working calendar, authorized 2026-09-26",
+      "phase": "future-schedule",
+      "title": "第二届世界赛与换届周期",
+      "location": "跨地区／会址与参战范围待写",
+      "status": "scheduled",
+      "visibility": "authoring",
+      "summary": "四年一届的第二个比赛窗口；胜者、人物状态及该阶段剧情不预写。常规换届日为 1979 年 10 月 1 日。",
+      "participants": {},
+      "source_docs": [
+        "docs/26-master-timeline.md",
+        "docs/32-first-journey-world-premise.md"
+      ]
     }
   ],
   "unwritten": [
@@ -451,91 +699,123 @@
       "id": "world-war-history",
       "date": null,
       "text": null,
-      "label": "第一次世界大战起讫、过程与旧内战构想的关系"
+      "label": "第一次世界大战导火索、战役与停战过程",
+      "anchor_events": [
+        "first-world-war-begins",
+        "first-world-war-ends"
+      ]
     },
     {
       "id": "outlawing-details",
       "date": null,
       "text": null,
-      "label": "火箭队非法化的具体手法、公开说法与责任链"
+      "label": "火箭队非法化的具体手法、公开说法与责任链",
+      "anchor_events": [
+        "rocket-outlawed"
+      ]
     },
     {
       "id": "oak-departure-details",
       "date": null,
       "text": null,
-      "label": "大木离职过程与现研究资金"
+      "label": "大木离职过程与现研究资金",
+      "anchor_events": [
+        "oak-leaves-institute"
+      ]
     },
     {
       "id": "silph-split-details",
       "date": null,
       "text": null,
-      "label": "火箭队与希尔弗分离的经过"
+      "label": "火箭队与希尔弗分离的经过",
+      "anchor_events": [
+        "rocket-silph-split"
+      ]
     },
     {
       "id": "world-federation-details",
       "date": null,
       "text": null,
-      "label": "倡议地区、制度生效、届次与两院细则"
+      "label": "倡议地区、谈判过程与两院细则",
+      "anchor_events": [
+        "world-tournament-proposal",
+        "federation-framework",
+        "first-world-executive"
+      ]
     },
     {
       "id": "silph-current-head",
       "date": null,
       "text": null,
-      "label": "当代希尔弗家族掌权人及老社长晚年"
+      "label": "当代希尔弗家族掌权人及老社长晚年",
+      "anchor_events": []
     },
     {
       "id": "kanto-current-elites",
       "date": null,
       "text": null,
-      "label": "当代关都四天王阵容与个人路线"
+      "label": "当代关都四天王阵容与个人路线",
+      "anchor_events": []
     },
     {
       "id": "red-current-life",
       "date": null,
       "text": null,
-      "label": "赤红启用日期、现状与公开履历"
+      "label": "赤红启用后的现状与公开履历",
+      "anchor_events": [
+        "red-developed"
+      ]
     },
     {
       "id": "ash-social-identity",
       "date": null,
       "text": null,
-      "label": "小智的载体、记忆来源、家庭关系与社会身份"
+      "label": "小智的载体、记忆来源、家庭关系与社会身份",
+      "anchor_events": [
+        "ash-developed",
+        "ash-departure"
+      ]
     },
     {
       "id": "ash-reveal",
       "date": null,
       "text": null,
-      "label": "小智身份揭露节点及之后的发展"
+      "label": "小智身份揭露节点及之后的发展",
+      "anchor_events": []
     },
     {
       "id": "mewtwo-project",
       "date": null,
       "text": null,
-      "label": "超梦研究计划"
+      "label": "超梦研究计划",
+      "anchor_events": []
     },
     {
       "id": "ash-young-adult",
       "date": null,
       "text": null,
-      "label": "少年后期／青年过渡及外观变化方式"
+      "label": "少年后期／青年过渡及外观变化方式",
+      "anchor_events": []
     },
     {
       "id": "ash-adult",
       "date": null,
       "text": null,
-      "label": "青年小智阶段"
+      "label": "青年小智阶段",
+      "anchor_events": []
     },
     {
       "id": "first-journey-ending",
       "date": null,
       "text": null,
-      "label": "关都篇结局与世界赛是否在一周目内发生"
+      "label": "关都篇结局与世界赛是否在一周目内发生",
+      "anchor_events": []
     }
   ],
   "continuity_rules": [
-    "一周目处于第一次宝可梦世界大战末期，距红莲事件几十年；绝对年份未定，不恢复 1967 映射。",
-    "已写前史沿用 1942—1943 工作纪年；间隔事件只登记已确认的结果，不补写过程或排序。",
-    "人类按同一日历成长；小智的 AI 启用日期、外观阶段、对外年龄与主观经历分开，未定值为空。",
+    "一周目于 1974-04-01 开始，距红莲事件 30 年 10 个月 17 天；不恢复旧 1967 映射。",
+    "前史沿用 1942—1943；日期已定的离职、分离与非法化只固定时间和结果，具体过程留空。",
+    "人类按同一日历成长；赤红 1970-10-04 启用、小智 1973-03-21 启用，不能据此推导其生物出生、载体或对外年龄。",
     "原作剧情不自动进入 Omni 生平；经典事件须按新基线改编，旧原型不证明真实童年或旁人知情。",
     "亚当死于红莲事件，不能因一周目年份为空而在主线作为活人出现。",
     "富士未被确定为泄密者；红莲洞窟神兽报告为伪造。",
@@ -544,40 +824,48 @@
     "希尔弗家族的当代活动不能自动归给 1942 年的老社长，不能推定老社长仍在世。",
     "世界四天王共四人且包含世界冠军；地区冠军与地区四天王是独立层级。",
     "八徽章通向关都联盟挑战；世界赛资格来自有效联盟履历或胜利记录，不要求必须先成为冠军。",
-    "世界制度的设计已确定，倡议地区、生效时间和首届届次仍未定；比赛周期不自动等于已定行政任期。",
+    "联邦方案于 1972-06-01 提出，过渡框架 1973-10-01 生效；首届世界赛 1975 年 9 月、行政就职 10 月 1 日；比赛和常规任期均四年，倡议地区及细则未定。",
     "只有大木知道小智的 AI 身份，小智本人不知；花子、小茂、坂木、赤红及玩家不能自动获得秘密。",
     "赤红是第一代 AI，未实现语言功能或战斗以外思想；不擅自添加内心独白、政治动机或终局。",
     "小智初始向往和平且忠于大木；目标冲突的处理和后续人格发展未定，不预写反叛或绝对控制。",
     "大木希望旅途顺利不意味着放水、必胜或读取隐藏对战信息；剧情 AI 设定不改变公平对战规则。",
-    "洗翠与神奥是时代关系；地区间新增地理必须与已知地形相容。"
+    "洗翠与神奥是时代关系；地区间新增地理必须与已知地形相容。",
+    "未来日程只固定时间，不登记胜者、身份揭露或主角必然达成的成绩。",
+    "1974 年 4 月 2—5 日开场窗口允许中心与包裹任务按玩家选择排序，不把书写顺序当作任务依赖。",
+    "本作 1940 年代局部冲突与 1962 年爆发的世界大战分开；旧 1945 年全面开战草案不再采用。"
   ],
   "phases": [
     {
       "id": "prehistory",
       "order": 0,
-      "label": "已写前史"
+      "label": "1942—1943 已写前史"
     },
     {
       "id": "interlude",
       "order": 1,
-      "label": "红莲事件后至一周目前的未定年代"
+      "label": "1943—1973 历史间隔"
     },
     {
       "id": "first-journey",
       "order": 2,
-      "label": "一周目·世界大战末期"
+      "label": "1974 关都篇开场"
+    },
+    {
+      "id": "future-schedule",
+      "order": 3,
+      "label": "已定未来日程／具体篇章待编"
     }
   ],
   "institutions": {
     "world_federation": {
-      "status": "established_design_enactment_undetermined",
+      "status": "adopted_framework_future_executive",
       "source_docs": [
         "docs/32-first-journey-world-premise.md"
       ],
       "proposer_region": null,
-      "enactment_date": null,
-      "first_tournament_date": null,
-      "opening_edition": null,
+      "enactment_date": "1973-10-01",
+      "first_tournament_date": "1975-09-01",
+      "opening_edition": 1,
       "tournament_cycle_years": 4,
       "eligibility": {
         "record_authority": "地区宝可梦联盟",
@@ -599,7 +887,7 @@
         "member_count": 4,
         "includes_champion": true,
         "title": "世界四天王／行政常务委员",
-        "term_years": null,
+        "term_years": 4,
         "departments": null,
         "removal_process": null
       },
@@ -613,7 +901,39 @@
         "bonus_count": null,
         "bonus_duration": null
       },
-      "district_structure": "世界职位不替代或重定义地区的冠军与四天王职位"
+      "district_structure": "世界职位不替代或重定义地区的冠军与四天王职位",
+      "proposal_date": "1972-06-01",
+      "qualification_deadline": "1975-06-30",
+      "first_tournament_end": "1975-09-30",
+      "first_executive_date": "1975-10-01",
+      "opening_stage": "首届筹备期",
+      "calendar_events": {
+        "proposal_date": "world-tournament-proposal",
+        "enactment_date": "federation-framework",
+        "qualification_deadline": "first-world-qualification-deadline",
+        "first_tournament_date": "first-world-tournament",
+        "first_executive_date": "first-world-executive"
+      },
+      "tournament_schedule": [
+        {
+          "edition": 1,
+          "start": "1975-09-01",
+          "end": "1975-09-30",
+          "executive_start": "1975-10-01"
+        },
+        {
+          "edition": 2,
+          "start": "1979-09-01",
+          "end": "1979-09-30",
+          "executive_start": "1979-10-01"
+        },
+        {
+          "edition": 3,
+          "start": "1983-09-01",
+          "end": "1983-09-30",
+          "executive_start": "1983-10-01"
+        }
+      ]
     }
   },
   "factions": [
@@ -669,6 +989,138 @@
       "source_docs": [
         "docs/32-first-journey-world-premise.md"
       ]
+    }
+  ],
+  "chronology_constraints": [
+    {
+      "earlier": "championship-injury",
+      "later": "rainbow-feather",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "rainbow-feather",
+      "later": "silph-agreement",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "silph-agreement",
+      "later": "institute-rocket-founded",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "institute-rocket-founded",
+      "later": "oak-resigns",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "oak-resigns",
+      "later": "relic-surveys",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "relic-surveys",
+      "later": "expanded-cabinet",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "expanded-cabinet",
+      "later": "assassination-orders",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "assassination-orders",
+      "later": "cinnabar-attack",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "cinnabar-attack",
+      "later": "rocket-outlawed",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "rocket-outlawed",
+      "later": "rocket-silph-split",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "rocket-silph-split",
+      "later": "oak-leaves-institute",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "first-world-war-begins",
+      "later": "oak-ai-project-start",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "oak-ai-project-start",
+      "later": "red-developed",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "red-developed",
+      "later": "ash-developed",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "ash-developed",
+      "later": "ash-qualification-plan",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "ash-qualification-plan",
+      "later": "ash-departure",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "world-tournament-proposal",
+      "later": "federation-framework",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "federation-framework",
+      "later": "ash-qualification-plan",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "first-world-war-begins",
+      "later": "ash-departure",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "ash-departure",
+      "later": "first-world-war-ends",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "first-world-war-ends",
+      "later": "first-world-qualification-deadline",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "first-world-qualification-deadline",
+      "later": "first-world-tournament",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "first-world-tournament",
+      "later": "first-world-executive",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "first-world-executive",
+      "later": "second-world-tournament",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "ash-departure",
+      "later": "viridian-center",
+      "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "ash-departure",
+      "later": "parcel-return",
+      "relation": "ends_before_or_same_day"
     }
   ]
 }

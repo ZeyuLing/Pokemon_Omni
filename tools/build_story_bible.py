@@ -12,6 +12,7 @@ import shutil
 import ssl
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
+from datetime import date as CalendarDate
 from html import escape as h
 from pathlib import Path
 
@@ -19,11 +20,19 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'build/story-bible'
 DOCS = ROOT / 'docs/story'
 STATUS = {'adopted':'已采用', 'candidate':'候选', 'placeholder':'身份待定', 'proposed_scene':'场景提案'}
-EVENT_STATUS = {'written':'正文已写', 'established':'背景已确定／场景未写', 'prototype':'原型已有／演出未完整'}
+EVENT_STATUS = {'written':'正文已写', 'established':'背景已确定／场景未写', 'prototype':'原型已有／演出未完整', 'scheduled':'已定日程／情节未写'}
 
 
 def read(path):
     return json.loads((ROOT/path).read_text(encoding='utf-8'))
+
+
+def calendar_date(value):
+    assert isinstance(value,str) and re.fullmatch(r'\d{4}-\d{2}-\d{2}',value), 'Invalid story date format'
+    try:
+        return CalendarDate.fromisoformat(value)
+    except ValueError as error:
+        raise AssertionError('Invalid calendar date') from error
 
 
 def validate(world, people, atlas, media):
@@ -37,14 +46,26 @@ def validate(world, people, atlas, media):
     ids(world['phases'])
     phases={p['id']:p['order'] for p in world['phases']}
     assert len(set(phases.values()))==len(phases), 'Duplicate phase order'
-    if world['calendar']['mainline_year_status']=='undetermined':
-        assert world['calendar']['epoch_year'] is None, 'Undetermined mainline year was fixed'
-        assert all(e['date'] is None for e in world['events'] if e['phase']=='first-journey'), 'Undetermined mainline event was dated'
+    epoch=calendar_date(world['calendar']['epoch_date'])
+    assert world['calendar']['mainline_year_status']=='adopted_working_calendar'
+    assert epoch.year==world['calendar']['epoch_year'], 'Epoch year/date mismatch'
+    assert event_map['ash-departure']['date']==epoch.isoformat(), 'Departure/epoch date mismatch'
     for e in world['events']:
         assert set(e['participants'])<=actors, 'Unregistered event participant'
         assert e['status'] in EVENT_STATUS
         assert e['phase'] in phases and e['visibility'] in ('authoring','author_only')
-        assert e['date'] is None or re.fullmatch(r'\d{4}(-\d{2})?(-\d{2})?',e['date'])
+        start=calendar_date(e['date']); end=calendar_date(e['end_date']) if e.get('end_date') else start
+        assert start<=end, 'Reversed event window'
+        assert e['date_role'] in ('event','window','snapshot','scheduled')
+    assert [e['date'] for e in world['events']]==sorted(e['date'] for e in world['events']), 'Events not in date order'
+    for constraint in world['chronology_constraints']:
+        assert constraint['earlier'] in event_ids and constraint['later'] in event_ids, 'Unknown chronology reference'
+        assert constraint['relation']=='ends_before_or_same_day'
+        earlier=event_map[constraint['earlier']]; later=event_map[constraint['later']]
+        assert (earlier.get('end_date') or earlier['date'])<=later['date'], 'Chronology prerequisite violated'
+    war_start=calendar_date(event_map['first-world-war-begins']['date'])
+    war_end=calendar_date(event_map['first-world-war-ends']['date'])
+    assert war_start<epoch<war_end and epoch.year==war_end.year, 'Opening must be in the final war year'
     for c in people:
         assert c['status'] in STATUS
         assert c['appearance']['reference_media'] is None or c['appearance']['reference_media'] in media_ids
@@ -65,6 +86,9 @@ def validate(world, people, atlas, media):
             assert not any(c['id'] in e['participants'] for e in world['events']), 'Proposal became biography without adoption'
         if c['kind']=='ai_trainer':
             assert c['birth_year'] is None, 'AI appearance silently became biological birth year'
+            activation=c['activation_event']
+            assert activation in event_ids and c['id'] in event_map[activation]['participants'], 'Missing AI activation event'
+            assert calendar_date(event_map[activation]['date'])<epoch, 'AI activation must precede opening'
     ids(world['secrets']); ids(world['factions'])
     for secret in world['secrets']:
         assert set(secret['known_by'])<=actors and secret['subject'] in actors, 'Unregistered secret knower'
@@ -76,6 +100,25 @@ def validate(world, people, atlas, media):
     assert all(f['leader'] is None or f['leader'] in actors for f in world['factions'])
     executive=world['institutions']['world_federation']['executive']
     assert executive['member_count']==4 and executive['includes_champion'], 'World executive includes champion within four members'
+    federation=world['institutions']['world_federation']
+    for field,event_id in federation['calendar_events'].items():
+        assert event_id in event_ids and federation[field]==event_map[event_id]['date'], 'Institution date drift'
+    assert federation['first_tournament_end']==event_map['first-world-tournament']['end_date'], 'Tournament end date drift'
+    previous=None
+    for edition in federation['tournament_schedule']:
+        begin=calendar_date(edition['start']); end=calendar_date(edition['end']); taking_office=calendar_date(edition['executive_start'])
+        assert begin<=end<taking_office, 'Tournament/office date order'
+        if previous:
+            assert edition['edition']==previous['edition']+1, 'Tournament edition sequence'
+            assert begin==calendar_date(previous['start']).replace(year=calendar_date(previous['start']).year+federation['tournament_cycle_years']), 'Tournament cycle drift'
+            assert taking_office==calendar_date(previous['executive_start']).replace(year=calendar_date(previous['executive_start']).year+executive['term_years']), 'Executive term drift'
+        else:
+            assert edition['edition']==federation['opening_edition']==1
+            assert edition['start']==federation['first_tournament_date'] and edition['end']==federation['first_tournament_end'] and edition['executive_start']==federation['first_executive_date'], 'First tournament schedule drift'
+        previous=edition
+    assert calendar_date(federation['enactment_date'])<epoch<calendar_date(federation['qualification_deadline'])<calendar_date(federation['first_tournament_date']), 'Framework/qualification/season order'
+    for item in world['unwritten']:
+        assert set(item['anchor_events'])<=event_ids, 'Unknown unwritten event anchor'
     for obj in people+world['events']:
         assert all((ROOT/p).is_file() for p in obj['source_docs']), 'Missing source document'
     for r in atlas['regions']:
@@ -130,7 +173,7 @@ def portrait(m,prefix=''):
 
 
 def event_date(e):
-    return e['date'] or e.get('time_label','日期未定，见正文')
+    return e['date']+(' 至 '+e['end_date'] if e.get('end_date') else '')+('（开场状态）' if e.get('date_role')=='snapshot' else '')
 
 
 def secret_badge(e):
@@ -142,6 +185,12 @@ def institution_summary(federation):
     return (f'每 {federation["tournament_cycle_years"]} 年举办世界赛；实力资格须有{eligibility["record_authority"]}认可的以下任一记录：'
             +'、'.join(eligibility['any_of'])+f'。{executive["head"]}任行政首领；{executive["members"]}（包含冠军），共 {executive["member_count"]} 人，担任{executive["title"]}。'
             +'设'+ '、'.join(legislature['chambers'])+'。'+('冠军地区享有更多议员席位。' if legislature['champion_region_extra_seats'] else ''))
+
+
+def institution_calendar(federation):
+    return (f'方案提出：{federation["proposal_date"]}；过渡框架生效：{federation["enactment_date"]}；'
+            f'首届资格截止：{federation["qualification_deadline"]}；首届比赛：{federation["first_tournament_date"]} 至 {federation["first_tournament_end"]}；'
+            f'首届行政就职：{federation["first_executive_date"]}。常规任期 {federation["executive"]["term_years"]} 年。倡议地区、谈判经过、席位公式与赛果留空。')
 
 
 def render(world,people,atlas,media):
@@ -157,12 +206,13 @@ def render(world,people,atlas,media):
     for i,r in enumerate(atlas['regions'][:9],1): body+=map_panel(r,i)
     body+='</div><h2>历史时代 · 洗翠</h2><p>它后来被称为神奥，不是第十块现代大陆；历史时期设施与现代地貌分别核对。</p><div class="historical">'+map_panel(atlas['regions'][9],10)+'</div><h2>扩展地区</h2><p>七之岛、北上乡、蓝莓学园、铠之孤岛和冠之雪原仍保留在项目范围内；完整分幅与连接尚待补入。</p><h2>进入游戏前的地图依据</h2><p>原作地区插画用于宏观对照；实际道路、洞窟、入口和碰撞由相应版本地图数据确认。关都当前以火红格位为准，不将 Let’s Go 插画直接当作火红关卡数据。游戏场景与图册须分别验收。</p>'
     outputs[OUT/'index.html']=page('世界地图',body,'atlas')
-    intro=world['calendar']['epoch']+'。主线年份未定，距红莲事件已经过去几十年。已确定背景、成篇正文与开发原型分别标记；同一未定区间内的排列不代表精确先后。'
+    intro=world['calendar']['epoch']+'。'+world['calendar']['prehistory_dates']+' 已定日期与内容完成度分开记录；时间窗口不强制其中的可选任务按书写顺序完成。'
     body='<p class="eyebrow">Worldline / 编剧主线</p><h1>故事世界线</h1><p class="intro">'+h(intro)+'</p><p class="notice">含小智身份等核心剧透，仅供创作使用；事件中的参与者不等于知道事件全部真相。</p><p>当前一周目基线：'+source_link('docs/32-first-journey-world-premise.md')+'</p>'
     md='# 故事世界线\n\n由 content/story/worldline.json 生成。请修改源数据后运行构建器，不直接编辑本文件。\n\n'+intro+'\n\n**编剧档案，含核心剧透。参与事件不等于知晓全部真相。**\n'
     federation_text=institution_summary(world['institutions']['world_federation'])
-    body+='<h2>世界赛与联邦构想</h2><p>'+h(federation_text)+'</p><p class="meta">倡议地区、正式生效日期、比赛届次、任期及席位公式未定。世界级职位不改变地区级冠军与四天王结构。</p><h2>当代势力</h2><ul>'
-    md+='\n## 世界赛与联邦构想\n\n'+federation_text+'倡议地区、生效日期、届次与具体细则未定。\n\n## 当代势力\n\n'
+    season_text=institution_calendar(world['institutions']['world_federation'])
+    body+='<h2>世界赛与联邦构想</h2><p>'+h(federation_text)+'</p><p class="meta">'+h(season_text)+'</p><h2>当代势力</h2><ul>'
+    md+='\n## 世界赛与联邦构想\n\n'+federation_text+'\n\n'+season_text+'\n\n## 当代势力\n\n'
     for f in world['factions']:
         body+=f'<li><strong>{h(f["name"])}</strong>：{h(f["current_goal"])}</li>'
         md+=f'- **{f["name"]}**：{f["current_goal"]}\n'
@@ -180,11 +230,13 @@ def render(world,people,atlas,media):
         md+=f'\n## {date} · {e["title"]}\n\n状态：{EVENT_STATUS[e["status"]]}；地点：{e["location"]}。\n\n{e["summary"]}\n\n'
         if e['visibility']=='author_only':md+='**编剧秘密，非角色已知信息。**\n\n'
         for id,text in e['participants'].items():md+=f'- [{cc[id]["name"]}](characters/{id}.md)：{text}\n'
-    body+='</div><h2>尚未创作</h2><table class="blank-table"><caption>空白保持为空；年龄坐标不是已经发生的事件。</caption><tbody>'
+    body+='</div><h2>尚未创作</h2><table class="blank-table"><caption>日期引用已定事件；正文空白表示经过仍未创作。</caption><tbody>'
     md+='\n## 尚未创作\n\n| 节点 | 日期 | 事件正文 |\n|---|---|---|\n'
     for x in world['unwritten']:
-        body+=f'<tr><th>{h(x["label"])}</th><td aria-label="尚未创作"></td></tr>'
-        md+=f'| {x["label"]} | | |\n'
+        anchors=[next(e for e in world['events'] if e['id']==id) for id in x['anchor_events']]
+        links='；'.join(f'<a href="#{e["id"]}">{h(e["date"])}</a>' for e in anchors)
+        body+=f'<tr><th>{h(x["label"])}</th><td>{links}</td><td aria-label="尚未创作"></td></tr>'
+        md+=f'| {x["label"]} | '+ '；'.join(e['date'] for e in anchors)+' | |\n'
     body+='</tbody></table><h2>连续性约束</h2><ul>'+''.join(f'<li>{h(r)}</li>' for r in world['continuity_rules'])+'</ul>'
     md+='\n## 连续性约束\n\n'+''.join(f'- {r}\n' for r in world['continuity_rules'])
     outputs[OUT/'timeline.html']=page('故事世界线',body,'timeline');outputs[DOCS/'worldline.md']=md
