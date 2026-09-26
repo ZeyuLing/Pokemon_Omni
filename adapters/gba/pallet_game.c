@@ -13,6 +13,8 @@
 #include "omni/stage.h"
 #include "music.h"
 #include "title.h"
+#include "battlefield.h"
+static uint32_t war_ticks;
 
 #define REG16(a) (*(volatile uint16_t*)(a))
 #define REG32(a) (*(volatile uint32_t*)(a))
@@ -166,6 +168,7 @@ static void draw_intro(void){
  if(ox){box(0,0,ox,160,RGB(3,5,7));box(ox+width,0,240-ox-width,160,RGB(3,5,7));}
  if(height<160)box(ox,height,width,160-height,RGB(3,5,7));
  for(row=0;row<(unsigned)height;++row)dma_row((const uint16_t*)(omni_opening_stage_blob+m->art)+(row+cy)*m->w+cx,omni_gba_surface+row*240+ox,(unsigned)width);
+ if(s->stage==0)omni_gba_war_draw(omni_gba_surface,cx,cy,war_ticks);
  /* Practical props stay in the corresponding source room. */
  if(s->monitor_x>=0){
   int x=s->monitor_x-cx+ox,y=s->monitor_y-cy;
@@ -353,7 +356,7 @@ static int read_slot(unsigned slot,uint32_t *sequence,int apply){
 }
 static int load_game(void){uint32_t a=0,b=0;int va=read_slot(0,&a,0),vb=read_slot(1,&b,0);unsigned first=(vb&&(!va||(int32_t)(b-a)>0))?1:0;uint32_t seq;if(!va&&!vb)return 0;if(read_slot(first,&seq,1)){save_slot=(int)first;save_seq=seq;return 1;}return 0;}
 static void begin_new(void){omni_adventure_new(&game);play_clock_remainder=0;memset(dex_flags,0,sizeof(dex_flags));px=6;py=6;direction=0;moving=0;anim_x=anim_y=0;save_game();message("小智醒来时，已经迟到了！\n今天要领取第一只宝可梦。\n先和妈妈告别，去研究所吧。",AFTER_WORLD);}
-static void begin_intro(uint8_t new_game){preview_return=screen;intro_new_game=new_game;omni_presentation_begin(&presentation,OMNI_INTRO_COUNT);screen=INTRO;dirty=1;}
+static void begin_intro(uint8_t new_game){preview_return=screen;intro_new_game=new_game;war_ticks=0;omni_presentation_begin(&presentation,OMNI_INTRO_COUNT);screen=INTRO;dirty=1;}
 static void end_intro(void){REG16(0x04000050)=0;if(intro_new_game)begin_new();else{screen=preview_return;dirty=1;}}
 static void talk_person(uint8_t person){
  const char *custom;uint8_t talk;
@@ -466,6 +469,7 @@ int main(void){
    play_clock_remainder+=(elapsed>128?128:elapsed);
    if(play_clock_remainder>=64){omni_adventure_elapsed(&game,play_clock_remainder/64);play_clock_remainder%=64;}
   }
+  if(screen==INTRO&&presentation.playing&&omni_intro[presentation.scene].stage==0)war_ticks+=elapsed>128?128:elapsed;
   omni_presentation_advance(&presentation,clock,presentation.playing?omni_intro[presentation.scene].duration:0);
   if(screen==INTRO&&!presentation.playing)end_intro();
   music=(screen==COVER||screen==FILE_MENU||screen==NEW_CONFIRM)?1:(screen==INTRO||screen==INTRO_SKIP)?omni_intro[presentation.scene].music:(screen==BATTLE||screen==BATTLE_LOG)?2:game.location==8?7:game.location==5?6:1;

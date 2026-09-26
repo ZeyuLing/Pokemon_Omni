@@ -3533,14 +3533,8 @@
       ],
       "relationships": [],
       "runtime_bindings": [],
-      "opening_scene_note": "无名河谷战场中，空中、水面和地面同时交战。作为同一战争群像登记，未制作单独 NPC 实例。个体姓名、训练家、所属地区、战役日期和胜负均未确定；不推断任何成员死亡。",
-      "presentation_bindings": [
-        {
-          "sequence": "first-journey-opening",
-          "scene": "war-front",
-          "mode": "illustrated_ensemble"
-        }
-      ]
+      "opening_scene_note": "上一版静态插画群像已撤下；本轮改用逐个登记的原生地图单位 war-unit-01 等。旧画仅保留美术参考，不再出现在开场。",
+      "presentation_bindings": []
     },
     {
       "id": "opening-frontline-radio",
@@ -3569,7 +3563,7 @@
       ],
       "relationships": [],
       "runtime_bindings": [],
-      "opening_scene_note": "在开场的混战画面中报告空中交战、两岸增援请求与人手不足，要求把伤情送回联盟。没有确立军衔、所属地区、性别、年龄、个人经历或结局。",
+      "opening_scene_note": "地图战争过场中报告桥头交锋，请水面部队掩护后撤，通知救护并让传令员把伤情送回联盟。未知履历、日期与归属留空。",
       "presentation_bindings": [
         {
           "sequence": "first-journey-opening",
@@ -3577,6 +3571,1486 @@
           "mode": "offscreen_voice"
         }
       ]
+    },
+    {
+      "id": "war-unit-01",
+      "name": "西岸第1组豪力 01",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/machoke.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-01"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-02",
+      "name": "东岸第1组豪力 02",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/machoke.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-02"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-03",
+      "name": "西岸第1组尼多力诺 03",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/nidorino.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-03"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-04",
+      "name": "东岸第1组尼多力诺 04",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/nidorino.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-04"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-05",
+      "name": "西岸第2组皮卡丘 05",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/pikachu.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-05"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-06",
+      "name": "东岸第2组皮卡丘 06",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/pikachu.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-06"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-07",
+      "name": "西岸第2组尼多力诺 07",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/nidorino.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-07"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-08",
+      "name": "东岸第2组尼多力诺 08",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/nidorino.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-08"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-09",
+      "name": "西岸第3组蚊香泳士 09",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/poliwrath.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-09"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-10",
+      "name": "东岸第3组蚊香泳士 10",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/poliwrath.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-10"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-11",
+      "name": "西岸第3组尼多力诺 11",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/nidorino.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-11"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-12",
+      "name": "东岸第3组尼多力诺 12",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/nidorino.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-12"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-13",
+      "name": "水面拉普拉斯 13",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/lapras.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-13"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-14",
+      "name": "水面拉普拉斯 14",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/lapras.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-14"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-15",
+      "name": "水面拉普拉斯 15",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/lapras.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-15"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-16",
+      "name": "水面拉普拉斯 16",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/lapras.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-16"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-17",
+      "name": "空中大比鸟 17",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/pidgeot.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-17"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-18",
+      "name": "空中大比鸟 18",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/pidgeot.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-18"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-19",
+      "name": "空中大比鸟 19",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/pidgeot.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-19"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-20",
+      "name": "空中大比鸟 20",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/pidgeot.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-20"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-21",
+      "name": "前线训练家 21",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-21"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-22",
+      "name": "前线训练家 22",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-22"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-23",
+      "name": "前线训练家 23",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-23"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-24",
+      "name": "战场指挥员 24",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/policeman.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-24"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-25",
+      "name": "救护员 25",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/nurse.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-25"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-26",
+      "name": "救护吉利蛋 26",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/chansey.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-26"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-27",
+      "name": "前线传令员 27",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/worker_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-27"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-28",
+      "name": "前线训练家 28",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-28"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-29",
+      "name": "前线训练家 29",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-29"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-30",
+      "name": "前线训练家 30",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-30"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-31",
+      "name": "战场指挥员 31",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/policeman.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-31"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-32",
+      "name": "救护员 32",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/nurse.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-32"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-33",
+      "name": "救护吉利蛋 33",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/pokemon/chansey.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-33"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-34",
+      "name": "前线传令员 34",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/worker_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-34"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-35",
+      "name": "前列支援训练家 35",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-35"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-36",
+      "name": "前列支援训练家 36",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-36"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-37",
+      "name": "前列支援训练家 37",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-37"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-38",
+      "name": "前列支援训练家 38",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-38"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-39",
+      "name": "前列支援训练家 39",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-39"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
+    },
+    {
+      "id": "war-unit-40",
+      "name": "前列支援训练家 40",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "无名战争舞台中的独立地图事件单位；东西两侧仅为舞台方位，不代表地区归属。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "复用火红原生地图素材 graphics/object_events/pics/people/cooltrainer_m.png。动画个体身份与年龄设计未分配；无新立绘或模型。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/39-map-war-opening.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-40"
+        }
+      ],
+      "opening_scene_note": "在可运行地图过场中按事件路线行动。参战、施招、后撤仅为开场演出；不确立个人背景、战果、死亡或未来结局。"
     }
   ],
   "revision": "2026-09-26.7"

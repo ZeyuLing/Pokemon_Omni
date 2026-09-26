@@ -98,18 +98,22 @@ class OpeningLayout(unittest.TestCase):
         self.assertGreaterEqual(scene['beats'][0]['ticks'],384)
         self.assertNotIn('speaker',scene['beats'][0])
         self.assertEqual(SCRIPT['scenes'][1]['id'],'lance')
-        self.assertTrue(all(GRIDS['war']['cells']),'Painted battlefield must not become walkable')
+        self.assertEqual(GRIDS['war']['kind'],'battlefield')
+        self.assertIn(0,GRIDS['war']['cells'],'Native battlefield requires traversable terrain')
+        data=json.loads((ROOT/'content/opening/battlefield.json').read_text('utf8'))
+        self.assertEqual(len(data['actors']),40)
+        self.assertTrue({a['id'] for a in data['actors']}<=set(scene['actors']))
         for cue in REPORT['cues']:
             if cue['stage']!='war':continue
             for x,y in cue['camera']:
-                self.assertTrue(0<=x<=48 and 0<=y<=32,'Camera exposes empty space')
+                self.assertTrue(0<=x<=272 and 0<=y<=160,'Camera exposes empty space')
         # Evidence comes from actual ROM frames, not the high-resolution source.
         selected=[REPORT['cues'][0],next(c for c in REPORT['cues'] if c['scene']=='war-front' and c['dialogue']),next(c for c in REPORT['cues'] if c['scene']=='lance' and c['dialogue'])]
         proof=Image.new('RGB',(720,160))
         for i,cue in enumerate(selected):
             actual=shot(OUT/f'cue-{cue["cue"]}.rgba')
             if i==0:
-                self.assertGreater(len(set(actual.get_flattened_data())),150)
+                self.assertGreater(len(set(actual.get_flattened_data())),30)
                 actual.resize((720,480),Image.Resampling.NEAREST).save(OUT/'war-opening.png')
             proof.paste(actual,(i*240,0))
         proof.resize((1440,320),Image.Resampling.NEAREST).save(OUT/'war-to-meeting-proof.png')

@@ -241,6 +241,11 @@ class ContinuityTests(unittest.TestCase):
         actor['runtime_bindings']=[]
         with self.assertRaisesRegex(AssertionError,'coverage drift'):self.validate()
 
+    def test_battlefield_instances_keep_their_own_registry_binding(self):
+        actor=next(c for c in self.people if c['id']=='war-unit-01')
+        actor['presentation_bindings'][0]['instance']='war-unit-02'
+        with self.assertRaisesRegex(AssertionError,'Battlefield instance coverage drift'):self.validate()
+
     def test_unwritten_stays_blank(self):
         self.world['unwritten'][0]['text']='Invented war ending'
         with self.assertRaisesRegex(AssertionError,'silently filled'):self.validate()

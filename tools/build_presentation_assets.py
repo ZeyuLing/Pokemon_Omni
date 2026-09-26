@@ -79,7 +79,7 @@ def compile_assets():
             assert len(lines)==2 and all(sum(glyph_width(c) for c in t)<=204 for t in lines),(s['id'],lines)
             if beat.get('actor'):assert beat['actor'] in s['actors']
             end_camera=beat.get('camera',camera);cx,cy=end_camera
-            max_y=height-(160 if grid.get('kind')=='illustration' else 112)
+            max_y=height-(160 if grid.get('kind') in ('illustration','battlefield') else 112)
             assert 0<=cx<=max(0,width-240) and 0<=cy<=max_y,(s['id'],end_camera)
             duration=beat.get('ticks',beat.get('wait',192+sum(map(len,lines))*4))
             assert len(beat.get('move',{}))<=1, 'One moving actor per cue; other cast members reserve their tiles'

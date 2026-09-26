@@ -1,5 +1,5 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "id": "first-journey-opening",
   "title": "未竟的和平",
   "clock_hz": 64,
@@ -21,13 +21,12 @@
   "stages": [
     {
       "id": "war",
-      "kind": "illustration",
-      "manifest": "assets/opening/world-war-v1.json",
+      "kind": "battlefield",
       "crop": [
         0,
         0,
-        288,
-        192
+        512,
+        320
       ]
     },
     {
@@ -89,48 +88,117 @@
       "tone": 0,
       "music": 2,
       "actors": [
-        "opening-war-combatants",
+        "war-unit-01",
+        "war-unit-02",
+        "war-unit-03",
+        "war-unit-04",
+        "war-unit-05",
+        "war-unit-06",
+        "war-unit-07",
+        "war-unit-08",
+        "war-unit-09",
+        "war-unit-10",
+        "war-unit-11",
+        "war-unit-12",
+        "war-unit-13",
+        "war-unit-14",
+        "war-unit-15",
+        "war-unit-16",
+        "war-unit-17",
+        "war-unit-18",
+        "war-unit-19",
+        "war-unit-20",
+        "war-unit-21",
+        "war-unit-22",
+        "war-unit-23",
+        "war-unit-24",
+        "war-unit-25",
+        "war-unit-26",
+        "war-unit-27",
+        "war-unit-28",
+        "war-unit-29",
+        "war-unit-30",
+        "war-unit-31",
+        "war-unit-32",
+        "war-unit-33",
+        "war-unit-34",
+        "war-unit-35",
+        "war-unit-36",
+        "war-unit-37",
+        "war-unit-38",
+        "war-unit-39",
+        "war-unit-40",
         "opening-frontline-radio"
       ],
       "cast": [],
       "camera": [
-        0,
-        32
+        80,
+        24
       ],
       "show_title": false,
       "transition": {
         "kind": "fade_in",
-        "reason": "先看见大规模宝可梦混战；无旁白，先留六秒战场镜头。"
+        "reason": "实际地图上的双方集结与交战；使用原生单位和招式事件，不显示战争插画。"
       },
       "beats": [
         {
           "ticks": 384,
           "camera": [
-            48,
-            0
+            112,
+            24
+          ]
+        },
+        {
+          "speaker": "指挥员",
+          "actor": "war-unit-24",
+          "lines": [
+            "指挥员：守住桥头！",
+            "后排，掩护他们！"
+          ],
+          "ticks": 224
+        },
+        {
+          "ticks": 512,
+          "camera": [
+            176,
+            112
+          ]
+        },
+        {
+          "ticks": 512,
+          "camera": [
+            144,
+            160
           ]
         },
         {
           "speaker": "前线",
           "actor": "opening-frontline-radio",
           "lines": [
-            "前线：空中编队已经交战！",
-            "河岸两侧都在请求增援！"
+            "前线：两座桥都在交战！",
+            "水面部队，请掩护后撤！"
           ],
-          "ticks": 224
+          "ticks": 256
+        },
+        {
+          "ticks": 320,
+          "camera": [
+            48,
+            112
+          ]
         },
         {
           "speaker": "前线",
           "actor": "opening-frontline-radio",
           "lines": [
-            "前线：这里没有空闲的队伍了。",
-            "把伤情报回联盟。"
+            "前线：救护队接住他们！",
+            "传令员，把伤情送回联盟！"
           ],
-          "ticks": 224,
+          "ticks": 256,
           "music": 4
         },
         {
-          "wait": 32
+          "wait": 48
         }
       ]
     },

@@ -9,8 +9,8 @@
   ],
   "tool": "image_gen.imagegen (built-in)",
   "prompt": "assets/opening/world-war-v1.prompt.txt",
-  "status": "opening_illustration_draft_in_rom",
+  "status": "retired_reference_not_in_rom",
   "scope": "Generated mass Pokemon battle illustration for the established late First World War. Unnamed composite battlefield, not a dated battle or literal region map. No named trainers, legendary deployment, casualties, winner or faction assignments established.",
-  "runtime": "288x192 RGB555 camera stage displayed through a 240x160 viewport. Static illustration with camera movement, not independently animated fighting Pokemon.",
+  "runtime": "Withdrawn from opening playback; retained only as art reference.",
   "credits": "Generated for Pokemon Omni; Pokemon species designs belong to the existing franchise. Not official anime footage or final model-sheet-verified creature assets."
 }

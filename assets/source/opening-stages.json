@@ -1,7 +1,7 @@
 {
   "repository": "https://github.com/pret/pokefirered",
   "commit": "c75f352304d529f6ba92d4f74b9cf8b5c3810788",
-  "scope": "Native room tiles/layouts and sprites plus separately credited generated cinematic illustrations; no source event scripts; illustrations do not define world geography",
+  "scope": "Native room tiles/layouts and sprites; authored map battle assets are tracked separately in battlefield.json. Optional illustrations are separately credited. No source event scripts or global geography claims.",
   "files": [
     {
       "path": "data/layouts/layouts.json",
@@ -412,16 +412,5 @@
       "bytes": 727
     }
   ],
-  "illustrations": [
-    {
-      "stage": "war",
-      "manifest": "assets/opening/world-war-v1.json",
-      "image": "assets/opening/world-war-v1.png",
-      "sha256": "b660e319b66d36a77e7e97eab4252204a4ea5da69137d2cf869ccabc80d6e58b",
-      "runtime_size": [
-        288,
-        192
-      ]
-    }
-  ]
+  "illustrations": []
 }

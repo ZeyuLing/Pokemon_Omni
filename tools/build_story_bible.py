@@ -220,6 +220,12 @@ def validate(world, people, atlas, media):
     assert set(world['opening_presentation']['actors'])=={x[2] for x in expected}, 'Opening worldline drift'
     assert world['opening_presentation']['date'] is None, 'Opening montage was dated'
     assert world['opening_presentation']['scene_count']==len(opening['scenes']), 'Opening scene count drift'
+    war=read('content/opening/battlefield.json')
+    war_ids=[a['id'] for a in war['actors']]
+    assert len(war_ids)==len(set(war_ids)), 'Duplicate battlefield instance'
+    assert set(war_ids)<=actors, 'Unregistered battlefield unit'
+    war_bindings=[(c['id'],b.get('instance')) for c in people for b in c.get('presentation_bindings',[]) if b.get('mode')=='map_battle_unit']
+    assert set(war_bindings)=={(id,id) for id in war_ids}, 'Battlefield instance coverage drift'
     for scene in opening['scenes']:
         assert 'opening-narrator' not in scene['actors'], 'Narration is not an acted scene'
         assert {c['actor'] for c in scene['cast']}<=set(scene['actors']), 'Unregistered opening cast'
@@ -391,7 +397,7 @@ def render(world,people,atlas,media):
     md+='\n## 连续性约束\n\n'+''.join(f'- {r}\n' for r in world['continuity_rules'])
     opening=world.get('opening_presentation')
     if opening:
-        summary=f'《未竟的和平》：{opening["scene_count"]} 场战争末期剧情，先展示大规模宝可梦混战，再由前线急报衔接世界赛提案、各方会议和下一代的选择。日期未定；战场群像、对白与匿名配角为开场稿，未补写红莲之后的空白历史。玩家脚本与编剧秘密独立维护。'
+        summary=f'《未竟的和平》：{opening["scene_count"]} 场战争末期剧情，先用原生地图上的宝可梦与训练家演出交战、招式和后撤，再由传令衔接世界赛提案、各方会议和下一代的选择。日期未定；每个地图单位独立登记，未补写红莲之后的空白历史。玩家脚本与编剧秘密独立维护。'
         body+='<h2>已实装的开场演出</h2><p>'+h(summary)+'</p><p>'+source_link(opening['source_docs'][0])+' · <a href="http://127.0.0.1:4173/play?opening">在 GBA 运行器中观看</a></p>'
         md+='\n## 已实装的开场演出\n\n'+summary+'[逐场剧本](../37-acted-opening-screenplay.md)，[实现与验证](../36-playable-opening-and-cast.md)。玩家文本见 `content/opening/prologue.json`。\n'
     outputs[OUT/'timeline.html']=page('故事世界线',body,'timeline');outputs[DOCS/'worldline.md']=md

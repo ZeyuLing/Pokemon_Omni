@@ -66,6 +66,16 @@ def main():
     blob=bytearray();stages=[];sprites=[];grids={};illustrations=[]
     (OUT/'stages').mkdir(parents=True,exist_ok=True)
     for s in opening['stages']:
+        if s.get('kind')=='battlefield':
+            from build_battlefield import compile_war
+            bg,mask,grid=compile_war();w,h=bg.size;art=len(blob)
+            assert s['crop']==[0,0,w,h]
+            blob+=rgba555(bg);mk=len(blob);blob+=mask.tobytes();co=len(blob);blob+=bytes(grid)
+            while len(blob)%4:blob.append(0)
+            stages.append('{'+','.join(map(str,[w,h,art,mk,co]))+'}')
+            bg.save(OUT/'stages'/f'{s["id"]}.png')
+            grids[s['id']]={'width':w//16,'height':h//16,'cells':grid,'source':'content/opening/battlefield.json','crop':s['crop'],'kind':'battlefield'}
+            continue
         if s.get('kind')=='illustration':
             asset=json.loads((ROOT/s['manifest']).read_text('utf8'))
             raw=(ROOT/asset['image']).read_bytes()
@@ -123,6 +133,6 @@ extern const unsigned char omni_opening_stage_blob[];
 ''')
     (OUT/'opening_stage.c').write_text('#include "opening_stage.h"\nconst OmniStage omni_stages[]={'+','.join(stages)+'};\nconst OmniStageSprite omni_stage_sprites[]={'+','.join(sprites)+'};\n')
     (OUT/'opening-collision.json').write_text(json.dumps(grids,indent=2)+'\n')
-    MANIFEST.write_text(json.dumps({'repository':'https://github.com/pret/pokefirered','commit':REV,'scope':'Native room tiles/layouts and sprites plus separately credited generated cinematic illustrations; no source event scripts; illustrations do not define world geography','files':list(records.values()),'illustrations':illustrations},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    MANIFEST.write_text(json.dumps({'repository':'https://github.com/pret/pokefirered','commit':REV,'scope':'Native room tiles/layouts and sprites; authored map battle assets are tracked separately in battlefield.json. Optional illustrations are separately credited. No source event scripts or global geography claims.','files':list(records.values()),'illustrations':illustrations},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(f'Opening stages: {len(stages)}, sprites: {len(sprites)}, bytes: {len(blob)}')
 if __name__=='__main__':main()

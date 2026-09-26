@@ -1,0 +1,1032 @@
+{
+  "schema_version": 1,
+  "id": "war-front-map",
+  "size": [
+    32,
+    20
+  ],
+  "scope": "Undated unnamed battlefield event stage. Native source art, authored terrain and routes; no world-map coordinates or winner.",
+  "tiles": {
+    ".": [
+      19,
+      0
+    ],
+    ",": [
+      20,
+      0
+    ],
+    ":": [
+      21,
+      3
+    ],
+    "#": [
+      0,
+      0
+    ],
+    "T": [
+      8,
+      0
+    ],
+    "~": [
+      13,
+      28
+    ],
+    "l": [
+      11,
+      28
+    ],
+    "r": [
+      16,
+      28
+    ],
+    "=": [
+      34,
+      7
+    ],
+    "A": [
+      8,
+      0
+    ],
+    "B": [
+      9,
+      0
+    ],
+    "C": [
+      8,
+      1
+    ],
+    "D": [
+      9,
+      1
+    ],
+    "|": [
+      11,
+      4
+    ]
+  },
+  "map": [
+    "##############l~~r##############",
+    "TTABABABAB..TTl~~r,.ABABABABAB.#",
+    "#,CDCDCDCD.,..l~~r..CDCDCDCDCD.#",
+    "#...,....,....l~~r.,....,....,.#",
+    "#.,....,....,.l~~r....,....,...#",
+    "#....:::::::::====:::::::::...,#",
+    "#..,....,....,l~~r,....,....,..#",
+    "#,..|||....,..l~~r...,...|||...#",
+    "#...,....,....l~~r.,....,....,.#",
+    "#.,....,....,.l~~r....,....,...#",
+    "#....,....,...l~~r..,....,....,#",
+    "#..,....,....,l~~r,....,....,..#",
+    "#,....,....,..l~~r...,....,....#",
+    "#...,:::::::::====:::::::::..,.#",
+    "#.,....,....,.l~~r....,....,...#",
+    "#....,....,...l~~r..,....,....,#",
+    "#..,....,....,l~~r,....,....,..#",
+    "#,ABABABAB.,..l~~r..ABABABABAB.#",
+    "TTCDCDCDCD..TTl~~r.,CDCDCDCDCD.#",
+    "##############l~~r##############"
+  ],
+  "sprites": [
+    {
+      "name": "machoke",
+      "path": "graphics/object_events/pics/pokemon/machoke.png",
+      "frame": [
+        16,
+        16
+      ],
+      "human": false
+    },
+    {
+      "name": "poliwrath",
+      "path": "graphics/object_events/pics/pokemon/poliwrath.png",
+      "frame": [
+        16,
+        16
+      ],
+      "human": false
+    },
+    {
+      "name": "pikachu",
+      "path": "graphics/object_events/pics/pokemon/pikachu.png",
+      "frame": [
+        16,
+        16
+      ],
+      "human": false
+    },
+    {
+      "name": "nidorino",
+      "path": "graphics/object_events/pics/pokemon/nidorino.png",
+      "frame": [
+        16,
+        16
+      ],
+      "human": false
+    },
+    {
+      "name": "lapras",
+      "path": "graphics/object_events/pics/pokemon/lapras.png",
+      "frame": [
+        16,
+        16
+      ],
+      "human": false
+    },
+    {
+      "name": "pidgeot",
+      "path": "graphics/object_events/pics/pokemon/pidgeot.png",
+      "frame": [
+        16,
+        16
+      ],
+      "human": false
+    },
+    {
+      "name": "chansey",
+      "path": "graphics/object_events/pics/pokemon/chansey.png",
+      "frame": [
+        16,
+        16
+      ],
+      "human": false
+    },
+    {
+      "name": "policeman",
+      "path": "graphics/object_events/pics/people/policeman.png",
+      "frame": [
+        16,
+        32
+      ],
+      "human": true
+    },
+    {
+      "name": "cooltrainer_m",
+      "path": "graphics/object_events/pics/people/cooltrainer_m.png",
+      "frame": [
+        16,
+        32
+      ],
+      "human": true
+    },
+    {
+      "name": "nurse",
+      "path": "graphics/object_events/pics/people/nurse.png",
+      "frame": [
+        16,
+        32
+      ],
+      "human": true
+    },
+    {
+      "name": "worker_m",
+      "path": "graphics/object_events/pics/people/worker_m.png",
+      "frame": [
+        16,
+        32
+      ],
+      "human": true
+    }
+  ],
+  "actors": [
+    {
+      "id": "war-unit-01",
+      "name": "西岸第1组豪力",
+      "sprite": 0,
+      "team": 0,
+      "at": [
+        160,
+        96
+      ],
+      "to": [
+        224,
+        96
+      ],
+      "layer": 0,
+      "attack": 3,
+      "phase": 0,
+      "start": 48,
+      "duration": 192,
+      "role": 0,
+      "target": 1
+    },
+    {
+      "id": "war-unit-02",
+      "name": "东岸第1组豪力",
+      "sprite": 0,
+      "team": 1,
+      "at": [
+        336,
+        96
+      ],
+      "to": [
+        256,
+        96
+      ],
+      "layer": 0,
+      "attack": 3,
+      "phase": 120,
+      "start": 48,
+      "duration": 192,
+      "role": 0,
+      "target": 0
+    },
+    {
+      "id": "war-unit-03",
+      "name": "西岸第1组尼多力诺",
+      "sprite": 3,
+      "team": 0,
+      "at": [
+        128,
+        128
+      ],
+      "to": [
+        144,
+        128
+      ],
+      "layer": 0,
+      "attack": 4,
+      "phase": 50,
+      "start": 48,
+      "duration": 192,
+      "role": 0,
+      "target": 3
+    },
+    {
+      "id": "war-unit-04",
+      "name": "东岸第1组尼多力诺",
+      "sprite": 3,
+      "team": 1,
+      "at": [
+        368,
+        128
+      ],
+      "to": [
+        352,
+        128
+      ],
+      "layer": 0,
+      "attack": 4,
+      "phase": 170,
+      "start": 48,
+      "duration": 192,
+      "role": 0,
+      "target": 2
+    },
+    {
+      "id": "war-unit-05",
+      "name": "西岸第2组皮卡丘",
+      "sprite": 2,
+      "team": 0,
+      "at": [
+        160,
+        160
+      ],
+      "to": [
+        176,
+        160
+      ],
+      "layer": 0,
+      "attack": 2,
+      "phase": 32,
+      "start": 48,
+      "duration": 192,
+      "role": 0,
+      "target": 5
+    },
+    {
+      "id": "war-unit-06",
+      "name": "东岸第2组皮卡丘",
+      "sprite": 2,
+      "team": 1,
+      "at": [
+        336,
+        160
+      ],
+      "to": [
+        320,
+        160
+      ],
+      "layer": 0,
+      "attack": 2,
+      "phase": 152,
+      "start": 48,
+      "duration": 192,
+      "role": 0,
+      "target": 4
+    },
+    {
+      "id": "war-unit-07",
+      "name": "西岸第2组尼多力诺",
+      "sprite": 3,
+      "team": 0,
+      "at": [
+        128,
+        192
+      ],
+      "to": [
+        144,
+        192
+      ],
+      "layer": 0,
+      "attack": 4,
+      "phase": 82,
+      "start": 48,
+      "duration": 192,
+      "role": 0,
+      "target": 7
+    },
+    {
+      "id": "war-unit-08",
+      "name": "东岸第2组尼多力诺",
+      "sprite": 3,
+      "team": 1,
+      "at": [
+        368,
+        192
+      ],
+      "to": [
+        352,
+        192
+      ],
+      "layer": 0,
+      "attack": 4,
+      "phase": 202,
+      "start": 48,
+      "duration": 192,
+      "role": 0,
+      "target": 6
+    },
+    {
+      "id": "war-unit-09",
+      "name": "西岸第3组蚊香泳士",
+      "sprite": 1,
+      "team": 0,
+      "at": [
+        160,
+        224
+      ],
+      "to": [
+        224,
+        224
+      ],
+      "layer": 0,
+      "attack": 1,
+      "phase": 64,
+      "start": 48,
+      "duration": 192,
+      "role": 0,
+      "target": 9
+    },
+    {
+      "id": "war-unit-10",
+      "name": "东岸第3组蚊香泳士",
+      "sprite": 1,
+      "team": 1,
+      "at": [
+        336,
+        224
+      ],
+      "to": [
+        256,
+        224
+      ],
+      "layer": 0,
+      "attack": 1,
+      "phase": 184,
+      "start": 48,
+      "duration": 192,
+      "role": 0,
+      "target": 8
+    },
+    {
+      "id": "war-unit-11",
+      "name": "西岸第3组尼多力诺",
+      "sprite": 3,
+      "team": 0,
+      "at": [
+        128,
+        256
+      ],
+      "to": [
+        144,
+        256
+      ],
+      "layer": 0,
+      "attack": 4,
+      "phase": 114,
+      "start": 48,
+      "duration": 192,
+      "role": 1,
+      "target": 11
+    },
+    {
+      "id": "war-unit-12",
+      "name": "东岸第3组尼多力诺",
+      "sprite": 3,
+      "team": 1,
+      "at": [
+        368,
+        256
+      ],
+      "to": [
+        352,
+        256
+      ],
+      "layer": 0,
+      "attack": 4,
+      "phase": 234,
+      "start": 48,
+      "duration": 192,
+      "role": 1,
+      "target": 10
+    },
+    {
+      "id": "war-unit-13",
+      "name": "水面拉普拉斯",
+      "sprite": 4,
+      "team": 0,
+      "at": [
+        240,
+        128
+      ],
+      "to": [
+        240,
+        112
+      ],
+      "layer": 1,
+      "attack": 1,
+      "phase": 128,
+      "start": 48,
+      "duration": 192,
+      "role": 0,
+      "target": 13
+    },
+    {
+      "id": "war-unit-14",
+      "name": "水面拉普拉斯",
+      "sprite": 4,
+      "team": 1,
+      "at": [
+        256,
+        128
+      ],
+      "to": [
+        256,
+        112
+      ],
+      "layer": 1,
+      "attack": 1,
+      "phase": 248,
+      "start": 48,
+      "duration": 192,
+      "role": 0,
+      "target": 12
+    },
+    {
+      "id": "war-unit-15",
+      "name": "水面拉普拉斯",
+      "sprite": 4,
+      "team": 0,
+      "at": [
+        240,
+        256
+      ],
+      "to": [
+        240,
+        240
+      ],
+      "layer": 1,
+      "attack": 1,
+      "phase": 256,
+      "start": 48,
+      "duration": 192,
+      "role": 0,
+      "target": 15
+    },
+    {
+      "id": "war-unit-16",
+      "name": "水面拉普拉斯",
+      "sprite": 4,
+      "team": 1,
+      "at": [
+        256,
+        256
+      ],
+      "to": [
+        256,
+        240
+      ],
+      "layer": 1,
+      "attack": 1,
+      "phase": 376,
+      "start": 48,
+      "duration": 192,
+      "role": 0,
+      "target": 14
+    },
+    {
+      "id": "war-unit-17",
+      "name": "空中大比鸟",
+      "sprite": 5,
+      "team": 0,
+      "at": [
+        112,
+        48
+      ],
+      "to": [
+        192,
+        48
+      ],
+      "layer": 2,
+      "attack": 5,
+      "phase": 48,
+      "start": 48,
+      "duration": 192,
+      "role": 0,
+      "target": 17
+    },
+    {
+      "id": "war-unit-18",
+      "name": "空中大比鸟",
+      "sprite": 5,
+      "team": 1,
+      "at": [
+        384,
+        48
+      ],
+      "to": [
+        304,
+        48
+      ],
+      "layer": 2,
+      "attack": 5,
+      "phase": 168,
+      "start": 48,
+      "duration": 192,
+      "role": 0,
+      "target": 16
+    },
+    {
+      "id": "war-unit-19",
+      "name": "空中大比鸟",
+      "sprite": 5,
+      "team": 0,
+      "at": [
+        112,
+        288
+      ],
+      "to": [
+        192,
+        288
+      ],
+      "layer": 2,
+      "attack": 5,
+      "phase": 288,
+      "start": 48,
+      "duration": 192,
+      "role": 0,
+      "target": 19
+    },
+    {
+      "id": "war-unit-20",
+      "name": "空中大比鸟",
+      "sprite": 5,
+      "team": 1,
+      "at": [
+        384,
+        288
+      ],
+      "to": [
+        304,
+        288
+      ],
+      "layer": 2,
+      "attack": 5,
+      "phase": 408,
+      "start": 48,
+      "duration": 192,
+      "role": 0,
+      "target": 18
+    },
+    {
+      "id": "war-unit-21",
+      "name": "前线训练家",
+      "sprite": 8,
+      "team": 0,
+      "at": [
+        80,
+        96
+      ],
+      "to": [
+        96,
+        96
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 0,
+      "duration": 96,
+      "role": 0,
+      "target": 20
+    },
+    {
+      "id": "war-unit-22",
+      "name": "前线训练家",
+      "sprite": 8,
+      "team": 0,
+      "at": [
+        80,
+        160
+      ],
+      "to": [
+        96,
+        160
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 0,
+      "duration": 96,
+      "role": 0,
+      "target": 21
+    },
+    {
+      "id": "war-unit-23",
+      "name": "前线训练家",
+      "sprite": 8,
+      "team": 0,
+      "at": [
+        80,
+        224
+      ],
+      "to": [
+        96,
+        224
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 0,
+      "duration": 96,
+      "role": 0,
+      "target": 22
+    },
+    {
+      "id": "war-unit-24",
+      "name": "战场指挥员",
+      "sprite": 7,
+      "team": 0,
+      "at": [
+        48,
+        144
+      ],
+      "to": [
+        48,
+        144
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 48,
+      "duration": 192,
+      "role": 0,
+      "target": 23
+    },
+    {
+      "id": "war-unit-25",
+      "name": "救护员",
+      "sprite": 9,
+      "team": 0,
+      "at": [
+        112,
+        176
+      ],
+      "to": [
+        112,
+        240
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 1280,
+      "duration": 128,
+      "role": 0,
+      "target": 24
+    },
+    {
+      "id": "war-unit-26",
+      "name": "救护吉利蛋",
+      "sprite": 6,
+      "team": 0,
+      "at": [
+        80,
+        176
+      ],
+      "to": [
+        80,
+        240
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 1280,
+      "duration": 128,
+      "role": 0,
+      "target": 25
+    },
+    {
+      "id": "war-unit-27",
+      "name": "前线传令员",
+      "sprite": 10,
+      "team": 0,
+      "at": [
+        64,
+        256
+      ],
+      "to": [
+        64,
+        176
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 1500,
+      "duration": 320,
+      "role": 0,
+      "target": 26
+    },
+    {
+      "id": "war-unit-28",
+      "name": "前线训练家",
+      "sprite": 8,
+      "team": 1,
+      "at": [
+        416,
+        96
+      ],
+      "to": [
+        400,
+        96
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 0,
+      "duration": 96,
+      "role": 0,
+      "target": 27
+    },
+    {
+      "id": "war-unit-29",
+      "name": "前线训练家",
+      "sprite": 8,
+      "team": 1,
+      "at": [
+        416,
+        160
+      ],
+      "to": [
+        400,
+        160
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 0,
+      "duration": 96,
+      "role": 0,
+      "target": 28
+    },
+    {
+      "id": "war-unit-30",
+      "name": "前线训练家",
+      "sprite": 8,
+      "team": 1,
+      "at": [
+        416,
+        224
+      ],
+      "to": [
+        400,
+        224
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 0,
+      "duration": 96,
+      "role": 0,
+      "target": 29
+    },
+    {
+      "id": "war-unit-31",
+      "name": "战场指挥员",
+      "sprite": 7,
+      "team": 1,
+      "at": [
+        448,
+        144
+      ],
+      "to": [
+        448,
+        144
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 48,
+      "duration": 192,
+      "role": 0,
+      "target": 30
+    },
+    {
+      "id": "war-unit-32",
+      "name": "救护员",
+      "sprite": 9,
+      "team": 1,
+      "at": [
+        384,
+        176
+      ],
+      "to": [
+        384,
+        240
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 1280,
+      "duration": 128,
+      "role": 0,
+      "target": 31
+    },
+    {
+      "id": "war-unit-33",
+      "name": "救护吉利蛋",
+      "sprite": 6,
+      "team": 1,
+      "at": [
+        416,
+        176
+      ],
+      "to": [
+        416,
+        240
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 1280,
+      "duration": 128,
+      "role": 0,
+      "target": 32
+    },
+    {
+      "id": "war-unit-34",
+      "name": "前线传令员",
+      "sprite": 10,
+      "team": 1,
+      "at": [
+        432,
+        256
+      ],
+      "to": [
+        432,
+        176
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 1500,
+      "duration": 320,
+      "role": 0,
+      "target": 33
+    },
+    {
+      "id": "war-unit-35",
+      "name": "前列支援训练家",
+      "sprite": 8,
+      "team": 0,
+      "at": [
+        128,
+        64
+      ],
+      "to": [
+        144,
+        64
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 320,
+      "duration": 160,
+      "role": 0,
+      "target": 34
+    },
+    {
+      "id": "war-unit-36",
+      "name": "前列支援训练家",
+      "sprite": 8,
+      "team": 0,
+      "at": [
+        128,
+        144
+      ],
+      "to": [
+        144,
+        144
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 320,
+      "duration": 160,
+      "role": 0,
+      "target": 35
+    },
+    {
+      "id": "war-unit-37",
+      "name": "前列支援训练家",
+      "sprite": 8,
+      "team": 0,
+      "at": [
+        128,
+        208
+      ],
+      "to": [
+        144,
+        208
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 320,
+      "duration": 160,
+      "role": 0,
+      "target": 36
+    },
+    {
+      "id": "war-unit-38",
+      "name": "前列支援训练家",
+      "sprite": 8,
+      "team": 1,
+      "at": [
+        368,
+        64
+      ],
+      "to": [
+        352,
+        64
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 320,
+      "duration": 160,
+      "role": 0,
+      "target": 37
+    },
+    {
+      "id": "war-unit-39",
+      "name": "前列支援训练家",
+      "sprite": 8,
+      "team": 1,
+      "at": [
+        368,
+        144
+      ],
+      "to": [
+        352,
+        144
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 320,
+      "duration": 160,
+      "role": 0,
+      "target": 38
+    },
+    {
+      "id": "war-unit-40",
+      "name": "前列支援训练家",
+      "sprite": 8,
+      "team": 1,
+      "at": [
+        368,
+        208
+      ],
+      "to": [
+        352,
+        208
+      ],
+      "layer": 0,
+      "attack": 0,
+      "phase": 0,
+      "start": 320,
+      "duration": 160,
+      "role": 0,
+      "target": 39
+    }
+  ]
+}
