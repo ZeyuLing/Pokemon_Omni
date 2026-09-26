@@ -12,7 +12,7 @@ const root=path.resolve('build/story-bible');
  await page.getByRole('link',{name:'放大关都地图'}).click();assert(page.url().endsWith('map-kanto.jpg'));await page.goBack();
  for(const width of [820,390,320]){await page.setViewportSize({width,height:900});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));}
  await page.goto(pathToFileURL(path.join(root,'characters.html')).href);
- await page.getByLabel('查找姓名或职责').fill('坂木');assert.equal(await page.locator('.person-link:visible').count(),6); // Includes Silver and the elder/keeper whose roles mention Giovanni.
+ await page.getByLabel('查找姓名或职责').fill('坂木');assert.equal(await page.locator('.person-link:visible').count(),require('../content/story/characters.json').characters.filter(c=>(c.name+c.role).includes('坂木')).length); // Includes Silver and the elder/keeper whose roles mention Giovanni.
  await page.getByLabel('查找姓名或职责').fill('无此人物');await page.getByText('没有匹配的角色。可以清空关键词或选择全部状态。').waitFor();
  await page.getByLabel('查找姓名或职责').fill('');await page.getByLabel('创作状态').selectOption('candidate');assert.equal(await page.locator('.person-link:visible').count(),38);
  await page.getByLabel('创作状态').selectOption('');await page.getByLabel('查找姓名或职责').fill('亚当');
@@ -63,5 +63,5 @@ const root=path.resolve('build/story-bible');
  assert((await page.locator('.rival-proposal').innerText()).includes('是否接受支持'));
  assert.equal(await page.locator('.event').count(),0);
  await page.setViewportSize({width:390,height:900});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
- assert.deepEqual(errors,[]);console.log('PASS: 10 maps, 80-person search and 38 candidates, 18 casting records, separate source facts/proposals/biography, legal-status barrier, future direction, keyboard and narrow layouts');
+ assert.deepEqual(errors,[]);console.log('PASS: 10 maps, 86-person search and 38 candidates, 18 casting records, separate source facts/proposals/biography, legal-status barrier, future direction, keyboard and narrow layouts');
 }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

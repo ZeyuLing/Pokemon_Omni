@@ -219,6 +219,13 @@ def validate(world, people, atlas, media):
     assert {x[2] for x in expected}<=actors, 'Unregistered opening actor'
     assert set(world['opening_presentation']['actors'])=={x[2] for x in expected}, 'Opening worldline drift'
     assert world['opening_presentation']['date'] is None, 'Opening montage was dated'
+    assert world['opening_presentation']['scene_count']==len(opening['scenes']), 'Opening scene count drift'
+    for scene in opening['scenes']:
+        assert 'opening-narrator' not in scene['actors'], 'Narration is not an acted scene'
+        assert {c['actor'] for c in scene['cast']}<=set(scene['actors']), 'Unregistered opening cast'
+        for beat in scene['beats']:
+            if beat.get('speaker'):
+                assert beat.get('actor') in scene['actors'] or (beat['speaker']=='屏幕' and beat.get('actor') is None), 'Unregistered opening speaker'
     cast=read('assets/characters/manifest.json')['portraits']
     assert len({p['actor'] for p in cast})==len(cast), 'Duplicate cast art'
     covered={c['id'] for c in people if c.get('game_assets',{}).get('portrait_actor')==c['id']}
@@ -384,8 +391,8 @@ def render(world,people,atlas,media):
     md+='\n## 连续性约束\n\n'+''.join(f'- {r}\n' for r in world['continuity_rules'])
     opening=world.get('opening_presentation')
     if opening:
-        body+='<h2>已实装的开场演出</h2><p>《未竟的和平》：11 幕战争末期蒙太奇，日期未定；不新增历史事件。玩家脚本与编剧秘密独立维护。</p><p>'+source_link(opening['source_docs'][0])+' · <a href="http://127.0.0.1:4173/play?opening">在 GBA 运行器中观看</a></p>'
-        md+='\n## 已实装的开场演出\n\n《未竟的和平》：11 幕战争末期蒙太奇；日期未定，不另增历史事件。[完整演出说明](../36-playable-opening-and-cast.md)，玩家文本见 `content/opening/prologue.json`。\n'
+        body+='<h2>已实装的开场演出</h2><p>《未竟的和平》：六场战争末期剧情，包含人物走位、对话、场景物件和镜头移动。日期未定；对白与匿名配角为开场稿，未补写红莲之后的空白历史。玩家脚本与编剧秘密独立维护。</p><p>'+source_link(opening['source_docs'][0])+' · <a href="http://127.0.0.1:4173/play?opening">在 GBA 运行器中观看</a></p>'
+        md+='\n## 已实装的开场演出\n\n《未竟的和平》：六场战争末期剧情，包含人物走位、对话、场景物件与镜头移动。日期未定；对白与匿名配角为开场稿，未补写红莲之后的空白历史。[逐场剧本](../37-acted-opening-screenplay.md)，[实现与验证](../36-playable-opening-and-cast.md)。玩家文本见 `content/opening/prologue.json`。\n'
     outputs[OUT/'timeline.html']=page('故事世界线',body,'timeline');outputs[DOCS/'worldline.md']=md
     body=f'<p class="eyebrow">People / 人物与伙伴</p><h1>人物档案</h1><p class="intro">{len(people)} 位已采用角色、无名角色与候选人物。包括有独立剧情作用的宝可梦个体。原作经历不会自动成为 Omni 生平；每一条已写经历都关联世界线事件。</p><div class="toolbar"><div><label for="query">查找姓名或职责</label><input id="query" type="search" placeholder="例如：坂木、研究、火箭队"></div><div><label for="status">创作状态</label><select id="status"><option value="">全部角色</option>'+''.join(f'<option value="{s}">{label}</option>' for s,label in STATUS.items())+'</select></div><p id="count" role="status" aria-live="polite"></p></div><div class="people">'
     for c in people:body+=f'<a class="person-link" data-status="{c["status"]}" href="people/{c["id"]}.html"><span class="name">{h(c["name"])}</span><span class="badge">{STATUS[c["status"]]}</span><span class="role">{h(c["role"])}</span></a>'
@@ -410,7 +417,11 @@ def render(world,people,atlas,media):
             md+=f'游戏立绘记录：[资产清单](../../../assets/characters/manifest.json)，角色键 `{c["id"]}`。\n\n'
         if c.get('presentation_bindings'):
             labels='、'.join(b['scene'] for b in c['presentation_bindings'])
-            design+=f'<p>开场演出绑定：{h(labels)}。属于既定背景的蒙太奇，不另增出生、经历或日期。</p>'
+            design+=f'<p>开场演出绑定：{h(labels)}。既定背景的演绎稿；不补写未定的人生经历或日期。</p>'
+        if c.get('opening_scene_note'):
+            note=c['opening_scene_note']
+            design+='<section class="opening-role"><h2>开场中的演绎</h2><p>'+h(note)+'</p><p>'+source_link('docs/37-acted-opening-screenplay.md','../')+'</p></section>'
+            md=md.replace('## 已写生平','## 开场中的演绎\n\n'+note+'\n\n[逐场剧本](../../37-acted-opening-screenplay.md)。\n\n## 已写生平')
         body=body.replace('<h2>已写生平</h2>',design+'<h2>已写生平</h2>')
         if c.get('body_profile'):
             profile=c['body_profile']

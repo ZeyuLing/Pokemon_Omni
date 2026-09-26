@@ -18,6 +18,12 @@ ID：`oak`；状态：已采用。
 
 最终立绘／像素／3D 资产：已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。
 
+## 开场中的演绎
+
+研究所开场稿：深夜查看对战推演；小茂来访时先关闭显示，再离开终端交谈。小茂离开后返回屏幕，最后结束当晚测试。画面没有说明测试对象，小茂不知其秘密。
+
+[逐场剧本](../../37-acted-opening-screenplay.md)。
+
 ## 已写生平
 
 游戏立绘记录：[资产清单](../../../assets/characters/manifest.json)，角色键 `oak`。
@@ -61,3 +67,4 @@ ID：`oak`；状态：已采用。
 - [32-first-journey-world-premise.md](../../../docs/32-first-journey-world-premise.md)
 - [35-kanto-rivals-and-succession.md](../../../docs/35-kanto-rivals-and-succession.md)
 - [36-playable-opening-and-cast.md](../../../docs/36-playable-opening-and-cast.md)
+- [37-acted-opening-screenplay.md](../../../docs/37-acted-opening-screenplay.md)

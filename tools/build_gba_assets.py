@@ -189,7 +189,10 @@ def main():
         strings.update(file.read_text(encoding='utf-8'))
     opening=json.loads((ROOT/'content/opening/prologue.json').read_text(encoding='utf-8'))
     for scene in opening['scenes']:
-        for value in [scene['title'],*scene['lines']]: strings.update(value)
+        strings.update(scene['title'])
+        for beat in scene['beats']:
+            strings.update(beat.get('speaker',''))
+            for value in beat.get('lines',[]):strings.update(value)
     cast=json.loads((ROOT/'assets/characters/manifest.json').read_text(encoding='utf-8'))
     for person in cast['portraits']:
         strings.update(person['name']);strings.update(person['caption'])

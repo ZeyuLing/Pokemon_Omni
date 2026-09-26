@@ -16,6 +16,12 @@ ID：`delia`；状态：已采用。
 
 最终立绘／像素／3D 资产：
 
+## 开场中的演绎
+
+清晨开场稿：在屋内催小智起床，衔接经典迟到开局。没有表现她知道小智的秘密。
+
+[逐场剧本](../../37-acted-opening-screenplay.md)。
+
 ## 已写生平
 
 - **T=0 附近·具体年份未定 · 少年小智领取皮卡丘**（原型已有／演出未完整）：原型以母亲身份叮嘱小智并提供休息；身份来历未写，她不知小智是 AI。 事件 ID：`ash-departure`。
@@ -39,3 +45,4 @@ ID：`delia`；状态：已采用。
 - [20-cast-and-opening.md](../../../docs/20-cast-and-opening.md)
 - [32-first-journey-world-premise.md](../../../docs/32-first-journey-world-premise.md)
 - [26-master-timeline.md](../../../docs/26-master-timeline.md)
+- [37-acted-opening-screenplay.md](../../../docs/37-acted-opening-screenplay.md)

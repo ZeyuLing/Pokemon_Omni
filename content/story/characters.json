@@ -30,7 +30,8 @@
         "docs/25-rainbow-covenant-prologue.md",
         "docs/32-first-journey-world-premise.md",
         "docs/35-kanto-rivals-and-succession.md",
-        "docs/36-playable-opening-and-cast.md"
+        "docs/36-playable-opening-and-cast.md",
+        "docs/37-acted-opening-screenplay.md"
       ],
       "relationships": [
         {
@@ -59,7 +60,8 @@
         {
           "sequence": "first-journey-opening",
           "scene": "rocket",
-          "mode": "montage"
+          "mode": "acted_sprite",
+          "sprite": "giovanni"
         }
       ],
       "game_assets": {
@@ -69,8 +71,15 @@
         "portrait_usage": "debug_cast_gallery",
         "overworld_animation": null,
         "battle_back": null,
-        "model_3d": null
-      }
+        "model_3d": null,
+        "opening_sprite": {
+          "source": "giovanni",
+          "manifest": "assets/source/opening-stages.json",
+          "status": "source_sprite_stage_adaptation",
+          "final_anime_design": false
+        }
+      },
+      "opening_scene_note": "火箭队开场稿：得知前冠军履历仍在、合法报名却受阻，要求继续寻找凤王与洛奇亚，并让年轻训练家照常培养。未恢复身份，未指定下一代人选。"
     },
     {
       "id": "oak",
@@ -100,7 +109,8 @@
         "docs/25-rainbow-covenant-prologue.md",
         "docs/32-first-journey-world-premise.md",
         "docs/35-kanto-rivals-and-succession.md",
-        "docs/36-playable-opening-and-cast.md"
+        "docs/36-playable-opening-and-cast.md",
+        "docs/37-acted-opening-screenplay.md"
       ],
       "relationships": [
         {
@@ -136,12 +146,8 @@
         {
           "sequence": "first-journey-opening",
           "scene": "oak",
-          "mode": "montage"
-        },
-        {
-          "sequence": "first-journey-opening",
-          "scene": "question",
-          "mode": "montage"
+          "mode": "acted_sprite",
+          "sprite": "prof_oak"
         }
       ],
       "game_assets": {
@@ -151,8 +157,15 @@
         "portrait_usage": "debug_cast_gallery",
         "overworld_animation": null,
         "battle_back": null,
-        "model_3d": null
-      }
+        "model_3d": null,
+        "opening_sprite": {
+          "source": "prof_oak",
+          "manifest": "assets/source/opening-stages.json",
+          "status": "source_sprite_stage_adaptation",
+          "final_anime_design": false
+        }
+      },
+      "opening_scene_note": "研究所开场稿：深夜查看对战推演；小茂来访时先关闭显示，再离开终端交谈。小茂离开后返回屏幕，最后结束当晚测试。画面没有说明测试对象，小茂不知其秘密。"
     },
     {
       "id": "silph",
@@ -181,8 +194,7 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "westwood",
@@ -221,8 +233,7 @@
           "relationship": "本作师生"
         }
       ],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "goodshow",
@@ -252,8 +263,7 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "agatha",
@@ -283,8 +293,7 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "juan",
@@ -319,8 +328,7 @@
           "relationship": "训练家与伙伴"
         }
       ],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "namba",
@@ -359,8 +367,7 @@
           "relationship": "本作师生"
         }
       ],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "fuji",
@@ -395,8 +402,7 @@
           "relationship": "本作师生"
         }
       ],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "blaine",
@@ -425,8 +431,7 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "red",
@@ -481,7 +486,6 @@
         "qualification_event": null,
         "arc_outcome": null
       },
-      "presentation_bindings": [],
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "red",
@@ -520,7 +524,8 @@
         "docs/32-first-journey-world-premise.md",
         "docs/33-ash-ai-design.md",
         "docs/34-ash-human-body-arc.md",
-        "docs/36-playable-opening-and-cast.md"
+        "docs/36-playable-opening-and-cast.md",
+        "docs/37-acted-opening-screenplay.md"
       ],
       "relationships": [
         {
@@ -565,7 +570,14 @@
           "implementation": null
         }
       },
-      "presentation_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "dawn",
+          "mode": "diegetic_voice",
+          "sprite": null
+        }
+      ],
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "ash",
@@ -574,7 +586,8 @@
         "overworld_animation": null,
         "battle_back": null,
         "model_3d": null
-      }
+      },
+      "opening_scene_note": "清晨开场稿：在真新镇屋内回应妈妈的催促，担忧迟到领不到第一只伙伴。这里使用屋内声音，随后衔接现有醒来与领取皮卡丘流程；身份仍为秘密。"
     },
     {
       "id": "gary",
@@ -604,7 +617,8 @@
         "docs/32-first-journey-world-premise.md",
         "docs/35-kanto-rivals-and-succession.md",
         "research/narrative/2026-09-26-kanto-rivals-evidence.md",
-        "docs/36-playable-opening-and-cast.md"
+        "docs/36-playable-opening-and-cast.md",
+        "docs/37-acted-opening-screenplay.md"
       ],
       "relationships": [
         {
@@ -647,8 +661,9 @@
       "presentation_bindings": [
         {
           "sequence": "first-journey-opening",
-          "scene": "rivals",
-          "mode": "montage"
+          "scene": "oak",
+          "mode": "acted_sprite",
+          "sprite": "blue"
         }
       ],
       "game_assets": {
@@ -658,8 +673,15 @@
         "portrait_usage": "debug_cast_gallery",
         "overworld_animation": null,
         "battle_back": null,
-        "model_3d": null
-      }
+        "model_3d": null,
+        "opening_sprite": {
+          "source": "blue",
+          "manifest": "assets/source/opening-stages.json",
+          "status": "source_sprite_stage_adaptation",
+          "final_anime_design": false
+        }
+      },
+      "opening_scene_note": "研究所开场稿：来访询问第二天领取伙伴的安排，与爷爷普通交谈后离开。大木提前关闭了测试画面；这不确认小茂知晓秘密或效忠大木的政治路线。"
     },
     {
       "id": "delia",
@@ -686,7 +708,8 @@
       "source_docs": [
         "docs/20-cast-and-opening.md",
         "docs/32-first-journey-world-premise.md",
-        "docs/26-master-timeline.md"
+        "docs/26-master-timeline.md",
+        "docs/37-acted-opening-screenplay.md"
       ],
       "relationships": [
         {
@@ -702,7 +725,15 @@
           "status": "prototype_sprite_not_final_animation_design"
         }
       ],
-      "presentation_bindings": []
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "dawn",
+          "mode": "diegetic_voice",
+          "sprite": null
+        }
+      ],
+      "opening_scene_note": "清晨开场稿：在屋内催小智起床，衔接经典迟到开局。没有表现她知道小智的秘密。"
     },
     {
       "id": "daisy-oak",
@@ -738,8 +769,7 @@
           "person_id": 6,
           "status": "prototype_sprite_not_final_animation_design"
         }
-      ],
-      "presentation_bindings": []
+      ]
     },
     {
       "id": "jessie",
@@ -775,8 +805,7 @@
           "person_id": 11,
           "status": "prototype_sprite_not_final_animation_design"
         }
-      ],
-      "presentation_bindings": []
+      ]
     },
     {
       "id": "james",
@@ -812,8 +841,7 @@
           "person_id": 11,
           "status": "prototype_sprite_not_final_animation_design"
         }
-      ],
-      "presentation_bindings": []
+      ]
     },
     {
       "id": "meowth",
@@ -842,8 +870,7 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "pikachu",
@@ -884,8 +911,7 @@
           "person_id": 9,
           "status": "prototype_sprite_not_final_animation_design"
         }
-      ],
-      "presentation_bindings": []
+      ]
     },
     {
       "id": "crobat",
@@ -919,8 +945,7 @@
           "relationship": "训练家与伙伴"
         }
       ],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "persian",
@@ -954,8 +979,7 @@
           "relationship": "训练家与伙伴"
         }
       ],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "ho-oh",
@@ -986,8 +1010,7 @@
         "research/narrative/2026-09-26-life-giving-legendaries.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "juan-gyarados",
@@ -1016,8 +1039,7 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "juan-milotic",
@@ -1051,8 +1073,7 @@
           "relationship": "训练家与伙伴"
         }
       ],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "joy-viridian",
@@ -1078,7 +1099,8 @@
       },
       "source_docs": [
         "core/src/adventure.c",
-        "docs/26-master-timeline.md"
+        "docs/26-master-timeline.md",
+        "docs/37-acted-opening-screenplay.md"
       ],
       "relationships": [],
       "runtime_bindings": [
@@ -1093,9 +1115,11 @@
         {
           "sequence": "first-journey-opening",
           "scene": "center",
-          "mode": "montage"
+          "mode": "acted_sprite",
+          "sprite": "nurse"
         }
-      ]
+      ],
+      "opening_scene_note": "常青市中心开场稿：面对接回伙伴的调运员，坚持它们仍需要休息；听见世界赛广播后，将注意力放回眼前的伙伴。未新增其战时履历。"
     },
     {
       "id": "jenny-kanto",
@@ -1123,8 +1147,7 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "elder",
@@ -1153,8 +1176,7 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "physician",
@@ -1183,8 +1205,7 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "tower-keeper",
@@ -1213,8 +1234,7 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "navy-minister",
@@ -1243,8 +1263,7 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "elite-fourth",
@@ -1272,8 +1291,7 @@
         "docs/30-cinnabar-incident.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "elite-successor",
@@ -1301,8 +1319,7 @@
         "docs/30-cinnabar-incident.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "inquiry-officer",
@@ -1330,8 +1347,7 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "neighbor",
@@ -1367,8 +1383,7 @@
           "person_id": 4,
           "status": "prototype_sprite_not_final_animation_design"
         }
-      ],
-      "presentation_bindings": []
+      ]
     },
     {
       "id": "walker",
@@ -1404,8 +1419,7 @@
           "person_id": 5,
           "status": "prototype_sprite_not_final_animation_design"
         }
-      ],
-      "presentation_bindings": []
+      ]
     },
     {
       "id": "aide-1",
@@ -1441,8 +1455,7 @@
           "person_id": 7,
           "status": "prototype_sprite_not_final_animation_design"
         }
-      ],
-      "presentation_bindings": []
+      ]
     },
     {
       "id": "aide-2",
@@ -1478,8 +1491,7 @@
           "person_id": 7,
           "status": "prototype_sprite_not_final_animation_design"
         }
-      ],
-      "presentation_bindings": []
+      ]
     },
     {
       "id": "clerk",
@@ -1515,8 +1527,7 @@
           "person_id": 12,
           "status": "prototype_sprite_not_final_animation_design"
         }
-      ],
-      "presentation_bindings": []
+      ]
     },
     {
       "id": "route-guide",
@@ -1552,8 +1563,7 @@
           "person_id": 13,
           "status": "prototype_sprite_not_final_animation_design"
         }
-      ],
-      "presentation_bindings": []
+      ]
     },
     {
       "id": "brock",
@@ -1581,8 +1591,7 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "misty",
@@ -1610,8 +1619,7 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "lance",
@@ -1640,7 +1648,8 @@
         "docs/32-first-journey-world-premise.md",
         "docs/26-master-timeline.md",
         "docs/35-kanto-rivals-and-succession.md",
-        "docs/36-playable-opening-and-cast.md"
+        "docs/36-playable-opening-and-cast.md",
+        "docs/37-acted-opening-screenplay.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
@@ -1656,7 +1665,8 @@
         {
           "sequence": "first-journey-opening",
           "scene": "lance",
-          "mode": "montage"
+          "mode": "acted_sprite",
+          "sprite": "lance"
         }
       ],
       "game_assets": {
@@ -1666,8 +1676,15 @@
         "portrait_usage": "debug_cast_gallery",
         "overworld_animation": null,
         "battle_back": null,
-        "model_3d": null
-      }
+        "model_3d": null,
+        "opening_sprite": {
+          "source": "lance",
+          "manifest": "assets/source/opening-stages.json",
+          "status": "source_sprite_stage_adaptation",
+          "final_anime_design": false
+        }
+      },
+      "opening_scene_note": "联盟开场稿：接受参赛训练家材料，反问“忠于谁”，表明亲自参赛、培养下一代与统一地区的意图。联络员为匿名配角，未指定师徒或政治继承者。"
     },
     {
       "id": "looker",
@@ -1695,8 +1712,7 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "steven",
@@ -1724,8 +1740,7 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "may",
@@ -1753,8 +1768,7 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "dawn",
@@ -1782,8 +1796,7 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "serena",
@@ -1811,8 +1824,7 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "cynthia",
@@ -1840,8 +1852,7 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "iris",
@@ -1869,8 +1880,7 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "n",
@@ -1898,8 +1908,7 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "alain",
@@ -1956,7 +1965,6 @@
         "qualification_event": null,
         "arc_outcome": null
       },
-      "presentation_bindings": [],
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "alain",
@@ -1993,8 +2001,7 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "lillie",
@@ -2022,8 +2029,7 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "gladion",
@@ -2051,8 +2057,7 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "leon",
@@ -2080,8 +2085,7 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "sonia",
@@ -2109,8 +2113,7 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "nemona",
@@ -2138,8 +2141,7 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "arven",
@@ -2167,8 +2169,7 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "penny",
@@ -2196,8 +2197,7 @@
         "docs/20-cast-and-opening.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "rose",
@@ -2225,8 +2225,7 @@
         "docs/19-narrative-direction.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "wallace",
@@ -2254,8 +2253,7 @@
         "docs/30-cinnabar-incident.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "xerneas",
@@ -2284,8 +2282,7 @@
         "research/narrative/2026-09-26-life-giving-legendaries.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "arceus",
@@ -2314,8 +2311,7 @@
         "research/narrative/2026-09-26-life-giving-legendaries.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "ash-life-giver",
@@ -2344,8 +2340,7 @@
         "research/narrative/2026-09-26-life-giving-legendaries.md"
       ],
       "relationships": [],
-      "runtime_bindings": [],
-      "presentation_bindings": []
+      "runtime_bindings": []
     },
     {
       "id": "silver",
@@ -2402,7 +2397,6 @@
         "qualification_event": null,
         "arc_outcome": null
       },
-      "presentation_bindings": [],
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "silver",
@@ -2467,7 +2461,6 @@
         "qualification_event": null,
         "arc_outcome": null
       },
-      "presentation_bindings": [],
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "janine",
@@ -2531,7 +2524,6 @@
         "qualification_event": null,
         "arc_outcome": null
       },
-      "presentation_bindings": [],
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "koga",
@@ -2593,7 +2585,6 @@
         "qualification_event": null,
         "arc_outcome": null
       },
-      "presentation_bindings": [],
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "ritchie",
@@ -2658,7 +2649,6 @@
         "qualification_event": null,
         "arc_outcome": null
       },
-      "presentation_bindings": [],
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "giselle",
@@ -2720,7 +2710,6 @@
         "qualification_event": null,
         "arc_outcome": null
       },
-      "presentation_bindings": [],
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "aj",
@@ -2783,7 +2772,6 @@
         "qualification_event": null,
         "arc_outcome": null
       },
-      "presentation_bindings": [],
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "leaf",
@@ -2845,7 +2833,6 @@
         "qualification_event": null,
         "arc_outcome": null
       },
-      "presentation_bindings": [],
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "green-lets-go",
@@ -2908,7 +2895,6 @@
         "qualification_event": null,
         "arc_outcome": null
       },
-      "presentation_bindings": [],
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "trace",
@@ -2971,7 +2957,6 @@
         "qualification_event": null,
         "arc_outcome": null
       },
-      "presentation_bindings": [],
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "elaine",
@@ -3034,7 +3019,6 @@
         "qualification_event": null,
         "arc_outcome": null
       },
-      "presentation_bindings": [],
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "chase",
@@ -3097,7 +3081,6 @@
         "qualification_event": null,
         "arc_outcome": null
       },
-      "presentation_bindings": [],
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "blue",
@@ -3161,7 +3144,6 @@
         "qualification_event": null,
         "arc_outcome": null
       },
-      "presentation_bindings": [],
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "clair",
@@ -3226,7 +3208,6 @@
         "qualification_event": null,
         "arc_outcome": null
       },
-      "presentation_bindings": [],
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "paul",
@@ -3288,7 +3269,6 @@
         "qualification_event": null,
         "arc_outcome": null
       },
-      "presentation_bindings": [],
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "bede",
@@ -3303,8 +3283,8 @@
       "id": "opening-narrator",
       "name": "序章旁白",
       "kind": "narrative_voice",
-      "status": "adopted",
-      "role": "玩家开场中的非剧内旁白，没有实体人物身份",
+      "status": "proposed_scene",
+      "role": "已撤下的第一版开场旁白；保留开发档案，不再出现在当前序章。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3325,60 +3305,230 @@
         "docs/36-playable-opening-and-cast.md"
       ],
       "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "opening-dispatcher",
+      "name": "传令员",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "奉命到宝可梦中心接回伙伴，与乔伊围绕恢复与返战发生争执。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "开场演出临时演员；采用火红 policeman 原生行走图。原创身份尚未分配动画人物设计，不能冒充已完成的动画设定。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/37-acted-opening-screenplay.md"
+      ],
+      "relationships": [],
       "runtime_bindings": [],
+      "opening_scene_note": "在可播放序章《未竟的和平》中参与大战末期 · 常青市场景。具体动作与对白见开场剧本；这是当前演出稿，不补写红莲事件后的未定历史。",
       "presentation_bindings": [
         {
           "sequence": "first-journey-opening",
-          "scene": "war",
-          "mode": "voice"
-        },
+          "scene": "center",
+          "mode": "acted_sprite",
+          "sprite": "policeman"
+        }
+      ]
+    },
+    {
+      "id": "opening-radio-reader",
+      "name": "世界赛消息播报员",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "通过广播传达正在讨论的世界大赛提案；不代表倡议地区已经确定。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "仅为画内广播声音，没有指定外貌或动画人物身份。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/37-acted-opening-screenplay.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "opening_scene_note": "在可播放序章《未竟的和平》中参与大战末期 · 常青市场景。具体动作与对白见开场剧本；这是当前演出稿，不补写红莲事件后的未定历史。",
+      "presentation_bindings": [
         {
           "sequence": "first-journey-opening",
           "scene": "center",
-          "mode": "voice"
-        },
-        {
-          "sequence": "first-journey-opening",
-          "scene": "proposal",
-          "mode": "voice"
-        },
-        {
-          "sequence": "first-journey-opening",
-          "scene": "power",
-          "mode": "voice"
-        },
+          "mode": "diegetic_voice",
+          "sprite": null
+        }
+      ]
+    },
+    {
+      "id": "opening-league-liaison",
+      "name": "联盟联络官",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "向渡报告参赛人选商议情况，听取其本人参赛与培养下一代的要求。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "开场演出临时演员；采用火红 policeman 原生行走图。原创身份尚未分配动画人物设计，不能冒充已完成的动画设定。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/37-acted-opening-screenplay.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "opening_scene_note": "在可播放序章《未竟的和平》中参与关都联盟场景。具体动作与对白见开场剧本；这是当前演出稿，不补写红莲事件后的未定历史。",
+      "presentation_bindings": [
         {
           "sequence": "first-journey-opening",
           "scene": "lance",
-          "mode": "voice"
-        },
+          "mode": "acted_sprite",
+          "sprite": "policeman"
+        }
+      ]
+    },
+    {
+      "id": "opening-silph-representative",
+      "name": "希尔弗家族代表",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "查看业务账目与训练家资料，讨论赞助与地区外市场。身份不等于当代家主，也不是1942年老社长。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "开场演出临时演员；采用火红 gentleman 原生行走图。原创身份尚未分配动画人物设计，不能冒充已完成的动画设定。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/37-acted-opening-screenplay.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "opening_scene_note": "在可播放序章《未竟的和平》中参与希尔弗公司场景。具体动作与对白见开场剧本；这是当前演出稿，不补写红莲事件后的未定历史。",
+      "presentation_bindings": [
         {
           "sequence": "first-journey-opening",
           "scene": "silph",
-          "mode": "voice"
-        },
+          "mode": "acted_sprite",
+          "sprite": "gentleman"
+        }
+      ]
+    },
+    {
+      "id": "opening-silph-secretary",
+      "name": "希尔弗秘书",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "递送账目与训练家资料，询问赞助名单及是否只依赖一个冠军。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "开场演出临时演员；采用火红 worker_f 原生行走图。原创身份尚未分配动画人物设计，不能冒充已完成的动画设定。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/37-acted-opening-screenplay.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "opening_scene_note": "在可播放序章《未竟的和平》中参与希尔弗公司场景。具体动作与对白见开场剧本；这是当前演出稿，不补写红莲事件后的未定历史。",
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "silph",
+          "mode": "acted_sprite",
+          "sprite": "worker_f"
+        }
+      ]
+    },
+    {
+      "id": "opening-rocket-clerk",
+      "name": "火箭队办事成员",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "报告坂木正常报名受阻，询问神兽调查与年轻训练家的培养。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "开场演出临时演员；采用火红 rocket_m 原生行走图。原创身份尚未分配动画人物设计，不能冒充已完成的动画设定。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/37-acted-opening-screenplay.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "opening_scene_note": "在可播放序章《未竟的和平》中参与火箭队场景。具体动作与对白见开场剧本；这是当前演出稿，不补写红莲事件后的未定历史。",
+      "presentation_bindings": [
         {
           "sequence": "first-journey-opening",
           "scene": "rocket",
-          "mode": "voice"
-        },
-        {
-          "sequence": "first-journey-opening",
-          "scene": "rivals",
-          "mode": "voice"
-        },
-        {
-          "sequence": "first-journey-opening",
-          "scene": "oak",
-          "mode": "voice"
-        },
-        {
-          "sequence": "first-journey-opening",
-          "scene": "dawn",
-          "mode": "voice"
+          "mode": "acted_sprite",
+          "sprite": "rocket_m"
         }
       ]
     }
   ],
-  "revision": "2026-09-26.6"
+  "revision": "2026-09-26.7"
 }

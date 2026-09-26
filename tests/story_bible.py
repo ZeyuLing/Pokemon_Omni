@@ -37,11 +37,20 @@ class ContinuityTests(unittest.TestCase):
 
     def test_player_opening_keeps_identity_secret(self):
         opening=bible.read('content/opening/prologue.json')
-        runtime=' '.join(t for s in opening['scenes'] for t in [s['title'],*s['lines']])
+        runtime=' '.join(t for s in opening['scenes'] for t in [s['title'],*(line for b in s['beats'] for line in b.get('lines',[]))])
         for secret in ['AI','VLM','PROMPT','人工智能','人造','机器人','不会长大','赤红']:
             self.assertNotIn(secret,runtime)
         self.assertIsNone(opening['date'])
         self.assertEqual(opening['visibility'],'player_safe')
+
+    def test_opening_supporting_roles_do_not_invent_life_history(self):
+        for c in self.people:
+            if c['id'].startswith('opening-'):
+                self.assertTrue(all(v is None for v in c['biography'].values()))
+                self.assertIsNone(c['birth_year'])
+                self.assertFalse(any(c['id'] in e['participants'] for e in self.world['events']))
+        oak=bible.render(self.world,self.people,self.atlas,self.media)[bible.DOCS/'characters/oak.md']
+        self.assertIn('开场中的演绎',oak)
 
     def test_past_championship_does_not_remove_giovanni_legal_barrier(self):
         case=next(c for c in self.world['institutions']['world_federation']['eligibility']['known_cases'] if c['actor']=='giovanni')

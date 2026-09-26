@@ -18,6 +18,12 @@ ID：`gary`；状态：已采用。
 
 最终立绘／像素／3D 资产：已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。
 
+## 开场中的演绎
+
+研究所开场稿：来访询问第二天领取伙伴的安排，与爷爷普通交谈后离开。大木提前关闭了测试画面；这不确认小茂知晓秘密或效忠大木的政治路线。
+
+[逐场剧本](../../37-acted-opening-screenplay.md)。
+
 ## 原作身份参考（不计入本作生平）
 
 电视动画小茂／Gary／シゲル
@@ -63,3 +69,4 @@ ID：`gary`；状态：已采用。
 - [35-kanto-rivals-and-succession.md](../../../docs/35-kanto-rivals-and-succession.md)
 - [2026-09-26-kanto-rivals-evidence.md](../../../research/narrative/2026-09-26-kanto-rivals-evidence.md)
 - [36-playable-opening-and-cast.md](../../../docs/36-playable-opening-and-cast.md)
+- [37-acted-opening-screenplay.md](../../../docs/37-acted-opening-screenplay.md)

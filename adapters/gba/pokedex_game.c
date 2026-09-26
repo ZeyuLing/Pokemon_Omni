@@ -10,6 +10,7 @@
 #include "plans.h"
 #include "gba_data.h"
 #include "pokedex_game.h"
+volatile uint16_t *omni_gba_surface=(volatile uint16_t*)0x06000000;
 
 #define REG16(a) (*(volatile uint16_t *)(a))
 #define RGB(r,g,b) ((r)|((g)<<5)|((b)<<10))
@@ -55,9 +56,9 @@ static unsigned length(const char *s){unsigned n=0;while(s[n])++n;return n;}
 /* Large fills use synchronous DMA3; tiny glyph/sprite writes stay on CPU.
  * This keeps button sampling responsive even on the actual ARM7TDMI. */
 static void box(int x,int y,int w,int h,uint16_t color){
- int row,col;volatile uint16_t *v=(volatile uint16_t*)0x06000000;
+ int row,col;volatile uint16_t *v=omni_gba_surface;
+ if(w==1&&h==1){if((unsigned)x<240&&(unsigned)y<160)v[y*240+x]=color;return;}
  if(x<0){w+=x;x=0;}if(y<0){h+=y;y=0;}if(x+w>240)w=240-x;if(y+h>160)h=160-y;if(w<=0||h<=0)return;
- if(w==1&&h==1){v[y*240+x]=color;return;}
  for(row=y;row<y+h;++row){volatile uint16_t *d=v+row*240+x;int n=w;if(n>=16){volatile uint32_t pair=(uint32_t)color|((uint32_t)color<<16);if(x&1){*d++=color;--n;}*(volatile uint32_t*)0x040000d4=(uint32_t)(uintptr_t)&pair;*(volatile uint32_t*)0x040000d8=(uint32_t)(uintptr_t)d;*(volatile uint32_t*)0x040000dc=0x85000000u|(unsigned)(n/2);if(n&1)d[n-1]=color;}else for(col=0;col<n;++col)d[col]=color;}
 }
 static uint32_t utf8(const char **p){const unsigned char *s=(const unsigned char*)*p;uint32_t c=*s++;if(c>=0xe0){c=((c&15)<<12)|((s[0]&63)<<6)|(s[1]&63);s+=2;}else if(c>=0xc0){c=((c&31)<<6)|(s[0]&63);++s;}*p=(const char*)s;return c;}

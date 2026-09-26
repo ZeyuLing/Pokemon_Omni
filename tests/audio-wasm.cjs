@@ -1,0 +1,2 @@
+const fs=require('node:fs'),assert=require('node:assert/strict');
+(async()=>{const {instance:{exports:e}}=await WebAssembly.instantiate(fs.readFileSync('build/pallet/test_audio.wasm'));assert(e.audio_test(),`ADPCM failure at line ${e.audio_failure_line()}`);console.log('PASS: portable IMA decoder silence, independent known nibble vector, signed headers, saturation and invalid index bound');})().catch(e=>{console.error(e);process.exitCode=1;});

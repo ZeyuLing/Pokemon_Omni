@@ -2,9 +2,9 @@
 
 <!-- GENERATED: edit content/story/characters.json and worldline.json -->
 
-ID：`opening-narrator`；状态：已采用。
+ID：`opening-narrator`；状态：场景提案。
 
-玩家开场中的非剧内旁白，没有实体人物身份
+已撤下的第一版开场旁白；保留开发档案，不再出现在当前序章。
 
 出生工作年：。
 

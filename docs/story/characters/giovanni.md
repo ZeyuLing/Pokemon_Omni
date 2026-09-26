@@ -18,6 +18,12 @@ ID：`giovanni`；状态：已采用。
 
 最终立绘／像素／3D 资产：已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。
 
+## 开场中的演绎
+
+火箭队开场稿：得知前冠军履历仍在、合法报名却受阻，要求继续寻找凤王与洛奇亚，并让年轻训练家照常培养。未恢复身份，未指定下一代人选。
+
+[逐场剧本](../../37-acted-opening-screenplay.md)。
+
 ## 当前参赛状态
 
 实力履历已满足。本人已决定争取参赛。前冠军履历满足实力条件；火箭队被认定为非法组织，合法身份被剥夺，当前正常报名受阻。
@@ -61,3 +67,4 @@ ID：`giovanni`；状态：已采用。
 - [32-first-journey-world-premise.md](../../../docs/32-first-journey-world-premise.md)
 - [35-kanto-rivals-and-succession.md](../../../docs/35-kanto-rivals-and-succession.md)
 - [36-playable-opening-and-cast.md](../../../docs/36-playable-opening-and-cast.md)
+- [37-acted-opening-screenplay.md](../../../docs/37-acted-opening-screenplay.md)

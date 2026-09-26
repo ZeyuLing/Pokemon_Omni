@@ -444,4 +444,4 @@ T=0：第一次宝可梦世界大战末期，小智从真新镇出发。1942—1
 
 ## 已实装的开场演出
 
-《未竟的和平》：11 幕战争末期蒙太奇；日期未定，不另增历史事件。[完整演出说明](../36-playable-opening-and-cast.md)，玩家文本见 `content/opening/prologue.json`。
+《未竟的和平》：六场战争末期剧情，包含人物走位、对话、场景物件与镜头移动。日期未定；对白与匿名配角为开场稿，未补写红莲之后的空白历史。[逐场剧本](../37-acted-opening-screenplay.md)，[实现与验证](../36-playable-opening-and-cast.md)。玩家文本见 `content/opening/prologue.json`。

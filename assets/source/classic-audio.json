@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "source_rom_sha256": "033235cdd389c4c8cb1aa6d68a93954a55fd681c92a1a554ebc63431117b4eaf",
+  "source_path": "assets/imported/rocket-user/rocket-user-modifier.gba",
+  "source_engine": "Archived m4a/MP2K, original samples and voices rendered in mGBA",
+  "tool_reference": "https://github.com/loveemu/saptapper/tree/ff7ec3e4da1f1ffc3bcc05793268036a319b4466",
+  "engine_addresses": {
+    "init": "0x08527b04",
+    "select": "0x08527bc4",
+    "main": "0x08527bb8",
+    "vsync": "0x085274a4",
+    "song_table": "0x08dac1f8"
+  },
+  "encoding": "mono 16384 Hz, IMA-ADPCM, 256 samples / 132 bytes per independent block; GBA Direct Sound 8-bit output",
+  "storage_policy": "Audio, reference ROMs and binaries are local-only; only importer and source audit are committed.",
+  "bytes": 3569280,
+  "tracks": [
+    {
+      "id": 0,
+      "name": "poke_tower",
+      "title_zh": "宝可梦塔",
+      "source_slot": 518,
+      "source_header": "0x96dec44",
+      "reference": {
+        "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/sound/songs/midi/mus_poke_tower.mid",
+        "sha256": "4d6fbdc45175efec028e6f7d10370daf2be564f1171e689b9c301234dbe39eb5",
+        "note_sequence_match_all_tracks": true,
+        "track_count": 6
+      },
+      "blocks": 3804,
+      "loop_start_block": 119,
+      "seconds": 59.4375,
+      "encoded_bytes": 502128,
+      "pcm_sha256": "165adba451f6004326379aef5141520940e874e09b51da5dc536984175633e4a",
+      "encoded_sha256": "b43dc01c7fa3df50bc411673190adede7c383b01b40459e118b8378d49565ade",
+      "adpcm_snr_db": 24.95
+    },
+    {
+      "id": 1,
+      "name": "pallet",
+      "title_zh": "真新镇",
+      "source_slot": 512,
+      "source_header": "0x96db564",
+      "reference": {
+        "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/sound/songs/midi/mus_pallet.mid",
+        "sha256": "2d4e76ac15a5fe64802fa59799893c265ba9e4c9fb78627407aeec074b097a23",
+        "note_sequence_match_all_tracks": true,
+        "track_count": 6
+      },
+      "blocks": 2810,
+      "loop_start_block": 3,
+      "seconds": 43.90625,
+      "encoded_bytes": 370920,
+      "pcm_sha256": "cb73a2d53a098b38043b93583770983e7baba0f26682dc4a8538957f078a4278",
+      "encoded_sha256": "16533b933473e82a86323055d0b241a970d0be5b0c27540e80b778ca2417bc02",
+      "adpcm_snr_db": 23.64
+    },
+    {
+      "id": 2,
+      "name": "vs_trainer",
+      "title_zh": "训练家对战",
+      "source_slot": 509,
+      "source_header": "0x96d73b4",
+      "reference": {
+        "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/sound/songs/midi/mus_vs_trainer.mid",
+        "sha256": "cbef88249f18e98a67b48f3156d3f097f0108884cbfda3c94855a6bd92d25861",
+        "note_sequence_match_all_tracks": true,
+        "track_count": 10
+      },
+      "blocks": 6553,
+      "loop_start_block": 1260,
+      "seconds": 102.390625,
+      "encoded_bytes": 864996,
+      "pcm_sha256": "efae2a133f14832d3a80616b7c0bfdf736f07e283036251b840d9530daffcc7b",
+      "encoded_sha256": "9ac8cf42416f87bd4187efa3fa19c508d0d807140a8ecedab50d70a1d8b81d46",
+      "adpcm_snr_db": 26.19
+    },
+    {
+      "id": 3,
+      "name": "victory_road",
+      "title_zh": "冠军之路",
+      "source_slot": 507,
+      "source_header": "0x96d2d5c",
+      "reference": {
+        "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/sound/songs/midi/mus_victory_road.mid",
+        "sha256": "e782c3ea2cebb670bc1e9ca5957625d1a40cfec122c24e5394d60ec482ffd61a",
+        "note_sequence_match_all_tracks": true,
+        "track_count": 8
+      },
+      "blocks": 2075,
+      "loop_start_block": 259,
+      "seconds": 32.421875,
+      "encoded_bytes": 273900,
+      "pcm_sha256": "34c935a3cd1d05d53b5503ec23cfb800331ecbfb6243b67225044c5643f842d4",
+      "encoded_sha256": "456163ac1df62a824ad2b5c0a029ce605d7590e24efccfc274d2b615a0fdf50a",
+      "adpcm_snr_db": 26.78
+    },
+    {
+      "id": 4,
+      "name": "silph",
+      "title_zh": "希尔弗公司",
+      "source_slot": 519,
+      "source_header": "0x96e0338",
+      "reference": {
+        "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/sound/songs/midi/mus_silph.mid",
+        "sha256": "06fafd18765301a549a902ebef08bf86634e6e556b564c297351fdf61a576ef6",
+        "note_sequence_match_all_tracks": true,
+        "track_count": 9
+      },
+      "blocks": 3804,
+      "loop_start_block": 241,
+      "seconds": 59.4375,
+      "encoded_bytes": 502128,
+      "pcm_sha256": "9b350e1e03961a6bf84397146d899161b446d14c6306fffe43be9c9cecbf8efc",
+      "encoded_sha256": "af81560891d373a9569101c5a0e5b0e81b7d4d9cfb80b016b046c4cb14a1ad9a",
+      "adpcm_snr_db": 27.47
+    },
+    {
+      "id": 5,
+      "name": "rocket_hideout",
+      "title_zh": "火箭队基地",
+      "source_slot": 486,
+      "source_header": "0x96c6e68",
+      "reference": {
+        "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/sound/songs/midi/mus_rocket_hideout.mid",
+        "sha256": "9985e95f394574fe51c77f05909b6d49d927e70e4da28d95349c91a36ab7e9f2",
+        "note_sequence_match_all_tracks": true,
+        "track_count": 10
+      },
+      "blocks": 4751,
+      "loop_start_block": 122,
+      "seconds": 74.234375,
+      "encoded_bytes": 627132,
+      "pcm_sha256": "3dbfbb2a8c9286778c22e08ef3dcdfb42118f3f64c9b52e7e7ad545133a6ddb9",
+      "encoded_sha256": "427237b56043170b2532b34dd744cabfb260eadc705b5b719f3a595f33a54ccc",
+      "adpcm_snr_db": 26.99
+    },
+    {
+      "id": 6,
+      "name": "oak_lab",
+      "title_zh": "大木研究所",
+      "source_slot": 513,
+      "source_header": "0x96dbd00",
+      "reference": {
+        "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/sound/songs/midi/mus_oak_lab.mid",
+        "sha256": "3b303fe45d7b643b82ebbd171b91c73ee710925e733657eeb251649fc9ee9c2d",
+        "note_sequence_match_all_tracks": true,
+        "track_count": 6
+      },
+      "blocks": 1096,
+      "loop_start_block": 68,
+      "seconds": 17.125,
+      "encoded_bytes": 144672,
+      "pcm_sha256": "541f685c220d23ed35862aada8e90251a9661def5bdf03cfa109911908c133aa",
+      "encoded_sha256": "7118b2e6a68d7ba680d559210a7c153da41c17168b9471c03051edd2b13dd509",
+      "adpcm_snr_db": 25.72
+    },
+    {
+      "id": 7,
+      "name": "poke_center",
+      "title_zh": "宝可梦中心",
+      "source_slot": 515,
+      "source_header": "0x96dc75c",
+      "reference": {
+        "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/sound/songs/midi/mus_poke_center.mid",
+        "sha256": "acef705b9f70f9b84377e38714dfe2c320193e3496c5cbca6ca216b7e36abbee",
+        "note_sequence_match_all_tracks": true,
+        "track_count": 10
+      },
+      "blocks": 2132,
+      "loop_start_block": 3,
+      "seconds": 33.3125,
+      "encoded_bytes": 281424,
+      "pcm_sha256": "3ec82ca90bc30aa58a262306195ec8e867cc45203f769c9632214d45145d5c2e",
+      "encoded_sha256": "b78dcd512a81780677b8d47083f107ba7c4e493fc69ea4083c3bb829c0a7221b",
+      "adpcm_snr_db": 24.86
+    },
+    {
+      "id": 8,
+      "name": "select",
+      "title_zh": "确认音",
+      "source_slot": 5,
+      "source_header": "0x9665f1c",
+      "reference": {
+        "constant_reference": "https://github.com/pret/pokeemerald/blob/5eff78649e7170a877b961ef0b3da13b81a16038/include/constants/songs.h",
+        "slot": "SE_SELECT",
+        "note_sequence_match_all_tracks": null
+      },
+      "blocks": 15,
+      "loop_start_block": 0,
+      "seconds": 0.234375,
+      "encoded_bytes": 1980,
+      "pcm_sha256": "3b42c0483a11d0f56f72c089e3fa94d6d7708d2e4dc292df04b258f2709f66c8",
+      "encoded_sha256": "a25b9e7f763e33cf36ba7c18770c55cbd37d86669a23e4ffe1d6de354ec41cb6",
+      "adpcm_snr_db": 18.61
+    }
+  ]
+}

@@ -8,6 +8,7 @@
 #include "game_ui.h"
 #include "omni/presentation.h"
 #include "presentation_data.h"
+#include "opening_stage.h"
 #include "music.h"
 
 #define REG16(a) (*(volatile uint16_t*)(a))
@@ -34,7 +35,7 @@ static OmniPractice battle;
 static OmniPracticeTurn turn;
 static OmniPresentation presentation;
 static uint8_t intro_new_game,cast_cursor,cast_credits;
-static uint8_t intro_drawn_scene=255,intro_drawn_screen=255;
+static uint16_t intro_frame[240*160] __attribute__((aligned(4)));
 static uint16_t speed_notice;
 static uint8_t dex_flags[OMNI_CATALOG_ENTRY_COUNT],scratch_flags[OMNI_CATALOG_ENTRY_COUNT];
 static OmniDexState dex_state={dex_flags,OMNI_CATALOG_ENTRY_COUNT};
@@ -51,7 +52,7 @@ static char buffer[512];
 static const char save_signature[] __attribute__((used))="SRAM_V113";
 /* Passive emulator observability. No write/cheat commands are exposed. */
 volatile uint32_t omni_pallet_probe[20];
-volatile uint32_t omni_presentation_probe[10];
+volatile uint32_t omni_presentation_probe[16];
 
 void *memset(void *d,int v,size_t n){uint8_t *p=d;while(n--)*p++=(uint8_t)v;return d;}
 void *memcpy(void *d,const void *s,size_t n){uint8_t *p=d;const uint8_t *q=s;while(n--)*p++=*q++;return d;}
@@ -69,14 +70,20 @@ static const PalletWarp *warp_at(int x,int y){unsigned i;const PalletMap *m=map(
 static int position_valid(unsigned location,unsigned x,unsigned y){const PalletMap *m;if(location<1||location>9)return 0;m=&pallet_maps[location-1];return x<m->w&&y<m->h&&!pallet_world_blob[m->collision+y*m->w+x];}
 static void message(const char *s,unsigned after){dialogue=s;next_page=s;after_dialog=(uint8_t)after;screen=DIALOG;dirty=1;}
 /* Source pixels stay at their native resolution. Bit 15 marks transparency. */
-static void ui_crop(unsigned offset,int width,int sx,int sy,int w,int h,int x,int y){const uint16_t *p=(const uint16_t*)(omni_game_ui_blob+offset);int row,col;for(row=0;row<h;++row)for(col=0;col<w;++col){uint16_t c=p[(sy+row)*width+sx+col];if(!(c&0x8000))box(x+col,y+row,1,1,c);}}
+static void ui_crop(unsigned offset,int width,int sx,int sy,int w,int h,int x,int y){
+ const uint16_t *p=(const uint16_t*)(omni_game_ui_blob+offset);int row,col;
+ int start=x<0?-x:0,end=x+w>240?240-x:w;
+ for(row=0;row<h;++row){int dy=y+row;if((unsigned)dy>=160)continue;
+  for(col=start;col<end;++col){uint16_t c=p[(sy+row)*width+sx+col];if(!(c&0x8000))omni_gba_surface[dy*240+x+col]=c;}
+ }
+}
 #define UI_DRAW(name,x,y) ui_crop(UI_##name,UI_##name##_W,0,0,UI_##name##_W,UI_##name##_H,x,y)
 static void dma_row(const uint16_t *source,volatile uint16_t *dest,unsigned count);
 static void panel(int x,int y,int w,int h){
  static uint16_t rows[24][240];static int previous_width;
  const uint16_t *p=(const uint16_t*)(omni_game_ui_blob+UI_WINDOW);int row,col;
  if(w!=previous_width){for(row=0;row<24;++row)for(col=0;col<w;++col){int sx=col<8?col:col>=w-8?24-w+col:8+(col-8)%8;rows[row][col]=p[row*24+sx];}previous_width=w;}
- for(row=0;row<h;++row){int sy=row<8?row:row>=h-8?24-h+row:8+(row-8)%8;dma_row(rows[sy],(volatile uint16_t*)0x06000000+(y+row)*240+x,(unsigned)w);}
+ for(row=0;row<h;++row){int sy=row<8?row:row>=h-8?24-h+row:8+(row-8)%8;dma_row(rows[sy],omni_gba_surface+(y+row)*240+x,(unsigned)w);}
 }
 static void number(int x,int y,unsigned n,uint16_t color){char b[11],out[11];unsigned i=0,j;do{b[i++]=(char)('0'+n%10);n/=10;}while(n&&i<10);for(j=0;j<i;++j)out[j]=b[i-j-1];out[i]=0;text(x,y,out,color,240);}
 static void dma_row(const uint16_t *source,volatile uint16_t *dest,unsigned count);
@@ -100,31 +107,75 @@ static void draw_cast(void){
  num(103,106,cast_cursor+1,MUTED);text(120,106,"/",MUTED,135);num(134,106,OMNI_CAST_COUNT,MUTED);
  text(12,126,"立绘初版 · 出场剧情另行开发",MUTED,234);text(12,142,"左右翻页 SELECT署名 B返回",BLUE,234);
 }
+static unsigned text_prefix(const char *s,unsigned count,char *out){
+ unsigned n=0,bytes=0;
+ while(*s&&n<count){unsigned size=(*(const unsigned char*)s&0x80)?3:1;unsigned i;for(i=0;i<size&&*s;++i)out[bytes++]=*s++;++n;}
+ out[bytes]=0;return n;
+}
+static uint16_t intro_color(uint16_t c,unsigned tone){
+ static const uint8_t four_fifths[32]={0,0,1,2,3,4,4,5,6,7,8,8,9,10,11,12,12,13,14,15,16,16,17,18,19,20,20,21,22,23,24,24};
+ static const uint8_t seventeen_twentieths[32]={0,0,1,2,3,4,5,5,6,7,8,9,10,11,11,12,13,14,15,16,17,17,18,19,20,21,22,22,23,24,25,26};
+ static const uint8_t three_fifths[32]={0,0,1,1,2,3,3,4,4,5,6,6,7,7,8,9,9,10,10,11,12,12,13,13,14,15,15,16,16,17,18,18};
+ unsigned r=c&31,g=(c>>5)&31,b=(c>>10)&31;
+ if(tone==1){r=four_fifths[r];g=four_fifths[g];b=seventeen_twentieths[b];}
+ if(tone==2){r=three_fifths[r];g=g*5/8;b=b*7/8+2;if(b>31)b=31;}
+ return (uint16_t)RGB(r,g,b);
+}
 static void draw_intro(void){
- const OmniIntroScene *s=&omni_intro[presentation.scene];const PalletMap *m=&pallet_maps[s->map-1];
- unsigned row,col;uint16_t strip[240];int width=m->w*16,height=m->h*16,x=s->x,y=s->y;
- const uint16_t *stage=(const uint16_t*)(pallet_world_blob+m->art);
- if(s->tone==3){stage=(const uint16_t*)(omni_game_ui_blob+UI_BATTLE_BUILDING);width=240;height=112;x=0;y=16;}
- unsigned fade=presentation.scene_ticks<16?16-presentation.scene_ticks:s->duration-presentation.scene_ticks<16?16-(s->duration-presentation.scene_ticks):0;
- REG16(0x04000050)=0xc4;REG16(0x04000054)=(uint16_t)(screen==INTRO_SKIP?0:fade);
- if(intro_drawn_scene==presentation.scene&&intro_drawn_screen==screen)return;
- intro_drawn_scene=presentation.scene;intro_drawn_screen=screen;
- if(y>height-80)y=height-80;
- box(0,0,240,160,RGB(2,3,5));
- for(row=0;row<80;++row){
-  unsigned count=(unsigned)(width<240?width:240);const uint16_t *src=stage+(y+row)*width+x;
-  if(s->tone){for(col=0;col<count;++col){uint16_t c=src[col];unsigned r=c&31,g=(c>>5)&31,b=(c>>10)&31;
-   if(s->tone==1){unsigned grey=(r+g+b)/3;r=(r+grey)/3;g=(g+grey)/3;b=(b+grey)/3;}else{r/=3;g/=3;b=b/2+3;}
-   strip[col]=(uint16_t)RGB(r,g,b);
-  }src=strip;}
-  dma_row(src,(volatile uint16_t*)0x06000000+(row+23)*240+(width<240?(240-width)/2:0),count);
+ const OmniIntroScene *s=&omni_intro[presentation.scene];const OmniStage *m=&omni_stages[s->stage];
+ unsigned row,col,i,j,order[4],fade=0;char line[128];
+ uint16_t ticks=presentation.scene_ticks;
+ int cx=omni_presentation_lerp(s->cx,s->tx,ticks,s->duration),cy=omni_presentation_lerp(s->cy,s->ty,ticks,s->duration);
+ int ox=m->w<240?(240-m->w)/2:0,width=m->w<240?m->w:240;
+ int height=*s->speaker?104:160;if(height>m->h-cy)height=m->h-cy;
+ unsigned letters=omni_presentation_letters(&presentation,s->letters);
+ if(s->fade_in&&ticks<16)fade=16-ticks;
+ if(s->fade_out&&s->duration-ticks<16)fade=16-(s->duration-ticks);
+ omni_gba_surface=intro_frame;
+ if(ox){box(0,0,ox,160,RGB(3,5,7));box(ox+width,0,240-ox-width,160,RGB(3,5,7));}
+ if(height<(*s->speaker?104:160))box(ox,height,width,(*s->speaker?104:160)-height,RGB(3,5,7));
+ for(row=0;row<(unsigned)height;++row)dma_row((const uint16_t*)(omni_opening_stage_blob+m->art)+(row+cy)*m->w+cx,omni_gba_surface+row*240+ox,(unsigned)width);
+ /* Practical props stay in the corresponding source room. */
+ if(s->stage==4){
+  int x=33-cx+ox,y=18-cy;
+  if(y>=0){box(x,y,12,8,s->monitor?RGB(4,14,13):RGB(3,5,7));if(s->monitor){box(x+2,y+2,5+(ticks/12)%4,1,RGB(15,26,18));box(x+2,y+5,7,1,RGB(8,20,17));}}
  }
- if(s->portrait<OMNI_CAST_COUNT){box(155,23,80,80,RGB(4,5,7));cast_portrait(s->portrait,155,23);}
- text(7,4,s->title,GOLD,235);box(0,105,240,1,GOLD);
- panel(1,108,238,51);text(10,114,s->line1,INK,230);text(10,132,s->line2,INK,230);
- /* Fade through black; no fabricated geography or AI-labelled computer UI. */
- REG16(0x04000050)=0xc4;REG16(0x04000054)=(uint16_t)fade;
- if(screen==INTRO_SKIP){REG16(0x04000054)=0;panel(15,47,210,61);text(27,56,"跳过这段开场？",INK,225);text(27,80,"A跳过  B继续观看",BLUE,225);}
+ if(s->effect==1&&((ticks/12)&1))for(i=0;i<3;++i)box(83+(int)i*5+ox-cx,26-cy,3,2,RGB(31,20,14));
+ if(s->effect==2&&((ticks/8)&1))box(120+ox-cx,20-cy,11,5,RGB(21,26,27));
+ if(s->effect==3){box(108+ox-cx,73-cy,10,6,PAPER);box(110+ox-cx,75-cy,5,1,MUTED);}
+ for(i=0;i<s->actor_count;++i)order[i]=i;
+ for(i=0;i<s->actor_count;++i)for(j=i+1;j<s->actor_count;++j)if(s->actors[order[j]].ty<s->actors[order[i]].ty){unsigned t=order[i];order[i]=order[j];order[j]=t;}
+ for(j=0;j<s->actor_count;++j){
+  const OmniIntroActor *a=&s->actors[order[j]];const OmniStageSprite *sp=&omni_stage_sprites[a->sprite];
+  int wx=omni_presentation_lerp(a->x,a->tx,ticks,s->duration),wy=omni_presentation_lerp(a->y,a->ty,ticks,s->duration);
+  unsigned frame=a->face==0?0:a->face==1?1:2;int walking=(a->x!=a->tx||a->y!=a->ty)&&ticks<s->duration;
+  const uint16_t *pixels;
+  if(walking&&(ticks/6)%2)frame=(a->face==0?3:a->face==1?5:7)+((ticks/12)&1);
+  pixels=(const uint16_t*)(omni_opening_stage_blob+sp->offset)+(frame%sp->frames)*512;
+  for(row=0;row<32;++row)for(col=0;col<16;++col){
+   int x=wx+(int)col,y=wy-32+(int)row,dx=x-cx+ox,dy=y-cy;
+   uint16_t c=pixels[row*16+(a->face==3?15-col:col)];
+   if(dx<0||dx>=240||dy<0||dy>=height||(c&0x8000))continue;
+   if(x>=0&&x<m->w&&y>=0&&y<m->h&&omni_opening_stage_blob[m->mask+y*m->w+x])continue;
+   omni_gba_surface[dy*240+dx]=intro_color(c,s->tone);
+  }
+  if(a->emote&&wy-cy>43&&wy-cy<height+24){int x=wx-cx+ox,y=wy-cy-43;panel(x-1,y,18,12);box(x+3,y+6,2,2,INK);box(x+7,y+6,2,2,INK);box(x+11,y+6,2,2,INK);}
+ }
+ if(s->fade_in&&ticks<96){panel(2,2,236,23);text(11,7,s->title,INK,236);}
+ if(*s->speaker){
+  unsigned used;panel(0,104,240,56);text(10,112,s->speaker,BLUE,229);
+  used=text_prefix(s->line1,letters,line);text(10,125,line,INK,230);
+  text_prefix(s->line2,letters-used,line);text(10,139,line,INK,230);
+  if(letters==s->letters&&((ticks/16)&1))text(222,112,"A",MUTED,236);
+ }
+ if(screen==INTRO_SKIP){panel(15,47,210,61);text(27,56,"跳过这段开场？",INK,225);text(27,80,"A跳过  B继续",INK,225);}
+ /* Never expose the background clear, partial actors or half-written text.
+  * Start the completed frame transfer in VBlank, ahead of the LCD scan. */
+ while(REG16(0x04000006)>=160){}while(REG16(0x04000006)<160){}
+ REG16(0x04000050)=0xc4;REG16(0x04000054)=(uint16_t)(screen==INTRO_SKIP?0:fade);
+ REG32(0x040000d4)=(uint32_t)(uintptr_t)intro_frame;REG32(0x040000d8)=0x06000000;
+ REG32(0x040000dc)=0x84000000u|(240*160/2);
+ omni_gba_surface=(volatile uint16_t*)0x06000000;
 }
 static void heading(const char *s){box(0,0,240,23,BLUE);text(7,3,s,PAPER,237);}
 static const char *paragraph_color(const char *s,int x,int y,unsigned rows,uint16_t color){unsigned row=0,w=0;char line[96];unsigned n=0;while(*s&&row<rows){unsigned bytes=1,width=6;const unsigned char c=(unsigned char)*s;if(c>=0xe0){bytes=3;width=12;}else if(c>=0xc0){bytes=2;width=12;}if(*s=='\n'||w+width>216){line[n]=0;text(x,y+(int)row*17,line,color,234);++row;n=w=0;if(*s=='\n')++s;if(row==rows)break;continue;}while(bytes--)line[n++]=*s++;w+=width;}if(n&&row<rows){line[n]=0;text(x,y+(int)row*17,line,color,234);}return s;}
@@ -214,7 +265,7 @@ static int read_slot(unsigned slot,uint32_t *sequence,int apply){
 }
 static int load_game(void){uint32_t a=0,b=0;int va=read_slot(0,&a,0),vb=read_slot(1,&b,0);unsigned first=(vb&&(!va||(int32_t)(b-a)>0))?1:0;uint32_t seq;if(!va&&!vb)return 0;if(read_slot(first,&seq,1)){save_slot=(int)first;save_seq=seq;return 1;}return 0;}
 static void begin_new(void){omni_adventure_new(&game);memset(dex_flags,0,sizeof(dex_flags));px=6;py=6;direction=0;moving=0;anim_x=anim_y=0;save_game();message("小智醒来时，已经迟到了！\n今天要领取第一只宝可梦。\n先和妈妈告别，去研究所吧。",AFTER_WORLD);}
-static void begin_intro(uint8_t new_game){intro_new_game=new_game;intro_drawn_scene=255;omni_presentation_begin(&presentation,OMNI_INTRO_COUNT);screen=INTRO;dirty=1;}
+static void begin_intro(uint8_t new_game){intro_new_game=new_game;omni_presentation_begin(&presentation,OMNI_INTRO_COUNT);screen=INTRO;dirty=1;}
 static void end_intro(void){REG16(0x04000050)=0;if(intro_new_game)begin_new();else{screen=TITLE;dirty=1;}}
 static void talk_person(uint8_t person){
  const char *custom;uint8_t talk;
@@ -258,9 +309,9 @@ static void flee_battle(void){if(!omni_adventure_escape(&game,&battle))finish_ba
 static void switch_partner(unsigned slot){if(!omni_adventure_switch(&game,&battle,(uint8_t)slot)){battle_page=0;battle_cursor=0;omni_practice_wait(&battle,&turn);log_index=0;battle_log(0);}else battle_notice("这位伙伴现在不能接替出战。");}
 static void probe(void){omni_pallet_probe[0]=0x50414c54u;omni_pallet_probe[1]=0x4f4d4e49u;omni_pallet_probe[2]=screen;omni_pallet_probe[3]=game.location;omni_pallet_probe[4]=px;omni_pallet_probe[5]=py;omni_pallet_probe[6]=direction;omni_pallet_probe[7]=game.chapter;omni_pallet_probe[8]=game.starter;omni_pallet_probe[9]=menu_cursor;omni_pallet_probe[10]=moving;omni_pallet_probe[11]=battle.mons[0].hp;omni_pallet_probe[12]=battle.mons[1].hp;omni_pallet_probe[13]=battle.turns;omni_pallet_probe[14]=game.potions;omni_pallet_probe[15]=game.battles_played;omni_pallet_probe[16]=game.party_count;omni_pallet_probe[17]=game.events;omni_pallet_probe[18]=game.balls;omni_pallet_probe[19]=game.party[0].level;}
 static void tick(uint16_t keys){
- uint16_t pressed=omni_gba_input_pressed();++frame_count;if(pressed&A){REG16(0x04000068)=0xa0b4;REG16(0x0400006c)=0xc6b8;}
- if(screen==INTRO){if(pressed&START){omni_presentation_skip(&presentation,0);screen=INTRO_SKIP;}else if(pressed&A){omni_presentation_next(&presentation);if(!presentation.playing)end_intro();}if(pressed)dirty=1;return;}
- if(screen==INTRO_SKIP){if(pressed&A){omni_presentation_skip(&presentation,1);end_intro();}else if(pressed&B){omni_presentation_skip(&presentation,0);screen=INTRO;}dirty=1;return;}
+ uint16_t pressed=omni_gba_input_pressed();++frame_count;if((pressed&A)&&screen!=INTRO)omni_gba_sound_select();
+ if(screen==INTRO){if(pressed&START){omni_presentation_skip(&presentation,0);screen=INTRO_SKIP;}else if((pressed&A)&&*omni_intro[presentation.scene].speaker){omni_presentation_confirm_text(&presentation,omni_intro[presentation.scene].letters);if(!presentation.playing)end_intro();}if(pressed)dirty=1;return;}
+ if(screen==INTRO_SKIP){if(pressed&A){omni_presentation_skip(&presentation,1);end_intro();}else if(pressed&B){omni_presentation_skip(&presentation,0);screen=INTRO;}if(pressed)dirty=1;return;}
  if(screen==CAST){if(pressed&SELECT)cast_credits^=1;if(pressed&B)screen=TITLE;if(pressed&RIGHT)cast_cursor=(cast_cursor+1)%OMNI_CAST_COUNT;if(pressed&LEFT)cast_cursor=(cast_cursor+OMNI_CAST_COUNT-1)%OMNI_CAST_COUNT;if(pressed)dirty=1;return;}
  if(screen==WORLD&&(pressed&SELECT)){omni_presentation_speed(&presentation);speed_notice=96;dirty=1;}
  if(screen==DEX){if(dex_wait_release){if(keys&A)return;dex_wait_release=0;}omni_game_dex_tick(keys);if(!omni_game_dex_is_open()){omni_gba_input_clear();screen=menu_return;dirty=1;}return;}
@@ -311,13 +362,13 @@ int main(void){
  omni_adventure_new(&game);omni_game_dex_bind(dex_state,host_save,0);has_save=(uint8_t)load_game();screen=TITLE;
  if(DEX_DEBUG_ACCESS){omni_game_dex_open();menu_return=TITLE;screen=DEX;}
  for(;;){
-  uint16_t keys;unsigned i,steps;uint8_t previous_scene=presentation.scene;
+  uint16_t keys;unsigned i,steps;uint8_t music;
   while(REG16(0x04000006)>=160){}while(REG16(0x04000006)<160){}
-  omni_presentation_track(&presentation,(screen==INTRO||screen==INTRO_SKIP)?0:(screen==BATTLE||screen==BATTLE_LOG)?2:1);
   omni_presentation_advance(&presentation,omni_gba_clock(),presentation.playing?omni_intro[presentation.scene].duration:0);
-  omni_gba_music_request(presentation.track);
   if(screen==INTRO&&!presentation.playing)end_intro();
-  if(screen==INTRO&&(previous_scene!=presentation.scene||!(frame_count%4)))dirty=1;
+  music=(screen==INTRO||screen==INTRO_SKIP)?omni_intro[presentation.scene].music:(screen==BATTLE||screen==BATTLE_LOG)?2:game.location==8?7:game.location==5?6:1;
+  omni_presentation_track(&presentation,music);omni_gba_music_request(music);
+  if(screen==INTRO)dirty=1;
   if(speed_notice){--speed_notice;if(!speed_notice)dirty=1;}
   keys=(uint16_t)(~REG16(0x04000130)&1023);
   steps=omni_presentation_steps(&presentation,screen==WORLD);
@@ -325,8 +376,13 @@ int main(void){
   if(dirty&&screen!=DEX)draw();probe();
   omni_presentation_probe[0]=0x50524553u;omni_presentation_probe[1]=0x4f4d4e49u;
   omni_presentation_probe[2]=presentation.speed;omni_presentation_probe[3]=presentation.scene;
-  omni_presentation_probe[4]=presentation.scene_ticks;omni_presentation_probe[5]=omni_gba_music_steps();
-  omni_presentation_probe[6]=presentation.note;omni_presentation_probe[7]=presentation.clock;
+  omni_presentation_probe[4]=presentation.scene_ticks;omni_presentation_probe[5]=omni_gba_music_samples();
+  omni_presentation_probe[6]=0;omni_presentation_probe[7]=presentation.clock;
   omni_presentation_probe[8]=cast_cursor;omni_presentation_probe[9]=presentation.track;
+  omni_presentation_probe[10]=omni_gba_music_track();omni_presentation_probe[11]=omni_gba_music_block();
+  omni_presentation_probe[12]=omni_gba_music_loops();
+  omni_presentation_probe[13]=(screen==INTRO||screen==INTRO_SKIP)?omni_intro[presentation.scene].chapter:255;
+  omni_presentation_probe[14]=(screen==INTRO||screen==INTRO_SKIP)?omni_presentation_letters(&presentation,omni_intro[presentation.scene].letters):0;
+  omni_presentation_probe[15]=presentation.text_revealed;
  }
 }

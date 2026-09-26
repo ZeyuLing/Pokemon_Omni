@@ -18,6 +18,12 @@ ID：`lance`；状态：已采用。
 
 最终立绘／像素／3D 资产：已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。
 
+## 开场中的演绎
+
+联盟开场稿：接受参赛训练家材料，反问“忠于谁”，表明亲自参赛、培养下一代与统一地区的意图。联络员为匿名配角，未指定师徒或政治继承者。
+
+[逐场剧本](../../37-acted-opening-screenplay.md)。
+
 ## 当前参赛状态
 
 实力履历已满足。本人已决定争取参赛。当代关都冠军；决定参赛，具体报名日期与完成状态未写。
@@ -48,3 +54,4 @@ ID：`lance`；状态：已采用。
 - [26-master-timeline.md](../../../docs/26-master-timeline.md)
 - [35-kanto-rivals-and-succession.md](../../../docs/35-kanto-rivals-and-succession.md)
 - [36-playable-opening-and-cast.md](../../../docs/36-playable-opening-and-cast.md)
+- [37-acted-opening-screenplay.md](../../../docs/37-acted-opening-screenplay.md)

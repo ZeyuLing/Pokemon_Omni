@@ -16,6 +16,12 @@ ID：`joy-viridian`；状态：已采用。
 
 最终立绘／像素／3D 资产：
 
+## 开场中的演绎
+
+常青市中心开场稿：面对接回伙伴的调运员，坚持它们仍需要休息；听见世界赛广播后，将注意力放回眼前的伙伴。未新增其战时履历。
+
+[逐场剧本](../../37-acted-opening-screenplay.md)。
+
 ## 已写生平
 
 - **T=0 附近·具体年份未定 · 常青中心冲突**（原型已有／演出未完整）：治疗伙伴并提醒可疑人物。 事件 ID：`viridian-center`。
@@ -37,3 +43,4 @@ ID：`joy-viridian`；状态：已采用。
 
 - [adventure.c](../../../core/src/adventure.c)
 - [26-master-timeline.md](../../../docs/26-master-timeline.md)
+- [37-acted-opening-screenplay.md](../../../docs/37-acted-opening-screenplay.md)

@@ -1,23 +1,926 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "first-journey-opening",
   "title": "未竟的和平",
   "clock_hz": 64,
   "date": null,
   "phase": "first-journey",
   "visibility": "player_safe",
-  "scope": "Undated montage of established conditions, not new historical events. Camera crops are stage dressing, not new locations or geography.",
+  "scope": "Staged adaptation of established late-war conditions. New dialogue and anonymous supporting roles are an opening draft, not unwritten post-Cinnabar history. Source rooms are stage adaptations, not new geographical claims.",
+  "sprites": [
+    "nurse",
+    "policeman",
+    "lance",
+    "gentleman",
+    "worker_f",
+    "giovanni",
+    "rocket_m",
+    "prof_oak",
+    "blue"
+  ],
+  "stages": [
+    {
+      "id": "center",
+      "source": "ViridianCity_PokemonCenter_1F",
+      "crop": [
+        0,
+        0,
+        240,
+        160
+      ]
+    },
+    {
+      "id": "league",
+      "source": "PokemonLeague_LancesRoom",
+      "crop": [
+        0,
+        80,
+        240,
+        160
+      ]
+    },
+    {
+      "id": "silph",
+      "source": "SilphCo_11F",
+      "crop": [
+        32,
+        96,
+        240,
+        160
+      ]
+    },
+    {
+      "id": "rocket",
+      "source": "RocketHideout_B4F",
+      "crop": [
+        144,
+        0,
+        240,
+        160
+      ]
+    },
+    {
+      "id": "lab",
+      "source": "PalletTown_ProfessorOaksLab",
+      "crop": [
+        0,
+        0,
+        208,
+        224
+      ]
+    },
+    {
+      "id": "dawn",
+      "source": "PalletTown",
+      "crop": [
+        0,
+        32,
+        256,
+        176
+      ]
+    }
+  ],
   "scenes": [
-    {"id":"war","title":"第一次宝可梦世界大战 · 末期","map":7,"camera":[168,120],"tone":1,"portrait":null,"actors":["opening-narrator"],"lines":["战争已经持续了太久。","胜负尚未分明，城镇却先疲惫了。"],"duration_ticks":512},
-    {"id":"center","title":"关都 · 宝可梦中心","map":8,"camera":[0,0],"tone":1,"portrait":null,"actors":["opening-narrator","joy-viridian"],"lines":["宝可梦仍在被送回战场。","人们等候的，是不必再战的一天。"],"duration_ticks":512},
-    {"id":"proposal","title":"一项传遍各地的提案","map":7,"camera":[280,120],"tone":1,"portrait":null,"actors":["opening-narrator"],"lines":["每四年，以世界大赛代替战争。","各地强者将争夺同一座冠军奖杯。"],"duration_ticks":576},
-    {"id":"power","title":"世界宝可梦联盟","map":7,"camera":[288,152],"tone":1,"portrait":null,"actors":["opening-narrator"],"lines":["冠军将执掌拟议中的世界联盟。","前四名，也将坐上议政的席位。"],"duration_ticks":576},
-    {"id":"lance","title":"渡 · 关都联盟冠军","map":5,"camera":[0,0],"tone":3,"stage":"source_battle_building","portrait":"lance","actors":["opening-narrator","lance"],"lines":["渡想让所有地区服从同一个意志。","赛场，或许是另一条统一之路。"],"duration_ticks":576},
-    {"id":"silph","title":"希尔弗 · 遍布关都的生意","map":9,"camera":[0,0],"tone":2,"portrait":null,"actors":["opening-narrator"],"lines":["商店、医疗与货物早已连成一体。","新的联盟，也意味着更大的市场。"],"duration_ticks":512},
-    {"id":"rocket","title":"火箭队 · 被剥夺的资格","map":6,"camera":[32,304],"tone":2,"portrait":"giovanni","actors":["opening-narrator","giovanni"],"lines":["坂木有过冠军之名，却无法报名。","他仍在追寻传说中的力量。"],"duration_ticks":576},
-    {"id":"rivals","title":"下一代的赛场","map":5,"camera":[0,48],"tone":2,"portrait":"gary","actors":["opening-narrator","gary"],"lines":["强者们开始寻找自己的接棒人。","年轻的训练家，也有自己的道路。"],"duration_ticks":512},
-    {"id":"oak","title":"真新镇 · 深夜","map":5,"camera":[0,0],"tone":2,"portrait":"oak","actors":["opening-narrator","oak"],"lines":["研究所的灯，依然没有熄灭。","屏幕上的对战，被反复推演。"],"duration_ticks":512},
-    {"id":"question","title":"大木博士","map":5,"camera":[0,0],"tone":2,"portrait":"oak","actors":["oak"],"lines":["“知道怎样赢，还不够。”","“还要知道，为什么而战。”"],"duration_ticks":576},
-    {"id":"dawn","title":"真新镇 · 清晨","map":1,"camera":[0,16],"tone":0,"portrait":null,"actors":["opening-narrator"],"lines":["天亮了。","今天，是领取第一只宝可梦的日子。"],"duration_ticks":448}
+    {
+      "id": "center",
+      "title": "大战末期 · 常青市",
+      "stage": "center",
+      "tone": 1,
+      "music": 0,
+      "actors": [
+        "joy-viridian",
+        "opening-dispatcher",
+        "opening-radio-reader"
+      ],
+      "cast": [
+        {
+          "actor": "joy-viridian",
+          "sprite": "nurse",
+          "at": [
+            112,
+            48
+          ],
+          "face": 0
+        },
+        {
+          "actor": "opening-dispatcher",
+          "sprite": "policeman",
+          "at": [
+            112,
+            144
+          ],
+          "face": 1
+        }
+      ],
+      "beats": [
+        {
+          "wait": 96,
+          "effect": "healing"
+        },
+        {
+          "move": {
+            "opening-dispatcher": [
+              112,
+              80
+            ]
+          },
+          "ticks": 96
+        },
+        {
+          "speaker": "传令员",
+          "actor": "opening-dispatcher",
+          "lines": [
+            "前线又在催。",
+            "这批伙伴，什么时候能走？"
+          ]
+        },
+        {
+          "face": {
+            "joy-viridian": 1
+          },
+          "wait": 32,
+          "effect": "healing"
+        },
+        {
+          "face": {
+            "joy-viridian": 0
+          },
+          "speaker": "乔伊",
+          "actor": "joy-viridian",
+          "lines": [
+            "它们才刚从治疗台上下来。",
+            "能站起来，不等于能回战场。"
+          ]
+        },
+        {
+          "wait": 40,
+          "emote": {
+            "opening-dispatcher": "silence"
+          }
+        },
+        {
+          "speaker": "传令员",
+          "actor": "opening-dispatcher",
+          "lines": [
+            "……我只负责把它们带回去。",
+            ""
+          ]
+        },
+        {
+          "speaker": "乔伊",
+          "actor": "joy-viridian",
+          "lines": [
+            "那就把刚才那句话，也带回去。",
+            ""
+          ]
+        },
+        {
+          "wait": 48,
+          "effect": "radio"
+        },
+        {
+          "speaker": "广播",
+          "actor": "opening-radio-reader",
+          "lines": [
+            "各地区正在讨论世界大赛提案。",
+            "拟每四年举办一次，以赛代战。"
+          ]
+        },
+        {
+          "speaker": "广播",
+          "actor": "opening-radio-reader",
+          "lines": [
+            "冠军将执掌世界宝可梦联盟，",
+            "前四名共同参与行政事务。"
+          ]
+        },
+        {
+          "face": {
+            "opening-dispatcher": 2
+          },
+          "wait": 40
+        },
+        {
+          "speaker": "传令员",
+          "actor": "opening-dispatcher",
+          "lines": [
+            "赢一场比赛……就能不用打了？",
+            ""
+          ]
+        },
+        {
+          "speaker": "乔伊",
+          "actor": "joy-viridian",
+          "lines": [
+            "先让它们把今晚睡完吧。",
+            ""
+          ]
+        },
+        {
+          "face": {
+            "opening-dispatcher": 1
+          },
+          "wait": 72
+        }
+      ]
+    },
+    {
+      "id": "lance",
+      "title": "关都联盟",
+      "stage": "league",
+      "tone": 0,
+      "music": 3,
+      "actors": [
+        "lance",
+        "opening-league-liaison"
+      ],
+      "cast": [
+        {
+          "actor": "lance",
+          "sprite": "lance",
+          "at": [
+            96,
+            64
+          ],
+          "face": 1
+        },
+        {
+          "actor": "opening-league-liaison",
+          "sprite": "policeman",
+          "at": [
+            112,
+            128
+          ],
+          "face": 2
+        }
+      ],
+      "beats": [
+        {
+          "move": {
+            "opening-league-liaison": [
+              112,
+              112
+            ]
+          },
+          "ticks": 32
+        },
+        {
+          "move": {
+            "opening-league-liaison": [
+              96,
+              112
+            ]
+          },
+          "ticks": 32
+        },
+        {
+          "move": {
+            "opening-league-liaison": [
+              96,
+              96
+            ]
+          },
+          "ticks": 32
+        },
+        {
+          "speaker": "联络官",
+          "actor": "opening-league-liaison",
+          "lines": [
+            "冠军，参赛人选还在商议。",
+            "上面的意思是，忠诚最要紧。"
+          ]
+        },
+        {
+          "face": {
+            "lance": 0
+          },
+          "wait": 48
+        },
+        {
+          "speaker": "渡",
+          "actor": "lance",
+          "lines": [
+            "忠于谁？",
+            ""
+          ]
+        },
+        {
+          "speaker": "联络官",
+          "actor": "opening-league-liaison",
+          "lines": [
+            "自然是……关都。",
+            ""
+          ]
+        },
+        {
+          "move": {
+            "lance": [
+              112,
+              64
+            ]
+          },
+          "ticks": 32
+        },
+        {
+          "face": {
+            "lance": 0
+          },
+          "speaker": "渡",
+          "actor": "lance",
+          "lines": [
+            "我会亲自参赛。",
+            "下一代的人选，也继续培养。"
+          ]
+        },
+        {
+          "speaker": "联络官",
+          "actor": "opening-league-liaison",
+          "lines": [
+            "您希望他们在赛场上配合您？",
+            ""
+          ]
+        },
+        {
+          "speaker": "渡",
+          "actor": "lance",
+          "lines": [
+            "我要他们有本事，走到最后。",
+            ""
+          ]
+        },
+        {
+          "face": {
+            "lance": 1
+          },
+          "wait": 48
+        },
+        {
+          "speaker": "渡",
+          "actor": "lance",
+          "lines": [
+            "地区还在各自发号施令，",
+            "战争就不会真正结束。"
+          ]
+        },
+        {
+          "speaker": "渡",
+          "actor": "lance",
+          "lines": [
+            "这一次，我要赢下的，",
+            "不只是一座关都联盟。"
+          ]
+        },
+        {
+          "wait": 80
+        }
+      ]
+    },
+    {
+      "id": "silph",
+      "title": "希尔弗公司",
+      "stage": "silph",
+      "tone": 0,
+      "music": 4,
+      "actors": [
+        "opening-silph-representative",
+        "opening-silph-secretary"
+      ],
+      "cast": [
+        {
+          "actor": "opening-silph-representative",
+          "sprite": "gentleman",
+          "at": [
+            112,
+            64
+          ],
+          "face": 0
+        },
+        {
+          "actor": "opening-silph-secretary",
+          "sprite": "worker_f",
+          "at": [
+            160,
+            128
+          ],
+          "face": 2
+        }
+      ],
+      "beats": [
+        {
+          "move": {
+            "opening-silph-secretary": [
+              160,
+              80
+            ]
+          },
+          "ticks": 48
+        },
+        {
+          "move": {
+            "opening-silph-secretary": [
+              144,
+              80
+            ]
+          },
+          "ticks": 32
+        },
+        {
+          "face": {
+            "opening-silph-secretary": 1
+          },
+          "speaker": "秘书",
+          "actor": "opening-silph-secretary",
+          "lines": [
+            "这是各地商店和医疗业务的账目。",
+            "还有，您要的训练家资料。"
+          ]
+        },
+        {
+          "wait": 48,
+          "effect": "papers"
+        },
+        {
+          "speaker": "家族代表",
+          "actor": "opening-silph-representative",
+          "lines": [
+            "训练家的，放在上面。",
+            ""
+          ]
+        },
+        {
+          "speaker": "秘书",
+          "actor": "opening-silph-secretary",
+          "lines": [
+            "他们没有经营公司的经验。",
+            ""
+          ]
+        },
+        {
+          "speaker": "家族代表",
+          "actor": "opening-silph-representative",
+          "lines": [
+            "不需要。他们要赢。",
+            "经营，是我们的事。"
+          ]
+        },
+        {
+          "face": {
+            "opening-silph-representative": 3
+          },
+          "wait": 32
+        },
+        {
+          "speaker": "秘书",
+          "actor": "opening-silph-secretary",
+          "lines": [
+            "那赞助名单……",
+            ""
+          ]
+        },
+        {
+          "speaker": "家族代表",
+          "actor": "opening-silph-representative",
+          "lines": [
+            "先看他们需要什么。",
+            "再看，谁能把关都以外的门打开。"
+          ]
+        },
+        {
+          "face": {
+            "opening-silph-representative": 0
+          },
+          "speaker": "秘书",
+          "actor": "opening-silph-secretary",
+          "lines": [
+            "只靠一个冠军，就够了吗？",
+            ""
+          ]
+        },
+        {
+          "speaker": "家族代表",
+          "actor": "opening-silph-representative",
+          "lines": [
+            "所以，不要只看一个名字。",
+            ""
+          ]
+        },
+        {
+          "move": {
+            "opening-silph-secretary": [
+              160,
+              80
+            ]
+          },
+          "ticks": 32
+        },
+        {
+          "move": {
+            "opening-silph-secretary": [
+              160,
+              128
+            ]
+          },
+          "ticks": 56
+        }
+      ]
+    },
+    {
+      "id": "rocket",
+      "title": "火箭队",
+      "stage": "rocket",
+      "tone": 2,
+      "music": 5,
+      "actors": [
+        "giovanni",
+        "opening-rocket-clerk"
+      ],
+      "cast": [
+        {
+          "actor": "giovanni",
+          "sprite": "giovanni",
+          "at": [
+            160,
+            80
+          ],
+          "face": 0
+        },
+        {
+          "actor": "opening-rocket-clerk",
+          "sprite": "rocket_m",
+          "at": [
+            144,
+            144
+          ],
+          "face": 1
+        }
+      ],
+      "beats": [
+        {
+          "move": {
+            "opening-rocket-clerk": [
+              144,
+              128
+            ]
+          },
+          "ticks": 48
+        },
+        {
+          "speaker": "火箭队成员",
+          "actor": "opening-rocket-clerk",
+          "lines": [
+            "老大，查过了。",
+            "您的名字过不了报名这一关。"
+          ]
+        },
+        {
+          "wait": 40
+        },
+        {
+          "speaker": "坂木",
+          "actor": "giovanni",
+          "lines": [
+            "我赢过的那几届冠军，",
+            "他们也一起抹掉了？"
+          ]
+        },
+        {
+          "speaker": "火箭队成员",
+          "actor": "opening-rocket-clerk",
+          "lines": [
+            "战绩还在。",
+            "可他们不承认您的合法身份。"
+          ]
+        },
+        {
+          "face": {
+            "giovanni": 2
+          },
+          "move": {
+            "giovanni": [
+              128,
+              80
+            ]
+          },
+          "ticks": 56
+        },
+        {
+          "speaker": "坂木",
+          "actor": "giovanni",
+          "lines": [
+            "连上场的机会，",
+            "都要由他们准许。"
+          ]
+        },
+        {
+          "speaker": "火箭队成员",
+          "actor": "opening-rocket-clerk",
+          "lines": [
+            "那我们还继续找吗？",
+            ""
+          ]
+        },
+        {
+          "face": {
+            "giovanni": 0
+          },
+          "speaker": "坂木",
+          "actor": "giovanni",
+          "lines": [
+            "凤王，洛奇亚。",
+            "一个线索也别放过。"
+          ]
+        },
+        {
+          "speaker": "坂木",
+          "actor": "giovanni",
+          "lines": [
+            "我们得有足够的力量，",
+            "才能让想说的话有人听。"
+          ]
+        },
+        {
+          "speaker": "火箭队成员",
+          "actor": "opening-rocket-clerk",
+          "lines": [
+            "年轻训练家的培养呢？",
+            ""
+          ]
+        },
+        {
+          "speaker": "坂木",
+          "actor": "giovanni",
+          "lines": [
+            "照常。",
+            "别把所有路，都押在我一个人身上。"
+          ]
+        },
+        {
+          "face": {
+            "opening-rocket-clerk": 0
+          },
+          "move": {
+            "opening-rocket-clerk": [
+              144,
+              144
+            ]
+          },
+          "ticks": 56
+        },
+        {
+          "face": {
+            "giovanni": 1
+          },
+          "wait": 80
+        }
+      ],
+      "camera": [
+        0,
+        24
+      ]
+    },
+    {
+      "id": "oak",
+      "title": "真新镇 · 深夜",
+      "stage": "lab",
+      "tone": 2,
+      "music": 0,
+      "actors": [
+        "oak",
+        "gary"
+      ],
+      "cast": [
+        {
+          "actor": "oak",
+          "sprite": "prof_oak",
+          "at": [
+            32,
+            64
+          ],
+          "face": 1
+        },
+        {
+          "actor": "gary",
+          "sprite": "blue",
+          "at": [
+            96,
+            208
+          ],
+          "face": 1
+        }
+      ],
+      "beats": [
+        {
+          "wait": 96,
+          "effect": "monitor"
+        },
+        {
+          "speaker": "屏幕",
+          "lines": [
+            "对战推演：胜利。",
+            "是否继续测试？"
+          ],
+          "effect": "monitor"
+        },
+        {
+          "speaker": "大木",
+          "actor": "oak",
+          "lines": [
+            "知道怎样赢，还不够。",
+            ""
+          ]
+        },
+        {
+          "wait": 64,
+          "effect": "monitor"
+        },
+        {
+          "speaker": "大木",
+          "actor": "oak",
+          "lines": [
+            "还要知道，为什么而战。",
+            ""
+          ]
+        },
+        {
+          "speaker": "小茂",
+          "actor": "gary",
+          "lines": [
+            "爷爷？这么晚了，还在忙？",
+            ""
+          ]
+        },
+        {
+          "face": {
+            "oak": 0
+          },
+          "wait": 32,
+          "effect": "monitor_off"
+        },
+        {
+          "move": {
+            "gary": [
+              96,
+              176
+            ]
+          },
+          "ticks": 64,
+          "camera": [
+            0,
+            80
+          ]
+        },
+        {
+          "move": {
+            "gary": [
+              96,
+              80
+            ]
+          },
+          "ticks": 112,
+          "camera": [
+            0,
+            0
+          ]
+        },
+        {
+          "move": {
+            "oak": [
+              64,
+              64
+            ]
+          },
+          "ticks": 48
+        },
+        {
+          "face": {
+            "oak": 0
+          },
+          "speaker": "大木",
+          "actor": "oak",
+          "lines": [
+            "一点对战研究。",
+            "怎么还没休息？"
+          ]
+        },
+        {
+          "speaker": "小茂",
+          "actor": "gary",
+          "lines": [
+            "明天领取伙伴，当然睡不着。",
+            "您可别只顾着研究。"
+          ]
+        },
+        {
+          "speaker": "大木",
+          "actor": "oak",
+          "lines": [
+            "记着呢。明天见。",
+            ""
+          ]
+        },
+        {
+          "speaker": "小茂",
+          "actor": "gary",
+          "lines": [
+            "明天见，爷爷。",
+            ""
+          ]
+        },
+        {
+          "face": {
+            "gary": 0
+          },
+          "move": {
+            "gary": [
+              96,
+              176
+            ]
+          },
+          "ticks": 112
+        },
+        {
+          "wait": 48
+        },
+        {
+          "move": {
+            "oak": [
+              32,
+              64
+            ]
+          },
+          "ticks": 48
+        },
+        {
+          "face": {
+            "oak": 1
+          },
+          "wait": 64,
+          "effect": "monitor"
+        },
+        {
+          "speaker": "屏幕",
+          "lines": [
+            "是否继续测试？",
+            "　继续　　结束"
+          ],
+          "effect": "monitor"
+        },
+        {
+          "speaker": "大木",
+          "actor": "oak",
+          "lines": [
+            "……今天就到这里。",
+            ""
+          ]
+        },
+        {
+          "wait": 80,
+          "effect": "monitor_off"
+        }
+      ]
+    },
+    {
+      "id": "dawn",
+      "title": "真新镇 · 清晨",
+      "stage": "dawn",
+      "tone": 0,
+      "music": 1,
+      "actors": [
+        "delia",
+        "ash"
+      ],
+      "cast": [],
+      "beats": [
+        {
+          "camera": [
+            16,
+            32
+          ],
+          "ticks": 144
+        },
+        {
+          "speaker": "花子（屋内）",
+          "actor": "delia",
+          "lines": [
+            "小智！已经几点了！",
+            ""
+          ]
+        },
+        {
+          "wait": 32
+        },
+        {
+          "speaker": "小智（屋内）",
+          "actor": "ash",
+          "lines": [
+            "糟了——我的第一只宝可梦！",
+            ""
+          ]
+        },
+        {
+          "wait": 64
+        }
+      ]
+    }
   ]
 }

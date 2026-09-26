@@ -1,0 +1,2 @@
+# Versions used for the classic audio import and waveform regression.
+numpy==2.3.5

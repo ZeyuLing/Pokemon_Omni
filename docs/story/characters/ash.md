@@ -18,6 +18,12 @@ ID：`ash`；状态：已采用。
 
 最终立绘／像素／3D 资产：已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。
 
+## 开场中的演绎
+
+清晨开场稿：在真新镇屋内回应妈妈的催促，担忧迟到领不到第一只伙伴。这里使用屋内声音，随后衔接现有醒来与领取皮卡丘流程；身份仍为秘密。
+
+[逐场剧本](../../37-acted-opening-screenplay.md)。
+
 ## 身体设定
 
 获得真正肉身前，小智不会长大，其余与常人相同；后续神兽受其打动，赋予肉身后，他将能够自然成长。转变前后的身体实现、日期和身份揭露顺序未定；青年、中年经历尚未创作。
@@ -61,3 +67,4 @@ ID：`ash`；状态：已采用。
 - [33-ash-ai-design.md](../../../docs/33-ash-ai-design.md)
 - [34-ash-human-body-arc.md](../../../docs/34-ash-human-body-arc.md)
 - [36-playable-opening-and-cast.md](../../../docs/36-playable-opening-and-cast.md)
+- [37-acted-opening-screenplay.md](../../../docs/37-acted-opening-screenplay.md)

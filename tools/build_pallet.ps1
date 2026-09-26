@@ -15,6 +15,10 @@ try {
  if ($LASTEXITCODE) { throw 'Pallet map compilation failed' }
  & $Python tools/build_game_ui_assets.py
  if ($LASTEXITCODE) { throw 'Source ROM interface compilation failed' }
+ & $Python tools/build_opening_stages.py
+ if ($LASTEXITCODE) { throw 'Opening stage compilation failed' }
+ & $Python tools/build_classic_audio.py
+ if ($LASTEXITCODE) { throw 'Classic audio compilation failed' }
  & $Python tools/build_presentation_assets.py
  if ($LASTEXITCODE) { throw 'Presentation asset compilation failed' }
  & $Python tools/build_gba_assets.py
@@ -28,7 +32,11 @@ try {
  if ($LASTEXITCODE) { throw 'Presentation core test build failed' }
  node tests/presentation-wasm.cjs
  if ($LASTEXITCODE) { throw 'Presentation core tests failed' }
- & $Zig cc @debugFlags -target arm-freestanding-eabi -mcpu=arm7tdmi -mthumb -std=c99 -O2 -ffreestanding -fno-builtin -fno-unwind-tables -fno-asynchronous-unwind-tables -nostdlib -Icore/include -Icontent/pokedex/generated -Icontent/training/generated -Ibuild/gba -Ibuild/pallet -Iadapters/gba adapters/gba/start.s adapters/gba/pallet_game.c adapters/gba/music.c adapters/gba/pokedex_game.c core/src/presentation.c build/pallet/presentation_data.c build/pallet/cast.s core/src/adventure.c core/src/pokedex.c core/src/training.c core/src/battle_stats.c content/pokedex/generated/catalog.c content/training/generated/plans.c build/gba/gba_data.c build/gba/blobs.s build/pallet/world_data.c build/pallet/world_blobs.s build/pallet/game_ui.s '-Wl,-T,adapters/gba/rom.ld' -o build/pallet/omni-pallet.elf
+ & $Zig cc -target wasm32-freestanding -std=c99 -Wall -Wextra -Werror -O1 -ffreestanding -fno-builtin -nostdlib -Icore/include core/src/audio.c tests/core/test_audio.c '-Wl,--no-entry' '-Wl,--export=audio_test' '-Wl,--export=audio_failure_line' -o build/pallet/test_audio.wasm
+ if ($LASTEXITCODE) { throw 'Audio core test build failed' }
+ node tests/audio-wasm.cjs
+ if ($LASTEXITCODE) { throw 'Audio decoder tests failed' }
+ & $Zig cc @debugFlags '-DOMNI_AUDIO_FAST=__attribute__((section(".iwram"),target("arm")))' -target arm-freestanding-eabi -mcpu=arm7tdmi -mthumb -std=c99 -O2 -ffreestanding -fno-builtin -fno-unwind-tables -fno-asynchronous-unwind-tables -nostdlib -Icore/include -Icontent/pokedex/generated -Icontent/training/generated -Ibuild/gba -Ibuild/pallet -Iadapters/gba adapters/gba/start.s adapters/gba/pallet_game.c adapters/gba/music.c adapters/gba/pokedex_game.c core/src/presentation.c core/src/audio.c build/pallet/classic_audio.c build/pallet/classic_audio.s build/pallet/opening_stage.c build/pallet/opening_stage.s build/pallet/presentation_data.c build/pallet/cast.s core/src/adventure.c core/src/pokedex.c core/src/training.c core/src/battle_stats.c content/pokedex/generated/catalog.c content/training/generated/plans.c build/gba/gba_data.c build/gba/blobs.s build/pallet/world_data.c build/pallet/world_blobs.s build/pallet/game_ui.s '-Wl,-T,adapters/gba/rom.ld' -o build/pallet/omni-pallet.elf
  if ($LASTEXITCODE) { throw 'Pallet GBA link failed' }
  & $Zig objcopy -O binary build/pallet/omni-pallet.elf build/pallet/omni-pallet.gba
  if ($LASTEXITCODE) { throw 'Pallet ROM export failed' }

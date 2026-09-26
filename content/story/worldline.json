@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "revision": "2026-09-26.6",
+  "revision": "2026-09-26.7",
   "status": "authoring_registry_not_runtime",
   "calendar": {
     "epoch_year": null,
@@ -1275,22 +1275,35 @@
   },
   "opening_presentation": {
     "id": "first-journey-opening",
-    "status": "implemented_first_pass",
+    "status": "playable_opening_draft",
     "date": null,
     "phase": "first-journey",
-    "script": "content/opening/prologue.json",
+    "script": "docs/37-acted-opening-screenplay.md",
     "source_docs": [
+      "docs/37-acted-opening-screenplay.md",
       "docs/36-playable-opening-and-cast.md"
     ],
     "actors": [
-      "opening-narrator",
+      "ash",
+      "delia",
+      "gary",
+      "giovanni",
       "joy-viridian",
       "lance",
-      "giovanni",
-      "gary",
-      "oak"
+      "oak",
+      "opening-dispatcher",
+      "opening-league-liaison",
+      "opening-radio-reader",
+      "opening-rocket-clerk",
+      "opening-silph-representative",
+      "opening-silph-secretary"
     ],
     "spoiler_boundary": "The game script contains no AI identity, synthetic body, model/prompt terminology or creation scene. Oak dialogue supports both ordinary training and later reinterpretation.",
-    "historical_effect": "Montage of existing conditions. Does not add a dated treaty signing, regime change, faction selection, research origin or tournament result."
+    "historical_effect": "Dramatizes established opening conditions with new scene dialogue and anonymous supporting roles. Does not date or settle unwritten post-Cinnabar history.",
+    "version": 2,
+    "format": "acted_scenes",
+    "scene_count": 6,
+    "source": "content/opening/prologue.json",
+    "scope": "既定大战末期背景的场景演绎；对白及六位匿名配角是本轮开场稿，未给中间历史、主线年份或候选人物阵营补定事实。"
   }
 }

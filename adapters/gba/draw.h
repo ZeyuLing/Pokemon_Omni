@@ -1,6 +1,8 @@
 #ifndef OMNI_GBA_DRAW_H
 #define OMNI_GBA_DRAW_H
 #include <stdint.h>
+/* Defaults to VRAM. Acted scenes compose a complete frame in EWRAM first. */
+extern volatile uint16_t *omni_gba_surface;
 void omni_gba_box(int x,int y,int w,int h,uint16_t color);
 void omni_gba_text(int x,int y,const char *text,uint16_t color,int end);
 void omni_gba_small_text(int x,int y,const char *text,uint16_t color,int end);
