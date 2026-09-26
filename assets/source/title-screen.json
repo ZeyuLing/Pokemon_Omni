@@ -1,0 +1,57 @@
+{
+  "sources": [
+    {
+      "path": "firered/background.pal",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/title_screen/firered/background.pal",
+      "sha256": "7632baafb7d67f3c46bde2be6f91b855a9793c089a3327adc27eb558e1c6ef28"
+    },
+    {
+      "path": "firered/game_title_logo.png",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/title_screen/firered/game_title_logo.png",
+      "sha256": "8c10d021f51e93ffbad6474ec9e16253d5181f1dbbb38bea8cf51821df3360c2"
+    },
+    {
+      "path": "firered/game_title_logo.pal",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/title_screen/firered/game_title_logo.pal",
+      "sha256": "ad45543960e4f12f26da5c130f2d0d030401aa55738ed06ff01964c645c754a1"
+    },
+    {
+      "path": "firered/game_title_logo.bin",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/title_screen/firered/game_title_logo.bin",
+      "sha256": "dde0863d634ea05c8083cb5b9210fe527ab1941286ece2a90afde877d1dc4b1d"
+    },
+    {
+      "path": "firered/box_art_mon.png",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/title_screen/firered/box_art_mon.png",
+      "sha256": "7330198b86db13763c0fab2fa32449348adb4beadc1589c479622be8b1d35a5d"
+    },
+    {
+      "path": "firered/box_art_mon.pal",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/title_screen/firered/box_art_mon.pal",
+      "sha256": "c204b50dce75ef3bc21caa291a3774979745b6aae5ee7eddd18bfc3a941c0fa0"
+    },
+    {
+      "path": "firered/box_art_mon.bin",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/title_screen/firered/box_art_mon.bin",
+      "sha256": "314892667d5ac3992d340d58a49e681ee7552d223d859d821f4c5bb7443ba552"
+    },
+    {
+      "path": "copyright_press_start.png",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/title_screen/copyright_press_start.png",
+      "sha256": "c27183819c31ada854622cdaad98139d907181505791be8d2289b253cc01395d"
+    },
+    {
+      "path": "copyright_press_start.bin",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/title_screen/copyright_press_start.bin",
+      "sha256": "1f87c5f7bda9c7a8482c9992032293a0ed76c34b8b07dfdb774cbaa067f67d0b"
+    }
+  ],
+  "adaptation": "FireRed logo, Charizard and PRESS START at native tilemap positions; authored OMNI version wordmark and black backdrop. FireRed intro effects are not ported. Not the Rocket hack cover or final commissioned Omni cover art.",
+  "credits": "Original Pokémon graphics: Game Freak / Nintendo / Creatures; extraction reference: pret/pokefirered.",
+  "size": [
+    240,
+    160
+  ],
+  "bytes": 78336,
+  "sha256": "7be12df4a72d34e10a3401a398a89a3f2656b2dd82d4b4f68d239350296a596f"
+}

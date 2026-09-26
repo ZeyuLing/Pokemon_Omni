@@ -28,10 +28,10 @@
   document.getElementById('gba-export').onclick=()=>{const bytes=save();if(!bytes){status.textContent=pallet?'尚无游戏进度；请先开始新的冒险。':'尚无保存进度；请先在事件联调菜单登记一次记录。';return;}const url=URL.createObjectURL(new Blob([bytes])),a=document.createElement('a');a.href=url;a.download=pallet?'omni-pallet.sav':'omni-dex.sav';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
   document.getElementById('gba-import').onchange=async e=>{try{const file=e.target.files[0];if(!file)return;if(file.size!==32768)throw Error('SRAM 存档必须为 32 KiB');importSave(new Uint8Array(await file.arrayBuffer()));persistenceBlocked=false;save();status.textContent='已载入 SRAM；游戏将验证存档槽。';}catch(error){status.textContent=error.message;}finally{e.target.value='';}};
   // Explicit preview links use normal ROM buttons. SRAM stays untouched.
-  if(pallet){const params=new URLSearchParams(location.search);if(params.has('opening')||params.has('cast')){
-   const run=n=>{while(n--)m._mgbawasm_run_frame();};
+  if(pallet){const params=new URLSearchParams(location.search);if(params.has('opening')||params.has('cast')||params.has('dex')){
+   const run=n=>{while(n--){m._mgbawasm_run_frame();drainAudio();}};
    const tap=key=>{m._mgbawasm_set_keys(key);run(8);m._mgbawasm_set_keys(0);run(24);};
-   run(90);tap(2);tap(params.has('opening')?512:256);drainAudio();
+   run(90);tap(params.has('opening')?512:params.has('cast')?256:4);
   }}
   if(!persistenceBlocked)status.textContent=pallet?'运行中 · 真新镇':'运行中 · 真实 GBA ROM / mGBA';requestAnimationFrame(loop);canvas.focus();
  }catch(e){status.textContent='无法启动：'+e.message;}

@@ -28,7 +28,7 @@
 
 原生 240×160，整帧在 EWRAM 合成后于 VBlank 显示。玩家脚本单独编译，不导出编剧秘密。时序和移动逻辑在 portable C，图片、DMA 和寄存器属于 GBA adapter。其他菜单和普通探索的旧字库本轮未全面替换，不能把开场对齐声称为全游戏 UI 复刻。
 
-新冒险先播放开场，完成或确认跳过后才初始化新存档。已有存档仍先确认替换。标题 **L** 回放、**R** 人物画册，二者不写存档。序章 **A** 先显示全文、再继续；走位自动完成。**START** 打开跳过确认，**A** 跳过、**B** 继续。浏览器 Z 对应 A、X 对应 B、Enter 对应 START。
+封面按 A／B／START 进入存档菜单。“新的游戏”先播放开场，完成或确认跳过后才初始化新存档。已有存档仍先确认替换。标题 **L** 回放、**R** 人物画册，二者不写存档。序章 **A** 先显示全文、再继续；走位自动完成。**START** 打开跳过确认，**A** 跳过、**B** 继续。浏览器 Z 对应 A、X 对应 B、Enter 对应 START。
 
 ## 人物形象与档案
 
@@ -84,7 +84,7 @@ node tests/story-bible-browser.cjs
 node tests/presentation-browser.cjs
 ```
 
-默认构建仍直接进入图鉴；`-StoryStart` 构建标题开局版。`-ReuseAssets` 只用于资源、脚本和字体未改变的 C 迭代。编译需要本地归档 ROM、锁定素材、mGBA WASM 和 Zig；原始资源、工具链与构建产物均不提交 Git。音频 Python 依赖版本见 `tools/audio/requirements.txt`；地图和图像构建另需 Pillow，本轮为 12.3.0。
+默认构建已改为封面 → 存档菜单，详见 [启动流程](38-title-and-save-menu.md)。`-StoryStart` 作为兼容参数等同默认，`-DebugDex` 才开机直接进入图鉴；网页直达 `/play?dex` 无需另一份 ROM。`-ReuseAssets` 只用于资源、脚本和字体未改变的 C 迭代。编译需要本地归档 ROM、锁定素材、mGBA WASM 和 Zig；原始资源、工具链与构建产物均不提交 Git。音频 Python 依赖版本见 `tools/audio/requirements.txt`；地图和图像构建另需 Pillow，本轮为 12.3.0。
 
 验收报告分别写入 `build/pallet/presentation-test.json`、`story-presentation-test.json`、`audio-correlation.json`。音频测试从实际 ROM 连续录制一分钟，与来源混音比较九个窗口的波形和采样相位，覆盖 FIFO 多次回绕及音乐循环。相关性与节拍测试不能替代主观试听，更不能据此声称在 GBA 真机上测试过。
 

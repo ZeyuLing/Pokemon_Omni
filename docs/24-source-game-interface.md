@@ -78,3 +78,6 @@ node tests/pallet-browser.cjs
 开场的通用九宫格、细字库、独立蓝色姓名栏与 A 提示已替换为归档火箭队的绿色 field dialogue、原 ROM 汉字和标点、灰色笔画及浅色阴影、正文姓名前缀与红色续页箭头。正文 `(16,121)`，14 像素行距，窗口 `(0,112,240,48)`；以来源正常开机的运行画面逐像素验证，再比较本作全部实际对白帧。
 
 提取器为 `tools/build_rocket_dialogue.py`，ROM 身份、字库及 UI 偏移记录在 `assets/source/rocket-dialogue.json`。详见 [开场实现与验证](36-playable-opening-and-cast.md)。这里只更新开场的字体与布局结论；背包、战斗和普通探索仍使用旧字库的限制继续成立。
+
+
+2026-09-26 启动界面更新：封面与存档菜单已分离，火箭队“新的游戏”首行实际 framebuffer 的 7,680 个像素全部对齐。封面使用火红源图适配 Omni，不将它称为火箭队原封面。详见 [封面与存档菜单](38-title-and-save-menu.md)。

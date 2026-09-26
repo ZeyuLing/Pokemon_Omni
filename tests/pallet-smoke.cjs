@@ -8,7 +8,7 @@ const scenes=require('../build/pallet/scene-audit.json');
  const m=await require(path.join(dir,'mgba.cjs'))({wasmBinary:fs.readFileSync(path.join(dir,'mgba.wasm'))});m._mgbawasm_init();m._mgbawasm_set_log_level(0);
  const rom=fs.readFileSync('build/pallet/omni-pallet.gba'),rp=m._malloc(rom.length);m.HEAPU8.set(rom,rp);assert(m._mgbawasm_load(rp,rom.length,0,0,0,0,1));m._free(rp);
  const size=m._mgbawasm_state_size(),sp=m._malloc(size),signature=Buffer.from('544c4150494e4d4f','hex');let probeOffset=-1,buttons=0,stopOnEncounter=false;
- function frames(n){while(n--)m._mgbawasm_run_frame();}
+ const audioPtr=m._malloc(8192);function frames(n){while(n--){m._mgbawasm_run_frame();while(m._mgbawasm_read_audio(audioPtr,2048)>0){}}}
  function state(){assert(m._mgbawasm_state_save(sp));const bytes=Buffer.from(m.HEAPU8.buffer,sp,size);if(probeOffset<0)probeOffset=bytes.indexOf(signature);assert(probeOffset>=0,'Game loop probe not initialized');const v=Array.from({length:18},(_,i)=>bytes.readUInt32LE(probeOffset+8+i*4));return {screen:v[0],map:v[1],x:v[2],y:v[3],direction:v[4],chapter:v[5],starter:v[6],menu:v[7],moving:v[8],hp:v[9],enemy:v[10],turns:v[11],potions:v[12],battles:v[13],party:v[14],events:v[15],balls:v[16],level:v[17]};}
  function press(key){++buttons;m._mgbawasm_set_keys(key);frames(4);m._mgbawasm_set_keys(0);frames(16);return state();}
  function shot(name){const bytes=Buffer.from(m.HEAPU8.slice(m._mgbawasm_video_ptr(),m._mgbawasm_video_ptr()+240*160*4));fs.writeFileSync(`build/pallet/${name}.rgba`,bytes);}
@@ -25,7 +25,7 @@ const scenes=require('../build/pallet/scene-audit.json');
  function face(dir){const keys=[128,64,32,16];const before=state();m._mgbawasm_set_keys(keys[dir]);for(let i=0;i<10&&state().direction!==dir;i++)frames(1);m._mgbawasm_set_keys(0);frames(4);assert.equal(state().x,before.x);assert.equal(state().y,before.y);}
  function talkAt(x,y,dir){walk(x,y);face(dir);press(1);}
 
- frames(90);assert.equal(state().screen,6,'Debug boot still opens Dex');press(2);assert.equal(state().screen,0);shot('title');press(1);assert.equal(state().screen,14);press(8);press(1);dismiss();assert.equal(state().map,3);shot('bedroom');
+ frames(90);assert.equal(state().screen,17,'Normal boot opens cover');press(2);assert.equal(state().screen,0);shot('title');press(1);assert.equal(state().screen,14);press(8);press(1);dismiss();assert.equal(state().map,3);shot('bedroom');
  press(8);press(1);assert.equal(state().screen,6);press(2);press(2);assert.equal(state().screen,1);
  talkAt(1,2,1);dismiss();assert.equal(state().potions,1);press(1);dismiss();assert.equal(state().potions,1);
  walk(10,2);assert.equal(state().map,2);talkAt(8,5,1);dismiss();walk(4,8);assert.equal(state().map,1);walk(16,13);assert.equal(state().map,5);

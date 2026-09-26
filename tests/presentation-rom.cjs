@@ -36,7 +36,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
  function press(k){m._mgbawasm_set_keys(k);frames(4);m._mgbawasm_set_keys(0);frames(12);}
  function shot(name){fs.writeFileSync(`build/pallet/${prefix}${name}.rgba`,Buffer.from(m.HEAPU8.slice(m._mgbawasm_video_ptr(),m._mgbawasm_video_ptr()+153600)));}
  function sram(){m._mgbawasm_sram_save();return Buffer.from(m.HEAPU8.slice(m._mgbawasm_sram_ptr(),m._mgbawasm_sram_ptr()+32768));}
- frames(90);assert.equal(state().screen,storyMode?0:6);if(!storyMode)press(2);assert.equal(state().screen,0);shot('opening-title');
+ frames(90);assert.equal(state().screen,17);press(2);assert.equal(state().screen,0);shot('opening-title');
  const cues=require('../build/pallet/presentation-report.json').cues;
  const script=require('../content/opening/prologue.json');
  const before=sram();press(512);assert.equal(state().screen,14);
@@ -90,7 +90,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
  fs.writeFileSync(`build/pallet/${prefix}music-loop.pcm`,Buffer.concat(chunks));
  fs.writeFileSync(`build/pallet/${prefix}music-loop.json`,JSON.stringify({start:audioStart,end:audioEnd,rate:m._mgbawasm_sample_rate()},null,2));
  /* Natural timeout also reaches bedroom; replay does not create a save. */
- m._mgbawasm_reset();go=po=-1;frames(90);if(!storyMode)press(2);press(512);frames(100);chunks.length=0;frames(600,true);fs.writeFileSync('build/pallet/music-opening.pcm',Buffer.concat(chunks));
+ m._mgbawasm_reset();go=po=-1;frames(90);press(2);press(512);frames(100);chunks.length=0;frames(600,true);fs.writeFileSync('build/pallet/music-opening.pcm',Buffer.concat(chunks));
  const seconds=cues.reduce((sum,c)=>sum+c.duration,0)/64;frames(Math.ceil(seconds*60));assert.equal(state().screen,0,'Automatic acted opening ends at title');
  const report={rom_sha256:crypto.createHash('sha256').update(rom).digest('hex'),scenes:chapters.size,cues:cues.length,text_reveal_checks:reveals,non_skippable_action_checks:actions,portraits:count,skip_cancel:true,replay_preserves_save:true,gallery_preserves_save:true,new_game_after_opening:true,automatic_advance:true,loop_verified:true,movement_tiles_in_12_frames:distances,audio_rate:m._mgbawasm_sample_rate(),speed_audio:rates,scope:'Archived classic source BGM through ADPCM/Direct Sound; independent in-game exploration speed. Arbitrary external emulator turbo is not controlled.'};
  fs.writeFileSync(`build/pallet/${prefix}presentation-test.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));m._mgbawasm_unload();

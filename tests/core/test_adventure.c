@@ -33,8 +33,17 @@ static void legacy_save(uint8_t *bytes){
 }
 int main(void){
  unsigned starter,seed,total=0;
+ {
+  OmniAdventure g,loaded;uint8_t bytes[OMNI_ADVENTURE_SAVE_BYTES];size_t n;
+  omni_adventure_new(&g);omni_adventure_elapsed(&g,3661);g.badges=2;
+  assert(!omni_adventure_save(&g,bytes,sizeof(bytes),&n));
+  assert(!omni_adventure_load(&loaded,bytes,n)&&loaded.play_seconds==3661&&loaded.badges==2);
+  omni_adventure_elapsed(&g,0xffffffffu);assert(g.play_seconds==3599999);
+  g.badges=9;assert(omni_adventure_save(&g,bytes,sizeof(bytes),&n)==OMNI_ADVENTURE_ARGUMENT);
+ }
+
  for(starter=1;starter<=3;++starter){
-  OmniAdventure g,old,loaded;OmniPractice b,b2;OmniPracticeTurn out,out2;uint8_t flags[7]={0},save[132];size_t size=0;OmniDexState state={flags,7};
+  OmniAdventure g,old,loaded;OmniPractice b,b2;OmniPracticeTurn out,out2;uint8_t flags[7]={0},save[OMNI_ADVENTURE_SAVE_BYTES];size_t size=0;OmniDexState state={flags,7};
   omni_adventure_new(&g);assert(g.location==OMNI_BEDROOM);assert(omni_adventure_interact(&g,OMNI_OAK)==OMNI_TALK_INVALID);
   assert(omni_adventure_choose(&g,starter,&dex,&state)==OMNI_ADVENTURE_LOCKED);
   assert(omni_adventure_interact(&g,OMNI_PC)==OMNI_TALK_PC_POTION);assert(g.potions==1);
@@ -43,8 +52,8 @@ int main(void){
   assert(!omni_adventure_choose(&g,starter,&dex,&state));assert(flags[starter-1]==3&&g.potions==4&&g.chapter==2);
   old=g;assert(omni_adventure_choose(&g,starter,&dex,&state)==OMNI_ADVENTURE_ALREADY);assert(!memcmp(&g,&old,sizeof(g)));
   assert(omni_adventure_potion(&g,0)==OMNI_ADVENTURE_LOCKED);g.party[0].hp=1;assert(!omni_adventure_potion(&g,0));assert(g.potions==3);
-  assert(!omni_adventure_save(&g,save,sizeof(save),&size)&&size==132);assert(!omni_adventure_load(&loaded,save,size));assert(!memcmp(&loaded,&g,sizeof(g)));
-  legacy_save(save);assert(!omni_adventure_load(&loaded,save,size));assert(!memcmp(&loaded,&g,sizeof(g)));
+  assert(!omni_adventure_save(&g,save,sizeof(save),&size)&&size==OMNI_ADVENTURE_SAVE_BYTES);assert(!omni_adventure_load(&loaded,save,size));assert(!memcmp(&loaded,&g,sizeof(g)));
+  legacy_save(save);size=132;assert(!omni_adventure_load(&loaded,save,size));assert(!memcmp(&loaded,&g,sizeof(g)));
   old=loaded;save[64]^=1;assert(omni_adventure_load(&loaded,save,size)==OMNI_ADVENTURE_BAD_SAVE);assert(!memcmp(&loaded,&old,sizeof(old)));
   for(seed=0;seed<40;++seed){
    unsigned rounds=0;omni_adventure_heal(&g);g.rng=seed;assert(!omni_practice_begin(&g,&b,&dex,&state));b2=b;
@@ -59,7 +68,7 @@ int main(void){
   assert(!omni_practice_begin(&g,&b,&dex,&state));b.mons[0].pp[0]=b.mons[0].pp[1]=0;assert(!omni_practice_turn(&b,0,&out));assert(out.actions[0].move==165||out.actions[1].move==165);
  }
  {
-  OmniAdventure g,loaded,prior;OmniPractice b;OmniPracticeTurn out;uint8_t flags[7]={0},bytes[132];size_t size;unsigned attempts=0,balls,money;
+  OmniAdventure g,loaded,prior;OmniPractice b;OmniPracticeTurn out;uint8_t flags[7]={0},bytes[OMNI_ADVENTURE_SAVE_BYTES];size_t size;unsigned attempts=0,balls,money;
   OmniDexState state={flags,7};omni_adventure_new(&g);
   assert(omni_adventure_enter(&g,OMNI_ROUTE1)==OMNI_ADVENTURE_LOCKED);
   omni_adventure_enter(&g,OMNI_LAB);omni_adventure_interact(&g,OMNI_OAK);assert(!omni_adventure_choose(&g,4,&dex,&state));assert(g.party[0].species==25&&g.balls==5&&flags[3]==3);

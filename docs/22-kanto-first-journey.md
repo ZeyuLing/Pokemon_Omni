@@ -19,7 +19,7 @@
 
 ## 游玩与构建
 
-`http://127.0.0.1:4173/play` 运行实际 GBA ROM。默认启动即打开图鉴，列表按 B 返回标题；这是保留的调试便利。`tools/build_pallet.ps1 -StoryStart` 可构建从标题开始的版本。
+`http://127.0.0.1:4173/play` 运行实际 GBA ROM。默认启动显示封面，A／B／START 进入存档菜单。图鉴直达保留在 `/play?dex`、封面 SELECT 或 `-DebugDex` 构建；`-StoryStart` 兼容参数等同默认启动。
 
 | 场景 | 操作 |
 |---|---|

@@ -10,12 +10,15 @@ enum { OMNI_EVENT_CENTER=1, OMNI_EVENT_ROCKET=2, OMNI_EVENT_PARCEL=4, OMNI_EVENT
 enum { OMNI_BATTLE_PRACTICE=0, OMNI_BATTLE_WILD=1, OMNI_BATTLE_ROCKET=2 };
 typedef struct { uint16_t species,hp;uint8_t level,pp[4],status;uint32_t experience; } OmniPartner;
 typedef struct {
- uint32_t rng,money;
+ uint32_t rng,money,play_seconds;
  uint16_t location,potions,balls,battles_won,battles_played;
- uint8_t chapter,starter,party_count,pc_claimed;
+ uint8_t chapter,starter,party_count,pc_claimed,badges;
  uint16_t events;
  OmniPartner party[6];
 } OmniAdventure;
+#define OMNI_ADVENTURE_SAVE_BYTES 140
+/* Real elapsed time, not accelerated simulation steps. Saturates at 999:59:59. */
+void omni_adventure_elapsed(OmniAdventure *,uint32_t seconds);
 typedef struct { uint16_t species,base[6],moves[2];uint8_t pp[2];const char *name,*ability; } OmniStarter;
 extern const OmniStarter omni_starters[7];
 void omni_adventure_new(OmniAdventure *);

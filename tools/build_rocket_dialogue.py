@@ -20,7 +20,7 @@ TABLE_PATH = 'old_(PMxxUS_CHPLUS_RELEASE)/PMEMUS_CHPLUS_RELEASE2/PMEMUS_CHPLUS_R
 TABLE_URL = 'https://raw.githubusercontent.com/Wokann/Pokemon_GBA_Font_Patch/'+TABLE_REV+'/'+urllib.parse.quote(TABLE_PATH)
 CHINESE = 0x1d3612c
 LATIN = 0xd34c28
-PUNCT = {' ':0,'。':0xad,'，':0xb8,'、':0xb8,'！':0xab,'？':0xac,'：':0xf0,
+PUNCT = {' ':0,'。':0xad,'，':0xb8,'、':0xb8,'！':0xab,'？':0xac,'：':0xf0,':':0xf0,
          '…':0xb0,'—':0xae,'·':0xaf,'“':0xb1,'”':0xb2,'（':0x5c,'）':0x5d}
 
 def digest(b): return hashlib.sha256(b).hexdigest()
@@ -73,6 +73,9 @@ def main():
         for beat in scene['beats']: strings.extend([beat.get('speaker',''),*beat.get('lines',[])])
     # Test phrase from the real ROM's opening, used for pixel verification.
     strings+=['本版本只在西班牙火箭队吧','进行更新发布。','跳过这段开场？','A跳过 B继续','第一次世界大战末期','翌晨 · 真新镇','：']
+    strings += ['新的游戏', '继续游戏', '玩家', '小智', '图鉴', '时间', '徽章',
+                '已有冒险记录。', '开始新游戏会覆盖旧记录。', 'A确认 B返回',
+                'PRESS A B', '0123456789：:']
     chars=sorted(set(''.join(strings))-{'\n'})
     missing=[c for c in chars if c not in mapping]
     assert not missing, 'No silent substitute for missing source glyphs: '+repr(missing)
