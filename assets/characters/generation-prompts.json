@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-26",
+  "mode": "built-in image_gen",
+  "requests": [
+    {
+      "id": 1,
+      "prompt": "Create a production pixel-art trainer sprite atlas for a Pokemon fan game on GBA. One image, exactly 3 columns by 2 rows of equal square cells, six separate full-body trainers, centered and completely contained within their own cell with generous white margin. Pure solid white background. No text, no labels, no shadows outside the figure, no Pokemon, no extra people. Authentic clean 64x64-resolution handheld RPG sprite style, hard pixel edges, restrained flat palette, one-pixel dark outlines, expressive recognizable faces, three-quarter front view, all feet visible. Characters in reading order: (1) young Kanto Ash Ketchum, black spiky hair, red and white original cap with green emblem, blue vest over white T-shirt, jeans, green fingerless gloves and sneakers; (2) Gary Oak in his original Kanto anime design, spiky brown hair, purple shirt, green pendant, dark trousers; (3) Ritchie in his original anime design, brown hair, green cap and green jacket, yellow shirt, blue trousers; (4) Giselle from anime episode 9, long flowing brown hair and original blue academy uniform, white collar, red bow, modest skirt and shoes; (5) A.J. from anime episode 8, green spiky hair, black sleeveless shirt with yellow accents, red belt, blue trousers; (6) Paul from Diamond and Pearl anime, purple hair, purple-and-dark jacket, dark trousers, calm stern expression. These are actual small full-body game sprites, not portrait paintings or concept art. Consistent light from upper left, fixed front three-quarter direction across all six.",
+      "status": "generated",
+      "request_id": null
+    },
+    {
+      "id": 2,
+      "prompt": "Create a single Pokemon fan-game GBA trainer selection atlas. Exactly 3 columns by 2 rows, six equal square cells with full-body figures centered and completely inside their cell. Pure flat white background, no gradients, no shadows, no text, no frame lines, no labels, no logos. Pixel art in the style of authentic 64 by 64 handheld trainer battle sprites, dark crisp outlines, 15 colors per character, all feet visible, no cropping, three-quarter front view. Reading order: top left Silver from HeartGold/SoulSilver and Pokemon Generations, shoulder-length red hair, black jacket with red trim, dark trousers; top middle Janine from HeartGold/SoulSilver, purple hair tied up, dark ninja outfit, purple scarf and red sash; top right female Green from Pokemon Let's Go and Pokemon Evolutions episode 8, long brown hair, sleeveless black dress, teal shorts and teal shoulder bag, NOT Leaf in a hat. Bottom left Leaf from FireRed/LeafGreen, white wide-brim hat with red band, teal sleeveless top, red skirt, white socks and shoes; bottom middle Alain from Pokemon XY anime, spiky dark blue hair, blue scarf, dark high-collared vest over gray shirt and gray trousers, wrist Mega bracelet; bottom right Bede from Pokemon Sword/Shield, curly pale lavender hair, magenta long coat with dark gray cuffs, pale trousers and boots. All clothing modest and practical. Consistent scale and light direction. These are small readable in-game sprites, not concept paintings.",
+      "status": "generated",
+      "request_id": null
+    },
+    {
+      "id": 3,
+      "prompt": "Create a single six-character Pokemon fan-game trainer sprite atlas, exactly 3 equal columns and 2 equal rows. Each cell contains ONE complete full-body trainer, all shoes visible and with generous margins. Flat pixel art for a 64x64 GBA battle-trainer portrait, crisp dark outlines and limited colors, three-quarter front view, consistent scale. No text or labels, no scenery, no creatures, no overlaps. Reading order: (1) Trace, the friendly rival from Pokemon Let's Go, brown spiky hair, black short-sleeve shirt with orange collar details, green backpack straps, olive shorts and sneakers; (2) Elaine, the female Let's Go protagonist, brown ponytail, white cap with red brim, black sleeveless top, red skirt, pale socks and sneakers, small yellow backpack; (3) Chase, the male Let's Go protagonist, brown hair, red cap with white front, red and white short-sleeve shirt, dark shorts, sneakers and yellow backpack; (4) Blue from Pokemon Origins and original games, light brown spiky hair, black short-sleeve top and dark trousers, distinct from purple-shirt anime Gary; (5) Koga in his original anime identity, middle-aged man with dark angular spiky hair, dark purple ninja outfit and large red scarf; (6) Clair from the Johto anime, long light blue hair in a high ponytail, fitted blue outfit, dark gloves and boots, and a cape. All figures centered in their own cells. Background flat white; no atmospheric effects.",
+      "status": "moderation_blocked",
+      "request_id": "fa37f6f9-333a-4334-a023-73e8c59ea392"
+    },
+    {
+      "id": 4,
+      "status": "moderation_blocked",
+      "request_id": "0c86487b-a472-4e56-98c0-b70eb77cb47c",
+      "purpose": "Kanto Ash nine-frame overworld walk sheet; no asset returned"
+    }
+  ]
+}

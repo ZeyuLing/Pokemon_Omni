@@ -25,7 +25,7 @@ const scenes=require('../build/pallet/scene-audit.json');
  function face(dir){const keys=[128,64,32,16];const before=state();m._mgbawasm_set_keys(keys[dir]);for(let i=0;i<10&&state().direction!==dir;i++)frames(1);m._mgbawasm_set_keys(0);frames(4);assert.equal(state().x,before.x);assert.equal(state().y,before.y);}
  function talkAt(x,y,dir){walk(x,y);face(dir);press(1);}
 
- frames(90);assert.equal(state().screen,6,'Debug boot still opens Dex');press(2);assert.equal(state().screen,0);shot('title');press(1);dismiss();assert.equal(state().map,3);shot('bedroom');
+ frames(90);assert.equal(state().screen,6,'Debug boot still opens Dex');press(2);assert.equal(state().screen,0);shot('title');press(1);assert.equal(state().screen,14);press(8);press(1);dismiss();assert.equal(state().map,3);shot('bedroom');
  press(8);press(1);assert.equal(state().screen,6);press(2);press(2);assert.equal(state().screen,1);
  talkAt(1,2,1);dismiss();assert.equal(state().potions,1);press(1);dismiss();assert.equal(state().potions,1);
  walk(10,2);assert.equal(state().map,2);talkAt(8,5,1);dismiss();walk(4,8);assert.equal(state().map,1);walk(16,13);assert.equal(state().map,5);

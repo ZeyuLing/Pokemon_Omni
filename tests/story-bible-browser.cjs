@@ -63,5 +63,5 @@ const root=path.resolve('build/story-bible');
  assert((await page.locator('.rival-proposal').innerText()).includes('是否接受支持'));
  assert.equal(await page.locator('.event').count(),0);
  await page.setViewportSize({width:390,height:900});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
- assert.deepEqual(errors,[]);console.log('PASS: 10 maps, 79-person search and 38 candidates, 18 casting records, separate source facts/proposals/biography, legal-status barrier, future direction, keyboard and narrow layouts');
+ assert.deepEqual(errors,[]);console.log('PASS: 10 maps, 80-person search and 38 candidates, 18 casting records, separate source facts/proposals/biography, legal-status barrier, future direction, keyboard and narrow layouts');
 }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

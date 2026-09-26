@@ -23,6 +23,26 @@ class ContinuityTests(unittest.TestCase):
     def test_current_registry(self):
         self.validate()
 
+    def test_opening_actor_requires_dossier_binding(self):
+        next(c for c in self.people if c['id']=='oak')['presentation_bindings']=[]
+        with self.assertRaisesRegex(AssertionError,'Opening actor coverage drift'):self.validate()
+
+    def test_montage_cannot_fill_unknown_date(self):
+        self.world['opening_presentation']['date']='1974-01-01'
+        with self.assertRaisesRegex(AssertionError,'Opening montage was dated'):self.validate()
+
+    def test_cast_assets_require_dossier(self):
+        next(c for c in self.people if c['id']=='silver')['game_assets']['portrait_actor']='missing'
+        with self.assertRaisesRegex(AssertionError,'Cast dossier coverage drift'):self.validate()
+
+    def test_player_opening_keeps_identity_secret(self):
+        opening=bible.read('content/opening/prologue.json')
+        runtime=' '.join(t for s in opening['scenes'] for t in [s['title'],*s['lines']])
+        for secret in ['AI','VLM','PROMPT','人工智能','人造','机器人','不会长大','赤红']:
+            self.assertNotIn(secret,runtime)
+        self.assertIsNone(opening['date'])
+        self.assertEqual(opening['visibility'],'player_safe')
+
     def test_past_championship_does_not_remove_giovanni_legal_barrier(self):
         case=next(c for c in self.world['institutions']['world_federation']['eligibility']['known_cases'] if c['actor']=='giovanni')
         case['legal_status']='eligible';case['registration_completed']=True

@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "revision": "2026-09-26.5",
+  "revision": "2026-09-26.6",
   "status": "authoring_registry_not_runtime",
   "calendar": {
     "epoch_year": null,
@@ -1272,5 +1272,25 @@
       "alliances": null,
       "outcomes": null
     }
+  },
+  "opening_presentation": {
+    "id": "first-journey-opening",
+    "status": "implemented_first_pass",
+    "date": null,
+    "phase": "first-journey",
+    "script": "content/opening/prologue.json",
+    "source_docs": [
+      "docs/36-playable-opening-and-cast.md"
+    ],
+    "actors": [
+      "opening-narrator",
+      "joy-viridian",
+      "lance",
+      "giovanni",
+      "gary",
+      "oak"
+    ],
+    "spoiler_boundary": "The game script contains no AI identity, synthetic body, model/prompt terminology or creation scene. Oak dialogue supports both ordinary training and later reinterpretation.",
+    "historical_effect": "Montage of existing conditions. Does not add a dated treaty signing, regime change, faction selection, research origin or tournament result."
   }
 }

@@ -212,6 +212,17 @@ def validate(world, people, atlas, media):
     expected={(s['key'],i,a['person']) for s in scenes for i,a in enumerate(s['actors']) if a.get('person')}
     bindings=[(b['scene'],b['actor_index'],b['person_id']) for c in people for b in c['runtime_bindings']]
     assert len(bindings)==len(set(bindings)) and set(bindings)==expected, 'Runtime actor coverage drift'
+    opening=read('content/opening/prologue.json')
+    expected={(opening['id'],s['id'],a) for s in opening['scenes'] for a in s['actors']}
+    actual=[(b['sequence'],b['scene'],c['id']) for c in people for b in c.get('presentation_bindings',[])]
+    assert len(actual)==len(set(actual)) and set(actual)==expected, 'Opening actor coverage drift'
+    assert {x[2] for x in expected}<=actors, 'Unregistered opening actor'
+    assert set(world['opening_presentation']['actors'])=={x[2] for x in expected}, 'Opening worldline drift'
+    assert world['opening_presentation']['date'] is None, 'Opening montage was dated'
+    cast=read('assets/characters/manifest.json')['portraits']
+    assert len({p['actor'] for p in cast})==len(cast), 'Duplicate cast art'
+    covered={c['id'] for c in people if c.get('game_assets',{}).get('portrait_actor')==c['id']}
+    assert {p['actor'] for p in cast}==covered, 'Cast dossier coverage drift'
 
 
 def fetch_media(media):
@@ -290,6 +301,8 @@ def rival_catalog(world,people):
         for id in group['actors']:
             c=cc[id]; source=c.get('source_identity'); proposal=c['rival_design']
             body+=f'<section class="rival-card" id="rival-{id}"><h3><a href="people/{id}.html">{h(c["name"])}</a> <span class="badge">{STATUS[c["status"]]}</span></h3>'
+            if c.get('game_assets'):
+                body+=f'<img src="cast/{id}.png" width="160" height="160" style="image-rendering:pixelated" alt="{h(c["name"])}的 GBA 立绘初版"><p class="meta">已编入人物画册；完整行走与战斗动画尚未完成。</p>'
             md+=f'\n### [{c["name"]}](characters/{id}.md) · {STATUS[c["status"]]}\n\n'
             if source:
                 body+=f'<p class="meta">来源版本：{h(source["continuity"])}；证据：{EVIDENCE_STATUS[source["evidence_level"]]}。</p><ul>'+''.join(f'<li>{h(fact)}</li>' for fact in source['facts'])+'</ul>'
@@ -369,6 +382,10 @@ def render(world,people,atlas,media):
         md+=f'\n### {x["label"]}\n\n{x["established_boundary"] or ""}\n\n'+''.join(f'- {q}\n' for q in x['questions'])
     body+='<h2>连续性约束</h2><ul>'+''.join(f'<li>{h(r)}</li>' for r in world['continuity_rules'])+'</ul>'
     md+='\n## 连续性约束\n\n'+''.join(f'- {r}\n' for r in world['continuity_rules'])
+    opening=world.get('opening_presentation')
+    if opening:
+        body+='<h2>已实装的开场演出</h2><p>《未竟的和平》：11 幕战争末期蒙太奇，日期未定；不新增历史事件。玩家脚本与编剧秘密独立维护。</p><p>'+source_link(opening['source_docs'][0])+' · <a href="http://127.0.0.1:4173/play?opening">在 GBA 运行器中观看</a></p>'
+        md+='\n## 已实装的开场演出\n\n《未竟的和平》：11 幕战争末期蒙太奇；日期未定，不另增历史事件。[完整演出说明](../36-playable-opening-and-cast.md)，玩家文本见 `content/opening/prologue.json`。\n'
     outputs[OUT/'timeline.html']=page('故事世界线',body,'timeline');outputs[DOCS/'worldline.md']=md
     body=f'<p class="eyebrow">People / 人物与伙伴</p><h1>人物档案</h1><p class="intro">{len(people)} 位已采用角色、无名角色与候选人物。包括有独立剧情作用的宝可梦个体。原作经历不会自动成为 Omni 生平；每一条已写经历都关联世界线事件。</p><div class="toolbar"><div><label for="query">查找姓名或职责</label><input id="query" type="search" placeholder="例如：坂木、研究、火箭队"></div><div><label for="status">创作状态</label><select id="status"><option value="">全部角色</option>'+''.join(f'<option value="{s}">{label}</option>' for s,label in STATUS.items())+'</select></div><p id="count" role="status" aria-live="polite"></p></div><div class="people">'
     for c in people:body+=f'<a class="person-link" data-status="{c["status"]}" href="people/{c["id"]}.html"><span class="name">{h(c["name"])}</span><span class="badge">{STATUS[c["status"]]}</span><span class="role">{h(c["role"])}</span></a>'
@@ -387,6 +404,13 @@ def render(world,people,atlas,media):
         for key,label in [('era_design','年龄阶段设计'),('production_art','立绘／像素／3D 资产')]:
             design+=f'<tr><th>{label}</th><td aria-label="{label}">{h(a[key] or "")}</td></tr>'
         design+='</tbody></table>'
+        if c.get('game_assets',{}).get('portrait_actor'):
+            art=f'cast/{c["id"]}.png'
+            design+=f'<figure><img src="../{art}" width="160" height="160" style="image-rendering:pixelated" alt="{h(name)}的 GBA 人物立绘初版"><figcaption>已编入 ROM 的人物立绘初版；不是完整行走、投球、背面或 3D 套件。</figcaption></figure>'
+            md+=f'游戏立绘记录：[资产清单](../../../assets/characters/manifest.json)，角色键 `{c["id"]}`。\n\n'
+        if c.get('presentation_bindings'):
+            labels='、'.join(b['scene'] for b in c['presentation_bindings'])
+            design+=f'<p>开场演出绑定：{h(labels)}。属于既定背景的蒙太奇，不另增出生、经历或日期。</p>'
         body=body.replace('<h2>已写生平</h2>',design+'<h2>已写生平</h2>')
         if c.get('body_profile'):
             profile=c['body_profile']
@@ -452,6 +476,12 @@ def main():
             if DOCS in path.parents:assert path.exists() and path.read_text(encoding='utf-8')==content, f'Stale generated document: {path}'
         else:path.parent.mkdir(parents=True,exist_ok=True);path.write_text(content,encoding='utf-8',newline='\n')
     if not args.check:
+        cast_dir=OUT/'cast';cast_dir.mkdir(exist_ok=True)
+        for c in people:
+            if c.get('game_assets',{}).get('portrait_actor'):
+                source=ROOT/'build/pallet/cast'/f'{c["id"]}.png'
+                assert source.exists(), 'Build presentation assets before story bible'
+                shutil.copyfile(source,cast_dir/source.name)
         for name in ['style.css','filter.js']:shutil.copyfile(ROOT/'tools/story_bible'/name,OUT/name)
         for src in {s for obj in people+world['events']+world.get('future_designs',[]) for s in obj['source_docs']}:
             dest=OUT/'sources'/src.replace('/','--');dest.parent.mkdir(exist_ok=True);shutil.copyfile(ROOT/src,dest)

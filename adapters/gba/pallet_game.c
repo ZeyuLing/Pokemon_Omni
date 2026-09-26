@@ -6,6 +6,9 @@
 #include "pokedex_game.h"
 #include "draw.h"
 #include "game_ui.h"
+#include "omni/presentation.h"
+#include "presentation_data.h"
+#include "music.h"
 
 #define REG16(a) (*(volatile uint16_t*)(a))
 #define REG32(a) (*(volatile uint32_t*)(a))
@@ -24,11 +27,15 @@
 #define DEX_DEBUG_ACCESS 0
 #endif
 enum {A=1,B=2,SELECT=4,START=8,RIGHT=16,LEFT=32,UP=64,DOWN=128,R=256,L=512};
-enum {TITLE,WORLD,MENU,TEAM,BAG,TRAINER,DEX,DIALOG,CHALLENGE,STARTER,BATTLE,BATTLE_LOG,NEW_CONFIRM,SHOP};
+enum {TITLE,WORLD,MENU,TEAM,BAG,TRAINER,DEX,DIALOG,CHALLENGE,STARTER,BATTLE,BATTLE_LOG,NEW_CONFIRM,SHOP,INTRO,INTRO_SKIP,CAST};
 enum {AFTER_WORLD,AFTER_CHALLENGE,AFTER_MENU,AFTER_BAG,AFTER_SHOP};
 static OmniAdventure game;
 static OmniPractice battle;
 static OmniPracticeTurn turn;
+static OmniPresentation presentation;
+static uint8_t intro_new_game,cast_cursor,cast_credits;
+static uint8_t intro_drawn_scene=255,intro_drawn_screen=255;
+static uint16_t speed_notice;
 static uint8_t dex_flags[OMNI_CATALOG_ENTRY_COUNT],scratch_flags[OMNI_CATALOG_ENTRY_COUNT];
 static OmniDexState dex_state={dex_flags,OMNI_CATALOG_ENTRY_COUNT};
 static uint8_t px=6,py=6,direction,screen,menu_cursor,choice,after_dialog,has_save,dirty=1;
@@ -36,7 +43,7 @@ static uint8_t dex_wait_release,party_cursor,challenge_kind,capture_failed,encou
 static uint8_t battle_page,battle_cursor,bag_pocket,bag_cursor,bag_in_battle;
 static uint8_t moving,move_dx,move_dy,walk_phase,menu_return,log_index,practice_result;
 static int anim_x,anim_y,camera_x,camera_y,origin_x,origin_y;
-static uint16_t old_keys,frame_count;
+static uint16_t frame_count;
 static uint32_t save_seq;static int save_slot=-1;
 static uint8_t save_bytes[12500];
 static const char *dialogue,*next_page;
@@ -44,6 +51,7 @@ static char buffer[512];
 static const char save_signature[] __attribute__((used))="SRAM_V113";
 /* Passive emulator observability. No write/cheat commands are exposed. */
 volatile uint32_t omni_pallet_probe[20];
+volatile uint32_t omni_presentation_probe[10];
 
 void *memset(void *d,int v,size_t n){uint8_t *p=d;while(n--)*p++=(uint8_t)v;return d;}
 void *memcpy(void *d,const void *s,size_t n){uint8_t *p=d;const uint8_t *q=s;while(n--)*p++=*q++;return d;}
@@ -63,8 +71,61 @@ static void message(const char *s,unsigned after){dialogue=s;next_page=s;after_d
 /* Source pixels stay at their native resolution. Bit 15 marks transparency. */
 static void ui_crop(unsigned offset,int width,int sx,int sy,int w,int h,int x,int y){const uint16_t *p=(const uint16_t*)(omni_game_ui_blob+offset);int row,col;for(row=0;row<h;++row)for(col=0;col<w;++col){uint16_t c=p[(sy+row)*width+sx+col];if(!(c&0x8000))box(x+col,y+row,1,1,c);}}
 #define UI_DRAW(name,x,y) ui_crop(UI_##name,UI_##name##_W,0,0,UI_##name##_W,UI_##name##_H,x,y)
-static void panel(int x,int y,int w,int h){const uint16_t *p=(const uint16_t*)(omni_game_ui_blob+UI_WINDOW);int row,col;for(row=0;row<h;++row)for(col=0;col<w;++col){int sx=col<8?col:col>=w-8?24-w+col:8+(col-8)%8;int sy=row<8?row:row>=h-8?24-h+row:8+(row-8)%8;box(x+col,y+row,1,1,p[sy*24+sx]);}}
+static void dma_row(const uint16_t *source,volatile uint16_t *dest,unsigned count);
+static void panel(int x,int y,int w,int h){
+ static uint16_t rows[24][240];static int previous_width;
+ const uint16_t *p=(const uint16_t*)(omni_game_ui_blob+UI_WINDOW);int row,col;
+ if(w!=previous_width){for(row=0;row<24;++row)for(col=0;col<w;++col){int sx=col<8?col:col>=w-8?24-w+col:8+(col-8)%8;rows[row][col]=p[row*24+sx];}previous_width=w;}
+ for(row=0;row<h;++row){int sy=row<8?row:row>=h-8?24-h+row:8+(row-8)%8;dma_row(rows[sy],(volatile uint16_t*)0x06000000+(y+row)*240+x,(unsigned)w);}
+}
 static void number(int x,int y,unsigned n,uint16_t color){char b[11],out[11];unsigned i=0,j;do{b[i++]=(char)('0'+n%10);n/=10;}while(n&&i<10);for(j=0;j<i;++j)out[j]=b[i-j-1];out[i]=0;text(x,y,out,color,240);}
+static void dma_row(const uint16_t *source,volatile uint16_t *dest,unsigned count);
+static void cast_portrait(unsigned id,int x,int y){
+ const uint16_t *p=(const uint16_t*)(omni_cast_blob+omni_cast[id].offset);unsigned row,col;
+ for(row=0;row<80;++row)for(col=0;col<80;++col){uint16_t c=p[row*80+col];if(!(c&0x8000))((volatile uint16_t*)0x06000000)[(y+row)*240+x+col]=c;}
+}
+static void draw_cast(void){
+ const OmniCastPortrait *c=&omni_cast[cast_cursor];const char *s=c->caption;char line[80];unsigned i=0;
+ if(cast_credits){
+  box(0,0,240,160,PAPER);panel(0,0,240,160);text(12,9,"人物美术 · 素材署名",BLUE,232);
+  text(12,34,"小进：kyledove",INK,232);text(12,54,"步美、小驱：Brumirage",INK,232);
+  text(12,78,"Game Freak / Nintendo / Creatures",INK,232);
+  text(12,101,"生成立绘：Omni / imagegen",INK,232);text(12,123,"来源与哈希见项目素材清单。",MUTED,232);
+  text(12,141,"SELECT立绘  B返回",BLUE,232);return;
+ }
+ box(0,0,240,160,PAPER);panel(0,0,240,160);text(12,9,"人物画册 · 开发预览",BLUE,232);
+ cast_portrait(cast_cursor,12,40);text(103,37,c->name,INK,232);
+ while(*s&&*s!='\n')line[i++]=*s++;line[i]=0;text(103,65,line,INK,233);
+ if(*s)text(103,84,s+1,INK,233);
+ num(103,106,cast_cursor+1,MUTED);text(120,106,"/",MUTED,135);num(134,106,OMNI_CAST_COUNT,MUTED);
+ text(12,126,"立绘初版 · 出场剧情另行开发",MUTED,234);text(12,142,"左右翻页 SELECT署名 B返回",BLUE,234);
+}
+static void draw_intro(void){
+ const OmniIntroScene *s=&omni_intro[presentation.scene];const PalletMap *m=&pallet_maps[s->map-1];
+ unsigned row,col;uint16_t strip[240];int width=m->w*16,height=m->h*16,x=s->x,y=s->y;
+ const uint16_t *stage=(const uint16_t*)(pallet_world_blob+m->art);
+ if(s->tone==3){stage=(const uint16_t*)(omni_game_ui_blob+UI_BATTLE_BUILDING);width=240;height=112;x=0;y=16;}
+ unsigned fade=presentation.scene_ticks<16?16-presentation.scene_ticks:s->duration-presentation.scene_ticks<16?16-(s->duration-presentation.scene_ticks):0;
+ REG16(0x04000050)=0xc4;REG16(0x04000054)=(uint16_t)(screen==INTRO_SKIP?0:fade);
+ if(intro_drawn_scene==presentation.scene&&intro_drawn_screen==screen)return;
+ intro_drawn_scene=presentation.scene;intro_drawn_screen=screen;
+ if(y>height-80)y=height-80;
+ box(0,0,240,160,RGB(2,3,5));
+ for(row=0;row<80;++row){
+  unsigned count=(unsigned)(width<240?width:240);const uint16_t *src=stage+(y+row)*width+x;
+  if(s->tone){for(col=0;col<count;++col){uint16_t c=src[col];unsigned r=c&31,g=(c>>5)&31,b=(c>>10)&31;
+   if(s->tone==1){unsigned grey=(r+g+b)/3;r=(r+grey)/3;g=(g+grey)/3;b=(b+grey)/3;}else{r/=3;g/=3;b=b/2+3;}
+   strip[col]=(uint16_t)RGB(r,g,b);
+  }src=strip;}
+  dma_row(src,(volatile uint16_t*)0x06000000+(row+23)*240+(width<240?(240-width)/2:0),count);
+ }
+ if(s->portrait<OMNI_CAST_COUNT){box(155,23,80,80,RGB(4,5,7));cast_portrait(s->portrait,155,23);}
+ text(7,4,s->title,GOLD,235);box(0,105,240,1,GOLD);
+ panel(1,108,238,51);text(10,114,s->line1,INK,230);text(10,132,s->line2,INK,230);
+ /* Fade through black; no fabricated geography or AI-labelled computer UI. */
+ REG16(0x04000050)=0xc4;REG16(0x04000054)=(uint16_t)fade;
+ if(screen==INTRO_SKIP){REG16(0x04000054)=0;panel(15,47,210,61);text(27,56,"跳过这段开场？",INK,225);text(27,80,"A跳过  B继续观看",BLUE,225);}
+}
 static void heading(const char *s){box(0,0,240,23,BLUE);text(7,3,s,PAPER,237);}
 static const char *paragraph_color(const char *s,int x,int y,unsigned rows,uint16_t color){unsigned row=0,w=0;char line[96];unsigned n=0;while(*s&&row<rows){unsigned bytes=1,width=6;const unsigned char c=(unsigned char)*s;if(c>=0xe0){bytes=3;width=12;}else if(c>=0xc0){bytes=2;width=12;}if(*s=='\n'||w+width>216){line[n]=0;text(x,y+(int)row*17,line,color,234);++row;n=w=0;if(*s=='\n')++s;if(row==rows)break;continue;}while(bytes--)line[n++]=*s++;w+=width;}if(n&&row<rows){line[n]=0;text(x,y+(int)row*17,line,color,234);}return s;}
 static const char *paragraph(const char *s,int x,int y,unsigned rows){return paragraph_color(s,x,y,rows,INK);}
@@ -83,7 +144,7 @@ static void draw_world(void){
  for(i=0;i<=count;++i){if(player_order<0&&(i==count||wy<pallet_actors[ordered[i]].y*16)){unsigned frame=face_frame(direction);if(moving&&((frame_count/4)&1))frame=(direction==0?3:direction==1?5:7)+(walk_phase&1);sprite(0,frame,wx,wy,direction==3);player_order=1;}if(i<count){const PalletActor *a=&pallet_actors[ordered[i]];sprite(a->sprite,face_frame(a->direction),a->x*16,a->y*16,a->direction==3);}}
 }
 static unsigned dex_index(uint16_t species){unsigned i;for(i=0;i<omni_pokedex_catalog.count;++i)if(omni_pokedex_catalog.entries[i].national==species&&omni_pokedex_catalog.entries[i].category==1)return i;return 0;}
-static void draw_title(void){box(0,0,240,160,RGB(5,12,17));box(0,115,240,45,RGB(7,17,17));text(34,18,"POKEMON OMNI",PAPER,237);text(53,45,"真新镇 · 启程",GOLD,237);omni_gba_picture(dex_index(1),4,62);omni_gba_picture(dex_index(4),87,62);omni_gba_picture(dex_index(7),170,62);text(72,120,has_save?(menu_cursor?"  继续冒险":"> 继续冒险"):"",PAPER,236);text(72,139,has_save?(menu_cursor?"> 新的冒险":"  新的冒险"):"> 新的冒险",PAPER,237);}
+static void draw_title(void){box(0,0,240,160,RGB(5,12,17));box(0,115,240,45,RGB(7,17,17));text(34,18,"POKEMON OMNI",PAPER,237);text(53,40,"真新镇 · 启程",GOLD,237);text(42,56,"L序章回放  R人物画册",PAPER,237);omni_gba_picture(dex_index(1),4,62);omni_gba_picture(dex_index(4),87,62);omni_gba_picture(dex_index(7),170,62);text(72,120,has_save?(menu_cursor?"  继续冒险":"> 继续冒险"):"",PAPER,236);text(72,139,has_save?(menu_cursor?"> 新的冒险":"  新的冒险"):"> 新的冒险",PAPER,237);}
 static void draw_menu(void){static const char *items[]={"图鉴","宝可梦","背包","训练家","保存","返回"};unsigned i;draw_world();panel(118,3,120,151);for(i=0;i<6;++i){if(menu_cursor==i)box(125,10+(int)i*22,105,21,RGB(25,28,29));text(129,12+(int)i*22,items[i],(i<2&&!game.starter)?MUTED:INK,234);}text(8,139,map()->name,PAPER,115);}
 static void draw_team(void){unsigned i;static const char *stats[]={"HP","攻击","防御","特攻","特防","速度"};const OmniPartner *mon=&game.party[party_cursor];const OmniStarter *spec=omni_partner_species(mon->species);box(0,0,240,160,PAPER);heading("同行的伙伴");if(!spec){text(12,50,"还没有宝可梦伙伴。",INK,237);return;}omni_gba_picture(dex_index(mon->species),8,29);text(84,28,spec->name,INK,237);text(84,48,"Lv.",MUTED,124);num(112,48,mon->level,INK);text(153,48,spec->ability,BLUE,236);num(84,68,mon->hp,INK);text(111,68,"/",MUTED,128);num(123,68,omni_partner_stat(mon,0),INK);for(i=0;i<6;++i){int x=(i%3)*80,y=91+(int)(i/3)*17;text(x+4,y,stats[i],MUTED,x+40);num(x+42,y,omni_partner_stat(mon,(uint8_t)i),INK);}for(i=0;i<2;++i){text(6+(int)i*120,126,omni_practice_move_name(spec->moves[i]),INK,110+(int)i*120);num(80+(int)i*120,126,mon->pp[i],BLUE);}text(7,144,"左右选  L领队 A图鉴 B返回",BLUE,237);num(219,28,party_cursor+1,BLUE);}
 enum {BAG_ITEMS_POCKET,BAG_BALLS_POCKET,BAG_TM_POCKET,BAG_BERRIES_POCKET,BAG_KEY_POCKET,BAG_POCKET_COUNT};
@@ -112,7 +173,7 @@ static void draw_bag(void){
   for(i=0;i<3;++i)text(3,105+(int)i*16,descriptions[bag_pocket][i],ink,104);
  }else{UI_DRAW(BAG_RETURN,8,72);text(3,105,"回到",ink,104);text(3,121,bag_in_battle?"对战。":"主界面。",ink,104);}
 }
-static void draw_trainer(void){box(0,0,240,160,PAPER);heading("训练家卡片");text(12,34,"小智 · 少年",INK,238);text(12,55,map()->name,BLUE,237);text(12,79,"对战胜场",MUTED,183);num(194,79,game.battles_won,INK);text(12,101,"图鉴已捕获",MUTED,183);num(194,101,omni_dex_count(&omni_pokedex_catalog,&dex_state,OMNI_DEX_REGISTERED,0),INK);paragraph(omni_adventure_objective(&game),12,119,2);text(12,144,"B返回",MUTED,237);}
+static void draw_trainer(void){box(0,0,240,160,PAPER);heading("训练家卡片");cast_portrait(0,148,24);text(12,34,"小智 · 少年",INK,238);text(12,55,map()->name,BLUE,237);text(12,79,"对战胜场",MUTED,119);num(116,79,game.battles_won,INK);text(12,101,"图鉴已捕获",MUTED,119);num(116,101,omni_dex_count(&omni_pokedex_catalog,&dex_state,OMNI_DEX_REGISTERED,0),INK);paragraph(omni_adventure_objective(&game),12,119,2);text(12,144,"B返回",MUTED,237);}
 static void draw_starter(void){const OmniStarter *s=&omni_starters[choice-1];box(0,0,240,160,PAPER);heading("选择你的第一位伙伴");omni_gba_picture(dex_index(s->species),12,39);text(95,39,s->name,INK,237);text(95,62,choice==1?"草 / 毒":choice==2?"火":choice==4?"电":"水",BLUE,237);text(95,84,s->ability,MUTED,237);text(12,116,"要和这位伙伴一起出发吗？",INK,237);text(12,140,"A确认选择  B再想想",BLUE,237);}
 static void hp_bar(int x,int y,const OmniPartner *m){unsigned i,max=omni_partner_stat(m,0),width=max?m->hp*48/max:0;ui_crop(UI_HP_ELEMENTS,96,8,0,16,8,x,y);for(i=0;i<6;++i){unsigned n=width>i*8?width-i*8:0;if(n>8)n=8;ui_crop(UI_HP_ELEMENTS,96,24+(int)n*8,0,8,8,x+16+(int)i*8,y);}if(m->hp*2<=max){box(x+16,y+3,(int)width,1,m->hp*5<=max?RGB(24,5,3):RGB(24,17,2));box(x+16,y+4,(int)width,1,m->hp*5<=max?RGB(31,13,9):RGB(31,26,6));}}
 static void battle_sprite(unsigned species,int back,int x,int y){unsigned index=0,row,col;while(index<6&&omni_starters[index].species!=species)++index;const uint16_t *p=(const uint16_t*)(pallet_world_blob+pallet_battle_sprites[index*2+back]);for(row=0;row<64;++row)for(col=0;col<64;++col)if(!(p[row*64+col]&0x8000)&&y+(int)row<112)box(x+(int)col,y+(int)row,1,1,p[row*64+col]);}
@@ -136,7 +197,7 @@ static void draw_battle(void){
  if(!battle_page){static const char *commands[]={"战斗","背包","宝可梦","逃跑"};UI_DRAW(BATTLE_COMMANDS,0,112);text(12,120,p->name,PAPER,115);text(12,138,"要做什么？",PAPER,116);for(i=0;i<4;++i){int x=139+(int)(i%2)*49,y=120+(int)(i/2)*19;text(x,y,commands[i],INK,239);if(battle_cursor==i)text(x-10,y,">",INK,x);}}
  else{UI_DRAW(BATTLE_MOVES,0,112);for(i=0;i<4;++i){int x=17+(int)(i%2)*75,y=119+(int)(i/2)*19;const char *move=i<2?omni_practice_move_name(p->moves[i]):"—";if(!battle.mons[0].pp[0]&&!battle.mons[0].pp[1]&&i==0)move="挣扎";text(x,y,move,INK,158);if(menu_cursor==i)text(x-9,y,">",INK,x);}text(173,119,"PP",INK,194);num(193,119,battle.mons[0].pp[menu_cursor],INK);text(209,119,"/",INK,219);num(218,119,p->pp[menu_cursor],INK);text(173,139,p->moves[menu_cursor]==84?"电":"一般",INK,236);}
 }
-static void draw(void){switch(screen){case TITLE:draw_title();break;case WORLD:draw_world();break;case MENU:draw_menu();break;case TEAM:draw_team();break;case BAG:draw_bag();break;case TRAINER:draw_trainer();break;case STARTER:draw_starter();break;case BATTLE:case BATTLE_LOG:draw_battle();break;case DIALOG:if(after_dialog==AFTER_BAG)draw_bag();else draw_world();text_box(dialogue);break;case SHOP:box(0,0,240,160,PAPER);heading("友好商店");text(12,40,menu_cursor?"  精灵球 200 元":"> 精灵球 200 元",INK,238);text(12,70,menu_cursor?"> 伤药   300 元":"  伤药   300 元",INK,238);text(12,101,"余额",MUTED,82);num(93,101,game.money,INK);text(12,139,"上下选择  A购买  B离开",BLUE,238);break;case CHALLENGE:draw_world();panel(14,93,212,66);text(26,102,challenge_kind==2?"阻止火箭队的行动？":"和小茂进行练习战？",INK,233);text(30,128,menu_cursor?"  是的":"> 是的",INK,118);text(140,128,menu_cursor?"> 下次":"  下次",INK,237);break;case NEW_CONFIRM:draw_title();panel(4,69,232,72);text(12,77,"新冒险会替换游戏存档。",INK,236);text(12,99,"A确认  B保留并返回",INK,236);break;default:break;}dirty=0;}
+static void draw(void){if(screen!=INTRO&&screen!=INTRO_SKIP)REG16(0x04000050)=0;switch(screen){case INTRO:case INTRO_SKIP:draw_intro();break;case CAST:draw_cast();break;case TITLE:draw_title();break;case WORLD:draw_world();if(speed_notice){panel(149,2,89,22);text(157,7,presentation.speed==1?"速度 1x":presentation.speed==2?"速度 2x":"速度 4x",INK,234);}break;case MENU:draw_menu();break;case TEAM:draw_team();break;case BAG:draw_bag();break;case TRAINER:draw_trainer();break;case STARTER:draw_starter();break;case BATTLE:case BATTLE_LOG:draw_battle();break;case DIALOG:if(after_dialog==AFTER_BAG)draw_bag();else draw_world();text_box(dialogue);break;case SHOP:box(0,0,240,160,PAPER);heading("友好商店");text(12,40,menu_cursor?"  精灵球 200 元":"> 精灵球 200 元",INK,238);text(12,70,menu_cursor?"> 伤药   300 元":"  伤药   300 元",INK,238);text(12,101,"余额",MUTED,82);num(93,101,game.money,INK);text(12,139,"上下选择  A购买  B离开",BLUE,238);break;case CHALLENGE:draw_world();panel(14,93,212,66);text(26,102,challenge_kind==2?"阻止火箭队的行动？":"和小茂进行练习战？",INK,233);text(30,128,menu_cursor?"  是的":"> 是的",INK,118);text(140,128,menu_cursor?"> 下次":"  下次",INK,237);break;case NEW_CONFIRM:draw_title();panel(4,69,232,72);text(12,77,"新冒险会替换游戏存档。",INK,236);text(12,99,"A确认  B保留并返回",INK,236);break;default:break;}dirty=0;}
 
 static int save_game(void){
  unsigned i,target=save_slot==0?1:0;size_t n=0,dex_n=0;uint8_t head[20];volatile uint8_t *s=(volatile uint8_t*)(uintptr_t)(0x0e000000u+target*16384u);
@@ -153,6 +214,8 @@ static int read_slot(unsigned slot,uint32_t *sequence,int apply){
 }
 static int load_game(void){uint32_t a=0,b=0;int va=read_slot(0,&a,0),vb=read_slot(1,&b,0);unsigned first=(vb&&(!va||(int32_t)(b-a)>0))?1:0;uint32_t seq;if(!va&&!vb)return 0;if(read_slot(first,&seq,1)){save_slot=(int)first;save_seq=seq;return 1;}return 0;}
 static void begin_new(void){omni_adventure_new(&game);memset(dex_flags,0,sizeof(dex_flags));px=6;py=6;direction=0;moving=0;anim_x=anim_y=0;save_game();message("小智醒来时，已经迟到了！\n今天要领取第一只宝可梦。\n先和妈妈告别，去研究所吧。",AFTER_WORLD);}
+static void begin_intro(uint8_t new_game){intro_new_game=new_game;intro_drawn_scene=255;omni_presentation_begin(&presentation,OMNI_INTRO_COUNT);screen=INTRO;dirty=1;}
+static void end_intro(void){REG16(0x04000050)=0;if(intro_new_game)begin_new();else{screen=TITLE;dirty=1;}}
 static void talk_person(uint8_t person){
  const char *custom;uint8_t talk;
  if(person==OMNI_ROCKET){if(!(game.events&OMNI_EVENT_CENTER)){message("武藏：别挡着我们。\n先照顾你的皮卡丘去吧！",AFTER_WORLD);return;}challenge_kind=OMNI_BATTLE_ROCKET;message((game.events&OMNI_EVENT_ROCKET)?"小次郎：这次换个战术！\n想再较量一次吗？":"武藏、小次郎和喵喵出现了！\n他们想夺走中心的宝可梦。\n小智决定保护大家。",AFTER_CHALLENGE);return;}
@@ -195,14 +258,18 @@ static void flee_battle(void){if(!omni_adventure_escape(&game,&battle))finish_ba
 static void switch_partner(unsigned slot){if(!omni_adventure_switch(&game,&battle,(uint8_t)slot)){battle_page=0;battle_cursor=0;omni_practice_wait(&battle,&turn);log_index=0;battle_log(0);}else battle_notice("这位伙伴现在不能接替出战。");}
 static void probe(void){omni_pallet_probe[0]=0x50414c54u;omni_pallet_probe[1]=0x4f4d4e49u;omni_pallet_probe[2]=screen;omni_pallet_probe[3]=game.location;omni_pallet_probe[4]=px;omni_pallet_probe[5]=py;omni_pallet_probe[6]=direction;omni_pallet_probe[7]=game.chapter;omni_pallet_probe[8]=game.starter;omni_pallet_probe[9]=menu_cursor;omni_pallet_probe[10]=moving;omni_pallet_probe[11]=battle.mons[0].hp;omni_pallet_probe[12]=battle.mons[1].hp;omni_pallet_probe[13]=battle.turns;omni_pallet_probe[14]=game.potions;omni_pallet_probe[15]=game.battles_played;omni_pallet_probe[16]=game.party_count;omni_pallet_probe[17]=game.events;omni_pallet_probe[18]=game.balls;omni_pallet_probe[19]=game.party[0].level;}
 static void tick(uint16_t keys){
- uint16_t pressed=keys&~old_keys;old_keys=keys;++frame_count;if(pressed&A){REG16(0x04000068)=0xa0b4;REG16(0x0400006c)=0xc6b8;}
- if(screen==DEX){if(dex_wait_release){if(keys&A)return;dex_wait_release=0;}omni_game_dex_tick(keys);if(!omni_game_dex_is_open()){screen=menu_return;dirty=1;}return;}
+ uint16_t pressed=omni_gba_input_pressed();++frame_count;if(pressed&A){REG16(0x04000068)=0xa0b4;REG16(0x0400006c)=0xc6b8;}
+ if(screen==INTRO){if(pressed&START){omni_presentation_skip(&presentation,0);screen=INTRO_SKIP;}else if(pressed&A){omni_presentation_next(&presentation);if(!presentation.playing)end_intro();}if(pressed)dirty=1;return;}
+ if(screen==INTRO_SKIP){if(pressed&A){omni_presentation_skip(&presentation,1);end_intro();}else if(pressed&B){omni_presentation_skip(&presentation,0);screen=INTRO;}dirty=1;return;}
+ if(screen==CAST){if(pressed&SELECT)cast_credits^=1;if(pressed&B)screen=TITLE;if(pressed&RIGHT)cast_cursor=(cast_cursor+1)%OMNI_CAST_COUNT;if(pressed&LEFT)cast_cursor=(cast_cursor+OMNI_CAST_COUNT-1)%OMNI_CAST_COUNT;if(pressed)dirty=1;return;}
+ if(screen==WORLD&&(pressed&SELECT)){omni_presentation_speed(&presentation);speed_notice=96;dirty=1;}
+ if(screen==DEX){if(dex_wait_release){if(keys&A)return;dex_wait_release=0;}omni_game_dex_tick(keys);if(!omni_game_dex_is_open()){omni_gba_input_clear();screen=menu_return;dirty=1;}return;}
  if(screen==WORLD&&moving){int speed=moving==2?4:2;anim_x+=((int)move_dx-1)*speed;anim_y+=((int)move_dy-1)*speed;dirty=1;if(!anim_x&&!anim_y)finish_step();return;}
  if(screen==WORLD){if(pressed&START){screen=MENU;menu_cursor=0;dirty=1;}else if(pressed&A)interact();else if(keys&UP)start_step(1,keys&B);else if(keys&DOWN)start_step(0,keys&B);else if(keys&LEFT)start_step(2,keys&B);else if(keys&RIGHT)start_step(3,keys&B);return;}
  if(!pressed)return;dirty=1;
  switch(screen){
- case TITLE:if(has_save&&(pressed&(UP|DOWN)))menu_cursor^=1;if(pressed&(A|START)){if(has_save&&!menu_cursor){load_game();screen=WORLD;}else if(has_save)screen=NEW_CONFIRM;else begin_new();}break;
- case NEW_CONFIRM:if(pressed&A)begin_new();if(pressed&B)screen=TITLE;break;
+ case TITLE:if(pressed&L){begin_intro(0);break;}if(pressed&R){cast_cursor=cast_credits=0;screen=CAST;break;}if(has_save&&(pressed&(UP|DOWN)))menu_cursor^=1;if(pressed&(A|START)){if(has_save&&!menu_cursor){load_game();screen=WORLD;}else if(has_save)screen=NEW_CONFIRM;else begin_intro(1);}break;
+ case NEW_CONFIRM:if(pressed&A)begin_intro(1);if(pressed&B)screen=TITLE;break;
  case DIALOG:if(pressed&(A|B)){if(*next_page)dialogue=next_page;else{screen=after_dialog==AFTER_CHALLENGE?CHALLENGE:after_dialog==AFTER_MENU?MENU:after_dialog==AFTER_BAG?BAG:after_dialog==AFTER_SHOP?SHOP:WORLD;if(screen==CHALLENGE)menu_cursor=0;}}break;
  case MENU:if(pressed&UP)menu_cursor=(menu_cursor+5)%6;if(pressed&DOWN)menu_cursor=(menu_cursor+1)%6;if(pressed&(B|START))screen=WORLD;if(pressed&A){switch(menu_cursor){case 0:if(DEX_DEBUG_ACCESS||game.starter){omni_game_dex_open();omni_game_dex_tick(0);menu_return=MENU;screen=DEX;dex_wait_release=1;}else message("先在研究所领取伙伴和图鉴。",AFTER_MENU);break;case 1:party_cursor=0;screen=TEAM;break;case 2:bag_in_battle=0;bag_pocket=0;bag_cursor=0;screen=BAG;break;case 3:screen=TRAINER;break;case 4:message(save_game()?"冒险记录已保存。\n下次可以从这里继续。":"保存失败，请重试。",AFTER_MENU);break;default:screen=WORLD;break;}}break;
  case TEAM:if(pressed&B)screen=MENU;if(game.party_count){if(pressed&RIGHT)party_cursor=(party_cursor+1)%game.party_count;if(pressed&LEFT)party_cursor=(party_cursor+game.party_count-1)%game.party_count;if(pressed&L){if(!omni_adventure_lead(&game,party_cursor)){party_cursor=0;save_game();}}if(pressed&A){unsigned i=dex_index(game.party[party_cursor].species);omni_game_dex_open_entry(omni_pokedex_catalog.entries[i].id);omni_game_dex_tick(0);menu_return=TEAM;screen=DEX;dex_wait_release=1;}}break;
@@ -238,4 +305,28 @@ static void tick(uint16_t keys){
  default:break;
  }
 }
-int main(void){REG16(0x04000000)=0x0403;REG16(0x04000204)=0x4317;REG16(0x04000084)=0x80;REG16(0x04000080)=0x2277;REG16(0x04000082)=2;(void)save_signature;omni_adventure_new(&game);omni_game_dex_bind(dex_state,host_save,0);has_save=(uint8_t)load_game();screen=TITLE;if(DEX_DEBUG_ACCESS){omni_game_dex_open();menu_return=TITLE;screen=DEX;}for(;;){while(REG16(0x04000006)>=160){}while(REG16(0x04000006)<160){}tick((uint16_t)(~REG16(0x04000130)&1023));if(dirty&&screen!=DEX)draw();probe();}}
+int main(void){
+ REG16(0x04000000)=0x0403;REG16(0x04000204)=0x4317;(void)save_signature;
+ omni_gba_music_init();omni_presentation_init(&presentation,omni_gba_clock());
+ omni_adventure_new(&game);omni_game_dex_bind(dex_state,host_save,0);has_save=(uint8_t)load_game();screen=TITLE;
+ if(DEX_DEBUG_ACCESS){omni_game_dex_open();menu_return=TITLE;screen=DEX;}
+ for(;;){
+  uint16_t keys;unsigned i,steps;uint8_t previous_scene=presentation.scene;
+  while(REG16(0x04000006)>=160){}while(REG16(0x04000006)<160){}
+  omni_presentation_track(&presentation,(screen==INTRO||screen==INTRO_SKIP)?0:(screen==BATTLE||screen==BATTLE_LOG)?2:1);
+  omni_presentation_advance(&presentation,omni_gba_clock(),presentation.playing?omni_intro[presentation.scene].duration:0);
+  omni_gba_music_request(presentation.track);
+  if(screen==INTRO&&!presentation.playing)end_intro();
+  if(screen==INTRO&&(previous_scene!=presentation.scene||!(frame_count%4)))dirty=1;
+  if(speed_notice){--speed_notice;if(!speed_notice)dirty=1;}
+  keys=(uint16_t)(~REG16(0x04000130)&1023);
+  steps=omni_presentation_steps(&presentation,screen==WORLD);
+  for(i=0;i<steps;++i){tick(keys);if(screen!=WORLD)break;}
+  if(dirty&&screen!=DEX)draw();probe();
+  omni_presentation_probe[0]=0x50524553u;omni_presentation_probe[1]=0x4f4d4e49u;
+  omni_presentation_probe[2]=presentation.speed;omni_presentation_probe[3]=presentation.scene;
+  omni_presentation_probe[4]=presentation.scene_ticks;omni_presentation_probe[5]=omni_gba_music_steps();
+  omni_presentation_probe[6]=presentation.note;omni_presentation_probe[7]=presentation.clock;
+  omni_presentation_probe[8]=cast_cursor;omni_presentation_probe[9]=presentation.track;
+ }
+}

@@ -187,6 +187,12 @@ def main():
         strings.update(file.read_text(encoding='utf-8'))
     for file in (ROOT / 'content/pallet-town').glob('*.json'):
         strings.update(file.read_text(encoding='utf-8'))
+    opening=json.loads((ROOT/'content/opening/prologue.json').read_text(encoding='utf-8'))
+    for scene in opening['scenes']:
+        for value in [scene['title'],*scene['lines']]: strings.update(value)
+    cast=json.loads((ROOT/'assets/characters/manifest.json').read_text(encoding='utf-8'))
+    for person in cast['portraits']:
+        strings.update(person['name']);strings.update(person['caption'])
     font_path=ROOT / '.cache/toolchains/unifont-16.0.04.hex.gz'
     assert hashlib.sha256(font_path.read_bytes()).hexdigest() == 'f9c8c7802453f47be02677176aeac2342ee96d354fad7a26cedcce48e68e1d9f'
     glyphs={}

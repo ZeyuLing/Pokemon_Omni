@@ -16,13 +16,15 @@ ID：`ash`；状态：已采用。
 
 年龄阶段设计：转变前身体不长大；获得肉身后可成长至青年、中年。各阶段年龄数字、体态、服装和解锁篇章待设计。
 
-最终立绘／像素／3D 资产：
+最终立绘／像素／3D 资产：已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。
 
 ## 身体设定
 
 获得真正肉身前，小智不会长大，其余与常人相同；后续神兽受其打动，赋予肉身后，他将能够自然成长。转变前后的身体实现、日期和身份揭露顺序未定；青年、中年经历尚未创作。
 
 ## 已写生平
+
+游戏立绘记录：[资产清单](../../../assets/characters/manifest.json)，角色键 `ash`。
 
 - **赤红之后、出发之前·日期未定 · 第二代 AI 训练家：小智**（背景已确定／场景未写；编剧秘密）：第二代 AI 训练家，不知道自己的 AI 身份；此时的身体不会随岁月长大，其余生活与生理表现如常人。具体身体技术、记忆与社会身份来历未写。 事件 ID：`ash-developed`。
 - **一周目旅程的秘密目标 · 大木安排小智取得世界赛资格**（背景已确定／场景未写；编剧秘密）：是秘密计划的参赛人选；不知道 AI 身份，不自动知道大木计划全貌。 事件 ID：`ash-qualification-plan`。
@@ -58,3 +60,4 @@ ID：`ash`；状态：已采用。
 - [32-first-journey-world-premise.md](../../../docs/32-first-journey-world-premise.md)
 - [33-ash-ai-design.md](../../../docs/33-ash-ai-design.md)
 - [34-ash-human-body-arc.md](../../../docs/34-ash-human-body-arc.md)
+- [36-playable-opening-and-cast.md](../../../docs/36-playable-opening-and-cast.md)

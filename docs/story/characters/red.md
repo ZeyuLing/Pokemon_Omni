@@ -16,7 +16,7 @@ ID：`red`；状态：已采用。
 
 年龄阶段设计：
 
-最终立绘／像素／3D 资产：
+最终立绘／像素／3D 资产：已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。
 
 ## 劲敌／关联人物提案
 
@@ -25,6 +25,8 @@ ID：`red`；状态：已采用。
 具体阵营、遇见节点、资格取得与结局未定。[选角研究](../rivals.md)。
 
 ## 已写生平
+
+游戏立绘记录：[资产清单](../../../assets/characters/manifest.json)，角色键 `red`。
 
 - **小智研发之前·日期未定 · 第一代 AI 训练家：赤红**（背景已确定／场景未写；编剧秘密）：作为第一代成果具备强大战斗能力，未实现语言功能及战斗外思想。 事件 ID：`red-developed`。
 
@@ -49,3 +51,4 @@ ID：`red`；状态：已采用。
 - [26-master-timeline.md](../../../docs/26-master-timeline.md)
 - [33-ash-ai-design.md](../../../docs/33-ash-ai-design.md)
 - [35-kanto-rivals-and-succession.md](../../../docs/35-kanto-rivals-and-succession.md)
+- [36-playable-opening-and-cast.md](../../../docs/36-playable-opening-and-cast.md)

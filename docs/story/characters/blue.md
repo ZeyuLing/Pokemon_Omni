@@ -14,7 +14,7 @@ ID：`blue`；状态：候选。
 
 年龄阶段设计：
 
-最终立绘／像素／3D 资产：
+最终立绘／像素／3D 资产：已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。
 
 ## 原作身份参考（不计入本作生平）
 
@@ -35,6 +35,8 @@ ID：`blue`；状态：候选。
 
 ## 已写生平
 
+游戏立绘记录：[资产清单](../../../assets/characters/manifest.json)，角色键 `blue`。
+
 
 ## 完整生平的留白
 
@@ -53,3 +55,4 @@ ID：`blue`；状态：候选。
 
 - [35-kanto-rivals-and-succession.md](../../../docs/35-kanto-rivals-and-succession.md)
 - [2026-09-26-kanto-rivals-evidence.md](../../../research/narrative/2026-09-26-kanto-rivals-evidence.md)
+- [36-playable-opening-and-cast.md](../../../docs/36-playable-opening-and-cast.md)

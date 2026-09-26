@@ -16,9 +16,11 @@ ID：`oak`；状态：已采用。
 
 年龄阶段设计：
 
-最终立绘／像素／3D 资产：
+最终立绘／像素／3D 资产：已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。
 
 ## 已写生平
+
+游戏立绘记录：[资产清单](../../../assets/characters/manifest.json)，角色键 `oak`。
 
 - **1942-03-02 · 冠军战与叉字蝠重伤**（正文已写）：与坂木共同送医，随后联系医师和学者。 事件 ID：`championship-injury`。
 - **1942-04-02 · 希尔弗会谈**（正文已写）：提出研究来源可追查、停止实验与公开医疗成果等条件。 事件 ID：`silph-agreement`。
@@ -58,3 +60,4 @@ ID：`oak`；状态：已采用。
 - [25-rainbow-covenant-prologue.md](../../../docs/25-rainbow-covenant-prologue.md)
 - [32-first-journey-world-premise.md](../../../docs/32-first-journey-world-premise.md)
 - [35-kanto-rivals-and-succession.md](../../../docs/35-kanto-rivals-and-succession.md)
+- [36-playable-opening-and-cast.md](../../../docs/36-playable-opening-and-cast.md)

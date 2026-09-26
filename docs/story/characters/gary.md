@@ -16,7 +16,7 @@ ID：`gary`；状态：已采用。
 
 年龄阶段设计：
 
-最终立绘／像素／3D 资产：
+最终立绘／像素／3D 资产：已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。
 
 ## 原作身份参考（不计入本作生平）
 
@@ -36,6 +36,8 @@ ID：`gary`；状态：已采用。
 具体阵营、遇见节点、资格取得与结局未定。[选角研究](../rivals.md)。
 
 ## 已写生平
+
+游戏立绘记录：[资产清单](../../../assets/characters/manifest.json)，角色键 `gary`。
 
 - **T=0 附近·具体年份未定 · 少年小智领取皮卡丘**（原型已有／演出未完整）：在研究所等待并可发起练习战。 事件 ID：`ash-departure`。
 
@@ -60,3 +62,4 @@ ID：`gary`；状态：已采用。
 - [32-first-journey-world-premise.md](../../../docs/32-first-journey-world-premise.md)
 - [35-kanto-rivals-and-succession.md](../../../docs/35-kanto-rivals-and-succession.md)
 - [2026-09-26-kanto-rivals-evidence.md](../../../research/narrative/2026-09-26-kanto-rivals-evidence.md)
+- [36-playable-opening-and-cast.md](../../../docs/36-playable-opening-and-cast.md)

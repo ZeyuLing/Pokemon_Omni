@@ -83,3 +83,4 @@
 | [小椿](characters/clair.md) | 候选 | 渡的亲族来源；成年龙系圈层候选 |
 | [真司](characters/paul.md) | 候选 | 神奥来访劲敌候选；渡的培养对象仅为原创提案 |
 | [彼特](characters/bede.md) | 候选 | 伽勒尔后续劲敌候选；推荐培养关系的原作范例 |
+| [序章旁白](characters/opening-narrator.md) | 已采用 | 玩家开场中的非剧内旁白，没有实体人物身份 |

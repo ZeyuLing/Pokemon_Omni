@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "first-journey-opening",
+  "title": "未竟的和平",
+  "clock_hz": 64,
+  "date": null,
+  "phase": "first-journey",
+  "visibility": "player_safe",
+  "scope": "Undated montage of established conditions, not new historical events. Camera crops are stage dressing, not new locations or geography.",
+  "scenes": [
+    {"id":"war","title":"第一次宝可梦世界大战 · 末期","map":7,"camera":[168,120],"tone":1,"portrait":null,"actors":["opening-narrator"],"lines":["战争已经持续了太久。","胜负尚未分明，城镇却先疲惫了。"],"duration_ticks":512},
+    {"id":"center","title":"关都 · 宝可梦中心","map":8,"camera":[0,0],"tone":1,"portrait":null,"actors":["opening-narrator","joy-viridian"],"lines":["宝可梦仍在被送回战场。","人们等候的，是不必再战的一天。"],"duration_ticks":512},
+    {"id":"proposal","title":"一项传遍各地的提案","map":7,"camera":[280,120],"tone":1,"portrait":null,"actors":["opening-narrator"],"lines":["每四年，以世界大赛代替战争。","各地强者将争夺同一座冠军奖杯。"],"duration_ticks":576},
+    {"id":"power","title":"世界宝可梦联盟","map":7,"camera":[288,152],"tone":1,"portrait":null,"actors":["opening-narrator"],"lines":["冠军将执掌拟议中的世界联盟。","前四名，也将坐上议政的席位。"],"duration_ticks":576},
+    {"id":"lance","title":"渡 · 关都联盟冠军","map":5,"camera":[0,0],"tone":3,"stage":"source_battle_building","portrait":"lance","actors":["opening-narrator","lance"],"lines":["渡想让所有地区服从同一个意志。","赛场，或许是另一条统一之路。"],"duration_ticks":576},
+    {"id":"silph","title":"希尔弗 · 遍布关都的生意","map":9,"camera":[0,0],"tone":2,"portrait":null,"actors":["opening-narrator"],"lines":["商店、医疗与货物早已连成一体。","新的联盟，也意味着更大的市场。"],"duration_ticks":512},
+    {"id":"rocket","title":"火箭队 · 被剥夺的资格","map":6,"camera":[32,304],"tone":2,"portrait":"giovanni","actors":["opening-narrator","giovanni"],"lines":["坂木有过冠军之名，却无法报名。","他仍在追寻传说中的力量。"],"duration_ticks":576},
+    {"id":"rivals","title":"下一代的赛场","map":5,"camera":[0,48],"tone":2,"portrait":"gary","actors":["opening-narrator","gary"],"lines":["强者们开始寻找自己的接棒人。","年轻的训练家，也有自己的道路。"],"duration_ticks":512},
+    {"id":"oak","title":"真新镇 · 深夜","map":5,"camera":[0,0],"tone":2,"portrait":"oak","actors":["opening-narrator","oak"],"lines":["研究所的灯，依然没有熄灭。","屏幕上的对战，被反复推演。"],"duration_ticks":512},
+    {"id":"question","title":"大木博士","map":5,"camera":[0,0],"tone":2,"portrait":"oak","actors":["oak"],"lines":["“知道怎样赢，还不够。”","“还要知道，为什么而战。”"],"duration_ticks":576},
+    {"id":"dawn","title":"真新镇 · 清晨","map":1,"camera":[0,16],"tone":0,"portrait":null,"actors":["opening-narrator"],"lines":["天亮了。","今天，是领取第一只宝可梦的日子。"],"duration_ticks":448}
+  ]
+}

@@ -87,5 +87,11 @@
       "reason": "旧固定年龄、服装和篇章方案未恢复；新方案须以获得肉身为前提，另行设计。"
     }
   ],
-  "transition_design_id": "ash-human-body"
+  "transition_design_id": "ash-human-body",
+  "portrait": {
+    "status": "draft_in_rom",
+    "source": "assets/characters/anime-cast-v1.png",
+    "manifest": "assets/characters/manifest.json",
+    "usage": "trainer_card_and_debug_gallery"
+  }
 }
