@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "status": "authoring_registry_not_runtime",
   "characters": [
     {
@@ -7,7 +7,7 @@
       "name": "坂木",
       "kind": "human",
       "status": "adopted",
-      "role": "冠军训练家；火箭队创立者",
+      "role": "火箭队创立者与首领；当代神兽力量路线的推动者",
       "birth_year": 1922,
       "birth_basis": "Omni 工作年；非官方生日",
       "death_event": null,
@@ -27,12 +27,13 @@
       "source_docs": [
         "docs/30-cinnabar-incident.md",
         "docs/26-master-timeline.md",
-        "docs/25-rainbow-covenant-prologue.md"
+        "docs/25-rainbow-covenant-prologue.md",
+        "docs/32-first-journey-world-premise.md"
       ],
       "relationships": [
         {
           "other": "oak",
-          "relationship": "冠军对手与研究合作者"
+          "relationship": "昔日冠军对手与研究合作者；当代政治目标相近而力量路线分歧，当前合作未定"
         },
         {
           "other": "crobat",
@@ -50,7 +51,7 @@
       "name": "大木博士",
       "kind": "human",
       "status": "adopted",
-      "role": "冠军、希尔弗研究院首席科学家",
+      "role": "前冠军、前希尔弗首席科学家；当代 AI 训练家研发者",
       "birth_year": 1917,
       "birth_basis": "Omni 工作年；非官方生日",
       "death_event": null,
@@ -70,7 +71,8 @@
       "source_docs": [
         "docs/30-cinnabar-incident.md",
         "docs/26-master-timeline.md",
-        "docs/25-rainbow-covenant-prologue.md"
+        "docs/25-rainbow-covenant-prologue.md",
+        "docs/32-first-journey-world-premise.md"
       ],
       "relationships": [
         {
@@ -83,7 +85,15 @@
         },
         {
           "other": "giovanni",
-          "relationship": "冠军对手与研究合作者"
+          "relationship": "昔日冠军对手与研究合作者；当代同求和平联邦，但科技分析与神兽路线分歧，当前联络未定"
+        },
+        {
+          "other": "ash",
+          "relationship": "研发第二代 AI，初始设定其向往和平、忠于自己；只有大木知晓其 AI 身份"
+        },
+        {
+          "other": "red",
+          "relationship": "第一代 AI 训练家的研发者"
         }
       ],
       "runtime_bindings": [
@@ -100,7 +110,7 @@
       "name": "希尔弗社长",
       "kind": "human",
       "status": "adopted",
-      "role": "出资人；希尔弗公司掌权者",
+      "role": "1942 年的希尔弗社长；当代是否仍在世未定",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -354,17 +364,54 @@
       "runtime_bindings": []
     },
     {
+      "id": "red",
+      "name": "赤红",
+      "kind": "ai_trainer",
+      "status": "adopted",
+      "role": "大木研发的第一代 AI 训练家；无语言功能及战斗外思想",
+      "birth_year": null,
+      "birth_basis": "AI 启用与研发完成日期未定，不按原作年龄倒推生物出生年。",
+      "death_event": null,
+      "appearance": {
+        "reference_media": "portrait-red",
+        "anime_identity": "以动画《宝可梦 起源》官方角色页的赤红为外观参考；红白帽与红色上装等识别特征沿用，具体年龄阶段和本作调整尚未设计。原作的语言、经历与性格不自动进入 Omni。",
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/32-first-journey-world-premise.md"
+      ],
+      "relationships": [
+        {
+          "other": "oak",
+          "relationship": "研发者与第一代 AI 成果"
+        },
+        {
+          "other": "ash",
+          "relationship": "同一研发者的两代成果；未确定相识，也不知小智 AI 身份"
+        }
+      ],
+      "runtime_bindings": []
+    },
+    {
       "id": "ash",
       "name": "小智",
-      "kind": "human",
+      "kind": "ai_trainer",
       "status": "adopted",
-      "role": "从真新镇出发的主角",
-      "birth_year": 1957,
-      "birth_basis": "Omni 工作年；非官方生日",
+      "role": "少年外观的主角；第二代 AI 训练家（编剧秘密，本人不知）",
+      "birth_year": null,
+      "birth_basis": "未设定生物出生年或载体性质；AI 启用年份、对外身份年龄和主观经历均未定。撤销旧 1957 年推算。",
       "death_event": null,
       "appearance": {
         "reference_media": "portrait-ash",
-        "anime_identity": "保留动画黑发、脸颊标记、帽子与皮卡丘搭档关系。参考图为后期动画服装；本作少年开场采用初代方向，16 岁和 21 岁属于待创作的年龄设计。",
+        "anime_identity": "沿用动画小智的黑发、脸颊标记、帽子及少年轮廓；现图为后期动画服装。初代风格开场与未来青年外观属于设计方向，不代表已确定生物年龄或 AI 载体的变化方式。",
         "era_design": null,
         "production_art": null
       },
@@ -377,16 +424,25 @@
       },
       "source_docs": [
         "docs/20-cast-and-opening.md",
-        "docs/26-master-timeline.md"
+        "docs/26-master-timeline.md",
+        "docs/32-first-journey-world-premise.md"
       ],
       "relationships": [
         {
           "other": "delia",
-          "relationship": "母子"
+          "relationship": "旧原型中的母子称谓；实际家庭关系与来历未定，花子不知 AI 身份"
         },
         {
           "other": "pikachu",
           "relationship": "训练家与伙伴"
+        },
+        {
+          "other": "oak",
+          "relationship": "研发者与第二代 AI；初始忠于大木，但自己不知道 AI 身份"
+        },
+        {
+          "other": "red",
+          "relationship": "同一研发者的两代 AI 成果；是否见面及彼此认知未定"
         }
       ],
       "runtime_bindings": []
@@ -397,8 +453,8 @@
       "kind": "human",
       "status": "adopted",
       "role": "大木的孙子；小智的劲敌",
-      "birth_year": 1957,
-      "birth_basis": "Omni 暂按与小智同龄换算；非官方确切年龄",
+      "birth_year": null,
+      "birth_basis": "主线年份及本作确切年龄未定，撤销随旧 1967 年映射推算的出生年。",
       "death_event": null,
       "appearance": {
         "reference_media": "portrait-oak-gary",
@@ -415,7 +471,8 @@
       },
       "source_docs": [
         "docs/20-cast-and-opening.md",
-        "docs/26-master-timeline.md"
+        "docs/26-master-timeline.md",
+        "docs/32-first-journey-world-premise.md"
       ],
       "relationships": [
         {
@@ -437,7 +494,7 @@
       "name": "花子",
       "kind": "human",
       "status": "adopted",
-      "role": "小智的母亲",
+      "role": "开场原型中的母亲角色；与小智关系的来历待改编",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -455,12 +512,13 @@
         "ending": null
       },
       "source_docs": [
-        "docs/20-cast-and-opening.md"
+        "docs/20-cast-and-opening.md",
+        "docs/32-first-journey-world-premise.md"
       ],
       "relationships": [
         {
           "other": "ash",
-          "relationship": "母子"
+          "relationship": "原型中的母子称谓；不知小智 AI 身份，不能据此推断生育或秘密共谋"
         }
       ],
       "runtime_bindings": [
@@ -1329,14 +1387,14 @@
       "id": "lance",
       "name": "渡",
       "kind": "human",
-      "status": "candidate",
-      "role": "安全与跨地区协作",
+      "status": "adopted",
+      "role": "当代关都冠军；追求统一所有地区的暴虐独裁者",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
       "appearance": {
-        "reference_media": null,
-        "anime_identity": null,
+        "reference_media": "portrait-lance",
+        "anime_identity": "参考电视动画《宝可梦》2022 年 7 月 8 日渡对卡露妮一集中的角色设计；仅借用外观，本作独裁者身份与经历为用户指定改编。主线确切年龄、服饰调整待定。",
         "era_design": null,
         "production_art": null
       },
@@ -1348,7 +1406,8 @@
         "ending": null
       },
       "source_docs": [
-        "docs/20-cast-and-opening.md"
+        "docs/20-cast-and-opening.md",
+        "docs/32-first-journey-world-premise.md"
       ],
       "relationships": [],
       "runtime_bindings": []
@@ -1885,5 +1944,6 @@
       "relationships": [],
       "runtime_bindings": []
     }
-  ]
+  ],
+  "revision": "2026-09-26.1"
 }

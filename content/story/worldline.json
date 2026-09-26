@@ -1,11 +1,20 @@
 {
-  "schema_version": 1,
-  "revision": "2026-09-25.1",
+  "schema_version": 2,
+  "revision": "2026-09-26.1",
   "status": "authoring_registry_not_runtime",
   "calendar": {
-    "epoch_year": 1967,
-    "epoch": "小智 10 岁从真新镇出发",
-    "official_calendar": false
+    "epoch_year": null,
+    "epoch": "T=0：第一次宝可梦世界大战末期，小智从真新镇出发",
+    "official_calendar": false,
+    "mainline_year_status": "undetermined",
+    "prehistory_dates": "1942—1943 沿用已写前史的工作纪年；主线距红莲事件几十年，具体间隔未定",
+    "age_policy": "人类年龄按已知出生年与实际年份计算；小智外观阶段、AI 启用时间与对外身份年龄分别记录，均不由动画十岁倒推出生年",
+    "retired_assumptions": [
+      "T=0 等于 1967",
+      "小智及小茂出生于 1957",
+      "主线大木固定 50 岁、坂木固定 45 岁",
+      "1973／1978 为小智后续阶段的固定年份"
+    ]
   },
   "events": [
     {
@@ -23,7 +32,9 @@
       },
       "source_docs": [
         "docs/25-rainbow-covenant-prologue.md"
-      ]
+      ],
+      "phase": "prehistory",
+      "visibility": "authoring"
     },
     {
       "id": "rainbow-feather",
@@ -41,7 +52,9 @@
       },
       "source_docs": [
         "docs/25-rainbow-covenant-prologue.md"
-      ]
+      ],
+      "phase": "prehistory",
+      "visibility": "authoring"
     },
     {
       "id": "silph-agreement",
@@ -57,7 +70,9 @@
       },
       "source_docs": [
         "docs/25-rainbow-covenant-prologue.md"
-      ]
+      ],
+      "phase": "prehistory",
+      "visibility": "authoring"
     },
     {
       "id": "institute-rocket-founded",
@@ -73,7 +88,9 @@
       },
       "source_docs": [
         "docs/25-rainbow-covenant-prologue.md"
-      ]
+      ],
+      "phase": "prehistory",
+      "visibility": "authoring"
     },
     {
       "id": "oak-resigns",
@@ -90,7 +107,9 @@
       },
       "source_docs": [
         "docs/30-cinnabar-incident.md"
-      ]
+      ],
+      "phase": "prehistory",
+      "visibility": "authoring"
     },
     {
       "id": "relic-surveys",
@@ -107,7 +126,10 @@
       },
       "source_docs": [
         "docs/30-cinnabar-incident.md"
-      ]
+      ],
+      "phase": "prehistory",
+      "visibility": "authoring",
+      "time_label": "1942 年夏至 1943 年初"
     },
     {
       "id": "expanded-cabinet",
@@ -124,7 +146,9 @@
       },
       "source_docs": [
         "docs/30-cinnabar-incident.md"
-      ]
+      ],
+      "phase": "prehistory",
+      "visibility": "authoring"
     },
     {
       "id": "assassination-orders",
@@ -141,7 +165,9 @@
       },
       "source_docs": [
         "docs/30-cinnabar-incident.md"
-      ]
+      ],
+      "phase": "prehistory",
+      "visibility": "authoring"
     },
     {
       "id": "cinnabar-attack",
@@ -158,7 +184,9 @@
       },
       "source_docs": [
         "docs/30-cinnabar-incident.md"
-      ]
+      ],
+      "phase": "prehistory",
+      "visibility": "authoring"
     },
     {
       "id": "cinnabar-betrayal",
@@ -174,7 +202,9 @@
       },
       "source_docs": [
         "docs/30-cinnabar-incident.md"
-      ]
+      ],
+      "phase": "prehistory",
+      "visibility": "authoring"
     },
     {
       "id": "giovanni-rescued",
@@ -189,21 +219,177 @@
       },
       "source_docs": [
         "docs/30-cinnabar-incident.md"
+      ],
+      "phase": "prehistory",
+      "visibility": "authoring"
+    },
+    {
+      "id": "rocket-outlawed",
+      "date": null,
+      "time_label": "红莲事件后·日期未定",
+      "phase": "interlude",
+      "title": "红莲事件被扭曲与火箭队非法化",
+      "location": "关都",
+      "status": "established",
+      "visibility": "authoring",
+      "summary": "红莲事件真相被扭曲，火箭队被判定为非法黑社会组织；具体公开说法、法律程序和操作者未写。",
+      "participants": {
+        "giovanni": "其组织被定性为非法黑社会组织，主线时期在关都受到普遍敌视；不因此推定他已掌握全部幕后真相。"
+      },
+      "source_docs": [
+        "docs/32-first-journey-world-premise.md"
+      ]
+    },
+    {
+      "id": "oak-leaves-institute",
+      "date": null,
+      "time_label": "一周目开始前·日期未定",
+      "phase": "interlude",
+      "title": "大木离开希尔弗体系",
+      "location": "关都",
+      "status": "established",
+      "visibility": "authoring",
+      "summary": "大木已经离职，主线时期在宝可梦和人工智能研究上均有重要成果；离职原因、过程及现资金来源未写。",
+      "participants": {
+        "oak": "离开希尔弗；选择科学技术与战斗分析的路线，认为神兽力量高度不可控。"
+      },
+      "source_docs": [
+        "docs/32-first-journey-world-premise.md"
+      ]
+    },
+    {
+      "id": "rocket-silph-split",
+      "date": null,
+      "time_label": "一周目开始前·日期未定",
+      "phase": "interlude",
+      "title": "火箭队脱离希尔弗并自行筹资",
+      "location": "关都",
+      "status": "established",
+      "visibility": "authoring",
+      "summary": "火箭队与希尔弗已无合作、隶属关系；不确定与大木离职的先后。组织依靠包括宝可梦买卖在内的灰色业务自负盈亏。",
+      "participants": {
+        "giovanni": "失去资助后自行筹措组织经费；多年追寻凤王、洛奇亚等神兽，愈发相信开发神兽力量的路线。"
+      },
+      "source_docs": [
+        "docs/32-first-journey-world-premise.md"
+      ]
+    },
+    {
+      "id": "red-developed",
+      "date": null,
+      "time_label": "小智研发之前·日期未定",
+      "phase": "interlude",
+      "title": "第一代 AI 训练家：赤红",
+      "location": "关都",
+      "status": "established",
+      "visibility": "author_only",
+      "summary": "大木研发赤红，战斗能力强大，尚无语言功能和战斗外思想；当前所在及公开履历未定。",
+      "participants": {
+        "oak": "完成第一代 AI 训练家研究。",
+        "red": "作为第一代成果具备强大战斗能力，未实现语言功能及战斗外思想。"
+      },
+      "source_docs": [
+        "docs/32-first-journey-world-premise.md"
+      ]
+    },
+    {
+      "id": "ash-developed",
+      "date": null,
+      "time_label": "赤红之后、出发之前·日期未定",
+      "phase": "interlude",
+      "title": "第二代 AI 训练家：小智",
+      "location": "关都",
+      "status": "established",
+      "visibility": "author_only",
+      "summary": "小智搭载视觉语言模型与战斗系统，能思考、交谈和战斗；通过提示词初始设定向往和平、忠于大木。",
+      "participants": {
+        "oak": "研发小智并设置初始目标；世界内只有他知道小智的 AI 身份。",
+        "ash": "作为第二代成果具有类人的思考、对话与战斗能力，但不知道自己是 AI；载体、记忆与启用年份未定。"
+      },
+      "source_docs": [
+        "docs/32-first-journey-world-premise.md"
+      ]
+    },
+    {
+      "id": "first-world-war-late",
+      "date": null,
+      "time_label": "T=0 背景·具体年份未定",
+      "phase": "first-journey",
+      "title": "第一次世界大战末期的社会",
+      "location": "跨地区／具体地点未定",
+      "status": "established",
+      "visibility": "authoring",
+      "summary": "红莲事件已过去几十年，各地区经济遭战争重创、民生凋敝；中间战争史和战争结束日未写。",
+      "participants": {},
+      "source_docs": [
+        "docs/32-first-journey-world-premise.md"
+      ]
+    },
+    {
+      "id": "world-tournament-proposal",
+      "date": null,
+      "time_label": "大战末期的制度背景·倡议日期未定",
+      "phase": "first-journey",
+      "title": "四年一届世界赛与联邦构想",
+      "location": "跨地区／具体地点未定",
+      "status": "established",
+      "visibility": "authoring",
+      "summary": "未定地区提出世界赛选拔行政首领与四名常务委员的方案；设两院，冠军地区增加议员席位。制度是否已生效、首届与当前届次未定。",
+      "participants": {},
+      "source_docs": [
+        "docs/32-first-journey-world-premise.md"
+      ]
+    },
+    {
+      "id": "kanto-contenders",
+      "date": null,
+      "time_label": "一周目当下",
+      "phase": "first-journey",
+      "title": "关都内部的世界赛竞争",
+      "location": "关都",
+      "status": "established",
+      "visibility": "authoring",
+      "summary": "关都高层追求忠诚参赛队，希尔弗家族追求跨地区商业扩展，当代四天王各有立场；不能把各方合并成同一派。",
+      "participants": {
+        "lance": "当下关都冠军，暴虐独裁，目标是真正统一全部地区；上台经过与具体行动尚未写。",
+        "oak": "追求繁荣和平的联邦共和国，选择科技与战斗分析；是否另行亲自参赛未定。",
+        "giovanni": "同样追求繁荣和平的联邦共和国，主张开发神兽力量；被定罪身份下的参赛方式未定。"
+      },
+      "source_docs": [
+        "docs/32-first-journey-world-premise.md"
+      ]
+    },
+    {
+      "id": "ash-qualification-plan",
+      "date": null,
+      "time_label": "一周目旅程的秘密目标",
+      "phase": "first-journey",
+      "title": "大木安排小智取得世界赛资格",
+      "location": "关都",
+      "status": "established",
+      "visibility": "author_only",
+      "summary": "大木计划让小智取得八枚徽章、挑战关都联盟，再获得世界赛资格。这是目标，不是已完成结果；实际挑战仍需玩家完成。",
+      "participants": {
+        "oak": "认为强大、向往和平且忠于自己的小智适合争夺世界冠军，规划关都挑战路线。",
+        "ash": "是秘密计划的参赛人选；不知道 AI 身份，不自动知道大木计划全貌。"
+      },
+      "source_docs": [
+        "docs/32-first-journey-world-premise.md"
       ]
     },
     {
       "id": "ash-departure",
-      "date": "1967",
+      "date": null,
       "title": "少年小智领取皮卡丘",
       "location": "真新镇",
       "status": "prototype",
-      "summary": "现有开场原型：小智到研究所，与皮卡丘相识，获得出发条件。",
+      "summary": "现有开场原型：小智到研究所，与皮卡丘相识，获得出发条件。 新基线下为待改编原型，不证明小智的生物出生、真实童年或旁人知晓 AI 秘密。",
       "participants": {
-        "ash": "开始旅程，后续人生仍由未写篇章与玩家选择决定。",
+        "ash": "以少年训练家身份开始旅程；不知道自己是 AI，外部身份年龄及启用日期尚未写定。",
         "oak": "把皮卡丘交给小智，指导他前往常青市。",
         "pikachu": "成为小智初始伙伴。",
         "gary": "在研究所等待并可发起练习战。",
-        "delia": "叮嘱小智并提供返家休息。",
+        "delia": "原型以母亲身份叮嘱小智并提供休息；身份来历未写，她不知小智是 AI。",
         "daisy-oak": "鼓励小智与小茂互相帮助。",
         "neighbor": "介绍镇内交互。",
         "walker": "介绍跑步与南侧水域。",
@@ -211,16 +397,20 @@
         "aide-2": "介绍图鉴和菜单。"
       },
       "source_docs": [
-        "core/src/adventure.c"
-      ]
+        "core/src/adventure.c",
+        "docs/32-first-journey-world-premise.md"
+      ],
+      "phase": "first-journey",
+      "visibility": "authoring",
+      "time_label": "T=0 附近·具体年份未定"
     },
     {
       "id": "viridian-center",
-      "date": "1967",
+      "date": null,
       "title": "常青中心冲突",
       "location": "常青市·宝可梦中心",
       "status": "prototype",
-      "summary": "现有原型以通用男女火箭队像素表示三人组冲突；喵喵尚无独立场景实体。",
+      "summary": "现有原型以通用男女火箭队像素表示三人组冲突；喵喵尚无独立场景实体。 新基线下为待改编原型，不证明小智的生物出生、真实童年或旁人知晓 AI 秘密。",
       "participants": {
         "ash": "保护中心并与火箭队对战。",
         "joy-viridian": "治疗伙伴并提醒可疑人物。",
@@ -230,15 +420,18 @@
       },
       "source_docs": [
         "docs/22-kanto-first-journey.md"
-      ]
+      ],
+      "phase": "first-journey",
+      "visibility": "authoring",
+      "time_label": "T=0 附近·具体年份未定"
     },
     {
       "id": "parcel-return",
-      "date": "1967",
+      "date": null,
       "title": "博士包裹",
       "location": "常青商店→真新镇研究所",
       "status": "prototype",
-      "summary": "当前可玩开场的任务：领取包裹并交还大木。",
+      "summary": "当前可玩开场的任务：领取包裹并交还大木。 新基线下为待改编原型，不证明小智的生物出生、真实童年或旁人知晓 AI 秘密。",
       "participants": {
         "ash": "把包裹送回研究所。",
         "clerk": "委托小智带回包裹。",
@@ -247,28 +440,72 @@
       },
       "source_docs": [
         "core/src/adventure.c"
-      ]
+      ],
+      "phase": "first-journey",
+      "visibility": "authoring",
+      "time_label": "T=0 附近·具体年份未定"
     }
   ],
   "unwritten": [
     {
-      "id": "civil-war",
+      "id": "world-war-history",
       "date": null,
-      "candidate_year": 1945,
       "text": null,
-      "label": "全面内战节点"
+      "label": "第一次世界大战起讫、过程与旧内战构想的关系"
     },
     {
-      "id": "oak-leaves-institute",
+      "id": "outlawing-details",
       "date": null,
       "text": null,
-      "label": "大木退出希尔弗体系"
+      "label": "火箭队非法化的具体手法、公开说法与责任链"
     },
     {
-      "id": "rocket-silph-split",
+      "id": "oak-departure-details",
       "date": null,
       "text": null,
-      "label": "火箭队与希尔弗关系转变"
+      "label": "大木离职过程与现研究资金"
+    },
+    {
+      "id": "silph-split-details",
+      "date": null,
+      "text": null,
+      "label": "火箭队与希尔弗分离的经过"
+    },
+    {
+      "id": "world-federation-details",
+      "date": null,
+      "text": null,
+      "label": "倡议地区、制度生效、届次与两院细则"
+    },
+    {
+      "id": "silph-current-head",
+      "date": null,
+      "text": null,
+      "label": "当代希尔弗家族掌权人及老社长晚年"
+    },
+    {
+      "id": "kanto-current-elites",
+      "date": null,
+      "text": null,
+      "label": "当代关都四天王阵容与个人路线"
+    },
+    {
+      "id": "red-current-life",
+      "date": null,
+      "text": null,
+      "label": "赤红启用日期、现状与公开履历"
+    },
+    {
+      "id": "ash-social-identity",
+      "date": null,
+      "text": null,
+      "label": "小智的载体、记忆来源、家庭关系与社会身份"
+    },
+    {
+      "id": "ash-reveal",
+      "date": null,
+      "text": null,
+      "label": "小智身份揭露节点及之后的发展"
     },
     {
       "id": "mewtwo-project",
@@ -279,25 +516,159 @@
     {
       "id": "ash-young-adult",
       "date": null,
-      "age_anchor_year": 1973,
       "text": null,
-      "label": "少年后期／青年过渡"
+      "label": "少年后期／青年过渡及外观变化方式"
     },
     {
       "id": "ash-adult",
       "date": null,
-      "age_anchor_year": 1978,
       "text": null,
       "label": "青年小智阶段"
+    },
+    {
+      "id": "first-journey-ending",
+      "date": null,
+      "text": null,
+      "label": "关都篇结局与世界赛是否在一周目内发生"
     }
   ],
   "continuity_rules": [
-    "人物按同一日历同步成长；未知出生年保持 null。",
-    "原作剧情不自动进入 Omni 生平；写入事件需要本作正文或原型来源。",
-    "亚当 1943 年死亡；不得在 1967 年主线仍以活人馆主出现。",
-    "富士未被确定为泄密者；不能由师承推断其叛变。",
-    "神兽目击报告在红莲事件中是伪造；不能把水君、洛奇亚登记为在洞窟真实出现。",
-    "作者知道的阴谋与人物当时掌握的信息分开；坂木获救时尚不知双重清除。",
-    "洗翠与神奥是时代关系；地图分幅顺序不是全球经纬度。"
+    "一周目处于第一次宝可梦世界大战末期，距红莲事件几十年；绝对年份未定，不恢复 1967 映射。",
+    "已写前史沿用 1942—1943 工作纪年；间隔事件只登记已确认的结果，不补写过程或排序。",
+    "人类按同一日历成长；小智的 AI 启用日期、外观阶段、对外年龄与主观经历分开，未定值为空。",
+    "原作剧情不自动进入 Omni 生平；经典事件须按新基线改编，旧原型不证明真实童年或旁人知情。",
+    "亚当死于红莲事件，不能因一周目年份为空而在主线作为活人出现。",
+    "富士未被确定为泄密者；红莲洞窟神兽报告为伪造。",
+    "坂木在红莲获救当时尚不知道双重清除；主线掌握了多少旧案真相仍未写。",
+    "一周目大木已离开希尔弗，火箭队与希尔弗已无合作和隶属关系。",
+    "希尔弗家族的当代活动不能自动归给 1942 年的老社长，不能推定老社长仍在世。",
+    "世界四天王共四人且包含世界冠军；地区冠军与地区四天王是独立层级。",
+    "八徽章通向关都联盟挑战；世界赛资格来自有效联盟履历或胜利记录，不要求必须先成为冠军。",
+    "世界制度的设计已确定，倡议地区、生效时间和首届届次仍未定；比赛周期不自动等于已定行政任期。",
+    "只有大木知道小智的 AI 身份，小智本人不知；花子、小茂、坂木、赤红及玩家不能自动获得秘密。",
+    "赤红是第一代 AI，未实现语言功能或战斗以外思想；不擅自添加内心独白、政治动机或终局。",
+    "小智初始向往和平且忠于大木；目标冲突的处理和后续人格发展未定，不预写反叛或绝对控制。",
+    "大木希望旅途顺利不意味着放水、必胜或读取隐藏对战信息；剧情 AI 设定不改变公平对战规则。",
+    "洗翠与神奥是时代关系；地区间新增地理必须与已知地形相容。"
+  ],
+  "phases": [
+    {
+      "id": "prehistory",
+      "order": 0,
+      "label": "已写前史"
+    },
+    {
+      "id": "interlude",
+      "order": 1,
+      "label": "红莲事件后至一周目前的未定年代"
+    },
+    {
+      "id": "first-journey",
+      "order": 2,
+      "label": "一周目·世界大战末期"
+    }
+  ],
+  "institutions": {
+    "world_federation": {
+      "status": "established_design_enactment_undetermined",
+      "source_docs": [
+        "docs/32-first-journey-world-premise.md"
+      ],
+      "proposer_region": null,
+      "enactment_date": null,
+      "first_tournament_date": null,
+      "opening_edition": null,
+      "tournament_cycle_years": 4,
+      "eligibility": {
+        "record_authority": "地区宝可梦联盟",
+        "any_of": [
+          "曾担任地区四天王",
+          "曾担任地区冠军",
+          "有击败地区四天王的记录",
+          "有击败地区冠军的记录"
+        ],
+        "formal_match_definition": null,
+        "regional_nomination_rule": null,
+        "regional_quota": null,
+        "criminal_status_rule": null,
+        "ai_eligibility_rule": null
+      },
+      "executive": {
+        "head": "世界冠军",
+        "members": "世界赛前四名",
+        "member_count": 4,
+        "includes_champion": true,
+        "title": "世界四天王／行政常务委员",
+        "term_years": null,
+        "departments": null,
+        "removal_process": null
+      },
+      "legislature": {
+        "chambers": [
+          "上议院",
+          "众议院"
+        ],
+        "champion_region_extra_seats": true,
+        "bonus_chamber": null,
+        "bonus_count": null,
+        "bonus_duration": null
+      },
+      "district_structure": "世界职位不替代或重定义地区的冠军与四天王职位"
+    }
+  },
+  "factions": [
+    {
+      "id": "kanto-leadership",
+      "name": "关都高层",
+      "current_goal": "培养绝对忠诚而强大的队伍，在世界联盟执行关都意志；高层内部也存在分歧。",
+      "leader": null
+    },
+    {
+      "id": "lance-unification",
+      "name": "渡的统一路线",
+      "current_goal": "以当代关都冠军的实力和权力争取真正统一全部地区；具体独裁行动待写。",
+      "leader": "lance"
+    },
+    {
+      "id": "oak-research",
+      "name": "大木的科技路线",
+      "current_goal": "追求繁荣和平的联邦共和国，依靠科技与战斗分析；秘密研发 AI 训练家并规划小智的参赛道路。",
+      "leader": "oak"
+    },
+    {
+      "id": "silph-family",
+      "name": "希尔弗家族",
+      "current_goal": "通过行政权力把遍布关都的商店、医疗与百货利益网络扩展到其他地区。",
+      "leader": null
+    },
+    {
+      "id": "rocket",
+      "name": "火箭队",
+      "current_goal": "由坂木领导，追求繁荣和平的联邦共和国，以开发神兽力量为路线；已非法化，自负盈亏，与希尔弗无合作隶属关系。",
+      "leader": "giovanni"
+    },
+    {
+      "id": "kanto-elite-four",
+      "name": "当代关都四天王",
+      "current_goal": "各有想法；具体成员和路线未定，不作为单一派别。",
+      "leader": null
+    }
+  ],
+  "secrets": [
+    {
+      "id": "ash-ai-identity",
+      "at": "first-journey-start",
+      "truth": "小智是大木研发的第二代 AI 训练家，初始向往和平并忠于大木。",
+      "visibility": "author_only",
+      "known_by": [
+        "oak"
+      ],
+      "subject": "ash",
+      "subject_knows": false,
+      "reveal_event": null,
+      "source_docs": [
+        "docs/32-first-journey-world-premise.md"
+      ]
+    }
   ]
 }

@@ -254,6 +254,28 @@
       "version": "动画／电影画面；转载来源，未核对完整剧集",
       "sha256": "fd8a9b5035fd59972252c624adb2b4270eaa593de4f739afb328dcc0fc86f3a2",
       "local_name": "portrait-fuji.jpg"
+    },
+    {
+      "id": "portrait-red",
+      "type": "portrait",
+      "label": "赤红",
+      "page_url": "https://www.pokemon.co.jp/ex/origin/story_character/",
+      "image_url": "https://www.pokemon.co.jp/ex/origin/story_character/images/red.png",
+      "evidence": "official_anime",
+      "version": "动画《宝可梦 起源》官方角色图",
+      "sha256": "2900098b9d87e233d532f1e5e4082a5ca36294708933980a8075e2da87d2a8e2",
+      "local_name": "portrait-red.png"
+    },
+    {
+      "id": "portrait-lance",
+      "type": "portrait",
+      "label": "渡",
+      "page_url": "https://www.tv-tokyo.co.jp/anime/pocketmonster/episodes/index_4.html",
+      "image_url": "https://www.tv-tokyo.co.jp/anime/pocketmonster/images/episodes/116_1.jpg",
+      "evidence": "official_anime",
+      "version": "电视动画《宝可梦》2022-07-08，第 116 集官方剧照；只作外观参考",
+      "sha256": "7c22632111b9aa9b27b54e8b380374a8956d1601fa933b0c530604adecc9902e",
+      "local_name": "portrait-lance.jpg"
     }
   ]
 }

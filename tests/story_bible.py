@@ -28,8 +28,32 @@ class ContinuityTests(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError,'Unregistered'):self.validate()
 
     def test_dead_character_cannot_reappear(self):
-        self.world['events'][-1]['participants']['juan']='Alive in 1967'
+        self.world['events'][-1]['participants']['juan']='Alive in the undated first journey'
         with self.assertRaisesRegex(AssertionError,'Post-death'):self.validate()
+
+    def test_unknown_year_is_not_restored(self):
+        self.world['calendar']['epoch_year']=1967
+        with self.assertRaisesRegex(AssertionError,'Undetermined mainline'):self.validate()
+
+    def test_mainline_event_cannot_invent_date(self):
+        self.world['events'][-1]['date']='1967'
+        with self.assertRaisesRegex(AssertionError,'Undetermined mainline'):self.validate()
+
+    def test_secret_does_not_spread_to_other_characters(self):
+        self.world['secrets'][0]['known_by'].append('delia')
+        with self.assertRaisesRegex(AssertionError,'only to Oak'):self.validate()
+
+    def test_protagonist_does_not_know_his_identity(self):
+        self.world['secrets'][0]['subject_knows']=True
+        with self.assertRaisesRegex(AssertionError,'Secret knowledge'):self.validate()
+
+    def test_appearance_is_not_ai_birth(self):
+        next(c for c in self.people if c['id']=='ash')['birth_year']=1957
+        with self.assertRaisesRegex(AssertionError,'biological birth'):self.validate()
+
+    def test_world_champion_is_inside_four(self):
+        self.world['institutions']['world_federation']['executive']['member_count']=5
+        with self.assertRaisesRegex(AssertionError,'within four'):self.validate()
 
     def test_candidate_not_silently_adopted(self):
         self.world['events'][-1]['participants']['wallace']='Unwritten future'

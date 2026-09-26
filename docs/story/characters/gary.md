@@ -6,7 +6,7 @@ ID：`gary`；状态：已采用。
 
 大木的孙子；小智的劲敌
 
-出生工作年：1957。Omni 暂按与小智同龄换算；非官方确切年龄
+出生工作年：。主线年份及本作确切年龄未定，撤销随旧 1967 年映射推算的出生年。
 
 ## 人物形象
 
@@ -20,7 +20,7 @@ ID：`gary`；状态：已采用。
 
 ## 已写生平
 
-- **1967 · 少年小智领取皮卡丘**（原型已有／演出未完整）：在研究所等待并可发起练习战。 事件 ID：`ash-departure`。
+- **T=0 附近·具体年份未定 · 少年小智领取皮卡丘**（原型已有／演出未完整）：在研究所等待并可发起练习战。 事件 ID：`ash-departure`。
 
 ## 完整生平的留白
 
@@ -40,3 +40,4 @@ ID：`gary`；状态：已采用。
 
 - [20-cast-and-opening.md](../../../docs/20-cast-and-opening.md)
 - [26-master-timeline.md](../../../docs/26-master-timeline.md)
+- [32-first-journey-world-premise.md](../../../docs/32-first-journey-world-premise.md)

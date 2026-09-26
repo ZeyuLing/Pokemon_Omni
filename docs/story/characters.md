@@ -4,9 +4,9 @@
 
 | 人物 | 状态 | 当前职责 |
 |---|---|---|
-| [坂木](characters/giovanni.md) | 已采用 | 冠军训练家；火箭队创立者 |
-| [大木博士](characters/oak.md) | 已采用 | 冠军、希尔弗研究院首席科学家 |
-| [希尔弗社长](characters/silph.md) | 已采用 | 出资人；希尔弗公司掌权者 |
+| [坂木](characters/giovanni.md) | 已采用 | 火箭队创立者与首领；当代神兽力量路线的推动者 |
+| [大木博士](characters/oak.md) | 已采用 | 前冠军、前希尔弗首席科学家；当代 AI 训练家研发者 |
+| [希尔弗社长](characters/silph.md) | 已采用 | 1942 年的希尔弗社长；当代是否仍在世未定 |
 | [西野森五世](characters/westwood.md) | 已采用 | 大木与南波的导师；代理冠军 |
 | [达马岚其](characters/goodshow.md) | 已采用 | 关都首相；清除行动策划者 |
 | [菊子](characters/agatha.md) | 已采用 | 关都四天王；大木旧日对手 |
@@ -14,9 +14,10 @@
 | [南波博士](characters/namba.md) | 已采用 | 研究人员；西野森学生、富士导师 |
 | [富士博士](characters/fuji.md) | 已采用 | 大木的研究助手；南波学生 |
 | [夏伯](characters/blaine.md) | 已采用 | 红莲火系训练与海岸事务负责人 |
-| [小智](characters/ash.md) | 已采用 | 从真新镇出发的主角 |
+| [赤红](characters/red.md) | 已采用 | 大木研发的第一代 AI 训练家；无语言功能及战斗外思想 |
+| [小智](characters/ash.md) | 已采用 | 少年外观的主角；第二代 AI 训练家（编剧秘密，本人不知） |
 | [小茂](characters/gary.md) | 已采用 | 大木的孙子；小智的劲敌 |
-| [花子](characters/delia.md) | 已采用 | 小智的母亲 |
+| [花子](characters/delia.md) | 已采用 | 开场原型中的母亲角色；与小智关系的来历待改编 |
 | [奈奈美](characters/daisy-oak.md) | 已采用 | 小茂家中的角色；游戏来源 |
 | [武藏](characters/jessie.md) | 已采用 | 火箭队三人组；劲敌与剧情推动者 |
 | [小次郎](characters/james.md) | 已采用 | 火箭队三人组；劲敌与剧情推动者 |
@@ -44,7 +45,7 @@
 | [一号道路向导](characters/route-guide.md) | 已采用 | 介绍野生对战与捕获 |
 | [小刚](characters/brock.md) | 候选 | 道馆、家庭责任与后续医疗方向 |
 | [小霞](characters/misty.md) | 候选 | 道馆、水域与地方社区 |
-| [渡](characters/lance.md) | 候选 | 安全与跨地区协作 |
+| [渡](characters/lance.md) | 已采用 | 当代关都冠军；追求统一所有地区的暴虐独裁者 |
 | [帅哥](characters/looker.md) | 候选 | 调查与证据 |
 | [大吾](characters/steven.md) | 候选 | 家族产业与公共职责 |
 | [小遥](characters/may.md) | 候选 | 地方文化网络 |
