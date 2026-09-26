@@ -32,9 +32,24 @@ function legacyV2(source){
  function reset(save){if(save){const p=m._malloc(save.length);m.HEAPU8.set(save,p);m._mgbawasm_sram_load(p,save.length);m._free(p);}m._mgbawasm_set_keys(0);m._mgbawasm_reset();offset=-1;frames(90);if(debug){assert.equal(state().screen,6);press(2);}assert.equal(state().screen,17);}
  frames(90);if(debug){assert.equal(state().screen,6);press(2);}assert.equal(state().screen,17);const empty=sram();
  // Capture both real blinking prompt phases, leaving art unchanged.
+ const title=fs.readFileSync('build/pallet/title.bin');
+ const [tx,ty,tw,th]=require('../assets/source/title-screen.json').prompt_layout;
+ const rgba=c=>[c&31,(c>>5)&31,(c>>10)&31].map(v=>(v<<3)|(v>>2)).concat(255);
+ const off=Buffer.alloc(240*160*4);
+ for(let i=0;i<240*160;i++)off.set(rgba(title.readUInt16LE(i*2)),i*4);
+ const on=Buffer.from(off);
+ for(let y=0;y<th;y++)for(let x=0;x<tw;x++){
+  const c=title.readUInt16LE(240*160*2+(y*tw+x)*2);
+  if(!(c&0x8000))on.set(rgba(c),((ty+y)*240+tx+x)*4);
+ }
+ assert(!on.equals(off),'Prompt must be visible against new cover');
  let lit=null,dark=null;
- for(let i=0;i<130;i++){frames(1);const b=pixels();let white=0;for(let y=128;y<136;y++)for(let x=40;x<136;x++)if(b[(y*240+x)*4]>220)white++;if(white)lit=b;else dark=b;}
- assert(lit&&dark);assert(lit.subarray(0,128*240*4).equals(dark.subarray(0,128*240*4)));
+ for(let i=0;i<130;i++){
+  frames(1);const b=pixels();
+  assert(b.equals(on)||b.equals(off),'Cover must match compiled art with only the prompt blinking');
+  if(b.equals(on))lit=b;else dark=b;
+ }
+ assert(lit&&dark,'Both prompt phases must occur');
  fs.writeFileSync('build/pallet/start-cover.rgba',lit);
  for(const key of [1,2,8]){
   press(key);assert.equal(state().screen,0);shot('empty');assert(empty.equals(sram()));

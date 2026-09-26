@@ -12,6 +12,7 @@
 #include "rocket_text.h"
 #include "omni/stage.h"
 #include "music.h"
+#include "title.h"
 
 #define REG16(a) (*(volatile uint16_t*)(a))
 #define REG32(a) (*(volatile uint32_t*)(a))
@@ -44,7 +45,6 @@ static uint8_t moving,move_dx,move_dy,walk_phase,menu_return,log_index,practice_
 static int anim_x,anim_y,camera_x,camera_y,origin_x,origin_y;
 static uint16_t frame_count,play_clock_remainder;
 static uint8_t fade_ticks,fade_target,preview_return;
-extern const uint16_t omni_title_pixels[];
 static void transition(uint8_t target){fade_target=target;fade_ticks=8;}
 
 static uint32_t save_seq;static int save_slot=-1;
@@ -250,7 +250,10 @@ static void draw_cover(void){
  dma_row(omni_title_pixels,omni_gba_surface,240*160);
  if((frame_count/48)%2==0){
   unsigned x,y;const uint16_t *prompt=omni_title_pixels+240*160;
-  for(y=0;y<8;++y)for(x=0;x<96;++x){uint16_t c=prompt[y*96+x];if(!(c&0x8000))omni_gba_surface[(128+y)*240+40+x]=c;}
+  for(y=0;y<OMNI_TITLE_PROMPT_H;++y)for(x=0;x<OMNI_TITLE_PROMPT_W;++x){
+   uint16_t c=prompt[y*OMNI_TITLE_PROMPT_W+x];
+   if(!(c&0x8000))omni_gba_surface[(OMNI_TITLE_PROMPT_Y+y)*240+OMNI_TITLE_PROMPT_X+x]=c;
+  }
  }
 }
 static void title_panel(int y,int h){

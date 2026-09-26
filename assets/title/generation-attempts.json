@@ -1,0 +1,27 @@
+{
+  "tool": "image_gen.imagegen (built-in)",
+  "attempts": [
+    {
+      "id": "omni-cover-v1",
+      "prompt": "omni-cover-v1.prompt.txt",
+      "status": "moderation_blocked",
+      "request_id": "438e15a1-694b-4803-8b17-835bc67b99db",
+      "stage": "output",
+      "category": "other",
+      "output": null
+    },
+    {
+      "id": "omni-cover-v2",
+      "prompt": "omni-cover-v2.prompt.txt",
+      "status": "generated_reference",
+      "output": "omni-cover-environment-v2.png"
+    },
+    {
+      "id": "omni-cover-v3",
+      "prompt": "omni-cover-v3.prompt.txt",
+      "status": "adopted",
+      "input": "omni-cover-environment-v2.png",
+      "output": "omni-cover-v3.png"
+    }
+  ]
+}

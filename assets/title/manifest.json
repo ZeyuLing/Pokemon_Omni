@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "id": "omni-cover-v3",
+  "status": "adopted_title_art",
+  "image": "assets/title/omni-cover-v3.png",
+  "sha256": "4b7d2687337238a0e3082eec4657cc0f18082ed27fb0d704c7e2714d6b0503ac",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "tool": "image_gen.imagegen (built-in)",
+  "intent": "original title illustration, refined from generated environment study",
+  "prompt": "assets/title/omni-cover-v3.prompt.txt",
+  "reference_image": "assets/title/omni-cover-environment-v2.png",
+  "reference_prompt": "assets/title/omni-cover-v2.prompt.txt",
+  "scope": "Symbolic environment illustration for Pokemon Omni. Does not define world coordinates, new buildings in actual maps, historical events, character identities, or a legendary body-giver. No AI identity spoilers.",
+  "elements": [
+    "rural Kanto-inspired departure town and Poke Ball",
+    "distant civic League tower and commercial high-rise",
+    "rainbow-gold sacred feather motif",
+    "sunset road between personal journey and political institutions"
+  ],
+  "credits": "Original cover illustration generated for Pokemon Omni using OpenAI imagegen; Pokemon is an existing franchise, not an original character design claim.",
+  "runtime_prompt": "FireRed source PRESS START remains a separate blinking overlay."
+}
