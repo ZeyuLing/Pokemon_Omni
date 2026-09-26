@@ -109,8 +109,22 @@ def validate(world, people, atlas, media):
             assert activation in event_ids and c['id'] in event_map[activation]['participants'], 'Missing AI activation event'
             if event_map[activation]['date'] and epoch:
                 assert calendar_date(event_map[activation]['date'])<epoch, 'AI activation must precede opening'
-    ash=next(c for c in people if c['id']=='ash')
-    assert ash['body_profile']['aging']=='does_not_grow_up' and ash['body_profile']['ordinary_human_function'], 'Ash body baseline drift'
+    future_designs=world.get('future_designs',[])
+    future_ids=ids(future_designs)
+    assert not (future_ids & event_ids), 'Future direction became an occurred event'
+    actor_map={c['id']:c for c in people}
+    for design in future_designs:
+        assert design['status']=='direction_adopted_scene_unwritten' and design['visibility']=='author_only'
+        assert all(design[k] is None for k in ('date','location','chapter','scene_text')), 'Unwritten future direction was scheduled or filled'
+        assert set(design['after_events'])<=event_ids, 'Unknown future prerequisite'
+        assert set(design['participants'])<=actors and set(design['candidate_actors'])<=actors, 'Unregistered future actor'
+        assert design['actor_slot'] in design['participants'] and actor_map[design['actor_slot']]['status']=='placeholder', 'Future actor slot must remain unassigned'
+        assert design['selected_actor'] is None, 'Unassigned future role was chosen'
+        assert design['recommended_actor'] in design['candidate_actors'] and design['recommendation_status']=='advisory_only', 'Future recommendation is not casting'
+    ash=actor_map['ash']; profile=ash['body_profile']
+    assert profile['scope']=='before_human_body' and profile['aging']=='does_not_grow_up' and profile['ordinary_human_function'], 'Ash body baseline drift'
+    assert profile['transition_design_id'] in future_ids, 'Missing human-body direction'
+    assert profile['after_transition']['aging']=='natural_growth' and profile['after_transition']['story_stages']==['少年','青年','中年'], 'Ash future growth drift'
     ids(world['secrets']); ids(world['factions'])
     for secret in world['secrets']:
         assert set(secret['known_by'])<=actors and secret['subject'] in actors, 'Unregistered secret knower'
@@ -148,7 +162,7 @@ def validate(world, people, atlas, media):
         assert set(item['anchor_events'])<=event_ids, 'Unknown unwritten event anchor'
         assert item['date'] is None, 'Unwritten history was dated'
         assert isinstance(item['questions'],list) and all(isinstance(q,str) for q in item['questions'])
-    for obj in people+world['events']:
+    for obj in people+world['events']+future_designs:
         assert all((ROOT/p).is_file() for p in obj['source_docs']), 'Missing source document'
     for r in atlas['regions']:
         if r['global_coordinates'] is not None:
@@ -255,6 +269,14 @@ def render(world,people,atlas,media):
         knowledge='、'.join(cc[id]['name'] for id in s['known_by'])
         text=s['truth']+' 一周目开始时仅'+knowledge+'知晓；'+cc[s['subject']]['name']+('知晓。' if s['subject_knows'] else '本人不知。')+'揭露节点未定。'
         body+=f'<p class="notice">{h(text)}</p>';md+=text+'\n'
+    if world.get('future_designs'):
+        body+='<h2>已确认的后续方向</h2><p>方向已经采用，场景尚未创作；不计入已发生事件或已写生平。</p>'
+        md+='\n## 已确认的后续方向\n\n方向已采用，场景未写；不是已发生事件或已写生平。\n'
+        for d in world['future_designs']:
+            candidates='、'.join(cc[id]['name'] for id in d['candidate_actors'])
+            casting=f'执行者未定。首选建议：{cc[d["recommended_actor"]]["name"]}；候选：{candidates}。建议不等于角色已选定。'
+            body+=f'<section class="future-design" id="future-{d["id"]}"><h3>{h(d["title"])}</h3><p>{h(d["summary"])}</p><p>{h(casting)}</p><p>日期、地区、篇章与场景正文未定。</p><ul>'+''.join(f'<li>{h(point)}</li>' for point in d['established_points'])+'</ul><p>'+source_link(d['source_docs'][0])+'</p></section>'
+            md+=f'\n### {d["title"]}\n\n{d["summary"]}\n\n{casting}\n\n日期、地区、篇章与场景正文未定。\n\n'+''.join(f'- {point}\n' for point in d['established_points'])+f'\n依据：[{Path(d["source_docs"][0]).name}](../../{d["source_docs"][0]})。\n'
     body+='<h2>已登记的历史、背景与原型</h2><div class="timeline">'
     for e in world['events']:
         members='、'.join(f'<a href="people/{id}.html">{h(cc[id]["name"])}</a>' for id in e['participants'])
@@ -299,8 +321,9 @@ def render(world,people,atlas,media):
         body=body.replace('<h2>已写生平</h2>',design+'<h2>已写生平</h2>')
         if c.get('body_profile'):
             profile=c['body_profile']
-            body=body.replace('<h2>已写生平</h2>','<h2>身体设定</h2><p>'+h(profile['summary'])+'</p><p>身体实现机制与长期不长大如何被察觉尚未创作。</p><h2>已写生平</h2>')
-            md=md.replace('## 已写生平','## 身体设定\n\n'+profile['summary']+'身体实现机制与长期不长大如何被察觉尚未创作。\n\n## 已写生平')
+            note='转变前后的身体实现、日期和身份揭露顺序未定；青年、中年经历尚未创作。'
+            body=body.replace('<h2>已写生平</h2>','<h2>身体设定</h2><p>'+h(profile['summary'])+'</p><p>'+note+'</p><h2>已写生平</h2>')
+            md=md.replace('## 已写生平','## 身体设定\n\n'+profile['summary']+note+'\n\n## 已写生平')
         life=[e for e in world['events'] if c['id'] in e['participants']]
         if not life:body+='<div class="blank" aria-label="尚未创作生平"></div>'
         for e in life:
@@ -308,6 +331,13 @@ def render(world,people,atlas,media):
             body+=f'<article class="event"><time>{h(date)}</time><h3><a href="../timeline.html#{e["id"]}">{h(e["title"])}</a>{secret_badge(e)}</h3><p>{h(e["participants"][c["id"]])}</p><span class="meta">{EVENT_STATUS[e["status"]]}</span></article>'
             private='；编剧秘密' if e['visibility']=='author_only' else ''
             md+=f'- **{date} · {e["title"]}**（{EVENT_STATUS[e["status"]]}{private}）：{e["participants"][c["id"]]} 事件 ID：`{e["id"]}`。\n'
+        directions=[d for d in world.get('future_designs',[]) if c['id'] in d['participants'] or c['id'] in d['candidate_actors']]
+        if directions:
+            body+='<h2>后续方向（尚未写入生平）</h2>';md+='\n## 后续方向（尚未写入生平）\n\n'
+            for d in directions:
+                role='仅作为执行者候选，尚未确定参与此事。' if c['id'] in d['candidate_actors'] else '方向已确认，日期与具体情节未定。'
+                body+=f'<section class="future-design"><h3><a href="../timeline.html#future-{d["id"]}">{h(d["title"])}</a></h3><p>{h(role)}</p><p>{h(d["summary"])}</p></section>'
+                md+=f'- [{d["title"]}](../worldline.md)：{role}{d["summary"]}\n'
         body+='<h2>生平阶段与留白</h2><table class="blank-table"><caption>留空表示尚未创作，不代表该段人生不存在。</caption><tbody>'
         md+='\n## 完整生平的留白\n\n| 阶段 | 正文 |\n|---|---|\n'
         for k,label in [('childhood','童年与成长'),('before_first_event','首次登场以前'),('unwritten_intervals','已知事件之间的空白'),('later_life','后续人生'),('ending','结局')]:
@@ -337,7 +367,7 @@ def main():
         else:path.parent.mkdir(parents=True,exist_ok=True);path.write_text(content,encoding='utf-8',newline='\n')
     if not args.check:
         for name in ['style.css','filter.js']:shutil.copyfile(ROOT/'tools/story_bible'/name,OUT/name)
-        for src in {s for obj in people+world['events'] for s in obj['source_docs']}:
+        for src in {s for obj in people+world['events']+world.get('future_designs',[]) for s in obj['source_docs']}:
             dest=OUT/'sources'/src.replace('/','--');dest.parent.mkdir(exist_ok=True);shutil.copyfile(ROOT/src,dest)
     missing=[m['id'] for m in media if not (OUT/'media'/m['local_name']).exists()]
     print(f'PASS: {len(people)} characters, {len(world["events"])} events, 10 regional references; runtime actors covered; documents {"checked" if args.check else "rendered"}')

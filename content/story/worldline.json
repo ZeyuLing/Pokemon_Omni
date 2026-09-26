@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "revision": "2026-09-26.3",
+  "revision": "2026-09-26.4",
   "status": "authoring_registry_not_runtime",
   "calendar": {
     "epoch_year": null,
@@ -8,7 +8,7 @@
     "official_calendar": false,
     "mainline_year_status": "undetermined",
     "prehistory_dates": "1942—1943 沿用已写前史的工作纪年；主线距红莲事件几十年，具体间隔未定",
-    "age_policy": "普通人按故事日历成长；小智不会随时间长大，其余生活与生理表现如常人。启用时间、经历年数、外观及社会身份年龄分别记录。",
+    "age_policy": "普通人按故事日历成长；小智获得真正肉身以前不会长大，其余如常人，获得肉身后可自然成长。故事跨少年、青年、中年；转变日期、年龄与篇章未定。",
     "retired_assumptions": [
       "T=0 等于 1967",
       "小智及小茂出生于 1957",
@@ -378,10 +378,10 @@
       "location": "关都",
       "status": "established",
       "visibility": "author_only",
-      "summary": "大木研发第二代 AI 小智，具备类人的观察、思考、对话与战斗能力，初始向往和平且忠于大木。小智不会长大，除此之外如常人；制造与启用日期、身体实现机制、记忆来源未写。",
+      "summary": "大木研发第二代 AI 小智，具备类人的观察、思考、对话与战斗能力，初始向往和平且忠于大木。小智在获得真正肉身以前不会长大，除此之外如常人；制造与启用日期、身体实现机制、记忆来源未写。",
       "participants": {
         "oak": "研发小智并设置初始目标；世界内只有他知道小智的 AI 身份。",
-        "ash": "第二代 AI 训练家，不知道自己的 AI 身份；身体不会随岁月长大，其余生活与生理表现如常人。具体身体技术、记忆与社会身份来历未写。"
+        "ash": "第二代 AI 训练家，不知道自己的 AI 身份；此时的身体不会随岁月长大，其余生活与生理表现如常人。具体身体技术、记忆与社会身份来历未写。"
       },
       "source_docs": [
         "docs/32-first-journey-world-premise.md",
@@ -715,25 +715,28 @@
       "id": "ash-young-adult",
       "date": null,
       "text": null,
-      "label": "小智的多年经历、认知变化与服装变化（身体不长大）",
+      "label": "小智获得肉身后的少年、青年与中年经历",
       "anchor_events": [
         "ash-departure"
       ],
-      "established_boundary": null,
-      "questions": []
+      "established_boundary": "全作将跨越少年、青年和中年；自然成长以获得真正肉身为前提。",
+      "questions": [
+        "各年龄阶段包含哪些故事与关系变化？",
+        "获得肉身时的身体年龄、各阶段跨度和篇章归属是什么？这些目前未定。"
+      ]
     },
     {
       "id": "ash-nonaging-recognition",
       "date": null,
       "text": null,
-      "label": "小智不长大的事实何时被谁注意到及如何解释",
+      "label": "获得肉身之前，小智不长大的事实如何被理解",
       "anchor_events": [
         "ash-departure"
       ],
-      "established_boundary": "小智不会长大；开场只有大木知道其 AI 身份，小智本人不知。",
+      "established_boundary": "获得肉身前小智不会长大；开场只有大木知道其 AI 身份，小智本人不知。",
       "questions": [
-        "跨多年以后谁会注意到身体不长大，怎样理解？",
-        "注意到异常与知道 AI 身份之间要经过哪些证据？"
+        "获得肉身以前是否有人注意到他不长大，若有，何时怎样理解？",
+        "身份揭露与获得肉身的先后关系是什么？不能自动合并。"
       ]
     },
     {
@@ -799,7 +802,7 @@
   "continuity_rules": [
     "一周目处于第一次宝可梦世界大战末期，距红莲事件几十年；绝对年份未定，不恢复 1967 映射。",
     "已写前史沿用 1942—1943 工作纪年；间隔事件只登记已确认的结果，不补写过程或排序。",
-    "小智不会随年月长大，除此之外如常人；不能再按周目自动换成成年身体，也不能把不长大推成无敌、不受伤或已证明长生。",
+    "小智获得真正肉身前不会长大，其余如常人；未来神兽受其打动而赋予肉身后可自然成长。不能在转变前自动使用成年身体，也不等于转变时瞬间成年。",
     "原作剧情不自动进入 Omni 生平；经典事件须按新基线改编，旧原型不证明真实童年或旁人知情。",
     "亚当死于红莲事件，不能因一周目年份为空而在主线作为活人出现。",
     "富士未被确定为泄密者；红莲洞窟神兽报告为伪造。",
@@ -816,7 +819,9 @@
     "洗翠与神奥是时代关系；地区间新增地理必须与已知地形相容。",
     "红莲后旧政府垮台、四天王更替、希尔弗变化、大木离职、火箭队分离和大木坂木关系演变，都要另行详细创作；暂不确定日期、内部顺序、责任人或结局。",
     "现实 AI 研究只为设定提供能力与限制依据；技术设计提案不自动成为已写生平、已实施实验或未来剧情。",
-    "小智长期不长大将产生他人与自身如何理解的连续性问题；察觉者、察觉时间、解释方式和身份揭露均留空。"
+    "获得肉身前的不长大如何被理解、转变与身份揭露的关系均留空；不能因此让开场其他角色自动知晓 AI 身份。",
+    "少年、青年、中年是已采用的叙事跨度；具体年龄、年份、经历与神兽身份未定。",
+    "小智获得肉身属于已确认的后续方向，独立于已发生事件和已写生平；哲尔尼亚斯是首选建议，不是已定执行者。"
   ],
   "phases": [
     {
@@ -1045,6 +1050,56 @@
       "earlier": "ash-departure",
       "later": "parcel-return",
       "relation": "ends_before_or_same_day"
+    }
+  ],
+  "future_designs": [
+    {
+      "id": "ash-human-body",
+      "title": "小智获得真正肉身并开始成长",
+      "status": "direction_adopted_scene_unwritten",
+      "visibility": "author_only",
+      "date": null,
+      "location": null,
+      "chapter": null,
+      "scene_text": null,
+      "after_events": [
+        "ash-departure"
+      ],
+      "participants": [
+        "ash",
+        "ash-life-giver"
+      ],
+      "actor_slot": "ash-life-giver",
+      "selected_actor": null,
+      "candidate_actors": [
+        "xerneas",
+        "ho-oh",
+        "arceus"
+      ],
+      "recommended_actor": "xerneas",
+      "recommendation_status": "advisory_only",
+      "summary": "后续剧情中，一只神兽受到小智打动，赋予他真正的肉身；此后小智可自然成长，全作跨越少年、青年和中年。方向已确认，执行神兽及具体剧情未定。",
+      "established_points": [
+        "转变前不会长大，其余如常人。",
+        "转变的动因是神兽受到小智打动，具体行动尚未写。",
+        "获得真正肉身后能够成长；故事覆盖少年、青年、中年。"
+      ],
+      "open_details": {
+        "trigger_action": null,
+        "body_mechanism": null,
+        "starting_physiological_age": null,
+        "memory_and_cognition": null,
+        "ai_system_after": null,
+        "prompt_effect_after": null,
+        "participants_knowledge": null,
+        "relationship_to_identity_reveal": null,
+        "cost_and_limits": null,
+        "stage_ages_and_dates": null
+      },
+      "source_docs": [
+        "docs/34-ash-human-body-arc.md",
+        "research/narrative/2026-09-26-life-giving-legendaries.md"
+      ]
     }
   ]
 }

@@ -87,20 +87,66 @@ class ContinuityTests(unittest.TestCase):
         self.world['events'].reverse()
         self.validate()
 
-    def test_ash_does_not_grow_up(self):
+    def test_ash_does_not_grow_up_before_transition(self):
         next(c for c in self.people if c['id']=='ash')['body_profile']['aging']='normal'
         with self.assertRaisesRegex(AssertionError,'Ash body baseline'):self.validate()
 
-    def test_withdrawn_adult_costumes_cannot_be_active(self):
+    def test_future_age_stages_require_body_transition(self):
         art=bible.read('assets/source/ash-age-design.json')
-        self.assertEqual(art['body_growth'],'none')
+        self.assertEqual(art['body_growth'],'after_ash_human_body')
         self.assertTrue(all(s['status']=='withdrawn' for s in art['retired_age_stages']))
-        self.assertEqual([s['id'] for s in art['stages']],['ash.kanto.young'])
+        self.assertEqual([s['id'] for s in art['stages']],['ash.kanto.young','ash.human.youth','ash.human.young_adult','ash.human.middle_aged'])
+        for stage in art['stages'][1:]:
+            self.assertEqual(stage['requires_design'],'ash-human-body')
+            self.assertIsNone(stage['age_range'])
+            self.assertIsNone(stage['unlock_date'])
 
     def test_nonaging_has_no_invented_mechanism(self):
         ash=next(c for c in self.people if c['id']=='ash')
         for field in ('implementation','longevity_limit','recognition_story'):
             self.assertIsNone(ash['body_profile'][field])
+
+    def test_future_body_allows_growth(self):
+        ash=next(c for c in self.people if c['id']=='ash')
+        ash['body_profile']['after_transition']['aging']='does_not_grow_up'
+        with self.assertRaisesRegex(AssertionError,'future growth'):self.validate()
+
+    def test_body_transition_requires_registered_direction(self):
+        self.world['future_designs']=[]
+        with self.assertRaisesRegex(AssertionError,'Missing human-body'):self.validate()
+
+    def test_future_direction_does_not_gain_a_date(self):
+        self.world['future_designs'][0]['date']='1980-01-01'
+        with self.assertRaisesRegex(AssertionError,'Unwritten future direction'):self.validate()
+
+    def test_future_direction_does_not_gain_a_scene(self):
+        self.world['future_designs'][0]['scene_text']='Unrequested sacrifice scene'
+        with self.assertRaisesRegex(AssertionError,'Unwritten future direction'):self.validate()
+
+    def test_recommended_giver_is_not_selected_giver(self):
+        self.world['future_designs'][0]['selected_actor']='xerneas'
+        with self.assertRaisesRegex(AssertionError,'Unassigned future role'):self.validate()
+
+    def test_future_candidates_are_registered(self):
+        self.world['future_designs'][0]['candidate_actors'].append('unknown-deity')
+        with self.assertRaisesRegex(AssertionError,'Unregistered future actor'):self.validate()
+
+    def test_new_candidates_do_not_have_written_history(self):
+        for id in ('xerneas','arceus','ash-life-giver'):
+            self.assertFalse(any(id in e['participants'] for e in self.world['events']))
+            c=next(c for c in self.people if c['id']==id)
+            self.assertTrue(all(v is None for v in c['biography'].values()))
+        self.world['events'][-1]['participants']['xerneas']='Already gave Ash his body'
+        with self.assertRaisesRegex(AssertionError,'Proposal became biography'):self.validate()
+
+    def test_future_direction_is_separate_in_generated_dossiers(self):
+        outputs=bible.render(self.world,self.people,self.atlas,self.media)
+        dossier=outputs[bible.DOCS/'characters/xerneas.md']
+        self.assertIn('仅作为执行者候选',dossier)
+        self.assertNotIn('事件 ID',dossier)
+        ash=outputs[bible.DOCS/'characters/ash.md']
+        self.assertIn('后续方向（尚未写入生平）',ash)
+        self.assertIn('青年和中年',ash)
 
     def test_deferred_arcs_do_not_become_biography(self):
         ids={x['id'] for x in self.world['unwritten']}

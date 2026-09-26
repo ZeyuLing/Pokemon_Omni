@@ -1,24 +1,23 @@
-# 凤王
+# 哲尔尼亚斯
 
 <!-- GENERATED: edit content/story/characters.json and worldline.json -->
 
-ID：`ho-oh`；状态：已采用。
+ID：`xerneas`；状态：候选。
 
-虹羽事件中的传说宝可梦
+赋予小智肉身的首选候选，尚未确定参与本作事件
 
 出生工作年：。
 
 ## 人物形象
 
-动画外观参考 2017 年电影《就决定是你了！》官方角色页；保留物种形象，具体像素／3D 资产未制作。本作前史未确认赠羽是否有主观意图，后续赋予小智肉身的职责也尚未采用。
+参考 2014 年动画电影《破坏之茧与蒂安希》官方角色页的哲尔尼亚斯设计；该页是动画参考，图片尚未归档。
 
-年龄阶段设计：
+年龄阶段设计：若采用，保持物种动画辨识度；本作年龄、特殊形态或个体差异尚未设计。
 
 最终立绘／像素／3D 资产：
 
 ## 已写生平
 
-- **1942-03-24 · 坂木寻医与虹羽事件**（正文已写）：飞过林地，未停留；其留下羽毛的动机未知。 事件 ID：`rainbow-feather`。
 
 ## 后续方向（尚未写入生平）
 
@@ -39,7 +38,5 @@ ID：`ho-oh`；状态：已采用。
 
 ## 创作依据
 
-- [25-rainbow-covenant-prologue.md](../../../docs/25-rainbow-covenant-prologue.md)
-- [26-master-timeline.md](../../../docs/26-master-timeline.md)
 - [34-ash-human-body-arc.md](../../../docs/34-ash-human-body-arc.md)
 - [2026-09-26-life-giving-legendaries.md](../../../research/narrative/2026-09-26-life-giving-legendaries.md)

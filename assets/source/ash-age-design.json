@@ -2,7 +2,7 @@
   "schema_version": 1,
   "date": "2026-09-26",
   "character": "ash",
-  "status": "revised_brief_nonaging_body",
+  "status": "brief_with_conditional_human_growth",
   "runtime_sprite": "temporary_red_overworld",
   "runtime_age_switching": false,
   "stages": [
@@ -11,7 +11,37 @@
       "age_range": null,
       "phase": "first_journey",
       "status": "proposed",
-      "apparent_stage": "少年轮廓，身体不长大；不是对外年龄或启用年限"
+      "apparent_stage": "转变前少年身体不长大；不代表实际启用时间或对外年龄"
+    },
+    {
+      "id": "ash.human.youth",
+      "age_range": null,
+      "phase": null,
+      "status": "direction_adopted_art_unwritten",
+      "apparent_stage": "少年",
+      "requires_design": "ash-human-body",
+      "unlock_date": null,
+      "production_art": null
+    },
+    {
+      "id": "ash.human.young_adult",
+      "age_range": null,
+      "phase": null,
+      "status": "direction_adopted_art_unwritten",
+      "apparent_stage": "青年",
+      "requires_design": "ash-human-body",
+      "unlock_date": null,
+      "production_art": null
+    },
+    {
+      "id": "ash.human.middle_aged",
+      "age_range": null,
+      "phase": null,
+      "status": "direction_adopted_art_unwritten",
+      "apparent_stage": "中年",
+      "requires_design": "ash-human-body",
+      "unlock_date": null,
+      "production_art": null
     }
   ],
   "generation": {
@@ -34,7 +64,7 @@
     "historical_request_only": true
   },
   "brief": "docs/23-ash-age-design.md",
-  "body_growth": "none",
+  "body_growth": "after_ash_human_body",
   "retired_age_stages": [
     {
       "id": "ash.travel.adolescent",
@@ -44,7 +74,7 @@
       ],
       "phase": "later_time_skip",
       "status": "withdrawn",
-      "reason": "用户确认小智不会长大；不得按年龄自动使用成年体型。"
+      "reason": "旧固定年龄、服装和篇章方案未恢复；新方案须以获得肉身为前提，另行设计。"
     },
     {
       "id": "ash.crisis.young_adult",
@@ -54,7 +84,8 @@
       ],
       "phase": "later_time_skip",
       "status": "withdrawn",
-      "reason": "用户确认小智不会长大；不得按年龄自动使用成年体型。"
+      "reason": "旧固定年龄、服装和篇章方案未恢复；新方案须以获得肉身为前提，另行设计。"
     }
-  ]
+  ],
+  "transition_design_id": "ash-human-body"
 }

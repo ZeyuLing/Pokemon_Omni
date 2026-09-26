@@ -416,14 +416,14 @@
       "name": "小智",
       "kind": "ai_trainer",
       "status": "adopted",
-      "role": "少年外观的主角；第二代 AI 训练家（编剧秘密，本人不知）",
+      "role": "主角；初期为本人不知身份的第二代 AI，后续获肉身成长的方向已定",
       "birth_year": null,
-      "birth_basis": "AI 制造／启用时间、对外身份年龄与主观经历均未定；不会长大，其余生活与生理表现如常人。",
+      "birth_basis": "AI 启用时间与对外年龄未定；获得真正肉身前不长大，之后可成长，转变日期与生理起始年龄未定。",
       "death_event": null,
       "appearance": {
         "reference_media": "portrait-ash",
-        "anime_identity": "沿用动画小智的黑发、脸颊标记、帽子及少年轮廓；现图为后期动画服装。按本作设定身体不随年月长大；后续可改变服装装备与神态，不能自动使用成年体格。这是 Omni 设定，不是动画官方对年龄的解释。",
-        "era_design": "身体保持少年形态，跨年变化体现在服装、装备和经历；具体服装与表情组尚待制作。",
+        "anime_identity": "以动画小智的黑发、脸颊标记、帽子及少年轮廓为识别基础；现图为后期动画服装。获得真正肉身前保持少年身体；之后延伸设计少年、青年、中年。本作青年与中年形象属于年龄改编，不能标为现成的官方成年小智设计。",
+        "era_design": "转变前身体不长大；获得肉身后可成长至青年、中年。各阶段年龄数字、体态、服装和解锁篇章待设计。",
         "production_art": null
       },
       "biography": {
@@ -437,7 +437,8 @@
         "docs/20-cast-and-opening.md",
         "docs/26-master-timeline.md",
         "docs/32-first-journey-world-premise.md",
-        "docs/33-ash-ai-design.md"
+        "docs/33-ash-ai-design.md",
+        "docs/34-ash-human-body-arc.md"
       ],
       "relationships": [
         {
@@ -463,10 +464,24 @@
         "status": "user_established",
         "aging": "does_not_grow_up",
         "ordinary_human_function": true,
-        "summary": "除不会长大以外，小智与正常人没有区别：按常人的方式生活、感受、受伤和恢复。",
+        "summary": "获得真正肉身前，小智不会长大，其余与常人相同；后续神兽受其打动，赋予肉身后，他将能够自然成长。",
         "implementation": null,
         "longevity_limit": null,
-        "recognition_story": null
+        "recognition_story": null,
+        "scope": "before_human_body",
+        "transition_design_id": "ash-human-body",
+        "after_transition": {
+          "status": "future_direction_adopted",
+          "body": "真正肉身",
+          "aging": "natural_growth",
+          "story_stages": [
+            "少年",
+            "青年",
+            "中年"
+          ],
+          "starting_age": null,
+          "implementation": null
+        }
       }
     },
     {
@@ -810,7 +825,7 @@
       "death_event": null,
       "appearance": {
         "reference_media": null,
-        "anime_identity": "动画物种外观作为参考；本作没有确认其赠羽是否有主观意图。",
+        "anime_identity": "动画外观参考 2017 年电影《就决定是你了！》官方角色页；保留物种形象，具体像素／3D 资产未制作。本作前史未确认赠羽是否有主观意图，后续赋予小智肉身的职责也尚未采用。",
         "era_design": null,
         "production_art": null
       },
@@ -823,7 +838,9 @@
       },
       "source_docs": [
         "docs/25-rainbow-covenant-prologue.md",
-        "docs/26-master-timeline.md"
+        "docs/26-master-timeline.md",
+        "docs/34-ash-human-body-arc.md",
+        "research/narrative/2026-09-26-life-giving-legendaries.md"
       ],
       "relationships": [],
       "runtime_bindings": []
@@ -1988,7 +2005,94 @@
       ],
       "relationships": [],
       "runtime_bindings": []
+    },
+    {
+      "id": "xerneas",
+      "name": "哲尔尼亚斯",
+      "kind": "pokemon_individual",
+      "status": "candidate",
+      "role": "赋予小智肉身的首选候选，尚未确定参与本作事件",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "参考 2014 年动画电影《破坏之茧与蒂安希》官方角色页的哲尔尼亚斯设计；该页是动画参考，图片尚未归档。",
+        "era_design": "若采用，保持物种动画辨识度；本作年龄、特殊形态或个体差异尚未设计。",
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/34-ash-human-body-arc.md",
+        "research/narrative/2026-09-26-life-giving-legendaries.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "arceus",
+      "name": "阿尔宙斯",
+      "kind": "pokemon_individual",
+      "status": "candidate",
+      "role": "赋予小智肉身的高位神话候选，尚未确定参与本作事件",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "参考 2009 年动画电影《阿尔宙斯 超克的时空》官方介绍中的角色设计；游戏《传说 阿尔宙斯》页面只作能力背景依据，不能代替动画参考图。",
+        "era_design": "若采用，保持电影物种辨识度；本作个体阶段与专属形态未定。",
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/34-ash-human-body-arc.md",
+        "research/narrative/2026-09-26-life-giving-legendaries.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
+    },
+    {
+      "id": "ash-life-giver",
+      "name": "赋予小智肉身的神兽（未定）",
+      "kind": "pokemon_individual",
+      "status": "placeholder",
+      "role": "已确认的后续职责占位；具体神兽、个体与形象未指派",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": null
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/34-ash-human-body-arc.md",
+        "research/narrative/2026-09-26-life-giving-legendaries.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": []
     }
   ],
-  "revision": "2026-09-26.3"
+  "revision": "2026-09-26.4"
 }

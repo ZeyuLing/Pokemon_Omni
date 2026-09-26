@@ -15,7 +15,7 @@
 | [富士博士](characters/fuji.md) | 已采用 | 大木的研究助手；南波学生 |
 | [夏伯](characters/blaine.md) | 已采用 | 红莲火系训练与海岸事务负责人 |
 | [赤红](characters/red.md) | 已采用 | 大木研发的第一代 AI 训练家；无语言功能及战斗外思想 |
-| [小智](characters/ash.md) | 已采用 | 少年外观的主角；第二代 AI 训练家（编剧秘密，本人不知） |
+| [小智](characters/ash.md) | 已采用 | 主角；初期为本人不知身份的第二代 AI，后续获肉身成长的方向已定 |
 | [小茂](characters/gary.md) | 已采用 | 大木的孙子；小智的劲敌 |
 | [花子](characters/delia.md) | 已采用 | 开场原型中的母亲角色；与小智关系的来历待改编 |
 | [奈奈美](characters/daisy-oak.md) | 已采用 | 小茂家中的角色；游戏来源 |
@@ -65,3 +65,6 @@
 | [牡丹](characters/penny.md) | 候选 | 信息系统候选线 |
 | [洛兹](characters/rose.md) | 候选 | 伽勒尔能源资本线 |
 | [米可利](characters/wallace.md) | 候选 | 亚当死亡后的琉璃馆主人选方向 |
+| [哲尔尼亚斯](characters/xerneas.md) | 候选 | 赋予小智肉身的首选候选，尚未确定参与本作事件 |
+| [阿尔宙斯](characters/arceus.md) | 候选 | 赋予小智肉身的高位神话候选，尚未确定参与本作事件 |
+| [赋予小智肉身的神兽（未定）](characters/ash-life-giver.md) | 身份待定 | 已确认的后续职责占位；具体神兽、个体与形象未指派 |
