@@ -23,6 +23,32 @@ class ContinuityTests(unittest.TestCase):
     def test_current_registry(self):
         self.validate()
 
+    def test_past_championship_does_not_remove_giovanni_legal_barrier(self):
+        case=next(c for c in self.world['institutions']['world_federation']['eligibility']['known_cases'] if c['actor']=='giovanni')
+        case['legal_status']='eligible';case['registration_completed']=True
+        next(c for c in self.people if c['id']=='giovanni')['competition_status']={k:v for k,v in case.items() if k!='actor'}
+        with self.assertRaisesRegex(AssertionError,'Giovanni eligibility obstacle'):self.validate()
+
+    def test_unregistered_rival_cannot_enter_casting_pool(self):
+        self.world['rival_program']['casting_groups'][0]['actors'].append('unregistered-heir')
+        with self.assertRaisesRegex(AssertionError,'Unregistered or duplicate rival'):self.validate()
+
+    def test_proposed_sponsor_is_not_adopted_allegiance(self):
+        next(c for c in self.people if c['id']=='silver')['rival_design']['selected_faction']='rocket'
+        with self.assertRaisesRegex(AssertionError,'proposal silently became affiliation'):self.validate()
+
+    def test_rival_source_facts_do_not_fill_omni_life(self):
+        for c in self.people:
+            if c.get('rival_design') and c['status']=='candidate':
+                self.assertTrue(all(v is None for v in c['biography'].values()),c['id'])
+                self.assertFalse(any(c['id'] in e['participants'] for e in self.world['events']),c['id'])
+        outputs=bible.render(self.world,self.people,self.atlas,self.media)
+        silver=outputs[bible.DOCS/'characters/silver.md']
+        self.assertIn('原作身份参考（不计入本作生平）',silver)
+        self.assertIn('父子',silver)
+        self.assertNotIn('事件 ID',silver)
+        self.assertIn('报名受阻',outputs[bible.DOCS/'rivals.md'])
+
     def test_unknown_actor(self):
         self.world['events'][0]['participants']['unknown']='Unregistered role'
         with self.assertRaisesRegex(AssertionError,'Unregistered'):self.validate()

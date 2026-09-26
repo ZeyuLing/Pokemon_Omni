@@ -12,9 +12,9 @@ const root=path.resolve('build/story-bible');
  await page.getByRole('link',{name:'放大关都地图'}).click();assert(page.url().endsWith('map-kanto.jpg'));await page.goBack();
  for(const width of [820,390,320]){await page.setViewportSize({width,height:900});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));}
  await page.goto(pathToFileURL(path.join(root,'characters.html')).href);
- await page.getByLabel('查找姓名或职责').fill('坂木');assert.equal(await page.locator('.person-link:visible').count(),5); // Includes the elder and keeper whose roles mention Giovanni.
+ await page.getByLabel('查找姓名或职责').fill('坂木');assert.equal(await page.locator('.person-link:visible').count(),6); // Includes Silver and the elder/keeper whose roles mention Giovanni.
  await page.getByLabel('查找姓名或职责').fill('无此人物');await page.getByText('没有匹配的角色。可以清空关键词或选择全部状态。').waitFor();
- await page.getByLabel('查找姓名或职责').fill('');await page.getByLabel('创作状态').selectOption('candidate');assert.equal(await page.locator('.person-link:visible').count(),23);
+ await page.getByLabel('查找姓名或职责').fill('');await page.getByLabel('创作状态').selectOption('candidate');assert.equal(await page.locator('.person-link:visible').count(),38);
  await page.getByLabel('创作状态').selectOption('');await page.getByLabel('查找姓名或职责').fill('亚当');
  await page.getByRole('link',{name:'亚当 已采用 丰缘迁居关都的水战专家；天王',exact:true}).click();
  await page.getByRole('heading',{name:'已写生平',exact:true}).waitFor();assert(await page.locator('body').innerText().then(s=>s.includes('1943 年 5 月 15 日')));
@@ -51,5 +51,17 @@ const root=path.resolve('build/story-bible');
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
  await page.keyboard.press('Control+Home');await page.keyboard.press('Tab');assert(await page.locator(':focus').count()===1);
  await page.addStyleTag({content:'html{font-size:200%}body{font-size:24px}'});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
- assert.deepEqual(errors,[]);console.log('PASS: 10 maps, original-image links, 64-person search and 23 candidates, blank biography fields, separate future direction, timeline, keyboard, narrow/reflow layouts');
+ await page.goto(pathToFileURL(path.join(root,'rivals.html')).href);
+ assert.equal(await page.locator('.rival-card').count(),18);
+ assert((await page.locator('#entry-giovanni').innerText()).includes('报名受阻'));
+ assert((await page.locator('#rival-silver').innerText()).includes('父子'));
+ assert((await page.locator('#rival-giselle').innerText()).includes('非官方资助关系'));
+ assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+ await page.setViewportSize({width:1400,height:1000});await page.screenshot({path:path.join(root,'rival-casting.png')});
+ await page.locator('#rival-silver').getByRole('link',{name:'小银',exact:true}).click();
+ assert((await page.locator('.source-identity').innerText()).includes('父子'));
+ assert((await page.locator('.rival-proposal').innerText()).includes('是否接受支持'));
+ assert.equal(await page.locator('.event').count(),0);
+ await page.setViewportSize({width:390,height:900});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+ assert.deepEqual(errors,[]);console.log('PASS: 10 maps, 79-person search and 38 candidates, 18 casting records, separate source facts/proposals/biography, legal-status barrier, future direction, keyboard and narrow layouts');
 }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

@@ -54,7 +54,7 @@
 | [竹兰](characters/cynthia.md) | 候选 | 历史与研究边界 |
 | [艾莉丝](characters/iris.md) | 候选 | 地方经验与宝可梦关系 |
 | [N](characters/n.md) | 候选 | 宝可梦意愿与政治诉求 |
-| [艾岚](characters/alain.md) | 候选 | 受资助的战斗人员 |
+| [艾岚](characters/alain.md) | 候选 | 卡洛斯来访劲敌候选；企业支持路线提案 |
 | [希特隆](characters/clemont.md) | 候选 | 工程与替代供给 |
 | [莉莉艾](characters/lillie.md) | 候选 | 研究机构与家庭线 |
 | [格拉吉欧](characters/gladion.md) | 候选 | 研究机构与家庭线 |
@@ -68,3 +68,18 @@
 | [哲尔尼亚斯](characters/xerneas.md) | 候选 | 赋予小智肉身的首选候选，尚未确定参与本作事件 |
 | [阿尔宙斯](characters/arceus.md) | 候选 | 赋予小智肉身的高位神话候选，尚未确定参与本作事件 |
 | [赋予小智肉身的神兽（未定）](characters/ash-life-giver.md) | 身份待定 | 已确认的后续职责占位；具体神兽、个体与形象未指派 |
+| [小银](characters/silver.md) | 候选 | 坂木之子的来源角色；火箭队后继者／关都劲敌候选 |
+| [阿杏](characters/janine.md) | 候选 | 阿桔之女的来源角色；道馆家系劲敌候选 |
+| [阿桔](characters/koga.md) | 候选 | 阿杏父亲的来源角色；当代关都权力结构候选 |
+| [阿弘](characters/ritchie.md) | 候选 | 关都联盟朋友兼对手；友好劲敌候选 |
+| [优藤圣代](characters/giselle.md) | 候选 | 训练学院出身；企业资助劲敌候选 |
+| [小明](characters/aj.md) | 候选 | 非认证道馆训练家；民间劲敌候选 |
+| [叶子](characters/leaf.md) | 候选 | 关都女训练家来源；与碧蓝分别管理的候选 |
+| [碧蓝](characters/green-lets-go.md) | 候选 | Let’s Go／进化女性训练家；调查捕获路线劲敌候选 |
+| [小进](characters/trace.md) | 候选 | Let’s Go 劲敌；真新镇同行竞争候选 |
+| [步美](characters/elaine.md) | 候选 | Let’s Go 女主角；关都选手候选 |
+| [小驱](characters/chase.md) | 候选 | Let’s Go 男主角；关都选手候选 |
+| [青绿](characters/blue.md) | 候选 | 游戏／起源劲敌来源对照；尚不新增为第二名大木之孙 |
+| [小椿](characters/clair.md) | 候选 | 渡的亲族来源；成年龙系圈层候选 |
+| [真司](characters/paul.md) | 候选 | 神奥来访劲敌候选；渡的培养对象仅为原创提案 |
+| [彼特](characters/bede.md) | 候选 | 伽勒尔后续劲敌候选；推荐培养关系的原作范例 |

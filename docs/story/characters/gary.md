@@ -18,6 +18,23 @@ ID：`gary`；状态：已采用。
 
 最终立绘／像素／3D 资产：
 
+## 原作身份参考（不计入本作生平）
+
+电视动画小茂／Gary／シゲル
+
+- 大木博士之孙；动画小智的劲敌；原动画中有研究志向。
+- 本作已有小茂，不把游戏青绿的全部经历叠加到他身上。
+
+证据：官方网站。原作资料不自动成为 Omni 已写生平；年龄、比赛履历与政治归属另行采用。
+
+[来源 1](https://www.tv-tokyo.co.jp/anime/pocketmonster/chara/)
+
+## 劲敌／关联人物提案
+
+已采用劲敌；建议以人类训练家的研究、经验与培养能力和小智形成竞争。政治安排、竞争动机及对 AI 的认知未定。
+
+具体阵营、遇见节点、资格取得与结局未定。[选角研究](../rivals.md)。
+
 ## 已写生平
 
 - **T=0 附近·具体年份未定 · 少年小智领取皮卡丘**（原型已有／演出未完整）：在研究所等待并可发起练习战。 事件 ID：`ash-departure`。
@@ -41,3 +58,5 @@ ID：`gary`；状态：已采用。
 - [20-cast-and-opening.md](../../../docs/20-cast-and-opening.md)
 - [26-master-timeline.md](../../../docs/26-master-timeline.md)
 - [32-first-journey-world-premise.md](../../../docs/32-first-journey-world-premise.md)
+- [35-kanto-rivals-and-succession.md](../../../docs/35-kanto-rivals-and-succession.md)
+- [2026-09-26-kanto-rivals-evidence.md](../../../research/narrative/2026-09-26-kanto-rivals-evidence.md)

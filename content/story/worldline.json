@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "revision": "2026-09-26.4",
+  "revision": "2026-09-26.5",
   "status": "authoring_registry_not_runtime",
   "calendar": {
     "epoch_year": null,
@@ -436,21 +436,22 @@
     {
       "id": "kanto-contenders",
       "date": null,
-      "time_label": "一周目当下",
+      "time_label": "世界赛消息传出后／一周目背景，具体日期未定",
       "phase": "first-journey",
       "title": "关都内部的世界赛竞争",
       "location": "关都",
       "status": "established",
       "visibility": "authoring",
-      "summary": "关都高层追求忠诚参赛队，希尔弗家族追求跨地区商业扩展，当代四天王各有立场；不能把各方合并成同一派。",
+      "summary": "世界赛消息传出后，各方同时争取强者本人参赛与培养下一代，使选手相互补充；小智将面对多位劲敌。渡决定参赛；坂木有前冠军实力履历，但合法身份因火箭队非法化被剥夺，当前报名受阻。新候选的培养关系与个人路线待选。",
       "participants": {
-        "lance": "当下关都冠军，暴虐独裁，目标是真正统一全部地区；上台经过与具体行动尚未写。",
+        "lance": "现任冠军，暴虐独裁，追求统一；已决定参赛，并布局培养下一代，具体人选未定。",
         "oak": "追求繁荣和平的联邦共和国，选择科技与战斗分析；是否另行亲自参赛未定。",
-        "giovanni": "同样追求繁荣和平的联邦共和国，主张开发神兽力量；被定罪身份下的参赛方式未定。"
+        "giovanni": "决定争取参赛，拥有前冠军实力履历，却因火箭队非法组织身份被剥夺合法身份；同时布局下一代，具体人选与资格恢复途径未定。"
       },
       "source_docs": [
         "docs/32-first-journey-world-premise.md",
-        "docs/26-master-timeline.md"
+        "docs/26-master-timeline.md",
+        "docs/35-kanto-rivals-and-succession.md"
       ],
       "end_date": null,
       "date_role": "snapshot",
@@ -797,6 +798,24 @@
         "有哪些争议、理解、合作或疏远，应由哪些具体事件证明？",
         "各阶段各自知道什么，当前联络怎样进行？不预定背叛或决裂。"
       ]
+    },
+    {
+      "id": "rival-succession-arcs",
+      "date": null,
+      "text": null,
+      "anchor_events": [
+        "world-tournament-proposal",
+        "kanto-contenders",
+        "ash-qualification-plan"
+      ],
+      "established_boundary": "多劲敌及各方培养下一代方向已定；渡、坂木决定争取参赛，坂木正常报名受阻。",
+      "questions": [
+        "具体选用哪些劲敌？各自是否接受支持，赞助与政治认同如何分开？",
+        "坂木怎样恢复或取得合法参赛身份？小银的父子关系何时、对谁公开？",
+        "阿桔在当代担任何职？渡和希尔弗培养谁，如何建立可信关系？",
+        "年轻人如何取得本作的联盟记录；哪些合作、冲突与遇见发生在何时？"
+      ],
+      "label": "各派下一代与多劲敌交集"
     }
   ],
   "continuity_rules": [
@@ -821,7 +840,10 @@
     "现实 AI 研究只为设定提供能力与限制依据；技术设计提案不自动成为已写生平、已实施实验或未来剧情。",
     "获得肉身前的不长大如何被理解、转变与身份揭露的关系均留空；不能因此让开场其他角色自动知晓 AI 身份。",
     "少年、青年、中年是已采用的叙事跨度；具体年龄、年份、经历与神兽身份未定。",
-    "小智获得肉身属于已确认的后续方向，独立于已发生事件和已写生平；哲尔尼亚斯是首选建议，不是已定执行者。"
+    "小智获得肉身属于已确认的后续方向，独立于已发生事件和已写生平；哲尔尼亚斯是首选建议，不是已定执行者。",
+    "世界赛消息后，各方亲自争取参赛并培养下一代，多劲敌结构已采用；候选亲属、学生或受资助者不自动成为忠诚派系成员。",
+    "坂木具有前冠军的实力履历且决定争取参赛，但合法身份已被剥夺；不能写成已合法报名，恢复方式与日期未定。",
+    "候选的来源身份与本作生平分开；小茂／青绿、叶子／碧蓝等跨版本角色不自动合并，外地区劲敌不自动改为关都人。"
   ],
   "phases": [
     {
@@ -863,7 +885,27 @@
         "regional_nomination_rule": null,
         "regional_quota": null,
         "criminal_status_rule": null,
-        "ai_eligibility_rule": null
+        "ai_eligibility_rule": null,
+        "known_cases": [
+          {
+            "actor": "lance",
+            "strength_record_qualified": true,
+            "entry_intent": true,
+            "legal_status": "eligible",
+            "registration_completed": null,
+            "reason": "当代关都冠军；决定参赛，具体报名日期与完成状态未写。",
+            "restoration": null
+          },
+          {
+            "actor": "giovanni",
+            "strength_record_qualified": true,
+            "entry_intent": true,
+            "legal_status": "revoked",
+            "registration_completed": false,
+            "reason": "前冠军履历满足实力条件；火箭队被认定为非法组织，合法身份被剥夺，当前正常报名受阻。",
+            "restoration": null
+          }
+        ]
       },
       "executive": {
         "head": "世界冠军",
@@ -905,7 +947,7 @@
     {
       "id": "lance-unification",
       "name": "渡的统一路线",
-      "current_goal": "以当代关都冠军的实力和权力争取真正统一全部地区；具体独裁行动待写。",
+      "current_goal": "争取真正统一全部地区；已决定亲自参赛并培养下一代，具体人选与行动待写。",
       "leader": "lance"
     },
     {
@@ -923,7 +965,7 @@
     {
       "id": "rocket",
       "name": "火箭队",
-      "current_goal": "由坂木领导，追求繁荣和平的联邦共和国，以开发神兽力量为路线；已非法化，自负盈亏，与希尔弗无合作隶属关系。",
+      "current_goal": "在坂木领导下追求繁荣和平的联邦共和国，以开发神兽力量为路线；组织已被非法化，独立筹资且与希尔弗无合作或隶属关系。坂木本人参赛受合法身份剥夺阻碍，同时布局下一代，具体人选未定。",
       "leader": "giovanni"
     },
     {
@@ -1050,6 +1092,11 @@
       "earlier": "ash-departure",
       "later": "parcel-return",
       "relation": "ends_before_or_same_day"
+    },
+    {
+      "earlier": "world-tournament-proposal",
+      "later": "kanto-contenders",
+      "relation": "ends_before_or_same_day"
     }
   ],
   "future_designs": [
@@ -1101,5 +1148,129 @@
         "research/narrative/2026-09-26-life-giving-legendaries.md"
       ]
     }
-  ]
+  ],
+  "rival_program": {
+    "status": "multi_rival_adopted_cast_proposed",
+    "trigger_event": "world-tournament-proposal",
+    "background_event": "kanto-contenders",
+    "source_docs": [
+      "docs/35-kanto-rivals-and-succession.md",
+      "research/narrative/2026-09-26-kanto-rivals-evidence.md"
+    ],
+    "summary": "世界赛消息公布后，各方在亲自争夺与培养下一代两条线上布局；多位劲敌相互竞争，也可能合作。具体新选角与阵营关系未采用。",
+    "adopted_rivals": [
+      "gary"
+    ],
+    "recurring_adversaries": [
+      "jessie",
+      "james",
+      "meowth"
+    ],
+    "casting_groups": [
+      {
+        "id": "core",
+        "title": "优先讨论的关都劲敌",
+        "actors": [
+          "gary",
+          "silver",
+          "janine",
+          "giselle",
+          "ritchie",
+          "green-lets-go"
+        ]
+      },
+      {
+        "id": "regional",
+        "title": "关都扩展候选",
+        "actors": [
+          "aj",
+          "trace",
+          "elaine",
+          "chase",
+          "leaf"
+        ]
+      },
+      {
+        "id": "cross-region",
+        "title": "外地区引入或后续候选",
+        "actors": [
+          "paul",
+          "alain",
+          "bede"
+        ]
+      },
+      {
+        "id": "comparison",
+        "title": "身份对照与特殊竞争者",
+        "actors": [
+          "blue",
+          "red"
+        ]
+      },
+      {
+        "id": "support",
+        "title": "成年关系人物候选",
+        "actors": [
+          "koga",
+          "clair"
+        ]
+      }
+    ],
+    "faction_proposals": [
+      {
+        "faction": "oak-research",
+        "already_assigned": [
+          "ash"
+        ],
+        "candidates": [
+          "gary",
+          "red"
+        ],
+        "note": "小智的资格计划已定；小茂与大木是祖孙，政治角色未定；赤红如何使用未定。"
+      },
+      {
+        "faction": "rocket",
+        "already_assigned": [],
+        "candidates": [
+          "silver"
+        ],
+        "note": "原作父子关系可借鉴；培养意愿不等于小银接受，也不预定其加入火箭队。"
+      },
+      {
+        "faction": "lance-unification",
+        "already_assigned": [],
+        "candidates": [
+          "paul"
+        ],
+        "note": "真司被招募是原创候选方案；小椿是亲族圈层参考，非女儿或已选继承人。"
+      },
+      {
+        "faction": "silph-family",
+        "already_assigned": [],
+        "candidates": [
+          "giselle",
+          "alain"
+        ],
+        "note": "学院资助与研究项目支持的两种提案，均无官方希尔弗关系；并非已确定同时采用。"
+      },
+      {
+        "faction": "kanto-elite-four",
+        "already_assigned": [],
+        "candidates": [
+          "janine"
+        ],
+        "note": "以阿桔／阿杏的原作关系为参考，阿桔在本作的当代职位仍未采用；其他后继者留空。"
+      }
+    ],
+    "open_details": {
+      "dates": null,
+      "final_roster": null,
+      "training_history": null,
+      "eligibility_procedure": null,
+      "meetings": null,
+      "team_rosters": null,
+      "alliances": null,
+      "outcomes": null
+    }
+  }
 }

@@ -1,16 +1,16 @@
-# 艾岚
+# 真司
 
 <!-- GENERATED: edit content/story/characters.json and worldline.json -->
 
-ID：`alain`；状态：候选。
+ID：`paul`；状态：候选。
 
-卡洛斯来访劲敌候选；企业支持路线提案
+神奥来访劲敌候选；渡的培养对象仅为原创提案
 
 出生工作年：。
 
 ## 人物形象
 
-参考 XY／XYZ 及最强 Mega 进化时期的动画艾岚；官方节目页已定位，具体年龄阶段适配与新素材尚未完成。
+参考神奥篇真司的动画辨识度，旅途 2022 年 6 月 10 日再会集可作为另一时期参考；不能混用两个阶段服装后宣称同一原作设计。具体年龄与截图待定。
 
 年龄阶段设计：
 
@@ -18,18 +18,18 @@ ID：`alain`；状态：候选。
 
 ## 原作身份参考（不计入本作生平）
 
-电视动画 XY／XYZ：Alain／アラン
+电视动画神奥／旅途：Paul／シンジ
 
-- 官方动画故事与节目介绍将其与卡洛斯主线、Mega 对战联系起来。
-- 希尔弗或渡资助他都不是已核实的官方关系。
+- 官方节目介绍称其为神奥篇劲敌，后在大木研究所与小智再会训练。
+- 无本轮可采用的官方依据认定他是渡的弟子、亲属或政治拥护者。
 
 证据：官方网站。原作资料不自动成为 Omni 已写生平；年龄、比赛履历与政治归属另行采用。
 
-[来源 1](https://www.tv-tokyo.co.jp/anime/pokemon_xyz/story/) · [来源 2](https://www.tv-tokyo.co.jp/broad_bstvtokyo/program/detail/201609/22836_201609110700.html)
+[来源 1](https://www.tv-tokyo.co.jp/broad_tvtokyo/program/detail/202206/25680_202206101855.html) · [来源 2](https://www.pokemon.com/us/animation/seasons/25/episode-24-friends-rivals-lend-me-your-spirit)
 
 ## 劲敌／关联人物提案
 
-适合研究项目与资源支持的精英训练家路线；候选资助方和关都出场时点待定。
+以分析、选材和训练成果展开竞技分歧；可讨论受到渡体系招募，但实际合作和政治立场未定。
 
 具体阵营、遇见节点、资格取得与结局未定。[选角研究](../rivals.md)。
 
@@ -51,6 +51,5 @@ ID：`alain`；状态：候选。
 
 ## 创作依据
 
-- [20-cast-and-opening.md](../../../docs/20-cast-and-opening.md)
 - [35-kanto-rivals-and-succession.md](../../../docs/35-kanto-rivals-and-succession.md)
 - [2026-09-26-kanto-rivals-evidence.md](../../../research/narrative/2026-09-26-kanto-rivals-evidence.md)

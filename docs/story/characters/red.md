@@ -18,6 +18,12 @@ ID：`red`；状态：已采用。
 
 最终立绘／像素／3D 资产：
 
+## 劲敌／关联人物提案
+
+已采用的第一代 AI；可作特殊竞技对照，是否参赛未定。保持无语言功能与无战斗外思想，不能当作可随意聊天的常规劲敌。
+
+具体阵营、遇见节点、资格取得与结局未定。[选角研究](../rivals.md)。
+
 ## 已写生平
 
 - **小智研发之前·日期未定 · 第一代 AI 训练家：赤红**（背景已确定／场景未写；编剧秘密）：作为第一代成果具备强大战斗能力，未实现语言功能及战斗外思想。 事件 ID：`red-developed`。
@@ -42,3 +48,4 @@ ID：`red`；状态：已采用。
 - [32-first-journey-world-premise.md](../../../docs/32-first-journey-world-premise.md)
 - [26-master-timeline.md](../../../docs/26-master-timeline.md)
 - [33-ash-ai-design.md](../../../docs/33-ash-ai-design.md)
+- [35-kanto-rivals-and-succession.md](../../../docs/35-kanto-rivals-and-succession.md)

@@ -18,9 +18,13 @@ ID：`lance`；状态：已采用。
 
 最终立绘／像素／3D 资产：
 
+## 当前参赛状态
+
+实力履历已满足。本人已决定争取参赛。当代关都冠军；决定参赛，具体报名日期与完成状态未写。
+
 ## 已写生平
 
-- **一周目当下（开场状态） · 关都内部的世界赛竞争**（背景已确定／场景未写）：当下关都冠军，暴虐独裁，目标是真正统一全部地区；上台经过与具体行动尚未写。 事件 ID：`kanto-contenders`。
+- **世界赛消息传出后／一周目背景，具体日期未定（开场状态） · 关都内部的世界赛竞争**（背景已确定／场景未写）：现任冠军，暴虐独裁，追求统一；已决定参赛，并布局培养下一代，具体人选未定。 事件 ID：`kanto-contenders`。
 
 ## 完整生平的留白
 
@@ -40,3 +44,4 @@ ID：`lance`；状态：已采用。
 - [20-cast-and-opening.md](../../../docs/20-cast-and-opening.md)
 - [32-first-journey-world-premise.md](../../../docs/32-first-journey-world-premise.md)
 - [26-master-timeline.md](../../../docs/26-master-timeline.md)
+- [35-kanto-rivals-and-succession.md](../../../docs/35-kanto-rivals-and-succession.md)

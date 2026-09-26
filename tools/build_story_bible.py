@@ -21,6 +21,7 @@ OUT = ROOT / 'build/story-bible'
 DOCS = ROOT / 'docs/story'
 STATUS = {'adopted':'已采用', 'candidate':'候选', 'placeholder':'身份待定', 'proposed_scene':'场景提案'}
 EVENT_STATUS = {'written':'正文已写', 'established':'背景已确定／场景未写', 'prototype':'原型已有／演出未完整', 'scheduled':'已定日程／情节未写'}
+EVIDENCE_STATUS = {'official':'官方网站', 'official_search_text':'官网检索正文', 'game_transcript_secondary':'游戏台词社区转录', 'secondary_episode_reference':'社区角色／剧集整理', 'licensed_episode_synopsis':'授权发行平台简介', 'official_with_secondary_name_index':'官方介绍及社区名称索引', 'official_with_secondary_animation_index':'官方介绍及社区动画索引'}
 
 
 def read(path):
@@ -134,9 +135,37 @@ def validate(world, people, atlas, media):
     ash_secret=next(s for s in world['secrets'] if s['id']=='ash-ai-identity')
     assert ash_secret['known_by']==['oak'] and not ash_secret['subject_knows'], 'Opening AI identity is known only to Oak'
     assert all(f['leader'] is None or f['leader'] in actors for f in world['factions'])
+    program=world['rival_program']; faction_ids=ids(world['factions'])
+    assert program['trigger_event'] in event_ids and program['background_event'] in event_ids
+    ids(program['casting_groups'])
+    cast=[id for group in program['casting_groups'] for id in group['actors']]
+    assert len(cast)==len(set(cast)) and set(cast)<=actors, 'Unregistered or duplicate rival candidate'
+    assert set(program['adopted_rivals'])<=set(cast) and all(actor_map[id]['status']=='adopted' for id in program['adopted_rivals'])
+    assert set(program['recurring_adversaries'])<=actors
+    for c in people:
+        if c.get('source_identity'):
+            source=c['source_identity']
+            assert source['evidence_level'] in EVIDENCE_STATUS and source['facts'] and source['continuity']
+            assert source['sources'] and all(url.startswith('https://') for url in source['sources']), 'Missing rival evidence source'
+        if c.get('rival_design'):
+            proposal=c['rival_design']
+            assert c['id'] in cast and any(c['id'] in group['actors'] and group['id']==proposal['pool'] for group in program['casting_groups'])
+            assert proposal['status']=='advisory_only' and proposal['selected_faction'] is None, 'Rival proposal silently became affiliation'
+            assert set(proposal['proposed_factions'])<=faction_ids
+            assert all(proposal[k] is None for k in ('first_meeting','qualification_event','arc_outcome')), 'Rival proposal silently became biography'
+    for f in program['faction_proposals']:
+        assert f['faction'] in faction_ids and set(f['candidates'])<=set(cast), 'Unregistered faction candidate'
+        assert set(f['already_assigned'])<=actors and all(actor_map[id]['status']=='adopted' for id in f['already_assigned'])
+    assert all(value is None for value in program['open_details'].values()), 'Rival arc gaps were filled'
     executive=world['institutions']['world_federation']['executive']
     assert executive['member_count']==4 and executive['includes_champion'], 'World executive includes champion within four members'
     federation=world['institutions']['world_federation']
+    cases=federation['eligibility']['known_cases']
+    assert len({c['actor'] for c in cases})==len(cases) and all(c['actor'] in actors for c in cases)
+    for case in cases:
+        assert actor_map[case['actor']]['competition_status']=={k:v for k,v in case.items() if k!='actor'}, 'Competition dossier drift'
+    giovanni_case=next(c for c in cases if c['actor']=='giovanni')
+    assert giovanni_case['strength_record_qualified'] and giovanni_case['entry_intent'] and giovanni_case['legal_status']=='revoked' and giovanni_case['registration_completed'] is False and giovanni_case['restoration'] is None, 'Giovanni eligibility obstacle drift'
     assert federation['tournament_cycle_years']==4, 'Tournament cycle drift'
     assert federation['calendar_status'] in ('undetermined','assigned')
     if federation['calendar_status']=='undetermined':
@@ -162,7 +191,7 @@ def validate(world, people, atlas, media):
         assert set(item['anchor_events'])<=event_ids, 'Unknown unwritten event anchor'
         assert item['date'] is None, 'Unwritten history was dated'
         assert isinstance(item['questions'],list) and all(isinstance(q,str) for q in item['questions'])
-    for obj in people+world['events']+future_designs:
+    for obj in people+world['events']+future_designs+[program]:
         assert all((ROOT/p).is_file() for p in obj['source_docs']), 'Missing source document'
     for r in atlas['regions']:
         if r['global_coordinates'] is not None:
@@ -202,7 +231,7 @@ def fetch_media(media):
 
 
 def page(title,body,active,prefix=''):
-    nav=''.join(f'<a href="{prefix}{url}"'+(' aria-current="page"' if active==key else '')+f'>{label}</a>' for key,url,label in [('atlas','index.html','世界地图'),('timeline','timeline.html','故事世界线'),('people','characters.html','人物档案')])
+    nav=''.join(f'<a href="{prefix}{url}"'+(' aria-current="page"' if active==key else '')+f'>{label}</a>' for key,url,label in [('atlas','index.html','世界地图'),('timeline','timeline.html','故事世界线'),('people','characters.html','人物档案'),('rivals','rivals.html','劲敌选角')])
     return f'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{h(title)} · Pokémon Omni</title><link rel="stylesheet" href="{prefix}style.css"><body><a class="skip" href="#main">跳到正文</a><header><div class="brand">POKÉMON OMNI<small>世界与人物设定集 · 2026.09 · 含编剧剧透</small></div><nav aria-label="设定集导航">{nav}</nav></header><main id="main">{body}<p class="foot">Omni 编剧档案，含未向玩家公开的真相；不是游戏内图鉴或公开宣传页。空白表示尚未创作。此阅读页不是游戏存档或已实装剧情。</p></main><script src="{prefix}filter.js" defer></script></body></html>'''
 
 
@@ -238,6 +267,40 @@ def institution_calendar(federation):
             f'首届行政就职：{federation["first_executive_date"]}。常规任期 {federation["executive"]["term_years"]} 年。倡议地区、谈判经过、席位公式与赛果留空。')
 
 
+def competition_summary(case):
+    return ('实力履历已满足。' if case['strength_record_qualified'] else '实力履历未确定。')+('本人已决定争取参赛。' if case['entry_intent'] else '')+case['reason']
+
+
+def rival_catalog(world,people):
+    cc={c['id']:c for c in people}; program=world['rival_program']; factions={f['id']:f['name'] for f in world['factions']}
+    body='<p class="eyebrow">Rivals / 劲敌选角</p><h1>关都的多位劲敌</h1><p class="intro">'+h(program['summary'])+'</p><p class="notice">多劲敌方向已采用。人物的原作关系、Omni 选角建议和已写经历分别记录；候选不等于已选阵营，含编剧秘密。</p>'
+    md='# 关都劲敌选角\n\n<!-- GENERATED: edit content/story/characters.json and worldline.json -->\n\n'+program['summary']+'\n\n候选不等于已选阵营，来源事实不等于本作经历；含编剧秘密。\n'
+    body+='<h2>当代强者的参赛状态</h2>';md+='\n## 当代强者的参赛状态\n\n'
+    for case in world['institutions']['world_federation']['eligibility']['known_cases']:
+        text=competition_summary(case)
+        body+=f'<section id="entry-{case["actor"]}"><h3>{h(cc[case["actor"]]["name"])}</h3><p>{h(text)}</p></section>'
+        md+=f'- **{cc[case["actor"]]["name"]}**：{text}\n'
+    body+='<h2>培养与资助关系提案</h2>';md+='\n## 培养与资助关系提案\n\n'
+    for f in program['faction_proposals']:
+        candidates='、'.join(cc[id]['name'] for id in f['candidates'])
+        body+=f'<section><h3>{h(factions[f["faction"]])}</h3><p>待讨论人选：{h(candidates)}。{h(f["note"])}</p></section>'
+        md+=f'- **{factions[f["faction"]]}**：待讨论人选 {candidates}。{f["note"]}\n'
+    for group in program['casting_groups']:
+        body+=f'<h2 id="{group["id"]}">{h(group["title"])}</h2>';md+=f'\n## {group["title"]}\n\n'
+        for id in group['actors']:
+            c=cc[id]; source=c.get('source_identity'); proposal=c['rival_design']
+            body+=f'<section class="rival-card" id="rival-{id}"><h3><a href="people/{id}.html">{h(c["name"])}</a> <span class="badge">{STATUS[c["status"]]}</span></h3>'
+            md+=f'\n### [{c["name"]}](characters/{id}.md) · {STATUS[c["status"]]}\n\n'
+            if source:
+                body+=f'<p class="meta">来源版本：{h(source["continuity"])}；证据：{EVIDENCE_STATUS[source["evidence_level"]]}。</p><ul>'+''.join(f'<li>{h(fact)}</li>' for fact in source['facts'])+'</ul>'
+                md+=f'来源版本：{source["continuity"]}；证据：{EVIDENCE_STATUS[source["evidence_level"]]}。\n\n'+''.join(f'- {fact}\n' for fact in source['facts'])
+            body+=f'<p><strong>改编建议：</strong>{h(proposal["proposal"])}</p><p class="meta">具体阵营、遇见节点、资格取得与结局未定。</p></section>'
+            md+=f'\n改编建议：{proposal["proposal"]}\n\n具体阵营、遇见节点、资格取得与结局未定。\n'
+    body+='<h2>完整研究与证据</h2><p>'+' · '.join(source_link(p) for p in program['source_docs'])+'</p>'
+    md+='\n## 完整研究与证据\n\n'+''.join(f'- [{Path(p).name}](../../{p})\n' for p in program['source_docs'])
+    return body,md
+
+
 def render(world,people,atlas,media):
     mm={m['id']:m for m in media}; cc={c['id']:c for c in people}
     outputs={}
@@ -263,7 +326,13 @@ def render(world,people,atlas,media):
     for f in world['factions']:
         body+=f'<li><strong>{h(f["name"])}</strong>：{h(f["current_goal"])}</li>'
         md+=f'- **{f["name"]}**：{f["current_goal"]}\n'
-    body+='</ul><h2>身份秘密与知情边界</h2>'
+    program=world['rival_program']
+    body+='</ul><section id="multi-rival-program"><h2>世界赛消息与下一代竞争</h2><p>'+h(program['summary'])+'</p><p><a href="rivals.html">查看劲敌候选、原作关系与阵营建议</a></p></section>'
+    md+='\n## 世界赛消息与下一代竞争\n\n'+program['summary']+'\n\n[劲敌候选、原作关系与阵营建议](rivals.md)。\n'
+    for case in world['institutions']['world_federation']['eligibility']['known_cases']:
+        text=cc[case['actor']]['name']+'：'+competition_summary(case)
+        body+='<p>'+h(text)+'</p>';md+='\n'+text+'\n'
+    body+='<h2>身份秘密与知情边界</h2>'
     md+='\n## 身份秘密与知情边界\n\n'
     for s in world['secrets']:
         knowledge='、'.join(cc[id]['name'] for id in s['known_by'])
@@ -324,6 +393,21 @@ def render(world,people,atlas,media):
             note='转变前后的身体实现、日期和身份揭露顺序未定；青年、中年经历尚未创作。'
             body=body.replace('<h2>已写生平</h2>','<h2>身体设定</h2><p>'+h(profile['summary'])+'</p><p>'+note+'</p><h2>已写生平</h2>')
             md=md.replace('## 已写生平','## 身体设定\n\n'+profile['summary']+note+'\n\n## 已写生平')
+        notes='';notes_md=''
+        if c.get('source_identity'):
+            s=c['source_identity']
+            notes+='<section class="source-identity"><h2>原作身份参考（不计入本作生平）</h2><p>'+h(s['continuity'])+'</p><ul>'+''.join(f'<li>{h(fact)}</li>' for fact in s['facts'])+'</ul><p class="meta">证据：'+EVIDENCE_STATUS[s['evidence_level']]+'。'+h(s['boundary'])+'</p><p>'+ ' · '.join(f'<a href="{h(url)}">来源 {i}</a>' for i,url in enumerate(s['sources'],1))+'</p></section>'
+            notes_md+='## 原作身份参考（不计入本作生平）\n\n'+s['continuity']+'\n\n'+''.join(f'- {fact}\n' for fact in s['facts'])+'\n证据：'+EVIDENCE_STATUS[s['evidence_level']]+'。'+s['boundary']+'\n\n'+' · '.join(f'[来源 {i}]({url})' for i,url in enumerate(s['sources'],1))+'\n\n'
+        if c.get('rival_design'):
+            text=c['rival_design']['proposal']
+            notes+='<section class="rival-proposal"><h2>劲敌／关联人物提案</h2><p>'+h(text)+'</p><p>具体阵营、遇见节点、资格取得与结局未定。</p><p><a href="../rivals.html#rival-'+c['id']+'">查看选角研究</a></p></section>'
+            notes_md+='## 劲敌／关联人物提案\n\n'+text+'\n\n具体阵营、遇见节点、资格取得与结局未定。[选角研究](../rivals.md)。\n\n'
+        if c.get('competition_status'):
+            text=competition_summary(c['competition_status'])
+            notes+='<h2>当前参赛状态</h2><p>'+h(text)+'</p>'
+            notes_md+='## 当前参赛状态\n\n'+text+'\n\n'
+        body=body.replace('<h2>已写生平</h2>',notes+'<h2>已写生平</h2>')
+        md=md.replace('## 已写生平',notes_md+'## 已写生平')
         life=[e for e in world['events'] if c['id'] in e['participants']]
         if not life:body+='<div class="blank" aria-label="尚未创作生平"></div>'
         for e in life:
@@ -353,6 +437,8 @@ def render(world,people,atlas,media):
         md+='\n## 创作依据\n\n'+''.join(f'- [{Path(s).name}](../../../{s})\n' for s in c['source_docs'])
         outputs[OUT/'people'/f'{c["id"]}.html']=page(name,body,'people','../');outputs[DOCS/'characters'/f'{c["id"]}.md']=md
     outputs[DOCS/'characters.md']=index
+    rivals_html,rivals_md=rival_catalog(world,people)
+    outputs[OUT/'rivals.html']=page('劲敌选角',rivals_html,'rivals');outputs[DOCS/'rivals.md']=rivals_md
     return outputs
 
 

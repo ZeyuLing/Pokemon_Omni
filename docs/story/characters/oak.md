@@ -28,7 +28,7 @@ ID：`oak`；状态：已采用。
 - **一周目开始前·日期未定 · 大木离开希尔弗体系**（背景已确定／场景未写）：离开希尔弗；选择科学技术与战斗分析的路线，认为神兽力量高度不可控。 事件 ID：`oak-leaves-institute`。
 - **小智研发之前·日期未定 · 第一代 AI 训练家：赤红**（背景已确定／场景未写；编剧秘密）：完成第一代 AI 训练家研究。 事件 ID：`red-developed`。
 - **赤红之后、出发之前·日期未定 · 第二代 AI 训练家：小智**（背景已确定／场景未写；编剧秘密）：研发小智并设置初始目标；世界内只有他知道小智的 AI 身份。 事件 ID：`ash-developed`。
-- **一周目当下（开场状态） · 关都内部的世界赛竞争**（背景已确定／场景未写）：追求繁荣和平的联邦共和国，选择科技与战斗分析；是否另行亲自参赛未定。 事件 ID：`kanto-contenders`。
+- **世界赛消息传出后／一周目背景，具体日期未定（开场状态） · 关都内部的世界赛竞争**（背景已确定／场景未写）：追求繁荣和平的联邦共和国，选择科技与战斗分析；是否另行亲自参赛未定。 事件 ID：`kanto-contenders`。
 - **一周目旅程的秘密目标 · 大木安排小智取得世界赛资格**（背景已确定／场景未写；编剧秘密）：认为强大、向往和平且忠于自己的小智适合争夺世界冠军，规划关都挑战路线。 事件 ID：`ash-qualification-plan`。
 - **T=0 附近·具体年份未定 · 少年小智领取皮卡丘**（原型已有／演出未完整）：把皮卡丘交给小智，指导他前往常青市。 事件 ID：`ash-departure`。
 - **T=0 附近·具体年份未定 · 博士包裹**（原型已有／演出未完整）：接收包裹并给予奖励。 事件 ID：`parcel-return`。
@@ -57,3 +57,4 @@ ID：`oak`；状态：已采用。
 - [26-master-timeline.md](../../../docs/26-master-timeline.md)
 - [25-rainbow-covenant-prologue.md](../../../docs/25-rainbow-covenant-prologue.md)
 - [32-first-journey-world-premise.md](../../../docs/32-first-journey-world-premise.md)
+- [35-kanto-rivals-and-succession.md](../../../docs/35-kanto-rivals-and-succession.md)
