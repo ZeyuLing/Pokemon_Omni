@@ -6,7 +6,7 @@
   "date": null,
   "phase": "first-journey",
   "visibility": "player_safe",
-  "scope": "Staged adaptation of established late-war conditions. New dialogue and anonymous supporting roles are an opening draft, not unwritten post-Cinnabar history. Source rooms are stage adaptations, not new geographical claims.",
+  "scope": "Player-safe acted draft: battlefield, nine regional delegates negotiating ceasefire, faction conversations, Oak and Gary. Political representation is authored Omni casting; no dates or unwritten history assigned.",
   "sprites": [
     "nurse",
     "policeman",
@@ -16,7 +16,16 @@
     "giovanni",
     "rocket_m",
     "prof_oak",
-    "blue"
+    "blue",
+    "steven",
+    "cynthia",
+    "karen",
+    "alder",
+    "diantha",
+    "hala",
+    "leon",
+    "geeta",
+    "matori"
   ],
   "stages": [
     {
@@ -345,31 +354,101 @@
       ]
     },
     {
-      "id": "lance",
-      "title": "关都联盟 · 议事室",
+      "id": "summit",
+      "title": "稍后 · 九地区停战会谈",
       "stage": "league",
       "tone": 0,
       "music": 4,
       "actors": [
         "lance",
-        "opening-league-liaison"
+        "karen",
+        "steven",
+        "cynthia",
+        "alder",
+        "diantha",
+        "hala",
+        "leon",
+        "geeta"
       ],
       "cast": [
         {
           "actor": "lance",
           "sprite": "lance",
           "at": [
-            128,
+            80,
             48
           ],
           "face": 0
         },
         {
-          "actor": "opening-league-liaison",
-          "sprite": "policeman",
+          "actor": "karen",
+          "sprite": "karen",
+          "at": [
+            112,
+            48
+          ],
+          "face": 0
+        },
+        {
+          "actor": "steven",
+          "sprite": "steven",
+          "at": [
+            144,
+            48
+          ],
+          "face": 0
+        },
+        {
+          "actor": "cynthia",
+          "sprite": "cynthia",
+          "at": [
+            176,
+            48
+          ],
+          "face": 0
+        },
+        {
+          "actor": "alder",
+          "sprite": "alder",
+          "at": [
+            64,
+            64
+          ],
+          "face": 3
+        },
+        {
+          "actor": "diantha",
+          "sprite": "diantha",
+          "at": [
+            64,
+            96
+          ],
+          "face": 3
+        },
+        {
+          "actor": "hala",
+          "sprite": "hala",
           "at": [
             208,
-            128
+            64
+          ],
+          "face": 2
+        },
+        {
+          "actor": "leon",
+          "sprite": "leon",
+          "at": [
+            208,
+            96
+          ],
+          "face": 2
+        },
+        {
+          "actor": "geeta",
+          "sprite": "geeta",
+          "at": [
+            128,
+            112
           ],
           "face": 1
         }
@@ -381,167 +460,289 @@
         ]
       },
       "transition": {
-        "kind": "sound_bridge",
-        "reason": "伤情命令接入稍后的关都会议，省略返程；不宣布停战或设定具体日期。"
+        "kind": "fade_through_black",
+        "reason": "战地余火淡出，黑场停顿表示时间流逝；渡随后到场参与决定。未定地点、旅程或日期。"
       },
       "beats": [
         {
-          "wait": 96
+          "wait": 32,
+          "effect": "blackout"
         },
         {
-          "move": {
-            "opening-league-liaison": [
-              128,
-              112
-            ]
-          },
-          "face": {
-            "opening-league-liaison": 1
-          }
+          "wait": 128
         },
         {
-          "speaker": "联络官",
-          "actor": "opening-league-liaison",
+          "speaker": "大吾",
+          "actor": "steven",
           "lines": [
-            "联络官：前线刚送回伤情。",
-            "各地中心的药品都在告急。"
-          ],
-          "effect": "papers"
-        },
-        {
-          "wait": 40,
-          "face": {
-            "lance": 0
-          }
-        },
-        {
-          "speaker": "渡",
-          "actor": "lance",
-          "lines": [
-            "渡：伤情册留下。另一份，念。",
-            ""
-          ]
-        },
-        {
-          "speaker": "联络官",
-          "actor": "opening-league-liaison",
-          "lines": [
-            "联络官：世界赛提案。",
-            "每四年一次，以赛代战。"
-          ]
-        },
-        {
-          "speaker": "联络官",
-          "actor": "opening-league-liaison",
-          "lines": [
-            "联络官：冠军执掌世界联盟，",
-            "前四名参与行政。"
+            "大吾：再拖下去，火山脚下就没有活人可",
+            "撤了。"
           ]
         },
         {
           "speaker": "渡",
           "actor": "lance",
           "lines": [
-            "渡：参赛资格？",
-            ""
+            "渡：撤离可以。谁保证撤退时背后没有",
+            "攻击？"
           ]
         },
         {
-          "speaker": "联络官",
-          "actor": "opening-league-liaison",
+          "speaker": "竹兰",
+          "actor": "cynthia",
           "lines": [
-            "联络官：须有担任或击败地区天王、冠军",
-            "的记录。"
+            "竹兰：救护通道对所有地区开放。伤员",
+            "不该是筹码。"
           ]
         },
         {
-          "wait": 32
-        },
-        {
-          "speaker": "渡",
-          "actor": "lance",
+          "speaker": "哈拉",
+          "actor": "hala",
           "lines": [
-            "渡：我会参赛。",
-            ""
+            "哈拉：还有宝可梦。它们也要被带回来",
+            "。"
           ]
         },
         {
-          "speaker": "联络官",
-          "actor": "opening-league-liaison",
+          "speaker": "梨花",
+          "actor": "karen",
           "lines": [
-            "联络官：但关都希望，",
-            "冠军始终服从本地区的决定。"
+            "梨花：各方同时停火。谁都不许借救援",
+            "推进阵线。"
+          ]
+        },
+        {
+          "speaker": "丹帝",
+          "actor": "leon",
+          "lines": [
+            "丹帝：伽勒尔接受。把这条写进共同命",
+            "令。"
           ]
         },
         {
           "wait": 48,
-          "emote": {
-            "opening-league-liaison": "silence"
-          }
-        },
-        {
-          "speaker": "渡",
-          "actor": "lance",
-          "lines": [
-            "渡：各地区还各发各的命令，",
-            "战争就不会结束。"
-          ]
-        },
-        {
-          "speaker": "联络官",
-          "actor": "opening-league-liaison",
-          "lines": [
-            "联络官：那下一代的人选，",
-            "还要继续筛吗？"
-          ]
-        },
-        {
-          "speaker": "渡",
-          "actor": "lance",
-          "lines": [
-            "渡：继续。我要他们也能走到最后。",
-            ""
-          ]
-        },
-        {
-          "wait": 32,
           "effect": "papers"
         },
         {
-          "speaker": "联络官",
-          "actor": "opening-league-liaison",
+          "speaker": "阿戴克",
+          "actor": "alder",
           "lines": [
-            "联络官：这批年轻人，",
-            "连徽章都还没集齐。"
+            "阿戴克：命令能让今天停火。下一场战",
+            "争呢？"
+          ]
+        },
+        {
+          "speaker": "卡露妮",
+          "actor": "diantha",
+          "lines": [
+            "卡露妮：桌上已有世界赛方案。让赛场",
+            "代替战场。"
           ]
         },
         {
           "speaker": "渡",
           "actor": "lance",
           "lines": [
-            "渡：现在没有资格，不等于将来没有。",
+            "渡：胜者没有权力，败者凭什么遵守？",
             ""
           ]
         },
         {
-          "wait": 36,
+          "speaker": "也慈",
+          "actor": "geeta",
+          "lines": [
+            "也慈：四年一届。冠军执掌世界联盟行",
+            "政权。"
+          ]
+        },
+        {
+          "speaker": "渡",
+          "actor": "lance",
+          "lines": [
+            "渡：我要的是能执行命令的联盟。不是",
+            "争吵的会场。"
+          ]
+        },
+        {
+          "speaker": "竹兰",
+          "actor": "cynthia",
+          "lines": [
+            "竹兰：那么谁来约束冠军？战胜我们，不",
+            "是拥有我们。"
+          ]
+        },
+        {
+          "wait": 48,
+          "effect": "papers"
+        },
+        {
+          "speaker": "卡露妮",
+          "actor": "diantha",
+          "lines": [
+            "卡露妮：前四名共同执政。冠军也在这",
+            "四席之内。"
+          ]
+        },
+        {
+          "speaker": "梨花",
+          "actor": "karen",
+          "lines": [
+            "梨花：上下两院必须保留。地区不能交",
+            "出所有声音。"
+          ]
+        },
+        {
+          "speaker": "大吾",
+          "actor": "steven",
+          "lines": [
+            "大吾：冠军地区增席可以。不能把其他",
+            "地区赶出议院。"
+          ]
+        },
+        {
+          "speaker": "也慈",
+          "actor": "geeta",
+          "lines": [
+            "也慈：这些写入建盟方案。各地对同一",
+            "份文本签署。"
+          ]
+        },
+        {
+          "speaker": "丹帝",
+          "actor": "leon",
+          "lines": [
+            "丹帝：参赛人数怎么限制？总不能把军队",
+            "搬进赛场。"
+          ]
+        },
+        {
+          "speaker": "也慈",
+          "actor": "geeta",
+          "lines": [
+            "也慈：须有担任或击败天王、冠军的联盟",
+            "记录。"
+          ]
+        },
+        {
+          "speaker": "阿戴克",
+          "actor": "alder",
+          "lines": [
+            "阿戴克：别只盯着我们。年轻人也会走",
+            "到这里。"
+          ]
+        },
+        {
+          "speaker": "渡",
+          "actor": "lance",
+          "lines": [
+            "渡：我会参赛。关都也会培养能走到最",
+            "后的人。"
+          ]
+        },
+        {
+          "wait": 48,
+          "effect": "papers"
+        },
+        {
+          "speaker": "哈拉",
+          "actor": "hala",
+          "lines": [
+            "哈拉：让他们活着走到那里。先把停火",
+            "令签了。"
+          ]
+        },
+        {
+          "speaker": "大吾",
+          "actor": "steven",
+          "lines": [
+            "大吾：丰缘接受共同停火。",
+            ""
+          ]
+        },
+        {
+          "speaker": "竹兰",
+          "actor": "cynthia",
+          "lines": [
+            "竹兰：神奥接受。救护不能再等。",
+            ""
+          ]
+        },
+        {
+          "speaker": "梨花",
+          "actor": "karen",
+          "lines": [
+            "梨花：城都接受。",
+            ""
+          ]
+        },
+        {
+          "speaker": "阿戴克",
+          "actor": "alder",
+          "lines": [
+            "阿戴克：合众接受。",
+            ""
+          ]
+        },
+        {
+          "speaker": "卡露妮",
+          "actor": "diantha",
+          "lines": [
+            "卡露妮：卡洛斯接受。",
+            ""
+          ]
+        },
+        {
+          "speaker": "哈拉",
+          "actor": "hala",
+          "lines": [
+            "哈拉：阿罗拉接受。",
+            ""
+          ]
+        },
+        {
+          "speaker": "丹帝",
+          "actor": "leon",
+          "lines": [
+            "丹帝：伽勒尔接受。",
+            ""
+          ]
+        },
+        {
+          "speaker": "也慈",
+          "actor": "geeta",
+          "lines": [
+            "也慈：帕底亚接受。",
+            ""
+          ]
+        },
+        {
+          "speaker": "渡",
+          "actor": "lance",
+          "lines": [
+            "渡：关都接受。各方按共同命令停火。",
+            ""
+          ]
+        },
+        {
+          "wait": 96,
           "effect": "papers"
         }
-      ]
+      ],
+      "establish_beat": 1
     },
     {
       "id": "silph",
-      "title": "希尔弗 · 会客议事室",
+      "title": "会后 · 希尔弗会客室",
       "stage": "silph",
       "tone": 0,
       "music": 4,
       "actors": [
-        "opening-silph-representative",
-        "opening-silph-secretary"
+        "silph-president-current",
+        "steven"
       ],
       "cast": [
         {
-          "actor": "opening-silph-representative",
+          "actor": "silph-president-current",
           "sprite": "gentleman",
           "at": [
             112,
@@ -550,8 +751,8 @@
           "face": 3
         },
         {
-          "actor": "opening-silph-secretary",
-          "sprite": "worker_f",
+          "actor": "steven",
+          "sprite": "steven",
           "at": [
             160,
             144
@@ -566,110 +767,98 @@
         ]
       },
       "transition": {
-        "kind": "paper_cut",
-        "from": "lance",
-        "reason": "由尚未取得资格的年轻人名单，切到商界正在评估的另一份候选档案；同一首音乐延续，不暗示两方秘密合作。"
+        "kind": "fade_through_black",
+        "reason": "会谈文件成为会后争论的对象；持续音乐和黑场连接公共决定与私人诉求。"
       },
       "beats": [
         {
+          "wait": 24,
+          "effect": "blackout"
+        },
+        {
+          "wait": 80
+        },
+        {
           "move": {
-            "opening-silph-secretary": [
+            "steven": [
               144,
               64
             ]
           },
           "face": {
-            "opening-silph-secretary": 2
+            "steven": 2
           }
         },
         {
-          "speaker": "秘书",
-          "actor": "opening-silph-secretary",
+          "speaker": "希尔弗社长",
+          "actor": "silph-president-current",
           "lines": [
-            "秘书：还没拿齐徽章，就给这么多赞助？",
-            ""
-          ],
-          "effect": "papers"
-        },
-        {
-          "speaker": "家族代表",
-          "actor": "opening-silph-representative",
-          "lines": [
-            "家族代表：等他们成了冠军，",
-            "还轮得到我们开价？"
+            "希尔弗社长：停火了。我们的药品可以",
+            "运往其他地区了。"
           ]
         },
         {
-          "speaker": "秘书",
-          "actor": "opening-silph-secretary",
+          "speaker": "大吾",
+          "actor": "steven",
           "lines": [
-            "秘书：账目可撑不起每个人。",
+            "大吾：救援通道不是你们的独家商路。",
             ""
           ]
         },
         {
-          "wait": 40,
-          "face": {
-            "opening-silph-representative": 3
-          }
-        },
-        {
-          "speaker": "家族代表",
-          "actor": "opening-silph-representative",
+          "speaker": "希尔弗社长",
+          "actor": "silph-president-current",
           "lines": [
-            "家族代表：商店、中心、百货大楼。",
-            "关都之外呢？"
+            "希尔弗社长：救援也要有人买单。你比",
+            "谁都清楚。"
           ]
         },
         {
-          "speaker": "秘书",
-          "actor": "opening-silph-secretary",
+          "speaker": "大吾",
+          "actor": "steven",
           "lines": [
-            "秘书：各地区的准入，都还得重新谈。",
+            "大吾：所以你把年轻训练家的名单放在",
+            "这里？"
+          ]
+        },
+        {
+          "speaker": "希尔弗社长",
+          "actor": "silph-president-current",
+          "lines": [
+            "希尔弗社长：四个席位。我们需要值得",
+            "投入的人。"
+          ]
+        },
+        {
+          "speaker": "大吾",
+          "actor": "steven",
+          "lines": [
+            "大吾：你想支持他们，还是替他们决定？",
             ""
           ]
         },
         {
-          "speaker": "家族代表",
-          "actor": "opening-silph-representative",
+          "speaker": "希尔弗社长",
+          "actor": "silph-president-current",
           "lines": [
-            "家族代表：所以看清楚，",
-            "谁能替我们打开那扇门。"
+            "希尔弗社长：没有资源，他们连出发都难",
+            "。"
           ]
         },
         {
-          "speaker": "秘书",
-          "actor": "opening-silph-secretary",
+          "speaker": "大吾",
+          "actor": "steven",
           "lines": [
-            "秘书：只押一个人？",
+            "大吾：别把资助写成他们一生的债。",
             ""
           ]
         },
         {
-          "speaker": "家族代表",
-          "actor": "opening-silph-representative",
-          "lines": [
-            "家族代表：四个席位。",
-            "为什么只盯着一个？"
-          ]
-        },
-        {
-          "wait": 36,
-          "effect": "papers"
-        },
-        {
-          "speaker": "家族代表",
-          "actor": "opening-silph-representative",
-          "lines": [
-            "家族代表：还有，先查身份。",
-            "战绩好，不代表能入场。"
-          ]
-        },
-        {
-          "wait": 36,
+          "wait": 72,
           "effect": "papers"
         }
-      ]
+      ],
+      "establish_beat": 1
     },
     {
       "id": "rocket",
@@ -683,7 +872,7 @@
       ],
       "actors": [
         "giovanni",
-        "opening-rocket-clerk"
+        "matori"
       ],
       "cast": [
         {
@@ -696,8 +885,8 @@
           "face": 0
         },
         {
-          "actor": "opening-rocket-clerk",
-          "sprite": "rocket_m",
+          "actor": "matori",
+          "sprite": "matori",
           "at": [
             176,
             144
@@ -712,27 +901,33 @@
         ]
       },
       "transition": {
-        "kind": "paper_cut",
-        "from": "silph",
-        "reason": "商业会议中的身份审查，落在坂木仍保有战绩却无法合法报名的困境上。"
+        "kind": "fade_through_black",
+        "reason": "名单上的合法资格，转为坂木被排除的旧战绩；黑场与持续音乐保持节奏。"
       },
       "beats": [
         {
+          "wait": 24,
+          "effect": "blackout"
+        },
+        {
+          "wait": 80
+        },
+        {
           "move": {
-            "opening-rocket-clerk": [
+            "matori": [
               176,
               128
             ]
           },
           "face": {
-            "opening-rocket-clerk": 2
+            "matori": 2
           }
         },
         {
-          "speaker": "火箭队成员",
-          "actor": "opening-rocket-clerk",
+          "speaker": "真鸟",
+          "actor": "matori",
           "lines": [
-            "火箭队成员：战绩查到了。",
+            "真鸟：战绩查到了。",
             "身份这一栏，还是过不了。"
           ],
           "effect": "papers"
@@ -764,10 +959,10 @@
           }
         },
         {
-          "speaker": "火箭队成员",
-          "actor": "opening-rocket-clerk",
+          "speaker": "真鸟",
+          "actor": "matori",
           "lines": [
-            "火箭队成员：他们把我们认定成了非法",
+            "真鸟：他们把我们认定成了非法",
             "组织。"
           ]
         },
@@ -785,7 +980,7 @@
         {
           "wait": 48,
           "emote": {
-            "opening-rocket-clerk": "silence"
+            "matori": "silence"
           }
         },
         {
@@ -797,10 +992,10 @@
           ]
         },
         {
-          "speaker": "火箭队成员",
-          "actor": "opening-rocket-clerk",
+          "speaker": "真鸟",
+          "actor": "matori",
           "lines": [
-            "火箭队成员：年轻人的培养呢？",
+            "真鸟：年轻人的培养呢？",
             ""
           ]
         },
@@ -813,10 +1008,10 @@
           ]
         },
         {
-          "speaker": "火箭队成员",
-          "actor": "opening-rocket-clerk",
+          "speaker": "真鸟",
+          "actor": "matori",
           "lines": [
-            "火箭队成员：他们会明白，",
+            "真鸟：他们会明白，",
             "自己为什么而战吗？"
           ]
         },
@@ -834,7 +1029,8 @@
         {
           "wait": 48
         }
-      ]
+      ],
+      "establish_beat": 1
     },
     {
       "id": "lab",
@@ -877,11 +1073,17 @@
         ]
       },
       "transition": {
-        "kind": "question_cut",
-        "from": "rocket",
-        "reason": "从为年轻人安排道路，转到小茂自己追问明天的起点；先呈现祖孙会面，待小茂离开后才留下独处研究的悬念。"
+        "kind": "fade_through_black",
+        "reason": "从各方培养下一代，过渡到真新镇的具体少年；保留研究疑问，不揭露身份。"
       },
       "beats": [
+        {
+          "wait": 24,
+          "effect": "blackout"
+        },
+        {
+          "wait": 80
+        },
         {
           "speaker": "小茂",
           "actor": "gary",
@@ -1029,7 +1231,8 @@
         {
           "wait": 64
         }
-      ]
+      ],
+      "establish_beat": 1
     },
     {
       "id": "dawn",
@@ -1087,5 +1290,16 @@
     "sound_bridge": "联盟、希尔弗、火箭队及祖孙会面共用同一首原版希尔弗曲，不随切镜重启。大木独处开始实验室曲；清晨转真新镇。",
     "room_continuity": "每场先交代人物和桌案位置；每次走位以来源地图地块和其他演员为障碍。",
     "historical_boundary": "只演绎已定的大战末期状态；不补写红莲之后未定历史、日期、继承人阵营或最终结局。"
-  }
+  },
+  "adapted_sprites": [
+    "steven",
+    "cynthia",
+    "karen",
+    "alder",
+    "diantha",
+    "hala",
+    "leon",
+    "geeta",
+    "matori"
+  ]
 }

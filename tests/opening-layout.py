@@ -86,9 +86,16 @@ class OpeningLayout(unittest.TestCase):
         spoken=[c for c in REPORT['cues'] if c['dialogue']]
         # The expanded war/aftermath now includes four commanders and cries;
         # political meetings still carry a majority of spoken beats.
-        self.assertGreater(sum(c['scene'] in ('lance','silph','rocket') for c in spoken),len(spoken)*.5)
-        self.assertEqual({c['music'] for c in REPORT['cues'] if c['scene'] in ('lance','silph','rocket')},{4})
-        self.assertFalse(any(c['fade_in'] or c['fade_out'] for c in REPORT['cues'] if c['scene'] in ('silph','rocket')))
+        self.assertGreater(sum(c['scene'] in ('summit','silph','rocket') for c in spoken),len(spoken)*.5)
+        self.assertEqual({c['music'] for c in REPORT['cues'] if c['scene'] in ('summit','silph','rocket')},{4})
+        for scene in ('summit','silph','rocket','lab'):
+            cues=[c for c in REPORT['cues'] if c['scene']==scene]
+            self.assertTrue(any(c['fade_in'] for c in cues))
+            self.assertTrue(cues[-1]['fade_out'])
+        summit=next(s for s in SCRIPT['scenes'] if s['id']=='summit')
+        self.assertEqual(len(summit['cast']),9)
+        self.assertIn('lance',{b.get('actor') for b in summit['beats']})
+        self.assertNotIn('opening-league-liaison',{a for s in SCRIPT['scenes'] for a in s['actors']})
         lab=next(s for s in SCRIPT['scenes'] if s['stage']=='lab')['beats'];leave=next(i for i,b in enumerate(lab) if b.get('move',{}).get('gary')==[96,208])
         monitor=next(i for i,b in enumerate(lab) if b.get('effect')=='monitor')
         self.assertGreater(monitor,leave,'Private research must begin after Gary leaves')
@@ -99,7 +106,7 @@ class OpeningLayout(unittest.TestCase):
         self.assertEqual(scene['cast'],[])
         self.assertGreaterEqual(scene['beats'][0]['ticks'],384)
         self.assertNotIn('speaker',scene['beats'][0])
-        self.assertEqual(SCRIPT['scenes'][1]['id'],'lance')
+        self.assertEqual(SCRIPT['scenes'][1]['id'],'summit')
         self.assertEqual(GRIDS['war']['kind'],'battlefield')
         self.assertIn(0,GRIDS['war']['cells'],'Native battlefield requires traversable terrain')
         data=json.loads((ROOT/'content/opening/battlefield.json').read_text('utf8'))
@@ -125,7 +132,7 @@ class OpeningLayout(unittest.TestCase):
             cx,cy=cue['camera'][1];x,y=data['actors'][20+team*5]['to']
             self.assertTrue(16<=x-cx<=216 and 36<=y-cy<=104,'Commander hidden by dialogue')
         # Evidence comes from actual ROM frames, not the high-resolution source.
-        selected=[REPORT['cues'][0],next(c for c in REPORT['cues'] if c['scene']=='war-front' and c['dialogue']),next(c for c in REPORT['cues'] if c['scene']=='lance' and c['dialogue'])]
+        selected=[REPORT['cues'][0],next(c for c in REPORT['cues'] if c['scene']=='war-front' and c['dialogue']),next(c for c in REPORT['cues'] if c['scene']=='summit' and c['dialogue'])]
         proof=Image.new('RGB',(720,160))
         for i,cue in enumerate(selected):
             actual=shot(OUT/f'cue-{cue["cue"]}.rgba')

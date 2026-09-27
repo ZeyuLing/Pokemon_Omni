@@ -1283,22 +1283,29 @@
       "docs/37-acted-opening-screenplay.md",
       "docs/36-playable-opening-and-cast.md",
       "docs/40-volcanic-war-direction.md",
-      "docs/41-battlefield-deployment.md"
+      "docs/41-battlefield-deployment.md",
+      "docs/42-ceasefire-summit.md"
     ],
     "actors": [
+      "alder",
       "ash",
       "caitlin",
+      "cynthia",
       "delia",
+      "diantha",
       "drake",
       "flint",
       "gary",
+      "geeta",
       "giovanni",
+      "hala",
+      "karen",
       "lance",
+      "leon",
+      "matori",
       "oak",
-      "opening-league-liaison",
-      "opening-rocket-clerk",
-      "opening-silph-representative",
-      "opening-silph-secretary",
+      "silph-president-current",
+      "steven",
       "war-unit-01",
       "war-unit-02",
       "war-unit-03",
@@ -1503,6 +1510,24 @@
           19
         ]
       ]
+    },
+    "summit_casting": {
+      "status": "playable_opening_draft",
+      "delegates": [
+        "lance",
+        "karen",
+        "steven",
+        "cynthia",
+        "alder",
+        "diantha",
+        "hala",
+        "leon",
+        "geeta"
+      ],
+      "authority": "Omni-authored regional mandates, not official government titles",
+      "date": null,
+      "location": null,
+      "proposer_region": null
     }
   }
 }

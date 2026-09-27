@@ -10,11 +10,27 @@ ID：`leon`；状态：候选。
 
 ## 人物形象
 
-
+动画《旅途》成年冠军设计：紫发、帽子、红披风；不设年龄。
 
 年龄阶段设计：
 
-最终立绘／像素／3D 资产：
+最终立绘／像素／3D 资产：开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。
+
+## 开场中的演绎
+
+参加九地区停战谈判，作为本作获授权代表；不设就任、旅程、年龄、会议日期。
+
+[逐场剧本](../../37-acted-opening-screenplay.md)。
+
+## 原作身份参考（不计入本作生平）
+
+分版本引用游戏／动画身份；不合并原作时间线。
+
+- 伽勒尔冠军。
+
+证据：社区角色／剧集整理。原作战斗职务不等于行政职务；本作参会授权、会后会谈为演绎稿，不补写任职或生平。
+
+[来源 1](https://bulbapedia.bulbagarden.net/wiki/Leon)
 
 ## 已写生平
 
@@ -35,3 +51,4 @@ ID：`leon`；状态：候选。
 ## 创作依据
 
 - [20-cast-and-opening.md](../../../docs/20-cast-and-opening.md)
+- [42-ceasefire-summit.md](../../../docs/42-ceasefire-summit.md)

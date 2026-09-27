@@ -1,16 +1,16 @@
-# 大吾
+# 也慈
 
 <!-- GENERATED: edit content/story/characters.json and worldline.json -->
 
-ID：`steven`；状态：候选。
+ID：`geeta`；状态：场景提案。
 
-家族产业与公共职责
+开场演绎中的正式人物
 
 出生工作年：。
 
 ## 人物形象
 
-动画《XY／旅途》成年大吾：银蓝短发、深色正装；运行素材来自绿宝石，不等同于动画成品设计。
+动画《地平线》成年设计参考：深蓝长发、蓝色挑染、深色套装；参考图尚未归档。
 
 年龄阶段设计：
 
@@ -26,11 +26,11 @@ ID：`steven`；状态：候选。
 
 分版本引用游戏／动画身份；不合并原作时间线。
 
-- 丰缘冠军；得文社长之子，不是希尔弗雇员。
+- 帕底亚首席冠军及联盟会长。
 
 证据：社区角色／剧集整理。原作战斗职务不等于行政职务；本作参会授权、会后会谈为演绎稿，不补写任职或生平。
 
-[来源 1](https://bulbapedia.bulbagarden.net/wiki/Steven_Stone)
+[来源 1](https://bulbapedia.bulbagarden.net/wiki/Geeta)
 
 ## 已写生平
 
@@ -50,5 +50,4 @@ ID：`steven`；状态：候选。
 
 ## 创作依据
 
-- [20-cast-and-opening.md](../../../docs/20-cast-and-opening.md)
 - [42-ceasefire-summit.md](../../../docs/42-ceasefire-summit.md)

@@ -89,7 +89,7 @@ def main():
                 assert list(source.size)==asset['dimensions']
                 assert source.width*h==source.height*w, 'Do not stretch cinematic art'
                 bg=source.convert('RGB').resize((w,h),Image.Resampling.LANCZOS)
-            art=len(blob);blob+=rgba555(bg);mk=len(blob);blob+=bytes(w*h)
+            art=len(blob);blob+=rgba555(bg);mk=len(blob);blob+=bytes((w*h+7)//8)
             # All tiles blocked: this is an illustration, never a walkable map.
             grid=[1]*(w//16*h//16);co=len(blob);blob+=bytes(grid)
             while len(blob)%4:blob.append(0)
@@ -104,13 +104,19 @@ def main():
         assert all(v%16==0 for v in (x,y,w,h)), 'Stage crops must preserve source collision tiles'
         bg=bg.crop((x,y,x+w,y+h));mask=mask.crop((x,y,x+w,y+h));art=len(blob)
         tone=next(c['tone'] for c in opening['scenes'] if c['stage']==s['id'])
-        blob+=rgba555(bg,tone);mk=len(blob);blob+=mask.tobytes()
+        blob+=rgba555(bg,tone);mk=len(blob);blob+=bytes(sum((v&1)<<j for j,v in enumerate(mask.tobytes()[i:i+8])) for i in range(0,w*h,8))
         grid=[cells[ty*layout['width']+tx] for ty in range(y//16,(y+h)//16) for tx in range(x//16,(x+w)//16)]
         co=len(blob);blob+=bytes(grid)
         while len(blob)%4:blob.append(0)
         stages.append('{'+','.join(map(str,[w,h,art,mk,co]))+'}');bg.save(OUT/'stages'/f'{s["id"]}.png')
         grids[s['id']]={'width':w//16,'height':h//16,'cells':grid,'source':s['source'],'crop':s['crop']}
     for name in opening['sprites']:
+        if name in opening.get('adapted_sprites',[]):
+            from summit_sprites import frames
+            art=frames(name,get);offset=len(blob)
+            for frame in art:blob+=rgba555(frame)
+            sprites.append('{'+','.join(map(str,[offset,len(art),art[0].width,1]))+'}')
+            continue
         im=Image.open(io.BytesIO(get('graphics/object_events/pics/people/'+name+'.png'))).convert('RGBA')
         # Indexed source transparency is color index zero, not PNG metadata.
         original=Image.open(io.BytesIO(get('graphics/object_events/pics/people/'+name+'.png')))
@@ -122,14 +128,14 @@ def main():
                     p=original.getpixel((frame*16+x,y))
                     if p:canvas.putpixel((x,y),tuple(pal[p*3:p*3+3])+ (255,))
             blob+=rgba555(canvas)
-        sprites.append('{'+','.join(map(str,[offset,count]))+'}')
+        sprites.append('{'+','.join(map(str,[offset,count,16,0]))+'}')
     (OUT/'opening_stage.bin').write_bytes(blob)
     (OUT/'opening_stage.s').write_text(f'/* SHA256 {hashlib.sha256(blob).hexdigest()} */\n'+'.section .rodata\n.balign 4\n.global omni_opening_stage_blob\nomni_opening_stage_blob:\n.incbin "build/pallet/opening_stage.bin"\n')
     (OUT/'opening_stage.h').write_text('''#ifndef OMNI_OPENING_STAGE_H
 #define OMNI_OPENING_STAGE_H
 #include <stdint.h>
 typedef struct {uint16_t w,h;uint32_t art,mask,collision;} OmniStage;
-typedef struct {uint32_t offset;uint8_t frames;} OmniStageSprite;
+typedef struct {uint32_t offset;uint8_t frames,w,cardinal;} OmniStageSprite;
 extern const OmniStage omni_stages[];
 extern const OmniStageSprite omni_stage_sprites[];
 extern const unsigned char omni_opening_stage_blob[];

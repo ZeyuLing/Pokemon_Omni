@@ -3,6 +3,11 @@
 #define OMNI_WAR_FAST
 #endif
 static int lerp(int a,int b,unsigned n,unsigned d){return !d||n>=d?b:a+(b-a)*(int)n/(int)d;}
+unsigned omni_war_shot_progress(unsigned phase){
+ if(phase<=OMNI_WAR_SHOT_START)return 0;
+ if(phase>=OMNI_WAR_IMPACT_START)return 256;
+ return (phase-OMNI_WAR_SHOT_START)*256/(OMNI_WAR_IMPACT_START-OMNI_WAR_SHOT_START);
+}
 static unsigned facing(int dx,int dy,int diagonal){
  int ax=dx<0?-dx:dx,ay=dy<0?-dy:dy;
  if(diagonal&&ax*2>=ay&&ay*2>=ax&&ax&&ay)return dy>0?(dx<0?4:5):(dx<0?6:7);
@@ -49,7 +54,7 @@ OMNI_WAR_FAST void omni_war_sample_all(const OmniWarActor *a,unsigned count,uint
    if(dx||dy)p[i].face=(uint8_t)facing(dx,dy,a[i].attack!=0);
   }
  }
- for(i=0;i<count;++i)if(a[i].attack&&t<a[i].stop&&t>=a[i].start+a[i].duration&&p[i].phase>=104&&p[i].phase<128){
+ for(i=0;i<count;++i)if(a[i].attack&&t<a[i].stop&&t>=a[i].start+a[i].duration&&p[i].phase>=OMNI_WAR_IMPACT_START&&p[i].phase<OMNI_WAR_IMPACT_END){
   unsigned target=omni_war_target(a,count,i,t);
   if(target<count){int dx=p[target].x-p[i].x,dy=p[target].y-p[i].y,force=p[i].phase<116?3:1;p[target].hit=1;
    if((dx<0?-dx:dx)>=(dy<0?-dy:dy))p[target].x+=(int16_t)(dx<0?-force:force);

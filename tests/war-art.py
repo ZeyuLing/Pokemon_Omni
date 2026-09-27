@@ -73,7 +73,7 @@ for i,(frame,name) in enumerate(zip(reference_frames,['FireRed Lance','Kanto sol
 height_proof.save(ROOT/'build/pallet/human-height-comparison.png')
 opening=json.loads((ROOT/'content/opening/prologue.json').read_text('utf8'))
 table=(ROOT/'build/pallet/opening_stage.c').read_text()
-rows=re.findall(r'\{(\d+),(\d+)\}',table.split('const OmniStageSprite omni_stage_sprites[]=')[1])
+rows=re.findall(r'\{(\d+),(\d+),\d+,\d+\}',table.split('const OmniStageSprite omni_stage_sprites[]=')[1])
 offset,frames=map(int,rows[opening['sprites'].index('lance')])
 meeting_blob=(ROOT/'build/pallet/opening_stage.bin').read_bytes()
 assert frames==3

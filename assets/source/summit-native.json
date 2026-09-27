@@ -1,0 +1,17 @@
+{
+  "scope": "Native summit overworlds; pinned imports, original pixels",
+  "files": [
+    {
+      "path": "emerald/graphics/object_events/pics/people/steven.png",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/graphics/object_events/pics/people/steven.png",
+      "sha256": "1985641fddd18d7ac996228eb9160ca67f6806cfd002e15518083607a015b3d8",
+      "bytes": 704
+    },
+    {
+      "path": "platinum/res/graphics/field_sprites/npc/cynthia.png",
+      "url": "https://raw.githubusercontent.com/pret/pokeplatinum/c248fb3f8cc9934ded800e489567c5c0eeee92eb/res/graphics/field_sprites/npc/cynthia.png",
+      "sha256": "47a8476fed0abdb7a368179453f2020cb7dc836e1dce41d5dada50b0270ff3c5",
+      "bytes": 1247
+    }
+  ]
+}

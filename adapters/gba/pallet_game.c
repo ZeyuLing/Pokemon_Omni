@@ -56,7 +56,7 @@ static char buffer[512];
 static const char save_signature[] __attribute__((used))="SRAM_V113";
 /* Passive emulator observability. No write/cheat commands are exposed. */
 volatile uint32_t omni_pallet_probe[20];
-volatile uint32_t omni_presentation_probe[28];
+volatile uint32_t omni_presentation_probe[44];
 
 void *memset(void *d,int v,size_t n){uint8_t *p=d;while(n--)*p++=(uint8_t)v;return d;}
 void *memcpy(void *d,const void *s,size_t n){uint8_t *p=d;const uint8_t *q=s;while(n--)*p++=*q++;return d;}
@@ -155,15 +155,16 @@ static void rocket_bitmap(unsigned offset,int w,int h,int x,int y){
 }
 static void draw_intro(void){
  const OmniIntroScene *s=&omni_intro[presentation.scene];const OmniStage *m=&omni_stages[s->stage];
- unsigned row,col,i,j,order[4],fade=0;char line[128];OmniWalkPoint positions[4];uint8_t faces[4];
+ unsigned row,col,i,j,order[12],fade=0;char line[128];OmniWalkPoint positions[12];uint8_t faces[12];
  OmniWalkGrid grid={omni_opening_stage_blob+m->collision,m->w/16,m->h/16};
  uint16_t ticks=presentation.scene_ticks;
  int cx=omni_presentation_lerp(s->cx,s->tx,ticks,s->duration),cy=omni_presentation_lerp(s->cy,s->ty,ticks,s->duration);
  int ox=m->w<240?(240-m->w)/2:0,width=m->w<240?m->w:240;
  int height=160;if(height>m->h-cy)height=m->h-cy;
  unsigned letters=omni_presentation_letters(&presentation,s->letters);
- if(s->fade_in&&ticks<16)fade=16-ticks;
- if(s->fade_out&&s->duration-ticks<16)fade=16-(s->duration-ticks);
+ if(s->fade_in&&ticks<32)fade=16-ticks/2;
+ if(s->effect==4)fade=16;
+ if(s->fade_out&&s->duration-ticks<32)fade=16-(s->duration-ticks)/2;
  omni_gba_surface=intro_frame;
  /* Pause overlays the last completed frame. Re-running a 64-unit battlefield
   * here delays the menu and advances its visual pose after the pause input. */
@@ -184,7 +185,7 @@ static void draw_intro(void){
  for(i=0;i<s->actor_count;++i){
   const OmniIntroActor *a=&s->actors[i];faces[i]=a->face;
   if(!omni_walk_sample(&grid,omni_intro_paths+a->path,a->count,ticks,s->duration,&positions[i],&faces[i]))omni_presentation_probe[16]|=1u<<i;
-  omni_presentation_probe[18+i*2]=(uint32_t)positions[i].x;omni_presentation_probe[19+i*2]=(uint32_t)positions[i].y;order[i]=i;
+  omni_presentation_probe[i<4?18+i*2:28+(i-4)*2]=(uint32_t)positions[i].x;omni_presentation_probe[i<4?19+i*2:29+(i-4)*2]=(uint32_t)positions[i].y;order[i]=i;
  }
  omni_presentation_probe[26]=presentation.scene;omni_presentation_probe[27]=ticks;
  for(i=0;i<s->actor_count;++i)for(j=i+1;j<s->actor_count;++j)if(positions[order[j]].y<positions[order[i]].y){unsigned t=order[i];order[i]=order[j];order[j]=t;}
@@ -193,13 +194,14 @@ static void draw_intro(void){
   int wx=positions[order[j]].x,wy=positions[order[j]].y;unsigned face=faces[order[j]];
   unsigned frame=face==0?0:face==1?1:2;int walking=a->count>1&&ticks<s->duration;
   const uint16_t *pixels;
-  if(walking&&(ticks/6)%2)frame=(face==0?3:face==1?5:7)+((ticks/12)&1);
-  pixels=(const uint16_t*)(omni_opening_stage_blob+sp->offset)+(frame%sp->frames)*512;
-  for(row=0;row<32;++row)for(col=0;col<16;++col){
-   int x=wx+(int)col,y=wy-32+(int)row,dx=x-cx+ox,dy=y-cy;
-   uint16_t c=pixels[row*16+(face==3?15-col:col)];
+  if(!sp->cardinal&&walking&&(ticks/6)%2)frame=(face==0?3:face==1?5:7)+((ticks/12)&1);
+  if(sp->cardinal)frame=face;
+  pixels=(const uint16_t*)(omni_opening_stage_blob+sp->offset)+(frame%sp->frames)*sp->w*32;
+  for(row=0;row<32;++row)for(col=0;col<sp->w;++col){
+   int x=wx+8-sp->w/2+(int)col,y=wy-32+(int)row,dx=x-cx+ox,dy=y-cy;
+   uint16_t c=pixels[row*sp->w+(!sp->cardinal&&face==3?sp->w-1-col:col)];
    if(dx<0||dx>=240||dy<0||dy>=height||(c&0x8000))continue;
-   if(m->mask!=0xffffffffu&&x>=0&&x<m->w&&y>=0&&y<m->h&&omni_opening_stage_blob[m->mask+y*m->w+x])continue;
+   if(m->mask!=0xffffffffu&&x>=0&&x<m->w&&y>=0&&y<m->h&&(omni_opening_stage_blob[m->mask+(y*m->w+x)/8]&(1u<<((y*m->w+x)%8))))continue;
    omni_gba_surface[dy*240+dx]=intro_color(c,s->tone);
   }
   if(a->emote&&wy-cy>43&&wy-cy<height+24){int x=wx-cx+ox,y=wy-cy-43;panel(x-1,y,18,12);box(x+3,y+6,2,2,INK);box(x+7,y+6,2,2,INK);box(x+11,y+6,2,2,INK);}

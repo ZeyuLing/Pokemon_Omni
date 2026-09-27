@@ -583,7 +583,7 @@
         {
           "sequence": "first-journey-opening",
           "scene": "dawn",
-          "mode": "diegetic_voice"
+          "mode": "offscreen_voice"
         }
       ],
       "game_assets": {
@@ -737,7 +737,7 @@
         {
           "sequence": "first-journey-opening",
           "scene": "dawn",
-          "mode": "diegetic_voice"
+          "mode": "offscreen_voice"
         }
       ],
       "opening_scene_note": "清晨开场稿：屋内催小智起床；与研究所熄灯后的时间转场衔接。不表现她知道小智的身份。"
@@ -1692,15 +1692,15 @@
       "presentation_bindings": [
         {
           "sequence": "first-journey-opening",
-          "scene": "lance",
-          "mode": "acted_sprite",
-          "sprite": "lance"
-        },
-        {
-          "sequence": "first-journey-opening",
           "scene": "war-front",
           "mode": "commander_identity",
           "instance": "war-unit-21"
+        },
+        {
+          "sequence": "first-journey-opening",
+          "scene": "summit",
+          "mode": "acted_sprite",
+          "sprite": "lance"
         }
       ],
       "game_assets": {
@@ -1718,7 +1718,7 @@
           "final_anime_design": false
         }
       },
-      "opening_scene_note": "烟囱山多地区混战的开场稿指挥官；参战和对白为 Omni 原创。具体日期、部队到达经过、战役结局及生死未定。另在稍后关都议事室讨论世界赛提案。"
+      "opening_scene_note": "亲自参加停战谈判，争取集中行政权并宣布参赛意向；不是由联络员告知既成决定。"
     },
     {
       "id": "looker",
@@ -1760,9 +1760,9 @@
       "death_event": null,
       "appearance": {
         "reference_media": null,
-        "anime_identity": null,
+        "anime_identity": "动画《XY／旅途》成年大吾：银蓝短发、深色正装；运行素材来自绿宝石，不等同于动画成品设计。",
         "era_design": null,
-        "production_art": null
+        "production_art": "开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。"
       },
       "biography": {
         "childhood": null,
@@ -1772,11 +1772,37 @@
         "ending": null
       },
       "source_docs": [
-        "docs/20-cast-and-opening.md"
+        "docs/20-cast-and-opening.md",
+        "docs/42-ceasefire-summit.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
-      "presentation_bindings": []
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "summit",
+          "mode": "acted_sprite",
+          "sprite": "steven"
+        },
+        {
+          "sequence": "first-journey-opening",
+          "scene": "silph",
+          "mode": "acted_sprite",
+          "sprite": "steven"
+        }
+      ],
+      "source_identity": {
+        "evidence_level": "secondary_episode_reference",
+        "continuity": "分版本引用游戏／动画身份；不合并原作时间线。",
+        "facts": [
+          "丰缘冠军；得文社长之子，不是希尔弗雇员。"
+        ],
+        "sources": [
+          "https://bulbapedia.bulbagarden.net/wiki/Steven_Stone"
+        ],
+        "boundary": "原作战斗职务不等于行政职务；本作参会授权、会后会谈为演绎稿，不补写任职或生平。"
+      },
+      "opening_scene_note": "参加九地区停战谈判，作为本作获授权代表；不设就任、旅程、年龄、会议日期。"
     },
     {
       "id": "may",
@@ -1876,9 +1902,9 @@
       "death_event": null,
       "appearance": {
         "reference_media": null,
-        "anime_identity": null,
+        "anime_identity": "动画《钻石＆珍珠／旅途》成年竹兰：金色长发、黑衣；运行素材来自白金。",
         "era_design": null,
-        "production_art": null
+        "production_art": "开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。"
       },
       "biography": {
         "childhood": null,
@@ -1888,11 +1914,31 @@
         "ending": null
       },
       "source_docs": [
-        "docs/20-cast-and-opening.md"
+        "docs/20-cast-and-opening.md",
+        "docs/42-ceasefire-summit.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
-      "presentation_bindings": []
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "summit",
+          "mode": "acted_sprite",
+          "sprite": "cynthia"
+        }
+      ],
+      "source_identity": {
+        "evidence_level": "secondary_episode_reference",
+        "continuity": "分版本引用游戏／动画身份；不合并原作时间线。",
+        "facts": [
+          "神奥冠军。"
+        ],
+        "sources": [
+          "https://bulbapedia.bulbagarden.net/wiki/Cynthia"
+        ],
+        "boundary": "原作战斗职务不等于行政职务；本作参会授权、会后会谈为演绎稿，不补写任职或生平。"
+      },
+      "opening_scene_note": "参加九地区停战谈判，作为本作获授权代表；不设就任、旅程、年龄、会议日期。"
     },
     {
       "id": "iris",
@@ -2116,9 +2162,9 @@
       "death_event": null,
       "appearance": {
         "reference_media": null,
-        "anime_identity": null,
+        "anime_identity": "动画《旅途》成年冠军设计：紫发、帽子、红披风；不设年龄。",
         "era_design": null,
-        "production_art": null
+        "production_art": "开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。"
       },
       "biography": {
         "childhood": null,
@@ -2128,11 +2174,31 @@
         "ending": null
       },
       "source_docs": [
-        "docs/20-cast-and-opening.md"
+        "docs/20-cast-and-opening.md",
+        "docs/42-ceasefire-summit.md"
       ],
       "relationships": [],
       "runtime_bindings": [],
-      "presentation_bindings": []
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "summit",
+          "mode": "acted_sprite",
+          "sprite": "leon"
+        }
+      ],
+      "source_identity": {
+        "evidence_level": "secondary_episode_reference",
+        "continuity": "分版本引用游戏／动画身份；不合并原作时间线。",
+        "facts": [
+          "伽勒尔冠军。"
+        ],
+        "sources": [
+          "https://bulbapedia.bulbagarden.net/wiki/Leon"
+        ],
+        "boundary": "原作战斗职务不等于行政职务；本作参会授权、会后会谈为演绎稿，不补写任职或生平。"
+      },
+      "opening_scene_note": "参加九地区停战谈判，作为本作获授权代表；不设就任、旅程、年龄、会议日期。"
     },
     {
       "id": "sonia",
@@ -3466,15 +3532,8 @@
       ],
       "relationships": [],
       "runtime_bindings": [],
-      "opening_scene_note": "接续战争开场的前线来讯，在议事室递交伤情和各地中心药品告急的汇总，再呈上世界赛提案与年轻训练家资料。与渡讨论参赛资格及冠军服从谁。匿名临时角色的具体政治归属与未知生平仍留空。",
-      "presentation_bindings": [
-        {
-          "sequence": "first-journey-opening",
-          "scene": "lance",
-          "mode": "acted_sprite",
-          "sprite": "policeman"
-        }
-      ]
+      "opening_scene_note": "已撤下的旧演出占位角色；当前开场不再出场，保留此记录仅用于版本追溯。",
+      "presentation_bindings": []
     },
     {
       "id": "opening-silph-representative",
@@ -3503,15 +3562,8 @@
       ],
       "relationships": [],
       "runtime_bindings": [],
-      "opening_scene_note": "希尔弗会客议事室开场稿：与秘书讨论提前赞助年轻训练家、地区准入和多个席位的价值，要求核查合法身份。只是当代家族代表的匿名场景角色，不指定为家主或旧总裁。",
-      "presentation_bindings": [
-        {
-          "sequence": "first-journey-opening",
-          "scene": "silph",
-          "mode": "acted_sprite",
-          "sprite": "gentleman"
-        }
-      ]
+      "opening_scene_note": "已撤下的旧演出占位角色；当前开场不再出场，保留此记录仅用于版本追溯。",
+      "presentation_bindings": []
     },
     {
       "id": "opening-silph-secretary",
@@ -3540,15 +3592,8 @@
       ],
       "relationships": [],
       "runtime_bindings": [],
-      "opening_scene_note": "希尔弗会客议事室开场稿：沿桌边进入，与代表讨论未集齐徽章者的赞助成本和地区业务准入。无名临时演员，经历与未来留空。",
-      "presentation_bindings": [
-        {
-          "sequence": "first-journey-opening",
-          "scene": "silph",
-          "mode": "acted_sprite",
-          "sprite": "worker_f"
-        }
-      ]
+      "opening_scene_note": "已撤下的旧演出占位角色；当前开场不再出场，保留此记录仅用于版本追溯。",
+      "presentation_bindings": []
     },
     {
       "id": "opening-rocket-clerk",
@@ -3577,15 +3622,8 @@
       ],
       "relationships": [],
       "runtime_bindings": [],
-      "opening_scene_note": "基地内部议事开场稿：向坂木说明战绩与合法身份分离的障碍，询问神兽调查、年轻训练家培养和他们为何而战。未替坂木正式报名或恢复身份。",
-      "presentation_bindings": [
-        {
-          "sequence": "first-journey-opening",
-          "scene": "rocket",
-          "mode": "acted_sprite",
-          "sprite": "rocket_m"
-        }
-      ]
+      "opening_scene_note": "已撤下的旧演出占位角色；当前开场不再出场，保留此记录仅用于版本追溯。",
+      "presentation_bindings": []
     },
     {
       "id": "opening-war-combatants",
@@ -6701,6 +6739,342 @@
         "formation_rank": 3,
         "facing_rule": "Watch own frontline."
       }
+    },
+    {
+      "id": "karen",
+      "name": "梨花",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "开场演绎中的正式人物",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "动画参考尚未归档；不冒充主动画人物。游戏参考为心金魂银的银蓝长发；此稿黑上衣属 Omni 会议服适配，不是原作服装逐像素复刻。",
+        "era_design": null,
+        "production_art": "开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/42-ceasefire-summit.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "source_identity": {
+        "evidence_level": "secondary_episode_reference",
+        "continuity": "分版本引用游戏／动画身份；不合并原作时间线。",
+        "facts": [
+          "《金银／心金魂银》石英高原联盟恶属性四天王；代表城都是本作改编，原作并非城都政府首脑。"
+        ],
+        "sources": [
+          "https://bulbapedia.bulbagarden.net/wiki/Karen"
+        ],
+        "boundary": "原作战斗职务不等于行政职务；本作参会授权、会后会谈为演绎稿，不补写任职或生平。"
+      },
+      "opening_scene_note": "参加九地区停战谈判，作为本作获授权代表；不设就任、旅程、年龄、会议日期。",
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "summit",
+          "mode": "acted_sprite",
+          "sprite": "karen"
+        }
+      ]
+    },
+    {
+      "id": "hala",
+      "name": "哈拉",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "开场演绎中的正式人物",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "动画《太阳＆月亮》成年岛屿之王设计：白发、宽体格、黄色衬衣、蓝短裤。保持长辈阶段，不赋予具体年龄。",
+        "era_design": null,
+        "production_art": "开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/42-ceasefire-summit.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "source_identity": {
+        "evidence_level": "secondary_episode_reference",
+        "continuity": "分版本引用游戏／动画身份；不合并原作时间线。",
+        "facts": [
+          "《太阳／月亮》的岛屿之王及阿罗拉四天王；《究极之日／究极之月》天王席位不同，不能混用。"
+        ],
+        "sources": [
+          "https://bulbapedia.bulbagarden.net/wiki/Hala"
+        ],
+        "boundary": "原作战斗职务不等于行政职务；本作参会授权、会后会谈为演绎稿，不补写任职或生平。"
+      },
+      "opening_scene_note": "参加九地区停战谈判，作为本作获授权代表；不设就任、旅程、年龄、会议日期。",
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "summit",
+          "mode": "acted_sprite",
+          "sprite": "hala"
+        }
+      ]
+    },
+    {
+      "id": "alder",
+      "name": "阿戴克",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "开场演绎中的正式人物",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "动画《超级愿望》成年冠军设计：橙红色长发、披衣和项链；不设年龄。",
+        "era_design": null,
+        "production_art": "开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/42-ceasefire-summit.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "source_identity": {
+        "evidence_level": "secondary_episode_reference",
+        "continuity": "分版本引用游戏／动画身份；不合并原作时间线。",
+        "facts": [
+          "《黑／白》合众冠军。"
+        ],
+        "sources": [
+          "https://bulbapedia.bulbagarden.net/wiki/Alder"
+        ],
+        "boundary": "原作战斗职务不等于行政职务；本作参会授权、会后会谈为演绎稿，不补写任职或生平。"
+      },
+      "opening_scene_note": "参加九地区停战谈判，作为本作获授权代表；不设就任、旅程、年龄、会议日期。",
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "summit",
+          "mode": "acted_sprite",
+          "sprite": "alder"
+        }
+      ]
+    },
+    {
+      "id": "diantha",
+      "name": "卡露妮",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "开场演绎中的正式人物",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "动画《XY》成年冠军设计：短棕发、白衣；不设年龄。",
+        "era_design": null,
+        "production_art": "开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/42-ceasefire-summit.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "source_identity": {
+        "evidence_level": "secondary_episode_reference",
+        "continuity": "分版本引用游戏／动画身份；不合并原作时间线。",
+        "facts": [
+          "卡洛斯冠军。"
+        ],
+        "sources": [
+          "https://bulbapedia.bulbagarden.net/wiki/Diantha"
+        ],
+        "boundary": "原作战斗职务不等于行政职务；本作参会授权、会后会谈为演绎稿，不补写任职或生平。"
+      },
+      "opening_scene_note": "参加九地区停战谈判，作为本作获授权代表；不设就任、旅程、年龄、会议日期。",
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "summit",
+          "mode": "acted_sprite",
+          "sprite": "diantha"
+        }
+      ]
+    },
+    {
+      "id": "geeta",
+      "name": "也慈",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "开场演绎中的正式人物",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "动画《地平线》成年设计参考：深蓝长发、蓝色挑染、深色套装；参考图尚未归档。",
+        "era_design": null,
+        "production_art": "开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/42-ceasefire-summit.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "source_identity": {
+        "evidence_level": "secondary_episode_reference",
+        "continuity": "分版本引用游戏／动画身份；不合并原作时间线。",
+        "facts": [
+          "帕底亚首席冠军及联盟会长。"
+        ],
+        "sources": [
+          "https://bulbapedia.bulbagarden.net/wiki/Geeta"
+        ],
+        "boundary": "原作战斗职务不等于行政职务；本作参会授权、会后会谈为演绎稿，不补写任职或生平。"
+      },
+      "opening_scene_note": "参加九地区停战谈判，作为本作获授权代表；不设就任、旅程、年龄、会议日期。",
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "summit",
+          "mode": "acted_sprite",
+          "sprite": "geeta"
+        }
+      ]
+    },
+    {
+      "id": "matori",
+      "name": "真鸟",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "开场演绎中的正式人物",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "动画《太阳＆月亮／旅途》成年真鸟：紫色齐刘海短发、眼镜、火箭队制服；本次为地图适配稿。",
+        "era_design": null,
+        "production_art": "开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/42-ceasefire-summit.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "source_identity": {
+        "evidence_level": "secondary_episode_reference",
+        "continuity": "分版本引用游戏／动画身份；不合并原作时间线。",
+        "facts": [
+          "动画中坂木的秘书、火箭队成员；不是原创联络员。"
+        ],
+        "sources": [
+          "https://bulbapedia.bulbagarden.net/wiki/Matori"
+        ],
+        "boundary": "原作战斗职务不等于行政职务；本作参会授权、会后会谈为演绎稿，不补写任职或生平。"
+      },
+      "opening_scene_note": "正式身份参与会后内部议事；不新增过往经历或未来结果。",
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "rocket",
+          "mode": "acted_sprite",
+          "sprite": "matori"
+        }
+      ]
+    },
+    {
+      "id": "silph-president-current",
+      "name": "希尔弗社长",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "开场演绎中的正式人物",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": "动画身份及图像未核验，保持未分配；暂用火红 gentleman 地图素材表达社长角色。不得冒认为1942年的创始人或断言血缘。",
+        "era_design": null,
+        "production_art": "开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/42-ceasefire-summit.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "source_identity": {
+        "evidence_level": "secondary_episode_reference",
+        "continuity": "分版本引用游戏／动画身份；不合并原作时间线。",
+        "facts": [
+          "关都游戏中希尔弗社长这一有正式身份的角色；没有已核实的个人姓名。"
+        ],
+        "sources": [
+          "https://bulbapedia.bulbagarden.net/wiki/Silph_Co."
+        ],
+        "boundary": "原作战斗职务不等于行政职务；本作参会授权、会后会谈为演绎稿，不补写任职或生平。"
+      },
+      "opening_scene_note": "正式身份参与会后内部议事；不新增过往经历或未来结果。",
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "silph",
+          "mode": "acted_sprite",
+          "sprite": "gentleman"
+        }
+      ]
     }
   ],
   "revision": "2026-09-28.1"

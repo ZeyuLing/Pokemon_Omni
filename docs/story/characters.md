@@ -159,3 +159,10 @@
 | [神奥后卫士兵 · 战场实例](characters/war-unit-62.md) | 场景提案 | 神奥部队的指挥所两翼警戒；独立地图事件实例 |
 | [合众传令兵 · 战场实例](characters/war-unit-63.md) | 场景提案 | 合众部队的指挥所两翼警戒；独立地图事件实例 |
 | [合众后卫士兵 · 战场实例](characters/war-unit-64.md) | 场景提案 | 合众部队的指挥所两翼警戒；独立地图事件实例 |
+| [梨花](characters/karen.md) | 场景提案 | 开场演绎中的正式人物 |
+| [哈拉](characters/hala.md) | 场景提案 | 开场演绎中的正式人物 |
+| [阿戴克](characters/alder.md) | 场景提案 | 开场演绎中的正式人物 |
+| [卡露妮](characters/diantha.md) | 场景提案 | 开场演绎中的正式人物 |
+| [也慈](characters/geeta.md) | 场景提案 | 开场演绎中的正式人物 |
+| [真鸟](characters/matori.md) | 场景提案 | 开场演绎中的正式人物 |
+| [希尔弗社长](characters/silph-president-current.md) | 场景提案 | 开场演绎中的正式人物 |

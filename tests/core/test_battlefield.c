@@ -1,6 +1,12 @@
 #include "omni/battlefield.h"
 #define CHECK(x) do { if (!(x)) return __LINE__; } while (0)
 int main(void) {
+ CHECK(omni_war_shot_progress(63)==0);
+ CHECK(omni_war_shot_progress(64)==0);
+ CHECK(omni_war_shot_progress(84)==128);
+ CHECK(omni_war_shot_progress(103)<256);
+ CHECK(omni_war_shot_progress(104)==256);
+ CHECK(omni_war_shot_progress(127)==256);
  OmniWarActor a[3]={
   {.x=100,.tx=100,.y=80,.ty=80,.team=0,.target=1,.attack=1,.stop=65535},
   {.x=40,.tx=40,.y=80,.ty=80,.team=1,.target=0,.attack=1,.stop=100},

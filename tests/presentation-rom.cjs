@@ -13,6 +13,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
  function auditBlocking(){
   state();const b=Buffer.from(m.HEAPU8.buffer,sp,n),cueIndex=b.readUInt32LE(po+104),cue=cues[cueIndex];
   if(!cue)return;const grid=grids[cue.stage],count=b.readUInt32LE(po+68);
+  assert.equal(count,Object.keys(cue.paths).length,"Runtime cast coverage");
   const currentAudio={chapter:cue.chapter,scene:cue.scene,track:b.readUInt32LE(po+40),block:b.readUInt32LE(po+44),loops:b.readUInt32LE(po+48)};
   if(lastAudio&&lastAudio.chapter!==cue.chapter&&['silph','rocket','lab'].includes(cue.scene)){
    assert.equal(currentAudio.track,4,'Meeting music must bridge the cut');
@@ -23,7 +24,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
   assert.equal(b.readUInt32LE(po+64),0,`Runtime blocked actor at cue ${cueIndex}`);
   const positions=[];
   for(let i=0;i<count;i++){
-   const x=b.readInt32LE(po+72+i*8),y=b.readInt32LE(po+76+i*8);positions.push([x,y]);
+   const o=i<4?72+i*8:112+(i-4)*8;const x=b.readInt32LE(po+o),y=b.readInt32LE(po+o+4);positions.push([x,y]);
    for(const [fx,fy] of [[x+2,y-12],[x+13,y-12],[x+2,y-1],[x+13,y-1]]){
     assert(fx>=0&&fy>=0&&fx<grid.width*16&&fy<grid.height*16,'Actor out of source room');
     assert.equal(grid.cells[Math.floor(fy/16)*grid.width+Math.floor(fx/16)],0,`Furniture overlap: cue ${cueIndex}, actor ${i}, (${x},${y})`);
@@ -45,8 +46,19 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
   assert.equal(state().scene,cue.cue,`Missing cue ${cue.cue}: ${JSON.stringify(state())}`);
   if(cue.dialogue){
    const total=script.scenes[cue.chapter].beats[cue.beat].lines.join('').length;
-   const s=state();if(s.letters+6<total){press(1);assert.equal(state().scene,cue.cue,'First A must reveal text, not skip dialogue');++reveals;}
+   const s=state();if(s.letters+16<total){press(1);assert.equal(state().scene,cue.cue,'First A must reveal text, not skip dialogue');++reveals;}
+   // Short lines may already be almost revealed at cue entry. Wait for the
+   // actual text clock, not a fixed number of host frames (nine actors cost
+   // more to draw than two). Keep the original short press/release cadence.
+   let revealBudget=total*4+90;
+   while(state().letters<total&&revealBudget-->0)frames(1);
+   assert(revealBudget>0,'Text reveal clock stalled');
    frames(20);shot('cue-'+cue.cue);chapters.add(cue.chapter);press(1);
+   // The probe publishes only after the complete framebuffer is transferred.
+   // Await that acknowledgement without injecting another button edge.
+   let publishBudget=32;
+   while(state().scene===cue.cue&&state().screen===14&&publishBudget-->0)frames(1);
+   assert(publishBudget>0,'Confirmed dialogue failed to publish next cue');
   }else{
    if(cue.duration>48){press(1);assert.equal(state().scene,cue.cue,'A must not teleport walking actors');++actions;}
    frames(8);shot('cue-'+cue.cue);

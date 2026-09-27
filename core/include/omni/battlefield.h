@@ -8,6 +8,9 @@ typedef struct {int16_t x,y;uint8_t face,step,action,hit;uint16_t phase;} OmniWa
 /* face: down, up, left, right, down-left, down-right, up-left, up-right.
  * Human support uses the cardinal subset; attack actors use all eight. */
 enum {OMNI_WAR_IDLE,OMNI_WAR_ADVANCE,OMNI_WAR_CHARGE,OMNI_WAR_FIRE,OMNI_WAR_RECOVER,OMNI_WAR_DOWN};
+enum {OMNI_WAR_SHOT_START=64,OMNI_WAR_IMPACT_START=104,OMNI_WAR_IMPACT_END=128};
+/* 0..256 progress; visual projectile arrival and hit reaction share a clock. */
+unsigned omni_war_shot_progress(unsigned phase);
 unsigned omni_war_target(const OmniWarActor *,unsigned count,unsigned index,uint32_t ticks);
 void omni_war_sample_all(const OmniWarActor *,unsigned count,uint32_t ticks,OmniWarPose *);
 /* Suppress hit recoil into a wall/lava; retain the authored traversable route.

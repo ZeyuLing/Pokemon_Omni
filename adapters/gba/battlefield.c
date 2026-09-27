@@ -22,7 +22,7 @@ static WAR_FAST void disc(int x,int y,int radius,uint16_t c){int xx,yy;if(x+radi
 static WAR_FAST void line(int x,int y,int tx,int ty,uint16_t c){int dx,dy,sx,sy,e;if((x<0&&tx<0)||(x>=240&&tx>=240)||(y<0&&ty<0)||(y>=160&&ty>=160))return;dx=tx>x?tx-x:x-tx;dy=ty>y?y-ty:ty-y;sx=x<tx?1:-1;sy=y<ty?1:-1;e=dx+dy;for(;;){int e2;dot(x,y,c);if(x==tx&&y==ty)break;e2=2*e;if(e2>=dy){e+=dy;x+=sx;}if(e2<=dx){e+=dx;y+=sy;}}}
 static const uint16_t colors[]={0,RGB(31,12,2),RGB(31,28,5),RGB(24,19,15),RGB(24,9,27),RGB(24,29,31),RGB(31,26,12),RGB(24,12,31)};
 WAR_FAST void omni_gba_war_draw(volatile uint16_t *surface,int cx,int cy,uint32_t ticks){
- OmniWarPose p[OMNI_WAR_COUNT];unsigned order[OMNI_WAR_COUNT],i,j,active=0,hits=0;int x,y;
+ OmniWarPose p[OMNI_WAR_COUNT];unsigned order[OMNI_WAR_COUNT],i,j,active=0,hits=0;int x,y,anchor_x[OMNI_WAR_COUNT],anchor_y[OMNI_WAR_COUNT];
  dst=surface;
  /* Authored regional standards are part of the terrain asset; commanders do
   * not carry a second, unrelated procedural flag on their heads. */
@@ -48,6 +48,9 @@ WAR_FAST void omni_gba_war_draw(volatile uint16_t *surface,int cx,int cy,uint32_
   else if(s->frames==4)frame=p[i].face;
   else {frame=p[i].face==0?0:p[i].face==1?1:2;if(p[i].action==OMNI_WAR_ADVANCE&&p[i].step)frame=(p[i].face==0?3:p[i].face==1?5:7)+(ticks/16&1);}
   frame%=s->frames;f=&s->frame_map[frame];pixels=omni_war_art+s->offset+f->offset;left=x+8-s->w/2;
+  /* Follow this frame's opaque body, including the actual airborne bob.
+   * Fixed foot-minus-16 anchors put shots below tall/flying Pokemon. */
+  anchor_x[i]=left+f->x+f->w/2;anchor_y[i]=y-s->h+f->y+f->h/2+bob;
   if(x+8+s->w/2>0&&left<240&&y>0&&y-s->h<160){
    {unsigned key=(unsigned)(pixels-omni_war_art)+1;unsigned char *cached=frame_cache+omni_war_cache_offsets[i];
     if(frame_cache_key[i]!=key){unpack_frame(pixels,(f->w*f->h+1)/2,cached);frame_cache_key[i]=key;}pixels=cached;}
@@ -68,17 +71,19 @@ WAR_FAST void omni_gba_war_draw(volatile uint16_t *surface,int cx,int cy,uint32_
  }
  for(i=0;i<OMNI_WAR_COUNT;++i){
   const OmniWarActor *a=&omni_war_actors[i];unsigned k,q=p[i].phase,target;int sx,sy,tx,ty;
-  if(!a->attack||p[i].action!=OMNI_WAR_FIRE)continue;
+  if(!a->attack||p[i].action==OMNI_WAR_DOWN||q<OMNI_WAR_SHOT_START||q>=OMNI_WAR_IMPACT_END)continue;
   target=omni_war_target(omni_war_actors,OMNI_WAR_COUNT,i,ticks);if(target>=OMNI_WAR_COUNT)continue;
-  ++active;sx=p[i].x+8-cx;sy=p[i].y-16-cy;tx=p[target].x+8-cx;ty=p[target].y-16-cy;
-  if(a->layer==2)sy-=8;if(omni_war_actors[target].layer==2)ty-=8;
-  if(a->attack==6&&q>82){line(sx,sy,tx,ty,colors[6]);line(sx,sy+1,tx,ty+1,RGB(31,31,27));line(sx,sy-1,tx,ty-1,RGB(31,14,3));}
-  for(k=0;k<9;++k){int u=(int)q-64-(int)k*2;if(u<0)continue;x=sx+(tx-sx)*u/48;y=sy+(ty-sy)*u/48;
+  if(p[i].action==OMNI_WAR_FIRE)++active;
+  sx=anchor_x[i];sy=anchor_y[i];tx=anchor_x[target];ty=anchor_y[target];
+  /* Start at the forward side of the body instead of beneath its feet. */
+  {int dx=tx-sx,dy=ty-sy,span=(dx<0?-dx:dx);if((dy<0?-dy:dy)>span)span=dy<0?-dy:dy;if(span){sx+=dx*5/span;sy+=dy*5/span;}}
+  if(a->attack==6&&q>=OMNI_WAR_IMPACT_START&&q<112){line(sx,sy,tx,ty,colors[6]);line(sx,sy+1,tx,ty+1,RGB(31,31,27));line(sx,sy-1,tx,ty-1,RGB(31,14,3));}
+  for(k=0;k<9;++k){int phase=(int)q-(int)k*2;unsigned u;if(phase<OMNI_WAR_SHOT_START||phase>OMNI_WAR_IMPACT_START)continue;u=omni_war_shot_progress((unsigned)phase);x=sx+(tx-sx)*(int)u/256;y=sy+(ty-sy)*(int)u/256;
    if(a->attack==2){int bend=((u/3)&1)?5:-5;line(x,y,x+bend,y+5,colors[2]);}
    else if(a->attack==7){disc(x,y,3,colors[7]);disc(x,y,1,RGB(31,25,31));}
    else {disc(x,y+(int)(k%3)-1,a->attack==1?3:2,colors[a->attack]);if(a->attack==1)dot(x,y,RGB(31,28,8));}
   }
-  if(q>=104){int r=2+(q-104)*2;for(k=0;k<8;++k){int dx=(k%3)-1,dy=(k/3)-1;line(tx+dx*2,ty+dy*2,tx+dx*r,ty+dy*r,RGB(31,23,15));}disc(tx,ty,3,colors[a->attack]);}
+  if(q>=OMNI_WAR_IMPACT_START){int r=2+(q-OMNI_WAR_IMPACT_START)%8;for(k=0;k<8;++k){int dx=(k%3)-1,dy=(k/3)-1;line(tx+dx*2,ty+dy*2,tx+dx*r,ty+dy*r,RGB(31,23,15));}disc(tx,ty,3,colors[a->attack]);}
  }
  /* Sparse drifting ash and ember trails; smoke covers fragments, not the whole scene. */
  for(i=0;i<24;++i){int xx=(int)((i*73+ticks/5)%560)-cx,yy=(int)((i*37+ticks/7)%336)-cy;dot(xx,yy,i%4?RGB(15,12,12):RGB(31,19,3));}

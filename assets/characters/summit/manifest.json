@@ -1,0 +1,23 @@
+{
+  "status": "opening_overworld_adaptations",
+  "image": "assets/characters/summit/delegates-source.png",
+  "sha256": "704d3afb1b481269c8fa7ef60da8aa41a3163ca9b59313085b343f2c453373bd",
+  "generator": "imagegen built-in",
+  "prompt": "7 rows x 4 cardinal views: Karen, Alder, Diantha, Hala, Leon, Geeta, Matori. Short FireRed overworld proportions referenced from build/pallet/human-reference-scale.png. Transparent, no labels. Common scale and 15-color character palettes.",
+  "rows": [
+    "karen",
+    "alder",
+    "diantha",
+    "hala",
+    "leon",
+    "geeta",
+    "matori"
+  ],
+  "limitations": "Generated adaptations, not ripped official art. Karen costume is a mixed Omni meeting adaptation. No completed seated/walk cycles or 3D models.",
+  "native": {
+    "lance": "FireRed original same frames as battlefield",
+    "steven": "Emerald pinned via war_sources.py",
+    "cynthia": "Platinum pinned via war_sources.py",
+    "silph-president-current": "FireRed gentleman temporary visual, no invented personal identity"
+  }
+}
