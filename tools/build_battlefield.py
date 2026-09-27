@@ -34,21 +34,9 @@ def compile_war():
             bg.paste(tiles[c],(x*16,y*16));terrain.append(2 if c=='~' else 1 if c in '#^v<>' else 0)
     blob=bytearray();sprites=[];art_layout=[]
     for s in data['sprites']:
-        if 'atlas_column' in s:
-            path=ROOT/'assets/characters/war-commanders-v1.png'
-            expected=json.loads((ROOT/'assets/characters/war-commanders-v1.json').read_text('utf8'))['sha256']
-            assert hashlib.sha256(path.read_bytes()).hexdigest()==expected, 'Commander atlas changed without provenance update'
-            im=Image.open(path).convert('RGBA');cw,ch=im.width//4,im.height//4;column=s['atlas_column'];frames=[]
-            for row in range(4):
-                cell=im.crop((column*cw,row*ch,(column+1)*cw,(row+1)*ch))
-                cell=cell.crop(cell.getbbox());cell.thumbnail((24,36),Image.Resampling.NEAREST)
-                canvas=Image.new('RGBA',(24,36));canvas.paste(cell,((24-cell.width)//2,36-cell.height));frames.append(canvas)
-            # Fixed 15-color palette for all directions; compilation only, source atlas preserved.
-            sheet=Image.new('RGBA',(96,36))
-            for i,f in enumerate(frames):sheet.paste(f,(i*24,0))
-            quant=sheet.convert('RGB').quantize(colors=15,method=Image.Quantize.MEDIANCUT).convert('RGB')
-            quant.putalpha(sheet.getchannel('A'))
-            frames=[quant.crop((i*24,0,(i+1)*24,36)) for i in range(4)]
+        if s.get('native_overworld'):
+            from war_humans import native_frames
+            frames=native_frames(s,get)
         elif 'pmd' in s:
             frames=war_sources.pokemon_frames(s['pmd'])
         else:
@@ -137,9 +125,9 @@ extern const uint32_t omni_war_cache_offsets[];
     (OUT/'war_data.c').write_text('#include "war_data.h"\nconst OmniWarActor omni_war_actors[]={'+','.join(rows)+'};\nconst OmniWarSprite omni_war_sprites[]={'+','.join(sprites)+'};\nconst unsigned char omni_war_terrain[]={'+','.join(map(str,terrain))+'};\nconst int16_t omni_war_standards[4][2]={'+standards+'};\n')
     (OUT/'war-terrain.json').write_text(json.dumps({'width':w,'height':h,'cells':terrain,'actors':actors}))
     with (OUT/'war_data.c').open('a') as target:target.write('const uint32_t omni_war_cache_offsets[]={'+','.join(map(str,cache_offsets))+'};\n')
-    fire_red_paths={s['path'] for s in data['sprites'] if 'path' in s and s.get('source')!='emerald'}
+    fire_red_paths={s['path'] for s in data['sprites'] if 'path' in s and s.get('source','firered')=='firered'}
     combined={**{path:records[path] for path in sorted(fire_red_paths)},**war_sources.records}
     for path,record in combined.items():
         assert path not in pinned or pinned[path]['sha256']==record['sha256'], 'Battlefield source changed: '+path
-    source_manifest.write_text(json.dumps({'scope':'Omni Mt Chimney front: Emerald volcanic tiles, PMD native animation frames with credits, FireRed human bases with runtime uniforms, generated commander atlas. No global geography or canonical war claims.','files':list(combined.values()),'actors':count,'sprite_bytes':len(blob),'commander_atlas':{'path':'assets/characters/war-commanders-v1.png','sha256':hashlib.sha256((ROOT/'assets/characters/war-commanders-v1.png').read_bytes()).hexdigest(),'runtime':'24x36, four directions, 15 colors + transparency'}},ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+    source_manifest.write_text(json.dumps({'scope':'Omni Mt Chimney front: Emerald volcanic tiles, PMD native animation frames with credits, FireRed human bases with runtime uniforms, native FireRed/Emerald/Platinum commander sheets. No global geography or canonical war claims.','files':list(combined.values()),'actors':count,'sprite_bytes':len(blob),'commander_sources':[s for s in data['sprites'] if s.get('native_overworld')]},ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     return bg,Image.new('L',bg.size),[int(c!=0) for c in terrain]

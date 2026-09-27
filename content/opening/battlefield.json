@@ -105,24 +105,84 @@
       "human": false
     },
     {
-      "name": "lance-war",
-      "atlas_column": 0,
-      "human": true
+      "name": "lance-native",
+      "source": "firered",
+      "path": "graphics/object_events/pics/people/lance.png",
+      "frame": [
+        16,
+        32
+      ],
+      "layout": "horizontal",
+      "directions": [
+        0,
+        1,
+        2,
+        2
+      ],
+      "mirror_right": true,
+      "offset_y": 0,
+      "human": true,
+      "native_overworld": true
     },
     {
-      "name": "drake-war",
-      "atlas_column": 1,
-      "human": true
+      "name": "drake-native",
+      "source": "emerald",
+      "path": "graphics/object_events/pics/people/elite_four/drake.png",
+      "frame": [
+        16,
+        32
+      ],
+      "layout": "horizontal",
+      "directions": [
+        0,
+        1,
+        2,
+        2
+      ],
+      "mirror_right": true,
+      "offset_y": 0,
+      "human": true,
+      "native_overworld": true
     },
     {
-      "name": "flint-war",
-      "atlas_column": 2,
-      "human": true
+      "name": "flint-native",
+      "source": "platinum",
+      "path": "res/graphics/field_sprites/npc/flint.png",
+      "frame": [
+        32,
+        32
+      ],
+      "layout": "vertical",
+      "directions": [
+        4,
+        0,
+        8,
+        12
+      ],
+      "mirror_right": false,
+      "offset_y": 1,
+      "human": true,
+      "native_overworld": true
     },
     {
-      "name": "caitlin-war",
-      "atlas_column": 3,
-      "human": true
+      "name": "caitlin-native",
+      "source": "platinum",
+      "path": "res/graphics/field_sprites/npc/caitlin.png",
+      "frame": [
+        32,
+        32
+      ],
+      "layout": "vertical",
+      "directions": [
+        4,
+        0,
+        8,
+        12
+      ],
+      "mirror_right": false,
+      "offset_y": 1,
+      "human": true,
+      "native_overworld": true
     },
     {
       "name": "kanto-infantry",

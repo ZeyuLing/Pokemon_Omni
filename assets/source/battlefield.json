@@ -1,11 +1,17 @@
 {
-  "scope": "Omni Mt Chimney front: Emerald volcanic tiles, PMD native animation frames with credits, FireRed human bases with runtime uniforms, generated commander atlas. No global geography or canonical war claims.",
+  "scope": "Omni Mt Chimney front: Emerald volcanic tiles, PMD native animation frames with credits, FireRed human bases with runtime uniforms, native FireRed/Emerald/Platinum commander sheets. No global geography or canonical war claims.",
   "files": [
     {
       "path": "graphics/object_events/pics/people/cooltrainer_m.png",
       "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/people/cooltrainer_m.png",
       "sha256": "0bf14055f9641ce78418c1396df0b329c7b7de571e9f9b6fd31161985e8a1dad",
       "bytes": 815
+    },
+    {
+      "path": "graphics/object_events/pics/people/lance.png",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/people/lance.png",
+      "sha256": "a47a03b01998e1bb0e35f0cf380cd5ba813d40c8782020b760d9ca221be00da2",
+      "bytes": 458
     },
     {
       "path": "emerald/data/tilesets/primary/general/tiles.png",
@@ -542,6 +548,24 @@
       "bytes": 887
     },
     {
+      "path": "emerald/graphics/object_events/pics/people/elite_four/drake.png",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/graphics/object_events/pics/people/elite_four/drake.png",
+      "sha256": "3d7be3c557ff103c503cf46fecb221ad1c057cffea0cd111b2b36be2575087f2",
+      "bytes": 458
+    },
+    {
+      "path": "platinum/res/graphics/field_sprites/npc/flint.png",
+      "url": "https://raw.githubusercontent.com/pret/pokeplatinum/c248fb3f8cc9934ded800e489567c5c0eeee92eb/res/graphics/field_sprites/npc/flint.png",
+      "sha256": "349960fa3c54fa36dc74b780c25e717d024a0dafdf918b8d1c7ae0b51cdc9d47",
+      "bytes": 1032
+    },
+    {
+      "path": "platinum/res/graphics/field_sprites/npc/caitlin.png",
+      "url": "https://raw.githubusercontent.com/pret/pokeplatinum/c248fb3f8cc9934ded800e489567c5c0eeee92eb/res/graphics/field_sprites/npc/caitlin.png",
+      "sha256": "1ef44c550aa199cedffeea3222de68f2026985691d9afe8e547db9d0674387eb",
+      "bytes": 1195
+    },
+    {
       "path": "pmd/sprite/0142/AnimData.xml",
       "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0142/AnimData.xml",
       "sha256": "48409c958822b3fb3af4b6ff66dee8e70bd5999ca53633f506a829b62d291156",
@@ -975,10 +999,87 @@
     }
   ],
   "actors": 40,
-  "sprite_bytes": 261939,
-  "commander_atlas": {
-    "path": "assets/characters/war-commanders-v1.png",
-    "sha256": "76bea69ea5f9b0cc4d75622a2cd094166761b3f8135ad96cf4db413fe5d16548",
-    "runtime": "24x36, four directions, 15 colors + transparency"
-  }
+  "sprite_bytes": 261120,
+  "commander_sources": [
+    {
+      "name": "lance-native",
+      "source": "firered",
+      "path": "graphics/object_events/pics/people/lance.png",
+      "frame": [
+        16,
+        32
+      ],
+      "layout": "horizontal",
+      "directions": [
+        0,
+        1,
+        2,
+        2
+      ],
+      "mirror_right": true,
+      "offset_y": 0,
+      "human": true,
+      "native_overworld": true
+    },
+    {
+      "name": "drake-native",
+      "source": "emerald",
+      "path": "graphics/object_events/pics/people/elite_four/drake.png",
+      "frame": [
+        16,
+        32
+      ],
+      "layout": "horizontal",
+      "directions": [
+        0,
+        1,
+        2,
+        2
+      ],
+      "mirror_right": true,
+      "offset_y": 0,
+      "human": true,
+      "native_overworld": true
+    },
+    {
+      "name": "flint-native",
+      "source": "platinum",
+      "path": "res/graphics/field_sprites/npc/flint.png",
+      "frame": [
+        32,
+        32
+      ],
+      "layout": "vertical",
+      "directions": [
+        4,
+        0,
+        8,
+        12
+      ],
+      "mirror_right": false,
+      "offset_y": 1,
+      "human": true,
+      "native_overworld": true
+    },
+    {
+      "name": "caitlin-native",
+      "source": "platinum",
+      "path": "res/graphics/field_sprites/npc/caitlin.png",
+      "frame": [
+        32,
+        32
+      ],
+      "layout": "vertical",
+      "directions": [
+        4,
+        0,
+        8,
+        12
+      ],
+      "mirror_right": false,
+      "offset_y": 1,
+      "human": true,
+      "native_overworld": true
+    }
+  ]
 }

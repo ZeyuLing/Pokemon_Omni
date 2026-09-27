@@ -1660,8 +1660,8 @@
         "reference_media": "portrait-lance",
         "anime_identity": "参考电视动画《宝可梦》2022 年 7 月 8 日渡对卡露妮一集中的角色设计；仅借用外观，本作独裁者身份与经历为用户指定改编。主线时期的确切年龄、服饰调整待定。",
         "era_design": null,
-        "production_art": "已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。",
-        "war_sprite": "assets/characters/war-commanders-v1.png；四向 GBA 战装初版，非 3D 模型。"
+        "production_art": "已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。 战场与会议室地图小人均使用同一火红原生16×32图，正背左右帧逐像素一致；已停用生成战装。",
+        "war_sprite": "火红原生渡地图小人，16×32画布；与会议室使用同一来源和正背面帧。"
       },
       "biography": {
         "childhood": null,
@@ -4560,7 +4560,8 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": "藏蓝战衣、红肩章与披风",
-        "production_art": "四向战争服装图集编译小人"
+        "production_art": "火红原生渡地图小人，16×32画布；与会议室使用同一来源和正背面帧。",
+        "war_sprite": "火红原生渡地图小人，16×32画布；与会议室使用同一来源和正背面帧。"
       },
       "biography": {
         "childhood": null,
@@ -4791,7 +4792,8 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": "深蓝海军战衣、青白肩章",
-        "production_art": "四向战争服装图集编译小人"
+        "production_art": "绿宝石原生源治地图小人，16×32画布。",
+        "war_sprite": "绿宝石原生源治地图小人，16×32画布。"
       },
       "biography": {
         "childhood": null,
@@ -5022,7 +5024,8 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": "炭灰防寒战衣、橙黄肩甲",
-        "production_art": "四向战争服装图集编译小人"
+        "production_art": "白金原生大叶地图小人，32×32画布；原像素不缩放，整体下移1像素对齐脚底。",
+        "war_sprite": "白金原生大叶地图小人，32×32画布；原像素不缩放，整体下移1像素对齐脚底。"
       },
       "biography": {
         "childhood": null,
@@ -5253,7 +5256,8 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": "紫黑长战衣、浅紫领章",
-        "production_art": "四向战争服装图集编译小人"
+        "production_art": "白金原生嘉德丽雅地图小人，32×32画布；原像素不缩放，整体下移1像素对齐脚底。采用白金造型，不等同于动画成年外观，不改变Omni年龄或生平设定。",
+        "war_sprite": "白金原生嘉德丽雅地图小人，32×32画布；原像素不缩放，整体下移1像素对齐脚底。采用白金造型，不等同于动画成年外观，不改变Omni年龄或生平设定。"
       },
       "biography": {
         "childhood": null,
@@ -5484,8 +5488,8 @@
         "reference_media": null,
         "anime_identity": "电视动画《宝可梦 超世代》Vanity Affair 的白色船长帽、白须与深色船长外套；以成年动画形象适配战争服装，具体年龄不定。",
         "era_design": "第一次世界大战末期战装；日期与年龄未定",
-        "production_art": "imagegen 原创战争服装图集，编译为 24×36 四向 GBA 小人；无行走专属帧，无 3D 模型。",
-        "war_sprite": "assets/characters/war-commanders-v1.png；四向 GBA 战装初版，非 3D 模型。"
+        "production_art": "绿宝石原生源治地图小人，16×32画布。",
+        "war_sprite": "绿宝石原生源治地图小人，16×32画布。"
       },
       "biography": {
         "childhood": null,
@@ -5533,8 +5537,8 @@
         "reference_media": null,
         "anime_identity": "电视动画《宝可梦 钻石与珍珠》Four Roads Diverged in a Pokémon Port! 的红色蓬松卷发、黄色背心；改为黄色防护背心与炭灰野战服，具体年龄不定。",
         "era_design": "第一次世界大战末期战装；日期与年龄未定",
-        "production_art": "imagegen 原创战争服装图集，编译为 24×36 四向 GBA 小人；无行走专属帧，无 3D 模型。",
-        "war_sprite": "assets/characters/war-commanders-v1.png；四向 GBA 战装初版，非 3D 模型。"
+        "production_art": "白金原生大叶地图小人，32×32画布；原像素不缩放，整体下移1像素对齐脚底。",
+        "war_sprite": "白金原生大叶地图小人，32×32画布；原像素不缩放，整体下移1像素对齐脚底。"
       },
       "biography": {
         "childhood": null,
@@ -5582,8 +5586,8 @@
         "reference_media": null,
         "anime_identity": "电视动画《宝可梦 超级愿望》Jostling for the Junior Cup! 的长金发、浅色帽与裙装轮廓；适配紫黑战衣和浅紫披肩，成年设计，具体年龄不定。",
         "era_design": "第一次世界大战末期战装；日期与年龄未定",
-        "production_art": "imagegen 原创战争服装图集，编译为 24×36 四向 GBA 小人；无行走专属帧，无 3D 模型。",
-        "war_sprite": "assets/characters/war-commanders-v1.png；四向 GBA 战装初版，非 3D 模型。"
+        "production_art": "白金原生嘉德丽雅地图小人，32×32画布；原像素不缩放，整体下移1像素对齐脚底。采用白金造型，不等同于动画成年外观，不改变Omni年龄或生平设定。",
+        "war_sprite": "白金原生嘉德丽雅地图小人，32×32画布；原像素不缩放，整体下移1像素对齐脚底。采用白金造型，不等同于动画成年外观，不改变Omni年龄或生平设定。"
       },
       "biography": {
         "childhood": null,

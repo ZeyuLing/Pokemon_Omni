@@ -8,7 +8,7 @@ The repository submission/use policy places community submissions under CC BY-NC
 Source policy: https://github.com/PMDCollab/SpriteCollab/blob/88cd945ef14b1d0fc3024a268482d77dfcc529a0/README.md
 Community license: https://creativecommons.org/licenses/by-nc/4.0/
 
-FireRed human sprite bases and Emerald volcanic tiles are original game assets referenced through the pret decompilation projects. Their code licenses do not transfer ownership of Pokemon artwork. Commander war costumes are generated Omni adaptations, not official anime screenshots or finished 3D models.
+FireRed human sprite bases and Emerald volcanic tiles are original game assets referenced through the pret decompilation projects. Their code licenses do not transfer ownership of Pokemon artwork. Commander overworlds now use native FireRed (Lance), Emerald (Drake) and Platinum (Flint/Caitlin) sheets, pinned in assets/source/battlefield.json. The generated costume atlas is withdrawn from runtime. These game sprites are not anime reference images or 3D models.
 
 ## 0149 快龙
 

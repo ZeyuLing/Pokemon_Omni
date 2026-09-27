@@ -9,6 +9,16 @@ REV = '5eff78649e7170a877b961ef0b3da13b81a16038'
 BASE = f'https://raw.githubusercontent.com/pret/pokeemerald/{REV}/'
 records = {}
 PMD_REV='88cd945ef14b1d0fc3024a268482d77dfcc529a0'
+PLATINUM_REV='c248fb3f8cc9934ded800e489567c5c0eeee92eb'
+
+def platinum_get(path):
+    target=ROOT/'.cache/war-platinum'/path
+    url=f'https://raw.githubusercontent.com/pret/pokeplatinum/{PLATINUM_REV}/'+path
+    if not target.exists():
+        target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(download(url))
+    data=target.read_bytes()
+    records['platinum/'+path]=dict(path='platinum/'+path,url=url,sha256=hashlib.sha256(data).hexdigest(),bytes=len(data))
+    return data
 
 def download(url):
     for attempt in range(3):
