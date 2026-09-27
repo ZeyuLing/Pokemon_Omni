@@ -235,6 +235,20 @@
       "sha256": "ae8ce38a38708db551813f48db82645ed9a8156467cedf9e696431b3be14f10e"
     },
     {
+      "char": "东",
+      "codepoint": 19996,
+      "rom_offset": "0x1d3f52c",
+      "width": 12,
+      "sha256": "16985f0b95a202c15ad45b79ff13d700ca45e00238a4a030eca1a2edaf6496e7"
+    },
+    {
+      "char": "两",
+      "codepoint": 20004,
+      "rom_offset": "0x1d5052c",
+      "width": 12,
+      "sha256": "c18a3d55120853e87f335d38fbe4ee94ef7b1f43f42af5c047ee47b84fac75f5"
+    },
+    {
       "char": "个",
       "codepoint": 20010,
       "rom_offset": "0x1d4392c",
@@ -333,6 +347,13 @@
       "sha256": "4ed6a8a6c25f1e24485fe9810216077944c7dc5fc628d5a28eed9c63653da305"
     },
     {
+      "char": "交",
+      "codepoint": 20132,
+      "rom_offset": "0x1d4a46c",
+      "width": 12,
+      "sha256": "1807a27d34d079e4542dd4229463a5ad241d7a34d2ff7d9ce6f28b20ddcbded3"
+    },
+    {
       "char": "人",
       "codepoint": 20154,
       "rom_offset": "0x1d5b3ec",
@@ -410,13 +431,6 @@
       "sha256": "645907fc4da04462c750d9caa3ce7057d188acb2a6ea23df39ca9183facf35ad"
     },
     {
-      "char": "众",
-      "codepoint": 20247,
-      "rom_offset": "0x1d70bec",
-      "width": 12,
-      "sha256": "f49687cd7ebb721bc39479d7a952ef5854450772190fd6bc34af2d1d3c7516c6"
-    },
-    {
       "char": "伙",
       "codepoint": 20249,
       "rom_offset": "0x1d4802c",
@@ -473,11 +487,11 @@
       "sha256": "89916099e4579db3ea481ad4d8a1d6f9d5672a1ec965ed4d2c42ff2b809b3b10"
     },
     {
-      "char": "侧",
-      "codepoint": 20391,
-      "rom_offset": "0x1d3a22c",
+      "char": "保",
+      "codepoint": 20445,
+      "rom_offset": "0x1d3792c",
       "width": 12,
-      "sha256": "1da7aa52e8cc7e75e28ae47fbfeaaccdf78f774a21e503cb8afcbcb705cadc67"
+      "sha256": "12c1ec8dfe13d9c52ad5e6f79ff1bc16ef3d586ea1dc1f8f86559417566f1431"
     },
     {
       "char": "停",
@@ -599,6 +613,13 @@
       "sha256": "2b63e2f1e51757ebc57fbb228ea1c905d8169f0a49aa282cf4cf7df323ab86a3"
     },
     {
+      "char": "出",
+      "codepoint": 20986,
+      "rom_offset": "0x1d3bf2c",
+      "width": 12,
+      "sha256": "c94f15256abb98d83eda2954f999c068859280bdd2a069940ebdc80914cf1fa5"
+    },
+    {
       "char": "击",
       "codepoint": 20987,
       "rom_offset": "0x1d4822c",
@@ -641,6 +662,13 @@
       "sha256": "8eae0bb984f698e360ec6438c17bec761b5909c356acf21d9580f18cb820acec"
     },
     {
+      "char": "力",
+      "codepoint": 21147,
+      "rom_offset": "0x1d4ff6c",
+      "width": 12,
+      "sha256": "d0db469c5b146b7fe8d9b90ebeb73e2bc8642f1817a2c8aab54e7905be531d6e"
+    },
+    {
       "char": "动",
       "codepoint": 21160,
       "rom_offset": "0x1d3f62c",
@@ -660,6 +688,13 @@
       "rom_offset": "0x1d5a7ac",
       "width": 12,
       "sha256": "2a984d29933ff1291f63ab0a7c383c11b78ff6a2696c27b928a19bd886ac4cfe"
+    },
+    {
+      "char": "卡",
+      "codepoint": 21345,
+      "rom_offset": "0x1d4ceac",
+      "width": 12,
+      "sha256": "a6815f08b5fc65ef360f71d800cc514bb0aaf18de7b639ede41321a48b4a0977"
     },
     {
       "char": "却",
@@ -697,11 +732,25 @@
       "sha256": "6e11b50df0206e05afa8a9bdc899ceaf3e5a4dcb757de492c897e5b74157e858"
     },
     {
+      "char": "叉",
+      "codepoint": 21449,
+      "rom_offset": "0x1d3a3ac",
+      "width": 12,
+      "sha256": "c44b5b2436c554ab06e2e6e369df0e63bc72aac018edf94e4d19b2b2b702879e"
+    },
+    {
       "char": "发",
       "codepoint": 21457,
       "rom_offset": "0x1d40a6c",
       "width": 12,
       "sha256": "9042b4da3fe35e4af3d3571e12530d0b31bfc69b9febbe5e80f84c99369fca0b"
+    },
+    {
+      "char": "口",
+      "codepoint": 21475,
+      "rom_offset": "0x1d4db2c",
+      "width": 12,
+      "sha256": "5054f1f4bbaf601232c8235c64306055fccb8af504401ba6c76f958aabcd52f0"
     },
     {
       "char": "另",
@@ -739,13 +788,6 @@
       "sha256": "c01cfd0e2b9c433237ba0337e716a64865f2bde7ed2a865516e957e80423f9ec"
     },
     {
-      "char": "合",
-      "codepoint": 21512,
-      "rom_offset": "0x1d45e6c",
-      "width": 12,
-      "sha256": "a8b2443c2198bda3351c92ba3d2d535bfbe0b2025e10a34ca6b62409159121ca"
-    },
-    {
       "char": "名",
       "codepoint": 21517,
       "rom_offset": "0x1d545ec",
@@ -758,6 +800,13 @@
       "rom_offset": "0x1d469ac",
       "width": 12,
       "sha256": "9641b974fb28d15f143ce4f0d3e7a473ea142f100328bc26b9d5234cc069f3c8"
+    },
+    {
+      "char": "向",
+      "codepoint": 21521,
+      "rom_offset": "0x1d668ec",
+      "width": 12,
+      "sha256": "16e34bd38ad847441cab1fdd1a805649220bfed0ef999cf57e565bd6fcb567ca"
     },
     {
       "char": "吗",
@@ -828,13 +877,6 @@
       "rom_offset": "0x1d57dac",
       "width": 12,
       "sha256": "08d0d7ad959e3ce05aa0a81fa2fb8dac75901e4f40401b04d285021f594929b6"
-    },
-    {
-      "char": "哥",
-      "codepoint": 21733,
-      "rom_offset": "0x1d4356c",
-      "width": 12,
-      "sha256": "f43bc028b8d661a3ab96333df9a71e95ef98c28f2b2c660e1a07c650f44550ca"
     },
     {
       "char": "商",
@@ -970,6 +1012,13 @@
       "sha256": "2c2b5ac1498d4bd5d360145c9a46842e3d76fea20317e72dd4cf554aceb906b2"
     },
     {
+      "char": "央",
+      "codepoint": 22830,
+      "rom_offset": "0x1d6962c",
+      "width": 12,
+      "sha256": "c98aa8851efdf55f17907ddd0a5a513991794529f8be3dc0735efadf79a0ac69"
+    },
+    {
       "char": "奇",
       "codepoint": 22855,
       "rom_offset": "0x1d5896c",
@@ -996,13 +1045,6 @@
       "rom_offset": "0x1d5e16c",
       "width": 12,
       "sha256": "c48a33e4184a0d930f498ce465dc6a92f1901a859be83d2ec96b43c678127072"
-    },
-    {
-      "char": "姐",
-      "codepoint": 22992,
-      "rom_offset": "0x1d4ae6c",
-      "width": 12,
-      "sha256": "f0b781c51e231bfdc323f1342638c976003f3360d5bf06f78b016c852ad419e9"
     },
     {
       "char": "子",
@@ -1215,6 +1257,13 @@
       "sha256": "46fe56fff4901cca41f247619317e72277299554635f7da456ea2036c79cff41"
     },
     {
+      "char": "形",
+      "codepoint": 24418,
+      "rom_offset": "0x1d6776c",
+      "width": 12,
+      "sha256": "d423f020be96cb4ee5f4ce5322d8e680238784524ea6378250325f57211b74af"
+    },
+    {
       "char": "往",
       "codepoint": 24448,
       "rom_offset": "0x1d6396c",
@@ -1334,13 +1383,6 @@
       "sha256": "c6a0011a3c21b20fa7fb090440ddf826e81ead62d91f1ba2c7d386e48c4ff102"
     },
     {
-      "char": "截",
-      "codepoint": 25130,
-      "rom_offset": "0x1d4abac",
-      "width": 12,
-      "sha256": "173992e6297a1d1766e93996e568a7be89cf9e1be1a7cc2f779b772c1bb92728"
-    },
-    {
       "char": "所",
       "codepoint": 25152,
       "rom_offset": "0x1d6082c",
@@ -1432,18 +1474,11 @@
       "sha256": "57ff603cefc9fc0c043bcf2f834c1067587774ee74fcb02ef1091fcd85532f51"
     },
     {
-      "char": "挡",
-      "codepoint": 25377,
-      "rom_offset": "0x1d3dd2c",
+      "char": "持",
+      "codepoint": 25345,
+      "rom_offset": "0x1d3b72c",
       "width": 12,
-      "sha256": "9a1e8657a069f8a17f873798050c99ca58177f9192f5e2700ce860b0333019e2"
-    },
-    {
-      "char": "挤",
-      "codepoint": 25380,
-      "rom_offset": "0x1d489ac",
-      "width": 12,
-      "sha256": "3c58db49086fdfb8a0da28dec19d096ae66145abd96dbad2c2b1191fc0bca170"
+      "sha256": "0d2b2b3f26d091e52b9c24fb179f6254c9711d5c541b75f33bf1b0a37e3b808d"
     },
     {
       "char": "掌",
@@ -1481,13 +1516,6 @@
       "sha256": "8603e9e9145e244057e70a44bde96778bb812d7e425d21913eb6c4ded7676baa"
     },
     {
-      "char": "攻",
-      "codepoint": 25915,
-      "rom_offset": "0x1d43c6c",
-      "width": 12,
-      "sha256": "ae21b6405b23f7668cff6f4c6b15d928ea3448806d27480c28483e4494b9ce18"
-    },
-    {
       "char": "政",
       "codepoint": 25919,
       "rom_offset": "0x1d6fd6c",
@@ -1500,13 +1528,6 @@
       "rom_offset": "0x1d4bf2c",
       "width": 12,
       "sha256": "c07cf95a0264045bbf3413c16c2021ac303326bdae3e56031a8d5f84b3a1a770"
-    },
-    {
-      "char": "散",
-      "codepoint": 25955,
-      "rom_offset": "0x1d5c12c",
-      "width": 12,
-      "sha256": "46d81b1a2211e7a1e1402687b7fa104e444dc84cdd68ac675ce3853c205d5e9a"
     },
     {
       "char": "新",
@@ -1717,6 +1738,13 @@
       "rom_offset": "0x1d53aac",
       "width": 12,
       "sha256": "501227d065ebb1923198bbf62ffc945dba34a6dc23d765351cd071f7056ebe1f"
+    },
+    {
+      "char": "楔",
+      "codepoint": 26964,
+      "rom_offset": "0x1d66dec",
+      "width": 12,
+      "sha256": "a70e97b3d792ead918bc5c12eba885c73eda06cb80727f3bfce2845b8ecd873c"
     },
     {
       "char": "楚",
@@ -2076,32 +2104,11 @@
       "sha256": "42147ec785f1adcb6cb71adacc0488cd7ece9c13b01c00fb398a6c79e8abf0ba"
     },
     {
-      "char": "稳",
-      "codepoint": 31283,
-      "rom_offset": "0x1d644ac",
-      "width": 12,
-      "sha256": "31e9c5ae18a8519a7789a6680bfd1a20c873918d0cfc4dfddb83657c401b4eff"
-    },
-    {
       "char": "究",
       "codepoint": 31350,
       "rom_offset": "0x1d4bcec",
       "width": 12,
       "sha256": "c45c3e762cf127a90b0743a76fd7c4ebe3894079c9c39446839ac7d9f93a9603"
-    },
-    {
-      "char": "空",
-      "codepoint": 31354,
-      "rom_offset": "0x1d4d9ec",
-      "width": 12,
-      "sha256": "19dc4e5c03a20d13954f333e0f80ca2ace4d7f94b89ef9780b983d3d8a5f0199"
-    },
-    {
-      "char": "穿",
-      "codepoint": 31359,
-      "rom_offset": "0x1d3c36c",
-      "width": 12,
-      "sha256": "d9613932cd11544e78549b2282dcba2d4b1f42d2d312356217ce93f30fe3608d"
     },
     {
       "char": "突",
@@ -2349,11 +2356,11 @@
       "sha256": "c86911d3c5b8591fcbb710caa0f49fd31ad24af00164541e70e218483c1878bb"
     },
     {
-      "char": "裂",
-      "codepoint": 35010,
-      "rom_offset": "0x1d50a2c",
+      "char": "装",
+      "codepoint": 35013,
+      "rom_offset": "0x1d718ec",
       "width": 12,
-      "sha256": "f481b1bdae0e5811a3637635b831e59e469f29d35ae064f0cb9b1dc25e56eb21"
+      "sha256": "ae540b064db36ac21f180af7e2168f87a55a8b921600c321c52032faae692add"
     },
     {
       "char": "西",
@@ -2452,13 +2459,6 @@
       "rom_offset": "0x1d60f6c",
       "width": 12,
       "sha256": "4cb4ec2f670c57124625ea22d43d050edbe1673df0ab57f29e2b71ef8d257289"
-    },
-    {
-      "char": "谷",
-      "codepoint": 35895,
-      "rom_offset": "0x1d4452c",
-      "width": 12,
-      "sha256": "c97bd3ca6c5410f35b39c443094868498fb93c80163da648b49c80e3115e107e"
     },
     {
       "char": "败",
@@ -2608,6 +2608,13 @@
       "sha256": "0038ecd1d5a793df4778cb5cde9fbae66b17c8604d7d0b41efe900b4dd4507b5"
     },
     {
+      "char": "追",
+      "codepoint": 36861,
+      "rom_offset": "0x1d71aac",
+      "width": 12,
+      "sha256": "34a57b06ddde01290ce7ef972bb955e025a1a785c0889fb46c63f3f387224242"
+    },
+    {
       "char": "送",
       "codepoint": 36865,
       "rom_offset": "0x1d5fd2c",
@@ -2620,6 +2627,13 @@
       "rom_offset": "0x1d683ac",
       "width": 12,
       "sha256": "3711870aa9b4d957432bec53df3fb68338204da60ef300ad10f633fdb2f401ec"
+    },
+    {
+      "char": "通",
+      "codepoint": 36890,
+      "rom_offset": "0x1d6252c",
+      "width": 12,
+      "sha256": "ef61048d9a5fb26449b32e4a4f1dfb30ac317809f2fa4de965c3f03f5c7e0d41"
     },
     {
       "char": "道",
@@ -2811,6 +2825,6 @@
       "sha256": "2896236f4b9b997c1eaa9ec109f441fb8666680e50c143a6d1cad2abfcd97f7d"
     }
   ],
-  "blob_sha256": "a88f551e4466d9fe41c2a875c455ef9c0c1b8c1456cfc80dfcd149d0f9d105a1",
-  "bytes": 48640
+  "blob_sha256": "0112d2482b236fc2221453ff2d56e737978568aa36d9781c3807956bdef64287",
+  "bytes": 48768
 }

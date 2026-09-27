@@ -42,7 +42,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
  const before=sram();press(512);assert.equal(state().screen,14);
  let reveals=0,actions=0;const chapters=new Set();auditing=true;
  for(const cue of cues){
-  assert.equal(state().scene,cue.cue,`Missing cue ${cue.cue}`);
+  assert.equal(state().scene,cue.cue,`Missing cue ${cue.cue}: ${JSON.stringify(state())}`);
   if(cue.dialogue){
    const total=script.scenes[cue.chapter].beats[cue.beat].lines.join('').length;
    const s=state();if(s.letters+6<total){press(1);assert.equal(state().scene,cue.cue,'First A must reveal text, not skip dialogue');++reveals;}

@@ -19,28 +19,28 @@
   },
   "map": [
     "################################",
-    "#~~~~~~~.....,......,.....~~~~~#",
-    "#~~~~~~~....,......,......~~~~~#",
-    "#~~~~~~~...,......,......,.....#",
-    "#..,......,......,......,......#",
-    "#.,......,......,......,......,#",
+    "#~~~~~~~~....,......,.....~~~~~#",
+    "#~~~~~~~~...,......,......~~~~~#",
+    "#~~~~~~~~..,......,......,.....#",
+    "#~~~~~~~~.,......,......,......#",
+    "#vvvvvvvv,......,......,......,#",
     "#,......,......,......,......,.#",
-    "#......,......,......,......,..#",
-    "#.....,......,^^....,......,...#",
-    "#....,......,<~~>..,......,..~~#",
-    "#...,......,.<~~>.,......,...~~#",
-    "#..,......,...vv.,......,....~~#",
-    "#.,......,......,......,.....~~#",
-    "#,......,......,......,......~~#",
     "#......,......,......,......,..#",
     "#.....,......,......,......,...#",
     "#....,......,......,......,....#",
+    "#...,......,.~....~......,.....#",
+    "#..,......,..~...,~.....,......#",
+    "#.,......,......,......,......,#",
+    "#,......,....~.,..~...,......,.#",
+    "#......,.....~,...~..,......,..#",
+    "#.....,......,......,......,...#",
+    "#....,......,......,......,....#",
     "#...,......,......,......,.....#",
-    "#~~~~~~~~~,......,......,......#",
-    "#..............................#",
-    "#..............................#",
-    "#..............................#",
-    "#...~~~~~~~.............~~~~~~.#",
+    "#..,......,......,......,......#",
+    "#^^^^....,......,......,..^^^^^#",
+    "#~~~~...,......,......,...~~~~~#",
+    "#~~~~..,......,......,....~~~~~#",
+    "#~~~~.,......,......,.....~~~~~#",
     "################################"
   ],
   "sprites": [
@@ -300,21 +300,27 @@
       "sprite": 0,
       "team": 0,
       "at": [
-        232,
-        88
+        248,
+        136
       ],
       "to": [
-        232,
-        104
+        248,
+        160
       ],
       "layer": 2,
       "attack": 6,
       "phase": 0,
-      "start": 64,
+      "start": 48,
       "duration": 128,
       "role": 2,
-      "target": 5,
-      "stop": 65535
+      "target": 10,
+      "stop": 65535,
+      "deployment": {
+        "station": "中央突击尖兵",
+        "purpose": "推进到北口，正面压制南侧烈焰猴；不离开两翼保护。",
+        "formation_rank": 0,
+        "facing_rule": "Face assigned opponent while firing; follow path while moving."
+      }
     },
     {
       "id": "war-unit-02",
@@ -322,21 +328,27 @@
       "sprite": 20,
       "team": 0,
       "at": [
-        288,
-        64
+        296,
+        128
       ],
       "to": [
-        288,
-        80
+        296,
+        144
       ],
       "layer": 2,
       "attack": 3,
-      "phase": 43,
-      "start": 82,
+      "phase": 12,
+      "start": 60,
       "duration": 128,
       "role": 0,
-      "target": 15,
-      "stop": 1600
+      "target": 18,
+      "stop": 1600,
+      "deployment": {
+        "station": "右翼制空",
+        "purpose": "在突击队右上空截击三首恶龙，保护关都右翼。",
+        "formation_rank": 1,
+        "facing_rule": "Face assigned opponent while firing; follow path while moving."
+      }
     },
     {
       "id": "war-unit-03",
@@ -344,21 +356,27 @@
       "sprite": 2,
       "team": 0,
       "at": [
-        184,
-        104
+        200,
+        128
       ],
       "to": [
-        184,
-        120
+        200,
+        144
       ],
       "layer": 0,
       "attack": 4,
-      "phase": 86,
-      "start": 100,
+      "phase": 24,
+      "start": 72,
       "duration": 128,
       "role": 0,
-      "target": 10,
-      "stop": 65535
+      "target": 6,
+      "stop": 65535,
+      "deployment": {
+        "station": "左翼护卫",
+        "purpose": "封住丰缘雷电兽接近北口的侧路。",
+        "formation_rank": 1,
+        "facing_rule": "Face assigned opponent while firing; follow path while moving."
+      }
     },
     {
       "id": "war-unit-04",
@@ -366,21 +384,27 @@
       "sprite": 21,
       "team": 0,
       "at": [
-        152,
-        56
+        208,
+        96
       ],
       "to": [
-        152,
-        72
+        208,
+        96
       ],
       "layer": 0,
       "attack": 3,
-      "phase": 129,
-      "start": 118,
-      "duration": 128,
+      "phase": 36,
+      "start": 84,
+      "duration": 0,
       "role": 0,
-      "target": 7,
-      "stop": 1600
+      "target": 8,
+      "stop": 1600,
+      "deployment": {
+        "station": "后列支撑",
+        "purpose": "在左翼后方牵制沙漠蜻蜓，保护指挥区。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent while firing; follow path while moving."
+      }
     },
     {
       "id": "war-unit-05",
@@ -388,21 +412,27 @@
       "sprite": 22,
       "team": 0,
       "at": [
-        336,
-        56
+        288,
+        96
       ],
       "to": [
-        336,
-        72
+        288,
+        96
       ],
       "layer": 0,
       "attack": 1,
-      "phase": 172,
-      "start": 136,
-      "duration": 128,
+      "phase": 48,
+      "start": 96,
+      "duration": 0,
       "role": 0,
-      "target": 18,
-      "stop": 1600
+      "target": 16,
+      "stop": 1600,
+      "deployment": {
+        "station": "右翼火力",
+        "purpose": "从北侧后列压制水晶灯火灵，为右翼提供火力。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent while firing; follow path while moving."
+      }
     },
     {
       "id": "war-unit-06",
@@ -410,21 +440,27 @@
       "sprite": 3,
       "team": 1,
       "at": [
-        112,
-        136
+        168,
+        192
       ],
       "to": [
-        128,
-        136
+        192,
+        192
       ],
       "layer": 2,
       "attack": 6,
-      "phase": 215,
-      "start": 112,
+      "phase": 80,
+      "start": 72,
       "duration": 128,
       "role": 2,
-      "target": 0,
-      "stop": 65535
+      "target": 15,
+      "stop": 65535,
+      "deployment": {
+        "station": "西口前沿",
+        "purpose": "在重装阵列前控制西口，压制东侧哥德小姐。",
+        "formation_rank": 0,
+        "facing_rule": "Face assigned opponent while firing; follow path while moving."
+      }
     },
     {
       "id": "war-unit-07",
@@ -432,21 +468,27 @@
       "sprite": 23,
       "team": 1,
       "at": [
-        88,
-        192
+        152,
+        160
       ],
       "to": [
-        104,
-        192
+        168,
+        160
       ],
       "layer": 0,
       "attack": 2,
-      "phase": 258,
-      "start": 130,
+      "phase": 92,
+      "start": 84,
       "duration": 128,
       "role": 0,
-      "target": 11,
-      "stop": 1600
+      "target": 2,
+      "stop": 1600,
+      "deployment": {
+        "station": "北侧警戒",
+        "purpose": "守西口北肩，与尼多王接触，阻止绕入西方后方。",
+        "formation_rank": 1,
+        "facing_rule": "Face assigned opponent while firing; follow path while moving."
+      }
     },
     {
       "id": "war-unit-08",
@@ -454,21 +496,27 @@
       "sprite": 5,
       "team": 1,
       "at": [
-        168,
-        184
+        152,
+        240
       ],
       "to": [
-        184,
-        184
+        168,
+        240
       ],
       "layer": 0,
       "attack": 3,
-      "phase": 301,
-      "start": 148,
+      "phase": 104,
+      "start": 96,
       "duration": 128,
       "role": 0,
-      "target": 17,
-      "stop": 65535
+      "target": 11,
+      "stop": 65535,
+      "deployment": {
+        "station": "重装盾位",
+        "purpose": "占住西口南肩，挡住暴雪王的侧向推进。",
+        "formation_rank": 1,
+        "facing_rule": "Face assigned opponent while firing; follow path while moving."
+      }
     },
     {
       "id": "war-unit-09",
@@ -476,21 +524,27 @@
       "sprite": 24,
       "team": 1,
       "at": [
-        48,
-        112
+        120,
+        160
       ],
       "to": [
-        64,
-        112
+        120,
+        160
       ],
       "layer": 2,
       "attack": 6,
-      "phase": 24,
-      "start": 166,
-      "duration": 128,
+      "phase": 116,
+      "start": 108,
+      "duration": 0,
       "role": 0,
       "target": 3,
-      "stop": 1600
+      "stop": 1600,
+      "deployment": {
+        "station": "高位支援",
+        "purpose": "从西侧后方牵制卡比兽，掩护雷电兽。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent while firing; follow path while moving."
+      }
     },
     {
       "id": "war-unit-10",
@@ -498,21 +552,27 @@
       "sprite": 25,
       "team": 1,
       "at": [
-        112,
+        120,
         224
       ],
       "to": [
-        128,
+        120,
         224
       ],
       "layer": 0,
       "attack": 7,
-      "phase": 67,
-      "start": 184,
-      "duration": 128,
+      "phase": 128,
+      "start": 120,
+      "duration": 0,
       "role": 0,
       "target": 13,
-      "stop": 1600
+      "stop": 1600,
+      "deployment": {
+        "station": "后列火力",
+        "purpose": "在波士可多拉后方压制路卡利欧，守南侧通路。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent while firing; follow path while moving."
+      }
     },
     {
       "id": "war-unit-11",
@@ -520,21 +580,27 @@
       "sprite": 6,
       "team": 2,
       "at": [
-        232,
-        232
+        248,
+        248
       ],
       "to": [
-        232,
-        216
+        248,
+        224
       ],
       "layer": 0,
       "attack": 1,
-      "phase": 110,
-      "start": 160,
+      "phase": 160,
+      "start": 96,
       "duration": 128,
       "role": 2,
-      "target": 15,
-      "stop": 65535
+      "target": 0,
+      "stop": 65535,
+      "deployment": {
+        "station": "楔形尖兵",
+        "purpose": "从南口正面迎击快龙，后列保持掩护距离。",
+        "formation_rank": 0,
+        "facing_rule": "Face assigned opponent while firing; follow path while moving."
+      }
     },
     {
       "id": "war-unit-12",
@@ -542,21 +608,27 @@
       "sprite": 26,
       "team": 2,
       "at": [
-        168,
-        264
+        200,
+        288
       ],
       "to": [
-        168,
-        248
+        200,
+        272
       ],
       "layer": 0,
       "attack": 5,
-      "phase": 153,
-      "start": 178,
+      "phase": 172,
+      "start": 108,
       "duration": 128,
       "role": 0,
-      "target": 6,
-      "stop": 1600
+      "target": 7,
+      "stop": 1600,
+      "deployment": {
+        "station": "左翼掩护",
+        "purpose": "在楔形左翼牵制波士可多拉，防止西侧合围。",
+        "formation_rank": 1,
+        "facing_rule": "Face assigned opponent while firing; follow path while moving."
+      }
     },
     {
       "id": "war-unit-13",
@@ -564,21 +636,27 @@
       "sprite": 8,
       "team": 2,
       "at": [
-        288,
-        264
+        296,
+        288
       ],
       "to": [
-        288,
-        248
+        296,
+        272
       ],
       "layer": 0,
       "attack": 3,
-      "phase": 196,
-      "start": 196,
+      "phase": 184,
+      "start": 120,
       "duration": 128,
       "role": 0,
-      "target": 2,
-      "stop": 65535
+      "target": 17,
+      "stop": 65535,
+      "deployment": {
+        "station": "右翼突破",
+        "purpose": "阻挡龙头地鼠进入神奥右翼，不追入东侧后方。",
+        "formation_rank": 1,
+        "facing_rule": "Face assigned opponent while firing; follow path while moving."
+      }
     },
     {
       "id": "war-unit-14",
@@ -586,21 +664,27 @@
       "sprite": 27,
       "team": 2,
       "at": [
-        104,
-        280
+        208,
+        304
       ],
       "to": [
-        104,
-        264
+        208,
+        304
       ],
       "layer": 0,
       "attack": 6,
-      "phase": 239,
-      "start": 214,
-      "duration": 128,
+      "phase": 196,
+      "start": 132,
+      "duration": 0,
       "role": 0,
-      "target": 19,
-      "stop": 1600
+      "target": 9,
+      "stop": 1600,
+      "deployment": {
+        "station": "后列支援",
+        "purpose": "从左后方压制巨金怪，掩护暴雪王。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent while firing; follow path while moving."
+      }
     },
     {
       "id": "war-unit-15",
@@ -608,21 +692,27 @@
       "sprite": 28,
       "team": 2,
       "at": [
-        352,
-        280
+        288,
+        304
       ],
       "to": [
-        352,
-        264
+        288,
+        304
       ],
       "layer": 0,
       "attack": 3,
-      "phase": 282,
-      "start": 232,
-      "duration": 128,
+      "phase": 208,
+      "start": 144,
+      "duration": 0,
       "role": 0,
-      "target": 16,
-      "stop": 1600
+      "target": 19,
+      "stop": 1600,
+      "deployment": {
+        "station": "后列支撑",
+        "purpose": "压住流氓鳄的南侧接近路线，保护本队后方。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent while firing; follow path while moving."
+      }
     },
     {
       "id": "war-unit-16",
@@ -630,21 +720,27 @@
       "sprite": 9,
       "team": 3,
       "at": [
-        344,
-        168
+        328,
+        192
       ],
       "to": [
-        328,
-        168
+        304,
+        192
       ],
       "layer": 0,
       "attack": 7,
-      "phase": 5,
-      "start": 208,
+      "phase": 240,
+      "start": 120,
       "duration": 128,
       "role": 2,
-      "target": 10,
-      "stop": 65535
+      "target": 5,
+      "stop": 65535,
+      "deployment": {
+        "station": "东口控制",
+        "purpose": "从东口压制暴飞龙，维持两翼之间的阵线。",
+        "formation_rank": 0,
+        "facing_rule": "Face assigned opponent while firing; follow path while moving."
+      }
     },
     {
       "id": "war-unit-17",
@@ -652,21 +748,27 @@
       "sprite": 29,
       "team": 3,
       "at": [
-        392,
-        128
+        344,
+        144
       ],
       "to": [
-        376,
-        128
+        328,
+        144
       ],
       "layer": 2,
       "attack": 1,
-      "phase": 48,
-      "start": 226,
+      "phase": 252,
+      "start": 132,
       "duration": 128,
       "role": 0,
       "target": 4,
-      "stop": 1600
+      "stop": 1600,
+      "deployment": {
+        "station": "北翼火力",
+        "purpose": "压制北侧风速狗，保护合众北肩。",
+        "formation_rank": 1,
+        "facing_rule": "Face assigned opponent while firing; follow path while moving."
+      }
     },
     {
       "id": "war-unit-18",
@@ -674,21 +776,27 @@
       "sprite": 11,
       "team": 3,
       "at": [
-        296,
-        168
+        344,
+        240
       ],
       "to": [
-        280,
-        168
+        328,
+        240
       ],
       "layer": 0,
       "attack": 3,
-      "phase": 91,
-      "start": 244,
+      "phase": 264,
+      "start": 144,
       "duration": 128,
       "role": 0,
-      "target": 7,
-      "stop": 65535
+      "target": 12,
+      "stop": 65535,
+      "deployment": {
+        "station": "南翼拦截",
+        "purpose": "在东口南肩挡住烈咬陆鲨，保持通往指挥区的退路。",
+        "formation_rank": 1,
+        "facing_rule": "Face assigned opponent while firing; follow path while moving."
+      }
     },
     {
       "id": "war-unit-19",
@@ -696,21 +804,27 @@
       "sprite": 30,
       "team": 3,
       "at": [
-        464,
-        64
+        384,
+        96
       ],
       "to": [
-        448,
-        64
+        384,
+        96
       ],
       "layer": 2,
       "attack": 6,
-      "phase": 134,
-      "start": 262,
-      "duration": 128,
+      "phase": 276,
+      "start": 156,
+      "duration": 0,
       "role": 0,
       "target": 1,
-      "stop": 1600
+      "stop": 1600,
+      "deployment": {
+        "station": "高位警戒",
+        "purpose": "从后方截击化石翼龙，阻止其绕过北翼。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent while firing; follow path while moving."
+      }
     },
     {
       "id": "war-unit-20",
@@ -718,21 +832,27 @@
       "sprite": 31,
       "team": 3,
       "at": [
-        368,
+        384,
         224
       ],
       "to": [
-        352,
+        384,
         224
       ],
       "layer": 0,
       "attack": 3,
-      "phase": 177,
-      "start": 280,
-      "duration": 128,
+      "phase": 288,
+      "start": 168,
+      "duration": 0,
       "role": 0,
-      "target": 12,
-      "stop": 1600
+      "target": 14,
+      "stop": 1600,
+      "deployment": {
+        "station": "南侧火力",
+        "purpose": "压制土台龟，防止神奥沿南缘包抄。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent while firing; follow path while moving."
+      }
     },
     {
       "id": "war-unit-21",
@@ -740,11 +860,11 @@
       "sprite": 12,
       "team": 0,
       "at": [
-        224,
+        248,
         48
       ],
       "to": [
-        224,
+        248,
         48
       ],
       "layer": 0,
@@ -754,7 +874,13 @@
       "duration": 0,
       "role": 2,
       "target": 0,
-      "stop": 65535
+      "stop": 65535,
+      "deployment": {
+        "station": "后方指挥",
+        "purpose": "位于本队突击线之后，面向本队前沿，保留通向后方的撤离空间。",
+        "formation_rank": 3,
+        "facing_rule": "Watch assigned partner or own frontline."
+      }
     },
     {
       "id": "war-unit-22",
@@ -762,12 +888,12 @@
       "sprite": 16,
       "team": 0,
       "at": [
-        192,
-        48
+        168,
+        80
       ],
       "to": [
-        192,
-        48
+        168,
+        80
       ],
       "layer": 0,
       "attack": 0,
@@ -776,7 +902,13 @@
       "duration": 0,
       "role": 0,
       "target": 0,
-      "stop": 1600
+      "stop": 1600,
+      "deployment": {
+        "station": "侧后警戒训练家",
+        "purpose": "守住本方后侧接近路线；切镜后负伤倒地，未设定死亡。",
+        "formation_rank": 3,
+        "facing_rule": "Watch assigned partner or own frontline."
+      }
     },
     {
       "id": "war-unit-23",
@@ -784,12 +916,12 @@
       "sprite": 16,
       "team": 0,
       "at": [
-        384,
-        96
+        352,
+        64
       ],
       "to": [
-        384,
-        96
+        352,
+        64
       ],
       "layer": 0,
       "attack": 0,
@@ -797,8 +929,14 @@
       "start": 0,
       "duration": 0,
       "role": 4,
-      "target": 0,
-      "stop": 65535
+      "target": 24,
+      "stop": 65535,
+      "deployment": {
+        "station": "伙伴训练家",
+        "purpose": "与自己的伙伴成组驻留，面向伙伴；战后呼唤而不站在主火线上。",
+        "formation_rank": 3,
+        "facing_rule": "Watch assigned partner or own frontline."
+      }
     },
     {
       "id": "war-unit-24",
@@ -806,11 +944,11 @@
       "sprite": 16,
       "team": 0,
       "at": [
-        448,
+        400,
         96
       ],
       "to": [
-        432,
+        344,
         96
       ],
       "layer": 0,
@@ -819,8 +957,14 @@
       "start": 1700,
       "duration": 128,
       "role": 3,
-      "target": 0,
-      "stop": 65535
+      "target": 24,
+      "stop": 65535,
+      "deployment": {
+        "station": "后方救护",
+        "purpose": "在本方后方待命，战后沿侧后安全路接近伤者，不横穿中央交火区。",
+        "formation_rank": 3,
+        "facing_rule": "Watch assigned partner or own frontline."
+      }
     },
     {
       "id": "war-unit-25",
@@ -828,11 +972,11 @@
       "sprite": 1,
       "team": 0,
       "at": [
-        400,
+        320,
         64
       ],
       "to": [
-        400,
+        320,
         64
       ],
       "layer": 0,
@@ -841,8 +985,14 @@
       "start": 0,
       "duration": 0,
       "role": 0,
-      "target": 0,
-      "stop": 1600
+      "target": 22,
+      "stop": 1600,
+      "deployment": {
+        "station": "后方伙伴",
+        "purpose": "与训练家成组驻留，为战后伤情镜头保留明确空间关系。",
+        "formation_rank": 3,
+        "facing_rule": "Watch assigned partner or own frontline."
+      }
     },
     {
       "id": "war-unit-26",
@@ -850,12 +1000,12 @@
       "sprite": 13,
       "team": 1,
       "at": [
-        40,
-        160
+        48,
+        192
       ],
       "to": [
-        40,
-        160
+        48,
+        192
       ],
       "layer": 0,
       "attack": 0,
@@ -863,8 +1013,14 @@
       "start": 0,
       "duration": 0,
       "role": 2,
-      "target": 0,
-      "stop": 65535
+      "target": 5,
+      "stop": 65535,
+      "deployment": {
+        "station": "后方指挥",
+        "purpose": "位于本队突击线之后，面向本队前沿，保留通向后方的撤离空间。",
+        "formation_rank": 3,
+        "facing_rule": "Watch assigned partner or own frontline."
+      }
     },
     {
       "id": "war-unit-27",
@@ -872,12 +1028,12 @@
       "sprite": 17,
       "team": 1,
       "at": [
-        32,
-        200
+        56,
+        256
       ],
       "to": [
-        32,
-        200
+        56,
+        256
       ],
       "layer": 0,
       "attack": 0,
@@ -885,8 +1041,14 @@
       "start": 0,
       "duration": 0,
       "role": 0,
-      "target": 0,
-      "stop": 1600
+      "target": 5,
+      "stop": 1600,
+      "deployment": {
+        "station": "侧后警戒训练家",
+        "purpose": "守住本方后侧接近路线；切镜后负伤倒地，未设定死亡。",
+        "formation_rank": 3,
+        "facing_rule": "Watch assigned partner or own frontline."
+      }
     },
     {
       "id": "war-unit-28",
@@ -895,11 +1057,11 @@
       "team": 1,
       "at": [
         80,
-        168
+        112
       ],
       "to": [
         80,
-        168
+        112
       ],
       "layer": 0,
       "attack": 0,
@@ -907,8 +1069,14 @@
       "start": 0,
       "duration": 0,
       "role": 4,
-      "target": 0,
-      "stop": 65535
+      "target": 29,
+      "stop": 65535,
+      "deployment": {
+        "station": "伙伴训练家",
+        "purpose": "与自己的伙伴成组驻留，面向伙伴；战后呼唤而不站在主火线上。",
+        "formation_rank": 3,
+        "facing_rule": "Watch assigned partner or own frontline."
+      }
     },
     {
       "id": "war-unit-29",
@@ -917,11 +1085,11 @@
       "team": 1,
       "at": [
         32,
-        264
+        144
       ],
       "to": [
-        48,
-        264
+        88,
+        144
       ],
       "layer": 0,
       "attack": 0,
@@ -929,8 +1097,14 @@
       "start": 1700,
       "duration": 128,
       "role": 3,
-      "target": 0,
-      "stop": 65535
+      "target": 29,
+      "stop": 65535,
+      "deployment": {
+        "station": "后方救护",
+        "purpose": "在本方后方待命，战后沿侧后安全路接近伤者，不横穿中央交火区。",
+        "formation_rank": 3,
+        "facing_rule": "Watch assigned partner or own frontline."
+      }
     },
     {
       "id": "war-unit-30",
@@ -938,12 +1112,12 @@
       "sprite": 4,
       "team": 1,
       "at": [
-        64,
-        200
+        112,
+        112
       ],
       "to": [
-        64,
-        200
+        112,
+        112
       ],
       "layer": 0,
       "attack": 0,
@@ -951,8 +1125,14 @@
       "start": 0,
       "duration": 0,
       "role": 0,
-      "target": 0,
-      "stop": 1600
+      "target": 27,
+      "stop": 1600,
+      "deployment": {
+        "station": "后方伙伴",
+        "purpose": "与训练家成组驻留，为战后伤情镜头保留明确空间关系。",
+        "formation_rank": 3,
+        "facing_rule": "Watch assigned partner or own frontline."
+      }
     },
     {
       "id": "war-unit-31",
@@ -960,12 +1140,12 @@
       "sprite": 14,
       "team": 2,
       "at": [
-        232,
-        304
+        248,
+        328
       ],
       "to": [
-        232,
-        304
+        248,
+        328
       ],
       "layer": 0,
       "attack": 0,
@@ -973,8 +1153,14 @@
       "start": 0,
       "duration": 0,
       "role": 2,
-      "target": 0,
-      "stop": 65535
+      "target": 10,
+      "stop": 65535,
+      "deployment": {
+        "station": "后方指挥",
+        "purpose": "位于本队突击线之后，面向本队前沿，保留通向后方的撤离空间。",
+        "formation_rank": 3,
+        "facing_rule": "Watch assigned partner or own frontline."
+      }
     },
     {
       "id": "war-unit-32",
@@ -982,12 +1168,12 @@
       "sprite": 18,
       "team": 2,
       "at": [
-        192,
-        304
+        336,
+        352
       ],
       "to": [
-        192,
-        304
+        336,
+        352
       ],
       "layer": 0,
       "attack": 0,
@@ -995,8 +1181,14 @@
       "start": 0,
       "duration": 0,
       "role": 0,
-      "target": 0,
-      "stop": 1600
+      "target": 10,
+      "stop": 1600,
+      "deployment": {
+        "station": "侧后警戒训练家",
+        "purpose": "守住本方后侧接近路线；切镜后负伤倒地，未设定死亡。",
+        "formation_rank": 3,
+        "facing_rule": "Watch assigned partner or own frontline."
+      }
     },
     {
       "id": "war-unit-33",
@@ -1004,12 +1196,12 @@
       "sprite": 18,
       "team": 2,
       "at": [
-        432,
-        304
+        144,
+        320
       ],
       "to": [
-        432,
-        304
+        144,
+        320
       ],
       "layer": 0,
       "attack": 0,
@@ -1017,8 +1209,14 @@
       "start": 0,
       "duration": 0,
       "role": 4,
-      "target": 0,
-      "stop": 65535
+      "target": 34,
+      "stop": 65535,
+      "deployment": {
+        "station": "伙伴训练家",
+        "purpose": "与自己的伙伴成组驻留，面向伙伴；战后呼唤而不站在主火线上。",
+        "formation_rank": 3,
+        "facing_rule": "Watch assigned partner or own frontline."
+      }
     },
     {
       "id": "war-unit-34",
@@ -1026,12 +1224,12 @@
       "sprite": 18,
       "team": 2,
       "at": [
-        464,
-        272
+        96,
+        288
       ],
       "to": [
-        448,
-        272
+        144,
+        288
       ],
       "layer": 0,
       "attack": 0,
@@ -1039,8 +1237,14 @@
       "start": 1700,
       "duration": 128,
       "role": 3,
-      "target": 0,
-      "stop": 65535
+      "target": 34,
+      "stop": 65535,
+      "deployment": {
+        "station": "后方救护",
+        "purpose": "在本方后方待命，战后沿侧后安全路接近伤者，不横穿中央交火区。",
+        "formation_rank": 3,
+        "facing_rule": "Watch assigned partner or own frontline."
+      }
     },
     {
       "id": "war-unit-35",
@@ -1048,12 +1252,12 @@
       "sprite": 7,
       "team": 2,
       "at": [
-        400,
-        280
+        176,
+        320
       ],
       "to": [
-        400,
-        280
+        176,
+        320
       ],
       "layer": 0,
       "attack": 0,
@@ -1061,8 +1265,14 @@
       "start": 0,
       "duration": 0,
       "role": 0,
-      "target": 0,
-      "stop": 1600
+      "target": 32,
+      "stop": 1600,
+      "deployment": {
+        "station": "后方伙伴",
+        "purpose": "与训练家成组驻留，为战后伤情镜头保留明确空间关系。",
+        "formation_rank": 3,
+        "facing_rule": "Watch assigned partner or own frontline."
+      }
     },
     {
       "id": "war-unit-36",
@@ -1071,11 +1281,11 @@
       "team": 3,
       "at": [
         448,
-        160
+        192
       ],
       "to": [
         448,
-        160
+        192
       ],
       "layer": 0,
       "attack": 0,
@@ -1083,8 +1293,14 @@
       "start": 0,
       "duration": 0,
       "role": 2,
-      "target": 0,
-      "stop": 65535
+      "target": 15,
+      "stop": 65535,
+      "deployment": {
+        "station": "后方指挥",
+        "purpose": "位于本队突击线之后，面向本队前沿，保留通向后方的撤离空间。",
+        "formation_rank": 3,
+        "facing_rule": "Watch assigned partner or own frontline."
+      }
     },
     {
       "id": "war-unit-37",
@@ -1093,11 +1309,11 @@
       "team": 3,
       "at": [
         448,
-        208
+        128
       ],
       "to": [
         448,
-        208
+        128
       ],
       "layer": 0,
       "attack": 0,
@@ -1105,8 +1321,14 @@
       "start": 0,
       "duration": 0,
       "role": 0,
-      "target": 0,
-      "stop": 1600
+      "target": 15,
+      "stop": 1600,
+      "deployment": {
+        "station": "侧后警戒训练家",
+        "purpose": "守住本方后侧接近路线；切镜后负伤倒地，未设定死亡。",
+        "formation_rank": 3,
+        "facing_rule": "Watch assigned partner or own frontline."
+      }
     },
     {
       "id": "war-unit-38",
@@ -1114,12 +1336,12 @@
       "sprite": 19,
       "team": 3,
       "at": [
-        416,
-        240
+        432,
+        288
       ],
       "to": [
-        416,
-        240
+        432,
+        288
       ],
       "layer": 0,
       "attack": 0,
@@ -1127,8 +1349,14 @@
       "start": 0,
       "duration": 0,
       "role": 4,
-      "target": 0,
-      "stop": 65535
+      "target": 39,
+      "stop": 65535,
+      "deployment": {
+        "station": "伙伴训练家",
+        "purpose": "与自己的伙伴成组驻留，面向伙伴；战后呼唤而不站在主火线上。",
+        "formation_rank": 3,
+        "facing_rule": "Watch assigned partner or own frontline."
+      }
     },
     {
       "id": "war-unit-39",
@@ -1136,11 +1364,11 @@
       "sprite": 19,
       "team": 3,
       "at": [
-        464,
+        480,
         256
       ],
       "to": [
-        448,
+        424,
         256
       ],
       "layer": 0,
@@ -1149,8 +1377,14 @@
       "start": 1700,
       "duration": 128,
       "role": 3,
-      "target": 0,
-      "stop": 65535
+      "target": 39,
+      "stop": 65535,
+      "deployment": {
+        "station": "后方救护",
+        "purpose": "在本方后方待命，战后沿侧后安全路接近伤者，不横穿中央交火区。",
+        "formation_rank": 3,
+        "facing_rule": "Watch assigned partner or own frontline."
+      }
     },
     {
       "id": "war-unit-40",
@@ -1159,11 +1393,11 @@
       "team": 3,
       "at": [
         400,
-        216
+        288
       ],
       "to": [
         400,
-        216
+        288
       ],
       "layer": 0,
       "attack": 0,
@@ -1171,8 +1405,14 @@
       "start": 0,
       "duration": 0,
       "role": 0,
-      "target": 0,
-      "stop": 1600
+      "target": 37,
+      "stop": 1600,
+      "deployment": {
+        "station": "后方伙伴",
+        "purpose": "与训练家成组驻留，为战后伤情镜头保留明确空间关系。",
+        "formation_rank": 3,
+        "facing_rule": "Watch assigned partner or own frontline."
+      }
     }
   ],
   "factions": [
@@ -1243,7 +1483,7 @@
     62
   ],
   "staging": {
-    "formation": "four_cardinal_approaches_intersecting_central_rock_platform",
+    "formation": "four_formations_contesting_one_rock_junction",
     "region_approaches": {
       "kanto": "north",
       "hoenn": "west",
@@ -1251,6 +1491,38 @@
       "unova": "east"
     },
     "unique_species": 24,
-    "target_rule": "Each region attacks all three other regions; no implicit alliances."
+    "objective": {
+      "name": "中央岩台通道",
+      "at": [
+        256,
+        192
+      ],
+      "scope": "Local tactical staging only; no new war cause, strategic resource, alliance or historical outcome."
+    },
+    "target_rule": "Named reciprocal contact pairs form two central fronts and cross-region flanks; targets are justified per actor, not assigned round-robin.",
+    "formation_rules": [
+      "Point and two shoulders screen two supporting units.",
+      "Commanders and partner/rescue groups remain behind their own front.",
+      "Bodies face their target or partner; moving actors face the route.",
+      "Each unit has a recorded station, purpose, target and route."
+    ],
+    "standards": [
+      [
+        232,
+        128
+      ],
+      [
+        160,
+        208
+      ],
+      [
+        272,
+        240
+      ],
+      [
+        336,
+        200
+      ]
+    ]
   }
 }

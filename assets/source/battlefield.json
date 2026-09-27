@@ -975,7 +975,7 @@
     }
   ],
   "actors": 40,
-  "sprite_bytes": 190779,
+  "sprite_bytes": 261939,
   "commander_atlas": {
     "path": "assets/characters/war-commanders-v1.png",
     "sha256": "76bea69ea5f9b0cc4d75622a2cd094166761b3f8135ad96cf4db413fe5d16548",

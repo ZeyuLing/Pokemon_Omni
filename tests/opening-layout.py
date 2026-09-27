@@ -119,6 +119,11 @@ class OpeningLayout(unittest.TestCase):
             for unit in (actor,partner):
                 x,y=unit['to']
                 self.assertTrue(16<=x-cx<=216 and 32<=y-cy<=104,'Injured partner or trainer hidden by dialogue')
+        for team,faction in enumerate(data['factions']):
+            cue=next(c for c in REPORT['cues'] if c['scene']=='war-front' and c['actor']==faction['commander'])
+            self.assertEqual(cue['camera'][0],cue['camera'][1],'Reach commander before speaking')
+            cx,cy=cue['camera'][1];x,y=data['actors'][20+team*5]['to']
+            self.assertTrue(16<=x-cx<=216 and 36<=y-cy<=104,'Commander hidden by dialogue')
         # Evidence comes from actual ROM frames, not the high-resolution source.
         selected=[REPORT['cues'][0],next(c for c in REPORT['cues'] if c['scene']=='war-front' and c['dialogue']),next(c for c in REPORT['cues'] if c['scene']=='lance' and c['dialogue'])]
         proof=Image.new('RGB',(720,160))

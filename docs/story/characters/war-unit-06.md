@@ -14,11 +14,11 @@ ID：`war-unit-06`；状态：场景提案。
 
 年龄阶段设计：
 
-最终立绘／像素／3D 资产：PMD 原生四向行走、施招、受击与伏地静止关键帧；本场 24 个宝可梦实例各用不同物种，来源及逐物种署名见 battlefield 素材清单。
+最终立绘／像素／3D 资产：PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。
 
 ## 开场中的演绎
 
-本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。
+西口前沿：在重装阵列前控制西口，压制东侧哥德小姐。 切镜后留在场景中，后续经历未定。
 
 [逐场剧本](../../37-acted-opening-screenplay.md)。
 
@@ -41,3 +41,4 @@ ID：`war-unit-06`；状态：场景提案。
 ## 创作依据
 
 - [40-volcanic-war-direction.md](../../../docs/40-volcanic-war-direction.md)
+- [41-battlefield-deployment.md](../../../docs/41-battlefield-deployment.md)

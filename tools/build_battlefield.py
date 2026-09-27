@@ -5,6 +5,7 @@ import io,json,hashlib
 from PIL import Image
 from build_opening_stages import ROOT,OUT,get,render,rgba555,records
 import war_sources
+from war_packing import pack
 
 def compile_war():
     assert json.loads((ROOT/'content/opening/prologue.json').read_text('utf8'))['stages'][0]['kind']=='battlefield', 'GBA war stage must occupy slot zero'
@@ -74,18 +75,24 @@ def compile_war():
                 indices.append(palette.index(c))
             assert len(palette)<=16,(s['name'],len(palette))
             if len(indices)%2:indices.append(0)
-            packed=bytes(indices[i]|(indices[i+1]<<4) for i in range(0,len(indices),2))
+            assert len(indices)//2<=4096, 'Frame exceeds GBA scratch space'
+            packed=pack(bytes(indices[i]|(indices[i+1]<<4) for i in range(0,len(indices),2)))
             if packed not in unique_frames:unique_frames.append(packed)
             position=sum(len(p) for p in unique_frames[:unique_frames.index(packed)])
             frame_map.append('{'+','.join(map(str,[position,cw,ch,box[0],box[1]]))+'}')
             frame_layout.append(dict(offset=offset+position,width=cw,height=ch,x=box[0],y=box[1]))
         for packed in unique_frames:blob.extend(packed)
-        frame_map += ['{0,0,0,0,0}']*(24-len(frame_map))
+        frame_map += ['{0,0,0,0,0}']*(48-len(frame_map))
         palette += [0x8000]*(16-len(palette))
         art_layout.append(dict(pmd=s.get('pmd'),width=fw,height=fh,palette=palette,frames=frame_layout))
         sprites.append('{'+','.join(map(str,[offset,fw,fh,len(frames),int(s['human']),int('pmd' in s)]))+',{'+','.join(map(str,palette))+'},{'+','.join(frame_map)+'}}')
     # Enforce traversable routes across the entire foot rectangle, not only endpoints.
     actors=data['actors'];count=len(actors)
+    cache_offsets=[];cache_bytes=0
+    for actor in actors:
+        cache_offsets.append(cache_bytes)
+        cache_bytes+=max((f['width']*f['height']+1)//2 for f in art_layout[actor['sprite']]['frames'])
+        cache_bytes=(cache_bytes+3)&~3
     assert 0<count<=255
     assert len(data['factions'])==4
     rosters=[{data['sprites'][a['sprite']].get('pmd') for a in actors if a['team']==team and not data['sprites'][a['sprite']]['human']} for team in range(4)]
@@ -118,14 +125,18 @@ def compile_war():
 #define OMNI_WAR_DATA_H
 #include "omni/battlefield.h"
 typedef struct {uint32_t offset;uint8_t w,h,x,y;} OmniWarFrame;
-typedef struct {uint32_t offset;uint8_t w,h,frames,human,pmd;uint16_t palette[16];OmniWarFrame frame_map[24];} OmniWarSprite;
+typedef struct {uint32_t offset;uint8_t w,h,frames,human,pmd;uint16_t palette[16];OmniWarFrame frame_map[48];} OmniWarSprite;
 extern const unsigned char omni_war_art[];
 extern const OmniWarActor omni_war_actors[];
 extern const OmniWarSprite omni_war_sprites[];
 extern const unsigned char omni_war_terrain[];
-'''+f'#define OMNI_WAR_COUNT {count}\n#define OMNI_WAR_WIDTH {w*16}\n#define OMNI_WAR_HEIGHT {h*16}\n#endif\n')
-    (OUT/'war_data.c').write_text('#include "war_data.h"\nconst OmniWarActor omni_war_actors[]={'+','.join(rows)+'};\nconst OmniWarSprite omni_war_sprites[]={'+','.join(sprites)+'};\nconst unsigned char omni_war_terrain[]={'+','.join(map(str,terrain))+'};\n')
+extern const int16_t omni_war_standards[4][2];
+extern const uint32_t omni_war_cache_offsets[];
+'''+f'#define OMNI_WAR_COUNT {count}\n#define OMNI_WAR_WIDTH {w*16}\n#define OMNI_WAR_HEIGHT {h*16}\n#define OMNI_WAR_CACHE_BYTES {cache_bytes}\n#endif\n')
+    standards=','.join('{'+','.join(map(str,p))+'}' for p in data['staging']['standards'])
+    (OUT/'war_data.c').write_text('#include "war_data.h"\nconst OmniWarActor omni_war_actors[]={'+','.join(rows)+'};\nconst OmniWarSprite omni_war_sprites[]={'+','.join(sprites)+'};\nconst unsigned char omni_war_terrain[]={'+','.join(map(str,terrain))+'};\nconst int16_t omni_war_standards[4][2]={'+standards+'};\n')
     (OUT/'war-terrain.json').write_text(json.dumps({'width':w,'height':h,'cells':terrain,'actors':actors}))
+    with (OUT/'war_data.c').open('a') as target:target.write('const uint32_t omni_war_cache_offsets[]={'+','.join(map(str,cache_offsets))+'};\n')
     fire_red_paths={s['path'] for s in data['sprites'] if 'path' in s and s.get('source')!='emerald'}
     combined={**{path:records[path] for path in sorted(fire_red_paths)},**war_sources.records}
     for path,record in combined.items():

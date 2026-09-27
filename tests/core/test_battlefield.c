@@ -26,5 +26,15 @@ int main(void) {
  omni_war_sample_all(a,3,0,p);CHECK(p[0].face==0);
  a[2].ty=32;
  omni_war_sample_all(a,3,0,p);CHECK(p[0].face==1);
+ a[2].tx=140;a[2].ty=120;
+ omni_war_sample_all(a,3,0,p);CHECK(p[0].face==5);
+ a[2].tx=60;
+ omni_war_sample_all(a,3,0,p);CHECK(p[0].face==4);
+ a[2].ty=40;
+ omni_war_sample_all(a,3,0,p);CHECK(p[0].face==6);
+ a[2].tx=140;
+ omni_war_sample_all(a,3,0,p);CHECK(p[0].face==7);
+ a[0].attack=0;
+ omni_war_sample_all(a,3,0,p);CHECK(p[0].face==3); /* Human support has cardinal art. */
  return 0;
 }

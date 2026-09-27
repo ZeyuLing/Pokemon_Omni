@@ -1,5 +1,10 @@
 #include "omni/battlefield.h"
 static int lerp(int a,int b,unsigned n,unsigned d){return !d||n>=d?b:a+(b-a)*(int)n/(int)d;}
+static unsigned facing(int dx,int dy,int diagonal){
+ int ax=dx<0?-dx:dx,ay=dy<0?-dy:dy;
+ if(diagonal&&ax*2>=ay&&ay*2>=ax&&ax&&ay)return dy>0?(dx<0?4:5):(dx<0?6:7);
+ return ax>=ay?(dx>0?3:2):(dy>0?0:1);
+}
 unsigned omni_war_target(const OmniWarActor *a,unsigned count,unsigned i,uint32_t t){
  unsigned j,best=count;int distance=0x7fffffff;
  if(i>=count)return count;
@@ -21,13 +26,12 @@ void omni_war_sample_all(const OmniWarActor *a,unsigned count,uint32_t t,OmniWar
   if(n<u->duration&&t>=u->start){p[i].action=OMNI_WAR_ADVANCE;p[i].face=u->tx>u->x?3:u->tx<u->x?2:u->ty>u->y?0:1;}
   if(u->attack&&t>=u->start+u->duration&&omni_war_target(a,count,i,t)<count){q=(unsigned)(t-u->start-u->duration+u->phase)%320;p[i].phase=(uint16_t)q;p[i].action=q<64?OMNI_WAR_CHARGE:q<112?OMNI_WAR_FIRE:OMNI_WAR_RECOVER;}
  }
- /* Imported combat art has four cardinal views. Face the actual current target,
-  * including retargeting after casualties, rather than assuming team parity. */
- for(i=0;i<count;++i)if(a[i].attack&&p[i].action!=OMNI_WAR_DOWN&&p[i].action!=OMNI_WAR_ADVANCE){
-  unsigned target=omni_war_target(a,count,i,t);
+ /* Fighters face their firing lane in eight directions; support personnel
+  * face their assigned partner/front, never an arbitrary team orientation. */
+ for(i=0;i<count;++i)if(p[i].action!=OMNI_WAR_ADVANCE){
+  unsigned target=a[i].attack?omni_war_target(a,count,i,t<a[i].stop?t:a[i].stop-1):a[i].target;
   if(target<count){int dx=p[target].x-p[i].x,dy=p[target].y-p[i].y;
-   int ax=dx<0?-dx:dx,ay=dy<0?-dy:dy;
-   if(ax||ay)p[i].face=ax>=ay?(dx>0?3:2):(dy>0?0:1);
+   if(dx||dy)p[i].face=(uint8_t)facing(dx,dy,a[i].attack!=0);
   }
  }
  for(i=0;i<count;++i)if(a[i].attack&&t<a[i].stop&&t>=a[i].start+a[i].duration&&p[i].phase>=104&&p[i].phase<128){

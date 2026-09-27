@@ -27,7 +27,7 @@ def pmd_get(path):
     return data
 
 def pokemon_frames(number):
-    """Native pixel scale, four cardinal directions, walk/shoot/hurt key frames.
+    """Native pixel scale, eight directions, walk/shoot/hurt key frames.
     All frames share a union crop, so animation never recenters independently.
     """
     base=f'sprite/{number:04d}/'
@@ -39,7 +39,7 @@ def pokemon_frames(number):
         while a.findtext('CopyOf'):name=a.findtext('CopyOf');a=anims[name]
         return a,Image.open(io.BytesIO(pmd_get(base+name+'-Anim.png'))).convert('RGBA')
     frames=[]
-    for direction in (0,4,6,2): # Core down/up/left/right -> native PMD rows.
+    for direction in (0,4,6,2,7,1,5,3): # Down/up/left/right/down-left/down-right/up-left/up-right.
         for name in ('Walk','Shoot','Hurt','Sleep'):
             a,im=anim(name if name in anims else 'Attack')
             w,h=int(a.findtext('FrameWidth')),int(a.findtext('FrameHeight'))

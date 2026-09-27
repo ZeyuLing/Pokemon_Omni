@@ -18,7 +18,7 @@ ID：`war-unit-36`；状态：场景提案。
 
 ## 开场中的演绎
 
-本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。
+后方指挥：位于本队突击线之后，面向本队前沿，保留通向后方的撤离空间。 切镜后留在场景中，后续经历未定。
 
 [逐场剧本](../../37-acted-opening-screenplay.md)。
 
@@ -42,3 +42,4 @@ ID：`war-unit-36`；状态：场景提案。
 ## 创作依据
 
 - [40-volcanic-war-direction.md](../../../docs/40-volcanic-war-direction.md)
+- [41-battlefield-deployment.md](../../../docs/41-battlefield-deployment.md)

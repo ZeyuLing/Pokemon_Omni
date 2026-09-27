@@ -70,7 +70,11 @@ def main():
             from build_battlefield import compile_war
             bg,mask,grid=compile_war();w,h=bg.size;art=len(blob)
             assert s['crop']==[0,0,w,h]
-            blob+=rgba555(bg);mk=len(blob);blob+=mask.tobytes();co=len(blob);blob+=bytes(grid)
+            # Battlefield actors have their own depth ordering; the old full-size
+            # occlusion plane was entirely zero. A sentinel preserves that exact
+            # behavior without reserving 192 KiB of empty cartridge data.
+            assert not mask.getbbox()
+            blob+=rgba555(bg);mk=0xffffffff;co=len(blob);blob+=bytes(grid)
             while len(blob)%4:blob.append(0)
             stages.append('{'+','.join(map(str,[w,h,art,mk,co]))+'}')
             bg.save(OUT/'stages'/f'{s["id"]}.png')

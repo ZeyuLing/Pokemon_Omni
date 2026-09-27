@@ -18,7 +18,7 @@ ID：`war-unit-32`；状态：场景提案。
 
 ## 开场中的演绎
 
-战后切镜后倒地且停止行动；未确定死亡。
+侧后警戒训练家：守住本方后侧接近路线；切镜后负伤倒地，未设定死亡。 切镜后倒地且停止行动；未确定死亡。
 
 [逐场剧本](../../37-acted-opening-screenplay.md)。
 
@@ -41,3 +41,4 @@ ID：`war-unit-32`；状态：场景提案。
 ## 创作依据
 
 - [40-volcanic-war-direction.md](../../../docs/40-volcanic-war-direction.md)
+- [41-battlefield-deployment.md](../../../docs/41-battlefield-deployment.md)

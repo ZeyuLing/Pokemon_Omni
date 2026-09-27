@@ -18,7 +18,7 @@ ID：`war-unit-38`；状态：场景提案。
 
 ## 开场中的演绎
 
-本场指挥、交战、哭喊或救护演出；不补写个人过去与未来结局。
+伙伴训练家：与自己的伙伴成组驻留，面向伙伴；战后呼唤而不站在主火线上。 切镜后留在场景中，后续经历未定。
 
 [逐场剧本](../../37-acted-opening-screenplay.md)。
 
@@ -41,3 +41,4 @@ ID：`war-unit-38`；状态：场景提案。
 ## 创作依据
 
 - [40-volcanic-war-direction.md](../../../docs/40-volcanic-war-direction.md)
+- [41-battlefield-deployment.md](../../../docs/41-battlefield-deployment.md)

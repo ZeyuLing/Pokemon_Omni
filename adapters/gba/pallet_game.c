@@ -196,7 +196,7 @@ static void draw_intro(void){
    int x=wx+(int)col,y=wy-32+(int)row,dx=x-cx+ox,dy=y-cy;
    uint16_t c=pixels[row*16+(face==3?15-col:col)];
    if(dx<0||dx>=240||dy<0||dy>=height||(c&0x8000))continue;
-   if(x>=0&&x<m->w&&y>=0&&y<m->h&&omni_opening_stage_blob[m->mask+y*m->w+x])continue;
+   if(m->mask!=0xffffffffu&&x>=0&&x<m->w&&y>=0&&y<m->h&&omni_opening_stage_blob[m->mask+y*m->w+x])continue;
    omni_gba_surface[dy*240+dx]=intro_color(c,s->tone);
   }
   if(a->emote&&wy-cy>43&&wy-cy<height+24){int x=wx-cx+ox,y=wy-cy-43;panel(x-1,y,18,12);box(x+3,y+6,2,2,INK);box(x+7,y+6,2,2,INK);box(x+11,y+6,2,2,INK);}
