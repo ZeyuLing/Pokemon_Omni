@@ -40,6 +40,7 @@ ID：`oak`；状态：已采用。
 - **一周目旅程的秘密目标 · 大木安排小智取得世界赛资格**（背景已确定／场景未写；编剧秘密）：认为强大、向往和平且忠于自己的小智适合争夺世界冠军，规划关都挑战路线。 事件 ID：`ash-qualification-plan`。
 - **T=0 附近·具体年份未定 · 少年小智领取皮卡丘**（原型已有／演出未完整）：把皮卡丘交给小智，指导他前往常青市。 事件 ID：`ash-departure`。
 - **T=0 附近·具体年份未定 · 博士包裹**（原型已有／演出未完整）：接收包裹并给予奖励。 事件 ID：`parcel-return`。
+- **小智出发当日；小茂提前三天出发 · 真新镇 initialization 与常青市捕捉教学**（正文已写）：赠送伙伴与培养工具；面对孙子的质问显得慌乱。 事件 ID：`pallet-initialization`。
 
 ## 完整生平的留白
 
@@ -68,3 +69,4 @@ ID：`oak`；状态：已采用。
 - [35-kanto-rivals-and-succession.md](../../../docs/35-kanto-rivals-and-succession.md)
 - [36-playable-opening-and-cast.md](../../../docs/36-playable-opening-and-cast.md)
 - [37-acted-opening-screenplay.md](../../../docs/37-acted-opening-screenplay.md)
+- [43-pallet-initialization.md](../../../docs/43-pallet-initialization.md)

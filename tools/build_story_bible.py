@@ -212,6 +212,16 @@ def validate(world, people, atlas, media):
     expected={(s['key'],i,a['person']) for s in scenes for i,a in enumerate(s['actors']) if a.get('person')}
     bindings=[(b['scene'],b['actor_index'],b['person_id']) for c in people for b in c['runtime_bindings']]
     assert len(bindings)==len(set(bindings)) and set(bindings)==expected, 'Runtime actor coverage drift'
+    initialization=read('content/pallet-town/initialization.json')
+    initial_actors={b['actor'] for s in initialization['sequences'] for b in s['beats'] if b.get('actor')}
+    assert initial_actors<=actors, 'Unregistered initialization speaker'
+    assert initialization['date'] is None and world['first_journey_initialization']['date'] is None, 'Initialization absolute date assigned'
+    assert initialization['relative_timing']=={'gary_departure_days_before':3,'ash_arrival_days_before':3}, 'Initialization relative timing drift'
+    initial_event=event_map['pallet-initialization']
+    assert initial_actors<=set(initial_event['participants']), 'Initialization event speaker missing'
+    assert world['first_journey_initialization']['relative_timing']['ai_activation_date'] is None, 'Arrival silently became AI activation'
+    researcher_ids={int(k) for k in initialization['research_dialogue']}
+    assert researcher_ids<={b['person_id'] for c in people for b in c['runtime_bindings']}, 'Unregistered initialization researcher'
     opening=read('content/opening/prologue.json')
     expected={(opening['id'],s['id'],a) for s in opening['scenes'] for a in s['actors']}
     actual=[(b['sequence'],b['scene'],c['id']) for c in people for b in c.get('presentation_bindings',[])]

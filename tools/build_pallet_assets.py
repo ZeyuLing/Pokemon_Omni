@@ -38,9 +38,11 @@ def main():
     layouts={l.get('id'):l for l in json.loads(get('data/layouts/layouts.json'))['layouts']}
     names={'gTileset_General':'primary/general','gTileset_Building':'primary/building','gTileset_PalletTown':'secondary/pallet_town','gTileset_GenericBuilding1':'secondary/generic_building_1','gTileset_GenericBuilding2':'secondary/generic_building_2','gTileset_Lab':'secondary/lab','gTileset_ViridianCity':'secondary/viridian_city','gTileset_PokemonCenter':'secondary/pokemon_center','gTileset_Mart':'secondary/mart'}
     blob=bytearray();map_rows=[];actor_rows=[];sign_rows=[];warp_rows=[];audit=[]
-    sprites=['red_normal','mom','prof_oak','blue','woman_1','fat_man','scientist','daisy','item_ball','pikachu','nurse','rocket_m','rocket_f']
+    sprites=['red_normal','mom','prof_oak','blue','woman_1','fat_man','scientist','daisy','item_ball','pikachu','nurse','rocket_m','rocket_f','old_man_1']
     maps={m['source']:m for m in scene['maps']}
-    source_maps={name:json.loads(get(f'data/maps/{name}/map.json')) for name in maps}
+    source_maps={name:json.loads(get(f'data/maps/{m.get("template",name)}/map.json')) for name,m in maps.items()}
+    for name,m in maps.items():
+        if m.get('template'):source_maps[name]['id']='MAP_'+name;source_maps[name]['warp_events']=[]
     source_ids={m['id']:name for name,m in source_maps.items()}
     for source,m in maps.items():
         meta=source_maps[source];layout=layouts[meta['layout']];w,h=layout['width'],layout['height']
@@ -57,6 +59,9 @@ def main():
             palettes.append([tuple(map(int,line.split())) for line in pal])
         blocks=[a[0] for a in struct.iter_unpack('<H',get(layout['blockdata_filepath']))]
         assert len(blocks)==w*h
+        original=blocks[:]
+        for patch in m.get("tile_patches",[]):
+            x,y=patch["at"];sx,sy=patch["copy"];blocks[y*w+x]=original[sy*w+sx]
         bg=Image.new('RGB',(w*16,h*16),palettes[0][0]);mask=bytearray(w*h*256);collision=[];grass=[]
         for cell,block in enumerate(blocks):
             mid=block&1023;bank=mid>=640;idx=mid-640 if bank else mid
@@ -74,9 +79,10 @@ def main():
                         bg.putpixel((ox+x,oy+y),palette[p])
                         if part>=4 and p and layer!=1:mask[(oy+y)*(w*16)+ox+x]=1
         art_offset=len(blob);blob+=packed(bg)
-        mask_offset=len(blob);blob+=mask
+        mask_offset=len(blob);blob+=bytes(sum((v&1)<<j for j,v in enumerate(mask[i:i+8])) for i in range(0,len(mask),8))
         for warp in meta['warp_events']:
             if warp['dest_map'] not in source_ids:collision[warp['y']*w+warp['x']]=1
+        for warp in m.get("extra_warps",[]):collision[warp["y"]*w+warp["x"]]=0
         collision_offset=len(blob);blob+=bytes(collision)
         grass_offset=len(blob);blob+=bytes(grass)
         while len(blob)%4:blob.append(0)
@@ -89,9 +95,10 @@ def main():
             if warp['dest_map'] not in source_ids:continue
             destname=source_ids[warp['dest_map']];dest=source_maps[destname]['warp_events'][int(warp['dest_warp_id'])]
             warp_rows.append('{'+','.join(map(str,[m['id'],warp['x'],warp['y'],maps[destname]['id'],dest['x'],dest['y']]))+'}')
+        for warp in m.get('extra_warps',[]):warp_rows.append('{'+','.join(map(str,[m['id'],warp['x'],warp['y'],warp['dest_map'],warp['dest_x'],warp['dest_y']]))+'}')
         map_rows.append('{'+','.join([str(m['id']),str(w),str(h),cs(m['name']),str(art_offset),str(mask_offset),str(collision_offset),str(grass_offset),str(actor_start),str(len(m['actors'])),str(sign_start),str(len(m['signs'])),str(warp_start),str(len(warp_rows)-warp_start)])+'}')
         bg.save(OUT/(source+'.png'))
-        audit.append({'id':m['id'],'key':m['key'],'source':source,'width':w,'height':h,'collision':collision,'grass':grass,'warps':[warp for warp in meta['warp_events'] if warp['dest_map'] in source_ids],'actors':m['actors'],'signs':m['signs']})
+        audit.append({'id':m['id'],'key':m['key'],'source':source,'width':w,'height':h,'collision':collision,'grass':grass,'warps':[warp for warp in meta['warp_events'] if warp['dest_map'] in source_ids],'actors':m['actors'],'signs':m['signs'],'extra_warps':m.get('extra_warps',[])})
     sprite_rows=[]
     for sprite in sprites:
         path='graphics/object_events/pics/'+('misc/item_ball.png' if sprite=='item_ball' else 'pokemon/pikachu.png' if sprite=='pikachu' else f'people/{sprite}.png')
@@ -103,7 +110,7 @@ def main():
                     blob+=struct.pack('<H',rgb555(palette[p*3:p*3+3]) if p else 0x8000)
         sprite_rows.append('{'+','.join(map(str,[offset,frames]))+'}')
     battle_offsets=[]
-    for species in ('bulbasaur','charmander','squirtle','pikachu','pidgey','rattata','koffing'):
+    for species in ('bulbasaur','charmander','squirtle','pikachu','pidgey','rattata','koffing','weedle'):
         for side in ('front','back'):
             im=Image.open(io.BytesIO(get(f'graphics/pokemon/{species}/{side}.png')))
             palette=im.getpalette();battle_offsets.append(len(blob))
@@ -121,18 +128,18 @@ typedef struct {uint8_t map,x,y,sprite,person,starter,direction;} PalletActor;
 typedef struct {uint8_t map,x,y,person;const char *text;} PalletSign;
 typedef struct {uint8_t map,x,y,dest_map,dest_x,dest_y;} PalletWarp;
 typedef struct {uint32_t offset;uint8_t frames;} PalletSprite;
-extern const PalletMap pallet_maps[9];
+extern const PalletMap pallet_maps[10];
 extern const PalletActor pallet_actors[];
 extern const PalletSign pallet_signs[];
 extern const PalletWarp pallet_warps[];
-extern const PalletSprite pallet_sprites[13];
-extern const uint32_t pallet_battle_sprites[14];
+extern const PalletSprite pallet_sprites[14];
+extern const uint32_t pallet_battle_sprites[16];
 extern const unsigned char pallet_world_blob[];
 #endif
 ''')
     code='#include "world_data.h"\n'
     for name,rows in [('PalletMap pallet_maps',map_rows),('PalletActor pallet_actors',actor_rows),('PalletSign pallet_signs',sign_rows),('PalletWarp pallet_warps',warp_rows),('PalletSprite pallet_sprites',sprite_rows)]:code+='const '+name+'[]={\n'+',\n'.join(rows)+'\n};\n'
-    code+='const uint32_t pallet_battle_sprites[14]={'+','.join(map(str,battle_offsets))+'};\n'
+    code+='const uint32_t pallet_battle_sprites[16]={'+','.join(map(str,battle_offsets))+'};\n'
     (OUT/'world_data.c').write_text(code,encoding='utf-8')
     (OUT/'scene-audit.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2),encoding='utf-8')
     MANIFEST.write_text(json.dumps({'repository':'https://github.com/pret/pokefirered','commit':REV,'scope':'Map layouts, metatiles and character artwork only; no upstream engine or story scripts executed','files':sorted(records.values(),key=lambda r:r['path'])},indent=2)+'\n')

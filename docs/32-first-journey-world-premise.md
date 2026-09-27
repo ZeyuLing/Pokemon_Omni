@@ -132,3 +132,7 @@
 小智继续参考小智动画形象，赤红采用动画《宝可梦 起源》的角色设计作为外观依据；两者的 AI 身份、研发关系和本作经历完全属于 Omni。参考：[《起源》官方角色页](https://www.pokemon.co.jp/ex/origin/story_character/)。
 
 渡的外观参考电视动画《宝可梦》2022 年 7 月 8 日《冠军的荣耀！渡 VS 卡露妮！！》的形象。官方节目页可用于对应动画角色与场次，不能证明本作的独裁者设定：[东京电视台剧集页](https://www.tv-tokyo.co.jp/anime/pocketmonster/episodes/index_4.html)。
+
+## 2026-09-28 正式初始化衔接
+
+正式第一段已采用并实装：见[43 · 真新镇 initialization](43-pallet-initialization.md)。小茂出发及小智抵达均相对开场三天前；不据此补定AI激活或主线年份。

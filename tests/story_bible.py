@@ -23,6 +23,24 @@ class ContinuityTests(unittest.TestCase):
     def test_current_registry(self):
         self.validate()
 
+    def test_initialization_keeps_dates_and_identity_open(self):
+        opening=bible.read('content/pallet-town/initialization.json')
+        text=' '.join(b.get('text','') for s in opening['sequences'] for b in s['beats'])
+        for secret in ['小智是AI','小智是人工智能','激活日期','不会长大']:
+            self.assertNotIn(secret,text)
+        self.assertEqual(opening['relative_timing']['gary_departure_days_before'],3)
+        self.assertIsNone(self.world['first_journey_initialization']['relative_timing']['ai_activation_date'])
+        self.assertEqual(next(s for s in self.world['secrets'] if s['id']=='ash-ai-identity')['known_by'],['oak'])
+
+    def test_initialization_cannot_gain_absolute_date(self):
+        self.world['first_journey_initialization']['date']='1974-01-01'
+        with self.assertRaisesRegex(AssertionError,'Initialization absolute date'):self.validate()
+
+    def test_initialization_cannot_lose_registered_speaker(self):
+        event=next(e for e in self.world['events'] if e['id']=='pallet-initialization')
+        del event['participants']['viridian-old-man']
+        with self.assertRaisesRegex(AssertionError,'Initialization event speaker'):self.validate()
+
     def test_opening_actor_requires_dossier_binding(self):
         next(c for c in self.people if c['id']=='oak')['presentation_bindings']=[]
         with self.assertRaisesRegex(AssertionError,'Opening actor coverage drift'):self.validate()

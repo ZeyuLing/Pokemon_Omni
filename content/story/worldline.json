@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "revision": "2026-09-26.8",
+  "revision": "2026-09-28.1",
   "status": "authoring_registry_not_runtime",
   "calendar": {
     "epoch_year": null,
@@ -563,6 +563,43 @@
       "date_role": "event",
       "date_status": "undetermined",
       "date_basis": null
+    },
+    {
+      "id": "pallet-initialization",
+      "date": null,
+      "end_date": null,
+      "time_label": "小智出发当日；小茂提前三天出发",
+      "title": "真新镇 initialization 与常青市捕捉教学",
+      "location": "真新镇／大木研究所／一号道路／常青市",
+      "status": "written",
+      "phase": "first-journey",
+      "visibility": "authoring",
+      "date_status": "undetermined",
+      "date_role": "event",
+      "date_basis": "用户采用的相对时间；公历、AI激活时间不推定",
+      "summary": "小智被母亲叫醒；研究所探索后获搭档皮卡丘、御三家、培养工具与100球。小茂返所质问并对战，胜负均离开。常青市老人提供教学或对战，满足分支条件后赠独角虫并警告火箭队渗透。",
+      "participants": {
+        "ash": "觉得做了很长的学校梦；抵达真新镇三天不等于 AI 激活三天，梦境不是已证实的就学履历。",
+        "delia": "叫醒迟到的小智；并不知晓其 AI 身份。",
+        "oak": "赠送伙伴与培养工具；面对孙子的质问显得慌乱。",
+        "gary": "三天前出发，回来索球，因祖父差别对待挑战小智；两种结果互斥，均愤然离开。",
+        "pikachu": "作为唯一获得后续羁绊进化资格的搭档皮卡丘加入队伍；普通皮卡丘不获此资格。",
+        "aide-1": "阅读宝可梦行为论文。",
+        "aide-2": "自述团队对战AI已能击败很多人类；是角色台词，不是对真实AI的一般结论。",
+        "lab-data-researcher": "整理招式属性数据。",
+        "lab-vlm-researcher": "研究视觉与语言模型。",
+        "lab-server-engineer": "维护GPU服务器。",
+        "viridian-old-man": "教学抓虫或在挑战获胜后送虫，透露针对火箭队的偏见并提醒渗透。",
+        "ash-bulbasaur": "由大木赠给小智的初始伙伴之一。",
+        "ash-charmander": "由大木赠给小智的初始伙伴之一。",
+        "ash-squirtle": "由大木赠给小智的初始伙伴之一。",
+        "gary-squirtle": "小茂提前三天领取的伙伴；参与研究所首战。",
+        "viridian-gift-weedle": "教学完成或挑战获胜后赠给小智；两条分支是同一个一次性奖励。",
+        "viridian-old-man-pidgey": "拒绝教学分支中出战；具体配置属于本章实现选择。"
+      },
+      "source_docs": [
+        "docs/43-pallet-initialization.md"
+      ]
     }
   ],
   "unwritten": [
@@ -1380,7 +1417,7 @@
     "scope": "关都、丰缘、神奥、合众四地区在丰缘烟囱山火山区域混战；稍后切至倒地伤者与仍在交战的部队，再接入关都会议。具体日期、战役结局与个体死亡不定。",
     "direction": {
       "throughline": "命令与混战 → 同地稍后倒地伤者、训练家呼唤伙伴与余部交火 → 伤情送入各方权力讨论。",
-      "sound_bridge": "战场采用原版训练家对战曲；前线要求上报伤情时转希尔弗曲，连续进入联盟、希尔弗、火箭队及祖孙会面。大木独处转研究所曲，翌晨转真新镇。",
+      "sound_bridge": "战场采用原版训练家对战曲；前线要求上报伤情时转希尔弗曲，连续进入联盟、希尔弗、火箭队及祖孙会面。大木独处转研究所曲，出发之晨转真新镇。",
       "room_continuity": "每场先交代人物和桌案位置；每次走位以来源地图地块和其他演员为障碍。",
       "historical_boundary": "只演绎已定的大战末期状态；不补写红莲之后未定历史、日期、继承人阵营或最终结局。",
       "battlefield": "512×384 烟囱山局部岩台争夺。64个独立实例：40种不重复宝可梦、24名人类。四队各有中央尖兵、两翼、侧翼第二梯队、后方指挥、伙伴救护与警戒；18对明确交火对象。黑场后36个单位倒地，8只宝可梦仍在交战；不确定死亡与战役结局。",
@@ -1529,5 +1566,17 @@
       "location": null,
       "proposer_region": null
     }
+  },
+  "first_journey_initialization": {
+    "date": null,
+    "script": "content/pallet-town/initialization.json",
+    "relative_timing": {
+      "gary_departure_days_before": 3,
+      "ash_arrival_days_before": 3,
+      "ai_activation_date": null
+    },
+    "knowledge_boundary": "只有大木知道小智AI身份；梦境、知识脱口而出、资助差别仅作伏笔。研究所研究AI并不意味着员工知道小智身份。",
+    "branch_policy": "小茂胜负两种演绎互斥，均推进；老人教学完成或对战获胜赠独角虫，战败可再试；礼物一次性。",
+    "unwritten": "未来羁绊形态、激活日期、后续劲敌安排、火箭队实际登场保持未写。"
   }
 }

@@ -21,6 +21,7 @@ ID：`pikachu`；状态：已采用。
 ## 已写生平
 
 - **T=0 附近·具体年份未定 · 少年小智领取皮卡丘**（原型已有／演出未完整）：成为小智初始伙伴。 事件 ID：`ash-departure`。
+- **小智出发当日；小茂提前三天出发 · 真新镇 initialization 与常青市捕捉教学**（正文已写）：作为唯一获得后续羁绊进化资格的搭档皮卡丘加入队伍；普通皮卡丘不获此资格。 事件 ID：`pallet-initialization`。
 
 ## 完整生平的留白
 
@@ -40,3 +41,4 @@ ID：`pikachu`；状态：已采用。
 
 - [adventure.c](../../../core/src/adventure.c)
 - [26-master-timeline.md](../../../docs/26-master-timeline.md)
+- [43-pallet-initialization.md](../../../docs/43-pallet-initialization.md)

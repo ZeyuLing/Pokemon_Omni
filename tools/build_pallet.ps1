@@ -14,6 +14,8 @@ try {
  New-Item -ItemType Directory -Force -Path $output | Out-Null
  [string[]]$debugFlags = @()
  if ($DebugDex) { $debugFlags += '-DOMNI_DEBUG_DEX' }
+ & $Python tools/build_initialization.py
+ if ($LASTEXITCODE) { throw "Initialization compilation failed" }
  if (!$ReuseAssets) {
  & $Python tools/build_pallet_assets.py
  if ($LASTEXITCODE) { throw 'Pallet map compilation failed' }
@@ -48,6 +50,6 @@ try {
  if ($LASTEXITCODE) { throw 'Pallet GBA link failed' }
  & $Zig objcopy -O binary "$output/omni-pallet.elf" "$output/omni-pallet.gba"
  if ($LASTEXITCODE) { throw 'Pallet ROM export failed' }
- & $Python tools/finalize_gba.py --rom "$output/omni-pallet.gba" --title 'OMNI PALLET' --code OMPL --scope 'Kanto opening: Pallet, Route 1, Viridian Center and Mart, Pikachu, early encounters and parcel quest. Full first journey not yet complete.' --asset build/pallet/world.bin --asset build/pallet/title.bin --asset build/pallet/rocket_text.bin
+ & $Python tools/finalize_gba.py --rom "$output/omni-pallet.gba" --title 'OMNI PALLET' --code OMPL --scope 'Formal initialization: Pallet wakeup, research/server lab, four partners and tools, Gary win/loss, Viridian catch/duel branches, Weedle gift and parcel return. Bounded opening battle core; full first journey not yet complete.' --asset build/pallet/world.bin --asset build/pallet/title.bin --asset build/pallet/rocket_text.bin
  if ($LASTEXITCODE) { throw 'Pallet header verification failed' }
 } finally { Pop-Location }

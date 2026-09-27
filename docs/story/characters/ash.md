@@ -37,6 +37,7 @@ ID：`ash`；状态：已采用。
 - **T=0 附近·具体年份未定 · 少年小智领取皮卡丘**（原型已有／演出未完整）：以少年训练家身份开始旅程；不知道自己是 AI，外部身份年龄及启用日期尚未写定。 事件 ID：`ash-departure`。
 - **T=0 附近·具体年份未定 · 常青中心冲突**（原型已有／演出未完整）：保护中心并与火箭队对战。 事件 ID：`viridian-center`。
 - **T=0 附近·具体年份未定 · 博士包裹**（原型已有／演出未完整）：把包裹送回研究所。 事件 ID：`parcel-return`。
+- **小智出发当日；小茂提前三天出发 · 真新镇 initialization 与常青市捕捉教学**（正文已写）：觉得做了很长的学校梦；抵达真新镇三天不等于 AI 激活三天，梦境不是已证实的就学履历。 事件 ID：`pallet-initialization`。
 
 ## 后续方向（尚未写入生平）
 
@@ -68,3 +69,4 @@ ID：`ash`；状态：已采用。
 - [34-ash-human-body-arc.md](../../../docs/34-ash-human-body-arc.md)
 - [36-playable-opening-and-cast.md](../../../docs/36-playable-opening-and-cast.md)
 - [37-acted-opening-screenplay.md](../../../docs/37-acted-opening-screenplay.md)
+- [43-pallet-initialization.md](../../../docs/43-pallet-initialization.md)

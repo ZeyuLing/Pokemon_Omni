@@ -46,13 +46,14 @@ ID：`gary`；状态：已采用。
 游戏立绘记录：[资产清单](../../../assets/characters/manifest.json)，角色键 `gary`。
 
 - **T=0 附近·具体年份未定 · 少年小智领取皮卡丘**（原型已有／演出未完整）：在研究所等待并可发起练习战。 事件 ID：`ash-departure`。
+- **小智出发当日；小茂提前三天出发 · 真新镇 initialization 与常青市捕捉教学**（正文已写）：三天前出发，回来索球，因祖父差别对待挑战小智；两种结果互斥，均愤然离开。 事件 ID：`pallet-initialization`。
 
 ## 完整生平的留白
 
 | 阶段 | 正文 |
 |---|---|
 | 童年与成长 |  |
-| 首次登场以前 |  |
+| 首次登场以前 | 在小智出发前三天，带着大木给的杰尼龟与5个精灵球出发。更早的成长经历未写。 |
 | 已知事件之间的空白 |  |
 | 后续人生 |  |
 | 结局 |  |
@@ -70,3 +71,4 @@ ID：`gary`；状态：已采用。
 - [2026-09-26-kanto-rivals-evidence.md](../../../research/narrative/2026-09-26-kanto-rivals-evidence.md)
 - [36-playable-opening-and-cast.md](../../../docs/36-playable-opening-and-cast.md)
 - [37-acted-opening-screenplay.md](../../../docs/37-acted-opening-screenplay.md)
+- [43-pallet-initialization.md](../../../docs/43-pallet-initialization.md)

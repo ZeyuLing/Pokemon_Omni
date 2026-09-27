@@ -44,3 +44,4 @@ ID：`joy-viridian`；状态：已采用。
 - [adventure.c](../../../core/src/adventure.c)
 - [26-master-timeline.md](../../../docs/26-master-timeline.md)
 - [37-acted-opening-screenplay.md](../../../docs/37-acted-opening-screenplay.md)
+- [43-pallet-initialization.md](../../../docs/43-pallet-initialization.md)

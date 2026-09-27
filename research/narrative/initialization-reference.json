@@ -1,0 +1,123 @@
+{
+  "status": "source_stats_verified_learnset_not_fully_verified",
+  "rom_sha256": "cb93af4a51809e4ef4fb5e7356e029e009a026bf20148fa7618e0731bb91edac",
+  "records": [
+    {
+      "source_sid": 25,
+      "source_name": "皮卡丘",
+      "name_bytes_hex": "0a5f07b60b12ff00000000",
+      "stats_offset": 16898492,
+      "record_sha256": "466cc524048d79b08d61774020fcdde764b6e586a612eba42663e41862d10bdf",
+      "record_hex": "2337285a32320d0dbe5280008b00ca007f1446000506090906021f00",
+      "stats": {
+        "hp": 35,
+        "atk": 55,
+        "def": 40,
+        "spe": 90,
+        "spa": 50,
+        "spd": 50
+      },
+      "type_ids": [
+        13,
+        13
+      ],
+      "types": [
+        "Electric"
+      ],
+      "ability_ids": [
+        9,
+        9,
+        31
+      ],
+      "ability_table_offset": 24772758,
+      "evolutions": [
+        {
+          "offset": 17136708,
+          "method_raw": 6,
+          "parameter": 96,
+          "target_sid": 431,
+          "padding": 0
+        },
+        {
+          "offset": 17136716,
+          "method_raw": 7,
+          "parameter": 96,
+          "target_sid": 858,
+          "padding": 0
+        }
+      ]
+    },
+    {
+      "source_sid": 1076,
+      "source_name": "小智皮卡丘",
+      "name_bytes_hex": "0e2c10980a5f07b60b12ff",
+      "stats_offset": 16927920,
+      "record_sha256": "0979029d01cd11648c875acb8e375351779e7cd249fb4f09f5d70f02d349f37e",
+      "record_hex": "5a505a784b5a0d0dbe528000ca000000001446000f0f090906020900",
+      "stats": {
+        "hp": 90,
+        "atk": 80,
+        "def": 90,
+        "spe": 120,
+        "spa": 75,
+        "spd": 90
+      },
+      "type_ids": [
+        13,
+        13
+      ],
+      "types": [
+        "Electric"
+      ],
+      "ability_ids": [
+        9,
+        9,
+        31
+      ],
+      "ability_table_offset": 24779064,
+      "evolutions": []
+    },
+    {
+      "source_sid": 1094,
+      "source_name": "搭档皮卡丘",
+      "name_bytes_hex": "02ce02f30a5f07b60b12ff",
+      "stats_offset": 16928424,
+      "record_sha256": "f101765d7258daa89baf5965764ca65f729748091e8ae932b1886ab22d2507d3",
+      "record_hex": "2d5032784b3c0d0dbe52c000000000007f1446000f0f090a06021f00",
+      "stats": {
+        "hp": 45,
+        "atk": 80,
+        "def": 50,
+        "spe": 120,
+        "spa": 75,
+        "spd": 60
+      },
+      "type_ids": [
+        13,
+        13
+      ],
+      "types": [
+        "Electric"
+      ],
+      "ability_ids": [
+        9,
+        9,
+        9
+      ],
+      "ability_table_offset": 24779172,
+      "evolutions": []
+    }
+  ],
+  "notes": [
+    "搭档皮卡丘是1094，不是1076小智皮卡丘。",
+    "种族值顺序HP/攻击/防御/特攻/特防/速度=45/80/50/75/60/120。",
+    "电电加速作为Omni初始招式采用LGPE50威力、先制+2、必定要害版本；没有声称核实UE5.8完整招式表。",
+    "羁绊资格是用户采用的Omni设定，后续形态未实装。"
+  ],
+  "sources": [
+    "https://pokemonletsgo.pokemon.com/en-us/story/",
+    "https://www.serebii.net/pokedex-sm/025.shtml",
+    "https://ph.portal-pokemon.com/tv-film/1/",
+    "https://docs.nvidia.com/dgx/dgxh100-user-guide/introduction-to-dgxh100.html"
+  ]
+}

@@ -39,8 +39,8 @@
 | [联盟调查官](characters/inquiry-officer.md) | 场景提案 | 希尔弗事件后移交场景中的角色 |
 | [真新镇邻居](characters/neighbor.md) | 已采用 | 介绍交互操作的路人 |
 | [真新镇散步者](characters/walker.md) | 已采用 | 介绍跑步和南侧水域的路人 |
-| [研究所助手甲](characters/aide-1.md) | 已采用 | 开场教学 NPC |
-| [研究所助手乙](characters/aide-2.md) | 已采用 | 开场教学 NPC |
+| [研究所助手甲](characters/aide-1.md) | 已采用 | 研究所宝可梦行为研究员；开场阅读行为观察论文。 |
+| [研究所助手乙](characters/aide-2.md) | 已采用 | 研究所对战 AI 研究员；开场谈论其团队的对战成果，不知小智身份。 |
 | [常青商店店员](characters/clerk.md) | 已采用 | 交付博士包裹、售卖物品 |
 | [一号道路向导](characters/route-guide.md) | 已采用 | 介绍野生对战与捕获 |
 | [小刚](characters/brock.md) | 候选 | 道馆、家庭责任与后续医疗方向 |
@@ -166,3 +166,13 @@
 | [也慈](characters/geeta.md) | 场景提案 | 开场演绎中的正式人物 |
 | [真鸟](characters/matori.md) | 场景提案 | 开场演绎中的正式人物 |
 | [希尔弗社长](characters/silph-president-current.md) | 场景提案 | 开场演绎中的正式人物 |
+| [研究所数据研究员](characters/lab-data-researcher.md) | 已采用 | 整理招式与属性标签。 |
+| [研究所视觉语言研究员](characters/lab-vlm-researcher.md) | 已采用 | 研究视觉与语言模型；不知小智的秘密。 |
+| [研究所机房工程师](characters/lab-server-engineer.md) | 已采用 | 维护计算节点；不知小智的秘密。 |
+| [常青市捕捉老人](characters/viridian-old-man.md) | 已采用 | 向小智提供捕捉教学，或在被拒绝后发起对战。 |
+| [小智的妙蛙种子](characters/ash-bulbasaur.md) | 已采用 | 由大木赠给小智的初始伙伴之一。 |
+| [小智的小火龙](characters/ash-charmander.md) | 已采用 | 由大木赠给小智的初始伙伴之一。 |
+| [小智的杰尼龟](characters/ash-squirtle.md) | 已采用 | 由大木赠给小智的初始伙伴之一。 |
+| [小茂的杰尼龟](characters/gary-squirtle.md) | 已采用 | 小茂提前三天领取的伙伴；参与研究所首战。 |
+| [老人赠予的独角虫](characters/viridian-gift-weedle.md) | 已采用 | 教学完成或挑战获胜后赠给小智；两条分支是同一个一次性奖励。 |
+| [捕捉老人的波波](characters/viridian-old-man-pidgey.md) | 已采用 | 拒绝教学分支中出战；具体配置属于本章实现选择。 |

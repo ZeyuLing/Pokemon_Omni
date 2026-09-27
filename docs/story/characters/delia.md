@@ -25,6 +25,7 @@ ID：`delia`；状态：已采用。
 ## 已写生平
 
 - **T=0 附近·具体年份未定 · 少年小智领取皮卡丘**（原型已有／演出未完整）：原型以母亲身份叮嘱小智并提供休息；身份来历未写，她不知小智是 AI。 事件 ID：`ash-departure`。
+- **小智出发当日；小茂提前三天出发 · 真新镇 initialization 与常青市捕捉教学**（正文已写）：叫醒迟到的小智；并不知晓其 AI 身份。 事件 ID：`pallet-initialization`。
 
 ## 完整生平的留白
 
@@ -46,3 +47,4 @@ ID：`delia`；状态：已采用。
 - [32-first-journey-world-premise.md](../../../docs/32-first-journey-world-premise.md)
 - [26-master-timeline.md](../../../docs/26-master-timeline.md)
 - [37-acted-opening-screenplay.md](../../../docs/37-acted-opening-screenplay.md)
+- [43-pallet-initialization.md](../../../docs/43-pallet-initialization.md)

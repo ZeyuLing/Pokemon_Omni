@@ -652,6 +652,12 @@
       "bytes": 551
     },
     {
+      "path": "graphics/object_events/pics/people/old_man_1.png",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/people/old_man_1.png",
+      "sha256": "d9605339fed36e193f5ae892e24bd1b39f93ad62c45ec0b018983b7a0ace5063",
+      "bytes": 641
+    },
+    {
       "path": "graphics/object_events/pics/people/prof_oak.png",
       "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/people/prof_oak.png",
       "sha256": "9ac53f6e5615d0cc4f78da06dd03c3d62808d60e634f051deaf3152411f83599",
@@ -776,6 +782,18 @@
       "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/pokemon/squirtle/front.png",
       "sha256": "30d6413a70495a23d4af23a941bae57f5373f7b6fec1e05eb8ef78a0636898bc",
       "bytes": 543
+    },
+    {
+      "path": "graphics/pokemon/weedle/back.png",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/pokemon/weedle/back.png",
+      "sha256": "8d50dbe8b44165219278bce83d684868de605968a9b8ec0172261e302dc46cd5",
+      "bytes": 502
+    },
+    {
+      "path": "graphics/pokemon/weedle/front.png",
+      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/pokemon/weedle/front.png",
+      "sha256": "9ee9225c4b1bba90d4aa78b33f8757fa4282a6ad7b81df62fa371f570176a9bd",
+      "bytes": 471
     }
   ]
 }

@@ -110,7 +110,8 @@
         "docs/32-first-journey-world-premise.md",
         "docs/35-kanto-rivals-and-succession.md",
         "docs/36-playable-opening-and-cast.md",
-        "docs/37-acted-opening-screenplay.md"
+        "docs/37-acted-opening-screenplay.md",
+        "docs/43-pallet-initialization.md"
       ],
       "relationships": [
         {
@@ -139,7 +140,7 @@
           "scene": "kanto.pallet_town.oak_lab",
           "actor_index": 0,
           "person_id": 1,
-          "status": "prototype_sprite_not_final_animation_design"
+          "status": "source_game_sprite_not_final_anime_design"
         }
       ],
       "presentation_bindings": [
@@ -534,7 +535,8 @@
         "docs/33-ash-ai-design.md",
         "docs/34-ash-human-body-arc.md",
         "docs/36-playable-opening-and-cast.md",
-        "docs/37-acted-opening-screenplay.md"
+        "docs/37-acted-opening-screenplay.md",
+        "docs/43-pallet-initialization.md"
       ],
       "relationships": [
         {
@@ -614,7 +616,7 @@
       },
       "biography": {
         "childhood": null,
-        "before_first_event": null,
+        "before_first_event": "在小智出发前三天，带着大木给的杰尼龟与5个精灵球出发。更早的成长经历未写。",
         "unwritten_intervals": null,
         "later_life": null,
         "ending": null
@@ -626,7 +628,8 @@
         "docs/35-kanto-rivals-and-succession.md",
         "research/narrative/2026-09-26-kanto-rivals-evidence.md",
         "docs/36-playable-opening-and-cast.md",
-        "docs/37-acted-opening-screenplay.md"
+        "docs/37-acted-opening-screenplay.md",
+        "docs/43-pallet-initialization.md"
       ],
       "relationships": [
         {
@@ -639,7 +642,7 @@
           "scene": "kanto.pallet_town.oak_lab",
           "actor_index": 1,
           "person_id": 3,
-          "status": "prototype_sprite_not_final_animation_design"
+          "status": "source_game_sprite_not_final_anime_design"
         }
       ],
       "source_identity": {
@@ -689,7 +692,8 @@
           "final_anime_design": false
         }
       },
-      "opening_scene_note": "研究所开场稿：由自己选择伙伴问起，谈世界赛资格和小智的起点，与爷爷道别后离开。屏幕测试在其离开后才开始；不确认其效忠大木政治路线或知道秘密。"
+      "opening_scene_note": "研究所开场稿：由自己选择伙伴问起，谈世界赛资格和小智的起点，与爷爷道别后离开。屏幕测试在其离开后才开始；不确认其效忠大木政治路线或知道秘密。",
+      "first_journey_note": "返回研究所索要精灵球，目睹小智获得四只伙伴与100个球，因祖父差别对待而挑战小智；胜负分支均愤然离开。未据此确定政治阵营或未来赛果。"
     },
     {
       "id": "delia",
@@ -717,7 +721,8 @@
         "docs/20-cast-and-opening.md",
         "docs/32-first-journey-world-premise.md",
         "docs/26-master-timeline.md",
-        "docs/37-acted-opening-screenplay.md"
+        "docs/37-acted-opening-screenplay.md",
+        "docs/43-pallet-initialization.md"
       ],
       "relationships": [
         {
@@ -730,7 +735,13 @@
           "scene": "kanto.pallet_town.player_home.1f",
           "actor_index": 0,
           "person_id": 2,
-          "status": "prototype_sprite_not_final_animation_design"
+          "status": "source_game_sprite_not_final_anime_design"
+        },
+        {
+          "scene": "kanto.pallet_town.player_home.2f",
+          "actor_index": 0,
+          "person_id": 19,
+          "status": "source_game_sprite_not_final_anime_design"
         }
       ],
       "presentation_bindings": [
@@ -766,7 +777,8 @@
       },
       "source_docs": [
         "core/src/adventure.c",
-        "docs/26-master-timeline.md"
+        "docs/26-master-timeline.md",
+        "docs/43-pallet-initialization.md"
       ],
       "relationships": [],
       "runtime_bindings": [
@@ -774,7 +786,7 @@
           "scene": "kanto.pallet_town.rival_home",
           "actor_index": 0,
           "person_id": 6,
-          "status": "prototype_sprite_not_final_animation_design"
+          "status": "source_game_sprite_not_final_anime_design"
         }
       ],
       "presentation_bindings": []
@@ -806,15 +818,9 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": [
-        {
-          "scene": "kanto.viridian_city.center",
-          "actor_index": 2,
-          "person_id": 11,
-          "status": "prototype_sprite_not_final_animation_design"
-        }
-      ],
-      "presentation_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": [],
+      "runtime_revision_note": "旧原型中的常青市中心直接遭遇已撤下；正式开场先由老人提示火箭队渗透，实际登场尚待后续创作。"
     },
     {
       "id": "james",
@@ -843,15 +849,9 @@
         "docs/26-master-timeline.md"
       ],
       "relationships": [],
-      "runtime_bindings": [
-        {
-          "scene": "kanto.viridian_city.center",
-          "actor_index": 1,
-          "person_id": 11,
-          "status": "prototype_sprite_not_final_animation_design"
-        }
-      ],
-      "presentation_bindings": []
+      "runtime_bindings": [],
+      "presentation_bindings": [],
+      "runtime_revision_note": "旧原型中的常青市中心直接遭遇已撤下；正式开场先由老人提示火箭队渗透，实际登场尚待后续创作。"
     },
     {
       "id": "meowth",
@@ -907,7 +907,8 @@
       },
       "source_docs": [
         "core/src/adventure.c",
-        "docs/26-master-timeline.md"
+        "docs/26-master-timeline.md",
+        "docs/43-pallet-initialization.md"
       ],
       "relationships": [
         {
@@ -920,7 +921,7 @@
           "scene": "kanto.pallet_town.oak_lab",
           "actor_index": 4,
           "person_id": 9,
-          "status": "prototype_sprite_not_final_animation_design"
+          "status": "source_game_sprite_not_final_anime_design"
         }
       ],
       "presentation_bindings": []
@@ -1117,7 +1118,8 @@
       "source_docs": [
         "core/src/adventure.c",
         "docs/26-master-timeline.md",
-        "docs/37-acted-opening-screenplay.md"
+        "docs/37-acted-opening-screenplay.md",
+        "docs/43-pallet-initialization.md"
       ],
       "relationships": [],
       "runtime_bindings": [
@@ -1125,7 +1127,7 @@
           "scene": "kanto.viridian_city.center",
           "actor_index": 0,
           "person_id": 10,
-          "status": "prototype_sprite_not_final_animation_design"
+          "status": "source_game_sprite_not_final_anime_design"
         }
       ],
       "presentation_bindings": [],
@@ -1391,7 +1393,8 @@
       },
       "source_docs": [
         "core/src/adventure.c",
-        "docs/26-master-timeline.md"
+        "docs/26-master-timeline.md",
+        "docs/43-pallet-initialization.md"
       ],
       "relationships": [],
       "runtime_bindings": [
@@ -1399,7 +1402,7 @@
           "scene": "kanto.pallet_town",
           "actor_index": 0,
           "person_id": 4,
-          "status": "prototype_sprite_not_final_animation_design"
+          "status": "source_game_sprite_not_final_anime_design"
         }
       ],
       "presentation_bindings": []
@@ -1428,7 +1431,8 @@
       },
       "source_docs": [
         "core/src/adventure.c",
-        "docs/26-master-timeline.md"
+        "docs/26-master-timeline.md",
+        "docs/43-pallet-initialization.md"
       ],
       "relationships": [],
       "runtime_bindings": [
@@ -1436,7 +1440,7 @@
           "scene": "kanto.pallet_town",
           "actor_index": 1,
           "person_id": 5,
-          "status": "prototype_sprite_not_final_animation_design"
+          "status": "source_game_sprite_not_final_anime_design"
         }
       ],
       "presentation_bindings": []
@@ -1446,15 +1450,15 @@
       "name": "研究所助手甲",
       "kind": "human",
       "status": "adopted",
-      "role": "开场教学 NPC",
+      "role": "研究所宝可梦行为研究员；开场阅读行为观察论文。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
       "appearance": {
         "reference_media": null,
         "anime_identity": null,
-        "era_design": null,
-        "production_art": null
+        "era_design": "匿名研究者；动画对应人物及年龄阶段未指定。",
+        "production_art": "当前使用 FireRed scientist 原版行走素材。"
       },
       "biography": {
         "childhood": null,
@@ -1465,15 +1469,16 @@
       },
       "source_docs": [
         "core/src/adventure.c",
-        "docs/26-master-timeline.md"
+        "docs/26-master-timeline.md",
+        "docs/43-pallet-initialization.md"
       ],
       "relationships": [],
       "runtime_bindings": [
         {
           "scene": "kanto.pallet_town.oak_lab",
           "actor_index": 2,
-          "person_id": 7,
-          "status": "prototype_sprite_not_final_animation_design"
+          "person_id": 14,
+          "status": "source_game_sprite_not_final_anime_design"
         }
       ],
       "presentation_bindings": []
@@ -1483,15 +1488,15 @@
       "name": "研究所助手乙",
       "kind": "human",
       "status": "adopted",
-      "role": "开场教学 NPC",
+      "role": "研究所对战 AI 研究员；开场谈论其团队的对战成果，不知小智身份。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
       "appearance": {
         "reference_media": null,
         "anime_identity": null,
-        "era_design": null,
-        "production_art": null
+        "era_design": "匿名研究者；动画对应人物及年龄阶段未指定。",
+        "production_art": "当前使用 FireRed scientist 原版行走素材。"
       },
       "biography": {
         "childhood": null,
@@ -1502,15 +1507,16 @@
       },
       "source_docs": [
         "core/src/adventure.c",
-        "docs/26-master-timeline.md"
+        "docs/26-master-timeline.md",
+        "docs/43-pallet-initialization.md"
       ],
       "relationships": [],
       "runtime_bindings": [
         {
           "scene": "kanto.pallet_town.oak_lab",
           "actor_index": 3,
-          "person_id": 7,
-          "status": "prototype_sprite_not_final_animation_design"
+          "person_id": 15,
+          "status": "source_game_sprite_not_final_anime_design"
         }
       ],
       "presentation_bindings": []
@@ -1539,7 +1545,8 @@
       },
       "source_docs": [
         "core/src/adventure.c",
-        "docs/26-master-timeline.md"
+        "docs/26-master-timeline.md",
+        "docs/43-pallet-initialization.md"
       ],
       "relationships": [],
       "runtime_bindings": [
@@ -1547,7 +1554,7 @@
           "scene": "kanto.viridian_city.mart",
           "actor_index": 0,
           "person_id": 12,
-          "status": "prototype_sprite_not_final_animation_design"
+          "status": "source_game_sprite_not_final_anime_design"
         }
       ],
       "presentation_bindings": []
@@ -1576,7 +1583,8 @@
       },
       "source_docs": [
         "core/src/adventure.c",
-        "docs/26-master-timeline.md"
+        "docs/26-master-timeline.md",
+        "docs/43-pallet-initialization.md"
       ],
       "relationships": [],
       "runtime_bindings": [
@@ -1584,7 +1592,7 @@
           "scene": "kanto.route1",
           "actor_index": 0,
           "person_id": 13,
-          "status": "prototype_sprite_not_final_animation_design"
+          "status": "source_game_sprite_not_final_anime_design"
         }
       ],
       "presentation_bindings": []
@@ -7075,6 +7083,344 @@
           "sprite": "gentleman"
         }
       ]
+    },
+    {
+      "id": "lab-data-researcher",
+      "name": "研究所数据研究员",
+      "kind": "human",
+      "status": "adopted",
+      "role": "整理招式与属性标签。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": "动画对应身份及年龄阶段尚未指定；不把游戏素材当作动画设定。",
+        "production_art": "当前使用 FireRed 原版 scientist 行走素材；不是最终动画风格角色套件。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/43-pallet-initialization.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [
+        {
+          "scene": "kanto.pallet_town.oak_lab",
+          "actor_index": 5,
+          "person_id": 16,
+          "status": "source_game_sprite_not_final_anime_design"
+        }
+      ]
+    },
+    {
+      "id": "lab-vlm-researcher",
+      "name": "研究所视觉语言研究员",
+      "kind": "human",
+      "status": "adopted",
+      "role": "研究视觉与语言模型；不知小智的秘密。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": "动画对应身份及年龄阶段尚未指定；不把游戏素材当作动画设定。",
+        "production_art": "当前使用 FireRed 原版 scientist 行走素材；不是最终动画风格角色套件。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/43-pallet-initialization.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [
+        {
+          "scene": "kanto.pallet_town.oak_lab",
+          "actor_index": 6,
+          "person_id": 17,
+          "status": "source_game_sprite_not_final_anime_design"
+        }
+      ]
+    },
+    {
+      "id": "lab-server-engineer",
+      "name": "研究所机房工程师",
+      "kind": "human",
+      "status": "adopted",
+      "role": "维护计算节点；不知小智的秘密。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": "动画对应身份及年龄阶段尚未指定；不把游戏素材当作动画设定。",
+        "production_art": "当前使用 FireRed 原版 scientist 行走素材；不是最终动画风格角色套件。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/43-pallet-initialization.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [
+        {
+          "scene": "kanto.pallet_town.oak_lab.servers",
+          "actor_index": 0,
+          "person_id": 20,
+          "status": "source_game_sprite_not_final_anime_design"
+        }
+      ]
+    },
+    {
+      "id": "viridian-old-man",
+      "name": "常青市捕捉老人",
+      "kind": "human",
+      "status": "adopted",
+      "role": "向小智提供捕捉教学，或在被拒绝后发起对战。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": "动画对应身份及年龄阶段尚未指定；不把游戏素材当作动画设定。",
+        "production_art": "当前使用 FireRed 原版 old_man_1 行走素材；不是最终动画风格角色套件。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/43-pallet-initialization.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [
+        {
+          "scene": "kanto.viridian_city",
+          "actor_index": 0,
+          "person_id": 18,
+          "status": "source_game_sprite_not_final_anime_design"
+        }
+      ]
+    },
+    {
+      "id": "ash-bulbasaur",
+      "name": "小智的妙蛙种子",
+      "kind": "pokemon",
+      "status": "adopted",
+      "role": "由大木赠给小智的初始伙伴之一。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": "本作个体；动画对应个体及年龄阶段未指定，不能继承原作同种宝可梦的生平。",
+        "production_art": "当前战斗使用FireRed物种精灵图；非新绘动画个体设计或3D资产。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/43-pallet-initialization.md"
+      ],
+      "relationships": [
+        {
+          "other": "ash",
+          "relationship": "由大木赠给小智的初始伙伴之一。"
+        }
+      ],
+      "runtime_bindings": []
+    },
+    {
+      "id": "ash-charmander",
+      "name": "小智的小火龙",
+      "kind": "pokemon",
+      "status": "adopted",
+      "role": "由大木赠给小智的初始伙伴之一。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": "本作个体；动画对应个体及年龄阶段未指定，不能继承原作同种宝可梦的生平。",
+        "production_art": "当前战斗使用FireRed物种精灵图；非新绘动画个体设计或3D资产。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/43-pallet-initialization.md"
+      ],
+      "relationships": [
+        {
+          "other": "ash",
+          "relationship": "由大木赠给小智的初始伙伴之一。"
+        }
+      ],
+      "runtime_bindings": []
+    },
+    {
+      "id": "ash-squirtle",
+      "name": "小智的杰尼龟",
+      "kind": "pokemon",
+      "status": "adopted",
+      "role": "由大木赠给小智的初始伙伴之一。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": "本作个体；动画对应个体及年龄阶段未指定，不能继承原作同种宝可梦的生平。",
+        "production_art": "当前战斗使用FireRed物种精灵图；非新绘动画个体设计或3D资产。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/43-pallet-initialization.md"
+      ],
+      "relationships": [
+        {
+          "other": "ash",
+          "relationship": "由大木赠给小智的初始伙伴之一。"
+        }
+      ],
+      "runtime_bindings": []
+    },
+    {
+      "id": "gary-squirtle",
+      "name": "小茂的杰尼龟",
+      "kind": "pokemon",
+      "status": "adopted",
+      "role": "小茂提前三天领取的伙伴；参与研究所首战。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": "本作个体；动画对应个体及年龄阶段未指定，不能继承原作同种宝可梦的生平。",
+        "production_art": "当前战斗使用FireRed物种精灵图；非新绘动画个体设计或3D资产。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/43-pallet-initialization.md"
+      ],
+      "relationships": [
+        {
+          "other": "gary",
+          "relationship": "小茂提前三天领取的伙伴；参与研究所首战。"
+        }
+      ],
+      "runtime_bindings": []
+    },
+    {
+      "id": "viridian-gift-weedle",
+      "name": "老人赠予的独角虫",
+      "kind": "pokemon",
+      "status": "adopted",
+      "role": "教学完成或挑战获胜后赠给小智；两条分支是同一个一次性奖励。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": "本作个体；动画对应个体及年龄阶段未指定，不能继承原作同种宝可梦的生平。",
+        "production_art": "当前战斗使用FireRed物种精灵图；非新绘动画个体设计或3D资产。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/43-pallet-initialization.md"
+      ],
+      "relationships": [
+        {
+          "other": "viridian-old-man",
+          "relationship": "教学完成或挑战获胜后赠给小智；两条分支是同一个一次性奖励。"
+        }
+      ],
+      "runtime_bindings": []
+    },
+    {
+      "id": "viridian-old-man-pidgey",
+      "name": "捕捉老人的波波",
+      "kind": "pokemon",
+      "status": "adopted",
+      "role": "拒绝教学分支中出战；具体配置属于本章实现选择。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": "本作个体；动画对应个体及年龄阶段未指定，不能继承原作同种宝可梦的生平。",
+        "production_art": "当前战斗使用FireRed物种精灵图；非新绘动画个体设计或3D资产。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/43-pallet-initialization.md"
+      ],
+      "relationships": [
+        {
+          "other": "viridian-old-man",
+          "relationship": "拒绝教学分支中出战；具体配置属于本章实现选择。"
+        }
+      ],
+      "runtime_bindings": []
     }
   ],
   "revision": "2026-09-28.1"

@@ -86,3 +86,7 @@
 - `content/story/characters.json`：每位候选的来源身份、证据层级、建议用途及空白生平。原作资料和 Omni 经历分别显示。
 - [证据台账](../research/narrative/2026-09-26-kanto-rivals-evidence.md)：区分官网正文、官网检索内容、授权发行简介和社区转录。
 - 生成的人物档案和劲敌选角页由 `tools/build_story_bible.py` 维护；没有编入运行时或改变现有对战。
+
+## 2026-09-28 正式初始化衔接
+
+小茂返所首战已由用户采用，详见[43](43-pallet-initialization.md)。胜负均离场；未决定政治效忠、世界赛资格或未来结局。

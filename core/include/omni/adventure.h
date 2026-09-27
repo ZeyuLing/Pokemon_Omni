@@ -1,26 +1,42 @@
 #ifndef OMNI_ADVENTURE_H
 #define OMNI_ADVENTURE_H
 #include "omni/pokedex.h"
+#define OMNI_PARTNER_PIKACHU_DEX_ID 2001874478u
 /* Stable semantic location/person IDs; screen coordinates live in adapters. */
-enum { OMNI_PALLET=1, OMNI_HOME=2, OMNI_BEDROOM=3, OMNI_RIVAL_HOME=4, OMNI_LAB=5, OMNI_ROUTE1=6, OMNI_VIRIDIAN=7, OMNI_CENTER=8, OMNI_MART=9 };
+enum { OMNI_PALLET=1, OMNI_HOME=2, OMNI_BEDROOM=3, OMNI_RIVAL_HOME=4, OMNI_LAB=5, OMNI_ROUTE1=6, OMNI_VIRIDIAN=7, OMNI_CENTER=8, OMNI_MART=9, OMNI_SERVERS=10 };
 enum { OMNI_OAK=1, OMNI_MOM=2, OMNI_RIVAL=3, OMNI_NEIGHBOR=4, OMNI_WALKER=5, OMNI_DAISY=6, OMNI_AIDE=7, OMNI_PC=8, OMNI_PIKACHU=9, OMNI_NURSE=10, OMNI_ROCKET=11, OMNI_CLERK=12, OMNI_ROUTE_GUIDE=13 };
 enum { OMNI_ADVENTURE_OK, OMNI_ADVENTURE_ARGUMENT, OMNI_ADVENTURE_LOCKED, OMNI_ADVENTURE_ALREADY, OMNI_ADVENTURE_BAD_SAVE };
 enum { OMNI_TALK_INVALID, OMNI_TALK_OAK_OFFER, OMNI_TALK_OAK_PARTNER, OMNI_TALK_OAK_DONE, OMNI_TALK_MOM_START, OMNI_TALK_HEALED, OMNI_TALK_RIVAL_WAIT, OMNI_TALK_RIVAL_BATTLE, OMNI_TALK_NEIGHBOR, OMNI_TALK_WALKER, OMNI_TALK_DAISY, OMNI_TALK_AIDE, OMNI_TALK_PC_POTION, OMNI_TALK_PC_EMPTY };
 enum { OMNI_EVENT_CENTER=1, OMNI_EVENT_ROCKET=2, OMNI_EVENT_PARCEL=4, OMNI_EVENT_DELIVERED=8 };
-enum { OMNI_BATTLE_PRACTICE=0, OMNI_BATTLE_WILD=1, OMNI_BATTLE_ROCKET=2 };
-typedef struct { uint16_t species,hp;uint8_t level,pp[4],status;uint32_t experience; } OmniPartner;
+enum { OMNI_EVENT_GIFTS=16, OMNI_EVENT_GARY_DONE=32, OMNI_EVENT_OLD_DONE=64,
+ OMNI_EVENT_OLD_DECLINED=128, OMNI_EVENT_WEEDLE_PENDING=256, OMNI_EVENT_WOKE=512, OMNI_EVENT_INITIALIZATION=1024 };
+enum { OMNI_BATTLE_PRACTICE=0, OMNI_BATTLE_WILD=1, OMNI_BATTLE_ROCKET=2, OMNI_BATTLE_GARY=3, OMNI_BATTLE_OLD_MAN=4, OMNI_BATTLE_TUTORIAL=5 };
+enum { OMNI_TOOL_MINT, OMNI_TOOL_ABILITY, OMNI_TOOL_IV, OMNI_TOOL_EV, OMNI_TOOL_ESCAPE };
+typedef struct { uint16_t species,hp;uint8_t level,pp[4],status;uint32_t experience;
+ uint16_t moves[4],evs[6];uint8_t ivs[6],nature,ability,form,bond_eligible;
+} OmniPartner;
 typedef struct {
  uint32_t rng,money,play_seconds;
  uint16_t location,potions,balls,battles_won,battles_played;
  uint8_t chapter,starter,party_count,pc_claimed,badges;
  uint16_t events;
  OmniPartner party[6];
+ OmniPartner storage[12];uint8_t storage_count;
 } OmniAdventure;
-#define OMNI_ADVENTURE_SAVE_BYTES 140
+#define OMNI_ADVENTURE_SAVE_BYTES 916
 /* Real elapsed time, not accelerated simulation steps. Saturates at 999:59:59. */
 void omni_adventure_elapsed(OmniAdventure *,uint32_t seconds);
-typedef struct { uint16_t species,base[6],moves[2];uint8_t pp[2];const char *name,*ability; } OmniStarter;
-extern const OmniStarter omni_starters[7];
+typedef struct { uint16_t species,base[6],moves[4];uint8_t pp[4];const char *name,*ability; } OmniStarter;
+extern const OmniStarter omni_starters[8];
+const char *omni_partner_name(const OmniPartner *);
+const char *omni_partner_ability(const OmniPartner *);
+const char *omni_nature_name(unsigned nature);
+unsigned omni_move_pp(unsigned move);
+int omni_initialization_gifts(OmniAdventure *,const OmniDex *,OmniDexState *);
+int omni_initialization_weedle(OmniAdventure *,const OmniDex *,OmniDexState *);
+int omni_adventure_train(OmniAdventure *,uint8_t slot,uint8_t tool,uint8_t parameter,uint16_t value);
+int omni_adventure_store(OmniAdventure *,uint8_t slot);
+int omni_adventure_withdraw(OmniAdventure *,uint8_t slot);
 void omni_adventure_new(OmniAdventure *);
 int omni_adventure_enter(OmniAdventure *,uint16_t location);
 uint8_t omni_adventure_interact(OmniAdventure *,uint8_t person);
@@ -40,9 +56,10 @@ int omni_adventure_load(OmniAdventure *,const uint8_t *bytes,size_t length);
 /* Deliberately bounded opening battle rules: Tackle, Scratch, Growl,
  * Tail Whip, Thunder Shock, Struggle. This is NOT the future complete battle engine. */
 typedef struct {
- OmniPartner mons[2];int8_t attack[2],defense[2];uint32_t rng;
+ OmniPartner mons[2];int8_t attack[2],defense[2],speed[2];uint32_t rng;
  uint8_t active,outcome,kind,party_slot;uint16_t turns;
 } OmniPractice;
+int omni_initialization_battle(OmniAdventure *,OmniPractice *,uint8_t kind,const OmniDex *,OmniDexState *);
 typedef struct {uint8_t actor,miss,critical,status;uint16_t move,damage,hp[2];} OmniPracticeAction;
 typedef struct {uint8_t count,outcome;OmniPracticeAction actions[2];} OmniPracticeTurn;
 int omni_practice_begin(OmniAdventure *,OmniPractice *,const OmniDex *,OmniDexState *);

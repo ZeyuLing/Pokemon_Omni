@@ -75,7 +75,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
  press(256);assert.equal(state().screen,16);const count=require('../assets/characters/manifest.json').portraits.length;const unique=new Set();
  for(let i=0;i<count;i++){assert.equal(state().cast,i);shot('cast-'+i);unique.add(crypto.createHash('sha256').update(Buffer.from(m.HEAPU8.slice(m._mgbawasm_video_ptr(),m._mgbawasm_video_ptr()+153600))).digest('hex'));press(16);}
  assert.equal(unique.size,count);assert.equal(state().cast,0);press(32);assert.equal(state().cast,count-1);press(2);assert(before.equals(sram()),'Gallery must not write SRAM');
- press(1);assert.equal(state().screen,14);press(8);press(1);assert.equal(state().screen,7);press(1);assert.equal(state().screen,1);assert(!before.equals(sram()),'New game commits only after opening');
+ press(1);assert.equal(state().screen,14);press(8);press(1);assert.equal(state().screen,7);for(let d=0;d<40&&state().screen===7;d++)press(1);assert.equal(state().screen,1);assert(!before.equals(sram()),'New game commits only after opening');
  frames(60);assert(m._mgbawasm_state_save(sp));const startState=Buffer.from(m.HEAPU8.slice(sp,sp+n));const distances=[];
  for(const speed of [1,2,4]){
   m.HEAPU8.set(startState,sp);assert(m._mgbawasm_state_load(sp));m._mgbawasm_set_keys(0);

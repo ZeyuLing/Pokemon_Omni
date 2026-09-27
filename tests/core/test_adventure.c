@@ -106,6 +106,38 @@ int main(void){
   }
   assert(paralyzed);
  }
+ {
+  /* Authored initialization: atomic gifts, exclusive partner, legal reusable
+   * training, both battle outcomes, one-time boxed reward and save migration. */
+  OmniAdventure g,copy,loaded;OmniPractice b;OmniPracticeTurn out;
+  OmniDexEntry all[8];OmniDex full={all,8};uint8_t flags[8]={0},bytes[OMNI_ADVENTURE_SAVE_BYTES];OmniDexState state={flags,8};size_t n;unsigned i,k,balls;
+  memcpy(all,entries,sizeof(entries));all[7]=entries[0];all[7].id=888;all[7].national=13;
+  omni_adventure_new(&g);omni_adventure_enter(&g,OMNI_LAB);copy=g;
+  assert(omni_initialization_gifts(&g,0,&state)==OMNI_ADVENTURE_ARGUMENT);assert(!memcmp(&g,&copy,sizeof(g)));
+  assert(!omni_initialization_gifts(&g,&full,&state));assert(g.party_count==4&&g.balls==100&&g.party[0].form==1&&g.party[0].bond_eligible==1);
+  assert(g.party[0].moves[2]==729&&g.party[0].pp[2]==15&&omni_partner_stat(&g.party[0],0)==21);
+  for(i=0;i<4;++i){unsigned sum=0;for(k=0;k<6;++k){assert(g.party[i].ivs[k]==31);sum+=g.party[i].evs[k];}assert(sum==508);assert(g.party[i].level==5);}
+  copy=g;assert(omni_initialization_gifts(&g,&full,&state)==OMNI_ADVENTURE_ALREADY);assert(!memcmp(&g,&copy,sizeof(g)));
+  assert(omni_adventure_train(&g,0,OMNI_TOOL_EV,1,252)==OMNI_ADVENTURE_LOCKED);assert(!memcmp(&g,&copy,sizeof(g)));
+  assert(!omni_adventure_train(&g,0,OMNI_TOOL_EV,3,0));assert(!omni_adventure_train(&g,0,OMNI_TOOL_EV,1,252));
+  assert(!omni_adventure_train(&g,0,OMNI_TOOL_MINT,0,3));assert(omni_partner_stat(&g.party[0],1)==18);
+  assert(omni_adventure_train(&g,0,OMNI_TOOL_ABILITY,0,0)==OMNI_ADVENTURE_ALREADY);
+  g.party[0].ivs[1]=0;assert(!omni_adventure_train(&g,0,OMNI_TOOL_IV,0,0)&&g.party[0].ivs[1]==31);
+  assert(!omni_initialization_battle(&g,&b,OMNI_BATTLE_GARY,&full,&state));assert(b.mons[1].level==8);
+  assert(omni_adventure_escape(&g,&b)==OMNI_ADVENTURE_LOCKED);balls=g.balls;assert(omni_adventure_capture(&g,&b,&full,&state)==OMNI_ADVENTURE_LOCKED&&g.balls==balls);
+  b.mons[1].hp=1;assert(!omni_practice_turn(&b,2,&out)&&b.outcome==1);assert(out.actions[0].move==729&&out.actions[0].critical&&out.actions[0].actor==0);
+  assert(!omni_practice_finish(&g,&b));assert(g.events&OMNI_EVENT_GARY_DONE);assert(g.party[0].hp==omni_partner_stat(&g.party[0],0));
+  g=copy;assert(!omni_initialization_battle(&g,&b,OMNI_BATTLE_GARY,&full,&state));b.mons[0].hp=0;b.outcome=2;assert(!omni_practice_finish(&g,&b));assert((g.events&OMNI_EVENT_GARY_DONE)&&g.location==OMNI_LAB&&g.money==3000);
+  omni_adventure_enter(&g,OMNI_VIRIDIAN);assert(!omni_initialization_battle(&g,&b,OMNI_BATTLE_TUTORIAL,&full,&state));assert(!omni_adventure_capture(&g,&b,&full,&state)&&g.balls==100);assert(!omni_practice_finish(&g,&b));
+  g.party[4]=g.party[5]=g.party[0];g.party_count=6;g.storage_count=12;for(i=0;i<12;++i)g.storage[i]=g.party[0];
+  assert(omni_initialization_weedle(&g,&full,&state)==OMNI_ADVENTURE_LOCKED);assert(g.events&OMNI_EVENT_WEEDLE_PENDING);
+  g.storage_count=0;memset(g.storage,0,sizeof(g.storage));assert(!omni_initialization_weedle(&g,&full,&state));assert(g.storage_count==1&&g.storage[0].species==13);assert(omni_initialization_weedle(&g,&full,&state)==OMNI_ADVENTURE_ALREADY);
+  assert(!omni_adventure_store(&g,1));assert(!omni_adventure_withdraw(&g,0));assert(g.party[5].species==13);
+  assert(!omni_adventure_save(&g,bytes,sizeof(bytes),&n));assert(n==916);assert(!omni_adventure_load(&loaded,bytes,n));assert(!memcmp(&g,&loaded,sizeof(g)));
+  copy=loaded;bytes[154]=255;assert(omni_adventure_load(&loaded,bytes,n)==OMNI_ADVENTURE_BAD_SAVE);assert(!memcmp(&loaded,&copy,sizeof(loaded)));
+  for(i=1;i<g.party_count;++i)g.party[i].hp=0;assert(omni_adventure_store(&g,0)==OMNI_ADVENTURE_LOCKED);
+  omni_adventure_enter(&g,OMNI_SERVERS);assert(!omni_adventure_train(&g,0,OMNI_TOOL_ESCAPE,0,0)&&g.location==OMNI_LAB);
+ }
 #ifdef OMNI_TEST_WASM
  rounds_checked=total;
 #endif

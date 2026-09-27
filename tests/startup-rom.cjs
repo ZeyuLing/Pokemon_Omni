@@ -58,7 +58,7 @@ function legacyV2(source){
  // A held from the cover must never select New Game in the next screen.
  m._mgbawasm_set_keys(1);frames(150);assert.equal(state().screen,0);m._mgbawasm_set_keys(0);frames(20);assert(empty.equals(sram()));
  press(1);assert.equal(state().screen,14);assert(empty.equals(sram()));
- press(8);press(1);assert.equal(state().screen,7);assert(valid(sram(),maps));press(1);assert.equal(state().screen,1);
+ press(8);press(1);assert.equal(state().screen,7);assert(valid(sram(),maps));for(let d=0;d<40&&state().screen===7;d++)press(1);assert.equal(state().screen,1);
  frames(130);press(8);for(let i=0;i<4;i++)press(128);press(1);press(1);press(2);
  const timed=sram();let newest=timed.readUInt32LE(4)>timed.readUInt32LE(16388)?0:16384;
  assert(timed.readUInt32LE(newest+20+16+128)>=2,'Real play time is serialized');
