@@ -1,4 +1,4 @@
-# 丰缘喷火驼 · 战场实例
+# 丰缘雷电兽 · 战场实例
 
 <!-- GENERATED: edit content/story/characters.json and worldline.json -->
 
@@ -14,7 +14,7 @@ ID：`war-unit-07`；状态：场景提案。
 
 年龄阶段设计：
 
-最终立绘／像素／3D 资产：PMD 原生行走、施招、受击及伏地静止动画帧；来源与逐物种署名见 battlefield 素材清单。
+最终立绘／像素／3D 资产：PMD 原生四向行走、施招、受击与伏地静止关键帧；本场 24 个宝可梦实例各用不同物种，来源及逐物种署名见 battlefield 素材清单。
 
 ## 开场中的演绎
 

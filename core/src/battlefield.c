@@ -16,19 +16,25 @@ void omni_war_sample_all(const OmniWarActor *a,unsigned count,uint32_t t,OmniWar
  for(i=0;i<count;++i){
   const OmniWarActor *u=&a[i];unsigned n=t>u->start?(unsigned)(t-u->start):0,q;
   p[i].x=(int16_t)lerp(u->x,u->tx,n,u->duration);p[i].y=(int16_t)lerp(u->y,u->ty,n,u->duration);
-  p[i].face=(u->team&1)?2:3;p[i].step=(uint8_t)((t/8)&1);p[i].hit=0;p[i].phase=0;p[i].action=OMNI_WAR_IDLE;
+  p[i].face=u->team==0?0:u->team==1?3:u->team==2?1:2;p[i].step=(uint8_t)((t/8)&1);p[i].hit=0;p[i].phase=0;p[i].action=OMNI_WAR_IDLE;
   if(t>=u->stop){p[i].action=OMNI_WAR_DOWN;continue;}
   if(n<u->duration&&t>=u->start){p[i].action=OMNI_WAR_ADVANCE;p[i].face=u->tx>u->x?3:u->tx<u->x?2:u->ty>u->y?0:1;}
   if(u->attack&&t>=u->start+u->duration&&omni_war_target(a,count,i,t)<count){q=(unsigned)(t-u->start-u->duration+u->phase)%320;p[i].phase=(uint16_t)q;p[i].action=q<64?OMNI_WAR_CHARGE:q<112?OMNI_WAR_FIRE:OMNI_WAR_RECOVER;}
  }
- /* Imported combat art has two lateral views. Face the actual current target,
+ /* Imported combat art has four cardinal views. Face the actual current target,
   * including retargeting after casualties, rather than assuming team parity. */
  for(i=0;i<count;++i)if(a[i].attack&&p[i].action!=OMNI_WAR_DOWN&&p[i].action!=OMNI_WAR_ADVANCE){
   unsigned target=omni_war_target(a,count,i,t);
-  if(target<count&&p[target].x!=p[i].x)p[i].face=p[target].x>p[i].x?3:2;
+  if(target<count){int dx=p[target].x-p[i].x,dy=p[target].y-p[i].y;
+   int ax=dx<0?-dx:dx,ay=dy<0?-dy:dy;
+   if(ax||ay)p[i].face=ax>=ay?(dx>0?3:2):(dy>0?0:1);
+  }
  }
  for(i=0;i<count;++i)if(a[i].attack&&t<a[i].stop&&t>=a[i].start+a[i].duration&&p[i].phase>=104&&p[i].phase<128){
   unsigned target=omni_war_target(a,count,i,t);
-  if(target<count){p[target].hit=1;p[target].x+=(int16_t)(((a[target].team&1)?1:-1)*(p[i].phase<116?3:1));}
+  if(target<count){int dx=p[target].x-p[i].x,dy=p[target].y-p[i].y,force=p[i].phase<116?3:1;p[target].hit=1;
+   if((dx<0?-dx:dx)>=(dy<0?-dy:dy))p[target].x+=(int16_t)(dx<0?-force:force);
+   else p[target].y+=(int16_t)(dy<0?-force:force);
+  }
  }
 }

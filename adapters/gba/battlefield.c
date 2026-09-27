@@ -13,7 +13,7 @@ WAR_FAST void omni_gba_war_draw(volatile uint16_t *surface,int cx,int cy,uint32_
  OmniWarPose p[OMNI_WAR_COUNT];unsigned order[OMNI_WAR_COUNT],i,j,active=0,hits=0;int x,y;
  dst=surface;
  /* Environmental danger belongs to terrain, not a red full-screen filter. */
- for(y=0;y<20;++y)for(x=0;x<32;++x)if(omni_war_terrain[y*32+x]==2){
+ for(y=0;y<OMNI_WAR_HEIGHT/16;++y)for(x=0;x<OMNI_WAR_WIDTH/16;++x)if(omni_war_terrain[y*(OMNI_WAR_WIDTH/16)+x]==2){
   int xx=x*16-cx,yy=y*16-cy,n=(int)((ticks/6+x*7+y*13)%13);
   line(xx+1,yy+n,xx+9,yy+n-2,RGB(31,18,2));dot(xx+12,yy+15-n,RGB(31,27,9));
  }
@@ -25,19 +25,19 @@ WAR_FAST void omni_gba_war_draw(volatile uint16_t *surface,int cx,int cy,uint32_
  for(i=0;i<OMNI_WAR_COUNT;++i)order[i]=i;
  for(i=0;i<OMNI_WAR_COUNT;++i)for(j=i+1;j<OMNI_WAR_COUNT;++j){unsigned a=order[i],b=order[j];int ka=p[a].y+(omni_war_actors[a].layer==2&&p[a].action!=OMNI_WAR_DOWN?1024:0),kb=p[b].y+(omni_war_actors[b].layer==2&&p[b].action!=OMNI_WAR_DOWN?1024:0);if(ka>kb){order[i]=b;order[j]=a;}}
  for(j=0;j<OMNI_WAR_COUNT;++j){
-  unsigned frame,stride;int row,col,bob=0,left,down;uint16_t palette[16];const unsigned char *pixels;const OmniWarActor *a;const OmniWarSprite *s;
+  unsigned frame;int row,col,bob=0,left,down;uint16_t palette[16];const unsigned char *pixels;const OmniWarActor *a;const OmniWarSprite *s;const OmniWarFrame *f;
   i=order[j];a=&omni_war_actors[i];s=&omni_war_sprites[a->sprite];x=p[i].x-cx;y=p[i].y-cy;down=p[i].action==OMNI_WAR_DOWN;
   if(a->layer==2&&!down)bob=-5-(int)((ticks/14+i)%3);
-  if(s->pmd){frame=(p[i].face==3?6:0)+(down?5:p[i].hit?4:p[i].action==OMNI_WAR_FIRE?3:p[i].action==OMNI_WAR_CHARGE?2:(ticks/12)&1);}
+  if(s->pmd){frame=p[i].face*6+(down?5:p[i].hit?4:p[i].action==OMNI_WAR_FIRE?3:p[i].action==OMNI_WAR_CHARGE?2:(ticks/12)&1);}
   else if(a->sprite>=12&&a->sprite<16)frame=p[i].face;
   else {frame=p[i].face==0?0:p[i].face==1?1:2;if(p[i].action==OMNI_WAR_ADVANCE&&p[i].step)frame=(p[i].face==0?3:p[i].face==1?5:7)+(ticks/16&1);}
-  frame%=s->frames;stride=(s->w*s->h+1)/2;pixels=omni_war_art+s->offset+frame*stride;left=x+8-s->w/2;
+  frame%=s->frames;f=&s->frame_map[frame];pixels=omni_war_art+s->offset+f->offset;left=x+8-s->w/2;
   if(x+8+s->w/2>0&&left<240&&y>0&&y-s->h<160){
    for(col=0;col<16;++col)palette[col]=s->palette[col];
    if(a->role==2&&s->human){int fx=x-6;line(fx,y,fx,y-36,RGB(14,12,12));for(row=0;row<9;++row)line(fx,y-36+row,fx+7-(row%3==0?2:0),y-36+row,uniforms[a->team]);}
    if(p[i].action==OMNI_WAR_CHARGE)for(col=0;col<4;++col)disc(x+2+col*4,y-s->h-2-(int)((ticks+col*7)%9),1,colors[a->attack]);
-   for(row=0;row<s->h;++row)for(col=0;col<s->w;++col){
-    unsigned ix=row*s->w+((!s->pmd&&a->sprite>=16&&p[i].face==3)?s->w-1-col:col);uint16_t c=palette[(pixels[ix/2]>>((ix&1)*4))&15];int dx=left+col,dy=y-s->h+row+bob;
+   for(row=0;row<f->h;++row)for(col=0;col<f->w;++col){
+    unsigned ix=row*f->w+((!s->pmd&&a->sprite>=16&&p[i].face==3)?f->w-1-col:col);uint16_t c=palette[(pixels[ix/2]>>((ix&1)*4))&15];int dx=left+f->x+col,dy=y-s->h+f->y+row+bob;
     if(c&0x8000)continue;
     if(down){if(!s->pmd){dx=x+8-s->h/2+row;dy=y-s->w+col;}c=(uint16_t)(((c&31)*4/5)|((((c>>5)&31)*4/5)<<5)|((((c>>10)&31)*4/5)<<10));}
     else if(p[i].hit&&(ticks/3&1))c=RGB(31,31,28);

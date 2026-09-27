@@ -31,7 +31,7 @@ def compile_war():
         assert len(row)==w
         for x,c in enumerate(row):
             bg.paste(tiles[c],(x*16,y*16));terrain.append(2 if c=='~' else 1 if c in '#^v<>' else 0)
-    blob=bytearray();sprites=[]
+    blob=bytearray();sprites=[];art_layout=[]
     for s in data['sprites']:
         if 'atlas_column' in s:
             path=ROOT/'assets/characters/war-commanders-v1.png'
@@ -63,23 +63,37 @@ def compile_war():
                 frames.append(canvas)
         fw,fh=frames[0].size;offset=len(blob)
         palette=[0x8000]
+        frame_map=[];unique_frames=[];frame_layout=[]
         for frame in frames:
+            box=frame.getbbox() if 'pmd' in s else (0,0,fw,fh)
+            cropped=frame.crop(box);cw,ch=cropped.size
             indices=[]
-            for r,g,b,a in frame.getdata():
+            for r,g,b,a in cropped.getdata():
                 c=0x8000 if a<128 else (r>>3)|((g>>3)<<5)|((b>>3)<<10)
                 if c not in palette:palette.append(c)
                 indices.append(palette.index(c))
             assert len(palette)<=16,(s['name'],len(palette))
             if len(indices)%2:indices.append(0)
-            blob.extend(indices[i]|(indices[i+1]<<4) for i in range(0,len(indices),2))
+            packed=bytes(indices[i]|(indices[i+1]<<4) for i in range(0,len(indices),2))
+            if packed not in unique_frames:unique_frames.append(packed)
+            position=sum(len(p) for p in unique_frames[:unique_frames.index(packed)])
+            frame_map.append('{'+','.join(map(str,[position,cw,ch,box[0],box[1]]))+'}')
+            frame_layout.append(dict(offset=offset+position,width=cw,height=ch,x=box[0],y=box[1]))
+        for packed in unique_frames:blob.extend(packed)
+        frame_map += ['{0,0,0,0,0}']*(24-len(frame_map))
         palette += [0x8000]*(16-len(palette))
-        sprites.append('{'+','.join(map(str,[offset,fw,fh,len(frames),int(s['human']),int('pmd' in s)]))+',{'+','.join(map(str,palette))+'}}')
+        art_layout.append(dict(pmd=s.get('pmd'),width=fw,height=fh,palette=palette,frames=frame_layout))
+        sprites.append('{'+','.join(map(str,[offset,fw,fh,len(frames),int(s['human']),int('pmd' in s)]))+',{'+','.join(map(str,palette))+'},{'+','.join(frame_map)+'}}')
     # Enforce traversable routes across the entire foot rectangle, not only endpoints.
     actors=data['actors'];count=len(actors)
     assert 0<count<=255
     assert len(data['factions'])==4
     rosters=[{data['sprites'][a['sprite']].get('pmd') for a in actors if a['team']==team and not data['sprites'][a['sprite']]['human']} for team in range(4)]
     assert all(rosters) and all(not (rosters[a]&rosters[b]) for a in range(4) for b in range(a+1,4)), 'Regional battle rosters must be visually distinct'
+    species=[data['sprites'][a['sprite']]['pmd'] for a in actors if not data['sprites'][a['sprite']]['human']]
+    assert len(species)==len(set(species))==24, 'Each Pokemon actor must have its own species'
+    for team in range(4):
+        assert {actors[a['target']]['team'] for a in actors if a['team']==team and a['attack']}==set(range(4))-{team}, 'Each region must fight all three opponents'
     assert sum(a.get('stop')==1600 for a in actors)==20
     assert sum(a['attack']>0 and a.get('stop',65535)>1600 for a in actors)==8
     for a in actors:
@@ -98,11 +112,13 @@ def compile_war():
     rows=['{'+','.join(map(str,[*a['at'],*a['to'],a['start'],a['duration'],a['phase'],a['sprite'],a['team'],a['layer'],a['target'],a['attack'],a['role'],a.get('stop',65535)]))+'}' for a in actors]
     OUT.mkdir(parents=True,exist_ok=True)
     (OUT/'war.bin').write_bytes(blob)
+    (OUT/'war-art-layout.json').write_text(json.dumps(art_layout))
     (OUT/'war.s').write_text(f'/* {hashlib.sha256(blob).hexdigest()} */\n.section .rodata\n.balign 4\n.global omni_war_art\nomni_war_art:\n.incbin "build/pallet/war.bin"\n')
     (OUT/'war_data.h').write_text('''#ifndef OMNI_WAR_DATA_H
 #define OMNI_WAR_DATA_H
 #include "omni/battlefield.h"
-typedef struct {uint32_t offset;uint8_t w,h,frames,human,pmd;uint16_t palette[16];} OmniWarSprite;
+typedef struct {uint32_t offset;uint8_t w,h,x,y;} OmniWarFrame;
+typedef struct {uint32_t offset;uint8_t w,h,frames,human,pmd;uint16_t palette[16];OmniWarFrame frame_map[24];} OmniWarSprite;
 extern const unsigned char omni_war_art[];
 extern const OmniWarActor omni_war_actors[];
 extern const OmniWarSprite omni_war_sprites[];

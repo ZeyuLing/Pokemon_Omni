@@ -1341,7 +1341,7 @@
     ],
     "spoiler_boundary": "The game script contains no AI identity, synthetic body, model/prompt terminology or creation scene. Oak dialogue supports both ordinary training and later reinterpretation.",
     "historical_effect": "Dramatizes established opening conditions with new scene dialogue and anonymous supporting roles. Does not date or settle unwritten post-Cinnabar history.",
-    "version": 6,
+    "version": 7,
     "format": "volcanic_four_region_battle_aftermath_meetings",
     "scene_count": 6,
     "source": "content/opening/prologue.json",
@@ -1351,7 +1351,7 @@
       "sound_bridge": "战场采用原版训练家对战曲；前线要求上报伤情时转希尔弗曲，连续进入联盟、希尔弗、火箭队及祖孙会面。大木独处转研究所曲，翌晨转真新镇。",
       "room_continuity": "每场先交代人物和桌案位置；每次走位以来源地图地块和其他演员为障碍。",
       "historical_boundary": "只演绎已定的大战末期状态；不补写红莲之后未定历史、日期、继承人阵营或最终结局。",
-      "battlefield": "512×320 烟囱山火山局部战时舞台，40 个独立单位；四指挥官、12 种地区宝可梦，切镜后 20 个单位倒地，仍有 8 只宝可梦交战。倒地非已定死亡。"
+      "battlefield": "512×384 烟囱山局部火山战场；关都北进、丰缘西进、神奥南进、合众东进，中央岩台交叉交火，各方攻击另外三方。40 个单位含 24 种不重复宝可梦与 16 名人类；20 个单位切镜后倒地，8 只宝可梦仍交战。倒地不等于确认死亡，地区来路仅指局部战术方向，不是全球地理。"
     },
     "battlefield_cast": [
       {

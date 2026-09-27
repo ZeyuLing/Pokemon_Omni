@@ -108,7 +108,17 @@ class OpeningLayout(unittest.TestCase):
         for cue in REPORT['cues']:
             if cue['stage']!='war':continue
             for x,y in cue['camera']:
-                self.assertTrue(0<=x<=272 and 0<=y<=160,'Camera exposes empty space')
+                self.assertTrue(0<=x<=data['size'][0]*16-240 and 0<=y<=data['size'][1]*16-160,'Camera exposes empty space')
+        # Crying trainers and their partners must remain above the dialogue box.
+        actors={a['id']:a for a in data['actors']}
+        for beat in scene['beats']:
+            actor=actors.get(beat.get('actor'))
+            if not actor or actor['role']!=4:continue
+            cx,cy=beat['camera']
+            partner=data['actors'][data['actors'].index(actor)+2]
+            for unit in (actor,partner):
+                x,y=unit['to']
+                self.assertTrue(16<=x-cx<=216 and 32<=y-cy<=104,'Injured partner or trainer hidden by dialogue')
         # Evidence comes from actual ROM frames, not the high-resolution source.
         selected=[REPORT['cues'][0],next(c for c in REPORT['cues'] if c['scene']=='war-front' and c['dialogue']),next(c for c in REPORT['cues'] if c['scene']=='lance' and c['dialogue'])]
         proof=Image.new('RGB',(720,160))

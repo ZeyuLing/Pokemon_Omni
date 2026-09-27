@@ -21,5 +21,10 @@ int main(void) {
  omni_war_sample_all(a,3,30,p);CHECK(p[0].face==0);
  a[0].ty=40;
  omni_war_sample_all(a,3,30,p);CHECK(p[0].face==1);
+ a[0].duration=0;a[0].ty=80;a[0].target=2;
+ a[2].tx=100;a[2].ty=160;
+ omni_war_sample_all(a,3,0,p);CHECK(p[0].face==0);
+ a[2].ty=32;
+ omni_war_sample_all(a,3,0,p);CHECK(p[0].face==1);
  return 0;
 }

@@ -91,3 +91,79 @@ FireRed human sprite bases and Emerald volcanic tiles are original game assets r
 2026-09-11 22:43:31.374316	<@!546904324098490368>	CUR	CC_BY-NC_4	Eat
 2026-09-11 22:43:43.619035	<@!546904324098490368>	CUR	CC_BY-NC_4	Eat
 ```
+
+## 0142 化石翼龙
+
+```text
+2020-10-07 17:58:43.736336	CHUNSOFT	CUR	Unspecified	Walk,Attack,Strike,Shoot,Hover,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate
+```
+
+## 0143 卡比兽
+
+```text
+2020-10-07 17:58:43.739327	CHUNSOFT	CUR	Unspecified	Walk,Attack,Stomp,Shoot,Twirl,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate
+```
+
+## 0059 风速狗
+
+```text
+2020-10-07 17:58:43.511936	CHUNSOFT	CUR	Unspecified	Walk,Attack,QuickStrike,Shoot,SpAttack,Rumble,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate
+```
+
+## 0310 雷电兽
+
+```text
+2020-10-07 17:58:44.332347	CHUNSOFT	CUR	Unspecified	Walk,Attack,QuickStrike,Shoot,Shock,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate
+2023-05-31 16:17:10.634354	<@!330751862590406656>	CUR	PMDCollab_2	Eat,LookUp,Cringe
+```
+
+## 0330 沙漠蜻蜓
+
+```text
+2020-10-07 17:58:44.388221	CHUNSOFT	CUR	Unspecified	Walk,Attack,Strike,Shoot,FlapAround,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate
+```
+
+## 0376 巨金怪
+
+```text
+2020-10-07 17:58:44.500897	CHUNSOFT	CUR	Unspecified	Walk,Attack,Ricochet,Shoot,Twirl,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate
+```
+
+## 0460 暴雪王
+
+```text
+2020-10-07 17:58:44.768180	CHUNSOFT	CUR	Unspecified	Walk,Attack,Strike,Shoot,SpAttack,RearUp,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate
+```
+
+## 0448 路卡利欧
+
+```text
+2020-10-07 17:58:44.723301	CHUNSOFT	CUR	Unspecified	Walk,Attack,QuickStrike,Strike,SpAttack,RearUp,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate
+2023-03-19 21:50:39.908380	<@!356635814668664832>	CUR	PMDCollab_1	EventSleep,Wake,Eat,Tumble,Pose,Pull,Pain,Float,DeepBreath,Nod,Sit,LookUp,Sink,Trip,Laying,LeapForth,Head,Cringe,LostBalance,TumbleBack,HitGround,Faint
+2024-09-07 21:23:27.049432	<@!356635814668664832>	CUR	CC_BY-NC_4	EventSleep,Wake,Float,Trip,Laying,HitGround
+```
+
+## 0389 土台龟
+
+```text
+2020-10-07 17:58:44.544779	CHUNSOFT	CUR	Unspecified	Walk,Attack,Strike,Shoot,Rumble,Withdraw,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate
+```
+
+## 0609 水晶灯火灵
+
+```text
+2021-12-12 09:35:31.369260	<@!544245909639397378>	CUR	PMDCollab_1	Walk,Attack,Strike,Shoot,SpAttack,Emit,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate
+```
+
+## 0635 三首恶龙
+
+```text
+2023-06-10 23:52:53.187664	<@!276369635304275968>	CUR	PMDCollab_2	Idle,Walk,Sleep,Hurt,Attack,Charge,Shoot,Swing,Double,Rotate,Hop
+```
+
+## 0553 流氓鳄
+
+```text
+2024-02-23 17:36:35.234309	<@!229131140903075840>	CUR	CC_BY-NC_4	Idle,Walk,Sleep,Hurt,Attack,Charge,Shoot,Strike,Twirl,Swing,Double,Rotate,Hop
+2024-03-30 15:50:14.539907	<@!229131140903075840>	CUR	CC_BY-NC_4	Charge,Swing,Double,Hop
+```
