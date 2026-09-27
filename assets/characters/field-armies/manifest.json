@@ -1,0 +1,27 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "date": "2026-09-28",
+  "status": "runtime sprites; standing four-direction military uniforms and static standards",
+  "reference": "FireRed native Lance and Cooltrainer visible height 20px; 32px canvas includes transparency",
+  "files": [
+    {
+      "path": "assets/characters/field-armies/soldiers-source.png",
+      "sha256": "2908c08cec45d1e17890d912d5fd9c771119dc48b32f50e26a7cc06bf0a8db4d"
+    },
+    {
+      "path": "assets/characters/field-armies/standards-source.png",
+      "sha256": "967ed426479e0112ac272434b57b5e83a99c9c4d88e739e68ea6c0be998b5856"
+    }
+  ],
+  "runtime_use": {
+    "soldiers-source.png": "Four rows; original 16 uniform directions, global isotropic scale, 19–20px visible height; alpha foot baseline 31. Native commanders unchanged.",
+    "standards-source.png": "ONLY final flag row is used; tall soldier rows rejected and never compiled."
+  },
+  "processing": "tools/war_uniforms.py; explicit verified cell gutters, shared scale across all soldiers, nearest pixel sampling, one 15-color palette per faction, no anisotropic stretch",
+  "limitations": [
+    "Four standing directions, not a full walk cycle.",
+    "Generated marks are local military unit emblems, not official regional flags.",
+    "Reference and sprite sources do not establish new biography or historical events."
+  ],
+  "prompts_file": "assets/characters/field-armies/prompts.md"
+}

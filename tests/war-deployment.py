@@ -15,7 +15,9 @@ for team in range(4):
     assert depth(commander)<min(map(depth,fighters)), 'Commander must be behind the combat formation'
     point=fighters[0]
     assert all(depth(u)<=depth(point) for u in fighters), 'Point must lead its formation'
-    assert max(depth(u) for u in fighters[3:])<min(depth(u) for u in fighters[:3]), 'Support must remain behind the shoulders'
+    # The original central wedge keeps two rear supports. Additional contacts
+    # belong to lateral echelons, behind the point but not all behind both wings.
+    assert max(depth(u) for u in fighters[3:5])<min(depth(u) for u in fighters[:3]), 'Central support must remain behind the shoulders'
     trainer,medic,partner=a[22+team*5:25+team*5]
     assert trainer['target']==medic['target']==a.index(partner) and partner['target']==a.index(trainer)
     assert math.dist(trainer['to'],partner['to'])<=40
@@ -29,4 +31,4 @@ for team in range(4):
             assert segment_distance(friend['to'],u['to'],target['to'])>=12,(u['id'],friend['id'],'Friendly unit in firing lane')
 for u in a:
     assert u['deployment']['station'] and u['deployment']['purpose']
-print('PASS: 40 assigned stations, 4 formation depths, 10 reciprocal contacts, partner/rescue distances and friendly fire lanes')
+print(f'PASS: {len(a)} assigned stations, 4 formation depths, {sum(bool(u["attack"]) for u in a)//2} reciprocal contacts, partner/rescue distances and friendly fire lanes')

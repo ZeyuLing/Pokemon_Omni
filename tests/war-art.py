@@ -5,6 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'tools'))
 from war_sources import pokemon_frames
 from war_humans import native_frames
+from war_uniforms import soldier_frames
 from build_opening_stages import get
 from PIL import Image,ImageDraw
 blob=(ROOT/'build/pallet/war.bin').read_bytes()
@@ -23,6 +24,13 @@ for index,sprite in enumerate(layout):
         source=native_frames(specs[index],get);assert len(source)==len(sprite['frames'])==4
         assert all(f.height==32 and f.getbbox()[3]==31 for f in source)
         assert len({f.getbbox()[3]-f.getbbox()[1] for f in source})==1,'Direction-dependent human height'
+    elif 'uniform_team' in specs[index]:
+        source=soldier_frames()[specs[index]['uniform_team']]
+        assert len(source)==len(sprite['frames'])==4
+        for f in source:
+            box=f.getbbox()
+            assert box[3]==31 and 19<=box[3]-box[1]<=20, 'Soldier exceeds native FireRed visible height'
+            assert 13<=box[2]-box[0]<=18, 'Soldier silhouette is too thin or too wide'
     else:continue
     for expected,frame in zip(source,sprite['frames']):
         w,h=expected.size;actual=[0x8000]*(w*h)
@@ -46,7 +54,7 @@ for index,sprite in enumerate(layout):
         reference=[0x8000 if a<128 else (r>>3)|((g>>3)<<5)|((b>>3)<<10) for r,g,b,a in expected.getdata()]
         assert actual==reference,(sprite['pmd'],count,'Source pixels or frame origin changed')
         if index==12:lance_runtime_frames.append(struct.pack('<'+'H'*len(actual),*actual))
-        if not sprite['pmd']:
+        if specs[index].get('native_overworld'):
             image=Image.new('RGBA',(w,h));image.putdata([(0,0,0,0) if v==0x8000 else ((v&31)*255//31,((v>>5)&31)*255//31,((v>>10)&31)*255//31,255) for v in actual]);image=image.resize((w*2,h*2),Image.Resampling.NEAREST)
             x=128+(native_count%4)*80+(64-image.width)//2;y=24+(native_count//4)*90
             labels.line((x-8,y+62,x+72,y+62),fill=(75,79,87))
@@ -54,6 +62,15 @@ for index,sprite in enumerate(layout):
         count+=1
 proof.save(ROOT/'build/pallet/native-commanders-proof.png')
 assert native_count==16
+height_proof=Image.new('RGB',(720,184),(33,38,45));height_labels=ImageDraw.Draw(height_proof)
+reference_frames=[native_frames(specs[12],get)[0]]+[row[0] for row in soldier_frames()]
+for i,(frame,name) in enumerate(zip(reference_frames,['FireRed Lance','Kanto soldier','Hoenn soldier','Sinnoh soldier','Unova soldier'])):
+    box=frame.getbbox();x=24+i*142
+    zoom=frame.resize((frame.width*4,frame.height*4),Image.Resampling.NEAREST)
+    height_proof.paste(zoom,(x,8),zoom);height_labels.line((x,132,x+110,132),fill=(90,95,100))
+    height_labels.text((x,145),name,fill='white')
+    height_labels.text((x,162),f'{box[3]-box[1]}px visible / 1:1 game',fill=(200,205,210))
+height_proof.save(ROOT/'build/pallet/human-height-comparison.png')
 opening=json.loads((ROOT/'content/opening/prologue.json').read_text('utf8'))
 table=(ROOT/'build/pallet/opening_stage.c').read_text()
 rows=re.findall(r'\{(\d+),(\d+)\}',table.split('const OmniStageSprite omni_stage_sprites[]=')[1])

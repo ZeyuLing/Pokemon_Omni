@@ -3652,7 +3652,7 @@
       "name": "关都快龙 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "关都部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "关都部队的中央突击尖兵；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3660,7 +3660,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -3683,7 +3683,7 @@
           "instance": "war-unit-01"
         }
       ],
-      "opening_scene_note": "中央突击尖兵：推进到北口，正面压制南侧烈焰猴；不离开两翼保护。 切镜后留在场景中，后续经历未定。",
+      "opening_scene_note": "中央突击尖兵：推进到北口，正面压制南侧烈焰猴；不离开两翼保护。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "kanto",
       "opening_deployment": {
         "station": "中央突击尖兵",
@@ -3697,7 +3697,7 @@
       "name": "关都化石翼龙 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "关都部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "关都部队的右翼制空；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3705,7 +3705,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -3728,7 +3728,7 @@
           "instance": "war-unit-02"
         }
       ],
-      "opening_scene_note": "右翼制空：在突击队右上空截击三首恶龙，保护关都右翼。 切镜后倒地且停止行动；未确定死亡。",
+      "opening_scene_note": "右翼制空：在突击队右上空截击三首恶龙，保护关都右翼。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "kanto",
       "opening_deployment": {
         "station": "右翼制空",
@@ -3742,7 +3742,7 @@
       "name": "关都尼多王 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "关都部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "关都部队的左翼护卫；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3750,7 +3750,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -3773,7 +3773,7 @@
           "instance": "war-unit-03"
         }
       ],
-      "opening_scene_note": "左翼护卫：封住丰缘雷电兽接近北口的侧路。 切镜后留在场景中，后续经历未定。",
+      "opening_scene_note": "左翼护卫：封住丰缘雷电兽接近北口的侧路。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "kanto",
       "opening_deployment": {
         "station": "左翼护卫",
@@ -3787,7 +3787,7 @@
       "name": "关都卡比兽 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "关都部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "关都部队的后列支撑；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3795,7 +3795,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -3818,7 +3818,7 @@
           "instance": "war-unit-04"
         }
       ],
-      "opening_scene_note": "后列支撑：在左翼后方牵制沙漠蜻蜓，保护指挥区。 切镜后倒地且停止行动；未确定死亡。",
+      "opening_scene_note": "后列支撑：在左翼后方牵制沙漠蜻蜓，保护指挥区。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "kanto",
       "opening_deployment": {
         "station": "后列支撑",
@@ -3832,7 +3832,7 @@
       "name": "关都风速狗 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "关都部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "关都部队的右翼火力；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3840,7 +3840,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -3863,7 +3863,7 @@
           "instance": "war-unit-05"
         }
       ],
-      "opening_scene_note": "右翼火力：从北侧后列压制水晶灯火灵，为右翼提供火力。 切镜后倒地且停止行动；未确定死亡。",
+      "opening_scene_note": "右翼火力：从北侧后列压制水晶灯火灵，为右翼提供火力。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "kanto",
       "opening_deployment": {
         "station": "右翼火力",
@@ -3877,7 +3877,7 @@
       "name": "丰缘暴飞龙 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "丰缘部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "丰缘部队的西口前沿；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3885,7 +3885,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -3908,7 +3908,7 @@
           "instance": "war-unit-06"
         }
       ],
-      "opening_scene_note": "西口前沿：在重装阵列前控制西口，压制东侧哥德小姐。 切镜后留在场景中，后续经历未定。",
+      "opening_scene_note": "西口前沿：在重装阵列前控制西口，压制东侧哥德小姐。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "hoenn",
       "opening_deployment": {
         "station": "西口前沿",
@@ -3922,7 +3922,7 @@
       "name": "丰缘雷电兽 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "丰缘部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "丰缘部队的北侧警戒；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3930,7 +3930,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -3953,7 +3953,7 @@
           "instance": "war-unit-07"
         }
       ],
-      "opening_scene_note": "北侧警戒：守西口北肩，与尼多王接触，阻止绕入西方后方。 切镜后倒地且停止行动；未确定死亡。",
+      "opening_scene_note": "北侧警戒：守西口北肩，与尼多王接触，阻止绕入西方后方。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "hoenn",
       "opening_deployment": {
         "station": "北侧警戒",
@@ -3967,7 +3967,7 @@
       "name": "丰缘波士可多拉 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "丰缘部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "丰缘部队的重装盾位；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -3975,7 +3975,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -3998,7 +3998,7 @@
           "instance": "war-unit-08"
         }
       ],
-      "opening_scene_note": "重装盾位：占住西口南肩，挡住暴雪王的侧向推进。 切镜后留在场景中，后续经历未定。",
+      "opening_scene_note": "重装盾位：占住西口南肩，挡住暴雪王的侧向推进。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "hoenn",
       "opening_deployment": {
         "station": "重装盾位",
@@ -4012,7 +4012,7 @@
       "name": "丰缘沙漠蜻蜓 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "丰缘部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "丰缘部队的高位支援；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4020,7 +4020,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4043,7 +4043,7 @@
           "instance": "war-unit-09"
         }
       ],
-      "opening_scene_note": "高位支援：从西侧后方牵制卡比兽，掩护雷电兽。 切镜后倒地且停止行动；未确定死亡。",
+      "opening_scene_note": "高位支援：从西侧后方牵制卡比兽，掩护雷电兽。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "hoenn",
       "opening_deployment": {
         "station": "高位支援",
@@ -4057,7 +4057,7 @@
       "name": "丰缘巨金怪 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "丰缘部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "丰缘部队的后列火力；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4065,7 +4065,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4088,7 +4088,7 @@
           "instance": "war-unit-10"
         }
       ],
-      "opening_scene_note": "后列火力：在波士可多拉后方压制路卡利欧，守南侧通路。 切镜后倒地且停止行动；未确定死亡。",
+      "opening_scene_note": "后列火力：在波士可多拉后方压制路卡利欧，守南侧通路。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "hoenn",
       "opening_deployment": {
         "station": "后列火力",
@@ -4102,7 +4102,7 @@
       "name": "神奥烈焰猴 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "神奥部队的楔形尖兵；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4110,7 +4110,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4133,7 +4133,7 @@
           "instance": "war-unit-11"
         }
       ],
-      "opening_scene_note": "楔形尖兵：从南口正面迎击快龙，后列保持掩护距离。 切镜后留在场景中，后续经历未定。",
+      "opening_scene_note": "楔形尖兵：从南口正面迎击快龙，后列保持掩护距离。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "sinnoh",
       "opening_deployment": {
         "station": "楔形尖兵",
@@ -4147,7 +4147,7 @@
       "name": "神奥暴雪王 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "神奥部队的左翼掩护；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4155,7 +4155,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4178,7 +4178,7 @@
           "instance": "war-unit-12"
         }
       ],
-      "opening_scene_note": "左翼掩护：在楔形左翼牵制波士可多拉，防止西侧合围。 切镜后倒地且停止行动；未确定死亡。",
+      "opening_scene_note": "左翼掩护：在楔形左翼牵制波士可多拉，防止西侧合围。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "sinnoh",
       "opening_deployment": {
         "station": "左翼掩护",
@@ -4192,7 +4192,7 @@
       "name": "神奥烈咬陆鲨 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "神奥部队的右翼突破；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4200,7 +4200,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4223,7 +4223,7 @@
           "instance": "war-unit-13"
         }
       ],
-      "opening_scene_note": "右翼突破：阻挡龙头地鼠进入神奥右翼，不追入东侧后方。 切镜后留在场景中，后续经历未定。",
+      "opening_scene_note": "右翼突破：阻挡龙头地鼠进入神奥右翼，不追入东侧后方。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "sinnoh",
       "opening_deployment": {
         "station": "右翼突破",
@@ -4237,7 +4237,7 @@
       "name": "神奥路卡利欧 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "神奥部队的后列支援；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4245,7 +4245,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4268,7 +4268,7 @@
           "instance": "war-unit-14"
         }
       ],
-      "opening_scene_note": "后列支援：从左后方压制巨金怪，掩护暴雪王。 切镜后倒地且停止行动；未确定死亡。",
+      "opening_scene_note": "后列支援：从左后方压制巨金怪，掩护暴雪王。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "sinnoh",
       "opening_deployment": {
         "station": "后列支援",
@@ -4282,7 +4282,7 @@
       "name": "神奥土台龟 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "神奥部队的后列支撑；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4290,7 +4290,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4313,7 +4313,7 @@
           "instance": "war-unit-15"
         }
       ],
-      "opening_scene_note": "后列支撑：压住流氓鳄的南侧接近路线，保护本队后方。 切镜后倒地且停止行动；未确定死亡。",
+      "opening_scene_note": "后列支撑：压住流氓鳄的南侧接近路线，保护本队后方。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "sinnoh",
       "opening_deployment": {
         "station": "后列支撑",
@@ -4327,7 +4327,7 @@
       "name": "合众哥德小姐 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "合众部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "合众部队的东口控制；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4335,7 +4335,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4358,7 +4358,7 @@
           "instance": "war-unit-16"
         }
       ],
-      "opening_scene_note": "东口控制：从东口压制暴飞龙，维持两翼之间的阵线。 切镜后留在场景中，后续经历未定。",
+      "opening_scene_note": "东口控制：从东口压制暴飞龙，维持两翼之间的阵线。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "unova",
       "opening_deployment": {
         "station": "东口控制",
@@ -4372,7 +4372,7 @@
       "name": "合众水晶灯火灵 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "合众部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "合众部队的北翼火力；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4380,7 +4380,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4403,7 +4403,7 @@
           "instance": "war-unit-17"
         }
       ],
-      "opening_scene_note": "北翼火力：压制北侧风速狗，保护合众北肩。 切镜后倒地且停止行动；未确定死亡。",
+      "opening_scene_note": "北翼火力：压制北侧风速狗，保护合众北肩。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "unova",
       "opening_deployment": {
         "station": "北翼火力",
@@ -4417,7 +4417,7 @@
       "name": "合众龙头地鼠 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "合众部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "合众部队的南翼拦截；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4425,7 +4425,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4448,7 +4448,7 @@
           "instance": "war-unit-18"
         }
       ],
-      "opening_scene_note": "南翼拦截：在东口南肩挡住烈咬陆鲨，保持通往指挥区的退路。 切镜后留在场景中，后续经历未定。",
+      "opening_scene_note": "南翼拦截：在东口南肩挡住烈咬陆鲨，保持通往指挥区的退路。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "unova",
       "opening_deployment": {
         "station": "南翼拦截",
@@ -4462,7 +4462,7 @@
       "name": "合众三首恶龙 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "合众部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "合众部队的高位警戒；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4470,7 +4470,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4493,7 +4493,7 @@
           "instance": "war-unit-19"
         }
       ],
-      "opening_scene_note": "高位警戒：从后方截击化石翼龙，阻止其绕过北翼。 切镜后倒地且停止行动；未确定死亡。",
+      "opening_scene_note": "高位警戒：从后方截击化石翼龙，阻止其绕过北翼。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "unova",
       "opening_deployment": {
         "station": "高位警戒",
@@ -4507,7 +4507,7 @@
       "name": "合众流氓鳄 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "合众部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "合众部队的南侧火力；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4515,7 +4515,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4538,7 +4538,7 @@
           "instance": "war-unit-20"
         }
       ],
-      "opening_scene_note": "南侧火力：压制土台龟，防止神奥沿南缘包抄。 切镜后倒地且停止行动；未确定死亡。",
+      "opening_scene_note": "南侧火力：压制土台龟，防止神奥沿南缘包抄。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "unova",
       "opening_deployment": {
         "station": "南侧火力",
@@ -4552,7 +4552,7 @@
       "name": "渡 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "关都部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "关都部队的后方指挥；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4589,7 +4589,7 @@
           "instance": "war-unit-21"
         }
       ],
-      "opening_scene_note": "后方指挥：位于本队突击线之后，面向本队前沿，保留通向后方的撤离空间。 切镜后留在场景中，后续经历未定。",
+      "opening_scene_note": "后方指挥：位于本队突击线之后，面向本队前沿，保留通向后方的撤离空间。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "kanto",
       "portrays": "lance",
       "opening_deployment": {
@@ -4604,7 +4604,7 @@
       "name": "关都负伤训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "关都部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "关都部队的侧后警戒训练家；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4612,7 +4612,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": "藏蓝战衣、红肩章与披风",
-        "production_art": "火红行走帧基底，独立地区配色及肩章。"
+        "production_art": "Omni 原创四地区军服；以火红16×20可见人物为比例参考，四朝向共用等比缩放，最终可见身高19–20像素、脚底基线31。头盔、护肩、背包与地区配色；并非动画既有人物。"
       },
       "biography": {
         "childhood": null,
@@ -4635,7 +4635,7 @@
           "instance": "war-unit-22"
         }
       ],
-      "opening_scene_note": "侧后警戒训练家：守住本方后侧接近路线；切镜后负伤倒地，未设定死亡。 切镜后倒地且停止行动；未确定死亡。",
+      "opening_scene_note": "侧后警戒训练家：守住本方后侧接近路线；切镜后负伤倒地，未设定死亡。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "kanto",
       "opening_deployment": {
         "station": "侧后警戒训练家",
@@ -4649,7 +4649,7 @@
       "name": "关都伙伴训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "关都部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "关都部队的伙伴训练家；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4657,7 +4657,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": "藏蓝战衣、红肩章与披风",
-        "production_art": "火红行走帧基底，独立地区配色及肩章。"
+        "production_art": "Omni 原创四地区军服；以火红16×20可见人物为比例参考，四朝向共用等比缩放，最终可见身高19–20像素、脚底基线31。头盔、护肩、背包与地区配色；并非动画既有人物。"
       },
       "biography": {
         "childhood": null,
@@ -4680,7 +4680,7 @@
           "instance": "war-unit-23"
         }
       ],
-      "opening_scene_note": "伙伴训练家：与自己的伙伴成组驻留，面向伙伴；战后呼唤而不站在主火线上。 切镜后留在场景中，后续经历未定。",
+      "opening_scene_note": "伙伴训练家：与自己的伙伴成组驻留，面向伙伴；战后呼唤而不站在主火线上。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "kanto",
       "opening_deployment": {
         "station": "伙伴训练家",
@@ -4694,7 +4694,7 @@
       "name": "关都救护训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "关都部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "关都部队的后方救护；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4702,7 +4702,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": "藏蓝战衣、红肩章与披风",
-        "production_art": "火红行走帧基底，独立地区配色及肩章。"
+        "production_art": "Omni 原创四地区军服；以火红16×20可见人物为比例参考，四朝向共用等比缩放，最终可见身高19–20像素、脚底基线31。头盔、护肩、背包与地区配色；并非动画既有人物。"
       },
       "biography": {
         "childhood": null,
@@ -4725,7 +4725,7 @@
           "instance": "war-unit-24"
         }
       ],
-      "opening_scene_note": "后方救护：在本方后方待命，战后沿侧后安全路接近伤者，不横穿中央交火区。 切镜后留在场景中，后续经历未定。",
+      "opening_scene_note": "后方救护：在本方后方待命，战后沿侧后安全路接近伤者，不横穿中央交火区。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "kanto",
       "opening_deployment": {
         "station": "后方救护",
@@ -4739,7 +4739,7 @@
       "name": "关都负伤喷火龙 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "关都部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "关都部队的后方伙伴；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4747,7 +4747,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -4770,7 +4770,7 @@
           "instance": "war-unit-25"
         }
       ],
-      "opening_scene_note": "后方伙伴：与训练家成组驻留，为战后伤情镜头保留明确空间关系。 切镜后倒地且停止行动；未确定死亡。",
+      "opening_scene_note": "后方伙伴：与训练家成组驻留，为战后伤情镜头保留明确空间关系。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "kanto",
       "opening_deployment": {
         "station": "后方伙伴",
@@ -4784,7 +4784,7 @@
       "name": "源治 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "丰缘部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "丰缘部队的后方指挥；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4821,7 +4821,7 @@
           "instance": "war-unit-26"
         }
       ],
-      "opening_scene_note": "后方指挥：位于本队突击线之后，面向本队前沿，保留通向后方的撤离空间。 切镜后留在场景中，后续经历未定。",
+      "opening_scene_note": "后方指挥：位于本队突击线之后，面向本队前沿，保留通向后方的撤离空间。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "hoenn",
       "portrays": "drake",
       "opening_deployment": {
@@ -4836,7 +4836,7 @@
       "name": "丰缘负伤训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "丰缘部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "丰缘部队的侧后警戒训练家；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4844,7 +4844,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": "深蓝海军战衣、青白肩章",
-        "production_art": "火红行走帧基底，独立地区配色及肩章。"
+        "production_art": "Omni 原创四地区军服；以火红16×20可见人物为比例参考，四朝向共用等比缩放，最终可见身高19–20像素、脚底基线31。头盔、护肩、背包与地区配色；并非动画既有人物。"
       },
       "biography": {
         "childhood": null,
@@ -4867,7 +4867,7 @@
           "instance": "war-unit-27"
         }
       ],
-      "opening_scene_note": "侧后警戒训练家：守住本方后侧接近路线；切镜后负伤倒地，未设定死亡。 切镜后倒地且停止行动；未确定死亡。",
+      "opening_scene_note": "侧后警戒训练家：守住本方后侧接近路线；切镜后负伤倒地，未设定死亡。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "hoenn",
       "opening_deployment": {
         "station": "侧后警戒训练家",
@@ -4881,7 +4881,7 @@
       "name": "丰缘伙伴训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "丰缘部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "丰缘部队的伙伴训练家；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4889,7 +4889,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": "深蓝海军战衣、青白肩章",
-        "production_art": "火红行走帧基底，独立地区配色及肩章。"
+        "production_art": "Omni 原创四地区军服；以火红16×20可见人物为比例参考，四朝向共用等比缩放，最终可见身高19–20像素、脚底基线31。头盔、护肩、背包与地区配色；并非动画既有人物。"
       },
       "biography": {
         "childhood": null,
@@ -4912,7 +4912,7 @@
           "instance": "war-unit-28"
         }
       ],
-      "opening_scene_note": "伙伴训练家：与自己的伙伴成组驻留，面向伙伴；战后呼唤而不站在主火线上。 切镜后留在场景中，后续经历未定。",
+      "opening_scene_note": "伙伴训练家：与自己的伙伴成组驻留，面向伙伴；战后呼唤而不站在主火线上。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "hoenn",
       "opening_deployment": {
         "station": "伙伴训练家",
@@ -4926,7 +4926,7 @@
       "name": "丰缘救护训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "丰缘部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "丰缘部队的后方救护；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4934,7 +4934,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": "深蓝海军战衣、青白肩章",
-        "production_art": "火红行走帧基底，独立地区配色及肩章。"
+        "production_art": "Omni 原创四地区军服；以火红16×20可见人物为比例参考，四朝向共用等比缩放，最终可见身高19–20像素、脚底基线31。头盔、护肩、背包与地区配色；并非动画既有人物。"
       },
       "biography": {
         "childhood": null,
@@ -4957,7 +4957,7 @@
           "instance": "war-unit-29"
         }
       ],
-      "opening_scene_note": "后方救护：在本方后方待命，战后沿侧后安全路接近伤者，不横穿中央交火区。 切镜后留在场景中，后续经历未定。",
+      "opening_scene_note": "后方救护：在本方后方待命，战后沿侧后安全路接近伤者，不横穿中央交火区。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "hoenn",
       "opening_deployment": {
         "station": "后方救护",
@@ -4971,7 +4971,7 @@
       "name": "丰缘负伤喷火驼 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "丰缘部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "丰缘部队的后方伙伴；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -4979,7 +4979,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -5002,7 +5002,7 @@
           "instance": "war-unit-30"
         }
       ],
-      "opening_scene_note": "后方伙伴：与训练家成组驻留，为战后伤情镜头保留明确空间关系。 切镜后倒地且停止行动；未确定死亡。",
+      "opening_scene_note": "后方伙伴：与训练家成组驻留，为战后伤情镜头保留明确空间关系。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "hoenn",
       "opening_deployment": {
         "station": "后方伙伴",
@@ -5016,7 +5016,7 @@
       "name": "大叶 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "神奥部队的后方指挥；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -5053,7 +5053,7 @@
           "instance": "war-unit-31"
         }
       ],
-      "opening_scene_note": "后方指挥：位于本队突击线之后，面向本队前沿，保留通向后方的撤离空间。 切镜后留在场景中，后续经历未定。",
+      "opening_scene_note": "后方指挥：位于本队突击线之后，面向本队前沿，保留通向后方的撤离空间。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "sinnoh",
       "portrays": "flint",
       "opening_deployment": {
@@ -5068,7 +5068,7 @@
       "name": "神奥负伤训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "神奥部队的侧后警戒训练家；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -5076,7 +5076,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": "炭灰防寒战衣、橙黄肩甲",
-        "production_art": "火红行走帧基底，独立地区配色及肩章。"
+        "production_art": "Omni 原创四地区军服；以火红16×20可见人物为比例参考，四朝向共用等比缩放，最终可见身高19–20像素、脚底基线31。头盔、护肩、背包与地区配色；并非动画既有人物。"
       },
       "biography": {
         "childhood": null,
@@ -5099,7 +5099,7 @@
           "instance": "war-unit-32"
         }
       ],
-      "opening_scene_note": "侧后警戒训练家：守住本方后侧接近路线；切镜后负伤倒地，未设定死亡。 切镜后倒地且停止行动；未确定死亡。",
+      "opening_scene_note": "侧后警戒训练家：守住本方后侧接近路线；切镜后负伤倒地，未设定死亡。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "sinnoh",
       "opening_deployment": {
         "station": "侧后警戒训练家",
@@ -5113,7 +5113,7 @@
       "name": "神奥伙伴训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "神奥部队的伙伴训练家；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -5121,7 +5121,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": "炭灰防寒战衣、橙黄肩甲",
-        "production_art": "火红行走帧基底，独立地区配色及肩章。"
+        "production_art": "Omni 原创四地区军服；以火红16×20可见人物为比例参考，四朝向共用等比缩放，最终可见身高19–20像素、脚底基线31。头盔、护肩、背包与地区配色；并非动画既有人物。"
       },
       "biography": {
         "childhood": null,
@@ -5144,7 +5144,7 @@
           "instance": "war-unit-33"
         }
       ],
-      "opening_scene_note": "伙伴训练家：与自己的伙伴成组驻留，面向伙伴；战后呼唤而不站在主火线上。 切镜后留在场景中，后续经历未定。",
+      "opening_scene_note": "伙伴训练家：与自己的伙伴成组驻留，面向伙伴；战后呼唤而不站在主火线上。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "sinnoh",
       "opening_deployment": {
         "station": "伙伴训练家",
@@ -5158,7 +5158,7 @@
       "name": "神奥救护训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "神奥部队的后方救护；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -5166,7 +5166,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": "炭灰防寒战衣、橙黄肩甲",
-        "production_art": "火红行走帧基底，独立地区配色及肩章。"
+        "production_art": "Omni 原创四地区军服；以火红16×20可见人物为比例参考，四朝向共用等比缩放，最终可见身高19–20像素、脚底基线31。头盔、护肩、背包与地区配色；并非动画既有人物。"
       },
       "biography": {
         "childhood": null,
@@ -5189,7 +5189,7 @@
           "instance": "war-unit-34"
         }
       ],
-      "opening_scene_note": "后方救护：在本方后方待命，战后沿侧后安全路接近伤者，不横穿中央交火区。 切镜后留在场景中，后续经历未定。",
+      "opening_scene_note": "后方救护：在本方后方待命，战后沿侧后安全路接近伤者，不横穿中央交火区。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "sinnoh",
       "opening_deployment": {
         "station": "后方救护",
@@ -5203,7 +5203,7 @@
       "name": "神奥负伤伦琴猫 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "神奥部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "神奥部队的后方伙伴；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -5211,7 +5211,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -5234,7 +5234,7 @@
           "instance": "war-unit-35"
         }
       ],
-      "opening_scene_note": "后方伙伴：与训练家成组驻留，为战后伤情镜头保留明确空间关系。 切镜后倒地且停止行动；未确定死亡。",
+      "opening_scene_note": "后方伙伴：与训练家成组驻留，为战后伤情镜头保留明确空间关系。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "sinnoh",
       "opening_deployment": {
         "station": "后方伙伴",
@@ -5248,7 +5248,7 @@
       "name": "嘉德丽雅 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "合众部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "合众部队的后方指挥；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -5285,7 +5285,7 @@
           "instance": "war-unit-36"
         }
       ],
-      "opening_scene_note": "后方指挥：位于本队突击线之后，面向本队前沿，保留通向后方的撤离空间。 切镜后留在场景中，后续经历未定。",
+      "opening_scene_note": "后方指挥：位于本队突击线之后，面向本队前沿，保留通向后方的撤离空间。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "unova",
       "portrays": "caitlin",
       "opening_deployment": {
@@ -5300,7 +5300,7 @@
       "name": "合众负伤训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "合众部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "合众部队的侧后警戒训练家；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -5308,7 +5308,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": "紫黑长战衣、浅紫领章",
-        "production_art": "火红行走帧基底，独立地区配色及肩章。"
+        "production_art": "Omni 原创四地区军服；以火红16×20可见人物为比例参考，四朝向共用等比缩放，最终可见身高19–20像素、脚底基线31。头盔、护肩、背包与地区配色；并非动画既有人物。"
       },
       "biography": {
         "childhood": null,
@@ -5331,7 +5331,7 @@
           "instance": "war-unit-37"
         }
       ],
-      "opening_scene_note": "侧后警戒训练家：守住本方后侧接近路线；切镜后负伤倒地，未设定死亡。 切镜后倒地且停止行动；未确定死亡。",
+      "opening_scene_note": "侧后警戒训练家：守住本方后侧接近路线；切镜后负伤倒地，未设定死亡。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "unova",
       "opening_deployment": {
         "station": "侧后警戒训练家",
@@ -5345,7 +5345,7 @@
       "name": "合众伙伴训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "合众部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "合众部队的伙伴训练家；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -5353,7 +5353,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": "紫黑长战衣、浅紫领章",
-        "production_art": "火红行走帧基底，独立地区配色及肩章。"
+        "production_art": "Omni 原创四地区军服；以火红16×20可见人物为比例参考，四朝向共用等比缩放，最终可见身高19–20像素、脚底基线31。头盔、护肩、背包与地区配色；并非动画既有人物。"
       },
       "biography": {
         "childhood": null,
@@ -5376,7 +5376,7 @@
           "instance": "war-unit-38"
         }
       ],
-      "opening_scene_note": "伙伴训练家：与自己的伙伴成组驻留，面向伙伴；战后呼唤而不站在主火线上。 切镜后留在场景中，后续经历未定。",
+      "opening_scene_note": "伙伴训练家：与自己的伙伴成组驻留，面向伙伴；战后呼唤而不站在主火线上。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "unova",
       "opening_deployment": {
         "station": "伙伴训练家",
@@ -5390,7 +5390,7 @@
       "name": "合众救护训练家 · 战场实例",
       "kind": "human",
       "status": "proposed_scene",
-      "role": "合众部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "合众部队的后方救护；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -5398,7 +5398,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": "紫黑长战衣、浅紫领章",
-        "production_art": "火红行走帧基底，独立地区配色及肩章。"
+        "production_art": "Omni 原创四地区军服；以火红16×20可见人物为比例参考，四朝向共用等比缩放，最终可见身高19–20像素、脚底基线31。头盔、护肩、背包与地区配色；并非动画既有人物。"
       },
       "biography": {
         "childhood": null,
@@ -5421,7 +5421,7 @@
           "instance": "war-unit-39"
         }
       ],
-      "opening_scene_note": "后方救护：在本方后方待命，战后沿侧后安全路接近伤者，不横穿中央交火区。 切镜后留在场景中，后续经历未定。",
+      "opening_scene_note": "后方救护：在本方后方待命，战后沿侧后安全路接近伤者，不横穿中央交火区。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "unova",
       "opening_deployment": {
         "station": "后方救护",
@@ -5435,7 +5435,7 @@
       "name": "合众负伤劈斩司令 · 战场实例",
       "kind": "pokemon",
       "status": "proposed_scene",
-      "role": "合众部队的独立地图事件实例；开场战斗及稍后伤情演出。",
+      "role": "合众部队的后方伙伴；独立地图事件实例",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,
@@ -5443,7 +5443,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧；24 个物种不重复，帧裁切保留原点；来源及署名见 battlefield 素材清单。"
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
       },
       "biography": {
         "childhood": null,
@@ -5466,7 +5466,7 @@
           "instance": "war-unit-40"
         }
       ],
-      "opening_scene_note": "后方伙伴：与训练家成组驻留，为战后伤情镜头保留明确空间关系。 切镜后倒地且停止行动；未确定死亡。",
+      "opening_scene_note": "后方伙伴：与训练家成组驻留，为战后伤情镜头保留明确空间关系。 属于开场演绎；日期、生平、死亡与战役结局未定。",
       "faction": "unova",
       "opening_deployment": {
         "station": "后方伙伴",
@@ -5621,7 +5621,1087 @@
         "boundary": "地区身份与外观为原作参考；参战、军服、指挥对白为 Omni 开场稿。未补写其任职过程或生平。"
       },
       "opening_scene_note": "烟囱山多地区混战的开场稿指挥官；参战和对白为 Omni 原创。具体日期、部队到达经过、战役结局及生死未定。"
+    },
+    {
+      "id": "war-unit-41",
+      "name": "关都怪力 · 战场实例",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "关都部队的侧翼第二梯队；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-41"
+        }
+      ],
+      "opening_scene_note": "侧翼第二梯队：掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "kanto",
+      "opening_deployment": {
+        "station": "侧翼第二梯队",
+        "purpose": "掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent; remain in supporting echelon."
+      }
+    },
+    {
+      "id": "war-unit-42",
+      "name": "关都水箭龟 · 战场实例",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "关都部队的侧翼第二梯队；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-42"
+        }
+      ],
+      "opening_scene_note": "侧翼第二梯队：掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "kanto",
+      "opening_deployment": {
+        "station": "侧翼第二梯队",
+        "purpose": "掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent; remain in supporting echelon."
+      }
+    },
+    {
+      "id": "war-unit-43",
+      "name": "关都钻角犀兽 · 战场实例",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "关都部队的侧翼第二梯队；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-43"
+        }
+      ],
+      "opening_scene_note": "侧翼第二梯队：掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "kanto",
+      "opening_deployment": {
+        "station": "侧翼第二梯队",
+        "purpose": "掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent; remain in supporting echelon."
+      }
+    },
+    {
+      "id": "war-unit-44",
+      "name": "关都耿鬼 · 战场实例",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "关都部队的侧翼第二梯队；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-44"
+        }
+      ],
+      "opening_scene_note": "侧翼第二梯队：掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "kanto",
+      "opening_deployment": {
+        "station": "侧翼第二梯队",
+        "purpose": "掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent; remain in supporting echelon."
+      }
+    },
+    {
+      "id": "war-unit-45",
+      "name": "丰缘火焰鸡 · 战场实例",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "丰缘部队的侧翼第二梯队；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-45"
+        }
+      ],
+      "opening_scene_note": "侧翼第二梯队：掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "hoenn",
+      "opening_deployment": {
+        "station": "侧翼第二梯队",
+        "purpose": "掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent; remain in supporting echelon."
+      }
+    },
+    {
+      "id": "war-unit-46",
+      "name": "丰缘巨沼怪 · 战场实例",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "丰缘部队的侧翼第二梯队；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-46"
+        }
+      ],
+      "opening_scene_note": "侧翼第二梯队：掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "hoenn",
+      "opening_deployment": {
+        "station": "侧翼第二梯队",
+        "purpose": "掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent; remain in supporting echelon."
+      }
+    },
+    {
+      "id": "war-unit-47",
+      "name": "丰缘蜥蜴王 · 战场实例",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "丰缘部队的侧翼第二梯队；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-47"
+        }
+      ],
+      "opening_scene_note": "侧翼第二梯队：掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "hoenn",
+      "opening_deployment": {
+        "station": "侧翼第二梯队",
+        "purpose": "掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent; remain in supporting echelon."
+      }
+    },
+    {
+      "id": "war-unit-48",
+      "name": "丰缘帝牙海狮 · 战场实例",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "丰缘部队的侧翼第二梯队；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-48"
+        }
+      ],
+      "opening_scene_note": "侧翼第二梯队：掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "hoenn",
+      "opening_deployment": {
+        "station": "侧翼第二梯队",
+        "purpose": "掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent; remain in supporting echelon."
+      }
+    },
+    {
+      "id": "war-unit-49",
+      "name": "神奥玛狃拉 · 战场实例",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "神奥部队的侧翼第二梯队；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-49"
+        }
+      ],
+      "opening_scene_note": "侧翼第二梯队：掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "sinnoh",
+      "opening_deployment": {
+        "station": "侧翼第二梯队",
+        "purpose": "掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent; remain in supporting echelon."
+      }
+    },
+    {
+      "id": "war-unit-50",
+      "name": "神奥帝王拿波 · 战场实例",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "神奥部队的侧翼第二梯队；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-50"
+        }
+      ],
+      "opening_scene_note": "侧翼第二梯队：掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "sinnoh",
+      "opening_deployment": {
+        "station": "侧翼第二梯队",
+        "purpose": "掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent; remain in supporting echelon."
+      }
+    },
+    {
+      "id": "war-unit-51",
+      "name": "神奥超甲狂犀 · 战场实例",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "神奥部队的侧翼第二梯队；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-51"
+        }
+      ],
+      "opening_scene_note": "侧翼第二梯队：掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "sinnoh",
+      "opening_deployment": {
+        "station": "侧翼第二梯队",
+        "purpose": "掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent; remain in supporting echelon."
+      }
+    },
+    {
+      "id": "war-unit-52",
+      "name": "神奥自爆磁怪 · 战场实例",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "神奥部队的侧翼第二梯队；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-52"
+        }
+      ],
+      "opening_scene_note": "侧翼第二梯队：掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "sinnoh",
+      "opening_deployment": {
+        "station": "侧翼第二梯队",
+        "purpose": "掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent; remain in supporting echelon."
+      }
+    },
+    {
+      "id": "war-unit-53",
+      "name": "合众炎武王 · 战场实例",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "合众部队的侧翼第二梯队；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-53"
+        }
+      ],
+      "opening_scene_note": "侧翼第二梯队：掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "unova",
+      "opening_deployment": {
+        "station": "侧翼第二梯队",
+        "purpose": "掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent; remain in supporting echelon."
+      }
+    },
+    {
+      "id": "war-unit-54",
+      "name": "合众君主蛇 · 战场实例",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "合众部队的侧翼第二梯队；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-54"
+        }
+      ],
+      "opening_scene_note": "侧翼第二梯队：掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "unova",
+      "opening_deployment": {
+        "station": "侧翼第二梯队",
+        "purpose": "掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent; remain in supporting echelon."
+      }
+    },
+    {
+      "id": "war-unit-55",
+      "name": "合众双斧战龙 · 战场实例",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "合众部队的侧翼第二梯队；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-55"
+        }
+      ],
+      "opening_scene_note": "侧翼第二梯队：掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "unova",
+      "opening_deployment": {
+        "station": "侧翼第二梯队",
+        "purpose": "掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent; remain in supporting echelon."
+      }
+    },
+    {
+      "id": "war-unit-56",
+      "name": "合众大剑鬼 · 战场实例",
+      "kind": "pokemon",
+      "status": "proposed_scene",
+      "role": "合众部队的侧翼第二梯队；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": null,
+        "production_art": "PMD 原生八向行走、施招、受击与静止关键帧。40种物种不重复；帧裁剪保留原点；来源与许可见 battlefield 素材清单。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-56"
+        }
+      ],
+      "opening_scene_note": "侧翼第二梯队：掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "unova",
+      "opening_deployment": {
+        "station": "侧翼第二梯队",
+        "purpose": "掩护本队侧翼通道，与相邻地区的侧翼部队形成明确接触；不越过中央尖兵。",
+        "formation_rank": 2,
+        "facing_rule": "Face assigned opponent; remain in supporting echelon."
+      }
+    },
+    {
+      "id": "war-unit-57",
+      "name": "关都传令兵 · 战场实例",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "关都部队的指挥所两翼警戒；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": "藏蓝战衣、红肩章与披风",
+        "production_art": "Omni 原创四地区军服；以火红16×20可见人物为比例参考，四朝向共用等比缩放，最终可见身高19–20像素、脚底基线31。头盔、护肩、背包与地区配色；并非动画既有人物。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-57"
+        }
+      ],
+      "opening_scene_note": "指挥所两翼警戒：守住指挥官侧后方，保持救护通道与战斗射线畅通；未补写生平。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "kanto",
+      "opening_deployment": {
+        "station": "指挥所两翼警戒",
+        "purpose": "守住指挥官侧后方，保持救护通道与战斗射线畅通；未补写生平。",
+        "formation_rank": 3,
+        "facing_rule": "Watch own frontline."
+      }
+    },
+    {
+      "id": "war-unit-58",
+      "name": "关都后卫士兵 · 战场实例",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "关都部队的指挥所两翼警戒；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": "藏蓝战衣、红肩章与披风",
+        "production_art": "Omni 原创四地区军服；以火红16×20可见人物为比例参考，四朝向共用等比缩放，最终可见身高19–20像素、脚底基线31。头盔、护肩、背包与地区配色；并非动画既有人物。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-58"
+        }
+      ],
+      "opening_scene_note": "指挥所两翼警戒：守住指挥官侧后方，保持救护通道与战斗射线畅通；未补写生平。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "kanto",
+      "opening_deployment": {
+        "station": "指挥所两翼警戒",
+        "purpose": "守住指挥官侧后方，保持救护通道与战斗射线畅通；未补写生平。",
+        "formation_rank": 3,
+        "facing_rule": "Watch own frontline."
+      }
+    },
+    {
+      "id": "war-unit-59",
+      "name": "丰缘传令兵 · 战场实例",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "丰缘部队的指挥所两翼警戒；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": "藏蓝战衣、红肩章与披风",
+        "production_art": "Omni 原创四地区军服；以火红16×20可见人物为比例参考，四朝向共用等比缩放，最终可见身高19–20像素、脚底基线31。头盔、护肩、背包与地区配色；并非动画既有人物。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-59"
+        }
+      ],
+      "opening_scene_note": "指挥所两翼警戒：守住指挥官侧后方，保持救护通道与战斗射线畅通；未补写生平。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "hoenn",
+      "opening_deployment": {
+        "station": "指挥所两翼警戒",
+        "purpose": "守住指挥官侧后方，保持救护通道与战斗射线畅通；未补写生平。",
+        "formation_rank": 3,
+        "facing_rule": "Watch own frontline."
+      }
+    },
+    {
+      "id": "war-unit-60",
+      "name": "丰缘后卫士兵 · 战场实例",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "丰缘部队的指挥所两翼警戒；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": "藏蓝战衣、红肩章与披风",
+        "production_art": "Omni 原创四地区军服；以火红16×20可见人物为比例参考，四朝向共用等比缩放，最终可见身高19–20像素、脚底基线31。头盔、护肩、背包与地区配色；并非动画既有人物。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-60"
+        }
+      ],
+      "opening_scene_note": "指挥所两翼警戒：守住指挥官侧后方，保持救护通道与战斗射线畅通；未补写生平。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "hoenn",
+      "opening_deployment": {
+        "station": "指挥所两翼警戒",
+        "purpose": "守住指挥官侧后方，保持救护通道与战斗射线畅通；未补写生平。",
+        "formation_rank": 3,
+        "facing_rule": "Watch own frontline."
+      }
+    },
+    {
+      "id": "war-unit-61",
+      "name": "神奥传令兵 · 战场实例",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "神奥部队的指挥所两翼警戒；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": "藏蓝战衣、红肩章与披风",
+        "production_art": "Omni 原创四地区军服；以火红16×20可见人物为比例参考，四朝向共用等比缩放，最终可见身高19–20像素、脚底基线31。头盔、护肩、背包与地区配色；并非动画既有人物。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-61"
+        }
+      ],
+      "opening_scene_note": "指挥所两翼警戒：守住指挥官侧后方，保持救护通道与战斗射线畅通；未补写生平。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "sinnoh",
+      "opening_deployment": {
+        "station": "指挥所两翼警戒",
+        "purpose": "守住指挥官侧后方，保持救护通道与战斗射线畅通；未补写生平。",
+        "formation_rank": 3,
+        "facing_rule": "Watch own frontline."
+      }
+    },
+    {
+      "id": "war-unit-62",
+      "name": "神奥后卫士兵 · 战场实例",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "神奥部队的指挥所两翼警戒；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": "藏蓝战衣、红肩章与披风",
+        "production_art": "Omni 原创四地区军服；以火红16×20可见人物为比例参考，四朝向共用等比缩放，最终可见身高19–20像素、脚底基线31。头盔、护肩、背包与地区配色；并非动画既有人物。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-62"
+        }
+      ],
+      "opening_scene_note": "指挥所两翼警戒：守住指挥官侧后方，保持救护通道与战斗射线畅通；未补写生平。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "sinnoh",
+      "opening_deployment": {
+        "station": "指挥所两翼警戒",
+        "purpose": "守住指挥官侧后方，保持救护通道与战斗射线畅通；未补写生平。",
+        "formation_rank": 3,
+        "facing_rule": "Watch own frontline."
+      }
+    },
+    {
+      "id": "war-unit-63",
+      "name": "合众传令兵 · 战场实例",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "合众部队的指挥所两翼警戒；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": "藏蓝战衣、红肩章与披风",
+        "production_art": "Omni 原创四地区军服；以火红16×20可见人物为比例参考，四朝向共用等比缩放，最终可见身高19–20像素、脚底基线31。头盔、护肩、背包与地区配色；并非动画既有人物。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-63"
+        }
+      ],
+      "opening_scene_note": "指挥所两翼警戒：守住指挥官侧后方，保持救护通道与战斗射线畅通；未补写生平。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "unova",
+      "opening_deployment": {
+        "station": "指挥所两翼警戒",
+        "purpose": "守住指挥官侧后方，保持救护通道与战斗射线畅通；未补写生平。",
+        "formation_rank": 3,
+        "facing_rule": "Watch own frontline."
+      }
+    },
+    {
+      "id": "war-unit-64",
+      "name": "合众后卫士兵 · 战场实例",
+      "kind": "human",
+      "status": "proposed_scene",
+      "role": "合众部队的指挥所两翼警戒；独立地图事件实例",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": "藏蓝战衣、红肩章与披风",
+        "production_art": "Omni 原创四地区军服；以火红16×20可见人物为比例参考，四朝向共用等比缩放，最终可见身高19–20像素、脚底基线31。头盔、护肩、背包与地区配色；并非动画既有人物。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/40-volcanic-war-direction.md",
+        "docs/41-battlefield-deployment.md"
+      ],
+      "relationships": [],
+      "runtime_bindings": [],
+      "presentation_bindings": [
+        {
+          "sequence": "first-journey-opening",
+          "scene": "war-front",
+          "mode": "map_battle_unit",
+          "instance": "war-unit-64"
+        }
+      ],
+      "opening_scene_note": "指挥所两翼警戒：守住指挥官侧后方，保持救护通道与战斗射线畅通；未补写生平。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "faction": "unova",
+      "opening_deployment": {
+        "station": "指挥所两翼警戒",
+        "purpose": "守住指挥官侧后方，保持救护通道与战斗射线畅通；未补写生平。",
+        "formation_rank": 3,
+        "facing_rule": "Watch own frontline."
+      }
     }
   ],
-  "revision": "2026-09-26.7"
+  "revision": "2026-09-28.1"
 }

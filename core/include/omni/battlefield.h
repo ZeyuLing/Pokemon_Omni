@@ -10,4 +10,7 @@ typedef struct {int16_t x,y;uint8_t face,step,action,hit;uint16_t phase;} OmniWa
 enum {OMNI_WAR_IDLE,OMNI_WAR_ADVANCE,OMNI_WAR_CHARGE,OMNI_WAR_FIRE,OMNI_WAR_RECOVER,OMNI_WAR_DOWN};
 unsigned omni_war_target(const OmniWarActor *,unsigned count,unsigned index,uint32_t ticks);
 void omni_war_sample_all(const OmniWarActor *,unsigned count,uint32_t ticks,OmniWarPose *);
+/* Suppress hit recoil into a wall/lava; retain the authored traversable route.
+ * Terrain cells are 16px, 0 ground, 1 solid, 2 lava/water. Air is unconstrained. */
+void omni_war_constrain_terrain(const OmniWarActor *,unsigned count,uint32_t ticks,OmniWarPose *,const unsigned char *cells,unsigned width,unsigned height);
 #endif

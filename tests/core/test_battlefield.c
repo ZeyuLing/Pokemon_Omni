@@ -36,5 +36,16 @@ int main(void) {
  omni_war_sample_all(a,3,0,p);CHECK(p[0].face==7);
  a[0].attack=0;
  omni_war_sample_all(a,3,0,p);CHECK(p[0].face==3); /* Human support has cardinal art. */
+ {
+  unsigned char cells[16]={0};
+  OmniWarActor u={.x=16,.tx=16,.y=32,.ty=32,.stop=65535};
+  OmniWarPose q={.x=19,.y=32,.hit=1};
+  cells[1*4+2]=1; /* Recoil crosses the right foot into a cliff. */
+  omni_war_constrain_terrain(&u,1,0,&q,cells,4,4);
+  CHECK(q.x==16&&q.y==32&&q.hit==1);
+  q.x=17;omni_war_constrain_terrain(&u,1,0,&q,cells,4,4);CHECK(q.x==17);
+  q.x=19;u.layer=2;omni_war_constrain_terrain(&u,1,0,&q,cells,4,4);CHECK(q.x==19);
+  u.layer=0;cells[6]=2;omni_war_constrain_terrain(&u,1,0,&q,cells,4,4);CHECK(q.x==16);
+ }
  return 0;
 }

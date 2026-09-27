@@ -103,7 +103,7 @@ class OpeningLayout(unittest.TestCase):
         self.assertEqual(GRIDS['war']['kind'],'battlefield')
         self.assertIn(0,GRIDS['war']['cells'],'Native battlefield requires traversable terrain')
         data=json.loads((ROOT/'content/opening/battlefield.json').read_text('utf8'))
-        self.assertEqual(len(data['actors']),40)
+        self.assertEqual(len(data['actors']),64)
         self.assertTrue({a['id'] for a in data['actors']}<=set(scene['actors']))
         for cue in REPORT['cues']:
             if cue['stage']!='war':continue

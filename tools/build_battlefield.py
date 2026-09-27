@@ -12,14 +12,17 @@ def compile_war():
     source_manifest=ROOT/'assets/source/battlefield.json'
     pinned={f['path']:f for f in json.loads(source_manifest.read_text('utf8'))['files']} if source_manifest.exists() else {}
     data=json.loads((ROOT/'content/opening/battlefield.json').read_text('utf8'))
+    war_sources.get(data['terrain_design']['source_layout'])
     source=war_sources.volcano_tiles()
-    tiles={k:source[index] for k,index in data['tiles'].items()}
+    grid=data['metatile_grid']
+    assert len(grid)==data['size'][1] and all(len(row)==data['size'][0] for row in grid)
+    tiles={n:source[n].copy() for row in grid for n in row}
     # Source pixels remain intact in cache. This is the scene's reproducible
     # palette lighting: dark rock against emissive lava, not a screen tint.
     if data.get('rock_lighting'):
         scales=data['rock_lighting']
         for key,tile in tiles.items():
-            if key=='~':continue
+            if key in (701,540):continue
             lit=tile.copy()
             for y in range(16):
                 for x in range(16):
@@ -28,13 +31,26 @@ def compile_war():
                     lit.putpixel((x,y),tuple(c*s//100 for c,s in zip(rgb,scales)))
             tiles[key]=lit
     w,h=data['size'];bg=Image.new('RGB',(w*16,h*16));terrain=[]
-    for y,row in enumerate(data['map']):
+    for y,row in enumerate(grid):
         assert len(row)==w
         for x,c in enumerate(row):
-            bg.paste(tiles[c],(x*16,y*16));terrain.append(2 if c=='~' else 1 if c in '#^v<>' else 0)
+            tile=tiles[c]
+            if c==625:
+                # Broad impact-scorched material patches retain the source rock
+                # texture. The authored ellipses feather across whole metatiles.
+                shade=100
+                for scar in data.get('ground_scars',[]):
+                    sx,sy=scar['center'];rx,ry=scar['radius']
+                    distance=((x-sx)/rx)**2+((y-sy)/ry)**2
+                    if distance<1:shade=min(shade,round(scar['shade']+(100-scar['shade'])*distance))
+                if shade<100:tile=tile.point(lambda v:v*shade//100)
+            bg.paste(tile,(x*16,y*16));terrain.append(data['terrain_grid'][y][x])
     blob=bytearray();sprites=[];art_layout=[]
     for s in data['sprites']:
-        if s.get('native_overworld'):
+        if 'uniform_team' in s:
+            from war_uniforms import soldier_frames
+            frames=soldier_frames()[s['uniform_team']]
+        elif s.get('native_overworld'):
             from war_humans import native_frames
             frames=native_frames(s,get)
         elif 'pmd' in s:
@@ -86,11 +102,11 @@ def compile_war():
     rosters=[{data['sprites'][a['sprite']].get('pmd') for a in actors if a['team']==team and not data['sprites'][a['sprite']]['human']} for team in range(4)]
     assert all(rosters) and all(not (rosters[a]&rosters[b]) for a in range(4) for b in range(a+1,4)), 'Regional battle rosters must be visually distinct'
     species=[data['sprites'][a['sprite']]['pmd'] for a in actors if not data['sprites'][a['sprite']]['human']]
-    assert len(species)==len(set(species))==24, 'Each Pokemon actor must have its own species'
+    assert len(species)==len(set(species))==data['staging']['unique_species'], 'Each Pokemon actor must have its own species'
     for team in range(4):
         assert {actors[a['target']]['team'] for a in actors if a['team']==team and a['attack']}==set(range(4))-{team}, 'Each region must fight all three opponents'
-    assert sum(a.get('stop')==1600 for a in actors)==20
-    assert sum(a['attack']>0 and a.get('stop',65535)>1600 for a in actors)==8
+    assert {a['id'] for a in actors if a.get('stop')==1600}==set(data['aftermath']['downed_ids'])
+    assert sum(a['attack']>0 and a.get('stop',65535)>1600 for a in actors)>=8
     for a in actors:
         assert 0<=a['target']<count and a['team'] in (0,1,2,3)
         assert 0<=a['attack']<=7 and a['layer'] in (0,2) and 0<=a['sprite']<len(sprites)
@@ -100,7 +116,7 @@ def compile_war():
         for step in range(distance+1):
             xx=x+(1 if tx>x else -1 if tx<x else 0)*step
             yy=y+(1 if ty>y else -1 if ty<y else 0)*step
-            for fx,fy in ((xx+2,yy-12),(xx+13,yy-1)):
+            for fx,fy in ((xx+2,yy-12),(xx+13,yy-12),(xx+2,yy-1),(xx+13,yy-1)):
                 assert 0<=fx<w*16 and 0<=fy<h*16,a['id']
                 cell=terrain[fy//16*w+fx//16]
                 assert a['layer']==2 or cell==(2 if a['layer']==1 else 0),(a['id'],xx,yy,cell)
@@ -129,5 +145,9 @@ extern const uint32_t omni_war_cache_offsets[];
     combined={**{path:records[path] for path in sorted(fire_red_paths)},**war_sources.records}
     for path,record in combined.items():
         assert path not in pinned or pinned[path]['sha256']==record['sha256'], 'Battlefield source changed: '+path
-    source_manifest.write_text(json.dumps({'scope':'Omni Mt Chimney front: Emerald volcanic tiles, PMD native animation frames with credits, FireRed human bases with runtime uniforms, native FireRed/Emerald/Platinum commander sheets. No global geography or canonical war claims.','files':list(combined.values()),'actors':count,'sprite_bytes':len(blob),'commander_sources':[s for s in data['sprites'] if s.get('native_overworld')]},ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+    source_manifest.write_text(json.dumps({'scope':'Omni Mt Chimney front: Emerald volcanic metatile assemblies, PMD native animation frames with credits, generated 19–20px military uniforms and field standards, native FireRed/Emerald/Platinum commander sheets. No global geography or canonical war claims.','files':list(combined.values()),'actors':count,'sprite_bytes':len(blob),'commander_sources':[s for s in data['sprites'] if s.get('native_overworld')],'uniform_source':'assets/characters/field-armies/manifest.json'},ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+    from war_uniforms import standard_frames
+    for flag,(x,y) in zip(standard_frames(),data['staging']['standards']):
+        bg.paste(flag,(x,y-flag.height),flag)
+    bg.save(OUT/'war-ground.png')
     return bg,Image.new('L',bg.size),[int(c!=0) for c in terrain]

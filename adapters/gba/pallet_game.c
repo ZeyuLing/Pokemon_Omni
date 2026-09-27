@@ -165,6 +165,9 @@ static void draw_intro(void){
  if(s->fade_in&&ticks<16)fade=16-ticks;
  if(s->fade_out&&s->duration-ticks<16)fade=16-(s->duration-ticks);
  omni_gba_surface=intro_frame;
+ /* Pause overlays the last completed frame. Re-running a 64-unit battlefield
+  * here delays the menu and advances its visual pose after the pause input. */
+ if(screen==INTRO_SKIP)goto intro_overlay;
  if(ox){box(0,0,ox,160,RGB(3,5,7));box(ox+width,0,240-ox-width,160,RGB(3,5,7));}
  if(height<160)box(ox,height,width,160-height,RGB(3,5,7));
  for(row=0;row<(unsigned)height;++row)dma_row((const uint16_t*)(omni_opening_stage_blob+m->art)+(row+cy)*m->w+cx,omni_gba_surface+row*240+ox,(unsigned)width);
@@ -209,6 +212,7 @@ static void draw_intro(void){
   text_prefix(s->line2,letters-used,line);if(*s->line2)end=rocket_text(16,135,line,220);
   if(letters==s->letters)rocket_bitmap(OMNI_ROCKET_ARROW,8,16,end+2,(*s->line2?135:121)+(int)((ticks/16)%3));
  }
+intro_overlay:
  if(screen==INTRO_SKIP){panel(15,47,210,61);text(27,56,"跳过这段开场？",INK,225);text(27,80,"A跳过  B继续",INK,225);}
  /* Never expose the background clear, partial actors or half-written text.
   * Start the completed frame transfer in VBlank, ahead of the LCD scan. */

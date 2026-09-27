@@ -8,7 +8,7 @@ The repository submission/use policy places community submissions under CC BY-NC
 Source policy: https://github.com/PMDCollab/SpriteCollab/blob/88cd945ef14b1d0fc3024a268482d77dfcc529a0/README.md
 Community license: https://creativecommons.org/licenses/by-nc/4.0/
 
-FireRed human sprite bases and Emerald volcanic tiles are original game assets referenced through the pret decompilation projects. Their code licenses do not transfer ownership of Pokemon artwork. Commander overworlds now use native FireRed (Lance), Emerald (Drake) and Platinum (Flint/Caitlin) sheets, pinned in assets/source/battlefield.json. The generated costume atlas is withdrawn from runtime. These game sprites are not anime reference images or 3D models.
+FireRed native character references and Emerald volcanic tiles are original game assets referenced through the pret decompilation projects. Their code licenses do not transfer ownership of Pokemon artwork. Commander overworlds now use native FireRed (Lance), Emerald (Drake) and Platinum (Flint/Caitlin) sheets, pinned in assets/source/battlefield.json. The earlier generated commander costume atlas is withdrawn from runtime. The separate field-armies uniform set introduced on 2026-09-28 is original generated art and is used for ordinary soldiers only. These game sprites are not anime reference images or 3D models.
 
 ## 0149 快龙
 
@@ -167,3 +167,108 @@ FireRed human sprite bases and Emerald volcanic tiles are original game assets r
 2024-02-23 17:36:35.234309	<@!229131140903075840>	CUR	CC_BY-NC_4	Idle,Walk,Sleep,Hurt,Attack,Charge,Shoot,Strike,Twirl,Swing,Double,Rotate,Hop
 2024-03-30 15:50:14.539907	<@!229131140903075840>	CUR	CC_BY-NC_4	Charge,Swing,Double,Hop
 ```
+
+## 2026-09-28 新增侧翼部队素材
+
+### 0068 怪力
+
+```text
+2020-10-07 17:58:43.533877	CHUNSOFT	CUR	Unspecified	Walk,Attack,Punch,Shoot,Kick,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate
+```
+
+### 0009 水箭龟
+
+```text
+2020-10-07 17:58:43.356353	CHUNSOFT	CUR	Unspecified	Walk,Attack,Ricochet,Shoot,Withdraw,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate
+```
+
+### 0112 钻角犀兽
+
+```text
+2020-10-07 17:58:43.651562	CHUNSOFT	CUR	Unspecified	Walk,Attack,Stomp,Shoot,Twirl,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate
+```
+
+### 0094 耿鬼
+
+```text
+2022-12-17 00:13:11.432426	CHUNSOFT	CUR	Unspecified	Idle,Walk,Sleep,Hurt,Attack,Charge,Shoot,Strike,Lick,Twirl,Swing,Double,Rotate,Hop
+2023-04-22 22:29:17.717502	<@!237286997645983744>	CUR	PMDCollab_1	EventSleep,Wake,Eat,Tumble,Pose,Pull,Pain,Float,DeepBreath,Nod,Sit,LookUp,Sink,Trip,Laying,LeapForth,Head,Cringe,LostBalance,TumbleBack,HitGround,Faint
+```
+
+### 0257 火焰鸡
+
+```text
+2020-10-07 17:58:44.190727	CHUNSOFT	CUR	Unspecified	Walk,Attack,Strike,Slam,Shoot,Kick,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate
+```
+
+### 0260 巨沼怪
+
+```text
+2020-10-07 17:58:44.200699	CHUNSOFT	CUR	Unspecified	Attack,Charge,Double,Hop,Hurt,Idle,RearUp,Rotate,Shoot,Sleep,Swing,Walk
+2021-08-13 22:37:46.324994	<@!356635814668664832>	CUR	PMDCollab_1	Attack,Charge,Cringe,DeepBreath,Double,Eat,EventSleep,Faint,Float,Head,HitGround,Hop,Hurt,Idle,Laying,LeapForth,LookUp,LostBalance,Nod,Pain,Pose,Pull,RearUp,Rotate,Shoot,Sink,Sit,Sleep,Swing,Trip,Tumble,TumbleBack,Wake,Walk
+```
+
+### 0254 蜥蜴王
+
+```text
+2020-10-07 17:58:44.180752	CHUNSOFT	CUR	Unspecified	Walk,Attack,Strike,Shoot,Twirl,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate
+```
+
+### 0365 帝牙海狮
+
+```text
+2023-04-30 22:17:27.867436	CHUNSOFT	CUR	Unspecified	Idle,Walk,Sleep,Hurt,Attack,Charge,Shoot,Strike,Rumble,SpAttack,RearUp,Swing,Double,Rotate,Hop
+```
+
+### 0461 玛狃拉
+
+```text
+2022-11-08 03:48:25.770646	CHUNSOFT	CUR	Unspecified	Idle,Walk,Sleep,Hurt,Attack,Charge,Shoot,SpAttack,Swing,Double,Rotate,Hop,QuickStrike
+```
+
+### 0395 帝王拿波
+
+```text
+2020-10-07 17:58:44.557744	CHUNSOFT	CUR	Unspecified	Walk,Attack,Strike,Shoot,Appeal,Hover,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate
+```
+
+### 0464 超甲狂犀
+
+```text
+2020-10-07 17:58:44.778154	CHUNSOFT	CUR	Unspecified	Walk,Attack,Strike,Shoot,Rumble,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate
+```
+
+### 0462 自爆磁怪
+
+```text
+2023-04-15 02:37:20.104045	CHUNSOFT	CUR	Unspecified	Idle,Walk,Sleep,Hurt,Attack,Charge,Shoot,Strike,SpAttack,Swing,Double,Rotate,Hop
+```
+
+### 0500 炎武王
+
+```text
+2022-02-18 08:50:59.186639	<@!319945906600411179>	CUR	PMDCollab_1	Attack,Idle,Walk
+2022-02-20 13:14:58.974812	<@!237286997645983744>	CUR	PMDCollab_1	Attack,Charge,Double,Hop,Hurt,Rotate,Shoot,Sleep,Swing
+```
+
+### 0497 君主蛇
+
+```text
+2021-03-26 04:24:43.905111	<@!319945906600411179>	CUR	PMDCollab_1	Walk,Attack,Strike,Shoot,Twirl,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate
+```
+
+### 0612 双斧战龙
+
+```text
+2023-04-10 22:58:35.865193	<@!872983950732165181>	CUR	PMDCollab_1	Idle,Walk,Sleep,Hurt,Attack,Charge,Shoot,Strike,Slice,Swing,Double,Rotate,Hop
+2023-04-30 22:15:42.405398	<@!544245909639397378>	CUR	PMDCollab_1	Idle,Walk,Sleep,Hurt,Attack,Charge,Shoot,Strike,Slice,Swing,Double,Rotate,Hop
+2024-02-26 06:11:43.758704	<@!157796074457661440>	CUR	CC_BY-NC_4	Idle,Walk,Sleep,Hurt,Attack,Charge,Shoot,Strike,Slice,Swing,Double,Rotate,Hop
+```
+
+### 0503 大剑鬼
+
+```text
+2022-07-07 22:34:09.001300	<@!276369635304275968>	CUR	PMDCollab_1	Idle,Walk,Sleep,Hurt,Attack,Charge,Shoot,Strike,Swing,Double,Rotate,Hop
+```
+
+军服与军旗是 Omni 原创生成素材，非原版资产；来源、统一缩放规则与提示词见 `assets/characters/field-armies/manifest.json`。原版指挥官保持不变。

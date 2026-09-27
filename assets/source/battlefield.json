@@ -1,17 +1,17 @@
 {
-  "scope": "Omni Mt Chimney front: Emerald volcanic tiles, PMD native animation frames with credits, FireRed human bases with runtime uniforms, native FireRed/Emerald/Platinum commander sheets. No global geography or canonical war claims.",
+  "scope": "Omni Mt Chimney front: Emerald volcanic metatile assemblies, PMD native animation frames with credits, generated 19–20px military uniforms and field standards, native FireRed/Emerald/Platinum commander sheets. No global geography or canonical war claims.",
   "files": [
-    {
-      "path": "graphics/object_events/pics/people/cooltrainer_m.png",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/people/cooltrainer_m.png",
-      "sha256": "0bf14055f9641ce78418c1396df0b329c7b7de571e9f9b6fd31161985e8a1dad",
-      "bytes": 815
-    },
     {
       "path": "graphics/object_events/pics/people/lance.png",
       "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/people/lance.png",
       "sha256": "a47a03b01998e1bb0e35f0cf380cd5ba813d40c8782020b760d9ca221be00da2",
       "bytes": 458
+    },
+    {
+      "path": "emerald/data/layouts/MtChimney/map.bin",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/data/layouts/MtChimney/map.bin",
+      "sha256": "6ee76f548b22b90181263a2233f5f809c5553af03f70e9bb31859c2a13d5a177",
+      "bytes": 3760
     },
     {
       "path": "emerald/data/tilesets/primary/general/tiles.png",
@@ -996,10 +996,586 @@
       "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0553/Sleep-Anim.png",
       "sha256": "5012f66304421554a49b960de8cbfbd865e1536c1bc187a58a039cc6d2e4dda0",
       "bytes": 1118
+    },
+    {
+      "path": "pmd/sprite/0068/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0068/AnimData.xml",
+      "sha256": "c3542b199ab099a0ddb6f970c4122a87dc9f065c1e78f0efb5100fd34a62d058",
+      "bytes": 5401
+    },
+    {
+      "path": "pmd/sprite/0068/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0068/credits.txt",
+      "sha256": "9ddf1801bea9fd4d20fceefaad843350ae72f9d2a2193db47745b19511b5c72f",
+      "bytes": 128
+    },
+    {
+      "path": "pmd/sprite/0068/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0068/Walk-Anim.png",
+      "sha256": "e169fb82de0226d8abfbc73e6b837af41cfb19347f71943bea804dfe5fc6120f",
+      "bytes": 11823
+    },
+    {
+      "path": "pmd/sprite/0068/Charge-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0068/Charge-Anim.png",
+      "sha256": "c04d51a80cb9328bf32430d6a0bd9e350441e6ce9657c766e2d1379c1b85a05d",
+      "bytes": 10833
+    },
+    {
+      "path": "pmd/sprite/0068/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0068/Hurt-Anim.png",
+      "sha256": "f9f3a887fa9030cab510fb94183e5edc392bc944aa44fa5ab22b54f62eeae37d",
+      "bytes": 6695
+    },
+    {
+      "path": "pmd/sprite/0068/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0068/Sleep-Anim.png",
+      "sha256": "d2eb05b5d688b4c478b94450e018523dd4b0cf6ee1a08a299069f385b0ff0601",
+      "bytes": 933
+    },
+    {
+      "path": "pmd/sprite/0009/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0009/AnimData.xml",
+      "sha256": "4ccb8ab3596721a434c3d561b8930a9988bb314d403e8b4cfc7a4daaea9732a8",
+      "bytes": 5585
+    },
+    {
+      "path": "pmd/sprite/0009/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0009/credits.txt",
+      "sha256": "2fc33440148a7c3cc3211c2ad517af3613750b3ff8cb3cb44db8200e9cb04276",
+      "bytes": 135
+    },
+    {
+      "path": "pmd/sprite/0009/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0009/Walk-Anim.png",
+      "sha256": "90074aa6cea5dc4fd11a5ca2bd756f71d83798e2efc346d8d609907489f70350",
+      "bytes": 11364
+    },
+    {
+      "path": "pmd/sprite/0009/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0009/Shoot-Anim.png",
+      "sha256": "18ef283b80280a7f8625ddfd5b9da950d77b9eb4022875e97e8f28e320e651bf",
+      "bytes": 18999
+    },
+    {
+      "path": "pmd/sprite/0009/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0009/Hurt-Anim.png",
+      "sha256": "8f5e78a8814aa0d16a9da08c56415e6892e09ec687ca9538ccc1e8edecd9961a",
+      "bytes": 3662
+    },
+    {
+      "path": "pmd/sprite/0009/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0009/Sleep-Anim.png",
+      "sha256": "173f081792c97727a8d45fa441729af7d085182dcc5895d39e772910c4b41fc4",
+      "bytes": 1069
+    },
+    {
+      "path": "pmd/sprite/0112/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0112/AnimData.xml",
+      "sha256": "49aa9878621e3eb4412e34defc8d1ee1cb720a0270d2c9c048d667b5611665c2",
+      "bytes": 5159
+    },
+    {
+      "path": "pmd/sprite/0112/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0112/credits.txt",
+      "sha256": "7039175bedb49cf8fa1330d5adf4d88f9198b8007bf2f4521552d00dee0de35d",
+      "bytes": 129
+    },
+    {
+      "path": "pmd/sprite/0112/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0112/Walk-Anim.png",
+      "sha256": "96d89d75637f5d7ae3b5a9ffa3daedb11289255b114ebe8835ed1f988a938ff8",
+      "bytes": 11409
+    },
+    {
+      "path": "pmd/sprite/0112/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0112/Shoot-Anim.png",
+      "sha256": "7538a4be11f5d22feafbbb2566bf3dda90ed075ee1d47b00f02650c38040a610",
+      "bytes": 28748
+    },
+    {
+      "path": "pmd/sprite/0112/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0112/Hurt-Anim.png",
+      "sha256": "1fd29dacf55f734242f532f56860269734eb28810d5e49bdd71f32991905e69d",
+      "bytes": 7538
+    },
+    {
+      "path": "pmd/sprite/0112/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0112/Sleep-Anim.png",
+      "sha256": "953c21bcce746295217ff3f16feca8756e1bfa3b15c101ea35f2aad474b297dd",
+      "bytes": 1236
+    },
+    {
+      "path": "pmd/sprite/0094/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0094/AnimData.xml",
+      "sha256": "cffb806df2432f57a596eb2d945e7eac7ca4b66dd7e51c7bd06cfdd6de221df0",
+      "bytes": 14111
+    },
+    {
+      "path": "pmd/sprite/0094/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0094/credits.txt",
+      "sha256": "b585d7d7c723801ec276f228f44610d390c42d04f873985d6ffe83303d89ef47",
+      "bytes": 353
+    },
+    {
+      "path": "pmd/sprite/0094/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0094/Walk-Anim.png",
+      "sha256": "be39dae12dae3715a3328628c4c6bc542fc9805d483e877d420d8dac31279a0d",
+      "bytes": 8403
+    },
+    {
+      "path": "pmd/sprite/0094/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0094/Shoot-Anim.png",
+      "sha256": "ec5a691407e63d6f415584b5a59acd29bf4458b2ecddcf2571f3d4b1eef897bb",
+      "bytes": 19627
+    },
+    {
+      "path": "pmd/sprite/0094/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0094/Hurt-Anim.png",
+      "sha256": "74e2457a2e7429a8417fc46ff39c48fae7fa04f2a19d01533cf4f5db8969e49a",
+      "bytes": 5993
+    },
+    {
+      "path": "pmd/sprite/0094/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0094/Sleep-Anim.png",
+      "sha256": "c74113d42eb4f8122bf535e2fa496e2a0a56cf1531f26e88b6a94e049a98cf19",
+      "bytes": 840
+    },
+    {
+      "path": "pmd/sprite/0257/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0257/AnimData.xml",
+      "sha256": "3071822a49c8fe39c4240fa117237369998e74662bad83c5150e7368b0b7f508",
+      "bytes": 5701
+    },
+    {
+      "path": "pmd/sprite/0257/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0257/credits.txt",
+      "sha256": "6c5f5ef738648795beced8a7df7abbddfb5c40857f9d7aa4ca9fef83e6ec82bc",
+      "bytes": 134
+    },
+    {
+      "path": "pmd/sprite/0257/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0257/Walk-Anim.png",
+      "sha256": "61581ec6b6f5af40ca96777f6777fee1e0f574a2747885073dce2b2dfee22633",
+      "bytes": 10043
+    },
+    {
+      "path": "pmd/sprite/0257/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0257/Shoot-Anim.png",
+      "sha256": "a25f4ee2d9843117824b5e23e45099309fef232befade647a909556a8f62f0aa",
+      "bytes": 25258
+    },
+    {
+      "path": "pmd/sprite/0257/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0257/Hurt-Anim.png",
+      "sha256": "7f756ef419dbacadba19dac185d114907094576393b0164996e7c8b6ecf416af",
+      "bytes": 6369
+    },
+    {
+      "path": "pmd/sprite/0257/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0257/Sleep-Anim.png",
+      "sha256": "3a2135508ba3fd7b242684cdbd76307fd3801fdbc0c5c5fb571de74e01f64bed",
+      "bytes": 1001
+    },
+    {
+      "path": "pmd/sprite/0260/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0260/AnimData.xml",
+      "sha256": "7b8968fd4305b6309a8ff17339e67965231aae7e3e1896f3c30280d3cbeb637b",
+      "bytes": 14165
+    },
+    {
+      "path": "pmd/sprite/0260/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0260/credits.txt",
+      "sha256": "95524a0cde76a7cac38fea14c4cd5823d68c0d20f6b54da88e3840e636b9fea0",
+      "bytes": 414
+    },
+    {
+      "path": "pmd/sprite/0260/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0260/Walk-Anim.png",
+      "sha256": "92f436a81c2602b707e879a10b59a6b587a6afe958d71b68d9b5797f02e7cdc1",
+      "bytes": 11065
+    },
+    {
+      "path": "pmd/sprite/0260/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0260/Shoot-Anim.png",
+      "sha256": "126cd3760bb3b9eb4a01141f7f76961c9cd5bac2f66a0166acca1dfc749ee1c1",
+      "bytes": 18267
+    },
+    {
+      "path": "pmd/sprite/0260/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0260/Hurt-Anim.png",
+      "sha256": "6bc58ee24522133b439e9afde77ad87ccdeb98e3a924a772443fb65d479f666c",
+      "bytes": 6715
+    },
+    {
+      "path": "pmd/sprite/0260/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0260/Sleep-Anim.png",
+      "sha256": "eca71a2deefc3f33e436e31791220ecba034e12c863f3ef9fef5d598a8be16d5",
+      "bytes": 834
+    },
+    {
+      "path": "pmd/sprite/0254/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0254/AnimData.xml",
+      "sha256": "01670c1eb20d10c43736a628056879b6236fc2c1a987b169286ab4e94ba6dc19",
+      "bytes": 5052
+    },
+    {
+      "path": "pmd/sprite/0254/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0254/credits.txt",
+      "sha256": "56cbb2543846a7c5800da4c3b9474fabdaec7c2c26211496ffaf430d7f0fd02c",
+      "bytes": 130
+    },
+    {
+      "path": "pmd/sprite/0254/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0254/Walk-Anim.png",
+      "sha256": "89f6a836fb1b0ccee94fec63ad2380ea10063782ef1655955e2bcb59bf1e550a",
+      "bytes": 9335
+    },
+    {
+      "path": "pmd/sprite/0254/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0254/Shoot-Anim.png",
+      "sha256": "c2d4fce7be58c68bc06d87771b7732c08bdbecee10f5742db7f548b2b684ce82",
+      "bytes": 23626
+    },
+    {
+      "path": "pmd/sprite/0254/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0254/Hurt-Anim.png",
+      "sha256": "9c84539e614a22a257073e345e9601d341fad179d92885d4a8b02dabff3e7b92",
+      "bytes": 6224
+    },
+    {
+      "path": "pmd/sprite/0254/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0254/Sleep-Anim.png",
+      "sha256": "b72dc7553004166b6cc0a53e62813cd9bab20d5fc136f84dc0b4cbe6e371cf95",
+      "bytes": 892
+    },
+    {
+      "path": "pmd/sprite/0365/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0365/AnimData.xml",
+      "sha256": "e05294a4f62275c050416de327f10edf923678963deaa3c0d4708b0bed0373ae",
+      "bytes": 5346
+    },
+    {
+      "path": "pmd/sprite/0365/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0365/credits.txt",
+      "sha256": "66d5b42cf8f1d86f948b5ec27fd12ea27e6db612c2c890462aabc55639b1aaf7",
+      "bytes": 147
+    },
+    {
+      "path": "pmd/sprite/0365/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0365/Walk-Anim.png",
+      "sha256": "09ed8c58dc5e42006d861a1313e5610f502bc087a6a43b0024e69d6de3253304",
+      "bytes": 17092
+    },
+    {
+      "path": "pmd/sprite/0365/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0365/Shoot-Anim.png",
+      "sha256": "565f271bfd96c62878b401bfdf2bd22f3c62aa8daa75760c3a8dd7d9818986ca",
+      "bytes": 21417
+    },
+    {
+      "path": "pmd/sprite/0365/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0365/Hurt-Anim.png",
+      "sha256": "a4a64435557b57f237bab43afb695d75dd1f6bfd609abae0f5c4dd93fa414ef3",
+      "bytes": 6148
+    },
+    {
+      "path": "pmd/sprite/0365/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0365/Sleep-Anim.png",
+      "sha256": "eae48cca51327dc1d4c130db540c0b07422a7ac35ffc9ddea97d4a03b5d59292",
+      "bytes": 880
+    },
+    {
+      "path": "pmd/sprite/0461/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0461/AnimData.xml",
+      "sha256": "8005a9b57cac7c4302531db62f1297b5a702d21aa42c9fe681f6e0fd7349ef22",
+      "bytes": 5115
+    },
+    {
+      "path": "pmd/sprite/0461/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0461/credits.txt",
+      "sha256": "ec985876b581191e9ad259ec52358b54a22fb940fb90070effec3e23b5caa7a6",
+      "bytes": 138
+    },
+    {
+      "path": "pmd/sprite/0461/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0461/Walk-Anim.png",
+      "sha256": "36c8b1acbc91db767e097761067cb0be0a7f10019d2a21c95b713da2cd3d1c5f",
+      "bytes": 10937
+    },
+    {
+      "path": "pmd/sprite/0461/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0461/Shoot-Anim.png",
+      "sha256": "b384dbef5b92e6b061ba63e1a584ce7749f688108aa1482d6c53dcfeb2706706",
+      "bytes": 22805
+    },
+    {
+      "path": "pmd/sprite/0461/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0461/Hurt-Anim.png",
+      "sha256": "0ded10e0ccbab101006dd7ce74c77b3a783669a9ebbab7fb7c944eb5ba6cc817",
+      "bytes": 6327
+    },
+    {
+      "path": "pmd/sprite/0461/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0461/Sleep-Anim.png",
+      "sha256": "660112e2a1e27849af203822431b571b053d7f69453da963f720c71d0307d179",
+      "bytes": 1023
+    },
+    {
+      "path": "pmd/sprite/0395/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0395/AnimData.xml",
+      "sha256": "823164bf21cc7d57acd7e6663b8d3b51018e99a23887862bb201ee50d737222c",
+      "bytes": 5285
+    },
+    {
+      "path": "pmd/sprite/0395/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0395/credits.txt",
+      "sha256": "052c04202307a3913922b84237791ca52c19e0a800ed0803ff266c4d5989c7fb",
+      "bytes": 137
+    },
+    {
+      "path": "pmd/sprite/0395/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0395/Walk-Anim.png",
+      "sha256": "806f7bc1fa019382d1743691a70c2bb8bbebec2eb587ec09aba0e1de0056a13b",
+      "bytes": 12696
+    },
+    {
+      "path": "pmd/sprite/0395/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0395/Shoot-Anim.png",
+      "sha256": "c544fba024806bf9f9c5ab927380f61d920d7658d1ae653c6791a4b769c48076",
+      "bytes": 18238
+    },
+    {
+      "path": "pmd/sprite/0395/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0395/Hurt-Anim.png",
+      "sha256": "9c2d0b1196366e432fb09b171946bda3b522ef4d1c51772f8b13b29d92493c9c",
+      "bytes": 6608
+    },
+    {
+      "path": "pmd/sprite/0395/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0395/Sleep-Anim.png",
+      "sha256": "6ce82b571dbe58da1059d3291ab4596e13a37444c3faf523c0fd4d565552b46f",
+      "bytes": 1228
+    },
+    {
+      "path": "pmd/sprite/0464/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0464/AnimData.xml",
+      "sha256": "4aa95d739d1e55a963194edd646c73f8a3b555890666f0056f5a93120e731429",
+      "bytes": 5857
+    },
+    {
+      "path": "pmd/sprite/0464/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0464/credits.txt",
+      "sha256": "b7fef10777dfcfb10a0677786a38d45360158f23a541c5456a075cc9397239df",
+      "bytes": 131
+    },
+    {
+      "path": "pmd/sprite/0464/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0464/Walk-Anim.png",
+      "sha256": "86acee83a1e0a8ab624dfa054f7ec0f99a1324253c26c02503a0653f3b743223",
+      "bytes": 22120
+    },
+    {
+      "path": "pmd/sprite/0464/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0464/Shoot-Anim.png",
+      "sha256": "2b6666a025c398b08ffcc0b4cb27941ae14aefc73992ddc43bcc62b81003dd28",
+      "bytes": 31533
+    },
+    {
+      "path": "pmd/sprite/0464/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0464/Hurt-Anim.png",
+      "sha256": "cd001ab173954797cba3b487f4b1aa858114a6b7ff74e87a0b7613fc286404ea",
+      "bytes": 13294
+    },
+    {
+      "path": "pmd/sprite/0464/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0464/Sleep-Anim.png",
+      "sha256": "a5c2a749e7362205d67c6cc1538d53cda668074b26f3ead6214b1b5c0bea8b2c",
+      "bytes": 1559
+    },
+    {
+      "path": "pmd/sprite/0462/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0462/AnimData.xml",
+      "sha256": "e689526f3dd51b5e50321dd127bd49607da6fcc90f64ccea2b8e6464a4aa56d7",
+      "bytes": 5952
+    },
+    {
+      "path": "pmd/sprite/0462/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0462/credits.txt",
+      "sha256": "06f55f8d67b55dcd604a93b7554e63d70240536cd1390c55787df802c7cc2e37",
+      "bytes": 133
+    },
+    {
+      "path": "pmd/sprite/0462/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0462/Walk-Anim.png",
+      "sha256": "879871febb91e9750ed109daa10d812b6e81d08193ad4291924a0f54a2a426a0",
+      "bytes": 13454
+    },
+    {
+      "path": "pmd/sprite/0462/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0462/Shoot-Anim.png",
+      "sha256": "3fd5c998a352129b203cfeb9bfa0f46a313f3a77a7abcc9bff8fc8df12eaa047",
+      "bytes": 33868
+    },
+    {
+      "path": "pmd/sprite/0462/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0462/Hurt-Anim.png",
+      "sha256": "a48f84b9febadc197a88c275545887eba8798d534392abb2d06d90233a101240",
+      "bytes": 8659
+    },
+    {
+      "path": "pmd/sprite/0462/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0462/Sleep-Anim.png",
+      "sha256": "9fac46a9a5824288e18e31bf24fd376376ffda841036c355cdd21d53ddad5d16",
+      "bytes": 2284
+    },
+    {
+      "path": "pmd/sprite/0500/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0500/AnimData.xml",
+      "sha256": "f35f11facb9477fa6335008f5557ddf8bcdc38922782a1be2b7b08be3bb73826",
+      "bytes": 5527
+    },
+    {
+      "path": "pmd/sprite/0500/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0500/credits.txt",
+      "sha256": "c841e621eae65e2dd074ae0aa7829bfbb9d07677a5a741d2699c9bb05116ed2f",
+      "bytes": 204
+    },
+    {
+      "path": "pmd/sprite/0500/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0500/Walk-Anim.png",
+      "sha256": "0cb8ec3b9a4b7546366cf477d5f04c4c67d60e767346c41625818c6bb6729ed0",
+      "bytes": 14948
+    },
+    {
+      "path": "pmd/sprite/0500/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0500/Shoot-Anim.png",
+      "sha256": "ec5c181bbb3d8dd4046dac966194390e61c3f7eecd177283d6570178e96c13a3",
+      "bytes": 27922
+    },
+    {
+      "path": "pmd/sprite/0500/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0500/Hurt-Anim.png",
+      "sha256": "d6fff9175ccdb26f681a68e9b6b8ecae816dc1326c0446b8f916e4807ec3b7f0",
+      "bytes": 7449
+    },
+    {
+      "path": "pmd/sprite/0500/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0500/Sleep-Anim.png",
+      "sha256": "206dace3e9a99c9cfebd757b64f54e668e9e1e0d29243c938049deeb7fa1cf16",
+      "bytes": 1333
+    },
+    {
+      "path": "pmd/sprite/0497/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0497/AnimData.xml",
+      "sha256": "ae684e15e8c320a499465de16d0ed5807740bf2c154ce6a847207a7bf6e06487",
+      "bytes": 6035
+    },
+    {
+      "path": "pmd/sprite/0497/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0497/credits.txt",
+      "sha256": "11b813553c6fb4bd64176b28601213520d2484f0dd8ca0f2f500538bed56da3d",
+      "bytes": 144
+    },
+    {
+      "path": "pmd/sprite/0497/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0497/Walk-Anim.png",
+      "sha256": "a812afaed2a8f29795fe7b89843d414d9edfd3f09708cfd71a8440de0028e120",
+      "bytes": 14300
+    },
+    {
+      "path": "pmd/sprite/0497/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0497/Shoot-Anim.png",
+      "sha256": "f182c778f35c096ec8bb41799910c3690f5ba8ab7e642ff99be008b8f94f1ba2",
+      "bytes": 21414
+    },
+    {
+      "path": "pmd/sprite/0497/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0497/Hurt-Anim.png",
+      "sha256": "506228a39b072abca50b0b8963fc3ecbc3725ba23feb2f5e4676d05454ec9036",
+      "bytes": 6394
+    },
+    {
+      "path": "pmd/sprite/0497/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0497/Sleep-Anim.png",
+      "sha256": "65625aaad8df38db014c053fe043c11466be06a0621db7953c77c55341739b96",
+      "bytes": 755
+    },
+    {
+      "path": "pmd/sprite/0612/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0612/AnimData.xml",
+      "sha256": "47d69f793785e2d6c6760a28456201dc7aa2e7f86b429c131b528d2efc195094",
+      "bytes": 6310
+    },
+    {
+      "path": "pmd/sprite/0612/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0612/credits.txt",
+      "sha256": "1e62c2f8a5c96a98cd0d74e8c872922d4eec3d1c99448def78ac1122ff738730",
+      "bytes": 431
+    },
+    {
+      "path": "pmd/sprite/0612/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0612/Walk-Anim.png",
+      "sha256": "7a4b22d0c1e66310cbe1f6d36330ff4020a13d81bac443e528fe60645378d747",
+      "bytes": 13010
+    },
+    {
+      "path": "pmd/sprite/0612/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0612/Shoot-Anim.png",
+      "sha256": "bb2e05c747315f1eabf214529689e4758115c0f92a9f038eb404e4c76c9f4e2a",
+      "bytes": 18875
+    },
+    {
+      "path": "pmd/sprite/0612/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0612/Hurt-Anim.png",
+      "sha256": "a6d410360dfde1d1a475535e996c2b0c551eed98de8961cced1ff7abaf19a046",
+      "bytes": 8259
+    },
+    {
+      "path": "pmd/sprite/0612/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0612/Sleep-Anim.png",
+      "sha256": "b33c246e8c982b0785d95b7d2db4adf0baa9a3aaf22cf41de5a31ee37e426229",
+      "bytes": 1145
+    },
+    {
+      "path": "pmd/sprite/0503/AnimData.xml",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0503/AnimData.xml",
+      "sha256": "8ab3e353ceed0ba57c86763686d5ba20e2905ba7564d790698ff9254e093d07d",
+      "bytes": 6028
+    },
+    {
+      "path": "pmd/sprite/0503/credits.txt",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0503/credits.txt",
+      "sha256": "b6b1509c119d25023eaa7c123ea3440d0092a0f2be57fc0ff62d8d9d8b309466",
+      "bytes": 138
+    },
+    {
+      "path": "pmd/sprite/0503/Walk-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0503/Walk-Anim.png",
+      "sha256": "fcda2815f95bb829c456c05d1eee587a2e95d3c4b0151f6c416b6328cc6e9784",
+      "bytes": 9725
+    },
+    {
+      "path": "pmd/sprite/0503/Shoot-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0503/Shoot-Anim.png",
+      "sha256": "87b355e0a17a00b17104d31b524bdfe4236ab2b9f1d41d4224d6d59c3c4c871f",
+      "bytes": 17081
+    },
+    {
+      "path": "pmd/sprite/0503/Hurt-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0503/Hurt-Anim.png",
+      "sha256": "1c54971a2c171e6b75e3a5c4200124fcec3d00ef1bba15a3658ca7ed76a5d728",
+      "bytes": 5419
+    },
+    {
+      "path": "pmd/sprite/0503/Sleep-Anim.png",
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/88cd945ef14b1d0fc3024a268482d77dfcc529a0/sprite/0503/Sleep-Anim.png",
+      "sha256": "d5e5c8beee5bd669b5ccc4edf76c22b264cb721446c04a87a8f35b6bdab9bad5",
+      "bytes": 655
     }
   ],
-  "actors": 40,
-  "sprite_bytes": 261120,
+  "actors": 64,
+  "sprite_bytes": 413720,
   "commander_sources": [
     {
       "name": "lance-native",
@@ -1081,5 +1657,6 @@
       "human": true,
       "native_overworld": true
     }
-  ]
+  ],
+  "uniform_source": "assets/characters/field-armies/manifest.json"
 }

@@ -24,7 +24,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
    positions.push([x,y]);if(x!==a.at[0]||y!==a.at[1])moves.add(i);if(action===3)fires.add(i);if(hurt)hit.add(i);
    if(s.tick>=1600&&a.stop===1600){assert.equal(action,5,'Downed units must remain down');assert.equal(hurt,0,'Survivors must not attack the downed');fallen.add(i);}
    if(s.tick>=1600&&action===3)aftermathFire=true;
-   if(a.layer!==2)for(const [fx,fy] of [[x+2,y-12],[x+13,y-1]]){
+   if(a.layer!==2)for(const [fx,fy] of [[x+2,y-12],[x+13,y-12],[x+2,y-1],[x+13,y-1]]){
     assert(fx>=0&&fy>=0&&fx<data.width*16&&fy<data.height*16);
     assert.equal(data.cells[Math.floor(fy/16)*data.width+Math.floor(fx/16)],a.layer===1?2:0,`Unit ${i} left traversable terrain at ${s.tick}`);
    }
@@ -33,7 +33,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
   if(f%60===0){samples.push({frame:f,ticks:s.tick,active:s.active,hits:s.hits,positions});unique.add(require('node:crypto').createHash('sha256').update(video()).digest('hex'));}
   f++;
  }
- fs.closeSync(vf);fs.closeSync(af);assert(f<3600);assert(maxActive>=3,'Must have simultaneous attacks');assert.equal(fires.size,data.actors.filter(a=>a.attack).length);assert(hit.size>=16);assert(moves.size>=data.actors.filter(a=>a.at.join()!=a.to.join()).length);assert(unique.size>30);assert.equal(fallen.size,20);assert(aftermathFire,'Battle must continue behind the wounded');
+  fs.closeSync(vf);fs.closeSync(af);assert(f<3600);assert(maxActive>=3,'Must have simultaneous attacks');assert.equal(fires.size,data.actors.filter(a=>a.attack).length);assert(hit.size>=16);assert(moves.size>=data.actors.filter(a=>a.at.join()!=a.to.join()).length);assert(unique.size>30);assert.equal(fallen.size,data.actors.filter(a=>a.stop===1600).length);assert(aftermathFire,'Battle must continue behind the wounded');
  // Repeat and pause at the same timeline; unit animation must also freeze.
  key(8);key(1);key(512);frames(240);key(8);assert.equal(state().screen,15);const paused=state().tick;frames(90);assert.equal(state().tick,paused);key(2);frames(20);assert(state().tick>paused);
  fs.writeFileSync('build/pallet/war-playback.json',JSON.stringify({frames:f,fps:59.727500569606/4,actors:data.actors.length,moving_units:moves.size,attackers:fires.size,hit_units:hit.size,max_simultaneous_attacks:maxActive,downed_units:fallen.size,battle_continues_after_cut:aftermathFire,pause_freezes_units:true,source:'Actual GBA ROM in mGBA, no RAM mutation',samples},null,2));

@@ -1338,7 +1338,31 @@
       "war-unit-37",
       "war-unit-38",
       "war-unit-39",
-      "war-unit-40"
+      "war-unit-40",
+      "war-unit-41",
+      "war-unit-42",
+      "war-unit-43",
+      "war-unit-44",
+      "war-unit-45",
+      "war-unit-46",
+      "war-unit-47",
+      "war-unit-48",
+      "war-unit-49",
+      "war-unit-50",
+      "war-unit-51",
+      "war-unit-52",
+      "war-unit-53",
+      "war-unit-54",
+      "war-unit-55",
+      "war-unit-56",
+      "war-unit-57",
+      "war-unit-58",
+      "war-unit-59",
+      "war-unit-60",
+      "war-unit-61",
+      "war-unit-62",
+      "war-unit-63",
+      "war-unit-64"
     ],
     "spoiler_boundary": "The game script contains no AI identity, synthetic body, model/prompt terminology or creation scene. Oak dialogue supports both ordinary training and later reinterpretation.",
     "historical_effect": "Dramatizes established opening conditions with new scene dialogue and anonymous supporting roles. Does not date or settle unwritten post-Cinnabar history.",
@@ -1352,7 +1376,7 @@
       "sound_bridge": "战场采用原版训练家对战曲；前线要求上报伤情时转希尔弗曲，连续进入联盟、希尔弗、火箭队及祖孙会面。大木独处转研究所曲，翌晨转真新镇。",
       "room_continuity": "每场先交代人物和桌案位置；每次走位以来源地图地块和其他演员为障碍。",
       "historical_boundary": "只演绎已定的大战末期状态；不补写红莲之后未定历史、日期、继承人阵营或最终结局。",
-      "battlefield": "512×384 烟囱山局部岩台通道争夺。四队各有尖兵、两翼、支援、后方指挥与伙伴救护组。40 个实例逐一记录岗位、任务、路线与对手。关都北进、丰缘西守、神奥南侧楔形推进、合众东口拦截；中央正面与侧翼接触线共同呈现四方混战。保留24种不重复宝可梦、20个倒地单位与8个仍交战单位。不确定死亡、战役结局、战略资源或地区结盟。",
+      "battlefield": "512×384 烟囱山局部岩台争夺。64个独立实例：40种不重复宝可梦、24名人类。四队各有中央尖兵、两翼、侧翼第二梯队、后方指挥、伙伴救护与警戒；18对明确交火对象。黑场后36个单位倒地，8只宝可梦仍在交战；不确定死亡与战役结局。",
       "camera": "中央四方接触全景建立空间；转到指挥官前先完成移动或明确切镜，指挥对白期间保持阵地画面；救护镜头回到同一对伙伴，不一边跨越整片战场一边显示另一名人物的对白。"
     },
     "battlefield_cast": [
@@ -1360,25 +1384,25 @@
         "id": "kanto",
         "name": "关都",
         "commander": "lance",
-        "uniform": "藏蓝战衣、红肩章与披风"
+        "uniform": "炭灰盔甲、红色头盔条纹与领巾"
       },
       {
         "id": "hoenn",
         "name": "丰缘",
         "commander": "drake",
-        "uniform": "深蓝海军战衣、青白肩章"
+        "uniform": "青灰海军头盔、沙色背包与背带"
       },
       {
         "id": "sinnoh",
         "name": "神奥",
         "commander": "flint",
-        "uniform": "炭灰防寒战衣、橙黄肩甲"
+        "uniform": "灰蓝防寒服、金色肩章与毛领"
       },
       {
         "id": "unova",
         "name": "合众",
         "commander": "caitlin",
-        "uniform": "紫黑长战衣、浅紫领章"
+        "uniform": "藏蓝军帽与军服、紫色短披肩"
       }
     ],
     "aftermath": {
@@ -1404,7 +1428,23 @@
         "war-unit-32",
         "war-unit-35",
         "war-unit-37",
-        "war-unit-40"
+        "war-unit-40",
+        "war-unit-41",
+        "war-unit-42",
+        "war-unit-43",
+        "war-unit-44",
+        "war-unit-45",
+        "war-unit-46",
+        "war-unit-47",
+        "war-unit-48",
+        "war-unit-49",
+        "war-unit-50",
+        "war-unit-51",
+        "war-unit-52",
+        "war-unit-53",
+        "war-unit-54",
+        "war-unit-55",
+        "war-unit-56"
       ],
       "death_confirmed": false,
       "survivors_keep_fighting": true
@@ -1417,6 +1457,52 @@
       "date": null,
       "outcome": null
     },
-    "commander_art": "四名指挥官改用火红、绿宝石、白金原生地图小人，停用生成战装。军旗与普通士兵识别色保留；嘉德丽雅当前采用白金外观，不宣称与动画成年设计一致。"
+    "commander_art": "四名指挥官改用火红、绿宝石、白金原生地图小人，停用生成战装。军旗与普通士兵识别色保留；嘉德丽雅当前采用白金外观，不宣称与动画成年设计一致。",
+    "soldier_art": "四地区原创军服，19–20像素可见身高，四朝向统一等比缩放；保留原生指挥官素材。",
+    "terrain_art": {
+      "source_layout": "data/layouts/MtChimney/map.bin",
+      "method": "Pinned Emerald native metatile assemblies, authored local battlefield; no global geography changes.",
+      "features": [
+        "northwest crater rim",
+        "northeast lava inlet",
+        "two banked central fissures with a rock causeway",
+        "southern cliff ledge",
+        "eight basalt shoulders"
+      ],
+      "source_patches": [
+        [
+          17,
+          6,
+          8,
+          6,
+          0,
+          0
+        ],
+        [
+          13,
+          1,
+          6,
+          4,
+          26,
+          0
+        ],
+        [
+          17,
+          3,
+          5,
+          4,
+          0,
+          20
+        ],
+        [
+          20,
+          7,
+          6,
+          5,
+          26,
+          19
+        ]
+      ]
+    }
   }
 }
