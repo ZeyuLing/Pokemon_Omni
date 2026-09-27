@@ -39,7 +39,7 @@ def pokemon_frames(number):
         while a.findtext('CopyOf'):name=a.findtext('CopyOf');a=anims[name]
         return a,Image.open(io.BytesIO(pmd_get(base+name+'-Anim.png'))).convert('RGBA')
     frames=[]
-    for direction in (2,6): # PMD left, right; no mirrored anatomy
+    for direction in (6,2): # PMD row 6 faces left, row 2 right; preserve asymmetric anatomy.
         for name in ('Walk','Shoot','Hurt','Sleep'):
             a,im=anim(name if name in anims else 'Attack')
             w,h=int(a.findtext('FrameWidth')),int(a.findtext('FrameHeight'))

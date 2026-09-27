@@ -39,9 +39,8 @@ WAR_FAST void omni_gba_war_draw(volatile uint16_t *surface,int cx,int cy,uint32_
    for(row=0;row<s->h;++row)for(col=0;col<s->w;++col){
     unsigned ix=row*s->w+((!s->pmd&&a->sprite>=16&&p[i].face==3)?s->w-1-col:col);uint16_t c=palette[(pixels[ix/2]>>((ix&1)*4))&15];int dx=left+col,dy=y-s->h+row+bob;
     if(c&0x8000)continue;
-    if(down){if(!s->pmd){dx=x+8-s->h/2+row;dy=y-s->w/2+col/2;}c=(uint16_t)(((c&31)*4/5)|((((c>>5)&31)*4/5)<<5)|((((c>>10)&31)*4/5)<<10));}
+    if(down){if(!s->pmd){dx=x+8-s->h/2+row;dy=y-s->w+col;}c=(uint16_t)(((c&31)*4/5)|((((c>>5)&31)*4/5)<<5)|((((c>>10)&31)*4/5)<<10));}
     else if(p[i].hit&&(ticks/3&1))c=RGB(31,31,28);
-    if(a->role==4&&ticks>=1600)dy=y-(s->h-row)*3/4; /* kneel beside partner */
     dot(dx,dy,c);
    }
    if(s->human&&a->sprite>=16&&!down)line(x+1,y-17,x+4,y-17,uniforms[a->team]);
