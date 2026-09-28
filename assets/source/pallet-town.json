@@ -664,12 +664,6 @@
       "bytes": 789
     },
     {
-      "path": "graphics/object_events/pics/people/red_normal.png",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/people/red_normal.png",
-      "sha256": "94eb37499a8bd663f47a0767c34b93569cf0c222a9906852943016e3a771054d",
-      "bytes": 742
-    },
-    {
       "path": "graphics/object_events/pics/people/rocket_f.png",
       "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/people/rocket_f.png",
       "sha256": "aa84b66499afe516e8b816cd12add9035208d4f95a85559d82406244d9f40d9d",
@@ -692,12 +686,6 @@
       "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/people/woman_1.png",
       "sha256": "cc6508fdb301902362bf094b11270acdb5fc98e99150503c96a81e0038ced77a",
       "bytes": 744
-    },
-    {
-      "path": "graphics/object_events/pics/pokemon/pikachu.png",
-      "url": "https://raw.githubusercontent.com/pret/pokefirered/c75f352304d529f6ba92d4f74b9cf8b5c3810788/graphics/object_events/pics/pokemon/pikachu.png",
-      "sha256": "2d7769d674b4a94c414ea6326ddbab9a8556ea68293d1979623c3a5b6006f292",
-      "bytes": 367
     },
     {
       "path": "graphics/pokemon/bulbasaur/back.png",

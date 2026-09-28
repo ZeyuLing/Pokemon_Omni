@@ -31,4 +31,10 @@ for team in range(4):
             assert segment_distance(friend['to'],u['to'],target['to'])>=12,(u['id'],friend['id'],'Friendly unit in firing lane')
 for u in a:
     assert u['deployment']['station'] and u['deployment']['purpose']
+cry=next(u for u in a if u['id']=='war-unit-28');partner=a[cry['target']]
+assert cry['at']==cry['to'] and cry['duration']==0, 'Crying trainer must already be at the partner'
+assert math.dist(cry['to'],partner['to'])<=24, 'Crying trainer must be directly beside Camerupt'
+opening=json.loads((ROOT/'content/opening/prologue.json').read_text('utf8'))
+war=opening['scenes'][0]['beats'];index=next(i for i,b in enumerate(war) if b.get('actor')=='war-unit-28')
+assert war[index].get('camera_transition')=='cut' and war[index-1].get('ticks')==64, 'No empty establishing hold before the cry'
 print(f'PASS: {len(a)} assigned stations, 4 formation depths, {sum(bool(u["attack"]) for u in a)//2} reciprocal contacts, partner/rescue distances and friendly fire lanes')

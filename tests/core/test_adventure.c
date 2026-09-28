@@ -126,6 +126,9 @@ int main(void){
   assert(!omni_initialization_battle(&g,&b,OMNI_BATTLE_GARY,&full,&state));assert(b.mons[1].level==8);
   assert(omni_adventure_escape(&g,&b)==OMNI_ADVENTURE_LOCKED);balls=g.balls;assert(omni_adventure_capture(&g,&b,&full,&state)==OMNI_ADVENTURE_LOCKED&&g.balls==balls);
   b.mons[1].hp=1;assert(!omni_practice_turn(&b,2,&out)&&b.outcome==1);assert(out.actions[0].move==729&&out.actions[0].critical&&out.actions[0].actor==0);
+  assert(b.opponent_count==3);assert(omni_practice_finish(&g,&b)==OMNI_ADVENTURE_LOCKED);
+  for(i=1;i<3;++i){unsigned playerhp=b.mons[0].hp;assert(!omni_practice_next_opponent(&b,&full,&state));assert(b.mons[1].species==(i==1?16:19)&&b.mons[1].level==8-i);assert(!b.outcome&&b.mons[0].hp==playerhp);b.mons[1].hp=1;assert(!omni_practice_turn(&b,2,&out)&&b.outcome==1);}
+  assert(omni_practice_next_opponent(&b,&full,&state)==OMNI_ADVENTURE_LOCKED);
   assert(!omni_practice_finish(&g,&b));assert(g.events&OMNI_EVENT_GARY_DONE);assert(g.party[0].hp==omni_partner_stat(&g.party[0],0));
   g=copy;assert(!omni_initialization_battle(&g,&b,OMNI_BATTLE_GARY,&full,&state));b.mons[0].hp=0;b.outcome=2;assert(!omni_practice_finish(&g,&b));assert((g.events&OMNI_EVENT_GARY_DONE)&&g.location==OMNI_LAB&&g.money==3000);
   omni_adventure_enter(&g,OMNI_VIRIDIAN);assert(!omni_initialization_battle(&g,&b,OMNI_BATTLE_TUTORIAL,&full,&state));assert(!omni_adventure_capture(&g,&b,&full,&state)&&g.balls==100);assert(!omni_practice_finish(&g,&b));

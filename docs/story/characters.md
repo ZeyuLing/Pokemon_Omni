@@ -176,3 +176,5 @@
 | [小茂的杰尼龟](characters/gary-squirtle.md) | 已采用 | 小茂提前三天领取的伙伴；参与研究所首战。 |
 | [老人赠予的独角虫](characters/viridian-gift-weedle.md) | 已采用 | 教学完成或挑战获胜后赠给小智；两条分支是同一个一次性奖励。 |
 | [捕捉老人的波波](characters/viridian-old-man-pidgey.md) | 已采用 | 拒绝教学分支中出战；具体配置属于本章实现选择。 |
+| [小茂的波波](characters/gary-pidgey.md) | 已采用 | 小茂出发后三天内捕获的伙伴；返所首战Lv7。 |
+| [小茂的小拉达](characters/gary-rattata.md) | 已采用 | 小茂出发后三天内捕获的伙伴；返所首战Lv6。 |

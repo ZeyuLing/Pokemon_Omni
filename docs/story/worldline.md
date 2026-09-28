@@ -302,7 +302,7 @@ T=0：第一次宝可梦世界大战末期，小智从真新镇出发。1942—1
 - [小智](characters/ash.md)：觉得做了很长的学校梦；抵达真新镇三天不等于 AI 激活三天，梦境不是已证实的就学履历。
 - [花子](characters/delia.md)：叫醒迟到的小智；并不知晓其 AI 身份。
 - [大木博士](characters/oak.md)：赠送伙伴与培养工具；面对孙子的质问显得慌乱。
-- [小茂](characters/gary.md)：三天前出发，回来索球，因祖父差别对待挑战小智；两种结果互斥，均愤然离开。
+- [小茂](characters/gary.md)：带着Lv8杰尼龟、Lv7波波、Lv6小拉达返所索球并挑战小智。已捕获两个新伙伴，具体捕获日期未写。
 - [小智的皮卡丘](characters/pikachu.md)：作为唯一获得后续羁绊进化资格的搭档皮卡丘加入队伍；普通皮卡丘不获此资格。
 - [研究所助手甲](characters/aide-1.md)：阅读宝可梦行为论文。
 - [研究所助手乙](characters/aide-2.md)：自述团队对战AI已能击败很多人类；是角色台词，不是对真实AI的一般结论。
@@ -316,6 +316,8 @@ T=0：第一次宝可梦世界大战末期，小智从真新镇出发。1942—1
 - [小茂的杰尼龟](characters/gary-squirtle.md)：小茂提前三天领取的伙伴；参与研究所首战。
 - [老人赠予的独角虫](characters/viridian-gift-weedle.md)：教学完成或挑战获胜后赠给小智；两条分支是同一个一次性奖励。
 - [捕捉老人的波波](characters/viridian-old-man-pidgey.md)：拒绝教学分支中出战；具体配置属于本章实现选择。
+- [小茂的波波](characters/gary-pidgey.md)：出发期间被小茂捕获，参与首战。
+- [小茂的小拉达](characters/gary-rattata.md)：出发期间被小茂捕获，参与首战。
 
 ## 尚未创作
 

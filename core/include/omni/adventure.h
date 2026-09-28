@@ -58,7 +58,9 @@ int omni_adventure_load(OmniAdventure *,const uint8_t *bytes,size_t length);
 typedef struct {
  OmniPartner mons[2];int8_t attack[2],defense[2],speed[2];uint32_t rng;
  uint8_t active,outcome,kind,party_slot;uint16_t turns;
+ OmniPartner opponents[3];uint8_t opponent_count,opponent_slot;
 } OmniPractice;
+int omni_practice_next_opponent(OmniPractice *,const OmniDex *,OmniDexState *);
 int omni_initialization_battle(OmniAdventure *,OmniPractice *,uint8_t kind,const OmniDex *,OmniDexState *);
 typedef struct {uint8_t actor,miss,critical,status;uint16_t move,damage,hp[2];} OmniPracticeAction;
 typedef struct {uint8_t count,outcome;OmniPracticeAction actions[2];} OmniPracticeTurn;

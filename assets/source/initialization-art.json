@@ -1,0 +1,52 @@
+{
+  "source_rom_sha256": "cb93af4a51809e4ef4fb5e7356e029e009a026bf20148fa7618e0731bb91edac",
+  "source_sid": 1094,
+  "source_name": "搭档皮卡丘",
+  "sprites": [
+    {
+      "side": "front",
+      "palette": "normal_palette",
+      "sprite_offset": 20836936,
+      "palette_offset": 20992312,
+      "decoded_png_sha256": "05867492d33605af70a438ee7e71cf5442d7987027cf009f02432055c9fde7c9"
+    },
+    {
+      "side": "back",
+      "palette": "normal_palette",
+      "sprite_offset": 20990492,
+      "palette_offset": 20992312,
+      "decoded_png_sha256": "071b31a1a5bca3a648816b96709f72871c333db8a2c44defa7218cc05f2c549b"
+    },
+    {
+      "side": "front",
+      "palette": "shiny_palette",
+      "sprite_offset": 20836936,
+      "palette_offset": 20992356,
+      "decoded_png_sha256": "b940471caae8f6ca3828faa893e04401c54bd6795b05e88b0cc9d33a46d5381d"
+    },
+    {
+      "side": "back",
+      "palette": "shiny_palette",
+      "sprite_offset": 20990492,
+      "palette_offset": 20992356,
+      "decoded_png_sha256": "5dd3dcd276ed6532ff70a43fe5997f3f4651d73fdc429dd588d371d817ad5540"
+    }
+  ],
+  "appearance": "红白帽；以用户5.8实际素材为准，不等同于官方LGPE搭档必须戴帽的说法。",
+  "ash": {
+    "path": "assets/characters/ash-kanto-walk-v1.png",
+    "sha256": "7429ff9e85e48c08bfc35385ca3b9780e836d288c9b64a80601812bf4143e621",
+    "reference": "宝可梦动画初代关都服装：红白帽、黑发、蓝马甲、白短袖、绿手套。",
+    "generator": "built-in image_gen",
+    "runtime_frame": [
+      16,
+      32
+    ],
+    "max_visible_body": [
+      14,
+      22
+    ],
+    "conversion": "alpha threshold160; nearest pixel resampling; shared15-color palette; feet aligned at31",
+    "prompt": "assets/characters/ash-kanto-walk-v1.prompt.txt"
+  }
+}

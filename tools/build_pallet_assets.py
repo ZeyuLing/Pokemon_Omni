@@ -38,7 +38,7 @@ def main():
     layouts={l.get('id'):l for l in json.loads(get('data/layouts/layouts.json'))['layouts']}
     names={'gTileset_General':'primary/general','gTileset_Building':'primary/building','gTileset_PalletTown':'secondary/pallet_town','gTileset_GenericBuilding1':'secondary/generic_building_1','gTileset_GenericBuilding2':'secondary/generic_building_2','gTileset_Lab':'secondary/lab','gTileset_ViridianCity':'secondary/viridian_city','gTileset_PokemonCenter':'secondary/pokemon_center','gTileset_Mart':'secondary/mart'}
     blob=bytearray();map_rows=[];actor_rows=[];sign_rows=[];warp_rows=[];audit=[]
-    sprites=['red_normal','mom','prof_oak','blue','woman_1','fat_man','scientist','daisy','item_ball','pikachu','nurse','rocket_m','rocket_f','old_man_1']
+    sprites=['ash_kanto','mom','prof_oak','blue','woman_1','fat_man','scientist','daisy','item_ball','pikachu','nurse','rocket_m','rocket_f','old_man_1']
     maps={m['source']:m for m in scene['maps']}
     source_maps={name:json.loads(get(f'data/maps/{m.get("template",name)}/map.json')) for name,m in maps.items()}
     for name,m in maps.items():
@@ -101,6 +101,14 @@ def main():
         audit.append({'id':m['id'],'key':m['key'],'source':source,'width':w,'height':h,'collision':collision,'grass':grass,'warps':[warp for warp in meta['warp_events'] if warp['dest_map'] in source_ids],'actors':m['actors'],'signs':m['signs'],'extra_warps':m.get('extra_warps',[])})
     sprite_rows=[]
     for sprite in sprites:
+        if sprite in ('ash_kanto','pikachu'):
+            from initialization_art import ash_frames,partner_overworld
+            art=ash_frames() if sprite=='ash_kanto' else [partner_overworld()]*3
+            offset=len(blob)
+            for frame in art:
+                for p in frame.get_flattened_data():blob+=struct.pack('<H',rgb555(p) if p[3]>=128 else 0x8000)
+            sprite_rows.append('{'+','.join(map(str,[offset,len(art)]))+'}')
+            continue
         path='graphics/object_events/pics/'+('misc/item_ball.png' if sprite=='item_ball' else 'pokemon/pikachu.png' if sprite=='pikachu' else f'people/{sprite}.png')
         im=Image.open(io.BytesIO(get(path)));palette=im.getpalette();height=im.height;frames=im.width//16;offset=len(blob)
         for frame in range(frames):
@@ -118,6 +126,11 @@ def main():
                 for x in range(64):
                     p=im.getpixel((x,y))
                     blob+=struct.pack('<H',rgb555(palette[p*3:p*3+3]) if p else 0x8000)
+    from initialization_art import partner_frames
+    partner_offsets=[]
+    for image in partner_frames():
+        partner_offsets.append(len(blob))
+        for p in image.get_flattened_data():blob+=struct.pack('<H',rgb555(p) if p[3]>=128 else 0x8000)
     (OUT/'world.bin').write_bytes(blob)
     (OUT/'world_blobs.s').write_text(f'/* {hashlib.sha256(blob).hexdigest()} */\n.section .rodata\n.balign 4\n.global pallet_world_blob\npallet_world_blob:\n.incbin "build/pallet/world.bin"\n')
     (OUT/'world_data.h').write_text('''#ifndef OMNI_PALLET_DATA_H
@@ -134,12 +147,14 @@ extern const PalletSign pallet_signs[];
 extern const PalletWarp pallet_warps[];
 extern const PalletSprite pallet_sprites[14];
 extern const uint32_t pallet_battle_sprites[16];
+extern const uint32_t pallet_partner_sprites[4];
 extern const unsigned char pallet_world_blob[];
 #endif
 ''')
     code='#include "world_data.h"\n'
     for name,rows in [('PalletMap pallet_maps',map_rows),('PalletActor pallet_actors',actor_rows),('PalletSign pallet_signs',sign_rows),('PalletWarp pallet_warps',warp_rows),('PalletSprite pallet_sprites',sprite_rows)]:code+='const '+name+'[]={\n'+',\n'.join(rows)+'\n};\n'
     code+='const uint32_t pallet_battle_sprites[16]={'+','.join(map(str,battle_offsets))+'};\n'
+    code+='const uint32_t pallet_partner_sprites[4]={'+','.join(map(str,partner_offsets))+'};\n'
     (OUT/'world_data.c').write_text(code,encoding='utf-8')
     (OUT/'scene-audit.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2),encoding='utf-8')
     MANIFEST.write_text(json.dumps({'repository':'https://github.com/pret/pokefirered','commit':REV,'scope':'Map layouts, metatiles and character artwork only; no upstream engine or story scripts executed','files':sorted(records.values(),key=lambda r:r['path'])},indent=2)+'\n')

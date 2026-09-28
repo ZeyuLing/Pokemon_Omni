@@ -112,12 +112,14 @@
     "搭档皮卡丘是1094，不是1076小智皮卡丘。",
     "种族值顺序HP/攻击/防御/特攻/特防/速度=45/80/50/75/60/120。",
     "电电加速作为Omni初始招式采用LGPE50威力、先制+2、必定要害版本；没有声称核实UE5.8完整招式表。",
-    "羁绊资格是用户采用的Omni设定，后续形态未实装。"
+    "羁绊资格是用户采用的Omni设定，后续形态未实装。",
+    "2026-09-28解码SID1094正背面与异色精灵图，确认戴红白帽；之前只核验数值而沿用普通皮卡丘图片的接入错误已修正。官方LGPE搭档与Partner Cap并非同一分类，本作视觉以用户ROM为准。"
   ],
   "sources": [
     "https://pokemonletsgo.pokemon.com/en-us/story/",
     "https://www.serebii.net/pokedex-sm/025.shtml",
     "https://ph.portal-pokemon.com/tv-film/1/",
     "https://docs.nvidia.com/dgx/dgxh100-user-guide/introduction-to-dgxh100.html"
-  ]
+  ],
+  "appearance_manifest": "assets/source/initialization-art.json"
 }

@@ -14,5 +14,7 @@ int omni_game_dex_event(uint32_t entry_id,uint8_t event);
 void omni_game_dex_open(void);
 uint8_t omni_game_dex_is_open(void);
 void omni_game_dex_tick(uint16_t keys);
+/* Host-specific appearance; standalone official reference Dex stays unchanged. */
+void omni_game_dex_art_override(uint32_t entry_id,const uint16_t *front,const uint16_t *back,const uint16_t *shiny_front,const uint16_t *shiny_back);
 const OmniDexState *omni_game_dex_state(void);
 #endif

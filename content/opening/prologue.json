@@ -264,14 +264,6 @@
         },
         {
           "ticks": 256,
-          "camera": [
-            0,
-            48
-          ],
-          "camera_transition": "cut"
-        },
-        {
-          "ticks": 256,
           "actor": "war-unit-28",
           "speaker": "丰缘训练家",
           "lines": [
@@ -281,7 +273,8 @@
           "camera": [
             0,
             48
-          ]
+          ],
+          "camera_transition": "cut"
         },
         {
           "ticks": 192,

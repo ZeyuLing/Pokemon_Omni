@@ -1071,11 +1071,11 @@
       "sprite": 17,
       "team": 1,
       "at": [
-        80,
+        88,
         112
       ],
       "to": [
-        80,
+        88,
         112
       ],
       "layer": 0,
@@ -1088,7 +1088,7 @@
       "stop": 65535,
       "deployment": {
         "station": "伙伴训练家",
-        "purpose": "与自己的伙伴成组驻留，面向伙伴；战后呼唤而不站在主火线上。",
+        "purpose": "始终站在自己的负伤喷火驼身旁，面向伙伴；切入战后即呼唤，没有先走过去的动作。",
         "formation_rank": 3,
         "facing_rule": "Watch assigned partner or own frontline."
       }

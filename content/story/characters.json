@@ -519,7 +519,7 @@
         "reference_media": "portrait-ash",
         "anime_identity": "以动画小智的黑发、脸颊标记、帽子及少年轮廓为识别基础；现图为后期动画服装。获得真正肉身前保持少年身体；之后延伸设计少年、青年、中年。本作青年与中年形象属于年龄改编，不能标为现成的官方成年小智设计。",
         "era_design": "转变前身体不长大；获得肉身后可成长至青年、中年。各阶段年龄数字、体态、服装和解锁篇章待设计。",
-        "production_art": "已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。"
+        "production_art": "地图行走已替换为小智初代关都动画服装的独立生成像素素材，蓝马甲、白袖、红白帽、黑发、绿手套；16×32帧、可见身高至多22像素。见assets/source/initialization-art.json。立绘沿用现有小智素材；未完成自行车、游泳、投球背影及3D套件。"
       },
       "biography": {
         "childhood": null,
@@ -693,7 +693,7 @@
         }
       },
       "opening_scene_note": "研究所开场稿：由自己选择伙伴问起，谈世界赛资格和小智的起点，与爷爷道别后离开。屏幕测试在其离开后才开始；不确认其效忠大木政治路线或知道秘密。",
-      "first_journey_note": "返回研究所索要精灵球，目睹小智获得四只伙伴与100个球，因祖父差别对待而挑战小智；胜负分支均愤然离开。未据此确定政治阵营或未来赛果。"
+      "first_journey_note": "出发三天后回研究所索球，使用Lv8杰尼龟、Lv7波波、Lv6小拉达。后两只体现期间捕获经历；未指定捕获日期或完整旅途。质问大木的差别对待，胜负均愤然离开。"
     },
     {
       "id": "delia",
@@ -896,7 +896,7 @@
         "reference_media": "portrait-ash",
         "anime_identity": "动画黄色身体、黑色耳尖、红色脸颊与闪电形尾巴；具体像素和模型另验收。",
         "era_design": null,
-        "production_art": null
+        "production_art": "正式开场搭档使用用户究极绿宝石5.8 ROM SID1094的戴帽正背面及异色素材。实验室静态像素由同源正面缩编；游戏队伍、战斗及宿主图鉴同步。普通皮卡丘和独立官方参考图鉴不被替换。"
       },
       "biography": {
         "childhood": null,
@@ -4958,7 +4958,7 @@
           "instance": "war-unit-28"
         }
       ],
-      "opening_scene_note": "伙伴训练家：与自己的伙伴成组驻留，面向伙伴；战后呼唤而不站在主火线上。 属于开场演绎；日期、生平、死亡与战役结局未定。",
+      "opening_scene_note": "固定站在负伤喷火驼身旁；战后切镜即呼唤，没有先走一段路或空镜等待。伤亡结局仍未确定。",
       "faction": "hoenn",
       "opening_deployment": {
         "station": "伙伴训练家",
@@ -7418,6 +7418,72 @@
         {
           "other": "viridian-old-man",
           "relationship": "拒绝教学分支中出战；具体配置属于本章实现选择。"
+        }
+      ],
+      "runtime_bindings": []
+    },
+    {
+      "id": "gary-pidgey",
+      "name": "小茂的波波",
+      "kind": "pokemon",
+      "status": "adopted",
+      "role": "小茂出发后三天内捕获的伙伴；返所首战Lv7。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": "本作个体；动画对应个体及年龄阶段未指定，不能继承原作同种宝可梦的生平。",
+        "production_art": "当前战斗使用FireRed物种精灵图；非新绘动画个体设计或3D资产。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/43-pallet-initialization.md"
+      ],
+      "relationships": [
+        {
+          "other": "gary",
+          "relationship": "训练家与已捕获伙伴"
+        }
+      ],
+      "runtime_bindings": []
+    },
+    {
+      "id": "gary-rattata",
+      "name": "小茂的小拉达",
+      "kind": "pokemon",
+      "status": "adopted",
+      "role": "小茂出发后三天内捕获的伙伴；返所首战Lv6。",
+      "birth_year": null,
+      "birth_basis": null,
+      "death_event": null,
+      "appearance": {
+        "reference_media": null,
+        "anime_identity": null,
+        "era_design": "本作个体；动画对应个体及年龄阶段未指定，不能继承原作同种宝可梦的生平。",
+        "production_art": "当前战斗使用FireRed物种精灵图；非新绘动画个体设计或3D资产。"
+      },
+      "biography": {
+        "childhood": null,
+        "before_first_event": null,
+        "unwritten_intervals": null,
+        "later_life": null,
+        "ending": null
+      },
+      "source_docs": [
+        "docs/43-pallet-initialization.md"
+      ],
+      "relationships": [
+        {
+          "other": "gary",
+          "relationship": "训练家与已捕获伙伴"
         }
       ],
       "runtime_bindings": []

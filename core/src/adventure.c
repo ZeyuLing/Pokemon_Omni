@@ -89,6 +89,7 @@ int omni_practice_turn(OmniPractice *b,uint8_t slot,OmniPracticeTurn *out){
 }
 int omni_practice_finish(OmniAdventure *s,OmniPractice *b){
  unsigned i,oldhp;if(!s||!b||!b->active||!b->outcome||!s->starter)return OMNI_ADVENTURE_LOCKED;
+ if(b->outcome==1&&b->opponent_slot+1<b->opponent_count)return OMNI_ADVENTURE_LOCKED;
  if((b->kind==OMNI_BATTLE_PRACTICE||b->kind==OMNI_BATTLE_GARY)&&s->location!=OMNI_LAB)return OMNI_ADVENTURE_LOCKED;
  s->party[b->party_slot]=b->mons[0];s->rng=b->rng;
  if(b->outcome<=3){if(s->battles_played<65535)++s->battles_played;if(b->outcome==1&&s->battles_won<65535)++s->battles_won;}
@@ -191,7 +192,13 @@ int omni_initialization_battle(OmniAdventure *s,OmniPractice *b,uint8_t kind,con
  memset(b,0,sizeof(*b));b->kind=kind;b->party_slot=(uint8_t)i;b->mons[0]=s->party[i];create_mon(&b->mons[1],choice);
  b->mons[1].level=kind==OMNI_BATTLE_GARY?8:kind==OMNI_BATTLE_OLD_MAN?7:3;
  b->mons[1].experience=b->mons[1].level*b->mons[1].level*b->mons[1].level;b->mons[1].hp=omni_partner_stat(&b->mons[1],0);
+ if(kind==OMNI_BATTLE_GARY){b->opponent_count=3;b->opponents[0]=b->mons[1];create_mon(&b->opponents[1],5);create_mon(&b->opponents[2],6);for(i=1;i<3;++i){b->opponents[i].level=(uint8_t)(8-i);b->opponents[i].experience=b->opponents[i].level*b->opponents[i].level*b->opponents[i].level;b->opponents[i].hp=omni_partner_stat(&b->opponents[i],0);}}
  b->rng=s->rng;b->active=1;return 0;
+}
+int omni_practice_next_opponent(OmniPractice *b,const OmniDex *dex,OmniDexState *state){
+ unsigned next;if(!b||!b->active||b->outcome!=1)return OMNI_ADVENTURE_LOCKED;next=b->opponent_slot+1;if(next>=b->opponent_count)return OMNI_ADVENTURE_LOCKED;
+ if(record_species(dex,state,b->opponents[next].species,OMNI_DEX_SEEN))return OMNI_ADVENTURE_ARGUMENT;
+ b->opponent_slot=(uint8_t)next;b->mons[1]=b->opponents[next];b->attack[1]=b->defense[1]=b->speed[1]=0;b->outcome=0;return 0;
 }
 int omni_initialization_weedle(OmniAdventure *s,const OmniDex *dex,OmniDexState *state){
  OmniPartner mon;if(!s||!(s->events&OMNI_EVENT_WEEDLE_PENDING))return OMNI_ADVENTURE_ALREADY;

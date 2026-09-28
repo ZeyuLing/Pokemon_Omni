@@ -3,14 +3,14 @@
   "date": "2026-09-26",
   "character": "ash",
   "status": "brief_with_conditional_human_growth",
-  "runtime_sprite": "temporary_red_overworld",
+  "runtime_sprite": "ash-kanto-walk-v1",
   "runtime_age_switching": false,
   "stages": [
     {
       "id": "ash.kanto.young",
       "age_range": null,
       "phase": "first_journey",
-      "status": "proposed",
+      "status": "walking_sprite_in_rom",
       "apparent_stage": "转变前少年身体不长大；不代表实际启用时间或对外年龄"
     },
     {
@@ -93,5 +93,6 @@
     "source": "assets/characters/anime-cast-v1.png",
     "manifest": "assets/characters/manifest.json",
     "usage": "trainer_card_and_debug_gallery"
-  }
+  },
+  "walking_asset": "assets/source/initialization-art.json"
 }
