@@ -8,6 +8,8 @@
 - Keep shared gameplay logic in portable C; platform presentation belongs in adapters. Prefer the same core for GBA and host preview.
 - Basic in-game UI must follow the archived Rocket ROM's actual running screens and verified layout data. Do not invent or relocate information panels (for example, money does not appear in its normal bag). Reuse source assets, verify text and sprite placement in the built ROM, and distinguish remaining prototype screens from faithfully aligned screens.
 
+- Character sprite changes must follow README.md section “人物像素素材与比例：必须遵守”. Native canvas dimensions or a maximum visible-height test are not visual acceptance. Compare native proportions and full directional animation in the built GBA ROM; prefer verified existing game sprites over downscaled illustrations. The rejected ash-kanto-walk-v1 is not a proportion template.
+
 # Story continuity maintenance
 
 - When writing or changing story/quest content, update the relevant prose and `content/story/worldline.json` / `characters.json` together. Register every named or anonymous narrative actor and each implemented NPC instance; distinguish candidates, written history, and prototype content.
