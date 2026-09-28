@@ -1,0 +1,140 @@
+{
+  "source": "user-provided Emerald IV Ash ROM",
+  "rom": "assets/imported/ultra-emerald-4-ash-user/ultra-emerald-4-ash-user.gba",
+  "sha256": "30a54ca97fe653dee226d004b1b9b36cc2065116089d9a8c7c96be99bbc0c8bb",
+  "graphics_info": 5282132,
+  "frame_table": 5266060,
+  "palette_entry": 5291016,
+  "palette": 4818936,
+  "reference": "动画 XY 小智衣装；来源改版像素改编，不冒称初代关都服装。",
+  "runtime_frame": [
+    16,
+    32
+  ],
+  "conversion": "Native 4bpp decode only; no crop, resize, recolor or per-frame recentering",
+  "order": [
+    "down idle",
+    "up idle",
+    "left idle",
+    "down step1",
+    "down step2",
+    "up step1",
+    "up step2",
+    "left step1",
+    "left step2"
+  ],
+  "right": "Horizontal mirror, same convention as source GBA engine",
+  "frames": [
+    {
+      "index": 0,
+      "offset": 4814328,
+      "bytes": 256,
+      "bbox": [
+        0,
+        12,
+        16,
+        31
+      ],
+      "rgba_sha256": "643d916ec28c9a1fcd8e0d89ebf4ecf83e8f33c174261cd67dc19eeb8cd92c53"
+    },
+    {
+      "index": 1,
+      "offset": 4814584,
+      "bytes": 256,
+      "bbox": [
+        0,
+        11,
+        16,
+        31
+      ],
+      "rgba_sha256": "bcb5fe39686cbd16729ab186ef84f2d210728e5f34007a1eb133da3b3cb32ee7"
+    },
+    {
+      "index": 2,
+      "offset": 4814840,
+      "bytes": 256,
+      "bbox": [
+        0,
+        11,
+        16,
+        31
+      ],
+      "rgba_sha256": "f41ed7381fbf922dcf1885e1c17d256cd3b2a30e4f7b356a1d4cbf5baacaf533"
+    },
+    {
+      "index": 3,
+      "offset": 4815096,
+      "bytes": 256,
+      "bbox": [
+        0,
+        13,
+        16,
+        32
+      ],
+      "rgba_sha256": "d793a27e1dad42a1c12ef7524336d592652285f5cdbbc558287de48e057fce33"
+    },
+    {
+      "index": 4,
+      "offset": 4815352,
+      "bytes": 256,
+      "bbox": [
+        0,
+        13,
+        16,
+        32
+      ],
+      "rgba_sha256": "3dacbb2842138a48e0ed95f468dddbaad7a44c677c508b92978cff5dc7ecf8ea"
+    },
+    {
+      "index": 5,
+      "offset": 4815608,
+      "bytes": 256,
+      "bbox": [
+        0,
+        12,
+        16,
+        31
+      ],
+      "rgba_sha256": "c2c63613022e3d4987ecb04567b8a2af60cc4b3b5c29b6dfce92c6a58637757e"
+    },
+    {
+      "index": 6,
+      "offset": 4815864,
+      "bytes": 256,
+      "bbox": [
+        0,
+        12,
+        16,
+        31
+      ],
+      "rgba_sha256": "4d831673bb67dce82d10f9c3c4e7c9cca4468846099dc84444d821f30c9e0d47"
+    },
+    {
+      "index": 7,
+      "offset": 4816120,
+      "bytes": 256,
+      "bbox": [
+        0,
+        12,
+        16,
+        32
+      ],
+      "rgba_sha256": "6545bc373cd6c5e127cdce9cbfa05e4b34616ec474e257bac9c2dd8707ef102e"
+    },
+    {
+      "index": 8,
+      "offset": 4816376,
+      "bytes": 256,
+      "bbox": [
+        0,
+        12,
+        16,
+        31
+      ],
+      "rgba_sha256": "c053ed760c388909f820264765a2ac40ab04ac22fe004e71bd238a178654dd30"
+    }
+  ],
+  "scope": "Walking only; cycling/surfing/battle backs and portraits are not replaced",
+  "credits": "究极绿宝石小智版制作组；转载说明提及八木、司徒参与行走素材，单帧作者尚未独立核实。",
+  "distribution": "User ROM and decoded art local-only, not included in Git"
+}

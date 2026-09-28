@@ -3,7 +3,7 @@
   "date": "2026-09-26",
   "character": "ash",
   "status": "brief_with_conditional_human_growth",
-  "runtime_sprite": "ash-kanto-walk-v1",
+  "runtime_sprite": "ultra-emerald-iv-ash-native",
   "runtime_age_switching": false,
   "stages": [
     {
@@ -94,5 +94,7 @@
     "manifest": "assets/characters/manifest.json",
     "usage": "trainer_card_and_debug_gallery"
   },
-  "walking_asset": "assets/source/initialization-art.json"
+  "walking_asset": "assets/source/initialization-art.json",
+  "runtime_sprite_manifest": "assets/source/ash-iv-overworld.json",
+  "withdrawn_runtime_sprite": "ash-kanto-walk-v1: user rejected proportions"
 }

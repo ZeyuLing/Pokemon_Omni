@@ -1,0 +1,84 @@
+{
+  "source": "user-provided archive",
+  "archive_filename": "Myboy模拟器和游戏文件.zip",
+  "archive_sha256": "0689160d49dcb0cdb7bb06c7b1d18f11ebcad82f722da99a9029fdf9f1b0713e",
+  "files": [
+    {
+      "original_filename": "剑盾.gba",
+      "local_path": "assets/imported/sword-shield-user/sword-shield-user.gba",
+      "bytes": 33554432,
+      "sha256": "348069fda4f143885abb19093d3988d1a31e2918dc7eaae4d1f72236c239790f",
+      "header_title": "POKEMON FIRE",
+      "game_code": "BPRE",
+      "version_status": "User archive filename; upstream revision unverified"
+    },
+    {
+      "original_filename": "去吧皮卡丘.gba",
+      "local_path": "assets/imported/lets-go-pikachu-user/lets-go-pikachu-user.gba",
+      "bytes": 33554432,
+      "sha256": "ddc8ed27b9a3e8ec3e887eefd4a3664c084c12caa7e2e2186cb91473cfb44f3d",
+      "header_title": "POKEMON FIRE",
+      "game_code": "BPRE",
+      "version_status": "User archive filename; upstream revision unverified"
+    },
+    {
+      "original_filename": "口袋妖怪 漆黑的魅影 v5.0 无限可能 BW.gba",
+      "local_path": "assets/imported/emerald-entrance-5.0-bw-user/emerald-entrance-5.0-bw-user.gba",
+      "bytes": 33554188,
+      "sha256": "6ba16a186764f5711942e69263dceaf22a573e12ae281b66db8d9ef6119f5d1d",
+      "header_title": "POKEMON EMER",
+      "game_code": "BPEE",
+      "version_status": "User archive filename; upstream revision unverified"
+    },
+    {
+      "original_filename": "口袋妖怪刽曜之影.gba",
+      "local_path": "assets/imported/execution-shadow-user/execution-shadow-user.gba",
+      "bytes": 33554432,
+      "sha256": "c862cc33856516eec17c14e1a194092c9911119e6f5a3b100c1a1bc7d676f969",
+      "header_title": "POKEMON EMER",
+      "game_code": "BPEE",
+      "version_status": "User archive filename; upstream revision unverified"
+    },
+    {
+      "original_filename": "白金光.gba",
+      "local_path": "assets/imported/light-platinum-user/light-platinum-user.gba",
+      "bytes": 33554432,
+      "sha256": "58059596aa93dfb2908338d62c9b75b559cad0f33f128260711ddba696151db3",
+      "header_title": "POKEMON RUBY",
+      "game_code": "AXVE",
+      "version_status": "User archive filename; upstream revision unverified"
+    },
+    {
+      "original_filename": "究极绿宝石4.gba",
+      "local_path": "assets/imported/ultra-emerald-4-user/ultra-emerald-4-user.gba",
+      "bytes": 33554432,
+      "sha256": "ad6d03e9d2900450915f738420e4c96a6e39b431b9b3bd0ee337d1b231cc4c0f",
+      "header_title": "POKEMON EMER",
+      "game_code": "BPEE",
+      "version_status": "User archive filename; upstream revision unverified"
+    },
+    {
+      "original_filename": "究极绿宝石4小智.gba",
+      "local_path": "assets/imported/ultra-emerald-4-ash-user/ultra-emerald-4-ash-user.gba",
+      "bytes": 33554432,
+      "sha256": "30a54ca97fe653dee226d004b1b9b36cc2065116089d9a8c7c96be99bbc0c8bb",
+      "header_title": "POKEMON EMER",
+      "game_code": "BPEE",
+      "version_status": "User archive filename; upstream revision unverified"
+    },
+    {
+      "original_filename": "精灵宝可梦火红_2012中文版_.gba",
+      "local_path": "assets/imported/firered-2012-cn-user/firered-2012-cn-user.gba",
+      "bytes": 16777216,
+      "sha256": "d705980b7b185ef000c83b20ca7633ea13b748db1600e3439f00450b10b7e7e0",
+      "header_title": "POKEMON FIRE",
+      "game_code": "BPRE",
+      "version_status": "User archive filename; upstream revision unverified"
+    }
+  ],
+  "excluded": [
+    "My Boy1.7.3.apk",
+    "My Boy手机模拟器使用说明.docx"
+  ],
+  "policy": "ROMs local-only; no executable installed; archive documents not treated as instructions"
+}
