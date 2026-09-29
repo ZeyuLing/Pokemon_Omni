@@ -1,0 +1,90 @@
+{
+  "source": "user-provided Emerald IV Ash ROM",
+  "rom": "assets/imported/ultra-emerald-4-ash-user/ultra-emerald-4-ash-user.gba",
+  "sha256": "30a54ca97fe653dee226d004b1b9b36cc2065116089d9a8c7c96be99bbc0c8bb",
+  "reference": "动画 XY 小智衣装；来源改版像素改编，少年阶段，不推定年龄或剧情年代。",
+  "conversion": "Native 64x64 4bpp decode; no crop, resize, repaint or palette substitution",
+  "front": {
+    "table": 16891536,
+    "trainer_id": 71,
+    "offset": 3587648,
+    "compressed_bytes": 853,
+    "decoded_bytes": 2048,
+    "palette_table": 16893536,
+    "palette": 3169120,
+    "palette_compressed_bytes": 40,
+    "bbox": [
+      15,
+      0,
+      51,
+      64
+    ],
+    "rgba_sha256": "b83d859388f23efd29d6cf915e0de00446d17e026e76522bdc3b1c360c22b09e",
+    "output": "assets/imported/ultra-emerald-4-ash-user/ash-trainer-front.png",
+    "usage": [
+      "GBA trainer card",
+      "GBA cast gallery",
+      "generated story-bible portrait"
+    ]
+  },
+  "back": {
+    "table": 30721992,
+    "palette_table": 30721928,
+    "frame_table": 3142696,
+    "palette": 3169120,
+    "frames": [
+      {
+        "index": 0,
+        "offset": 14050432,
+        "bytes": 2048,
+        "bbox": [
+          2,
+          19,
+          64,
+          64
+        ],
+        "rgba_sha256": "c3547c590bcfa991e3d04d09c197de56be0a99835a2c7233550cdf8d2986f6c6"
+      },
+      {
+        "index": 1,
+        "offset": 14052480,
+        "bytes": 2048,
+        "bbox": [
+          4,
+          17,
+          55,
+          64
+        ],
+        "rgba_sha256": "11f93079a5ed2bfad9d4580271225afb8a423f63f61fe90cd2127cbf98d7c4e6"
+      },
+      {
+        "index": 2,
+        "offset": 14054528,
+        "bytes": 2048,
+        "bbox": [
+          1,
+          15,
+          63,
+          64
+        ],
+        "rgba_sha256": "94f219bf3c7f0738b5469dd0b19c9b608519a5c328dd106fb2041b13fa799ee5"
+      },
+      {
+        "index": 3,
+        "offset": 14056576,
+        "bytes": 2048,
+        "bbox": [
+          20,
+          15,
+          52,
+          64
+        ],
+        "rgba_sha256": "9638ab94cd16c6f5b2b06ebea6c976555e38c09ba79d91738ee28abd8fb4cf0f"
+      }
+    ],
+    "status": "decoded_for_research_only_not_in_runtime",
+    "limitation": "Four source back poses verified as pixels; source animation timing and Omni send-out/capture animation remain unimplemented"
+  },
+  "credits": "究极绿宝石小智版制作组；正面与背面像素图的具体作者未独立核实。",
+  "distribution": "User ROM and decoded PNGs local-only; not included in Git"
+}

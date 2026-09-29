@@ -134,7 +134,7 @@
       "rgba_sha256": "c053ed760c388909f820264765a2ac40ab04ac22fe004e71bd238a178654dd30"
     }
   ],
-  "scope": "Walking only; cycling/surfing/battle backs and portraits are not replaced",
+  "scope": "Walking only; trainer-front usage and research-only battle backs are recorded separately in ash-iv-trainer.json",
   "credits": "究极绿宝石小智版制作组；转载说明提及八木、司徒参与行走素材，单帧作者尚未独立核实。",
   "distribution": "User ROM and decoded art local-only, not included in Git"
 }

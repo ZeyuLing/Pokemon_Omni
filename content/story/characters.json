@@ -519,7 +519,7 @@
         "reference_media": "portrait-ash",
         "anime_identity": "以动画小智的黑发、脸颊标记、帽子及少年轮廓为识别基础；现图为后期动画服装。获得真正肉身前保持少年身体；之后延伸设计少年、青年、中年。本作青年与中年形象属于年龄改编，不能标为现成的官方成年小智设计。",
         "era_design": "转变前身体不长大；获得肉身后可成长至青年、中年。各阶段年龄数字、体态、服装和解锁篇章待设计。",
-        "production_art": "地图行走采用用户提供的究极绿宝石IV小智版原生九帧，动画XY衣装参考，16×32画布，保持原始像素、头身比例与脚底动画，不缩放。见assets/source/ash-iv-overworld.json。旧生成行走素材因比例不合格撤下。立绘未替换，衣装统一仍待完成；自行车、游泳、投球背影及3D套件未接入。"
+        "production_art": "地图行走采用用户提供的究极绿宝石IV小智版原生九帧，动画XY衣装参考，16×32画布，保持原始像素、头身比例与脚底动画，不缩放。见assets/source/ash-iv-overworld.json。旧生成行走素材因比例不合格撤下。训练家卡、人物画册与生成设定集肖像统一采用同ROM的64×64原生XY小智正面图，仅加透明边距，见assets/source/ash-iv-trainer.json。四个战斗背面姿势已解码核查，尚未接入入场或投球动画；自行车、游泳及3D套件未接入。"
       },
       "biography": {
         "childhood": null,
@@ -591,11 +591,12 @@
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "ash",
-        "status": "portrait_draft_in_rom",
-        "portrait_usage": "debug_cast_gallery",
+        "status": "native_trainer_front_in_rom",
+        "portrait_usage": "trainer_card_and_cast_gallery",
         "overworld_animation": "assets/source/ash-iv-overworld.json",
         "battle_back": null,
-        "model_3d": null
+        "model_3d": null,
+        "portrait_source": "assets/source/ash-iv-trainer.json"
       },
       "opening_scene_note": "清晨开场稿：屋内回应花子的催促，担忧迟到领不到第一只伙伴；接回现有醒来、告别和领取皮卡丘流程，身份仍是秘密。"
     },

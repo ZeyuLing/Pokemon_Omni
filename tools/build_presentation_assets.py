@@ -33,6 +33,9 @@ def compile_assets():
     audit = []
     for entry in manifest['portraits']:
         assert entry['actor'] in chars
+        if entry.get('decoder') == 'ash_iv_trainer_front':
+            from ash_source_art import ash_trainer_art
+            ash_trainer_art()
         target = ROOT/entry['source_path']
         if not target.exists():
             assert entry.get('url'), f'Missing generated source: {target}'

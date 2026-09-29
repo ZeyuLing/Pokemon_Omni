@@ -110,7 +110,7 @@ static void draw_cast(void){
   box(0,0,240,160,PAPER);panel(0,0,240,160);text(12,9,"人物美术 · 素材署名",BLUE,232);
   text(12,34,"小进：kyledove",INK,232);text(12,54,"步美、小驱：Brumirage",INK,232);
   text(12,78,"Game Freak / Nintendo / Creatures",INK,232);
-  text(12,101,"生成立绘：Omni / imagegen",INK,232);text(12,123,"来源与哈希见项目素材清单。",MUTED,232);
+  text(12,101,"小智：究极绿宝石小智版制作组",INK,232);text(12,123,"生成立绘：Omni / imagegen",MUTED,232);
   text(12,141,"SELECT立绘  B返回",BLUE,232);return;
  }
  box(0,0,240,160,PAPER);panel(0,0,240,160);text(12,9,"人物画册 · 开发预览",BLUE,232);
@@ -118,7 +118,7 @@ static void draw_cast(void){
  while(*s&&*s!='\n')line[i++]=*s++;line[i]=0;text(103,65,line,INK,233);
  if(*s)text(103,84,s+1,INK,233);
  num(103,106,cast_cursor+1,MUTED);text(120,106,"/",MUTED,135);num(134,106,OMNI_CAST_COUNT,MUTED);
- text(12,126,"立绘初版 · 出场剧情另行开发",MUTED,234);text(12,142,"左右翻页 SELECT署名 B返回",BLUE,234);
+ text(12,126,cast_cursor==0?"原生像素 · XY衣装":"立绘初版 · 出场剧情另行开发",MUTED,234);text(12,142,"左右翻页 SELECT署名 B返回",BLUE,234);
 }
 static unsigned text_prefix(const char *s,unsigned count,char *out){
  unsigned n=0,bytes=0;
