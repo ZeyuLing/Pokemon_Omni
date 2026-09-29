@@ -36,6 +36,9 @@ def compile_assets():
         if entry.get('decoder') == 'ash_iv_trainer_front':
             from ash_source_art import ash_trainer_art
             ash_trainer_art()
+        if entry.get('decoder') == 'fireash_native':
+            from fireash_cast_art import native_portrait
+            native_portrait(entry['actor'])
         target = ROOT/entry['source_path']
         if not target.exists():
             assert entry.get('url'), f'Missing generated source: {target}'
@@ -46,13 +49,13 @@ def compile_assets():
         if entry.get('sha256') and entry['sha256'] != sha:
             raise ValueError('Cast source hash changed: '+entry['actor'])
         entry['sha256'] = sha
-        im = Image.open(target).convert('RGBA')
-        if entry.get('cell') is not None:
-            assert im.size == (1536, 1024)
-            cell = entry['cell']; x = (cell % 3)*512; y = (cell//3)*512
-            # Compiles the generated draft atlas; does not repaint the artwork.
-            im = im.crop((x, y, x+512, y+512)).resize((80, 80), Image.Resampling.NEAREST)
-        assert im.width <= 80 and im.height <= 80, 'Do not resize imported artist sprites'
+        assert 'cell' not in entry, 'Illustration atlases are not native game portraits'
+        if entry.get('decoder') == 'native_pixel_rows':
+            from native_cast_art import pixel_portrait
+            im = pixel_portrait(entry['actor'])
+        else:
+            im = Image.open(target).convert('RGBA')
+        assert im.width <= 80 and im.height <= 80, 'Author at native resolution; never shrink an illustration'
         canvas = Image.new('RGBA', (80, 80))
         canvas.paste(im, ((80-im.width)//2, 80-im.height))
         offset = len(blob)
@@ -60,7 +63,8 @@ def compile_assets():
             blob += struct.pack('<H', 0x8000 if a<128 else (r>>3)|((g>>3)<<5)|((b>>3)<<10))
         out = OUT/'cast'/f'{entry["actor"]}.png'
         out.parent.mkdir(exist_ok=True); canvas.save(out)
-        rows.append('{'+','.join([cs(entry['actor']),cs(entry['name']),cs(entry['caption']),str(offset)])+'}')
+        label = entry.get('runtime_label', '来源像素 · 原始比例')
+        rows.append('{'+','.join([cs(entry['actor']),cs(entry['name']),cs(entry['caption']),cs(entry['credit']),cs(label),str(offset)])+'}')
         audit.append({'actor':entry['actor'],'bytes':12800,'offset':offset,'source_sha256':sha,
                       'status':entry['status'],'runtime_size':[80,80]})
     scene_rows = []
@@ -122,7 +126,7 @@ def compile_assets():
 #define OMNI_PRESENTATION_DATA_H
 #include <stdint.h>
 #include "omni/stage.h"
-typedef struct {const char *id,*name,*caption;uint32_t offset;} OmniCastPortrait;
+typedef struct {const char *id,*name,*caption,*credit,*label;uint32_t offset;} OmniCastPortrait;
 typedef struct {int16_t x,y,tx,ty;uint16_t path;uint8_t count,sprite,face,emote;} OmniIntroActor;
 typedef struct {const char *title,*speaker,*line1,*line2;uint16_t duration,war_time;int16_t cx,cy,tx,ty,document_x,document_y,monitor_x,monitor_y;uint8_t chapter,stage,tone,music,actor_count,effect,monitor,fade_in,fade_out,location_title,letters,speaker_actor;OmniIntroActor actors[12];} OmniIntroScene;
 extern const unsigned char omni_cast_blob[];

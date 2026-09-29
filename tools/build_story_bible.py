@@ -325,7 +325,8 @@ def rival_catalog(world,people):
             c=cc[id]; source=c.get('source_identity'); proposal=c['rival_design']
             body+=f'<section class="rival-card" id="rival-{id}"><h3><a href="people/{id}.html">{h(c["name"])}</a> <span class="badge">{STATUS[c["status"]]}</span></h3>'
             if c.get('game_assets'):
-                body+=f'<img src="cast/{id}.png" width="160" height="160" style="image-rendering:pixelated" alt="{h(c["name"])}的 GBA 立绘初版"><p class="meta">已编入人物画册；完整行走与战斗动画尚未完成。</p>'
+                label='原生像素重绘，待视觉确认' if c['game_assets']['status']=='native_pixel_redraw_in_rom_review_pending' else '来源像素立绘'
+                body+=f'<img src="cast/{id}.png" width="160" height="160" style="image-rendering:pixelated" alt="{h(c["name"])}的 GBA {label}"><p class="meta">{label}，已编入人物画册；完整行走与战斗动画尚未完成。</p>'
             md+=f'\n### [{c["name"]}](characters/{id}.md) · {STATUS[c["status"]]}\n\n'
             if source:
                 body+=f'<p class="meta">来源版本：{h(source["continuity"])}；证据：{EVIDENCE_STATUS[source["evidence_level"]]}。</p><ul>'+''.join(f'<li>{h(fact)}</li>' for fact in source['facts'])+'</ul>'
@@ -430,7 +431,8 @@ def render(world,people,atlas,media):
         design+='</tbody></table>'
         if c.get('game_assets',{}).get('portrait_actor'):
             art=f'cast/{c["id"]}.png'
-            design+=f'<figure><img src="../{art}" width="160" height="160" style="image-rendering:pixelated" alt="{h(name)}的 GBA 人物立绘初版"><figcaption>已编入 ROM 的人物立绘初版；不是完整行走、投球、背面或 3D 套件。</figcaption></figure>'
+            label='原生像素重绘，待视觉确认' if c['game_assets']['status']=='native_pixel_redraw_in_rom_review_pending' else '来源像素立绘'
+            design+=f'<figure><img src="../{art}" width="160" height="160" style="image-rendering:pixelated" alt="{h(name)}的 GBA {label}"><figcaption>{label}，已编入 ROM；不是完整行走、投球、背面或 3D 套件。</figcaption></figure>'
             md+=f'游戏立绘记录：[资产清单](../../../assets/characters/manifest.json)，角色键 `{c["id"]}`。\n\n'
         if c.get('presentation_bindings'):
             labels='、'.join(b['scene'] for b in c['presentation_bindings'])

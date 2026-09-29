@@ -1,0 +1,76 @@
+{
+  "source": "Pokemon Fire Ash 3.7.1 Audioless developer distribution",
+  "source_page": "https://www.pokecommunity.com/threads/pok%C3%A9mon-fire-ash-version-3-7-1-out.531791/",
+  "archive_url": "https://drive.usercontent.google.com/download?id=1P_-B4g8CsCYUlBugwdGZDOxXzXKK90wA&export=download&confirm=t",
+  "archive_bytes": 95885753,
+  "archive_sha256": null,
+  "archive_note": "Only selected ZIP entries fetched via HTTP ranges; full archive hash not claimed. Internal root directory still says 3.7.",
+  "trainer_data_sha256": "4c8363de9c85ca9f573165f9daece46b7c8b939fea5160025c8fbd6d7b3fb621",
+  "conversion": "Verify every visible source 2x2 block is identical before recovering exactly one native pixel. Remove transparent outer margins only; no interpolation, quantization or repainting.",
+  "sprites": [
+    {
+      "actor": "gary",
+      "archive_entry": "Pokemon Fire Ash 3.7 (Audioless)/Graphics/Trainers/RIVAL1.png",
+      "source_path": "assets/imported/fire-ash-3.7.1/RIVAL1.png",
+      "sha256": "e399d945bfbb80b148ff51b28e718c17149213323096038dfebbc38aa1787427",
+      "source_canvas": [
+        169,
+        169
+      ],
+      "native_bounds": [
+        56,
+        8,
+        122,
+        162
+      ],
+      "pixel_replication": 2,
+      "native_size": [
+        33,
+        77
+      ],
+      "native_rgba_sha256": "ed7f058c0fe0af8a6bf4643e237a4f0fd09e9b55ab8d27578551e1d8e65d60ef",
+      "output": "assets/imported/cast/gary-fireash-native.png",
+      "binding": {
+        "trainer_type": "RIVAL1",
+        "trainer_name": "Gary",
+        "trainer_id": 635
+      },
+      "credit": "Pokemon Fire Ash team; individual sprite artist unverified"
+    },
+    {
+      "actor": "paul",
+      "archive_entry": "Pokemon Fire Ash 3.7 (Audioless)/Graphics/Trainers/RIVAL3.png",
+      "source_path": "assets/imported/fire-ash-3.7.1/RIVAL3.png",
+      "sha256": "ffc648aa37edd2954465375a38ebef7a3f0de91ea9aa0d18e61fbdc57454a71f",
+      "source_canvas": [
+        138,
+        138
+      ],
+      "native_bounds": [
+        42,
+        0,
+        96,
+        138
+      ],
+      "pixel_replication": 2,
+      "native_size": [
+        27,
+        69
+      ],
+      "native_rgba_sha256": "3161ca4d7e70f034c5aea031f419726ebc922ffe1d12734a1ee6a694bbbcd946",
+      "output": "assets/imported/cast/paul-fireash-native.png",
+      "binding": {
+        "trainer_type": "RIVAL3",
+        "trainer_name": "Paul",
+        "trainer_id": 1112
+      },
+      "credit": "Pokemon Fire Ash team; individual sprite artist unverified"
+    }
+  ],
+  "excluded": {
+    "ritchie": "Source uses generic CAMPER, not an identity-specific sprite",
+    "giselle": "Source uses generic LASS",
+    "aj": "Source uses generic YOUNGSTER"
+  },
+  "distribution": "Downloaded PNG and data files remain local-only"
+}

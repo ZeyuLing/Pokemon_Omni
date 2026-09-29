@@ -12,15 +12,15 @@ const scenes=require('../build/pallet/scene-audit.json');for(const m of scenes)m
  function state(){assert(m._mgbawasm_state_save(sp));const bytes=Buffer.from(m.HEAPU8.buffer,sp,size);if(probeOffset<0)probeOffset=bytes.indexOf(signature);assert(probeOffset>=0,'Game loop probe not initialized');const v=Array.from({length:35},(_,i)=>bytes.readUInt32LE(probeOffset+8+i*4));return {screen:v[0],map:v[1],x:v[2],y:v[3],direction:v[4],chapter:v[5],starter:v[6],menu:v[7],moving:v[8],hp:v[9],enemy:v[10],turns:v[11],potions:v[12],battles:v[13],party:v[14],events:v[15],balls:v[16],level:v[17],seq:v[18],beat:v[19],gary:v[20],garyX:v[21],garyY:v[22],storage:v[23],page:v[24],cursor:v[25],form:v[26],nature:v[27],spaEV:v[28],speedEV:v[29],enemyLevel:v[30],bond:v[31],opponents:v[32],opponentSlot:v[33],activeSpecies:v[34]};}
  function press(key){++buttons;m._mgbawasm_set_keys(key);frames(4);m._mgbawasm_set_keys(0);frames(16);return state();}
  function shot(name){const bytes=Buffer.from(m.HEAPU8.slice(m._mgbawasm_video_ptr(),m._mgbawasm_video_ptr()+240*160*4));fs.writeFileSync(`build/pallet/${name}.rgba`,bytes);}
- function portraitAt(x,y){
+ function portraitAt(x,y,index=0){
   const source=fs.readFileSync('build/pallet/cast.bin'),video=m._mgbawasm_video_ptr();let count=0;
   for(let row=0;row<80;row++)for(let col=0;col<80;col++){
-   const color=source.readUInt16LE((row*80+col)*2);if(color&0x8000)continue;
+   const color=source.readUInt16LE(index*12800+(row*80+col)*2);if(color&0x8000)continue;
    const pixel=video+((y+row)*240+x+col)*4;
    for(let c=0;c<3;c++)assert.equal(m.HEAPU8[pixel+c]>>3,(color>>(c*5))&31,`Portrait pixel ${col},${row},channel ${c}`);
    count++;
   }
-  assert(count>1000,'Native Ash portrait must actually be visible');
+  assert(count>500,'Native portrait must actually be visible');
  }
  function dismiss(){for(let i=0;state().screen===7&&i<200;i++)press(1);assert.notEqual(state().screen,7,'Dialogue did not finish');}
  function visible(a,s){if(a.person===3)return !!s.gary;if(a.person===19)return !(s.events&512);return !a.starter||!s.starter;}
@@ -44,7 +44,12 @@ const scenes=require('../build/pallet/scene-audit.json');for(const m of scenes)m
  function snapshot(){assert(m._mgbawasm_state_save(sp));return Buffer.from(m.HEAPU8.slice(sp,sp+size));}
  function restore(b){m.HEAPU8.set(b,sp);assert(m._mgbawasm_state_load(sp));m._mgbawasm_set_keys(0);frames(2);}
  frames(90);press(256);assert.equal(state().screen,16);portraitAt(12,40);shot('init-ash-gallery');
- press(4);shot('init-ash-credits');press(2);
+ const portraits=require('../assets/characters/manifest.json').portraits;
+ for(let i=0;i<portraits.length;i++){
+  assert.equal(state().screen,16);portraitAt(12,40,i);shot('cast-review-'+portraits[i].actor);
+  press(4);shot('cast-credit-'+portraits[i].actor);press(4);press(16);
+ }
+ portraitAt(12,40);press(2);
  press(2);press(1);press(8);press(1);shot('init-wake');dialogue();assert.equal(state().screen,1);assert(state().events&512);
  press(8);for(let i=0;i<3;i++)press(128);press(1);assert.equal(state().screen,5);portraitAt(148,24);shot('init-ash-trainer');press(2);press(2);assert.equal(state().screen,1);
  walk(10,2);walk(4,8);walk(16,13);assert.equal(state().map,5);

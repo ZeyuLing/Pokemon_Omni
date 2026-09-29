@@ -613,7 +613,7 @@
         "reference_media": "portrait-oak-gary",
         "anime_identity": "动画棕色刺状发型与自信神态；图中服装为后期参考，少年出发服饰另核对。",
         "era_design": null,
-        "production_art": "已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。"
+        "production_art": "旧生成立绘已撤下。采用Pokemon Fire Ash 3.7.1的专用人物像素图，训练家数据对应身份已核查；先验证每个2×2原像素块完全一致，再无损恢复原始网格。动画初代小茂的紫衣少年设计；不是青绿的游戏身份。具体像素作者尚未独立核实。来源见assets/characters/manifest.json；本轮仅处理正面立绘，未完成角色的整套行走、投球、背面或3D素材。"
       },
       "biography": {
         "childhood": null,
@@ -681,7 +681,7 @@
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "gary",
-        "status": "portrait_draft_in_rom",
+        "status": "source_portrait_in_rom",
         "portrait_usage": "debug_cast_gallery",
         "overworld_animation": null,
         "battle_back": null,
@@ -691,7 +691,8 @@
           "manifest": "assets/source/opening-stages.json",
           "status": "source_sprite_stage_adaptation",
           "final_anime_design": false
-        }
+        },
+        "portrait_source": "assets/source/fireash-cast.json"
       },
       "opening_scene_note": "研究所开场稿：由自己选择伙伴问起，谈世界赛资格和小智的起点，与爷爷道别后离开。屏幕测试在其离开后才开始；不确认其效忠大木政治路线或知道秘密。",
       "first_journey_note": "出发三天后回研究所索球，使用Lv8杰尼龟、Lv7波波、Lv6小拉达。后两只体现期间捕获经历；未指定捕获日期或完整旅途。质问大木的差别对待，胜负均愤然离开。"
@@ -2020,7 +2021,7 @@
         "reference_media": null,
         "anime_identity": "参考 XY／XYZ 及最强 Mega 进化时期的动画艾岚；官方节目页已定位，具体年龄阶段适配与新素材尚未完成。",
         "era_design": null,
-        "production_art": "已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。"
+        "production_art": "旧生成立绘已撤下。采用Pokemon Showdown归档的原始像素立绘，不缩放、不重绘；署名ZacWeavile。动画XY艾岚的社区像素设计；年龄阶段不新增。来源见assets/characters/manifest.json；本轮仅处理正面立绘，未完成角色的整套行走、投球、背面或3D素材。"
       },
       "biography": {
         "childhood": null,
@@ -2065,11 +2066,12 @@
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "alain",
-        "status": "portrait_draft_in_rom",
+        "status": "source_portrait_in_rom",
         "portrait_usage": "debug_cast_gallery",
         "overworld_animation": null,
         "battle_back": null,
-        "model_3d": null
+        "model_3d": null,
+        "portrait_source": "https://play.pokemonshowdown.com/sprites/trainers/alain.png"
       },
       "presentation_bindings": []
     },
@@ -2486,7 +2488,7 @@
         "reference_media": null,
         "anime_identity": "动画参考版本定位为《宝可梦 世代》第 5 集《传承／The Legacy》（2016），官方片源已找到，尚未逐帧核对及归档形象；本作年龄、衣着调整未定。",
         "era_design": null,
-        "production_art": "已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。"
+        "production_art": "旧生成立绘已撤下。采用Pokemon Showdown归档的原始像素立绘，不缩放、不重绘；署名Game Freak / Nintendo / Creatures。游戏心金魂银来源设计；不冒称动画世代逐帧核验。来源见assets/characters/manifest.json；本轮仅处理正面立绘，未完成角色的整套行走、投球、背面或3D素材。"
       },
       "biography": {
         "childhood": null,
@@ -2531,11 +2533,12 @@
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "silver",
-        "status": "portrait_draft_in_rom",
+        "status": "source_portrait_in_rom",
         "portrait_usage": "debug_cast_gallery",
         "overworld_animation": null,
         "battle_back": null,
-        "model_3d": null
+        "model_3d": null,
+        "portrait_source": "https://play.pokemonshowdown.com/sprites/trainers/silver.png"
       },
       "presentation_bindings": []
     },
@@ -2552,7 +2555,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。"
+        "production_art": "旧生成立绘已撤下。采用Pokemon Showdown归档的原始像素立绘，不缩放、不重绘；署名Game Freak / Nintendo / Creatures。游戏心金魂银阿杏；动画设计仍未指定。来源见assets/characters/manifest.json；本轮仅处理正面立绘，未完成角色的整套行走、投球、背面或3D素材。"
       },
       "biography": {
         "childhood": null,
@@ -2596,11 +2599,12 @@
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "janine",
-        "status": "portrait_draft_in_rom",
+        "status": "source_portrait_in_rom",
         "portrait_usage": "debug_cast_gallery",
         "overworld_animation": null,
         "battle_back": null,
-        "model_3d": null
+        "model_3d": null,
+        "portrait_source": "https://play.pokemonshowdown.com/sprites/trainers/janine.png"
       },
       "presentation_bindings": []
     },
@@ -2679,9 +2683,9 @@
       "death_event": null,
       "appearance": {
         "reference_media": null,
-        "anime_identity": "参考初代动画关都联盟篇阿弘（《Friend and Foe Alike》）；正式服饰及年龄调整等待原片截图核对，未归档新素材。",
+        "anime_identity": "参考初代动画关都联盟篇阿弘（《Friend and Foe Alike》）。本轮已查看并归档社区保存的动画形象截图，核对蓝黄帽、深蓝背心和青绿色衣装；未独立逐帧核验原片。本作少年阶段像素适配不新增具体年龄。",
         "era_design": null,
-        "production_art": "已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。"
+        "production_art": "旧512×512插画缩图已撤下。现为直接在80×80网格编写的16色专用像素立绘，脸部与服装逐像素绘制，已接入画册供用户逐张视觉确认；没有从插画缩小取样。初代动画关都联盟阿弘：蓝黄帽、红色圆形标记、棕发、深蓝背心与浅色领片、青绿色衣裤。脚部为Omni像素适配，不新增年龄。参考图为社区保存的动画画面，不能声称官方完整美术套件。来源见assets/characters/manifest.json；本轮仅处理正面立绘，未完成角色的整套行走、投球、背面或3D素材。"
       },
       "biography": {
         "childhood": null,
@@ -2722,11 +2726,12 @@
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "ritchie",
-        "status": "portrait_draft_in_rom",
+        "status": "native_pixel_redraw_in_rom_review_pending",
         "portrait_usage": "debug_cast_gallery",
         "overworld_animation": null,
         "battle_back": null,
-        "model_3d": null
+        "model_3d": null,
+        "portrait_source": "assets/source/native-cast-redraw.json"
       },
       "presentation_bindings": []
     },
@@ -2741,9 +2746,9 @@
       "death_event": null,
       "appearance": {
         "reference_media": null,
-        "anime_identity": "参考初代动画第 9 集《The School of Hard Knocks》的圣代；本轮以社区资料定位，未归档可核验动画截图。学生阶段适配、本作服装未定。",
+        "anime_identity": "参考初代动画第9集《The School of Hard Knocks》的圣代。本轮已查看并归档社区保存的全身画面，核对白衬衫、红蝴蝶结、蓝色校服和白长袜；未独立逐帧核验原片。学生阶段像素适配不新增具体年龄。",
         "era_design": null,
-        "production_art": "已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。"
+        "production_art": "旧512×512插画缩图已撤下。现为直接在80×80网格编写的16色专用像素立绘，脸部与服装逐像素绘制，已接入画册供用户逐张视觉确认；没有从插画缩小取样。初代动画EP009圣代：长棕发、白色短袖衬衫、红蝴蝶结、蓝色背心与百褶裙、白色长袜和深色鞋。参考动画画面，姿势为Omni原创像素改编；不新增年龄。参考图为社区保存的动画画面，不能声称官方完整美术套件。来源见assets/characters/manifest.json；本轮仅处理正面立绘，未完成角色的整套行走、投球、背面或3D素材。"
       },
       "biography": {
         "childhood": null,
@@ -2787,11 +2792,12 @@
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "giselle",
-        "status": "portrait_draft_in_rom",
+        "status": "native_pixel_redraw_in_rom_review_pending",
         "portrait_usage": "debug_cast_gallery",
         "overworld_animation": null,
         "battle_back": null,
-        "model_3d": null
+        "model_3d": null,
+        "portrait_source": "assets/source/native-cast-redraw.json"
       },
       "presentation_bindings": []
     },
@@ -2806,9 +2812,9 @@
       "death_event": null,
       "appearance": {
         "reference_media": null,
-        "anime_identity": "参考初代动画第 8 集《The Path to the Pokémon League》的小明；本轮核对发行简介，具体外观和年龄适配待原片核验。",
+        "anime_identity": "参考初代动画第8集《The Path to the Pokémon League》的小明。本轮已查看并归档社区保存的上半身画面，核对深绿尖发、橙色上衣及深色立领；长裤与站姿为Omni适配，未声称全身服装逐帧核验，不新增具体年龄。",
         "era_design": null,
-        "production_art": "已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。"
+        "production_art": "旧512×512插画缩图已撤下。现为直接在80×80网格编写的16色专用像素立绘，脸部与服装逐像素绘制，已接入画册供用户逐张视觉确认；没有从插画缩小取样。初代动画EP008小明：深绿色尖发与浅绿高光、橙色无袖上衣和深色立领。长裤与站姿为Omni像素适配，不宣称全身服装逐帧核验，不新增年龄。参考图为社区保存的动画画面，不能声称官方完整美术套件。来源见assets/characters/manifest.json；本轮仅处理正面立绘，未完成角色的整套行走、投球、背面或3D素材。"
       },
       "biography": {
         "childhood": null,
@@ -2849,11 +2855,12 @@
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "aj",
-        "status": "portrait_draft_in_rom",
+        "status": "native_pixel_redraw_in_rom_review_pending",
         "portrait_usage": "debug_cast_gallery",
         "overworld_animation": null,
         "battle_back": null,
-        "model_3d": null
+        "model_3d": null,
+        "portrait_source": "assets/source/native-cast-redraw.json"
       },
       "presentation_bindings": []
     },
@@ -2870,7 +2877,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。"
+        "production_art": "旧生成立绘已撤下。采用Pokemon Showdown归档的原始像素立绘，不缩放、不重绘；署名Game Freak / Nintendo / Creatures。火红叶绿的叶子；不与Let's Go碧蓝混用。来源见assets/characters/manifest.json；本轮仅处理正面立绘，未完成角色的整套行走、投球、背面或3D素材。"
       },
       "biography": {
         "childhood": null,
@@ -2912,11 +2919,12 @@
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "leaf",
-        "status": "portrait_draft_in_rom",
+        "status": "source_portrait_in_rom",
         "portrait_usage": "debug_cast_gallery",
         "overworld_animation": null,
         "battle_back": null,
-        "model_3d": null
+        "model_3d": null,
+        "portrait_source": "https://play.pokemonshowdown.com/sprites/trainers/leaf-gen3.png"
       },
       "presentation_bindings": []
     },
@@ -2933,7 +2941,7 @@
         "reference_media": null,
         "anime_identity": "参考《宝可梦 进化》第 8 集《The Discovery》（2021）的女性碧蓝；已定位官方介绍，尚未逐帧归档；不以漫画或 Leaf 游戏立绘替代动画参考。",
         "era_design": null,
-        "production_art": "已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。"
+        "production_art": "旧生成立绘已撤下。采用Pokemon Showdown归档的原始像素立绘，不缩放、不重绘；署名ZacWeavile。Let's Go碧蓝的社区像素设计；不是Leaf，也不是动画截图证据。来源见assets/characters/manifest.json；本轮仅处理正面立绘，未完成角色的整套行走、投球、背面或3D素材。"
       },
       "biography": {
         "childhood": null,
@@ -2974,11 +2982,12 @@
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "green-lets-go",
-        "status": "portrait_draft_in_rom",
+        "status": "source_portrait_in_rom",
         "portrait_usage": "debug_cast_gallery",
         "overworld_animation": null,
         "battle_back": null,
-        "model_3d": null
+        "model_3d": null,
+        "portrait_source": "https://play.pokemonshowdown.com/sprites/trainers/green.png"
       },
       "presentation_bindings": []
     },
@@ -3311,7 +3320,7 @@
         "reference_media": null,
         "anime_identity": "参考神奥篇真司的动画辨识度，旅途 2022 年 6 月 10 日再会集可作为另一时期参考；不能混用两个阶段服装后宣称同一原作设计。具体年龄与截图待定。",
         "era_design": null,
-        "production_art": "已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。"
+        "production_art": "旧生成立绘已撤下。采用Pokemon Fire Ash 3.7.1的专用人物像素图，训练家数据对应身份已核查；先验证每个2×2原像素块完全一致，再无损恢复原始网格。动画神奥真司的紫衣设计；不混用旅途时期服装具体像素作者尚未独立核实。来源见assets/characters/manifest.json；本轮仅处理正面立绘，未完成角色的整套行走、投球、背面或3D素材。"
       },
       "biography": {
         "childhood": null,
@@ -3355,11 +3364,12 @@
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "paul",
-        "status": "portrait_draft_in_rom",
+        "status": "source_portrait_in_rom",
         "portrait_usage": "debug_cast_gallery",
         "overworld_animation": null,
         "battle_back": null,
-        "model_3d": null
+        "model_3d": null,
+        "portrait_source": "assets/source/fireash-cast.json"
       },
       "presentation_bindings": []
     },
@@ -3376,7 +3386,7 @@
         "reference_media": null,
         "anime_identity": null,
         "era_design": null,
-        "production_art": "已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。"
+        "production_art": "旧生成立绘已撤下。采用Pokemon Showdown归档的原始像素立绘，不缩放、不重绘；署名Brumirage。剑盾彼特的社区像素设计；动画设计仍未指定。来源见assets/characters/manifest.json；本轮仅处理正面立绘，未完成角色的整套行走、投球、背面或3D素材。"
       },
       "biography": {
         "childhood": null,
@@ -3417,11 +3427,12 @@
       "game_assets": {
         "manifest": "assets/characters/manifest.json",
         "portrait_actor": "bede",
-        "status": "portrait_draft_in_rom",
+        "status": "source_portrait_in_rom",
         "portrait_usage": "debug_cast_gallery",
         "overworld_animation": null,
         "battle_back": null,
-        "model_3d": null
+        "model_3d": null,
+        "portrait_source": "https://play.pokemonshowdown.com/sprites/trainers/bede.png"
       },
       "presentation_bindings": []
     },

@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-30",
+  "method": "Editable 80x80 palette-indexed pixel rows. Every output pixel is authored on this grid; no source image resize, automatic trace, quantization or shrink-to-fit.",
+  "sprites": [
+    {
+      "actor": "ritchie",
+      "source_path": "assets/characters/pixel/ritchie.json",
+      "source_sha256": "49d690fae26a5a1fee534779a69d2a960434928794ddf09678e3d464edac719b",
+      "canvas": [
+        80,
+        80
+      ],
+      "palette_entries": 16,
+      "reference": "初代动画关都联盟阿弘：蓝黄帽、红色圆形标记、棕发、深蓝背心与浅色领片、青绿色衣裤。脚部为Omni像素适配，不新增年龄。",
+      "reference_image": {
+        "path": "assets/imported/cast-anime-references/ritchie.png",
+        "sha256": "d0010288abef60bd39d5f3a3aca3ed86d75fd21e3cc611a7daa7e912a5d41ed9",
+        "page": "https://pokemon.fandom.com/pl/wiki/Ritchie",
+        "url": "https://vignette.wikia.nocookie.net/pokemony/images/f/f0/Ritchie.png/revision/latest?cb=20181123083826&path-prefix=pl",
+        "evidence": "Community-hosted anime screenshot visually inspected; not an official licensed sprite or independent frame-by-frame episode verification"
+      },
+      "status": "in_rom_pending_user_visual_review"
+    },
+    {
+      "actor": "giselle",
+      "source_path": "assets/characters/pixel/giselle.json",
+      "source_sha256": "eb96927922140aa866ae8814d33c3bd6d93c21441acdac22aa6a3e08a0593e50",
+      "canvas": [
+        80,
+        80
+      ],
+      "palette_entries": 16,
+      "reference": "初代动画EP009圣代：长棕发、白色短袖衬衫、红蝴蝶结、蓝色背心与百褶裙、白色长袜和深色鞋。参考动画画面，姿势为Omni原创像素改编；不新增年龄。",
+      "reference_image": {
+        "path": "assets/imported/cast-anime-references/giselle.jpg",
+        "sha256": "bac1277f0484f8d5a19204f2e3913ec0767d6298b9a36433594173e5ba18b284",
+        "page": "https://x.com/MalteserRefs/status/1368293395433721869",
+        "url": "https://pbs.twimg.com/media/Ev0neZlXMAMi1uV.jpg",
+        "evidence": "Community-hosted anime screenshot visually inspected; not an official licensed sprite or independent frame-by-frame episode verification"
+      },
+      "status": "in_rom_pending_user_visual_review"
+    },
+    {
+      "actor": "aj",
+      "source_path": "assets/characters/pixel/aj.json",
+      "source_sha256": "1d39c80e24c8563ddeed62097ce7857dde5afce3fc5ea0de1fd472123df38f14",
+      "canvas": [
+        80,
+        80
+      ],
+      "palette_entries": 16,
+      "reference": "初代动画EP008小明：深绿色尖发与浅绿高光、橙色无袖上衣和深色立领。长裤与站姿为Omni像素适配，不宣称全身服装逐帧核验，不新增年龄。",
+      "reference_image": {
+        "path": "assets/imported/cast-anime-references/aj.png",
+        "sha256": "63fdb9769177a2e7cf95f75f3fd7e92ef334fd89d790ee1e1779fff08e73ec30",
+        "page": "https://www.wikidex.net/wiki/A.J.",
+        "url": "https://images.wikidexcdn.net/mwuploads/wikidex/f/f0/latest/20080915202733/EP008_AJ.png",
+        "evidence": "Community-hosted anime screenshot visually inspected; not an official licensed sprite or independent frame-by-frame episode verification"
+      },
+      "status": "in_rom_pending_user_visual_review"
+    }
+  ],
+  "rejected_generation": {
+    "sha256": "cded7cfa37b295dcd5cde870f748962b86ef9d408d2ce5fc4eedd99e4fdedd9a",
+    "status": "not_used_in_runtime",
+    "reason": "Image generator did not provide the requested native grid; green-cap design also conflicts with the inspected anime reference"
+  },
+  "scope": "Trainer/gallery front portraits only; does not implement overworld frames, battle backs, throwing animation, or 3D models"
+}

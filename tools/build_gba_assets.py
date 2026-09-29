@@ -196,6 +196,7 @@ def main():
     cast=json.loads((ROOT/'assets/characters/manifest.json').read_text(encoding='utf-8'))
     for person in cast['portraits']:
         strings.update(person['name']);strings.update(person['caption'])
+        strings.update(person['credit']);strings.update(person.get('runtime_label','来源像素 · 原始比例'))
     font_path=ROOT / '.cache/toolchains/unifont-16.0.04.hex.gz'
     assert hashlib.sha256(font_path.read_bytes()).hexdigest() == 'f9c8c7802453f47be02677176aeac2342ee96d354fad7a26cedcce48e68e1d9f'
     glyphs={}

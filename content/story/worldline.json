@@ -1310,6 +1310,29 @@
       "team_rosters": null,
       "alliances": null,
       "outcomes": null
+    },
+    "portrait_assets": {
+      "status": "eight_source_replacements_and_three_native_redraws_in_visual_review",
+      "source_doc": "docs/45-cast-native-pixel-repair.md",
+      "actors": [
+        "gary",
+        "ritchie",
+        "giselle",
+        "aj",
+        "paul",
+        "silver",
+        "janine",
+        "green-lets-go",
+        "leaf",
+        "alain",
+        "bede"
+      ],
+      "continuity": "仅修正画册美术来源、像素规格与动画服装辨识。候选名单、阵营、日期、年龄与已写生平不变；小茂不与青绿合并，叶子不与碧蓝混用。",
+      "pending_visual_review": [
+        "ritchie",
+        "giselle",
+        "aj"
+      ]
     }
   },
   "opening_presentation": {

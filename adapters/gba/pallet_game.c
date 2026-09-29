@@ -100,6 +100,7 @@ static void panel(int x,int y,int w,int h){
 }
 static void number(int x,int y,unsigned n,uint16_t color){char b[11],out[11];unsigned i=0,j;do{b[i++]=(char)('0'+n%10);n/=10;}while(n&&i<10);for(j=0;j<i;++j)out[j]=b[i-j-1];out[i]=0;text(x,y,out,color,240);}
 static void dma_row(const uint16_t *source,volatile uint16_t *dest,unsigned count);
+static const char *paragraph(const char *s,int x,int y,unsigned rows);
 static void cast_portrait(unsigned id,int x,int y){
  const uint16_t *p=(const uint16_t*)(omni_cast_blob+omni_cast[id].offset);unsigned row,col;
  for(row=0;row<80;++row)for(col=0;col<80;++col){uint16_t c=p[row*80+col];if(!(c&0x8000))((volatile uint16_t*)0x06000000)[(y+row)*240+x+col]=c;}
@@ -108,9 +109,8 @@ static void draw_cast(void){
  const OmniCastPortrait *c=&omni_cast[cast_cursor];const char *s=c->caption;char line[80];unsigned i=0;
  if(cast_credits){
   box(0,0,240,160,PAPER);panel(0,0,240,160);text(12,9,"人物美术 · 素材署名",BLUE,232);
-  text(12,34,"小进：kyledove",INK,232);text(12,54,"步美、小驱：Brumirage",INK,232);
-  text(12,78,"Game Freak / Nintendo / Creatures",INK,232);
-  text(12,101,"小智：究极绿宝石小智版制作组",INK,232);text(12,123,"生成立绘：Omni / imagegen",MUTED,232);
+  text(12,34,c->name,INK,232);paragraph(c->credit,12,56,3);
+  text(12,112,"完整来源与哈希见素材清单。",MUTED,232);
   text(12,141,"SELECT立绘  B返回",BLUE,232);return;
  }
  box(0,0,240,160,PAPER);panel(0,0,240,160);text(12,9,"人物画册 · 开发预览",BLUE,232);
@@ -118,7 +118,7 @@ static void draw_cast(void){
  while(*s&&*s!='\n')line[i++]=*s++;line[i]=0;text(103,65,line,INK,233);
  if(*s)text(103,84,s+1,INK,233);
  num(103,106,cast_cursor+1,MUTED);text(120,106,"/",MUTED,135);num(134,106,OMNI_CAST_COUNT,MUTED);
- text(12,126,cast_cursor==0?"原生像素 · XY衣装":"立绘初版 · 出场剧情另行开发",MUTED,234);text(12,142,"左右翻页 SELECT署名 B返回",BLUE,234);
+ text(12,126,c->label,MUTED,234);text(12,142,"左右翻页 SELECT署名 B返回",BLUE,234);
 }
 static unsigned text_prefix(const char *s,unsigned count,char *out){
  unsigned n=0,bytes=0;

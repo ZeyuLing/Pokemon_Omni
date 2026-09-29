@@ -14,7 +14,7 @@ ID：`alain`；状态：候选。
 
 年龄阶段设计：
 
-最终立绘／像素／3D 资产：已编入 GBA 的 80×80 人物立绘初版；见 assets/characters/manifest.json。行走、投球、背面及 3D 套件尚未完成；不能以此宣称最终美术完成。
+最终立绘／像素／3D 资产：旧生成立绘已撤下。采用Pokemon Showdown归档的原始像素立绘，不缩放、不重绘；署名ZacWeavile。动画XY艾岚的社区像素设计；年龄阶段不新增。来源见assets/characters/manifest.json；本轮仅处理正面立绘，未完成角色的整套行走、投球、背面或3D素材。
 
 ## 原作身份参考（不计入本作生平）
 
