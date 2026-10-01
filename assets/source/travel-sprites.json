@@ -1,0 +1,234 @@
+{
+  "repository": "https://github.com/rh-hideout/pokeemerald-expansion",
+  "commit": "dfb0f84374230f4d462191601179b742f9f077df",
+  "scope": "Native cardinal walk animation; no resampling; local-only decoded artwork",
+  "sprites": [
+    {
+      "species": 1,
+      "frames": 8,
+      "original_cell": [
+        32,
+        32
+      ],
+      "common_crop": [
+        6,
+        15,
+        26,
+        31
+      ],
+      "credit": "Game Freak; HGSS-style follower imported from rh-hideout/pokeemerald-expansion (see repository CREDITS.md)"
+    },
+    {
+      "species": 4,
+      "frames": 8,
+      "original_cell": [
+        32,
+        32
+      ],
+      "common_crop": [
+        5,
+        13,
+        27,
+        30
+      ],
+      "credit": "Game Freak; HGSS-style follower imported from rh-hideout/pokeemerald-expansion (see repository CREDITS.md)"
+    },
+    {
+      "species": 7,
+      "frames": 8,
+      "original_cell": [
+        32,
+        32
+      ],
+      "common_crop": [
+        7,
+        15,
+        25,
+        30
+      ],
+      "credit": "Game Freak; HGSS-style follower imported from rh-hideout/pokeemerald-expansion (see repository CREDITS.md)"
+    },
+    {
+      "species": 25,
+      "frames": 8,
+      "original_cell": [
+        32,
+        32
+      ],
+      "common_crop": [
+        7,
+        12,
+        25,
+        30
+      ],
+      "credit": "Game Freak; HGSS-style follower imported from rh-hideout/pokeemerald-expansion (see repository CREDITS.md)"
+    },
+    {
+      "species": 16,
+      "frames": 8,
+      "original_cell": [
+        32,
+        32
+      ],
+      "common_crop": [
+        8,
+        16,
+        24,
+        30
+      ],
+      "credit": "Game Freak; HGSS-style follower imported from rh-hideout/pokeemerald-expansion (see repository CREDITS.md)"
+    },
+    {
+      "species": 19,
+      "frames": 8,
+      "original_cell": [
+        32,
+        32
+      ],
+      "common_crop": [
+        6,
+        11,
+        26,
+        31
+      ],
+      "credit": "Game Freak; HGSS-style follower imported from rh-hideout/pokeemerald-expansion (see repository CREDITS.md)"
+    },
+    {
+      "species": 109,
+      "frames": 8,
+      "original_cell": [
+        32,
+        32
+      ],
+      "common_crop": [
+        3,
+        8,
+        27,
+        30
+      ],
+      "credit": "Game Freak; HGSS-style follower imported from rh-hideout/pokeemerald-expansion (see repository CREDITS.md)"
+    },
+    {
+      "species": 13,
+      "frames": 8,
+      "original_cell": [
+        32,
+        32
+      ],
+      "common_crop": [
+        5,
+        12,
+        27,
+        30
+      ],
+      "credit": "Game Freak; HGSS-style follower imported from rh-hideout/pokeemerald-expansion (see repository CREDITS.md)"
+    },
+    {
+      "species": 111,
+      "frames": 8,
+      "original_cell": [
+        32,
+        32
+      ],
+      "common_crop": [
+        1,
+        9,
+        31,
+        30
+      ],
+      "credit": "Game Freak; HGSS-style follower imported from rh-hideout/pokeemerald-expansion (see repository CREDITS.md)"
+    }
+  ],
+  "files": [
+    {
+      "path": "graphics/pokemon/bulbasaur/overworld.png",
+      "url": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/dfb0f84374230f4d462191601179b742f9f077df/graphics/pokemon/bulbasaur/overworld.png",
+      "sha256": "60664b697728dcc29348677239e5151e48cb88f6eaefce233fbf0660b3ae4893"
+    },
+    {
+      "path": "graphics/pokemon/bulbasaur/overworld_normal.pal",
+      "url": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/dfb0f84374230f4d462191601179b742f9f077df/graphics/pokemon/bulbasaur/overworld_normal.pal",
+      "sha256": "a617fed775e0fe3ad289e4a7687e59c2a9d01733dcebaa42974a617a9580d298"
+    },
+    {
+      "path": "graphics/pokemon/charmander/overworld.png",
+      "url": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/dfb0f84374230f4d462191601179b742f9f077df/graphics/pokemon/charmander/overworld.png",
+      "sha256": "9db1fc08eeffe1768d608b7f5f38c6f9e46bbba5b2d77135e8e484f98520e60d"
+    },
+    {
+      "path": "graphics/pokemon/charmander/overworld_normal.pal",
+      "url": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/dfb0f84374230f4d462191601179b742f9f077df/graphics/pokemon/charmander/overworld_normal.pal",
+      "sha256": "a61860a6439e8030b9431c8d86bfdd0677ca1bc9e95ea216782ecb51389749be"
+    },
+    {
+      "path": "graphics/pokemon/squirtle/overworld.png",
+      "url": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/dfb0f84374230f4d462191601179b742f9f077df/graphics/pokemon/squirtle/overworld.png",
+      "sha256": "840b7671a1350650369c487cc460a9ca5ee5349e24413cb43b188424f4bc3e82"
+    },
+    {
+      "path": "graphics/pokemon/squirtle/overworld_normal.pal",
+      "url": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/dfb0f84374230f4d462191601179b742f9f077df/graphics/pokemon/squirtle/overworld_normal.pal",
+      "sha256": "093e210aa0a79a506dfb8c44fa77344a4042f9a556876794157eeec5ab2fce9f"
+    },
+    {
+      "path": "graphics/pokemon/pikachu/overworld.png",
+      "url": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/dfb0f84374230f4d462191601179b742f9f077df/graphics/pokemon/pikachu/overworld.png",
+      "sha256": "6c6e1755d53b156e808e2bcbbfa911eb202b966fbdb17483920dbfe37643f9fa"
+    },
+    {
+      "path": "graphics/pokemon/pikachu/overworld_normal.pal",
+      "url": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/dfb0f84374230f4d462191601179b742f9f077df/graphics/pokemon/pikachu/overworld_normal.pal",
+      "sha256": "9ed475d6b938b0f9f709116dbc994aef4997acd7648a1de7a8ae200afbf74daf"
+    },
+    {
+      "path": "graphics/pokemon/pidgey/overworld.png",
+      "url": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/dfb0f84374230f4d462191601179b742f9f077df/graphics/pokemon/pidgey/overworld.png",
+      "sha256": "b54a7439ddc434e99ce399fb8678565e31afb57a9e18734d28f6529be05f2751"
+    },
+    {
+      "path": "graphics/pokemon/pidgey/overworld_normal.pal",
+      "url": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/dfb0f84374230f4d462191601179b742f9f077df/graphics/pokemon/pidgey/overworld_normal.pal",
+      "sha256": "7a2b82388e0e56fc963f049450fe45670c82b7d61ae6a8203e6db56960aa513b"
+    },
+    {
+      "path": "graphics/pokemon/rattata/overworld.png",
+      "url": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/dfb0f84374230f4d462191601179b742f9f077df/graphics/pokemon/rattata/overworld.png",
+      "sha256": "05e3e63cfbea4809604e09476320eebad923c93484ddd211ff12790013cdcf53"
+    },
+    {
+      "path": "graphics/pokemon/rattata/overworld_normal.pal",
+      "url": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/dfb0f84374230f4d462191601179b742f9f077df/graphics/pokemon/rattata/overworld_normal.pal",
+      "sha256": "98f3821e311ea696239d7bff1d2f7e689ec59c1679f40bc118ed0d1f727dacd7"
+    },
+    {
+      "path": "graphics/pokemon/koffing/overworld.png",
+      "url": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/dfb0f84374230f4d462191601179b742f9f077df/graphics/pokemon/koffing/overworld.png",
+      "sha256": "9afbbf9fca92a50c9cb1d41335d77ad687717491fa46ca5d3dc57c744f2ce9be"
+    },
+    {
+      "path": "graphics/pokemon/koffing/overworld_normal.pal",
+      "url": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/dfb0f84374230f4d462191601179b742f9f077df/graphics/pokemon/koffing/overworld_normal.pal",
+      "sha256": "1d15cf6b5f7c6fb43e8752c8c8f0812bfa4feac34bd31a7ddbaa6edc43ca36c3"
+    },
+    {
+      "path": "graphics/pokemon/weedle/overworld.png",
+      "url": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/dfb0f84374230f4d462191601179b742f9f077df/graphics/pokemon/weedle/overworld.png",
+      "sha256": "3cbe64ccffc543289cc9b2291c36ba49ef4bbdb44e4597599abf0b2217b8d070"
+    },
+    {
+      "path": "graphics/pokemon/weedle/overworld_normal.pal",
+      "url": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/dfb0f84374230f4d462191601179b742f9f077df/graphics/pokemon/weedle/overworld_normal.pal",
+      "sha256": "14eae1c52ae1f4db765ac99764c826155ff319b7d5de274d3bbd55f08833753d"
+    },
+    {
+      "path": "graphics/pokemon/rhyhorn/overworld.png",
+      "url": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/dfb0f84374230f4d462191601179b742f9f077df/graphics/pokemon/rhyhorn/overworld.png",
+      "sha256": "82ddcfcc32d7ead3be3be6b56941a7651f6151b0490b2164aeff2c2f3685d5bd"
+    },
+    {
+      "path": "graphics/pokemon/rhyhorn/overworld_normal.pal",
+      "url": "https://raw.githubusercontent.com/rh-hideout/pokeemerald-expansion/dfb0f84374230f4d462191601179b742f9f077df/graphics/pokemon/rhyhorn/overworld_normal.pal",
+      "sha256": "a27a8339ac59a9075ba66aed56c2069740e927ffc78e43555684a3d95c202866"
+    }
+  ]
+}

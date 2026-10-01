@@ -76,11 +76,15 @@ const scenes=require('../build/pallet/scene-audit.json');for(const m of scenes)m
  walk(26,26);talkAt(6,4,1);dialogue();assert(state().events&1);walk(7,8);
  walk(36,19);talkAt(4,3,2);dialogue();assert.equal(state().screen,13);assert(state().events&4);press(1);dialogue();assert.equal(state().balls,101);press(2);walk(4,7);
  walk(24,39);press(128);walk(12,39);press(128);walk(16,13);talkAt(6,4,1);dialogue();assert(state().events&8);const parcelBalls=state().balls;press(1);dialogue();assert.equal(state().balls,parcelBalls);
+ // Choose an actual owned companion through the ordinary party screen.
+ press(8);press(128);press(1);press(16);press(256);assert.equal(state().screen,1);
  press(8);for(let i=0;i<4;i++)press(128);press(1);dialogue();press(2);
  m._mgbawasm_sram_save();const saved=Buffer.from(m.HEAPU8.slice(m._mgbawasm_sram_ptr(),m._mgbawasm_sram_ptr()+32768));fs.writeFileSync('build/pallet/initialization.sav',saved);assert(require('../adapters/pokedex-preview/pallet-save.js')(saved,scenes));
+ const active=saved.readUInt32LE(4)>saved.readUInt32LE(16388)?0:16384;assert.equal(saved[active+20+16+133],2,'Selected companion persists in version 5 save');
  const legacy=require('./legacy-pallet-save.cjs')(saved);assert(require('../adapters/pokedex-preview/pallet-save.js')(legacy,scenes));fs.writeFileSync('build/pallet/test-game.sav',legacy);
  m._mgbawasm_reset();probeOffset=-1;frames(90);press(2);press(1);frames(20);assert.equal(state().party,5);assert.equal(state().form,1);assert.equal(state().nature,11);assert(state().events&64);shot('init-continued');
+ state();const continued=Buffer.from(m.HEAPU8.buffer,sp,size),travelProbe=continued.indexOf(Buffer.from('545241564f4d4e49','hex'));assert(travelProbe>=0);assert.equal(continued.readUInt32LE(travelProbe+8),2,'Continue restores the selected companion');
  const corrupt=Buffer.from(saved),latest=corrupt.readUInt32LE(4)>corrupt.readUInt32LE(16388)?0:16384;corrupt[latest+60]^=255;const sv=m._malloc(corrupt.length);m.HEAPU8.set(corrupt,sv);m._mgbawasm_sram_load(sv,corrupt.length);m._free(sv);m._mgbawasm_reset();probeOffset=-1;frames(90);press(2);press(1);assert.equal(state().party,5,'Corrupt newest slot falls back');assert.equal(state().form,1);
- const report={pass:true,rom:crypto.createHash('sha256').update(rom).digest('hex'),buttons,nativeAshGallery:true,nativeAshTrainerCard:true,garyWin:true,garyLoss:true,walkSamples,serverRoom:true,partnerExclusiveMove:true,toolPersistence:true,tutorialR:true,oldManDuel:true,onceOnlyGifts:true,parcel:true,saveContinue:true,corruptSlotFallback:true};fs.writeFileSync('build/pallet/initialization-report.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
+ const report={pass:true,rom:crypto.createHash('sha256').update(rom).digest('hex'),buttons,nativeAshGallery:true,nativeAshTrainerCard:true,garyWin:true,garyLoss:true,walkSamples,serverRoom:true,partnerExclusiveMove:true,toolPersistence:true,tutorialR:true,oldManDuel:true,onceOnlyGifts:true,parcel:true,saveContinue:true,companionPersistence:true,corruptSlotFallback:true};fs.writeFileSync('build/pallet/initialization-report.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
  m._mgbawasm_unload();
 })().catch(e=>{console.error(e);process.exitCode=1;});

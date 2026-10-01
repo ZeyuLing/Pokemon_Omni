@@ -39,7 +39,7 @@ static void story_next(void){
  }
  story_seq=255;screen=WORLD;dirty=1;save_game();
 }
-static void story_start(unsigned id){story_seq=(uint8_t)id;story_beat=0;story_next();}
+static void story_start(unsigned id){omni_travel_reset(&travel,game.location,travel_species(),px*16,py*16);story_seq=(uint8_t)id;story_beat=0;story_next();}
 static void initialization_resume(void){
  gary_present=0;story_seq=255;
  if(!(game.events&OMNI_EVENT_INITIALIZATION))return;

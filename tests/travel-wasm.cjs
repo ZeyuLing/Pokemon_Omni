@@ -1,0 +1,2 @@
+const fs=require('node:fs'),assert=require('node:assert/strict');
+(async()=>{const {instance}=await WebAssembly.instantiate(fs.readFileSync('build/test_travel.wasm'),{});try{assert.equal(instance.exports.travel_test(),0);console.log('PASS: portable follow paths, rider anatomy, terrain, clearance and speeds');}catch(e){throw Error(`Travel core failed at line ${instance.exports.travel_failure_line()}: ${e.message}`);}})().catch(e=>{console.error(e);process.exitCode=1;});

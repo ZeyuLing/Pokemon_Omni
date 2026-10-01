@@ -115,6 +115,11 @@ int main(void){
   omni_adventure_new(&g);omni_adventure_enter(&g,OMNI_LAB);copy=g;
   assert(omni_initialization_gifts(&g,0,&state)==OMNI_ADVENTURE_ARGUMENT);assert(!memcmp(&g,&copy,sizeof(g)));
   assert(!omni_initialization_gifts(&g,&full,&state));assert(g.party_count==4&&g.balls==100&&g.party[0].form==1&&g.party[0].bond_eligible==1);
+  assert(!omni_adventure_companion(&g,2)&&g.companion==2);
+  assert(!omni_adventure_save(&g,bytes,sizeof(bytes),&n));assert(!omni_adventure_load(&loaded,bytes,n)&&loaded.companion==2);
+  assert(!omni_adventure_lead(&g,1)&&g.companion==1);assert(!omni_adventure_lead(&g,1)&&g.companion==2);
+  assert(omni_adventure_companion(&g,5)==OMNI_ADVENTURE_ARGUMENT&&g.companion==2);
+  assert(!omni_adventure_companion(&g,0)&&!g.companion);
   assert(g.party[0].moves[2]==729&&g.party[0].pp[2]==15&&omni_partner_stat(&g.party[0],0)==21);
   for(i=0;i<4;++i){unsigned sum=0;for(k=0;k<6;++k){assert(g.party[i].ivs[k]==31);sum+=g.party[i].evs[k];}assert(sum==508);assert(g.party[i].level==5);}
   copy=g;assert(omni_initialization_gifts(&g,&full,&state)==OMNI_ADVENTURE_ALREADY);assert(!memcmp(&g,&copy,sizeof(g)));
@@ -135,7 +140,8 @@ int main(void){
   g.party[4]=g.party[5]=g.party[0];g.party_count=6;g.storage_count=12;for(i=0;i<12;++i)g.storage[i]=g.party[0];
   assert(omni_initialization_weedle(&g,&full,&state)==OMNI_ADVENTURE_LOCKED);assert(g.events&OMNI_EVENT_WEEDLE_PENDING);
   g.storage_count=0;memset(g.storage,0,sizeof(g.storage));assert(!omni_initialization_weedle(&g,&full,&state));assert(g.storage_count==1&&g.storage[0].species==13);assert(omni_initialization_weedle(&g,&full,&state)==OMNI_ADVENTURE_ALREADY);
-  assert(!omni_adventure_store(&g,1));assert(!omni_adventure_withdraw(&g,0));assert(g.party[5].species==13);
+  assert(!omni_adventure_companion(&g,3));assert(!omni_adventure_store(&g,1)&&g.companion==2);assert(!omni_adventure_withdraw(&g,0));assert(g.party[5].species==13);
+  assert(!omni_adventure_store(&g,1)&&!g.companion);assert(!omni_adventure_withdraw(&g,0));
   assert(!omni_adventure_save(&g,bytes,sizeof(bytes),&n));assert(n==916);assert(!omni_adventure_load(&loaded,bytes,n));assert(!memcmp(&g,&loaded,sizeof(g)));
   copy=loaded;bytes[154]=255;assert(omni_adventure_load(&loaded,bytes,n)==OMNI_ADVENTURE_BAD_SAVE);assert(!memcmp(&loaded,&copy,sizeof(loaded)));
   for(i=1;i<g.party_count;++i)g.party[i].hp=0;assert(omni_adventure_store(&g,0)==OMNI_ADVENTURE_LOCKED);

@@ -22,12 +22,14 @@ typedef struct {
  uint16_t events;
  OmniPartner party[6];
  OmniPartner storage[12];uint8_t storage_count;
+ uint8_t companion; /* 0 = recalled; otherwise party slot + 1, remapped on reorder. */
 } OmniAdventure;
 #define OMNI_ADVENTURE_SAVE_BYTES 916
 /* Real elapsed time, not accelerated simulation steps. Saturates at 999:59:59. */
 void omni_adventure_elapsed(OmniAdventure *,uint32_t seconds);
 typedef struct { uint16_t species,base[6],moves[4];uint8_t pp[4];const char *name,*ability; } OmniStarter;
-extern const OmniStarter omni_starters[8];
+extern const OmniStarter omni_starters[9];
+int omni_adventure_companion(OmniAdventure *,uint8_t slot_plus_one);
 const char *omni_partner_name(const OmniPartner *);
 const char *omni_partner_ability(const OmniPartner *);
 const char *omni_nature_name(unsigned nature);
