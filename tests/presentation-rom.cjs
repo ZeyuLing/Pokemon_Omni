@@ -8,7 +8,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
  const rom=fs.readFileSync(storyMode?'build/pallet/omni-story.gba':'build/pallet/omni-pallet.gba'),p=m._malloc(rom.length);m.HEAPU8.set(rom,p);assert(m._mgbawasm_load(p,rom.length,0,0,0,0,1));m._free(p);
  const n=m._mgbawasm_state_size(),sp=m._malloc(n),ap=m._malloc(8192);let go=-1,po=-1;
  function state(){assert(m._mgbawasm_state_save(sp));const b=Buffer.from(m.HEAPU8.buffer,sp,n);if(go<0)go=b.indexOf(Buffer.from('544c4150494e4d4f','hex'));if(po<0)po=b.indexOf(Buffer.from('53455250494e4d4f','hex'));assert(go>=0&&po>=0);return {screen:b.readUInt32LE(go+8),x:b.readUInt32LE(go+16),speed:b.readUInt32LE(po+8),scene:b.readUInt32LE(po+12),ticks:b.readUInt32LE(po+16),music:b.readUInt32LE(po+20),clock:b.readUInt32LE(po+28),cast:b.readUInt32LE(po+32),track:b.readUInt32LE(po+40),block:b.readUInt32LE(po+44),loops:b.readUInt32LE(po+48),chapter:b.readUInt32LE(po+52),letters:b.readUInt32LE(po+56),revealed:b.readUInt32LE(po+60)};}
- let auditing=false,walkFrames=0,lastAudio=null;const observedWalks=new Set(),blockingSamples=[],soundBridges=[];
+ let auditing=false,walkFrames=0,lastAudio=null;const observedWalks=new Set(),blockingSamples=[],soundBridges=[],stevenPoses=new Set(),stevenSamples=[];
  const grids=require('../build/pallet/opening-collision.json');
  function auditBlocking(){
   state();const b=Buffer.from(m.HEAPU8.buffer,sp,n),cueIndex=b.readUInt32LE(po+104),cue=cues[cueIndex];
@@ -32,6 +32,19 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
   }
   for(let i=0;i<count;i++)for(let j=i+1;j<count;j++)assert(Math.abs(positions[i][0]-positions[j][0])>=12||Math.abs(positions[i][1]-positions[j][1])>=12,'Actors overlap');
   if(cue.movement){walkFrames++;observedWalks.add(cueIndex);if(walkFrames%8===0)blockingSamples.push({cue:cueIndex,ticks:b.readUInt32LE(po+108),positions});}
+  const actors=Object.keys(cue.paths),steven=actors.indexOf('steven');
+  // Drawing can span hardware frames. Only inspect poses once this cue's
+  // complete framebuffer has been published by the main-loop probe.
+  for(let i=0;i<actors.length;i++)if(b.readUInt32LE(po+12)===cueIndex&&['steven','cynthia','karen','alder','diantha','leon','geeta'].includes(actors[i])&&cue.paths[actors[i]].length===1){
+   assert.equal(b.readUInt32LE(po+(44+i)*4)%3,0,`${actors[i]} must return to idle when stationary (cue ${cueIndex})`);
+  }
+  if(steven>=0&&cue.paths.steven.length>1){
+   const pose=b.readUInt32LE(po+(44+steven)*4),tick=b.readUInt32LE(po+108);stevenPoses.add(pose);
+   if(!stevenSamples.length||tick>=stevenSamples.at(-1).tick+4){
+    const file=`steven-walk-${String(stevenSamples.length).padStart(3,'0')}`;shot(file);
+    stevenSamples.push({tick,pose,position:positions[steven],file});
+   }
+  }
  }
  const chunks=[];function frames(count,record=false){while(count--){m._mgbawasm_run_frame();let size;while((size=m._mgbawasm_read_audio(ap,2048))>0)if(record)chunks.push(Buffer.from(m.HEAPU8.slice(ap,ap+size*4)));if(auditing)auditBlocking();}}
  function press(k){m._mgbawasm_set_keys(k);frames(4);m._mgbawasm_set_keys(0);frames(12);}
@@ -69,6 +82,9 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
  auditing=false;
  assert.equal(chapters.size,script.scenes.length);assert(reveals>30&&actions>10);assert.equal(state().screen,0);assert(before.equals(sram()),'Replay must not write SRAM');
  assert.equal(observedWalks.size,cues.filter(c=>c.movement).length,'Every walking/camera cue observed in actual ROM');
+ assert([3,4,5].every(p=>stevenPoses.has(p)),'Steven must show idle and BOTH native northward strides, not slide');
+ assert(stevenSamples.some(s=>s.pose>=6&&s.pose<=8),'Steven must turn west at the route corner');
+ fs.writeFileSync('build/pallet/steven-walk-review.json',JSON.stringify(stevenSamples,null,2));
  assert.equal(soundBridges.length,3,'Three continuous musical scene transitions');
  fs.writeFileSync(`build/pallet/${prefix}opening-blocking-samples.json`,JSON.stringify({walkFrames,cues:[...observedWalks],soundBridges,samples:blockingSamples},null,2));
  press(512);press(8);assert.equal(state().screen,15);const paused=state().ticks;frames(100);assert.equal(state().ticks,paused);press(2);frames(12);assert.equal(state().screen,14,JSON.stringify(state()));press(8);press(1);assert.equal(state().screen,0);

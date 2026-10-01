@@ -1,7 +1,7 @@
 {
   "tool": "built-in image_gen.imagegen",
   "date": "2026-09-28",
-  "status": "runtime sprites; standing four-direction military uniforms and static standards",
+  "status": "rejected runtime fallback; soldier proportions and missing gait remain unresolved",
   "reference": "FireRed native Lance and Cooltrainer visible height 20px; 32px canvas includes transparency",
   "files": [
     {
@@ -19,6 +19,7 @@
   },
   "processing": "tools/war_uniforms.py; explicit verified cell gutters, shared scale across all soldiers, nearest pixel sampling, one 15-color palette per faction, no anisotropic stretch",
   "limitations": [
+    "User rejected distorted overworld figures; visible-height and canvas checks are not visual acceptance. Requires native directional gait repair.",
     "Four standing directions, not a full walk cycle.",
     "Generated marks are local military unit emblems, not official regional flags.",
     "Reference and sprite sources do not establish new biography or historical events."

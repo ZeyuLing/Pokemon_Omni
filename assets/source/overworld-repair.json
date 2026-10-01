@@ -1,0 +1,209 @@
+{
+  "date": "2026-10-01",
+  "scope": "Overworld cardinal idle and two-stride loops; no portrait replacement and no 3D model claim",
+  "frames": "south/north/west/east, each idle/stride A/stride B; one shared origin, no per-frame crop/recenter or resampling",
+  "sprites": [
+    {
+      "actor": "geeta",
+      "path": "assets/imported/overworld-repair/geeta-overworlds.webp",
+      "sha256": "23c5bc5fea527e489d83d5d020b517a8fd99ae0cc35e95a0c698e27ec957f518",
+      "url": "https://pokengine.b-cdn.net/play/images/trainers/overworlds/014rsek5.webp",
+      "page": "https://pokengine.org/trainers/014rsek5/Geeta",
+      "credit": "DiegoWT; overworld edits Kyledove",
+      "replication": 1,
+      "phase": [
+        0,
+        0
+      ],
+      "rows": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "poses": [
+        0,
+        1,
+        3
+      ],
+      "permission": "Free to use with credit per creator entry; source pixels preserved"
+    },
+    {
+      "actor": "diantha",
+      "path": "assets/imported/overworld-repair/diantha.webp",
+      "sha256": "90bc71d709ffe54bbe0975c41bc2e2e8f9075b7daf00161eb24653bf415a92c5",
+      "url": "https://pokengine.b-cdn.net/play/images/trainers/overworlds/018pukjr.webp",
+      "page": "https://pokengine.org/trainers/018pukjr/Diantha",
+      "credit": "Wolfang62 / WolfPP; commissioned for briocheeee",
+      "replication": 1,
+      "phase": [
+        0,
+        0
+      ],
+      "rows": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "poses": [
+        0,
+        1,
+        3
+      ],
+      "permission": "Free to use with credit per creator entry; source pixels preserved"
+    },
+    {
+      "actor": "leon",
+      "path": "assets/imported/overworld-repair/leon.webp",
+      "sha256": "ee9356b77b824e3e7ac0ec6644ea7377a12cd8f1fd749e957deba1621faacae9",
+      "url": "https://pokengine.b-cdn.net/play/images/trainers/overworlds/011rh3ku.webp",
+      "page": "https://pokengine.org/trainers/011rh3ku/Leon",
+      "credit": "DiegoWT; commissioned by Gavin Torem",
+      "replication": 1,
+      "phase": [
+        0,
+        0
+      ],
+      "rows": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "poses": [
+        0,
+        1,
+        3
+      ],
+      "permission": "Free to use with credit per creator entry; source pixels preserved"
+    },
+    {
+      "actor": "karen",
+      "path": "assets/imported/overworld-repair/karen.png",
+      "sha256": "d41c8d79cf7fdd7453ded36202dd642e3da7ef52770b670fefc275983ff01c85",
+      "archive_url": "https://drive.usercontent.google.com/download?id=1dAEg4aCqC1kYqR3NHgVAoWGHB-sMjWS-&export=download&confirm=t",
+      "archive_sha256": "3922673c0c0a2562ead5a73aa889119f7ddb559b1cf7e76b8ffd7ff0cc67d8b8",
+      "entry": "NPC 68.png",
+      "page": "https://eeveeexpo.com/resources/404/",
+      "credit": "Game Freak; Gen 4 OW pack: Neo-Spriteman, Vanilla Sunshine, PurpleZaffre & Maicerochico, AtomicReactor",
+      "replication": 2,
+      "phase": [
+        1,
+        0
+      ],
+      "rows": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "poses": [
+        0,
+        1,
+        3
+      ],
+      "permission": "Credit all pack contributors; original resource is local-only and not redistributed",
+      "identity": "HGSS Karen silver hair/yellow top; visually compared with named Fire Ash Karen, with genuine rear view"
+    },
+    {
+      "actor": "alder",
+      "path": "assets/imported/fire-ash-3.7.1/overworld/Alder.png",
+      "sha256": "13f3753ad26a32a79ff09290eaa8fe7dd3368c4d706b835ca590b593cb883152",
+      "archive_url": "https://drive.usercontent.google.com/download?id=1P_-B4g8CsCYUlBugwdGZDOxXzXKK90wA&export=download&confirm=t",
+      "archive_bytes": 95885753,
+      "entry": "Pokemon Fire Ash 3.7 (Audioless)/Graphics/Characters/SECRET_Alder.png",
+      "page": "https://www.pokecommunity.com/threads/pok%C3%A9mon-fire-ash-version-3-7-1-out.531791/",
+      "credit": "Pokemon Fire Ash team; individual sprite artist unverified",
+      "replication": 2,
+      "phase": [
+        0,
+        0
+      ],
+      "rows": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "poses": [
+        0,
+        1,
+        3
+      ],
+      "identity": "Named source character, red/orange hair and poncho; native grid and genuine rear view checked"
+    }
+  ],
+  "pending": [
+    "hala",
+    "matori",
+    "field-army uniforms"
+  ],
+  "rejected": {
+    "Fire Ash SECRET_Karen and SECRET_Diantha": "Fourth row repeats front-facing art; cannot stand in for north view",
+    "Fire Ash SECRET_Hala": "Not an exact replicated pixel grid",
+    "generated summit and soldiers": "Large illustrations reduced to tiny standing poses; not accepted as complete directional animation"
+  },
+  "native_game_sources": [
+    {
+      "actor": "steven",
+      "url": "https://raw.githubusercontent.com/pret/pokeemerald/5eff78649e7170a877b961ef0b3da13b81a16038/graphics/object_events/pics/people/steven.png",
+      "sha256": "1985641fddd18d7ac996228eb9160ca67f6806cfd002e15518083607a015b3d8",
+      "poses": [
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          1,
+          5,
+          6
+        ],
+        [
+          2,
+          7,
+          8
+        ],
+        [
+          2,
+          7,
+          8
+        ]
+      ],
+      "mirror_right": true,
+      "credit": "Game Freak / Nintendo / Creatures",
+      "conversion": "Original palette-indexed pixels, fixed shared canvas offset only"
+    },
+    {
+      "actor": "cynthia",
+      "url": "https://raw.githubusercontent.com/pret/pokeplatinum/c248fb3f8cc9934ded800e489567c5c0eeee92eb/res/graphics/field_sprites/npc/cynthia.png",
+      "sha256": "47a8476fed0abdb7a368179453f2020cb7dc836e1dce41d5dada50b0270ff3c5",
+      "poses": [
+        [
+          4,
+          5,
+          7
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          8,
+          9,
+          11
+        ],
+        [
+          12,
+          13,
+          15
+        ]
+      ],
+      "mirror_right": false,
+      "credit": "Game Freak / Nintendo / Creatures",
+      "conversion": "Original palette-indexed pixels, fixed shared canvas offset only"
+    }
+  ]
+}

@@ -110,12 +110,14 @@ def main():
         while len(blob)%4:blob.append(0)
         stages.append('{'+','.join(map(str,[w,h,art,mk,co]))+'}');bg.save(OUT/'stages'/f'{s["id"]}.png')
         grids[s['id']]={'width':w//16,'height':h//16,'cells':grid,'source':s['source'],'crop':s['crop']}
+    sprite_audit=[]
     for name in opening['sprites']:
         if name in opening.get('adapted_sprites',[]):
             from summit_sprites import frames
             art=frames(name,get);offset=len(blob)
             for frame in art:blob+=rgba555(frame)
-            sprites.append('{'+','.join(map(str,[offset,len(art),art[0].width,1]))+'}')
+            sprites.append('{'+','.join(map(str,[offset,len(art),art[0].width,2 if len(art)==12 else 1]))+'}')
+            sprite_audit.append(dict(actor=name,offset=offset,frames=len(art),width=art[0].width,layout='cardinal_gait' if len(art)==12 else 'static_cardinal'))
             continue
         im=Image.open(io.BytesIO(get('graphics/object_events/pics/people/'+name+'.png'))).convert('RGBA')
         # Indexed source transparency is color index zero, not PNG metadata.
@@ -130,11 +132,13 @@ def main():
             blob+=rgba555(canvas)
         sprites.append('{'+','.join(map(str,[offset,count,16,0]))+'}')
     (OUT/'opening_stage.bin').write_bytes(blob)
+    (OUT/'opening-sprite-audit.json').write_text(json.dumps(sprite_audit,indent=2)+'\n',encoding='utf-8')
     (OUT/'opening_stage.s').write_text(f'/* SHA256 {hashlib.sha256(blob).hexdigest()} */\n'+'.section .rodata\n.balign 4\n.global omni_opening_stage_blob\nomni_opening_stage_blob:\n.incbin "build/pallet/opening_stage.bin"\n')
     (OUT/'opening_stage.h').write_text('''#ifndef OMNI_OPENING_STAGE_H
 #define OMNI_OPENING_STAGE_H
 #include <stdint.h>
 typedef struct {uint16_t w,h;uint32_t art,mask,collision;} OmniStage;
+/* cardinal: 0 = FRLG nine-frame layout, 1 = four static views, 2 = four three-pose gaits. */
 typedef struct {uint32_t offset;uint8_t frames,w,cardinal;} OmniStageSprite;
 extern const OmniStage omni_stages[];
 extern const OmniStageSprite omni_stage_sprites[];

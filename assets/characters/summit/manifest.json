@@ -1,5 +1,5 @@
 {
-  "status": "opening_overworld_adaptations",
+  "status": "generated source archived; only rejected Hala/Matori fallbacks remain in runtime",
   "image": "assets/characters/summit/delegates-source.png",
   "sha256": "704d3afb1b481269c8fa7ef60da8aa41a3163ca9b59313085b343f2c453373bd",
   "generator": "imagegen built-in",
@@ -13,11 +13,27 @@
     "geeta",
     "matori"
   ],
-  "limitations": "Generated adaptations, not ripped official art. Karen costume is a mixed Omni meeting adaptation. No completed seated/walk cycles or 3D models.",
+  "limitations": "Hala/Matori generated downscaled standing views remain rejected and pending. Other generated rows are unused. Seven source gaits integrated; final visual acceptance pending. No completed seated/battle/growth cycles or 3D models.",
   "native": {
     "lance": "FireRed original same frames as battlefield",
     "steven": "Emerald pinned via war_sources.py",
     "cynthia": "Platinum pinned via war_sources.py",
     "silph-president-current": "FireRed gentleman temporary visual, no invented personal identity"
+  },
+  "runtime_use": {
+    "generated_rows": [
+      "hala",
+      "matori"
+    ],
+    "native_gaits": [
+      "steven",
+      "cynthia",
+      "karen",
+      "alder",
+      "diantha",
+      "leon",
+      "geeta"
+    ],
+    "source_manifest": "assets/source/overworld-repair.json"
   }
 }

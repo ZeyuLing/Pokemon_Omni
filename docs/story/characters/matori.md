@@ -14,7 +14,7 @@ ID：`matori`；状态：场景提案。
 
 年龄阶段设计：
 
-最终立绘／像素／3D 资产：开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。
+最终立绘／像素／3D 资产：地图仍使用 assets/characters/summit/manifest.json 中不合格的生成缩图与四张站姿，待重做真实四向／行走帧；不能以画册正面修复或画布尺寸视为完成。完整战斗、成长与3D套件未完成。
 
 ## 开场中的演绎
 

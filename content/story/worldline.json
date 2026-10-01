@@ -1346,7 +1346,8 @@
       "docs/36-playable-opening-and-cast.md",
       "docs/40-volcanic-war-direction.md",
       "docs/41-battlefield-deployment.md",
-      "docs/42-ceasefire-summit.md"
+      "docs/42-ceasefire-summit.md",
+      "docs/46-overworld-directional-repair.md"
     ],
     "actors": [
       "alder",
@@ -1527,7 +1528,7 @@
       "outcome": null
     },
     "commander_art": "四名指挥官改用火红、绿宝石、白金原生地图小人，停用生成战装。军旗与普通士兵识别色保留；嘉德丽雅当前采用白金外观，不宣称与动画成年设计一致。",
-    "soldier_art": "四地区原创军服，19–20像素可见身高，四朝向统一等比缩放；保留原生指挥官素材。",
+    "soldier_art": "四地区原创军服当前仍为生成插画缩成的四向站姿，用户指出扭曲后列为不合格待重做；19–20像素高度测试不能证明比例或完整行走合格。保留原生指挥官素材。",
     "terrain_art": {
       "source_layout": "data/layouts/MtChimney/map.bin",
       "method": "Pinned Emerald native metatile assemblies, authored local battlefield; no global geography changes.",
@@ -1590,6 +1591,26 @@
       "date": null,
       "location": null,
       "proposer_region": null
+    },
+    "overworld_art_review": {
+      "date": "2026-10-01",
+      "document": "docs/46-overworld-directional-repair.md",
+      "native_gait_integrated": [
+        "steven",
+        "cynthia",
+        "karen",
+        "alder",
+        "diantha",
+        "leon",
+        "geeta"
+      ],
+      "rom_verified": "大吾原生迈步与转身；七位人物来源像素一致，最终美术待逐张确认",
+      "pending": [
+        "hala",
+        "matori",
+        "field-army uniforms"
+      ],
+      "scope": "地图四向和行走；画册正面修复不能替代；不宣称完整3D模型"
     }
   },
   "first_journey_initialization": {

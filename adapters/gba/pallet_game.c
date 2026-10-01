@@ -65,7 +65,7 @@ static char buffer[512];
 static const char save_signature[] __attribute__((used))="SRAM_V113";
 /* Passive emulator observability. No write/cheat commands are exposed. */
 volatile uint32_t omni_pallet_probe[37];
-volatile uint32_t omni_presentation_probe[44];
+volatile uint32_t omni_presentation_probe[56];
 
 void *memset(void *d,int v,size_t n){uint8_t *p=d;while(n--)*p++=(uint8_t)v;return d;}
 void *memcpy(void *d,const void *s,size_t n){uint8_t *p=d;const uint8_t *q=s;while(n--)*p++=*q++;return d;}
@@ -204,7 +204,19 @@ static void draw_intro(void){
   unsigned frame=face==0?0:face==1?1:2;int walking=a->count>1&&ticks<s->duration;
   const uint16_t *pixels;
   if(!sp->cardinal&&walking&&(ticks/6)%2)frame=(face==0?3:face==1?5:7)+((ticks/12)&1);
-  if(sp->cardinal)frame=face;
+  if(sp->cardinal){
+   frame=face;
+   if(sp->cardinal==2){
+    static const unsigned poses[]={0,1,0,2};unsigned k,distance=0,travel;
+    for(k=1;k<a->count;++k){
+     const OmniWalkPoint *p=omni_intro_paths+a->path+k;int dx=p->x-p[-1].x,dy=p->y-p[-1].y;
+     distance+=(unsigned)(dx<0?-dx:dx)+(unsigned)(dy<0?-dy:dy);
+    }
+    travel=s->duration?distance*ticks/s->duration:distance;
+    frame=face*3+(walking&&travel<distance?poses[(travel/4)%4]:0);
+   }
+  }
+  omni_presentation_probe[44+order[j]]=frame%sp->frames;
   pixels=(const uint16_t*)(omni_opening_stage_blob+sp->offset)+(frame%sp->frames)*sp->w*32;
   for(row=0;row<32;++row)for(col=0;col<sp->w;++col){
    int x=wx+8-sp->w/2+(int)col,y=wy-32+(int)row,dx=x-cx+ox,dy=y-cy;

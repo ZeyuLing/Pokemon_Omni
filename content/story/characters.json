@@ -1772,7 +1772,7 @@
         "reference_media": null,
         "anime_identity": "动画《XY／旅途》成年大吾：银蓝短发、深色正装；运行素材来自绿宝石，不等同于动画成品设计。",
         "era_design": null,
-        "production_art": "开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。"
+        "production_art": "地图采用Emerald 原生九帧，四向各站立／双迈步共12帧，不缩放；来源与限制见 assets/source/overworld-repair.json、docs/46-overworld-directional-repair.md。已接入实际 GBA ROM，最终风格／比例仍待逐张确认。来源游戏／同人像素不等于动画设计核准，不确定年龄；完整战斗、坐姿、成长或3D套件未完成。"
       },
       "biography": {
         "childhood": null,
@@ -1914,7 +1914,7 @@
         "reference_media": null,
         "anime_identity": "动画《钻石＆珍珠／旅途》成年竹兰：金色长发、黑衣；运行素材来自白金。",
         "era_design": null,
-        "production_art": "开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。"
+        "production_art": "地图采用Platinum 原生帧，四向各站立／双迈步共12帧，不缩放；来源与限制见 assets/source/overworld-repair.json、docs/46-overworld-directional-repair.md。已接入实际 GBA ROM，最终风格／比例仍待逐张确认。来源游戏／同人像素不等于动画设计核准，不确定年龄；完整战斗、坐姿、成长或3D套件未完成。"
       },
       "biography": {
         "childhood": null,
@@ -2175,7 +2175,7 @@
         "reference_media": null,
         "anime_identity": "动画《旅途》成年冠军设计：紫发、帽子、红披风；不设年龄。",
         "era_design": null,
-        "production_art": "开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。"
+        "production_art": "地图采用DiegoWT，Gavin Torem 委托，四向各站立／双迈步共12帧，不缩放；来源与限制见 assets/source/overworld-repair.json、docs/46-overworld-directional-repair.md。已接入实际 GBA ROM，最终风格／比例仍待逐张确认。来源游戏／同人像素不等于动画设计核准，不确定年龄；完整战斗、坐姿、成长或3D套件未完成。"
       },
       "biography": {
         "childhood": null,
@@ -6773,7 +6773,7 @@
         "reference_media": null,
         "anime_identity": "动画参考尚未归档；不冒充主动画人物。游戏参考为心金魂银的银蓝长发；此稿黑上衣属 Omni 会议服适配，不是原作服装逐像素复刻。",
         "era_design": null,
-        "production_art": "开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。"
+        "production_art": "地图采用HGSS／Gen 4 OW pack NPC 68，四向各站立／双迈步共12帧，不缩放；来源与限制见 assets/source/overworld-repair.json、docs/46-overworld-directional-repair.md。已接入实际 GBA ROM，最终风格／比例仍待逐张确认。来源游戏／同人像素不等于动画设计核准，不确定年龄；完整战斗、坐姿、成长或3D套件未完成。"
       },
       "biography": {
         "childhood": null,
@@ -6821,7 +6821,7 @@
         "reference_media": null,
         "anime_identity": "动画《太阳＆月亮》成年岛屿之王设计：白发、宽体格、黄色衬衣、蓝短裤。保持长辈阶段，不赋予具体年龄。",
         "era_design": null,
-        "production_art": "开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。"
+        "production_art": "地图仍使用 assets/characters/summit/manifest.json 中不合格的生成缩图与四张站姿，待重做真实四向／行走帧；不能以画册正面修复或画布尺寸视为完成。完整战斗、成长与3D套件未完成。"
       },
       "biography": {
         "childhood": null,
@@ -6869,7 +6869,7 @@
         "reference_media": null,
         "anime_identity": "动画《超级愿望》成年冠军设计：橙红色长发、披衣和项链；不设年龄。",
         "era_design": null,
-        "production_art": "开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。"
+        "production_art": "地图采用Fire Ash 3.7.1 SECRET_Alder，四向各站立／双迈步共12帧，不缩放；来源与限制见 assets/source/overworld-repair.json、docs/46-overworld-directional-repair.md。已接入实际 GBA ROM，最终风格／比例仍待逐张确认。来源游戏／同人像素不等于动画设计核准，不确定年龄；完整战斗、坐姿、成长或3D套件未完成。"
       },
       "biography": {
         "childhood": null,
@@ -6917,7 +6917,7 @@
         "reference_media": null,
         "anime_identity": "动画《XY》成年冠军设计：短棕发、白衣；不设年龄。",
         "era_design": null,
-        "production_art": "开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。"
+        "production_art": "地图采用Wolfang62／WolfPP，briocheeee 委托，四向各站立／双迈步共12帧，不缩放；来源与限制见 assets/source/overworld-repair.json、docs/46-overworld-directional-repair.md。已接入实际 GBA ROM，最终风格／比例仍待逐张确认。来源游戏／同人像素不等于动画设计核准，不确定年龄；完整战斗、坐姿、成长或3D套件未完成。"
       },
       "biography": {
         "childhood": null,
@@ -6965,7 +6965,7 @@
         "reference_media": null,
         "anime_identity": "动画《地平线》成年设计参考：深蓝长发、蓝色挑染、深色套装；参考图尚未归档。",
         "era_design": null,
-        "production_art": "开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。"
+        "production_art": "地图采用DiegoWT，Kyledove 编辑，四向各站立／双迈步共12帧，不缩放；来源与限制见 assets/source/overworld-repair.json、docs/46-overworld-directional-repair.md。已接入实际 GBA ROM，最终风格／比例仍待逐张确认。来源游戏／同人像素不等于动画设计核准，不确定年龄；完整战斗、坐姿、成长或3D套件未完成。"
       },
       "biography": {
         "childhood": null,
@@ -7013,7 +7013,7 @@
         "reference_media": null,
         "anime_identity": "动画《太阳＆月亮／旅途》成年真鸟：紫色齐刘海短发、眼镜、火箭队制服；本次为地图适配稿。",
         "era_design": null,
-        "production_art": "开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。"
+        "production_art": "地图仍使用 assets/characters/summit/manifest.json 中不合格的生成缩图与四张站姿，待重做真实四向／行走帧；不能以画册正面修复或画布尺寸视为完成。完整战斗、成长与3D套件未完成。"
       },
       "biography": {
         "childhood": null,

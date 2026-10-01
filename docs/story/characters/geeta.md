@@ -14,7 +14,7 @@ ID：`geeta`；状态：场景提案。
 
 年龄阶段设计：
 
-最终立绘／像素／3D 资产：开场地图素材见 assets/characters/summit/manifest.json；会议适配稿，不是完整战斗、成长或3D套件。
+最终立绘／像素／3D 资产：地图采用DiegoWT，Kyledove 编辑，四向各站立／双迈步共12帧，不缩放；来源与限制见 assets/source/overworld-repair.json、docs/46-overworld-directional-repair.md。已接入实际 GBA ROM，最终风格／比例仍待逐张确认。来源游戏／同人像素不等于动画设计核准，不确定年龄；完整战斗、坐姿、成长或3D套件未完成。
 
 ## 开场中的演绎
 
