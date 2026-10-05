@@ -9,6 +9,16 @@ unsigned travel_failure_line(void){return failure_line;}
 #include "omni/travel.h"
 int main(void){
  OmniTravel t;OmniTravelProfile p={999,1,1,1,OMNI_LAND,2};
+ /* Expected outcomes independently enumerated; body length/type is not a shortcut. */
+ {static const unsigned ids[]={59,78,111,128,95,131,130,25,7,109,999};
+ static const unsigned land1[]={0,0,0,0,OMNI_TRAVEL_SPACE,OMNI_TRAVEL_TERRAIN,OMNI_TRAVEL_TERRAIN,OMNI_TRAVEL_SMALL,OMNI_TRAVEL_SMALL,OMNI_TRAVEL_SMALL,OMNI_TRAVEL_UNKNOWN};
+ unsigned i;for(i=0;i<sizeof(ids)/sizeof(ids[0]);++i){const OmniTravelProfile *profile=omni_travel_profile(ids[i]);
+ assert(omni_travel_ride(profile,OMNI_LAND,1)==(int)land1[i]);
+ assert(omni_travel_ride(profile,OMNI_LAND|OMNI_INDOOR,2)!=OMNI_TRAVEL_OK);
+ if(i<5){assert(!omni_travel_ride(profile,OMNI_LAND,2));assert(omni_travel_ride(profile,OMNI_WATER,2)==OMNI_TRAVEL_TERRAIN);}
+ if(i==5||i==6){assert(!omni_travel_ride(profile,OMNI_WATER,2));assert(omni_travel_ride(profile,OMNI_WATER,1)==OMNI_TRAVEL_SPACE);}
+ }}
+
  assert(omni_travel_ride(omni_travel_profile(25),OMNI_LAND,1)==OMNI_TRAVEL_SMALL);
  assert(!omni_travel_ride(omni_travel_profile(111),OMNI_LAND,1));
  assert(omni_travel_ride(omni_travel_profile(111),OMNI_INDOOR|OMNI_LAND,1)==OMNI_TRAVEL_TERRAIN);

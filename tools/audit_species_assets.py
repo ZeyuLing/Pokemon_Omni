@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-RUNTIME = {1,4,7,25,16,19,109,13,111}
+RUNTIME = {1,4,7,25,16,19,109,13,111,59,128,131}
 
 
 def main():
@@ -26,7 +26,7 @@ def main():
         base=next((e for e in entries if e['category']=='base'), {})
         variants=base.get('art_reference',{}).get('variants',{})
         rows.append(dict(national=number,name=n['name_zh_hans'],
-            field='integrated_4_directions_2_frames' if number in RUNTIME else 'missing',
+            field='integrated_art_water_gameplay_pending' if number==131 else 'integrated_4_directions_2_frames' if number in RUNTIME else 'missing',
             battle='integrated_base_front_back' if number in RUNTIME else 'not_integrated',
             party_icon='integrated_native_2_frames_first_displayed' if number in RUNTIME else 'not_integrated',
             dex_front='reference_mapped' if variants.get('front_default') else 'missing',
@@ -36,7 +36,7 @@ def main():
             catalog_entries=len(entries)))
     out=ROOT/'docs/assets';out.mkdir(exist_ok=True)
     def write(name, rows):
-        stream=io.StringIO(newline='');w=csv.DictWriter(stream,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
+        stream=io.StringIO(newline='');w=csv.DictWriter(stream,fieldnames=list(rows[0]),lineterminator="\n");w.writeheader();w.writerows(rows)
         (out/name).write_text(stream.getvalue(),'utf8')
     write('species-coverage.csv', rows)
     forms=[]

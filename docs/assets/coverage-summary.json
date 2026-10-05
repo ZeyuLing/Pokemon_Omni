@@ -1,9 +1,9 @@
 {
   "national_species": 1025,
   "catalog_entries": 2419,
-  "runtime_field_species": 9,
-  "runtime_battle_base_species": 9,
-  "runtime_party_icons": 9,
+  "runtime_field_species": 12,
+  "runtime_battle_base_species": 12,
+  "runtime_party_icons": 12,
   "base_dex_front_mapped": 1025,
   "base_dex_back_mapped": 1025,
   "species_with_unverified_source_name_candidates": 1007,

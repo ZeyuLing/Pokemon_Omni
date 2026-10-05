@@ -20,8 +20,8 @@ def fetch(name,file):
     records[path]=dict(path=path,url=url,sha256=digest)
     return data
 OUT=ROOT/'build/pallet'
-SPECIES=[1,4,7,25,16,19,109,13,111]
-NAMES=["bulbasaur","charmander","squirtle","pikachu","pidgey","rattata","koffing","weedle","rhyhorn"]
+SPECIES=[1,4,7,25,16,19,109,13,111,59,128,131]
+NAMES=["bulbasaur","charmander","squirtle","pikachu","pidgey","rattata","koffing","weedle","rhyhorn","arcanine","tauros","lapras"]
 def main():
     OUT.mkdir(parents=True,exist_ok=True)
     blob=bytearray();rows=[];audit=[]
@@ -55,9 +55,9 @@ def main():
         proof.resize((proof.width*4,proof.height*4),Image.Resampling.NEAREST).save(OUT/f'travel-{species}-proof.png')
         audit.append(dict(species=species,frames=count*4,original_cell=[w,h],common_crop=box,credit=credit))
     (OUT/'travel.bin').write_bytes(blob)
-    (OUT/'travel.s').write_text('.section .rodata\n.balign 4\n.global omni_travel_blob\nomni_travel_blob:\n.incbin "build/pallet/travel.bin"\n')
-    (OUT/'travel_art.h').write_text('#include <stdint.h>\ntypedef struct {uint16_t species;uint32_t offset;uint8_t w,h,frames;int8_t origin_x,origin_y;} OmniTravelArt;\nextern const OmniTravelArt omni_travel_art[9];\nextern const unsigned char omni_travel_blob[];\n')
-    (OUT/'travel_art.c').write_text('#include "travel_art.h"\nconst OmniTravelArt omni_travel_art[9]={'+','.join(rows)+'};\n')
+    (OUT/'travel.s').write_text('/* '+hashlib.sha256(blob).hexdigest()+' */\n.section .rodata\n.balign 4\n.global omni_travel_blob\nomni_travel_blob:\n.incbin "build/pallet/travel.bin"\n')
+    (OUT/'travel_art.h').write_text('#include <stdint.h>\ntypedef struct {uint16_t species;uint32_t offset;uint8_t w,h,frames;int8_t origin_x,origin_y;} OmniTravelArt;\nenum { OMNI_TRAVEL_ART_COUNT = '+str(len(SPECIES))+' };\nextern const OmniTravelArt omni_travel_art[OMNI_TRAVEL_ART_COUNT];\nextern const unsigned char omni_travel_blob[];\n')
+    (OUT/'travel_art.c').write_text('#include "travel_art.h"\nconst OmniTravelArt omni_travel_art[OMNI_TRAVEL_ART_COUNT]={'+','.join(rows)+'};\n')
     (ROOT/'assets/source/travel-sprites.json').write_text(json.dumps(dict(repository='https://github.com/rh-hideout/pokeemerald-expansion',commit=REV,scope='Native cardinal walk animation; no resampling; local-only decoded artwork',sprites=audit,files=list(records.values())),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(f'PASS: {len(rows)} source-native travel sheets, {len(blob)} bytes')
 if __name__=='__main__':main()

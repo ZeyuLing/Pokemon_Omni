@@ -28,7 +28,7 @@ def add_party_assets(rom, read, pictures):
                 im.paste(tile_image(tiles[tile*32:(tile+1)*32], 8,8,p,transparent=False), ((i%w)*8,(i//w)*8))
             pictures['party_'+name+str(selected)] = im
     table, indices, palettes = [pointer(rom, at) for at in (0x138,0x13c,0x140)]
-    for species in [1,4,7,25,16,19,109,13,111]:
+    for species in [1,4,7,25,16,19,109,13,111,59,128,131]:
         index = read(f'icon_{species}_palette_index', indices+species, 1)[0]
         assert index < 16
         palette = colors(read(f'icon_{species}_palette', pointer(rom,palettes+index*8),32))

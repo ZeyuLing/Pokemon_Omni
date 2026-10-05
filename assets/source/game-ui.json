@@ -519,6 +519,78 @@
       "decoded_bytes": 1024,
       "encoded_sha256": "610ebba83f6c553b5b543d1e48f798b9d47c710b0a5ba7836878323153d2159c",
       "decoded_sha256": "610ebba83f6c553b5b543d1e48f798b9d47c710b0a5ba7836878323153d2159c"
+    },
+    "icon_59_palette_index": {
+      "offset": "0xc2ef53",
+      "encoding": "raw",
+      "encoded_bytes": 1,
+      "decoded_bytes": 1,
+      "encoded_sha256": "084fed08b978af4d7d196a7446a86b58009e636b611db16211b65a9aadff29c5",
+      "decoded_sha256": "084fed08b978af4d7d196a7446a86b58009e636b611db16211b65a9aadff29c5"
+    },
+    "icon_59_palette": {
+      "offset": "0x1cd175c",
+      "encoding": "raw",
+      "encoded_bytes": 32,
+      "decoded_bytes": 32,
+      "encoded_sha256": "18e5d0533dffd01eb2ef21ff41bc6d8ec7fe685a4fb79177c209e9973c670cc2",
+      "decoded_sha256": "18e5d0533dffd01eb2ef21ff41bc6d8ec7fe685a4fb79177c209e9973c670cc2"
+    },
+    "icon_59_tiles": {
+      "offset": "0x1a97584",
+      "encoding": "raw",
+      "encoded_bytes": 1024,
+      "decoded_bytes": 1024,
+      "encoded_sha256": "55cc1fceb54aceca07fdf0798a3a3bb81069bc1b355cb4a76a3751ec19e3adde",
+      "decoded_sha256": "55cc1fceb54aceca07fdf0798a3a3bb81069bc1b355cb4a76a3751ec19e3adde"
+    },
+    "icon_128_palette_index": {
+      "offset": "0xc2ef98",
+      "encoding": "raw",
+      "encoded_bytes": 1,
+      "decoded_bytes": 1,
+      "encoded_sha256": "dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d986",
+      "decoded_sha256": "dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d986"
+    },
+    "icon_128_palette": {
+      "offset": "0x1cd173c",
+      "encoding": "raw",
+      "encoded_bytes": 32,
+      "decoded_bytes": 32,
+      "encoded_sha256": "bf4efd49980292d28777de594d0192e75b05f7eab60097a64b66529dd9d712bb",
+      "decoded_sha256": "bf4efd49980292d28777de594d0192e75b05f7eab60097a64b66529dd9d712bb"
+    },
+    "icon_128_tiles": {
+      "offset": "0x1aa8984",
+      "encoding": "raw",
+      "encoded_bytes": 1024,
+      "decoded_bytes": 1024,
+      "encoded_sha256": "772be9e818c0491b308dc06eb77b5b33ee50ed7f9a2fe070add430bfbab5dfb5",
+      "decoded_sha256": "772be9e818c0491b308dc06eb77b5b33ee50ed7f9a2fe070add430bfbab5dfb5"
+    },
+    "icon_131_palette_index": {
+      "offset": "0xc2ef9b",
+      "encoding": "raw",
+      "encoded_bytes": 1,
+      "decoded_bytes": 1,
+      "encoded_sha256": "dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d986",
+      "decoded_sha256": "dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d986"
+    },
+    "icon_131_palette": {
+      "offset": "0x1cd173c",
+      "encoding": "raw",
+      "encoded_bytes": 32,
+      "decoded_bytes": 32,
+      "encoded_sha256": "bf4efd49980292d28777de594d0192e75b05f7eab60097a64b66529dd9d712bb",
+      "decoded_sha256": "bf4efd49980292d28777de594d0192e75b05f7eab60097a64b66529dd9d712bb"
+    },
+    "icon_131_tiles": {
+      "offset": "0x1aa9584",
+      "encoding": "raw",
+      "encoded_bytes": 1024,
+      "decoded_bytes": 1024,
+      "encoded_sha256": "e5603feafebd436a64644872fd9896ae97398ad92cb194200a4549db645e090d",
+      "decoded_sha256": "e5603feafebd436a64644872fd9896ae97398ad92cb194200a4549db645e090d"
     }
   },
   "images": {
@@ -755,8 +827,26 @@
       "height": 64,
       "offset": 482688,
       "pixel_sha256": "1cf8d5ce4a5774ce5ff3757a68a0430fdebc31284183357088de80147e93a663"
+    },
+    "party_icon_59": {
+      "width": 32,
+      "height": 64,
+      "offset": 486784,
+      "pixel_sha256": "e3bfcb9d7d1b338ec4a8c9fe72199ec4a47de3b970ccd6976012d76378f66ac8"
+    },
+    "party_icon_128": {
+      "width": 32,
+      "height": 64,
+      "offset": 490880,
+      "pixel_sha256": "48a32d88dd11f3066999e8847817eda92f7c9ae250bf6f1ea5d79bc25fa1b018"
+    },
+    "party_icon_131": {
+      "width": 32,
+      "height": 64,
+      "offset": 494976,
+      "pixel_sha256": "57d692921cac2b39f3e32c72d5e01632452b683c8f72f1bd1270882c4ceac1bb"
     }
   },
-  "blob_bytes": 486784,
-  "blob_sha256": "ba36bb1227190f0241be7f6ebce445bfe284e0228cac82745189c48d2a00e43a"
+  "blob_bytes": 499072,
+  "blob_sha256": "89a6681176a9128bb7ffe256da332f3149b2863035c180a18a5beead779fcb06"
 }

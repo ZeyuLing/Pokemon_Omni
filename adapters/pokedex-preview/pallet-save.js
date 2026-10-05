@@ -14,7 +14,7 @@
    if(!map||bytes[p+8]!==location||x>=map.width||y>=map.height||map.collision[y*map.width+x]||bytes[p+11]>3||chapter>3||starter>(version===1?3:4)||party>(version===1?1:6)||bytes[a+17]>1||v.getUint16(a+18,true)>999||v.getUint16(a+20,true)>999||v.getUint32(a+24,true)>999999||v.getUint16(a+28,true)>v.getUint16(a+30,true)||!!starter!==(chapter>=2)||!!starter!==!!party||(!starter&&location>=6&&location<=9)||(version===1&&location>5))continue;
    const event=version>=2?v.getUint16(a+22,true):0;
    if(event>(version>=4?2047:15)||((event&2)&&!(event&1))||((event&8)&&!(event&4)))continue;
-   const roster={1:[45,35,40],4:[39,35,40],7:[44,35,30],25:[35,30,40],16:[40,35,0],19:[30,35,30],109:[40,35,0],13:[40,35,40],111:[80,35,30]};
+   const roster={1:[45,35,40],4:[39,35,40],7:[44,35,30],25:[35,30,40],16:[40,35,0],19:[30,35,30],109:[40,35,0],13:[40,35,40],111:[80,35,30],59:[90,35,40],128:[75,35,30],131:[130,35,40]};
    let partyValid=true;
    const checkMon=(m,e)=>{
     const species=v.getUint16(m,true),level=bytes[m+2],hp=v.getUint16(m+4,true),spec=roster[species];
@@ -24,7 +24,7 @@
     if(ev>510||bytes[e+26]>24||bytes[e+27]>1||(bytes[e+27]&&species!==16&&species!==19)||bytes[e+28]>1||bytes[e+29]>1||(bytes[e+28]&&species!==25)||(bytes[e+29]&&!bytes[e+28]))return false;
     const maxHp=Math.floor((2*(bytes[e+28]?45:spec[0])+bytes[e+8]+Math.floor(v.getUint16(e+14,true)/4))*level/100)+level+10;
     if(hp>maxHp)return false;
-    const allowed={1:[33,45],4:[10,45],7:[33,39],25:[84,45],16:[33,0],19:[33,39],109:[33,0],13:[40,81],111:[33,39]};
+    const allowed={1:[33,45],4:[10,45],7:[33,39],25:[84,45],16:[33,0],19:[33,39],109:[33,0],13:[40,81],111:[33,39],59:[33,45],128:[33,39],131:[33,45]};
     const pp={0:0,33:35,10:35,40:35,45:40,81:40,39:30,84:30,729:15};
     for(let j=0;j<4;j++){const move=v.getUint16(e+j*2,true);if(pp[move]===undefined||bytes[m+6+j]>pp[move]||(move&&!allowed[species].includes(move)&&!(move===729&&bytes[e+28])))return false;}
     return true;

@@ -1,7 +1,7 @@
 #include "omni/adventure.h"
 #include "omni/memory.h"
 
-const OmniStarter omni_starters[9]={
+const OmniStarter omni_starters[OMNI_PARTNER_SPECIES_COUNT]={
  {1,{45,49,49,65,65,45},{33,45},{35,40},"妙蛙种子","茂盛"},
  {4,{39,52,43,60,50,65},{10,45},{35,40},"小火龙","猛火"},
  {7,{44,48,65,50,64,43},{33,39},{35,30},"杰尼龟","激流"},
@@ -10,9 +10,12 @@ const OmniStarter omni_starters[9]={
  {19,{30,56,35,25,35,72},{33,39},{35,30},"小拉达","逃跑"},
  {109,{40,65,95,60,45,35},{33,0},{35,0},"瓦斯弹","飘浮"},
  {13,{40,35,30,20,20,50},{40,81},{35,40},"独角虫","鳞粉"},
- {111,{80,85,95,30,30,25},{33,39},{35,30},"独角犀牛","坚硬脑袋"}
+ {111,{80,85,95,30,30,25},{33,39},{35,30},"独角犀牛","坚硬脑袋"},
+ {59,{90,110,80,100,80,95},{33,45},{35,40},"风速狗","威吓"},
+ {128,{75,100,95,40,70,110},{33,39},{35,30},"肯泰罗","威吓"},
+ {131,{130,85,80,85,95,60},{33,45},{35,40},"拉普拉斯","储水"}
 };
-const OmniStarter *omni_partner_species(uint16_t species){unsigned i;for(i=0;i<9;++i)if(omni_starters[i].species==species)return &omni_starters[i];return 0;}
+const OmniStarter *omni_partner_species(uint16_t species){unsigned i;for(i=0;i<OMNI_PARTNER_SPECIES_COUNT;++i)if(omni_starters[i].species==species)return &omni_starters[i];return 0;}
 static const uint16_t partner_base[6]={45,80,50,75,60,120};
 static const uint8_t nature_stats[5]={1,2,5,3,4};
 const char *omni_nature_name(unsigned n){static const char *names[]={"勤奋","怕寂寞","勇敢","固执","顽皮","大胆","坦率","悠闲","淘气","乐天","胆小","急躁","认真","爽朗","天真","内敛","慢吞吞","冷静","害羞","马虎","温和","温顺","自大","慎重","浮躁"};return n<25?names[n]:"未知";}

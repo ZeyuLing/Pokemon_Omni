@@ -51,3 +51,5 @@
 核心 Wasm 测试覆盖独立索引、同个体冲突、同种不同个体、交换、入库、存档；实际 ROM 测试 `tests/travel-rom.cjs` 覆盖并行跟随／骑乘、速度、地形及队伍／背包操作。`tests/initialization-rom.cjs` 验证正常冒险及存档回归。实际帧截图在 `build/pallet/travel-*.rgba`，不提交构建产物。
 
 本轮最终 ROM：16ad6722fd8369fd9e5c6f679901bcb99a56f288685feb3aa2888f3510f7c968。已执行并通过共享核心 Wasm（含 1,255 轮确定性战斗）、	ravel-rom、party-menu-rom、initialization-rom、presentation-rom、ag-layout、	ravel-browser、pallet-browser 与 6 项源界面测试。后两次小修分别针对 START 窗口底边和下骑后改随行，已重建并运行对应 ROM 回归；开场音频完整回归通过的构建为 7215e0a240fd90a212d68222694414c98ee84619e4e8fd8fbe93e1fdf01bf260。本地批量输出 13,881 张 PNG；未逐张宣告视觉验收。
+
+多物种骑乘后续：风速狗、肯泰罗、拉普拉斯的行走资源、战斗正背面和队伍图标已接入，共 12 种。拉普拉斯当前仅验证陆地骑乘拒绝，水面玩法未开放，不能算作已完成水上跟随／骑乘。最新明细由覆盖表记录，见 [多物种骑乘验收](47-companion-and-riding.md#2026-10-05多物种骑乘验收)。

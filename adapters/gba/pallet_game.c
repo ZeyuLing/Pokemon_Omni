@@ -83,7 +83,7 @@ static const char save_signature[] __attribute__((used))="SRAM_V113";
 /* Passive emulator observability. No write/cheat commands are exposed. */
 volatile uint32_t omni_pallet_probe[37];
 volatile uint32_t omni_presentation_probe[56];
-volatile uint32_t omni_travel_probe[16];
+volatile uint32_t omni_travel_probe[20];
 
 void *memset(void *d,int v,size_t n){uint8_t *p=d;while(n--)*p++=(uint8_t)v;return d;}
 void *memcpy(void *d,const void *s,size_t n){uint8_t *p=d;const uint8_t *q=s;while(n--)*p++=*q++;return d;}
@@ -277,11 +277,11 @@ static unsigned travel_terrain(int x,int y){unsigned t=(game.location==1||game.l
 static void travel_sync(void){unsigned species=travel_species();int dx=px*16-travel.x,dy=py*16-travel.y;if(travel.location!=game.location||travel.species!=species||dx>32||dx<-32||dy>32||dy<-32)omni_travel_reset(&travel,game.location,species,px*16,py*16);if(riding&&omni_travel_ride(omni_travel_profile(mount_species()),travel_terrain(px,py),1))riding=0;}
 static OMNI_WORLD_FAST void travel_picture(unsigned species,int wx,int wy,unsigned face,unsigned walking){
  const PalletMap *m=map();const OmniTravelArt *a=0;const uint16_t *pixels;unsigned i,row,col,pose;
- for(i=0;i<9;++i)if(omni_travel_art[i].species==species){a=&omni_travel_art[i];break;}
+ for(i=0;i<OMNI_TRAVEL_ART_COUNT;++i)if(omni_travel_art[i].species==species){a=&omni_travel_art[i];break;}
  if(!a)return;
  /* Advance feet with displacement, including faster mounted movement. */
  pose=face*a->frames+(walking?((16-(anim_x<0?-anim_x:anim_x)-(anim_y<0?-anim_y:anim_y))/8)%a->frames:0);pixels=(const uint16_t*)(omni_travel_blob+a->offset)+pose*a->w*a->h;
- omni_travel_probe[15]=pose;
+ omni_travel_probe[15]=pose;if(riding&&species==mount_species())omni_travel_probe[18]=pose;else omni_travel_probe[19]=pose;
  for(row=0;row<a->h;++row)for(col=0;col<a->w;++col){int x=wx+8-a->origin_x+(int)col,y=wy+16-a->origin_y+(int)row,dx=x-camera_x+origin_x,dy=y-camera_y+origin_y;uint16_t c=pixels[row*a->w+col];
  if(dx<0||dx>=240||dy<0||dy>=160||(c&0x8000))continue;
  if(x>=0&&x<m->w*16&&y>=0&&y<m->h*16&&(pallet_world_blob[m->mask+(y*m->w*16+x)/8]&(1u<<((y*m->w*16+x)%8))))continue;
@@ -366,7 +366,7 @@ static unsigned bag_quantity(void){return bag_pocket==BAG_ITEMS_POCKET?game.poti
 static void menu_arrow(int x,int y,uint16_t color){int row;for(row=0;row<9;++row)box(x,y+row,row<5?row+1:9-row,1,color);}
 static int right_number(int right,int y,unsigned n,uint16_t color){unsigned digits=1,value=n;int x;while(value>=10){value/=10;++digits;}x=right-(int)(digits*omni_gba_small_text_width("0"));number(x,y,n,color);return x;}
 static void party_icon(unsigned species,int x,int y){unsigned offset;switch(species){
-case 1:offset=UI_PARTY_ICON_1;break;case 4:offset=UI_PARTY_ICON_4;break;case 7:offset=UI_PARTY_ICON_7;break;case 25:offset=UI_PARTY_ICON_25;break;case 16:offset=UI_PARTY_ICON_16;break;case 19:offset=UI_PARTY_ICON_19;break;case 109:offset=UI_PARTY_ICON_109;break;case 13:offset=UI_PARTY_ICON_13;break;case 111:offset=UI_PARTY_ICON_111;break;default:return;}ui_crop(offset,32,0,0,32,32,x,y);}
+case 1:offset=UI_PARTY_ICON_1;break;case 4:offset=UI_PARTY_ICON_4;break;case 7:offset=UI_PARTY_ICON_7;break;case 25:offset=UI_PARTY_ICON_25;break;case 16:offset=UI_PARTY_ICON_16;break;case 19:offset=UI_PARTY_ICON_19;break;case 109:offset=UI_PARTY_ICON_109;break;case 13:offset=UI_PARTY_ICON_13;break;case 111:offset=UI_PARTY_ICON_111;break;case 59:offset=UI_PARTY_ICON_59;break;case 128:offset=UI_PARTY_ICON_128;break;case 131:offset=UI_PARTY_ICON_131;break;default:return;}ui_crop(offset,32,0,0,32,32,x,y);}
 static void draw_team(void){unsigned i;static const char *actions[]={"查看能力","交换","跟随/收回","骑乘/下骑","图鉴","取消"};
  if(team_summary){draw_summary();return;}UI_DRAW(PARTY_BACKGROUND,0,0);
  for(i=0;i<6;++i){int x=i?96:8,y=i?8+24*((int)i-1):24;const OmniPartner *mon=&game.party[i];unsigned max,width;
@@ -406,7 +406,7 @@ static void draw_bag(void){
 static void draw_trainer(void){box(0,0,240,160,PAPER);heading("训练家卡片");cast_portrait(0,148,24);text(12,34,"小智 · 少年",INK,238);text(12,55,map()->name,BLUE,237);text(12,79,"对战胜场",MUTED,119);num(116,79,game.battles_won,INK);text(12,101,"图鉴已捕获",MUTED,119);num(116,101,omni_dex_count(&omni_pokedex_catalog,&dex_state,OMNI_DEX_REGISTERED,0),INK);paragraph(omni_adventure_objective(&game),12,119,2);text(12,144,"B返回",MUTED,237);}
 static void draw_starter(void){const OmniStarter *s=&omni_starters[choice-1];box(0,0,240,160,PAPER);heading("选择你的第一位伙伴");omni_gba_picture(dex_index(s->species),12,39);text(95,39,s->name,INK,237);text(95,62,choice==1?"草 / 毒":choice==2?"火":choice==4?"电":"水",BLUE,237);text(95,84,s->ability,MUTED,237);text(12,116,"要和这位伙伴一起出发吗？",INK,237);text(12,140,"A确认选择  B再想想",BLUE,237);}
 static void hp_bar(int x,int y,const OmniPartner *m){unsigned i,max=omni_partner_stat(m,0),width=max?m->hp*48/max:0;ui_crop(UI_HP_ELEMENTS,96,8,0,16,8,x,y);for(i=0;i<6;++i){unsigned n=width>i*8?width-i*8:0;if(n>8)n=8;ui_crop(UI_HP_ELEMENTS,96,24+(int)n*8,0,8,8,x+16+(int)i*8,y);}if(m->hp*2<=max){box(x+16,y+3,(int)width,1,m->hp*5<=max?RGB(24,5,3):RGB(24,17,2));box(x+16,y+4,(int)width,1,m->hp*5<=max?RGB(31,13,9):RGB(31,26,6));}}
-static void battle_sprite(const OmniPartner *mon,int back,int x,int y){unsigned species=mon->species;unsigned index=0,row,col;while(index<9&&omni_starters[index].species!=species)++index;if(index==9)return;const uint16_t *p=(const uint16_t*)(pallet_world_blob+(mon->form?pallet_partner_sprites[back]:pallet_battle_sprites[index*2+back]));for(row=0;row<64;++row)for(col=0;col<64;++col)if(!(p[row*64+col]&0x8000)&&y+(int)row<112)box(x+(int)col,y+(int)row,1,1,p[row*64+col]);}
+static void battle_sprite(const OmniPartner *mon,int back,int x,int y){unsigned species=mon->species;unsigned index=0,row,col;while(index<OMNI_PARTNER_SPECIES_COUNT&&omni_starters[index].species!=species)++index;if(index==OMNI_PARTNER_SPECIES_COUNT)return;const uint16_t *p=(const uint16_t*)(pallet_world_blob+(mon->form?pallet_partner_sprites[back]:pallet_battle_sprites[index*2+back]));for(row=0;row<64;++row)for(col=0;col<64;++col)if(!(p[row*64+col]&0x8000)&&y+(int)row<112)box(x+(int)col,y+(int)row,1,1,p[row*64+col]);}
 static void draw_battle(void){
  const OmniStarter *p=omni_partner_species(battle.mons[0].species),*e=omni_partner_species(battle.mons[1].species);unsigned i,level=battle.mons[0].level,base=level*level*level,next=(level+1)*(level+1)*(level+1),exp=battle.mons[0].experience;
  box(0,0,240,160,RGB(0,0,0));
@@ -504,14 +504,14 @@ static void travel_toggle_ride(void){
  if(!slot){message("请在队伍中选择伙伴，再按START骑乘。",AFTER_WORLD);return;}
  if(slot==game.companion){message("同一只伙伴不能同时骑乘和跟随。\n请先收回它，或选择另一只。",AFTER_WORLD);return;}
  reason=omni_travel_ride(omni_travel_profile(game.party[slot-1].species),travel_terrain(px,py),1);
- if(reason){message(reason==OMNI_TRAVEL_SMALL?"这只伙伴体型太小，不能承载。":reason==OMNI_TRAVEL_TERRAIN?"这里不适合骑乘，请到室外。":reason==OMNI_TRAVEL_UNKNOWN?"这只伙伴的骑乘能力尚未核定。":"这只伙伴没有合适的承载部位。",AFTER_WORLD);return;}
+ if(reason){const OmniTravelProfile *profile=omni_travel_profile(game.party[slot-1].species);const char *why=reason==OMNI_TRAVEL_SMALL?"这只伙伴体型太小，不能承载。":reason==OMNI_TRAVEL_SPACE?"这里没有足够宽敞的骑乘空间。":reason==OMNI_TRAVEL_CONTACT?"这只伙伴的乘坐部位不能安全接触。":reason==OMNI_TRAVEL_UNKNOWN?"这只伙伴的骑乘能力尚未核定。":reason==OMNI_TRAVEL_SUPPORT?"这只伙伴没有合适的承载部位。":(travel_terrain(px,py)&OMNI_INDOOR)?"室内不能骑乘，请先到室外。":profile&&!(profile->surfaces&OMNI_LAND)?"这只伙伴需要水面，不能在陆地骑乘。":"当前地形不适合这只坐骑。";message(why,AFTER_WORLD);return;}
  if(omni_adventure_mount(&game,(uint8_t)slot)){message("伙伴需要先恢复体力。",AFTER_WORLD);return;}
  riding=1;screen=WORLD;dirty=1;save_game();
 }
 static void travel_trial_start(void){
- unsigned i,j;static const unsigned choices[]={3,0,8,1,2,4};omni_adventure_new(&game);travel_trial=1;game.location=OMNI_PALLET;game.starter=4;game.chapter=2;game.party_count=6;game.potions=3;game.events=OMNI_EVENT_GARY_DONE;px=10;py=10;direction=0;moving=0;anim_x=anim_y=0;gary_present=0;story_seq=255;
+ unsigned i,j;static const unsigned choices[]={3,0,8,9,10,11};omni_adventure_new(&game);travel_trial=1;game.location=OMNI_PALLET;game.starter=4;game.chapter=2;game.party_count=6;game.potions=3;game.events=OMNI_EVENT_GARY_DONE;px=10;py=10;direction=0;moving=0;anim_x=anim_y=0;gary_present=0;story_seq=255;
  for(i=0;i<6;++i){OmniPartner *m=&game.party[i];const OmniStarter *a=&omni_starters[choices[i]];m->species=a->species;m->level=5;m->experience=125;for(j=0;j<4;++j){m->moves[j]=a->moves[j];m->pp[j]=a->pp[j];}m->hp=omni_partner_stat(m,0);}
- riding=0;game.mount=0;game.companion=0;omni_travel_reset(&travel,0,0,0,0);travel_toggle_follow(1);message("随行与骑乘试用，不写入存档。\n皮卡丘已放出。L收回。\nSTART队伍中选独角犀牛，\n按START骑乘，皮卡丘继续跟随。",AFTER_WORLD);
+ riding=0;game.mount=0;game.companion=0;omni_travel_reset(&travel,0,0,0,0);travel_toggle_follow(1);message("随行与骑乘试用，不写入存档。\n皮卡丘已放出。L收回。\nSTART队伍中选独角犀牛，\n按START骑乘，皮卡丘继续跟随。\n风速狗、肯泰罗也可以试骑。\n拉普拉斯需要水面，陆地拒绝。",AFTER_WORLD);
 }
 static void battle_log(unsigned index){const OmniPracticeAction *a=&turn.actions[index];buffer[0]=0;if(capture_failed){append("没有抓住！\n");capture_failed=0;}append(a->actor?(battle.kind==1?"野生的":battle.kind==2?"火箭队的":battle.kind==OMNI_BATTLE_OLD_MAN?"老人的":"小茂的"):"你的");append(omni_partner_species(battle.mons[a->actor].species)->name);append("\n使用了");append(omni_practice_move_name(a->move));append("！");if(a->miss)append("\n因麻痹而无法行动。");else if(a->status==3)append("\n对手麻痹了！");else if(a->critical)append("\n击中了要害！");else if(a->status==1)append(a->move==45?"\n对手的攻击降低了。":"\n对手的防御降低了。");else if(a->status==4)append("\n对手的速度降低了。");else if(a->status==2)append("\n能力已经不能再降低了。");dialogue=buffer;screen=BATTLE_LOG;dirty=1;}
 static void finish_battle(void){unsigned i,first=!(game.events&OMNI_EVENT_ROCKET),kind=battle.kind,outcome=battle.outcome,level=battle.mons[0].level;
@@ -635,7 +635,7 @@ int main(void){
   if(dirty&&screen!=DEX)draw();
   if(screen!=INTRO&&screen!=INTRO_SKIP){REG16(0x04000050)=fade_ticks?0x00c4:0;REG16(0x04000054)=fade_ticks>4?(8-fade_ticks)*4:fade_ticks*4;}
   probe();
-  omni_travel_probe[0]=0x56415254;omni_travel_probe[1]=0x494e4d4f;omni_travel_probe[2]=game.companion;omni_travel_probe[3]=travel.species;omni_travel_probe[4]=travel.visible;omni_travel_probe[5]=riding;omni_travel_probe[6]=travel.x;omni_travel_probe[7]=travel.y;omni_travel_probe[8]=travel.face;omni_travel_probe[9]=travel.walking;omni_travel_probe[10]=travel_trial;omni_travel_probe[11]=moving;omni_travel_probe[12]=anim_x;omni_travel_probe[13]=anim_y;omni_travel_probe[14]=travel.location;
+  omni_travel_probe[0]=0x56415254;omni_travel_probe[1]=0x494e4d4f;omni_travel_probe[2]=game.companion;omni_travel_probe[3]=travel.species;omni_travel_probe[4]=travel.visible;omni_travel_probe[5]=riding;omni_travel_probe[6]=travel.x;omni_travel_probe[7]=travel.y;omni_travel_probe[8]=travel.face;omni_travel_probe[9]=travel.walking;omni_travel_probe[10]=travel_trial;omni_travel_probe[11]=moving;omni_travel_probe[12]=anim_x;omni_travel_probe[13]=anim_y;omni_travel_probe[14]=travel.location;omni_travel_probe[16]=game.mount;omni_travel_probe[17]=mount_species();
   omni_presentation_probe[0]=0x50524553u;omni_presentation_probe[1]=0x4f4d4e49u;
   omni_presentation_probe[2]=presentation.speed;omni_presentation_probe[3]=presentation.scene;
   omni_presentation_probe[4]=presentation.scene_ticks;omni_presentation_probe[5]=omni_gba_music_samples();

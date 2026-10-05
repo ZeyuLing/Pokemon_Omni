@@ -29,7 +29,8 @@ typedef struct {
 /* Real elapsed time, not accelerated simulation steps. Saturates at 999:59:59. */
 void omni_adventure_elapsed(OmniAdventure *,uint32_t seconds);
 typedef struct { uint16_t species,base[6],moves[4];uint8_t pp[4];const char *name,*ability; } OmniStarter;
-extern const OmniStarter omni_starters[9];
+enum { OMNI_PARTNER_SPECIES_COUNT = 12 };
+extern const OmniStarter omni_starters[OMNI_PARTNER_SPECIES_COUNT];
 int omni_adventure_companion(OmniAdventure *,uint8_t slot_plus_one);
 int omni_adventure_mount(OmniAdventure *,uint8_t slot_plus_one);
 const char *omni_partner_name(const OmniPartner *);
