@@ -126,6 +126,17 @@ def main():
                 for x in range(64):
                     p=im.getpixel((x,y))
                     blob+=struct.pack('<H',rgb555(palette[p*3:p*3+3]) if p else 0x8000)
+    # Ninth playable species: use the user's verified Rocket front/back pair.
+    from extract_rocket_rom import pointer,lz10,USER_SHA,sprite_png
+    source_rom=(ROOT/'assets/imported/rocket-user/rocket-user-modifier.gba').read_bytes()
+    assert hashlib.sha256(source_rom).hexdigest()==USER_SHA
+    palette=lz10(source_rom,pointer(source_rom,pointer(source_rom,0x130)+111*8))[0]
+    for field in (0x128,0x12c):
+        tiles=lz10(source_rom,pointer(source_rom,pointer(source_rom,field)+111*8))[0]
+        image=Image.open(io.BytesIO(sprite_png(tiles,palette))).convert('RGBA')
+        battle_offsets.append(len(blob))
+        for pixel in image.get_flattened_data():
+            blob+=struct.pack('<H',rgb555(pixel) if pixel[3]>=128 else 0x8000)
     from initialization_art import partner_frames
     partner_offsets=[]
     for image in partner_frames():
@@ -146,14 +157,14 @@ extern const PalletActor pallet_actors[];
 extern const PalletSign pallet_signs[];
 extern const PalletWarp pallet_warps[];
 extern const PalletSprite pallet_sprites[14];
-extern const uint32_t pallet_battle_sprites[16];
+extern const uint32_t pallet_battle_sprites[18];
 extern const uint32_t pallet_partner_sprites[4];
 extern const unsigned char pallet_world_blob[];
 #endif
 ''')
     code='#include "world_data.h"\n'
     for name,rows in [('PalletMap pallet_maps',map_rows),('PalletActor pallet_actors',actor_rows),('PalletSign pallet_signs',sign_rows),('PalletWarp pallet_warps',warp_rows),('PalletSprite pallet_sprites',sprite_rows)]:code+='const '+name+'[]={\n'+',\n'.join(rows)+'\n};\n'
-    code+='const uint32_t pallet_battle_sprites[16]={'+','.join(map(str,battle_offsets))+'};\n'
+    code+='const uint32_t pallet_battle_sprites[18]={'+','.join(map(str,battle_offsets))+'};\n'
     code+='const uint32_t pallet_partner_sprites[4]={'+','.join(map(str,partner_offsets))+'};\n'
     (OUT/'world_data.c').write_text(code,encoding='utf-8')
     (OUT/'scene-audit.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2),encoding='utf-8')

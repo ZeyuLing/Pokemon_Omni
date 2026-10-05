@@ -62,8 +62,8 @@ const scenes=require('../build/pallet/scene-audit.json');for(const m of scenes)m
  // Gift dialogue cannot duplicate the four partners or the initial 100 balls.
  press(1);dialogue();assert.equal(state().party,4);assert.equal(state().balls,100);
  press(8);press(128);press(128);press(1);for(let i=0;i<4;i++)press(16);shot('init-toolkit');assert.equal(state().screen,4);
- press(128);press(1);assert.equal(state().screen,19);shot('init-mint');press(128);press(1);dialogue();assert.equal(state().screen,19);assert.equal(state().nature,11);press(2);
- press(128);press(128);press(128);press(1);assert.equal(state().screen,19);shot('init-ev');press(128);press(128);press(128);press(4);assert.equal(state().spaEV,0);press(1);assert.equal(state().spaEV,252);press(2);press(2);press(2);
+ press(128);press(1);press(1);assert.equal(state().screen,19);shot('init-mint');press(128);press(1);dialogue();assert.equal(state().screen,19);assert.equal(state().nature,11);press(2);
+ press(128);press(128);press(128);press(1);press(1);assert.equal(state().screen,19);shot('init-ev');press(128);press(128);press(128);press(4);assert.equal(state().spaEV,0);press(1);assert.equal(state().spaEV,252);press(2);press(2);press(2);
  walk(6,12);assert.equal(state().map,1);walk(12,0);press(64);assert.equal(state().map,6);walk(12,0);press(64);assert.equal(state().map,7);shot('init-viridian');
  talkAt(20,10,1);dialogue();assert.equal(state().screen,18);const oldChoice=snapshot();shot('init-old-choice');
  press(1);dialogue();assert.equal(state().screen,10);assert.equal(state().enemyLevel,3);shot('init-capture-lesson');
@@ -80,7 +80,7 @@ const scenes=require('../build/pallet/scene-audit.json');for(const m of scenes)m
  press(8);press(128);press(1);press(16);press(256);assert.equal(state().screen,1);
  press(8);for(let i=0;i<4;i++)press(128);press(1);dialogue();press(2);
  m._mgbawasm_sram_save();const saved=Buffer.from(m.HEAPU8.slice(m._mgbawasm_sram_ptr(),m._mgbawasm_sram_ptr()+32768));fs.writeFileSync('build/pallet/initialization.sav',saved);assert(require('../adapters/pokedex-preview/pallet-save.js')(saved,scenes));
- const active=saved.readUInt32LE(4)>saved.readUInt32LE(16388)?0:16384;assert.equal(saved[active+20+16+133],2,'Selected companion persists in version 5 save');
+ const active=saved.readUInt32LE(4)>saved.readUInt32LE(16388)?0:16384;assert.equal(saved[active+20+16+133],2,'Selected companion persists in version 6 save');
  const legacy=require('./legacy-pallet-save.cjs')(saved);assert(require('../adapters/pokedex-preview/pallet-save.js')(legacy,scenes));fs.writeFileSync('build/pallet/test-game.sav',legacy);
  m._mgbawasm_reset();probeOffset=-1;frames(90);press(2);press(1);frames(20);assert.equal(state().party,5);assert.equal(state().form,1);assert.equal(state().nature,11);assert(state().events&64);shot('init-continued');
  state();const continued=Buffer.from(m.HEAPU8.buffer,sp,size),travelProbe=continued.indexOf(Buffer.from('545241564f4d4e49','hex'));assert(travelProbe>=0);assert.equal(continued.readUInt32LE(travelProbe+8),2,'Continue restores the selected companion');

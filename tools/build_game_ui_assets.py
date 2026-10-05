@@ -122,6 +122,8 @@ def main():
     pictures['window'] = tile_image(read('window_tiles', 11963192, 288, 'graphics/text_window/1.png'), 24, 24,
                                     colors(read('window_palette', 11968952, 32)), transparent=False)
 
+    from party_ui_assets import add_party_assets
+    add_party_assets(rom, read, pictures)
     blob, declarations, images = bytearray(), [], {}
     for name, im in pictures.items():
         im.save(OUT/('ui-'+name+'.png'))

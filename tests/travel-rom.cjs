@@ -15,14 +15,16 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
  function step(key){const from=state();let ticks=0;m._mgbawasm_set_keys(key);while(state().x===from.x&&state().y===from.y&&ticks++<120)frames(1);m._mgbawasm_set_keys(0);assert(ticks<120,'Blocked step '+JSON.stringify(from));while(state().moving&&ticks++<120)frames(1);frames(4);assert(ticks<120);return ticks;}
  function route(tx,ty){const s=state(),g=require('../build/pallet/scene-audit.json').find(g=>g.id===s.map),queue=[[s.x,s.y,[]]],seen=new Set();while(queue.length){const [x,y,p]=queue.shift(),id=y*g.width+x;if(seen.has(id))continue;seen.add(id);if(x===tx&&y===ty){for(const k of p)step(k);return;}for(const [dx,dy,k] of [[0,1,128],[0,-1,64],[-1,0,32],[1,0,16]]){const nx=x+dx,ny=y+dy;if(nx>=0&&ny>=0&&nx<g.width&&ny<g.height&&(!g.collision[ny*g.width+nx]||(nx===tx&&ny===ty&&(g.warps||[]).some(w=>w.x===nx&&w.y===ny)))&&!g.actors.some(a=>a.x===nx&&a.y===ny)&&(!(g.warps||[]).some(w=>w.x===nx&&w.y===ny)||(nx===tx&&ny===ty)))queue.push([nx,ny,[...p,k]]);}}throw Error('No route');}
  frames(90);const before=sram();press(12);dismiss();assert.equal(state().species,25);assert.equal(state().selected,1);assert(state().visible);shot('travel-follow-pikachu');
- press(256);assert.equal(state().mounted,0);dismiss(); // Small partner rejected.
+ press(8);press(128);press(1);press(128);press(8);assert.equal(state().mounted,0);dismiss(); // Bulbasaur: a different, undersized individual.
  record=true;press(128);press(16);press(64);press(32);record=false;
  assert(captures.some(s=>s.walking),'Follower must walk, not merely remain behind the player');
  press(512);assert.equal(state().selected,0);assert.equal(state().visible,0);
  press(512);assert.equal(state().selected,1);
- press(8);press(128);press(1);assert.equal(state().screen,3);press(16);press(16);press(256);
- assert.equal(state().selected,3);assert.equal(state().species,111);assert.equal(state().mounted,0);shot('travel-follow-rhyhorn');
- press(256);assert.equal(state().mounted,1);assert.equal(state().visible,0);shot('travel-riding-rhyhorn');
+ press(8);press(128);press(1);assert.equal(state().screen,3);shot('travel-party-native');press(1);shot('travel-party-actions');press(1);assert.equal(state().screen,3);press(2);press(128);press(128);press(8);
+ assert.equal(state().selected,1);assert.equal(state().species,25);assert.equal(state().mounted,1);assert.equal(state().visible,1);shot('travel-riding-and-following');
+ // The same individual cannot be released while selected for riding.
+ press(8);press(128);press(1);press(128);press(128);press(256);dismiss();
+ assert.equal(state().selected,1);assert.equal(state().mounted,1);
  record=true;press(128);press(16);press(64);press(32);record=false;
  assert(captures.some(s=>s.mounted&&s.moving===3),'Riding must use the faster movement state');
  for(const mounted of [0,1])assert.equal(new Set(captures.filter(s=>s.mounted===mounted&&(s.walking||mounted)).map(s=>s.pose%2)).size,2,'Both native gait poses must render');
@@ -31,7 +33,9 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
  route(6,7);assert.equal(state().map,2);assert.equal(state().mounted,0,'Door automatically dismounts');
  press(256);assert.equal(state().mounted,0,'Indoor mounting rejected');dismiss();shot('travel-indoor');
  step(128);assert.equal(state().map,1);assert.equal(state().mounted,0);step(128);assert.equal(state().visible,1,'Follower reappears on a safe tile after warp');
+ press(8);shot('travel-start-menu');press(128);press(128);press(1);assert.equal(state().screen,4);shot('travel-bag');press(1);shot('travel-bag-actions');press(1);assert.equal(state().screen,3,'Potion opens party target selector');shot('travel-item-target');press(128);press(1);for(let i=0;i<8&&state().screen===7;i++)press(1);assert.equal(state().screen,4);press(2);press(2);
+ press(8);press(128);press(1);press(128);press(128);press(256);assert.equal(state().selected,3,'Dismounted remembered mount may become follower');assert.equal(state().mounted,0);
  assert(before.equals(sram()),'Trial must preserve SRAM byte-for-byte');
  fs.writeFileSync('build/pallet/travel-walk-review.json',JSON.stringify(captures,null,2));
- console.log(JSON.stringify({pass:true,checks:['single release','small rider rejected','following gait','recall','replace companion','mount','ride speed','dismount','door dismount','indoor mount rejected','warp follower resumes','SRAM unchanged'],walkingTicks,ridingTicks,final:state(),captures:captures.length}));
+ console.log(JSON.stringify({pass:true,checks:['single release','small rider rejected','following gait','recall','independent follower and mount','same individual rejected','ride speed','dismount','door dismount','indoor mount rejected','warp follower resumes','SRAM unchanged'],walkingTicks,ridingTicks,final:state(),captures:captures.length}));
 })().catch(e=>{console.error(e);process.exitCode=1;});

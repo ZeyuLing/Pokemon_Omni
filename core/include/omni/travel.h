@@ -17,7 +17,7 @@ unsigned omni_travel_speed(unsigned mounted,unsigned running,unsigned terrain);
  * survives a warp/load; no stale route may cross a scene boundary. */
 typedef struct {
  int16_t x,y,from_x,from_y,to_x,to_y;
- uint16_t location,species;uint8_t face,visible,mounted,walking;
+ uint16_t location,species;uint8_t face,visible,walking;
 } OmniTravel;
 void omni_travel_reset(OmniTravel *,unsigned location,unsigned species,int x,int y);
 void omni_travel_step(OmniTravel *,int old_x,int old_y,unsigned terrain,unsigned clear);

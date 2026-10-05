@@ -1,0 +1,27 @@
+{
+  "national_species": 1025,
+  "catalog_entries": 2419,
+  "runtime_field_species": 9,
+  "runtime_battle_base_species": 9,
+  "runtime_party_icons": 9,
+  "base_dex_front_mapped": 1025,
+  "base_dex_back_mapped": 1025,
+  "species_with_unverified_source_name_candidates": 1007,
+  "source_slot_counts": {
+    "rocket": {
+      "front": 1392,
+      "back": 1392,
+      "normal": 1392,
+      "shiny": 1392,
+      "icon": 1392
+    },
+    "ultra58": {
+      "front": 1385,
+      "back": 1385,
+      "normal": 1384,
+      "shiny": 1384,
+      "icon": 1385
+    }
+  },
+  "remaining": "Field animations, mounting art, per-form identity and visual review, missing palettes, gameplay integration."
+}

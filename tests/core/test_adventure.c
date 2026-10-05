@@ -119,6 +119,19 @@ int main(void){
   assert(!omni_adventure_save(&g,bytes,sizeof(bytes),&n));assert(!omni_adventure_load(&loaded,bytes,n)&&loaded.companion==2);
   assert(!omni_adventure_lead(&g,1)&&g.companion==1);assert(!omni_adventure_lead(&g,1)&&g.companion==2);
   assert(omni_adventure_companion(&g,5)==OMNI_ADVENTURE_ARGUMENT&&g.companion==2);
+  assert(!omni_adventure_mount(&g,1)&&g.mount==1&&g.companion==2);
+  assert(omni_adventure_mount(&g,2)==OMNI_ADVENTURE_LOCKED&&g.mount==1);
+  assert(omni_adventure_companion(&g,1)==OMNI_ADVENTURE_LOCKED&&g.companion==2);
+  assert(!omni_adventure_save(&g,bytes,sizeof(bytes),&n));assert(!omni_adventure_load(&loaded,bytes,n)&&loaded.mount==1&&loaded.companion==2);
+  {uint32_t h=2166136261u;bytes[4]=5;bytes[134]=255;for(i=0;i<912;++i)h=(h^bytes[i])*16777619u;for(i=0;i<4;++i)bytes[912+i]=(uint8_t)(h>>(i*8));assert(!omni_adventure_load(&loaded,bytes,n)&&!loaded.mount&&loaded.companion==2);}
+  assert(!omni_adventure_lead(&g,1)&&g.mount==2&&g.companion==1);
+  assert(!omni_adventure_lead(&g,1)&&g.mount==1&&g.companion==2);
+  copy=g;g.party[1]=g.party[0]; /* Same species, distinct individuals. */
+  assert(!omni_adventure_mount(&g,1)&&g.companion==2);
+  assert(!omni_adventure_swap(&g,1,2)&&g.companion==3&&g.mount==1);
+  assert(!omni_adventure_swap(&g,0,2)&&g.companion==1&&g.mount==3);
+  assert(!omni_adventure_store(&g,2)&&!g.mount&&g.companion==1);g=copy;
+  assert(!omni_adventure_mount(&g,0));
   assert(!omni_adventure_companion(&g,0)&&!g.companion);
   assert(g.party[0].moves[2]==729&&g.party[0].pp[2]==15&&omni_partner_stat(&g.party[0],0)==21);
   for(i=0;i<4;++i){unsigned sum=0;for(k=0;k<6;++k){assert(g.party[i].ivs[k]==31);sum+=g.party[i].evs[k];}assert(sum==508);assert(g.party[i].level==5);}

@@ -9,7 +9,7 @@
    const n=v.getUint32(base+8,true),p=base+20,a=p+16;
    if(v.getUint32(base,true)!==0x31474d4f||n<164||n>12500||v.getUint32(base+16,true)!==hash(base,16)||v.getUint32(base+12,true)!==hash(p,n))continue;
    const version=v.getUint32(a+4,true),wrapper=v.getUint32(p+4,true),adventureBytes=wrapper===3?916:wrapper===2?140:132,dexAt=16+adventureBytes;
-   if(v.getUint32(p,true)!==0x4c41504f||![1,2,3].includes(wrapper)||v.getUint32(p+12,true)!==n-dexAt||v.getUint32(a,true)!==0x5644414f||![1,2,3,4,5].includes(version)||(wrapper===1?version>2:wrapper===2?version!==3:(version!==4&&version!==5))||v.getUint32(a+adventureBytes-4,true)!==hash(a,adventureBytes-4))continue;
+   if(v.getUint32(p,true)!==0x4c41504f||![1,2,3].includes(wrapper)||v.getUint32(p+12,true)!==n-dexAt||v.getUint32(a,true)!==0x5644414f||![1,2,3,4,5,6].includes(version)||(wrapper===1?version>2:wrapper===2?version!==3:(version<4||version>6))||v.getUint32(a+adventureBytes-4,true)!==hash(a,adventureBytes-4))continue;
    const location=v.getUint16(a+12,true),map=maps.find(m=>m.id===location),chapter=bytes[a+14],starter=bytes[a+15],party=bytes[a+16],x=bytes[p+9],y=bytes[p+10];
    if(!map||bytes[p+8]!==location||x>=map.width||y>=map.height||map.collision[y*map.width+x]||bytes[p+11]>3||chapter>3||starter>(version===1?3:4)||party>(version===1?1:6)||bytes[a+17]>1||v.getUint16(a+18,true)>999||v.getUint16(a+20,true)>999||v.getUint32(a+24,true)>999999||v.getUint16(a+28,true)>v.getUint16(a+30,true)||!!starter!==(chapter>=2)||!!starter!==!!party||(!starter&&location>=6&&location<=9)||(version===1&&location>5))continue;
    const event=version>=2?v.getUint16(a+22,true):0;
@@ -31,7 +31,7 @@
    };
    for(let i=0;i<party;i++)if(!checkMon(a+32+i*16,version>=4?a+140+i*32:0))partyValid=false;
    if(version>=4){if(bytes[a+332]>12)partyValid=false;else for(let i=0;i<bytes[a+332];i++)if(!checkMon(a+336+i*48,a+352+i*48))partyValid=false;}
-   if((version>=5&&bytes[a+133]>party)||!partyValid||(version>=3&&(v.getUint32(a+128,true)>3599999||bytes[a+132]>8)))continue;
+   if((version>=5&&bytes[a+133]>party)||(version>=6&&(bytes[a+134]>party||(bytes[a+134]&&bytes[a+134]===bytes[a+133])))||!partyValid||(version>=3&&(v.getUint32(a+128,true)>3599999||bytes[a+132]>8)))continue;
    if(validOdex(bytes.subarray(p+dexAt,p+n)))return true;
   }
   return false;

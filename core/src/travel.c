@@ -26,7 +26,7 @@ int omni_travel_ride(const OmniTravelProfile *p,unsigned terrain,unsigned cleara
 unsigned omni_travel_speed(unsigned mounted,unsigned running,unsigned terrain){return mounted?((terrain&OMNI_ROUGH)?4:8):(running?4:2);}
 void omni_travel_reset(OmniTravel *t,unsigned location,unsigned species,int x,int y){
  t->x=t->from_x=t->to_x=(int16_t)x;t->y=t->from_y=t->to_y=(int16_t)y;
- t->location=(uint16_t)location;t->species=(uint16_t)species;t->face=0;t->visible=t->mounted=t->walking=0;
+ t->location=(uint16_t)location;t->species=(uint16_t)species;t->face=0;t->visible=t->walking=0;
 }
 void omni_travel_step(OmniTravel *t,int old_x,int old_y,unsigned terrain,unsigned clear){
  const OmniTravelProfile *p=omni_travel_profile(t->species);int dx,dy;
