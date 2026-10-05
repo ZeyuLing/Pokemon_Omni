@@ -15,7 +15,10 @@ const OmniStarter omni_starters[OMNI_PARTNER_SPECIES_COUNT]={
  {128,{75,100,95,40,70,110},{33,39},{35,30},"肯泰罗","威吓"},
  {131,{130,85,80,85,95,60},{33,45},{35,40},"拉普拉斯","储水"}
 };
-const OmniStarter *omni_partner_species(uint16_t species){unsigned i;for(i=0;i<OMNI_PARTNER_SPECIES_COUNT;++i)if(omni_starters[i].species==species)return &omni_starters[i];return 0;}
+static const OmniStarter travel_reference_partners[]={
+#include "../../content/travel/generated/partners.inc"
+};
+const OmniStarter *omni_partner_species(uint16_t species){unsigned i;for(i=0;i<OMNI_PARTNER_SPECIES_COUNT;++i)if(omni_starters[i].species==species)return &omni_starters[i];for(i=0;i<sizeof(travel_reference_partners)/sizeof(travel_reference_partners[0]);++i)if(travel_reference_partners[i].species==species)return &travel_reference_partners[i];return 0;}
 static const uint16_t partner_base[6]={45,80,50,75,60,120};
 static const uint8_t nature_stats[5]={1,2,5,3,4};
 const char *omni_nature_name(unsigned n){static const char *names[]={"勤奋","怕寂寞","勇敢","固执","顽皮","大胆","坦率","悠闲","淘气","乐天","胆小","急躁","认真","爽朗","天真","内敛","慢吞吞","冷静","害羞","马虎","温和","温顺","自大","慎重","浮躁"};return n<25?names[n]:"未知";}

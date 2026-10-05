@@ -9,25 +9,30 @@ unsigned travel_failure_line(void){return failure_line;}
 #include "omni/travel.h"
 int main(void){
  OmniTravel t;OmniTravelProfile p={999,1,1,1,OMNI_LAND,2};
- /* Expected outcomes independently enumerated; body length/type is not a shortcut. */
- {static const unsigned ids[]={59,78,111,128,95,131,130,25,7,109,999};
- static const unsigned land1[]={0,0,0,0,OMNI_TRAVEL_SPACE,OMNI_TRAVEL_TERRAIN,OMNI_TRAVEL_TERRAIN,OMNI_TRAVEL_SMALL,OMNI_TRAVEL_SMALL,OMNI_TRAVEL_SMALL,OMNI_TRAVEL_UNKNOWN};
- unsigned i;for(i=0;i<sizeof(ids)/sizeof(ids[0]);++i){const OmniTravelProfile *profile=omni_travel_profile(ids[i]);
- assert(omni_travel_ride(profile,OMNI_LAND,1)==(int)land1[i]);
- assert(omni_travel_ride(profile,OMNI_LAND|OMNI_INDOOR,2)!=OMNI_TRAVEL_OK);
- if(i<5){assert(!omni_travel_ride(profile,OMNI_LAND,2));assert(omni_travel_ride(profile,OMNI_WATER,2)==OMNI_TRAVEL_TERRAIN);}
- if(i==5||i==6){assert(!omni_travel_ride(profile,OMNI_WATER,2));assert(omni_travel_ride(profile,OMNI_WATER,1)==OMNI_TRAVEL_SPACE);}
- }}
-
+ /* Exhaust every species: neither water typing nor riding grants Surf. */
+ {unsigned id,eligible=0;for(id=1;id<=1025;++id){const OmniTravelProfile *q=omni_travel_profile(id);
+ assert(q&&q->species==id);
+ if(!omni_travel_eligible(q)){++eligible;assert(!omni_travel_ride(q,OMNI_LAND,2));
+ assert(omni_travel_ride(q,OMNI_WATER,2)==OMNI_TRAVEL_SURF_REQUIRED);
+ assert(!omni_travel_access(q,OMNI_WATER,2,OMNI_TRAVEL_PERMISSION_SURF));
+ assert(omni_travel_access(q,OMNI_INDOOR|OMNI_LAND,2,OMNI_TRAVEL_PERMISSION_SURF)==OMNI_TRAVEL_TERRAIN);
+ assert(omni_travel_access(q,0,2,OMNI_TRAVEL_PERMISSION_SURF)==OMNI_TRAVEL_TERRAIN);
+ }}assert(eligible>100);}
  assert(omni_travel_ride(omni_travel_profile(25),OMNI_LAND,1)==OMNI_TRAVEL_SMALL);
  assert(!omni_travel_ride(omni_travel_profile(111),OMNI_LAND,1));
- assert(omni_travel_ride(omni_travel_profile(111),OMNI_INDOOR|OMNI_LAND,1)==OMNI_TRAVEL_TERRAIN);
- assert(omni_travel_ride(omni_travel_profile(111),OMNI_WATER,1)==OMNI_TRAVEL_TERRAIN);
- assert(!omni_travel_ride(omni_travel_profile(131),OMNI_WATER,2));
+ assert(!omni_travel_ride(omni_travel_profile(131),OMNI_LAND,1));
+ assert(!omni_travel_ride(omni_travel_profile(18),OMNI_LAND,1));
+ assert(omni_travel_ride(omni_travel_profile(18),OMNI_WATER,1)==OMNI_TRAVEL_SURF_REQUIRED);
+ assert(omni_travel_ride(omni_travel_profile(95),OMNI_LAND,1)==OMNI_TRAVEL_SPACE);
+ assert(omni_travel_ride(omni_travel_profile(130),OMNI_LAND,1)==OMNI_TRAVEL_SPACE);
+ assert(!omni_travel_ride(omni_travel_profile(130),OMNI_LAND,2));
  assert(omni_travel_ride(&p,OMNI_LAND,1)==OMNI_TRAVEL_SPACE);
  p.safe_contact=0;assert(omni_travel_ride(&p,OMNI_LAND,2)==OMNI_TRAVEL_CONTACT);
  p.safe_contact=1;p.support=0;assert(omni_travel_ride(&p,OMNI_LAND,2)==OMNI_TRAVEL_SUPPORT);
  assert(omni_travel_ride(0,OMNI_LAND,2)==OMNI_TRAVEL_UNKNOWN);
+ assert(omni_travel_eligible(omni_travel_profile(598))==OMNI_TRAVEL_CONTACT);
+ assert(omni_travel_eligible(omni_travel_profile(904))==OMNI_TRAVEL_CONTACT);
+ assert(!omni_travel_profile(0)&&!omni_travel_profile(1026));
  assert(omni_travel_speed(1,0,OMNI_LAND)>omni_travel_speed(0,1,OMNI_LAND));
  assert(omni_travel_speed(1,0,OMNI_ROUGH|OMNI_LAND)==4);
  omni_travel_reset(&t,1,25,32,32);omni_travel_step(&t,32,32,OMNI_LAND,1);assert(t.visible);
@@ -37,7 +42,7 @@ int main(void){
  omni_travel_step(&t,64,64,OMNI_LAND,1);assert(!t.visible);
  omni_travel_step(&t,64,64,OMNI_LAND,0);assert(!t.visible);
  omni_travel_step(&t,64,64,OMNI_WATER,1);assert(!t.visible);
- omni_travel_reset(&t,2,7,16,16);omni_travel_step(&t,16,16,OMNI_WATER,1);assert(t.visible);
+ omni_travel_reset(&t,2,7,16,16);omni_travel_step(&t,16,16,OMNI_WATER,1);assert(!t.visible);
  omni_travel_reset(&t,3,999,16,16);omni_travel_step(&t,16,16,OMNI_LAND,1);assert(t.visible);
  return 0;
 }

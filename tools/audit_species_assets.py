@@ -19,6 +19,8 @@ def main():
             n = names.get(r.get('source_name'))
             if n:
                 candidates.setdefault(n, []).append(source['id']+':'+str(r['sid']))
+    field_roster=json.loads((ROOT/'assets/source/travel-roster.json').read_text('utf8'))['species']
+    field={r['species'] for r in field_roster if r['status']=='native_source_prepared'}
     rows=[]
     for n in national:
         number=n['national_number']
@@ -26,9 +28,9 @@ def main():
         base=next((e for e in entries if e['category']=='base'), {})
         variants=base.get('art_reference',{}).get('variants',{})
         rows.append(dict(national=number,name=n['name_zh_hans'],
-            field='integrated_art_water_gameplay_pending' if number==131 else 'integrated_4_directions_2_frames' if number in RUNTIME else 'missing',
+            field='integrated_native_four_directions_visual_review_pending' if number in field else 'missing',
             battle='integrated_base_front_back' if number in RUNTIME else 'not_integrated',
-            party_icon='integrated_native_2_frames_first_displayed' if number in RUNTIME else 'not_integrated',
+            party_icon='integrated_native_first_frame' if number in field else 'not_integrated',
             dex_front='reference_mapped' if variants.get('front_default') else 'missing',
             dex_back='reference_mapped' if variants.get('back_default') else 'missing',
             source_candidates=';'.join(candidates.get(number,[])),
@@ -47,7 +49,7 @@ def main():
             field_form_acceptance='not_individually_verified',battle_form_acceptance='not_individually_verified'))
     write('form-coverage.csv', forms)
     summary={'national_species':len(rows),'catalog_entries':len(forms),
-        'runtime_field_species':len(RUNTIME),'runtime_battle_base_species':len(RUNTIME),'runtime_party_icons':len(RUNTIME),
+        'runtime_field_species':len(field),'runtime_battle_base_species':len(RUNTIME),'runtime_party_icons':len(field),
         'base_dex_front_mapped':sum(r['dex_front']=='reference_mapped' for r in rows),
         'base_dex_back_mapped':sum(r['dex_back']=='reference_mapped' for r in rows),
         'species_with_unverified_source_name_candidates':sum(bool(r['source_candidates']) for r in rows),

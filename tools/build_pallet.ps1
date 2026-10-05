@@ -14,6 +14,10 @@ try {
  New-Item -ItemType Directory -Force -Path $output | Out-Null
  [string[]]$debugFlags = @()
  if ($DebugDex) { $debugFlags += '-DOMNI_DEBUG_DEX' }
+ & $Python tools/build_travel_profiles.py
+ if ($LASTEXITCODE) { throw 'Travel profile generation failed' }
+ & $Python tools/prepare_travel_roster.py
+ if ($LASTEXITCODE) { throw 'Travel source preparation failed' }
  & $Zig cc -target wasm32-freestanding -std=c99 -Wall -Wextra -Werror -O1 -DOMNI_TEST_WASM -ffreestanding -fno-builtin -nostdlib -Icore/include core/src/travel.c tests/core/test_travel.c '-Wl,--no-entry' '-Wl,--export=travel_test' '-Wl,--export=travel_failure_line' -o build/test_travel.wasm
  if ($LASTEXITCODE) { throw 'Travel core compilation failed' }
  node tests/travel-wasm.cjs

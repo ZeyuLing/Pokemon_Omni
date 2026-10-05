@@ -1215,6 +1215,13 @@
       "sha256": "eb16bb3dc91096d66f93a59d835132b001ef4c94badb699615adb6041d7ab9df"
     },
     {
+      "char": "冲",
+      "codepoint": 20914,
+      "rom_offset": "0x1d3baec",
+      "width": 12,
+      "sha256": "6df0284a8910ed1dfb4092c18cd0651d8f26bfcf90d0e96650550db3279f5248"
+    },
+    {
       "char": "决",
       "codepoint": 20915,
       "rom_offset": "0x1d4caac",
@@ -3126,13 +3133,6 @@
       "sha256": "bf261ff7b7a8033114ef225c54ea12010d005a78e8c273ad55b499b3079d8fdc"
     },
     {
-      "char": "拒",
-      "codepoint": 25298,
-      "rom_offset": "0x1d4c42c",
-      "width": 12,
-      "sha256": "688518f6a5fccc8b8dde2153539a4e6925ea72ad766f5aab80ba2efe68857a10"
-    },
-    {
       "char": "拖",
       "codepoint": 25302,
       "rom_offset": "0x1d62eec",
@@ -4118,6 +4118,13 @@
       "rom_offset": "0x1d3a2ac",
       "width": 12,
       "sha256": "b3613395cb444a2d64c30b2e2de3f9572c647c24d7f95d4df338722a8843d4d0"
+    },
+    {
+      "char": "浪",
+      "codepoint": 28010,
+      "rom_offset": "0x1d4f12c",
+      "width": 12,
+      "sha256": "30775de6dde9ffd0956613567735253f6c8382b55377201138614996930ed688"
     },
     {
       "char": "浮",
@@ -6521,6 +6528,6 @@
       "sha256": "2896236f4b9b997c1eaa9ec109f441fb8666680e50c143a6d1cad2abfcd97f7d"
     }
   ],
-  "blob_sha256": "72fd313489e62cda395475886dbcbb8249966542b6c242f9471e788b7d8e80f7",
-  "bytes": 82560
+  "blob_sha256": "615032d6ef19347dd8fd306e98828134c355aef0db9d3cc61ea39a573ca86f2f",
+  "bytes": 82624
 }

@@ -35,7 +35,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
  step(128);assert.equal(state().map,1);assert.equal(state().mounted,0);step(128);assert.equal(state().visible,1,'Follower reappears on a safe tile after warp');
  press(8);shot('travel-start-menu');press(128);press(128);press(1);assert.equal(state().screen,4);shot('travel-bag');press(1);shot('travel-bag-actions');press(1);assert.equal(state().screen,3,'Potion opens party target selector');shot('travel-item-target');press(128);press(1);for(let i=0;i<8&&state().screen===7;i++)press(1);assert.equal(state().screen,4);press(2);press(2);
  const mountResults=[];route(10,10);
- for(const [slot,species] of [[2,111],[3,59],[4,128]]){
+ for(const [slot,species] of [[2,111],[3,59],[4,128],[5,131]]){
   press(8);press(128);press(1);for(let i=0;i<slot;i++)press(128);press(8);
   assert.equal(state().mounted,1);assert.equal(state().mountSpecies,species);assert.equal(state().species,25);assert.equal(state().visible,1);
   shot('travel-mount-'+species);const first=captures.length;record=true;
@@ -45,10 +45,10 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
   press(256);const walk=step(16);step(32);press(256);const ride=step(16);step(32);assert(ride<walk);press(256);
   mountResults.push({species,walk,ride,directions:4,posesPerDirection:2});
  }
- press(8);press(128);press(1);for(let i=0;i<5;i++)press(128);press(8);assert.equal(state().screen,7);assert.equal(state().mounted,0);assert.equal(state().mountSpecies,128,'Rejected selection must preserve previous mount');shot('travel-lapras-land-rejected');dismiss();
- fs.writeFileSync('build/pallet/mount-species-review.json',JSON.stringify({mountResults,laprasLandRejected:true},null,2));
+
+ fs.writeFileSync('build/pallet/mount-species-review.json',JSON.stringify({mountResults,laprasLandRiding:true},null,2));
  press(8);press(128);press(1);press(128);press(128);press(256);assert.equal(state().selected,3,'Dismounted remembered mount may become follower');assert.equal(state().mounted,0);
  assert(before.equals(sram()),'Trial must preserve SRAM byte-for-byte');
  fs.writeFileSync('build/pallet/travel-walk-review.json',JSON.stringify(captures,null,2));
- console.log(JSON.stringify({pass:true,checks:['single release','small rider rejected','following gait','recall','independent follower and mount','same individual rejected','ride speed','dismount','door dismount','indoor mount rejected','warp follower resumes','SRAM unchanged'],walkingTicks,ridingTicks,mountResults,laprasLandRejected:true,final:state(),captures:captures.length}));
+ console.log(JSON.stringify({pass:true,checks:['single release','small rider rejected','following gait','recall','independent follower and mount','same individual rejected','ride speed','dismount','door dismount','indoor mount rejected','warp follower resumes','SRAM unchanged'],walkingTicks,ridingTicks,mountResults,laprasLandRiding:true,final:state(),captures:captures.length}));
 })().catch(e=>{console.error(e);process.exitCode=1;});

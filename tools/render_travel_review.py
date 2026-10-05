@@ -14,7 +14,7 @@ for direction in range(4):
     s=next(s for s in reversed(samples) if s['mounted'] and s['direction']==direction)
     review.paste(frame(s['file']).resize((480,320),Image.Resampling.NEAREST),((direction%2)*480,(direction//2)*320))
 review.save(OUT/'travel-rider-directions.png')
-for name in ['travel-follow-pikachu','travel-riding-and-following','travel-indoor','travel-lapras-land-rejected']:
+for name in ['travel-follow-pikachu','travel-riding-and-following','travel-indoor']:
     frame(name).resize((720,480),Image.Resampling.NEAREST).save(OUT/(name+'.png'))
 mounts=json.loads((OUT/'mount-species-review.json').read_text())['mountResults']
 review=Image.new('RGB',(240*len(mounts),4*184))
@@ -29,4 +29,4 @@ for col,mount in enumerate(mounts):
         draw.text((col*240+8,direction*184+5),f'Species {species} / direction {direction}',fill='white')
         review.paste(frame(s['file']),(col*240,direction*184+24))
 review.save(OUT/'mount-multispecies-directions.png')
-print('Rendered current actual-ROM frames: three mounts, four directions each, and slowed gait GIFs')
+print('Rendered current actual-ROM frames: mount roster, four directions each, and slowed gait GIFs')

@@ -274,15 +274,19 @@ static int actor_world_y(const PalletActor *a){return a->person==3&&(game.events
 static unsigned travel_species(void){return game.companion&&game.companion<=game.party_count&&game.party[game.companion-1].hp?game.party[game.companion-1].species:0;}
 static unsigned mount_species(void){return game.mount&&game.mount<=game.party_count&&game.party[game.mount-1].hp?game.party[game.mount-1].species:0;}
 static unsigned travel_terrain(int x,int y){unsigned t=(game.location==1||game.location==6||game.location==7)?OMNI_LAND:OMNI_LAND|OMNI_INDOOR;const PalletMap *m=map();if(x>=0&&y>=0&&x<m->w&&y<m->h&&pallet_world_blob[m->grass+y*m->w+x])t|=OMNI_ROUGH;return t;}
-static void travel_sync(void){unsigned species=travel_species();int dx=px*16-travel.x,dy=py*16-travel.y;if(travel.location!=game.location||travel.species!=species||dx>32||dx<-32||dy>32||dy<-32)omni_travel_reset(&travel,game.location,species,px*16,py*16);if(riding&&omni_travel_ride(omni_travel_profile(mount_species()),travel_terrain(px,py),1))riding=0;}
+/* A wide body needs free space on both sides of one axis. These checks use
+ * the same solid tiles and actors as walking; flying never skips them. */
+static int travel_free(int x,int y){const PalletMap *m=map();return x>=0&&y>=0&&x<m->w&&y<m->h&&!pallet_world_blob[m->collision+y*m->w+x]&&actor_at(x,y)<0;}
+static unsigned travel_clearance(int x,int y){return 1+((travel_free(x-1,y)&&travel_free(x+1,y))||(travel_free(x,y-1)&&travel_free(x,y+1)));}
+static void travel_sync(void){unsigned species=travel_species();int dx=px*16-travel.x,dy=py*16-travel.y;if(travel.location!=game.location||travel.species!=species||dx>32||dx<-32||dy>32||dy<-32)omni_travel_reset(&travel,game.location,species,px*16,py*16);if(riding&&omni_travel_ride(omni_travel_profile(mount_species()),travel_terrain(px,py),travel_clearance(px,py)))riding=0;}
 static OMNI_WORLD_FAST void travel_picture(unsigned species,int wx,int wy,unsigned face,unsigned walking){
- const PalletMap *m=map();const OmniTravelArt *a=0;const uint16_t *pixels;unsigned i,row,col,pose;
+ const PalletMap *m=map();const OmniTravelArt *a=0;const uint16_t *palette;const uint8_t *pixels;unsigned i,row,col,pose,run=0,color=0;
  for(i=0;i<OMNI_TRAVEL_ART_COUNT;++i)if(omni_travel_art[i].species==species){a=&omni_travel_art[i];break;}
  if(!a)return;
  /* Advance feet with displacement, including faster mounted movement. */
- pose=face*a->frames+(walking?((16-(anim_x<0?-anim_x:anim_x)-(anim_y<0?-anim_y:anim_y))/8)%a->frames:0);pixels=(const uint16_t*)(omni_travel_blob+a->offset)+pose*a->w*a->h;
+ pose=face*a->frames+(walking?((16-(anim_x<0?-anim_x:anim_x)-(anim_y<0?-anim_y:anim_y))/8)%a->frames:0);palette=(const uint16_t*)(omni_travel_blob+a->offset);pixels=omni_travel_blob+((const uint32_t*)(omni_travel_blob+a->offset+32))[pose];
  omni_travel_probe[15]=pose;if(riding&&species==mount_species())omni_travel_probe[18]=pose;else omni_travel_probe[19]=pose;
- for(row=0;row<a->h;++row)for(col=0;col<a->w;++col){int x=wx+8-a->origin_x+(int)col,y=wy+16-a->origin_y+(int)row,dx=x-camera_x+origin_x,dy=y-camera_y+origin_y;uint16_t c=pixels[row*a->w+col];
+ for(row=0;row<a->h;++row)for(col=0;col<a->w;++col){int x=wx+8-a->origin_x+(int)(face==3&&a->mirror_right?a->w-1-col:col),y=wy+16-a->origin_y+(int)row,dx=x-camera_x+origin_x,dy=y-camera_y+origin_y;uint16_t c;if(!run){unsigned token=*pixels++;run=(token>>4)+1;color=token&15;}--run;c=palette[color];
  if(dx<0||dx>=240||dy<0||dy>=160||(c&0x8000))continue;
  if(x>=0&&x<m->w*16&&y>=0&&y<m->h*16&&(pallet_world_blob[m->mask+(y*m->w*16+x)/8]&(1u<<((y*m->w*16+x)%8))))continue;
  omni_gba_surface[dy*240+dx]=c;}
@@ -365,12 +369,18 @@ static const char *bag_name(unsigned index){static const char *tools[]={"穿洞�
 static unsigned bag_quantity(void){return bag_pocket==BAG_ITEMS_POCKET?game.potions:bag_pocket==BAG_BALLS_POCKET?game.balls:bag_count();}
 static void menu_arrow(int x,int y,uint16_t color){int row;for(row=0;row<9;++row)box(x,y+row,row<5?row+1:9-row,1,color);}
 static int right_number(int right,int y,unsigned n,uint16_t color){unsigned digits=1,value=n;int x;while(value>=10){value/=10;++digits;}x=right-(int)(digits*omni_gba_small_text_width("0"));number(x,y,n,color);return x;}
+static void travel_party_icon(unsigned species,int x,int y){
+ unsigned i,col,row,run=0,color=0;const OmniTravelArt *art=0;const uint16_t *palette;const uint8_t *p;
+ for(i=0;i<OMNI_TRAVEL_ART_COUNT;++i)if(omni_travel_art[i].species==species){art=&omni_travel_art[i];break;}
+ if(!art)return;palette=(const uint16_t*)(omni_travel_blob+art->icon);p=omni_travel_blob+art->icon+32;
+ for(row=0;row<32;++row)for(col=0;col<32;++col){if(!run){unsigned token=*p++;run=(token>>4)+1;color=token&15;}--run;if(!(palette[color]&0x8000))box(x+(int)col,y+(int)row,1,1,palette[color]);}
+}
 static void party_icon(unsigned species,int x,int y){unsigned offset;switch(species){
-case 1:offset=UI_PARTY_ICON_1;break;case 4:offset=UI_PARTY_ICON_4;break;case 7:offset=UI_PARTY_ICON_7;break;case 25:offset=UI_PARTY_ICON_25;break;case 16:offset=UI_PARTY_ICON_16;break;case 19:offset=UI_PARTY_ICON_19;break;case 109:offset=UI_PARTY_ICON_109;break;case 13:offset=UI_PARTY_ICON_13;break;case 111:offset=UI_PARTY_ICON_111;break;case 59:offset=UI_PARTY_ICON_59;break;case 128:offset=UI_PARTY_ICON_128;break;case 131:offset=UI_PARTY_ICON_131;break;default:return;}ui_crop(offset,32,0,0,32,32,x,y);}
+case 1:offset=UI_PARTY_ICON_1;break;case 4:offset=UI_PARTY_ICON_4;break;case 7:offset=UI_PARTY_ICON_7;break;case 25:offset=UI_PARTY_ICON_25;break;case 16:offset=UI_PARTY_ICON_16;break;case 19:offset=UI_PARTY_ICON_19;break;case 109:offset=UI_PARTY_ICON_109;break;case 13:offset=UI_PARTY_ICON_13;break;case 111:offset=UI_PARTY_ICON_111;break;case 59:offset=UI_PARTY_ICON_59;break;case 128:offset=UI_PARTY_ICON_128;break;case 131:offset=UI_PARTY_ICON_131;break;default:travel_party_icon(species,x,y);return;}ui_crop(offset,32,0,0,32,32,x,y);}
 /* Store semantic action IDs separately from visible rows: ride may be absent. */
 static unsigned team_actions(uint8_t items[6]){unsigned n=0,slot=party_cursor+1;const OmniPartner *mon=&game.party[party_cursor];
  items[n++]=0;items[n++]=1;items[n++]=2;
- if((riding&&game.mount==slot)||(mon->hp&&game.companion!=slot&&!omni_travel_ride(omni_travel_profile(mon->species),travel_terrain(px,py),1)))items[n++]=3;
+ if((riding&&game.mount==slot)||(mon->hp&&game.companion!=slot&&!omni_travel_ride(omni_travel_profile(mon->species),travel_terrain(px,py),travel_clearance(px,py))))items[n++]=3;
  items[n++]=4;items[n++]=5;return n;
 }
 static const char *team_action_label(unsigned action){switch(action){case 0:return "查看能力";case 1:return "交换";case 2:return game.companion==party_cursor+1?"收回":"跟随";case 3:return riding&&game.mount==party_cursor+1?"下骑":"骑乘";case 4:return "图鉴";default:return "取消";}}
@@ -495,7 +505,7 @@ static void finish_step(void){const PalletWarp *w=warp_at(px,py);moving=0;anim_x
  else if(encounter_cooldown)--encounter_cooldown;
  else if(!travel_trial&&omni_adventure_step(&game,pallet_world_blob[map()->grass+py*map()->w+px])&&!omni_adventure_battle(&game,&battle,OMNI_BATTLE_WILD,&omni_pokedex_catalog,&dex_state)){menu_cursor=0;battle_page=0;battle_cursor=0;capture_failed=0;screen=BATTLE;dirty=1;}
 }
-static void start_step(unsigned dir,unsigned run){static const int dx[]={0,0,-1,1},dy[]={1,-1,0,0};int x=px+dx[dir],y=py+dy[dir];const PalletMap *m=map();direction=(uint8_t)dir;dirty=1;if(x<0||y<0||x>=m->w||y>=m->h){if(connection(x,y))return;message(game.starter?"常青森林与后续道馆正在开发。\n可以先完成中心与博士的任务。":"独自离开镇子太危险了。\n先去研究所领取宝可梦伙伴吧。",AFTER_WORLD);return;}if(actor_at(x,y)>=0)return;if(!warp_at(x,y)&&pallet_world_blob[m->collision+y*m->w+x])return;travel_sync();omni_travel_step(&travel,px*16,py*16,travel_terrain(px,py),actor_at(px,py)<0);if(riding&&warp_at(x,y))riding=0;px=(uint8_t)x;py=(uint8_t)y;anim_x=-dx[dir]*16;anim_y=-dy[dir]*16;move_dx=(uint8_t)(dx[dir]+1);move_dy=(uint8_t)(dy[dir]+1);moving=(uint8_t)(riding?3:run?2:1);}
+static void start_step(unsigned dir,unsigned run){static const int dx[]={0,0,-1,1},dy[]={1,-1,0,0};int x=px+dx[dir],y=py+dy[dir];const PalletMap *m=map();direction=(uint8_t)dir;dirty=1;if(x<0||y<0||x>=m->w||y>=m->h){if(connection(x,y))return;message(game.starter?"常青森林与后续道馆正在开发。\n可以先完成中心与博士的任务。":"独自离开镇子太危险了。\n先去研究所领取宝可梦伙伴吧。",AFTER_WORLD);return;}if(actor_at(x,y)>=0)return;if(!warp_at(x,y)&&pallet_world_blob[m->collision+y*m->w+x])return;travel_sync();if(riding&&!warp_at(x,y)&&omni_travel_ride(omni_travel_profile(mount_species()),travel_terrain(x,y),travel_clearance(x,y)))return;omni_travel_step(&travel,px*16,py*16,travel_terrain(px,py),actor_at(px,py)<0?travel_clearance(px,py):0);if(riding&&warp_at(x,y))riding=0;px=(uint8_t)x;py=(uint8_t)y;anim_x=-dx[dir]*16;anim_y=-dy[dir]*16;move_dx=(uint8_t)(dx[dir]+1);move_dy=(uint8_t)(dy[dir]+1);moving=(uint8_t)(riding?3:run?2:1);}
 static void travel_toggle_follow(unsigned slot){
  unsigned i;static const int dx[]={0,0,-1,1},dy[]={1,-1,0,0};
  if(!slot||slot>game.party_count){message("还没有可以放出的伙伴。",AFTER_WORLD);return;}
@@ -510,15 +520,28 @@ static void travel_toggle_ride(void){
  travel_sync();if(riding&&slot==game.mount){riding=0;screen=WORLD;dirty=1;return;}
  if(!slot){message("请在队伍中选择伙伴，再按START骑乘。",AFTER_WORLD);return;}
  if(slot==game.companion){message("同一只伙伴不能同时骑乘和跟随。\n请先收回它，或选择另一只。",AFTER_WORLD);return;}
- reason=omni_travel_ride(omni_travel_profile(game.party[slot-1].species),travel_terrain(px,py),1);
- if(reason){const OmniTravelProfile *profile=omni_travel_profile(game.party[slot-1].species);const char *why=reason==OMNI_TRAVEL_SMALL?"这只伙伴体型太小，不能承载。":reason==OMNI_TRAVEL_SPACE?"这里没有足够宽敞的骑乘空间。":reason==OMNI_TRAVEL_CONTACT?"这只伙伴的乘坐部位不能安全接触。":reason==OMNI_TRAVEL_UNKNOWN?"这只伙伴的骑乘能力尚未核定。":reason==OMNI_TRAVEL_SUPPORT?"这只伙伴没有合适的承载部位。":(travel_terrain(px,py)&OMNI_INDOOR)?"室内不能骑乘，请先到室外。":profile&&!(profile->surfaces&OMNI_LAND)?"这只伙伴需要水面，不能在陆地骑乘。":"当前地形不适合这只坐骑。";message(why,AFTER_WORLD);return;}
+ reason=omni_travel_ride(omni_travel_profile(game.party[slot-1].species),travel_terrain(px,py),travel_clearance(px,py));
+ if(reason){const char *why=reason==OMNI_TRAVEL_SMALL?"这只伙伴体型太小，不能承载。":reason==OMNI_TRAVEL_SPACE?"这里没有足够宽敞的骑乘空间。":reason==OMNI_TRAVEL_CONTACT?"这只伙伴的乘坐部位不能安全接触。":reason==OMNI_TRAVEL_UNKNOWN?"这只伙伴的骑乘能力尚未核定。":reason==OMNI_TRAVEL_SUPPORT?"这只伙伴没有合适的承载部位。":(travel_terrain(px,py)&OMNI_INDOOR)?"室内不能骑乘，请先到室外。":reason==OMNI_TRAVEL_SURF_REQUIRED?"需要先取得冲浪通行能力。":"当前地形不适合这只坐骑。";message(why,AFTER_WORLD);return;}
  if(omni_adventure_mount(&game,(uint8_t)slot)){message("伙伴需要先恢复体力。",AFTER_WORLD);return;}
  riding=1;screen=WORLD;dirty=1;save_game();
+}
+/* Explicit nonpersistent roster review. Every prepared eligible species can be
+ * selected, with the same party identity and collision path as normal riding. */
+static void travel_trial_cycle(int backwards){
+ unsigned i,current=game.party[5].species,next=current;OmniPartner *mon=&game.party[5];
+ for(i=0;i<1025;++i){unsigned j;next=backwards?(next==1?1025:next-1):(next==1025?1:next+1);
+ if(omni_travel_eligible(omni_travel_profile(next)))continue;
+ for(j=0;j<OMNI_TRAVEL_ART_COUNT;++j)if(omni_travel_art[j].species==next)break;
+ if(j<OMNI_TRAVEL_ART_COUNT)break;}
+ if(game.companion==6)game.companion=0;
+ memset(mon,0,sizeof(*mon));mon->species=(uint16_t)next;mon->level=5;mon->hp=omni_partner_stat(mon,0);
+ game.mount=6;riding=(uint8_t)!omni_travel_ride(omni_travel_profile(next),travel_terrain(px,py),travel_clearance(px,py));
+ dirty=1;
 }
 static void travel_trial_start(void){
  unsigned i,j;static const unsigned choices[]={3,0,8,9,10,11};omni_adventure_new(&game);travel_trial=1;game.location=OMNI_PALLET;game.starter=4;game.chapter=2;game.party_count=6;game.potions=3;game.events=OMNI_EVENT_GARY_DONE;px=10;py=10;direction=0;moving=0;anim_x=anim_y=0;gary_present=0;story_seq=255;
  for(i=0;i<6;++i){OmniPartner *m=&game.party[i];const OmniStarter *a=&omni_starters[choices[i]];m->species=a->species;m->level=5;m->experience=125;for(j=0;j<4;++j){m->moves[j]=a->moves[j];m->pp[j]=a->pp[j];}m->hp=omni_partner_stat(m,0);}
- riding=0;game.mount=0;game.companion=0;omni_travel_reset(&travel,0,0,0,0);travel_toggle_follow(1);message("随行与骑乘试用，不写入存档。\n皮卡丘已放出。L收回。\nSTART队伍中选独角犀牛，\n按START骑乘，皮卡丘继续跟随。\n风速狗、肯泰罗也可以试骑。\n拉普拉斯需要水面，陆地拒绝。",AFTER_WORLD);
+ riding=0;game.mount=0;game.companion=0;omni_travel_reset(&travel,0,0,0,0);travel_toggle_follow(1);message("随行与骑乘试用，不写入存档。\n皮卡丘已放出。L收回。\nSTART队伍中选独角犀牛，\n按START骑乘，皮卡丘继续跟随。\n风速狗、肯泰罗也可以试骑。\n拉普拉斯也可在陆地骑乘。\nSELECT加R或L切换全部坐骑。",AFTER_WORLD);
 }
 static void battle_log(unsigned index){const OmniPracticeAction *a=&turn.actions[index];buffer[0]=0;if(capture_failed){append("没有抓住！\n");capture_failed=0;}append(a->actor?(battle.kind==1?"野生的":battle.kind==2?"火箭队的":battle.kind==OMNI_BATTLE_OLD_MAN?"老人的":"小茂的"):"你的");append(omni_partner_species(battle.mons[a->actor].species)->name);append("\n使用了");append(omni_practice_move_name(a->move));append("！");if(a->miss)append("\n因麻痹而无法行动。");else if(a->status==3)append("\n对手麻痹了！");else if(a->critical)append("\n击中了要害！");else if(a->status==1)append(a->move==45?"\n对手的攻击降低了。":"\n对手的防御降低了。");else if(a->status==4)append("\n对手的速度降低了。");else if(a->status==2)append("\n能力已经不能再降低了。");dialogue=buffer;screen=BATTLE_LOG;dirty=1;}
 static void finish_battle(void){unsigned i,first=!(game.events&OMNI_EVENT_ROCKET),kind=battle.kind,outcome=battle.outcome,level=battle.mons[0].level;
@@ -544,7 +567,8 @@ static void tick(uint16_t keys){
  if(screen==INTRO){if(pressed&START){omni_presentation_skip(&presentation,0);screen=INTRO_SKIP;}else if((pressed&A)&&*omni_intro[presentation.scene].speaker){omni_presentation_confirm_text(&presentation,omni_intro[presentation.scene].letters);if(!presentation.playing)end_intro();}if(pressed)dirty=1;return;}
  if(screen==INTRO_SKIP){if(pressed&A){omni_presentation_skip(&presentation,1);end_intro();}else if(pressed&B){omni_presentation_skip(&presentation,0);screen=INTRO;}if(pressed)dirty=1;return;}
  if(screen==CAST){if(pressed&SELECT)cast_credits^=1;if(pressed&B)screen=preview_return;if(pressed&RIGHT)cast_cursor=(cast_cursor+1)%OMNI_CAST_COUNT;if(pressed&LEFT)cast_cursor=(cast_cursor+OMNI_CAST_COUNT-1)%OMNI_CAST_COUNT;if(pressed)dirty=1;return;}
- if(screen==WORLD&&(pressed&SELECT)){omni_presentation_speed(&presentation);speed_notice=96;dirty=1;}
+ if(screen==WORLD&&!moving&&travel_trial&&(keys&SELECT)&&(pressed&(R|L))){travel_trial_cycle((pressed&L)!=0);return;}
+ if(screen==WORLD&&!travel_trial&&(pressed&SELECT)){omni_presentation_speed(&presentation);speed_notice=96;dirty=1;}
  if(screen==DEX){if(dex_wait_release){if(keys&dex_wait_release)return;dex_wait_release=0;}omni_game_dex_tick(keys);if(!omni_game_dex_is_open()){omni_gba_input_clear();screen=menu_return;dirty=1;}return;}
  if(screen==WORLD&&moving){int speed=(int)omni_travel_speed(moving==3,moving==2,travel_terrain(px,py));anim_x+=((int)move_dx-1)*speed;anim_y+=((int)move_dy-1)*speed;omni_travel_sample(&travel,(unsigned)(16-(anim_x<0?-anim_x:anim_x)-(anim_y<0?-anim_y:anim_y)));dirty=1;if(!anim_x&&!anim_y)finish_step();return;}
  if(screen==WORLD){if(pressed&R){travel_toggle_ride();return;}if(pressed&L){travel_toggle_follow(game.companion?game.companion:1);return;}if(pressed&START){screen=MENU;menu_cursor=0;dirty=1;}else if(pressed&A)interact();else if(keys&UP)start_step(1,keys&B);else if(keys&DOWN)start_step(0,keys&B);else if(keys&LEFT)start_step(2,keys&B);else if(keys&RIGHT)start_step(3,keys&B);return;}

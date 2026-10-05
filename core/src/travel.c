@@ -1,30 +1,25 @@
 #include "omni/travel.h"
-/* Size describes usable support/body volume, not a snake's total length.
- * These are Omni design classifications; unreviewed species can follow but
- * cannot be mounted until their anatomical profile is supplied. */
+/* Generated reference anatomy plus explicit Omni design exceptions. */
 static const OmniTravelProfile profiles[]={
- {1,0,0,1,OMNI_LAND,1},{4,0,0,1,OMNI_LAND,1},
- {7,0,0,1,OMNI_LAND|OMNI_WATER,1},{25,0,0,1,OMNI_LAND,1},
- {16,0,0,1,OMNI_LAND|OMNI_WATER,1},{19,0,0,1,OMNI_LAND,1},
- {109,0,0,0,OMNI_LAND|OMNI_WATER,1},{13,0,0,0,OMNI_LAND,1},
- {111,OMNI_BODY_MEDIUM,OMNI_SUPPORT_BACK,1,OMNI_LAND,1},
- {59,OMNI_BODY_MEDIUM,OMNI_SUPPORT_BACK,1,OMNI_LAND,1},
- {128,OMNI_BODY_MEDIUM,OMNI_SUPPORT_BACK,1,OMNI_LAND,1},
- {78,OMNI_BODY_MEDIUM,OMNI_SUPPORT_BACK,1,OMNI_LAND,1},
- {131,OMNI_BODY_LARGE,OMNI_SUPPORT_SHELL,1,OMNI_WATER,2},
- {95,OMNI_BODY_LARGE,OMNI_SUPPORT_BACK,1,OMNI_LAND,2},
- {130,OMNI_BODY_LARGE,OMNI_SUPPORT_BACK,1,OMNI_WATER,2}
+#include "../../content/travel/generated/profiles.inc"
 };
-const OmniTravelProfile *omni_travel_profile(uint16_t species){unsigned i;for(i=0;i<sizeof(profiles)/sizeof(profiles[0]);++i)if(profiles[i].species==species)return &profiles[i];return 0;}
-int omni_travel_ride(const OmniTravelProfile *p,unsigned terrain,unsigned clearance){
+const OmniTravelProfile *omni_travel_profile(uint16_t species){return species>=1&&species<=sizeof(profiles)/sizeof(profiles[0])?&profiles[species-1]:0;}
+int omni_travel_eligible(const OmniTravelProfile *p){
  if(!p)return OMNI_TRAVEL_UNKNOWN;
  if(p->body<OMNI_BODY_MEDIUM)return OMNI_TRAVEL_SMALL;
  if(!p->support)return OMNI_TRAVEL_SUPPORT;
  if(!p->safe_contact)return OMNI_TRAVEL_CONTACT;
- if((terrain&OMNI_INDOOR)||!(p->surfaces&terrain&(OMNI_LAND|OMNI_WATER)))return OMNI_TRAVEL_TERRAIN;
+ return OMNI_TRAVEL_OK;
+}
+int omni_travel_access(const OmniTravelProfile *p,unsigned terrain,unsigned clearance,unsigned permissions){
+ int reason=omni_travel_eligible(p);if(reason)return reason;
+ if(terrain&OMNI_INDOOR)return OMNI_TRAVEL_TERRAIN;
+ if(!(terrain&(OMNI_LAND|OMNI_WATER)))return OMNI_TRAVEL_TERRAIN;
+ if((terrain&OMNI_WATER)&&!(permissions&OMNI_TRAVEL_PERMISSION_SURF))return OMNI_TRAVEL_SURF_REQUIRED;
  if(clearance<p->clearance)return OMNI_TRAVEL_SPACE;
  return OMNI_TRAVEL_OK;
 }
+int omni_travel_ride(const OmniTravelProfile *p,unsigned terrain,unsigned clearance){return omni_travel_access(p,terrain,clearance,0);}
 unsigned omni_travel_speed(unsigned mounted,unsigned running,unsigned terrain){return mounted?((terrain&OMNI_ROUGH)?4:8):(running?4:2);}
 void omni_travel_reset(OmniTravel *t,unsigned location,unsigned species,int x,int y){
  t->x=t->from_x=t->to_x=(int16_t)x;t->y=t->from_y=t->to_y=(int16_t)y;
