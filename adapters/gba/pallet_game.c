@@ -367,7 +367,14 @@ static void menu_arrow(int x,int y,uint16_t color){int row;for(row=0;row<9;++row
 static int right_number(int right,int y,unsigned n,uint16_t color){unsigned digits=1,value=n;int x;while(value>=10){value/=10;++digits;}x=right-(int)(digits*omni_gba_small_text_width("0"));number(x,y,n,color);return x;}
 static void party_icon(unsigned species,int x,int y){unsigned offset;switch(species){
 case 1:offset=UI_PARTY_ICON_1;break;case 4:offset=UI_PARTY_ICON_4;break;case 7:offset=UI_PARTY_ICON_7;break;case 25:offset=UI_PARTY_ICON_25;break;case 16:offset=UI_PARTY_ICON_16;break;case 19:offset=UI_PARTY_ICON_19;break;case 109:offset=UI_PARTY_ICON_109;break;case 13:offset=UI_PARTY_ICON_13;break;case 111:offset=UI_PARTY_ICON_111;break;case 59:offset=UI_PARTY_ICON_59;break;case 128:offset=UI_PARTY_ICON_128;break;case 131:offset=UI_PARTY_ICON_131;break;default:return;}ui_crop(offset,32,0,0,32,32,x,y);}
-static void draw_team(void){unsigned i;static const char *actions[]={"查看能力","交换","跟随/收回","骑乘/下骑","图鉴","取消"};
+/* Store semantic action IDs separately from visible rows: ride may be absent. */
+static unsigned team_actions(uint8_t items[6]){unsigned n=0,slot=party_cursor+1;const OmniPartner *mon=&game.party[party_cursor];
+ items[n++]=0;items[n++]=1;items[n++]=2;
+ if((riding&&game.mount==slot)||(mon->hp&&game.companion!=slot&&!omni_travel_ride(omni_travel_profile(mon->species),travel_terrain(px,py),1)))items[n++]=3;
+ items[n++]=4;items[n++]=5;return n;
+}
+static const char *team_action_label(unsigned action){switch(action){case 0:return "查看能力";case 1:return "交换";case 2:return game.companion==party_cursor+1?"收回":"跟随";case 3:return riding&&game.mount==party_cursor+1?"下骑":"骑乘";case 4:return "图鉴";default:return "取消";}}
+static void draw_team(void){unsigned i;
  if(team_summary){draw_summary();return;}UI_DRAW(PARTY_BACKGROUND,0,0);
  for(i=0;i<6;++i){int x=i?96:8,y=i?8+24*((int)i-1):24;const OmniPartner *mon=&game.party[i];unsigned max,width;
  if(i>=game.party_count){if(i)UI_DRAW(PARTY_EMPTY0,x,y);continue;}
@@ -378,7 +385,7 @@ static void draw_team(void){unsigned i;static const char *actions[]={"查看能�
  num(x+(i?102:38),y+(i?13:39),mon->hp,INK);text(x+(i?117:53),y+(i?13:39),"/",INK,239);num(x+(i?123:59),y+(i?13:39),max,INK);
  }
  source_window(0,128,168,32);text(7,139,team_item?"对哪只宝可梦使用？":team_switch?"与哪只宝可梦交换？":"选择宝可梦或取消。",INK,164);text(202,140,"取消",INK,235);if(party_cursor==game.party_count)menu_arrow(193,142,INK);
- if(team_action){source_window(144,48,96,112);for(i=0;i<6;++i)text(160,57+(int)i*16,actions[i],INK,236);menu_arrow(151,60+(int)team_action_cursor*16,INK);}
+ if(team_action){uint8_t actions[6];unsigned count=team_actions(actions);int y=144-(int)count*16;source_window(144,y,96,(int)count*16+16);for(i=0;i<count;++i)text(160,y+9+(int)i*16,team_action_label(actions[i]),INK,236);menu_arrow(151,y+12+(int)team_action_cursor*16,INK);}
 }
 static void draw_bag(void){
  /* Source item_menu.c: list window (112,16) + item (8,1),
@@ -555,8 +562,8 @@ static void tick(uint16_t keys){
  case MENU:if(pressed&UP)menu_cursor=(menu_cursor+5)%6;if(pressed&DOWN)menu_cursor=(menu_cursor+1)%6;if(pressed&(B|START))screen=WORLD;if(pressed&A){switch(menu_cursor){case 0:if(DEX_DEBUG_ACCESS||game.starter){omni_game_dex_open();omni_game_dex_tick(0);menu_return=MENU;screen=DEX;dex_wait_release=1;}else message("先在研究所领取伙伴和图鉴。",AFTER_MENU);break;case 1:team_action=team_summary=team_item=team_switch=0;party_cursor=0;screen=TEAM;break;case 2:bag_in_battle=0;bag_pocket=0;bag_cursor=0;screen=BAG;break;case 3:screen=TRAINER;break;case 4:message(travel_trial?"试用模式不会覆盖冒险存档。":save_game()?"冒险记录已保存。\n下次可以从这里继续。":"保存失败，请重试。",AFTER_MENU);break;default:screen=WORLD;break;}}break;
  case TEAM:
  if(team_summary){if(pressed&B)team_summary=0;break;}
- if(team_action){if(pressed&B){team_action=0;break;}if(pressed&UP)team_action_cursor=(team_action_cursor+5)%6;if(pressed&DOWN)team_action_cursor=(team_action_cursor+1)%6;
- if(pressed&A){team_action=0;switch(team_action_cursor){case 0:team_summary=1;break;case 1:team_switch=party_cursor+1;break;case 2:travel_toggle_follow(party_cursor+1);break;case 3:travel_toggle_ride();break;case 4:{unsigned i=partner_dex_index(&game.party[party_cursor]);omni_game_dex_open_entry(omni_pokedex_catalog.entries[i].id);omni_game_dex_tick(0);menu_return=TEAM;screen=DEX;dex_wait_release=1;break;}default:break;}}break;}
+ if(team_action){uint8_t actions[6];unsigned count=team_actions(actions);if(team_action_cursor>=count)team_action_cursor=0;if(pressed&B){team_action=0;break;}if(pressed&UP)team_action_cursor=(team_action_cursor+count-1)%count;if(pressed&DOWN)team_action_cursor=(team_action_cursor+1)%count;
+ if(pressed&A){team_action=0;switch(actions[team_action_cursor]){case 0:team_summary=1;break;case 1:team_switch=party_cursor+1;break;case 2:travel_toggle_follow(party_cursor+1);break;case 3:travel_toggle_ride();break;case 4:{unsigned i=partner_dex_index(&game.party[party_cursor]);omni_game_dex_open_entry(omni_pokedex_catalog.entries[i].id);omni_game_dex_tick(0);menu_return=TEAM;screen=DEX;dex_wait_release=1;break;}default:break;}}break;}
  if(pressed&B){if(team_switch){team_switch=0;break;}screen=team_item?BAG:MENU;team_item=0;break;}
  if(pressed&DOWN)party_cursor=(party_cursor+1)%(game.party_count+1);if(pressed&UP)party_cursor=(party_cursor+game.party_count)%(game.party_count+1);
  if((pressed&RIGHT)&&game.party_count>1&&party_cursor==0)party_cursor=1;if((pressed&LEFT)&&party_cursor<game.party_count)party_cursor=0;
