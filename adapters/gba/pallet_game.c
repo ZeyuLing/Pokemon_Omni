@@ -366,9 +366,10 @@ static void draw_file_menu(void){
  }else{title_panel(0,32);rocket_text(16,9,"新的游戏",224);}
 }
 
-/* Rocket START window: right edge 238, text x184, 16px rows; no map label. */
+/* Rocket START: native shadowed font/cursor; 16px rows inside an 8px frame.
+ * Content height is actions*16+16, plus the top/bottom border tiles. */
 static void source_window(int x,int y,int w,int h){int a,b;for(b=0;b<h;b+=8)for(a=0;a<w;a+=8)ui_crop(UI_WINDOW,24,a==0?0:a+8>=w?16:8,b==0?0:b+8>=h?16:8,8,8,x+a,y+b);}
-static void draw_menu(void){static const char *items[]={"图鉴","宝可梦","背包","小智","保存","返回"};unsigned i;draw_world();source_window(168,0,72,120);for(i=0;i<6;++i)text(184,17+(int)i*16,items[i],(i<2&&!game.starter)?MUTED:INK,234);menu_arrow(177,20+(int)menu_cursor*16,INK);}
+static void draw_menu(void){static const char *items[]={"图鉴","宝可梦","背包","小智","保存","返回"};unsigned i;draw_world();source_window(168,0,72,128);for(i=0;i<6;++i)rocket_text(184,17+(int)i*16,items[i],232);rocket_text(176,17+(int)menu_cursor*16,"▶",184);}
 
 static unsigned partner_dex_index(const OmniPartner *m){int32_t i=m->form?omni_dex_find(&omni_pokedex_catalog,2001874478u):-1;return i>=0?(unsigned)i:dex_index(m->species);}
 static void draw_summary(void){unsigned i;static const char *stats[]={"HP","攻击","防御","特攻","特防","速度"};const OmniPartner *mon=&game.party[party_cursor];const OmniStarter *spec=omni_partner_species(mon->species);box(0,0,240,160,PAPER);heading("同行的伙伴");if(!spec){text(12,50,"还没有宝可梦伙伴。",INK,237);return;}omni_gba_picture(partner_dex_index(mon),8,29);text(84,28,omni_partner_name(mon),INK,237);text(84,48,"Lv.",MUTED,124);num(112,48,mon->level,INK);text(153,48,omni_partner_ability(mon),BLUE,236);num(84,68,mon->hp,INK);text(111,68,"/",MUTED,128);num(123,68,omni_partner_stat(mon,0),INK);for(i=0;i<6;++i){int x=(i%3)*80,y=84+(int)(i/3)*17;text(x+4,y,stats[i],MUTED,x+40);num(x+42,y,omni_partner_stat(mon,(uint8_t)i),INK);}for(i=0;i<4;++i){int x=6+(int)(i%2)*120,y=118+(int)(i/2)*14;text(x,y,omni_practice_move_name(mon->moves[i]),INK,x+88);num(x+88,y,mon->pp[i],BLUE);}text(7,148,"左右选 L领队 A图鉴 R放出",BLUE,237);num(219,28,party_cursor+1,BLUE);if(game.companion==party_cursor+1)text(167,68,"随行中",BLUE,238);}

@@ -53,3 +53,14 @@
 本轮最终 ROM：16ad6722fd8369fd9e5c6f679901bcb99a56f288685feb3aa2888f3510f7c968。已执行并通过共享核心 Wasm（含 1,255 轮确定性战斗）、	ravel-rom、party-menu-rom、initialization-rom、presentation-rom、ag-layout、	ravel-browser、pallet-browser 与 6 项源界面测试。后两次小修分别针对 START 窗口底边和下骑后改随行，已重建并运行对应 ROM 回归；开场音频完整回归通过的构建为 7215e0a240fd90a212d68222694414c98ee84619e4e8fd8fbe93e1fdf01bf260。本地批量输出 13,881 张 PNG；未逐张宣告视觉验收。
 
 多物种骑乘后续：风速狗、肯泰罗、拉普拉斯的行走资源、战斗正背面和队伍图标已接入，共 12 种。拉普拉斯当前仅验证陆地骑乘拒绝，水面玩法未开放，不能算作已完成水上跟随／骑乘。最新明细由覆盖表记录，见 [多物种骑乘验收](47-companion-and-riding.md#2026-10-05多物种骑乘验收)。
+
+
+## 2026-10-07：START 菜单字体与光标纠正
+
+之前只复用了 Rocket 窗口图块，正文仍调用通用细像素字体，并用无阴影的蓝黑实心三角代替原版光标。因此此前“恢复原版 START”的描述不完整。
+
+本轮 START 改用同一归档 ROM 的中文原生字形、灰色正文和浅色阴影；选择符由原生字库 `0xEF` 解码，替代手画三角。正文坐标为 (184,17)，光标原点 (176,17)，行距 16 像素。六项内容的外框为 (168,0,72,128)，补齐底部留白；实际菜单项目保持图鉴、宝可梦、背包、小智、保存、返回。
+
+`tests/start-menu-rom.cjs` 重新运行归档 Rocket 与当前编译 ROM，逐像素比较“背包”“保存”、光标和上下边框，并检查六行光标、上下循环、返回／B／START 关闭、队伍／背包／训练家页进入及返回。参考采用 `.cache/rocket-before-dex.state` 后正常按 B、START、DOWN；本测试不修改 ROM、状态标志或运行内存。旧 `.cache/rocket-inspect.state` 曾用于解锁标志研究，不再作为未修改进度的依据。源菜单只有当时进度可见的项目，与 Omni 六项功能不完全相同。
+
+已通过真实 ARM ROM 构建、START 专项逐像素与交互验证、跟随骑乘 ROM 回归。构建哈希与参考状态哈希见 [START 验证记录](assets/start-menu-verification.json)。对比截图为本地 `build/pallet/start-menu-comparison.png`。这次仅确认 START 菜单，不扩大为所有游戏界面均已原版对齐。

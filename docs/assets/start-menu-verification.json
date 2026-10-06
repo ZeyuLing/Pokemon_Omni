@@ -1,0 +1,34 @@
+{
+  "rom_sha256": "b0545e5ba2721ef8402b64a98c73551311768408ae2d267773cfc679da4659ee",
+  "reference_rom_sha256": "033235cdd389c4c8cb1aa6d68a93954a55fd681c92a1a554ebc63431117b4eaf",
+  "reference_state_sha256": "26555b36e48a199c1c752a44295e3506f18651f06b80d76b71c69ca657d197b7",
+  "reference": "Archived pre-Dex state; B, START, DOWN; no memory/flag patches in this test",
+  "checks": [
+    "source Bag/Save glyph pixels",
+    "source shadowed cursor",
+    "source top/bottom frame",
+    "six cursor rows",
+    "up/down wrap",
+    "B/START/return close",
+    "party/bag/trainer entry and return"
+  ],
+  "menu": {
+    "outer": [
+      168,
+      0,
+      72,
+      128
+    ],
+    "text": [
+      184,
+      17
+    ],
+    "cursor": [
+      176,
+      17
+    ],
+    "row_step": 16
+  },
+  "checked_at": "2026-10-07",
+  "scope": "START menu only; six implemented actions. Source has different progression/options; no placeholder features added."
+}

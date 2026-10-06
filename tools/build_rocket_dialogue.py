@@ -20,7 +20,7 @@ TABLE_PATH = 'old_(PMxxUS_CHPLUS_RELEASE)/PMEMUS_CHPLUS_RELEASE2/PMEMUS_CHPLUS_R
 TABLE_URL = 'https://raw.githubusercontent.com/Wokann/Pokemon_GBA_Font_Patch/'+TABLE_REV+'/'+urllib.parse.quote(TABLE_PATH)
 CHINESE = 0x1d3612c
 LATIN = 0xd34c28
-PUNCT = {' ':0,'×':0xb9,'/':0xba,'.':0xad,'。':0xad,'，':0xb8,'、':0xb8,'！':0xab,'？':0xac,'：':0xf0,':':0xf0,
+PUNCT = {' ':0,'▶':0xef,'×':0xb9,'/':0xba,'.':0xad,'。':0xad,'，':0xb8,'、':0xb8,'！':0xab,'？':0xac,'：':0xf0,':':0xf0,
          '…':0xb0,'—':0xae,'·':0xaf,'“':0xb1,'”':0xb2,'（':0x5c,'）':0x5d}
 
 def digest(b): return hashlib.sha256(b).hexdigest()
