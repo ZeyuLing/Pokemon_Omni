@@ -113,3 +113,13 @@ bootstrap 为 2000 次重采样的近似百分位区间，仅描述此合成测�
 `power` 只比较基础威力、标称命中、物种属性克制和 STAB；不计算精确伤害、不处理临时属性、特性免疫、强化价值和主动换人价值，不能代表强搜索基线。`random` 从已告知动作均匀抽样，包含频繁无效战略换人。三套队伍是覆盖集成路径的合成数据，不是高手配队或独立强度测试集。当前吞吐包括合法性检查、独立重放、哈希和磁盘输出，不是纯结算速度。
 
 实际验证与下一阶段：[对战训练基础记录](../../docs/battle-training-foundation.md)。
+
+## 动画回放
+
+将保存的真实对局重新校验并导出为 Showdown 动画播放器：
+
+```powershell
+node tools/battle-lab/export-replay.cjs build/battle-lab/reproduce-v2/runs/protected-rl-power/protected-0-0-0.replay.json build/battle-lab/viewer/rl-vs-power.html
+```
+
+用浏览器打开输出 HTML，点击 Play；支持逐回合、调速和切换视角。导出前核对每一步观察摘要、动作接受状态和终局；仅把观众频道事件写入 HTML，不包含私有快照。页面记录原文件 SHA-256。播放器及精灵素材依赖 Showdown 在线资源，播放器版本不固定；结算仍由固定版本模拟器重建。不会上传对局到 Showdown 回放服务器。这是开发参考模拟器回放，不是 GBA ROM 画面。
