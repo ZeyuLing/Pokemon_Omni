@@ -19,6 +19,7 @@
 #include "travel_art.h"
 static OmniTravel travel;
 static uint8_t riding;
+static uint8_t ride_transition; /* Four presentation ticks; no position/collision change. */
 static uint8_t travel_trial;
 static uint8_t world_presented;
 static void travel_toggle_follow(unsigned slot);
@@ -279,23 +280,31 @@ static unsigned travel_terrain(int x,int y){unsigned t=(game.location==1||game.l
 static int travel_free(int x,int y){const PalletMap *m=map();return x>=0&&y>=0&&x<m->w&&y<m->h&&!pallet_world_blob[m->collision+y*m->w+x]&&actor_at(x,y)<0;}
 static unsigned travel_clearance(int x,int y){return 1+((travel_free(x-1,y)&&travel_free(x+1,y))||(travel_free(x,y-1)&&travel_free(x,y+1)));}
 static void travel_sync(void){unsigned species=travel_species();int dx=px*16-travel.x,dy=py*16-travel.y;if(travel.location!=game.location||travel.species!=species||dx>32||dx<-32||dy>32||dy<-32)omni_travel_reset(&travel,game.location,species,px*16,py*16);if(riding&&omni_travel_ride(omni_travel_profile(mount_species()),travel_terrain(px,py),travel_clearance(px,py)))riding=0;}
-static OMNI_WORLD_FAST void travel_picture(unsigned species,int wx,int wy,unsigned face,unsigned walking){
+static OMNI_WORLD_FAST void travel_picture(unsigned species,int wx,int wy,unsigned face,unsigned walking,unsigned foreground){
  const PalletMap *m=map();const OmniTravelArt *a=0;const uint16_t *palette;const uint8_t *pixels;unsigned i,row,col,pose,run=0,color=0;
  for(i=0;i<OMNI_TRAVEL_ART_COUNT;++i)if(omni_travel_art[i].species==species){a=&omni_travel_art[i];break;}
  if(!a)return;
  /* Advance feet with displacement, including faster mounted movement. */
  pose=face*a->frames+(walking?((16-(anim_x<0?-anim_x:anim_x)-(anim_y<0?-anim_y:anim_y))/8)%a->frames:0);palette=(const uint16_t*)(omni_travel_blob+a->offset);pixels=omni_travel_blob+((const uint32_t*)(omni_travel_blob+a->offset+32))[pose];
+ if(foreground&&(a->seats[pose].r<=a->seats[pose].l||a->seats[pose].b<=a->seats[pose].t))return;
  omni_travel_probe[15]=pose;if(riding&&species==mount_species())omni_travel_probe[18]=pose;else omni_travel_probe[19]=pose;
  for(row=0;row<a->h;++row)for(col=0;col<a->w;++col){int x=wx+8-a->origin_x+(int)(face==3&&a->mirror_right?a->w-1-col:col),y=wy+16-a->origin_y+(int)row,dx=x-camera_x+origin_x,dy=y-camera_y+origin_y;uint16_t c;if(!run){unsigned token=*pixels++;run=(token>>4)+1;color=token&15;}--run;c=palette[color];
  if(dx<0||dx>=240||dy<0||dy>=160||(c&0x8000))continue;
+ if(foreground){const OmniRideSeat *seat=&a->seats[pose];int u=x-(wx+8-a->origin_x);if(u<seat->l||u>=seat->r||(int)row<seat->t||(int)row>=seat->b)continue;}
  if(x>=0&&x<m->w*16&&y>=0&&y<m->h*16&&(pallet_world_blob[m->mask+(y*m->w*16+x)/8]&(1u<<((y*m->w*16+x)%8))))continue;
  omni_gba_surface[dy*240+dx]=c;}
 }
 static OMNI_WORLD_FAST void travel_rider(int wx,int wy){
- const PalletMap *m=map();const uint16_t *pixels=(const uint16_t*)(pallet_world_blob+pallet_sprites[0].offset)+face_frame(direction)*512;unsigned row,col;
- /* Prototype saddle occlusion: source-native Ash torso, never a resized rider.
-  * Dedicated seated poses remain an art task; the mount supplies locomotion. */
- for(row=0;row<26;++row)for(col=0;col<16;++col){int x=wx+(int)col,y=wy-20+(int)row,dx=x-camera_x+origin_x,dy=y-camera_y+origin_y;uint16_t c=pixels[row*16+(direction==3?15-col:col)];if(dx<0||dx>=240||dy<0||dy>=160||(c&0x8000))continue;if(x>=0&&x<m->w*16&&y>=0&&y<m->h*16&&(pallet_world_blob[m->mask+(y*m->w*16+x)/8]&(1u<<((y*m->w*16+x)%8))))continue;omni_gba_surface[dy*240+dx]=c;}
+ const PalletMap *m=map();const OmniTravelArt *art=0;const OmniRideSeat *seat;const uint16_t *pixels=(const uint16_t*)omni_travel_blob+direction*1024;unsigned i,row,col,pose,progress=4,width=32;int base_x,base_y;
+ for(i=0;i<OMNI_TRAVEL_ART_COUNT;++i)if(omni_travel_art[i].species==mount_species()){art=&omni_travel_art[i];break;}
+ if(!art)return;
+ pose=direction*2+(moving?((16-(anim_x<0?-anim_x:anim_x)-(anim_y<0?-anim_y:anim_y))/8)%2:0);seat=&art->seats[pose];
+ /* Full seated pose from the same locked Ash ROM, including arms and bent legs. */
+ base_x=wx+8-art->origin_x+seat->x-(direction==3?15:16);base_y=wy+16-art->origin_y+seat->y-26;
+ if(ride_transition){progress=riding?4-ride_transition:ride_transition;
+ base_x=(wx-8)+(base_x-(wx-8))*(int)progress/4;base_y=(wy-16)+(base_y-(wy-16))*(int)progress/4;
+ if(progress<2){width=16;base_x+=8;pixels=(const uint16_t*)(pallet_world_blob+pallet_sprites[0].offset)+face_frame(direction)*512;}}
+ for(row=0;row<32;++row)for(col=0;col<width;++col){int x=base_x+(int)col,y=base_y+(int)row,dx=x-camera_x+origin_x,dy=y-camera_y+origin_y;uint16_t c=pixels[row*width+(width==16&&direction==3?15-col:col)];if(dx<0||dx>=240||dy<0||dy>=160||(c&0x8000))continue;if(x>=0&&x<m->w*16&&y>=0&&y<m->h*16&&(pallet_world_blob[m->mask+(y*m->w*16+x)/8]&(1u<<((y*m->w*16+x)%8))))continue;omni_gba_surface[dy*240+dx]=c;}
 }
 static OMNI_WORLD_FAST void draw_world(void){
  const PalletMap *m=map();int width=m->w*16,height=m->h*16,wx=px*16+anim_x,wy=py*16+anim_y;unsigned row,i,j,ordered[20],count=0;int player_order=-1,companion_order=-1;travel_sync();
@@ -305,7 +314,7 @@ static OMNI_WORLD_FAST void draw_world(void){
  for(row=0;row<(unsigned)(height<160?height:160);++row)dma_row((const uint16_t*)(pallet_world_blob+m->art)+(row+camera_y)*width+camera_x,omni_gba_surface+(row+origin_y)*240+origin_x,(unsigned)(width<240?width:240));
  for(i=m->actors;i<m->actors+m->actor_count;++i)if(actor_visible(&pallet_actors[i]))ordered[count++]=i;
  for(i=0;i<count;++i)for(j=i+1;j<count;++j)if(actor_world_y(&pallet_actors[ordered[j]])<actor_world_y(&pallet_actors[ordered[i]])){unsigned temp=ordered[i];ordered[i]=ordered[j];ordered[j]=temp;}
- for(i=0;i<=count;++i){if(companion_order<0&&travel.visible&&(i==count||travel.y<actor_world_y(&pallet_actors[ordered[i]]))&&travel.y<=wy){travel_picture(travel.species,travel.x,travel.y,travel.face,travel.walking);companion_order=1;}if(player_order<0&&(i==count||wy<actor_world_y(&pallet_actors[ordered[i]]))){unsigned frame=face_frame(direction);if(moving&&((frame_count/4)&1))frame=(direction==0?3:direction==1?5:7)+(walk_phase&1);if(riding){travel_picture(mount_species(),wx,wy,direction,moving);travel_rider(wx,wy);}else sprite(0,frame,wx,wy,direction==3);player_order=1;}if(companion_order<0&&travel.visible&&player_order>=0&&(i==count||travel.y<actor_world_y(&pallet_actors[ordered[i]]))){travel_picture(travel.species,travel.x,travel.y,travel.face,travel.walking);companion_order=1;}if(i<count){const PalletActor *a=&pallet_actors[ordered[i]];if(a->person==3&&(game.events&OMNI_EVENT_INITIALIZATION)){unsigned f=face_frame(gary_direction);if(gary_moving&&((frame_count/4)&1))f=(gary_direction==0?3:gary_direction==1?5:7)+((frame_count/8)&1);sprite(a->sprite,f,gary_x,gary_y,gary_direction==3);}else sprite(a->sprite,face_frame(a->direction),a->x*16,a->y*16,a->direction==3);}}
+ for(i=0;i<=count;++i){if(companion_order<0&&travel.visible&&(i==count||travel.y<actor_world_y(&pallet_actors[ordered[i]]))&&travel.y<=wy){travel_picture(travel.species,travel.x,travel.y,travel.face,travel.walking,0);companion_order=1;}if(player_order<0&&(i==count||wy<actor_world_y(&pallet_actors[ordered[i]]))){unsigned frame=face_frame(direction);if(moving&&((frame_count/4)&1))frame=(direction==0?3:direction==1?5:7)+(walk_phase&1);if(riding||ride_transition){travel_picture(mount_species(),wx,wy,direction,moving,0);travel_rider(wx,wy);travel_picture(mount_species(),wx,wy,direction,moving,1);}else sprite(0,frame,wx,wy,direction==3);player_order=1;}if(companion_order<0&&travel.visible&&player_order>=0&&(i==count||travel.y<actor_world_y(&pallet_actors[ordered[i]]))){travel_picture(travel.species,travel.x,travel.y,travel.face,travel.walking,0);companion_order=1;}if(i<count){const PalletActor *a=&pallet_actors[ordered[i]];if(a->person==3&&(game.events&OMNI_EVENT_INITIALIZATION)){unsigned f=face_frame(gary_direction);if(gary_moving&&((frame_count/4)&1))f=(gary_direction==0?3:gary_direction==1?5:7)+((frame_count/8)&1);sprite(a->sprite,f,gary_x,gary_y,gary_direction==3);}else sprite(a->sprite,face_frame(a->direction),a->x*16,a->y*16,a->direction==3);}}
 }
 static unsigned dex_index(uint16_t species){unsigned i;for(i=0;i<omni_pokedex_catalog.count;++i)if(omni_pokedex_catalog.entries[i].national==species&&omni_pokedex_catalog.entries[i].category==1)return i;return 0;}
 /* Rocket main_menu.c: content at (16,8), 26 tiles wide; native 8px border. */
@@ -470,7 +479,7 @@ static int read_slot(unsigned slot,uint32_t *sequence,int apply){
  *sequence=get32(header+4);if(apply){riding=0;omni_travel_reset(&travel,0,0,0,0);game=temp;memcpy(dex_flags,scratch_flags,sizeof(dex_flags));px=save_bytes[9];py=save_bytes[10];direction=save_bytes[11];}return 1;
 }
 static int load_game(void){uint32_t a=0,b=0;int va=read_slot(0,&a,0),vb=read_slot(1,&b,0);unsigned first=(vb&&(!va||(int32_t)(b-a)>0))?1:0;uint32_t seq;if(!va&&!vb)return 0;if(read_slot(first,&seq,1)){save_slot=(int)first;save_seq=seq;return 1;}return 0;}
-static void begin_new(void){travel_trial=0;riding=0;omni_travel_reset(&travel,0,0,0,0);omni_adventure_new(&game);game.events|=OMNI_EVENT_INITIALIZATION;play_clock_remainder=0;memset(dex_flags,0,sizeof(dex_flags));px=6;py=6;direction=0;moving=0;anim_x=anim_y=0;gary_present=0;save_game();story_start(STORY_WAKE);}
+static void begin_new(void){travel_trial=0;riding=0;ride_transition=0;omni_travel_reset(&travel,0,0,0,0);omni_adventure_new(&game);game.events|=OMNI_EVENT_INITIALIZATION;play_clock_remainder=0;memset(dex_flags,0,sizeof(dex_flags));px=6;py=6;direction=0;moving=0;anim_x=anim_y=0;gary_present=0;save_game();story_start(STORY_WAKE);}
 static void begin_intro(uint8_t new_game){preview_return=screen;intro_new_game=new_game;war_ticks=0;omni_presentation_begin(&presentation,OMNI_INTRO_COUNT);screen=INTRO;dirty=1;}
 static void end_intro(void){REG16(0x04000050)=0;if(intro_new_game)begin_new();else{screen=preview_return;dirty=1;}}
 static void talk_person(uint8_t person){
@@ -517,13 +526,13 @@ static void travel_toggle_follow(unsigned slot){
 }
 static void travel_toggle_ride(void){
  unsigned slot=screen==TEAM?party_cursor+1:game.mount;int reason;
- travel_sync();if(riding&&slot==game.mount){riding=0;screen=WORLD;dirty=1;return;}
+ travel_sync();if(riding&&slot==game.mount){riding=0;ride_transition=4;screen=WORLD;dirty=1;return;}
  if(!slot){message("请在队伍中选择伙伴，再按START骑乘。",AFTER_WORLD);return;}
  if(slot==game.companion){message("同一只伙伴不能同时骑乘和跟随。\n请先收回它，或选择另一只。",AFTER_WORLD);return;}
  reason=omni_travel_ride(omni_travel_profile(game.party[slot-1].species),travel_terrain(px,py),travel_clearance(px,py));
  if(reason){const char *why=reason==OMNI_TRAVEL_SMALL?"这只伙伴体型太小，不能承载。":reason==OMNI_TRAVEL_SPACE?"这里没有足够宽敞的骑乘空间。":reason==OMNI_TRAVEL_CONTACT?"这只伙伴的乘坐部位不能安全接触。":reason==OMNI_TRAVEL_UNKNOWN?"这只伙伴的骑乘能力尚未核定。":reason==OMNI_TRAVEL_SUPPORT?"这只伙伴没有合适的承载部位。":(travel_terrain(px,py)&OMNI_INDOOR)?"室内不能骑乘，请先到室外。":reason==OMNI_TRAVEL_SURF_REQUIRED?"需要先取得冲浪通行能力。":"当前地形不适合这只坐骑。";message(why,AFTER_WORLD);return;}
  if(omni_adventure_mount(&game,(uint8_t)slot)){message("伙伴需要先恢复体力。",AFTER_WORLD);return;}
- riding=1;screen=WORLD;dirty=1;save_game();
+ riding=1;ride_transition=4;screen=WORLD;dirty=1;save_game();
 }
 /* Explicit nonpersistent roster review. Every prepared eligible species can be
  * selected, with the same party identity and collision path as normal riding. */
@@ -541,7 +550,7 @@ static void travel_trial_cycle(int backwards){
 static void travel_trial_start(void){
  unsigned i,j;static const unsigned choices[]={3,0,8,9,10,11};omni_adventure_new(&game);travel_trial=1;game.location=OMNI_PALLET;game.starter=4;game.chapter=2;game.party_count=6;game.potions=3;game.events=OMNI_EVENT_GARY_DONE;px=10;py=10;direction=0;moving=0;anim_x=anim_y=0;gary_present=0;story_seq=255;
  for(i=0;i<6;++i){OmniPartner *m=&game.party[i];const OmniStarter *a=&omni_starters[choices[i]];m->species=a->species;m->level=5;m->experience=125;for(j=0;j<4;++j){m->moves[j]=a->moves[j];m->pp[j]=a->pp[j];}m->hp=omni_partner_stat(m,0);}
- riding=0;game.mount=0;game.companion=0;omni_travel_reset(&travel,0,0,0,0);travel_toggle_follow(1);message("随行与骑乘试用，不写入存档。\n皮卡丘已放出。L收回。\nSTART队伍中选独角犀牛，\n按START骑乘，皮卡丘继续跟随。\n风速狗、肯泰罗也可以试骑。\n拉普拉斯也可在陆地骑乘。\nSELECT加R或L切换全部坐骑。",AFTER_WORLD);
+ riding=0;ride_transition=0;game.mount=0;game.companion=0;omni_travel_reset(&travel,0,0,0,0);travel_toggle_follow(1);message("随行与骑乘试用，不写入存档。\n皮卡丘已放出。L收回。\nSTART队伍中选独角犀牛，\n按START骑乘，皮卡丘继续跟随。\n风速狗、肯泰罗也可以试骑。\n拉普拉斯也可在陆地骑乘。\nSELECT加R或L切换全部坐骑。",AFTER_WORLD);
 }
 static void battle_log(unsigned index){const OmniPracticeAction *a=&turn.actions[index];buffer[0]=0;if(capture_failed){append("没有抓住！\n");capture_failed=0;}append(a->actor?(battle.kind==1?"野生的":battle.kind==2?"火箭队的":battle.kind==OMNI_BATTLE_OLD_MAN?"老人的":"小茂的"):"你的");append(omni_partner_species(battle.mons[a->actor].species)->name);append("\n使用了");append(omni_practice_move_name(a->move));append("！");if(a->miss)append("\n因麻痹而无法行动。");else if(a->status==3)append("\n对手麻痹了！");else if(a->critical)append("\n击中了要害！");else if(a->status==1)append(a->move==45?"\n对手的攻击降低了。":"\n对手的防御降低了。");else if(a->status==4)append("\n对手的速度降低了。");else if(a->status==2)append("\n能力已经不能再降低了。");dialogue=buffer;screen=BATTLE_LOG;dirty=1;}
 static void finish_battle(void){unsigned i,first=!(game.events&OMNI_EVENT_ROCKET),kind=battle.kind,outcome=battle.outcome,level=battle.mons[0].level;
@@ -567,6 +576,7 @@ static void tick(uint16_t keys){
  if(screen==INTRO){if(pressed&START){omni_presentation_skip(&presentation,0);screen=INTRO_SKIP;}else if((pressed&A)&&*omni_intro[presentation.scene].speaker){omni_presentation_confirm_text(&presentation,omni_intro[presentation.scene].letters);if(!presentation.playing)end_intro();}if(pressed)dirty=1;return;}
  if(screen==INTRO_SKIP){if(pressed&A){omni_presentation_skip(&presentation,1);end_intro();}else if(pressed&B){omni_presentation_skip(&presentation,0);screen=INTRO;}if(pressed)dirty=1;return;}
  if(screen==CAST){if(pressed&SELECT)cast_credits^=1;if(pressed&B)screen=preview_return;if(pressed&RIGHT)cast_cursor=(cast_cursor+1)%OMNI_CAST_COUNT;if(pressed&LEFT)cast_cursor=(cast_cursor+OMNI_CAST_COUNT-1)%OMNI_CAST_COUNT;if(pressed)dirty=1;return;}
+ if(screen==WORLD&&ride_transition){--ride_transition;dirty=1;return;}
  if(screen==WORLD&&!moving&&travel_trial&&(keys&SELECT)&&(pressed&(R|L))){travel_trial_cycle((pressed&L)!=0);return;}
  if(screen==WORLD&&!travel_trial&&(pressed&SELECT)){omni_presentation_speed(&presentation);speed_notice=96;dirty=1;}
  if(screen==DEX){if(dex_wait_release){if(keys&dex_wait_release)return;dex_wait_release=0;}omni_game_dex_tick(keys);if(!omni_game_dex_is_open()){omni_gba_input_clear();screen=menu_return;dirty=1;}return;}

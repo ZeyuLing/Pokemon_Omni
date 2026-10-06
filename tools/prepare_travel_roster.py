@@ -9,6 +9,7 @@ import json
 from pathlib import Path
 from PIL import Image
 from build_travel_assets import fetch, ROOT, REV
+from riding_art import layout_review
 
 
 def prepare(profile):
@@ -17,7 +18,7 @@ def prepare(profile):
                'tornadus': 'tornadus', 'thundurus': 'thundurus'}
     name = aliases.get(name, name.replace('-', '_'))
     result = dict(species=number, name=name, eligible=profile['eligible'], status='missing',
-                  visual_review='pending', rider_pose='native_torso_prototype')
+                  visual_review=layout_review(number), rider_pose='full_native_ash_seated')
     try:
         data = fetch(name, 'overworld.png')
         palette = fetch(name, 'overworld_normal.pal')

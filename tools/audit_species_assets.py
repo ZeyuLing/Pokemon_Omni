@@ -21,6 +21,7 @@ def main():
                 candidates.setdefault(n, []).append(source['id']+':'+str(r['sid']))
     field_roster=json.loads((ROOT/'assets/source/travel-roster.json').read_text('utf8'))['species']
     field={r['species'] for r in field_roster if r['status']=='native_source_prepared'}
+    reviewed={r["species"] for r in field_roster if r.get("visual_review")=="reviewed_native_rom_2026_10_07"}
     rows=[]
     for n in national:
         number=n['national_number']
@@ -29,6 +30,7 @@ def main():
         variants=base.get('art_reference',{}).get('variants',{})
         rows.append(dict(national=number,name=n['name_zh_hans'],
             field='integrated_native_four_directions_visual_review_pending' if number in field else 'missing',
+            riding_art='native_seated_directional_layout_rom_reviewed' if number in reviewed else 'not_accepted',
             battle='integrated_base_front_back' if number in RUNTIME else 'not_integrated',
             party_icon='integrated_native_first_frame' if number in field else 'not_integrated',
             dex_front='reference_mapped' if variants.get('front_default') else 'missing',
@@ -49,12 +51,12 @@ def main():
             field_form_acceptance='not_individually_verified',battle_form_acceptance='not_individually_verified'))
     write('form-coverage.csv', forms)
     summary={'national_species':len(rows),'catalog_entries':len(forms),
-        'runtime_field_species':len(field),'runtime_battle_base_species':len(RUNTIME),'runtime_party_icons':len(field),
+        'reviewed_default_riding_art':len(reviewed),'runtime_field_species':len(field),'runtime_battle_base_species':len(RUNTIME),'runtime_party_icons':len(field),
         'base_dex_front_mapped':sum(r['dex_front']=='reference_mapped' for r in rows),
         'base_dex_back_mapped':sum(r['dex_back']=='reference_mapped' for r in rows),
         'species_with_unverified_source_name_candidates':sum(bool(r['source_candidates']) for r in rows),
         'source_slot_counts':{s['id']:s['counts'] for s in prepared['sources']},
-        'remaining':'Field animations, mounting art, per-form identity and visual review, missing palettes, gameplay integration.'}
+        'remaining':'Remaining field species, per-form identity and visual review, missing palettes, battle gameplay integration. Current 179 default riding layouts reviewed separately.'}
     (out/'coverage-summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n','utf8')
     print(json.dumps(summary,ensure_ascii=False))
 

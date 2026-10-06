@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-10-06",
-  "rom_sha256": "ddf4e3c776275fae458e4b080c1e4980f38ca9e6445377892481d6beb10cf846",
+  "checked_at": "2026-10-07",
+  "rom_sha256": "b2f622a031c0e50e7f66988cd3175042e9be46eb9082ddbf491049e3d95e8a1b",
   "rom_bytes": 33554432,
   "classification_scope": "1025 default species; alternate forms not approved by inheritance",
   "eligible": 179,
   "prepared_field_and_icon_species": 189,
-  "asset_bytes": 390732,
+  "asset_bytes": 398924,
   "verification": "Actual ARM ROM inputs/state/framebuffer captures plus native-source pixel round trips; not official carrying-capacity or final art certification",
   "tested_species": [
     139,
@@ -197,7 +197,7 @@
   "lapras_land_riding": true,
   "surf_permission_core_only": true,
   "water_map_traversal_implemented": false,
-  "dedicated_rider_art_complete": false,
-  "visual_review": "All contact sheets inspected; large/long-neck/winged mounts still need saddle anchors and occlusion refinement",
+  "dedicated_rider_art_complete": true,
+  "visual_review": "179 eligible default species: full native seated Ash, authored directional saddles and foreground masks, all 1432 ROM views inspected; shared rider pose, not bespoke per-species gripping animations",
   "normal_adventure_acquisition_added": false
 }

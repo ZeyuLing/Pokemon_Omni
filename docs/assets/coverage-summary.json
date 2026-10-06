@@ -1,6 +1,7 @@
 {
   "national_species": 1025,
   "catalog_entries": 2419,
+  "reviewed_default_riding_art": 179,
   "runtime_field_species": 189,
   "runtime_battle_base_species": 12,
   "runtime_party_icons": 189,
@@ -23,5 +24,5 @@
       "icon": 1385
     }
   },
-  "remaining": "Field animations, mounting art, per-form identity and visual review, missing palettes, gameplay integration."
+  "remaining": "Remaining field species, per-form identity and visual review, missing palettes, battle gameplay integration. Current 179 default riding layouts reviewed separately."
 }

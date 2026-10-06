@@ -1,0 +1,51 @@
+{
+  "source": "User Emerald IV Ash ROM; same XY outfit as current walking sprite",
+  "rom": "assets/imported/ultra-emerald-4-ash-user/ultra-emerald-4-ash-user.gba",
+  "rom_sha256": "30a54ca97fe653dee226d004b1b9b36cc2065116089d9a8c7c96be99bbc0c8bb",
+  "graphics_info": 5282240,
+  "frame_table": 5266492,
+  "palette": 4818936,
+  "frames": [
+    {
+      "index": 0,
+      "offset": 4826712,
+      "bytes": 512,
+      "bbox": [
+        7,
+        12,
+        25,
+        31
+      ],
+      "rgba_sha256": "baf752c48e3f6326d3ca9770a55718fc500c8947ff7f65151cab1c991f2ff969"
+    },
+    {
+      "index": 1,
+      "offset": 4827736,
+      "bytes": 512,
+      "bbox": [
+        8,
+        13,
+        24,
+        31
+      ],
+      "rgba_sha256": "6f1d79f60adda6b4a5513e5f32501b8d8e49bf829fab7680b67cf4ce5b56a2dc"
+    },
+    {
+      "index": 2,
+      "offset": 4828760,
+      "bytes": 512,
+      "bbox": [
+        9,
+        12,
+        25,
+        32
+      ],
+      "rgba_sha256": "85f7c8a04ecd2f81a61c3b14f5d57c163ef31a31b76030110ca357958d48ed81"
+    }
+  ],
+  "right": "Source-engine horizontal mirror of left",
+  "conversion": "Full native 32x32 seated frames; no crop, recolor, resize or torso truncation",
+  "scope": "Seated rider; reuse of surfing pose does not grant Surf traversal",
+  "provenance": "BrendanSurfing graphics slot replaced by Ash in user ROM; not renamed Brendan/Red artwork",
+  "distribution": "ROM and decoded images stay local"
+}
