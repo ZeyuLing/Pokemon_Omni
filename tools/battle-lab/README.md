@@ -1,6 +1,34 @@
 # Battle Lab：宿主对战训练基础
 
-首个可运行阶段，固定 `pokemon-showdown@0.11.11 / gen4ou`。这是开发机上的标准赛制参考后端，**不是 Omni 正式结算、GBA AI 或已经训练好的强化学习模型**。没有复制一份 JavaScript Omni 玩法逻辑；后续正式规则仍应由共享可移植 C 核心拥有。
+固定 `pokemon-showdown@0.11.11 / gen4ou`，包含开发机标准赛制参考后端与下述学习器。**尚未接入 Omni 正式结算或 GBA AI。**没有复制一份 JavaScript Omni 玩法逻辑；后续正式规则仍应由共享可移植 C 核心拥有。
+
+2026-10-06 后续：已新增实际训练的 NumPy 策略／价值网络和自博弈更新。上面所述参考环境仍非 Omni 正式结算；学习器的实现、模型位置、测量与限制见 [训练记录](../../docs/battle-learning-v2.md)。
+
+## 训练入口
+
+训练只使用现有 NumPy 2.3.5 和 Showdown 依赖；入口不会安装依赖、下载数据或调用远程 GPU。当前机器的 `python` 命令是 Windows Store 别名，因此使用已验证的真实解释器：
+
+```powershell
+$battlePython = Join-Path $env:USERPROFILE '.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe'
+& $battlePython tools/battle-lab/experiment.py --out build/battle-lab/my-training
+```
+
+`--out` 必须不存在。默认运行：冻结三个队伍分区 → 生成 256 局训练数据和 32 局开发数据 → 梯度／1、8、32 样本过拟合／检查点／跨语言一致性门禁 → 两种网络宽度 × 两种数据量 → 16 轮、每轮 64 局的新鲜自博弈和一次参数更新 → 开发评测。每阶段保存命令、退出状态、日志和模型；失败即停止下游，不替换旧输出。`--train-blocks`、`--rounds`、`--selfplay-blocks` 可显式调整有界预算。
+
+主要新文件：
+
+- `features.cjs`：84 维选手观察／候选动作特征，最多 9 个动作，v2 显式区分替身、强化、回复、保护、撒钉、转场等效果。
+- `network.cjs`：与 Python 数学结构一致的只读模型加载与对局推理。
+- `train.py`：NumPy 前向、解析梯度、Adam、模仿学习和 Monte Carlo actor-critic 更新；终局奖励实际进入 value 和策略梯度。
+- `learning.cjs`：冻结组合分区、生成数据、执行神经网络对局、导出真实采样概率和按观察记录的样本。
+- `selfplay.py`：每轮重新采样，只对采集该批数据的检查点做一次全批更新；记录并验证模型哈希，保留被隐藏机制拒绝的已采样动作。出现截断批次会明确失败，尚未实现截断 bootstrap。
+- `experiment.py`：可复现完整工程训练流程；不会读取 protected 最终评测反馈。
+
+当前目录中训练模型选择了全新初始化的两层小型网络，**不是预训练大模型、Transformer 或 AlphaZero 搜索模型**。已经发生实际参数训练，也不等于已经形成高水平战术。当前数据来自人工配置的模拟器对局，标为 `FIXTURE_NON_EMPIRICAL`；生成数据的教师仍是简单 `power` 策略。特征含显式威力先验，模仿成功不能证明超越教师。
+
+模型 JSON、优化器 NPZ、轨迹和完整运行日志都在忽略的 `build/` 中。`requirements-training.txt` 记录唯一 Python 依赖，每轮 `environment.json` 记录实际解释器哈希、NumPy 与完整已安装包版本。当前精确重跑验证在同一运行环境的新进程中完成，不声称在另一台机器或另一种 BLAS 上逐位一致。
+
+受保护评测还需 `--selection` 收据，固定模型哈希、协议、代码、对手、随机偏移和评测块数。独立 evaluator 执行后只供审计和最终报告，不反馈给训练或选模。这个边界由角色和哈希检查共同维护，不是操作系统访问控制沙箱。
 
 ## 运行
 

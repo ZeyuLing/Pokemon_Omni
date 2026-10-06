@@ -1,0 +1,1428 @@
+{
+  "schema": 1,
+  "date": "2026-10-06",
+  "evidenceClass": "FIXTURE_NON_EMPIRICAL",
+  "scope": "Actual reproducible model training on authored fixture teams; not human or competitive-strength evidence",
+  "protocolHash": "89313ba08c39db451c45093e40b40b2dc3123854373ecfd0832f85ff3db23455",
+  "selectionHash": "8582d88d0719f5b6e413940df7e8ae0c8d41b75c32bec39d1f5fd2ac7f71d179",
+  "sourceHashes": {
+    "features.cjs": "8c7bdbe62fd28e8dcc3768e257ec66cc0c80f572456810cb485ab6892cf890fe",
+    "network.cjs": "1ce045c7c0b1e3810b5045a25c23f55d512836cbcbed7e878e13365c0b06bd1b",
+    "learning.cjs": "bb5b4952443c9075c4fcf0b5ab2c3b061f030a5e2c72fafa32714c79c8925a19",
+    "train.py": "adc14bcab72d9fb0c4ad16adb13468cab016de710cf284b1237dd63152d65630",
+    "environment.cjs": "881f04f6932f52369ac8afc7ce58f62a0f3ca56a3d59c09abee02b811ccfe281",
+    "agents.cjs": "ab509a18c1ad81df1c5fbc274077e8916ccf7a2a5fc6d601817d6657318123d7",
+    "fixtures.cjs": "07b46c0f7f621d007e6f7a61c96689108f7e4ef17e1c9291a6dc72e8ed67496e",
+    "reference.cjs": "2300a7dbee1bb4b0cad373a6146afced697c3d267d51d82e9331e3a4bd45cbcc",
+    "evaluate.cjs": "eb4813ffa39ee63c347c60ff0aef546052f2946f4249409eeaa860aa65e48b08",
+    "../legality-reference/pnpm-lock.yaml": "9d15e8c00de0f09306fe2124dc94f92a2a9439700662c7c32e67bb707db6f83e"
+  },
+  "models": {
+    "initial": {
+      "path": "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\bc-h64-full\\initial.json",
+      "sha256": "0dee942fab6d346a5b987b1244b1ba09dd35a82f7ff972bdb85832ec622d3849"
+    },
+    "bc": {
+      "path": "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\bc-h64-full\\model.json",
+      "sha256": "21d893bcecfdf4f23ec63a23983ed15cd57d04909b81a143f08e07178420b2ba"
+    },
+    "rl": {
+      "path": "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-015\\model.json",
+      "sha256": "2e90a7dd5a995a1221020ef267ae0134580375a632772dd3c5cb144543758386"
+    }
+  },
+  "training": [
+    {
+      "run": "bc-h16-small",
+      "reportHash": "62a25bf54b8d32dfb8fdcee48e6f402ffd8c92974b86bc8efdb4cff7bf6b7a18",
+      "evidenceClass": "FIXTURE_NON_EMPIRICAL",
+      "before": {
+        "train": {
+          "samples": 2815,
+          "policyCrossEntropy": 1.708811589710152,
+          "valueMSE": 0.9918785109780196,
+          "teacherAgreement": 0.4912966252220249
+        },
+        "development": {
+          "samples": 1402,
+          "policyCrossEntropy": 1.71772313849919,
+          "valueMSE": 0.9856285116051168,
+          "teacherAgreement": 0.5235378031383737
+        }
+      },
+      "after": {
+        "train": {
+          "samples": 2815,
+          "policyCrossEntropy": 0.34152601475780275,
+          "valueMSE": 0.5124148686322895,
+          "teacherAgreement": 0.9793960923623446
+        },
+        "development": {
+          "samples": 1402,
+          "policyCrossEntropy": 0.38839189328202556,
+          "valueMSE": 0.5894988666546842,
+          "teacherAgreement": 0.9714693295292439
+        }
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 1.7485559592928288
+        },
+        {
+          "epoch": 2,
+          "loss": 1.371644975426015
+        },
+        {
+          "epoch": 3,
+          "loss": 1.1007869535825774
+        },
+        {
+          "epoch": 4,
+          "loss": 0.9290625952538254
+        },
+        {
+          "epoch": 5,
+          "loss": 0.8144560156608867
+        },
+        {
+          "epoch": 6,
+          "loss": 0.7301332101780924
+        },
+        {
+          "epoch": 7,
+          "loss": 0.6671307115253642
+        },
+        {
+          "epoch": 8,
+          "loss": 0.6181955413285284
+        },
+        {
+          "epoch": 9,
+          "loss": 0.5813477355808743
+        },
+        {
+          "epoch": 10,
+          "loss": 0.5526578616934124
+        },
+        {
+          "epoch": 11,
+          "loss": 0.5304833028558273
+        },
+        {
+          "epoch": 12,
+          "loss": 0.5124381562411109
+        },
+        {
+          "epoch": 13,
+          "loss": 0.49891021258495855
+        },
+        {
+          "epoch": 14,
+          "loss": 0.4884301991200941
+        },
+        {
+          "epoch": 15,
+          "loss": 0.47773054990013664
+        },
+        {
+          "epoch": 16,
+          "loss": 0.4685666206440554
+        }
+      ],
+      "optimizerSteps": 352,
+      "parameterCount": 1393,
+      "parameterDeltas": {
+        "w": 8.198582491061115,
+        "b": 0.8143167441442632,
+        "policy": 2.14953644323451,
+        "value": 1.450687708901496,
+        "valueBias": 0.14819161992827987
+      },
+      "modelHash": "eaaf74dd310780d5fce1e8ca590b9be325f57a1b42f623a4a8ed417934ceb1b4",
+      "seconds": 0.3235296000057133
+    },
+    {
+      "run": "bc-h16-full",
+      "reportHash": "f29170048f8fa761769b48d7e32f0695de629ac443a53690db8fa656c320e68d",
+      "evidenceClass": "FIXTURE_NON_EMPIRICAL",
+      "before": {
+        "train": {
+          "samples": 11019,
+          "policyCrossEntropy": 1.7104568187323947,
+          "valueMSE": 0.9912751054804239,
+          "teacherAgreement": 0.5145657500680643
+        },
+        "development": {
+          "samples": 1402,
+          "policyCrossEntropy": 1.71772313849919,
+          "valueMSE": 0.9856285116051168,
+          "teacherAgreement": 0.5235378031383737
+        }
+      },
+      "after": {
+        "train": {
+          "samples": 11019,
+          "policyCrossEntropy": 0.2756125687045357,
+          "valueMSE": 0.5498027506453307,
+          "teacherAgreement": 0.9985479626100372
+        },
+        "development": {
+          "samples": 1402,
+          "policyCrossEntropy": 0.2979260365274988,
+          "valueMSE": 0.5250962289538462,
+          "teacherAgreement": 0.9971469329529244
+        }
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 1.320701345275983
+        },
+        {
+          "epoch": 2,
+          "loss": 0.7504208933063267
+        },
+        {
+          "epoch": 3,
+          "loss": 0.5858673180123026
+        },
+        {
+          "epoch": 4,
+          "loss": 0.5218490936432487
+        },
+        {
+          "epoch": 5,
+          "loss": 0.48907663887988717
+        },
+        {
+          "epoch": 6,
+          "loss": 0.4692838040123644
+        },
+        {
+          "epoch": 7,
+          "loss": 0.45699081952340626
+        },
+        {
+          "epoch": 8,
+          "loss": 0.4474188887565457
+        },
+        {
+          "epoch": 9,
+          "loss": 0.4397866920040732
+        },
+        {
+          "epoch": 10,
+          "loss": 0.43451851492742377
+        },
+        {
+          "epoch": 11,
+          "loss": 0.4300527029015946
+        },
+        {
+          "epoch": 12,
+          "loss": 0.42506822556917184
+        },
+        {
+          "epoch": 13,
+          "loss": 0.4224493691888314
+        },
+        {
+          "epoch": 14,
+          "loss": 0.41886495459867357
+        },
+        {
+          "epoch": 15,
+          "loss": 0.4149309794721503
+        },
+        {
+          "epoch": 16,
+          "loss": 0.41230251838063225
+        }
+      ],
+      "optimizerSteps": 1392,
+      "parameterCount": 1393,
+      "parameterDeltas": {
+        "w": 12.21458262828249,
+        "b": 1.0987289749150273,
+        "policy": 4.081945273508845,
+        "value": 1.9347543090869692,
+        "valueBias": 0.13460549655207477
+      },
+      "modelHash": "bd1314647ad58917089824e8e1f1bc840b2c45b861a60d06f6e27e2e148131a5",
+      "seconds": 1.2255933999986155
+    },
+    {
+      "run": "bc-h64-small",
+      "reportHash": "baccbcd2d0d5c0b6396a11298b0257d273f281fb5d2e104426012013377fdc4b",
+      "evidenceClass": "FIXTURE_NON_EMPIRICAL",
+      "before": {
+        "train": {
+          "samples": 2815,
+          "policyCrossEntropy": 1.728897979653164,
+          "valueMSE": 1.0273340078918884,
+          "teacherAgreement": 0.17975133214920072
+        },
+        "development": {
+          "samples": 1402,
+          "policyCrossEntropy": 1.7416138985114755,
+          "valueMSE": 1.032756925366099,
+          "teacherAgreement": 0.181169757489301
+        }
+      },
+      "after": {
+        "train": {
+          "samples": 2815,
+          "policyCrossEntropy": 0.29080296099749425,
+          "valueMSE": 0.47727882102674246,
+          "teacherAgreement": 0.9886323268206039
+        },
+        "development": {
+          "samples": 1402,
+          "policyCrossEntropy": 0.3284172615951285,
+          "valueMSE": 0.5954120009088267,
+          "teacherAgreement": 0.9814550641940085
+        }
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 1.5003927056584119
+        },
+        {
+          "epoch": 2,
+          "loss": 0.9884752312905593
+        },
+        {
+          "epoch": 3,
+          "loss": 0.7694051654423704
+        },
+        {
+          "epoch": 4,
+          "loss": 0.6455838748852497
+        },
+        {
+          "epoch": 5,
+          "loss": 0.569208757396394
+        },
+        {
+          "epoch": 6,
+          "loss": 0.5221787237642367
+        },
+        {
+          "epoch": 7,
+          "loss": 0.49208990785589213
+        },
+        {
+          "epoch": 8,
+          "loss": 0.4709351881150664
+        },
+        {
+          "epoch": 9,
+          "loss": 0.45710109674972627
+        },
+        {
+          "epoch": 10,
+          "loss": 0.4453779417588975
+        },
+        {
+          "epoch": 11,
+          "loss": 0.4370481609367256
+        },
+        {
+          "epoch": 12,
+          "loss": 0.4300244341543637
+        },
+        {
+          "epoch": 13,
+          "loss": 0.4232226862852761
+        },
+        {
+          "epoch": 14,
+          "loss": 0.4186009878015058
+        },
+        {
+          "epoch": 15,
+          "loss": 0.413531331598577
+        },
+        {
+          "epoch": 16,
+          "loss": 0.41234116042232744
+        }
+      ],
+      "optimizerSteps": 352,
+      "parameterCount": 5569,
+      "parameterDeltas": {
+        "w": 9.791234741210035,
+        "b": 0.8295672855311834,
+        "policy": 2.9714308714115556,
+        "value": 1.3005096688914657,
+        "valueBias": 0.05980071054481933
+      },
+      "modelHash": "2c433c0e5f11bc265362757e952d8bffaa029db5d43f4f83da5657fc66466a77",
+      "seconds": 1.0198096000021906
+    },
+    {
+      "run": "bc-h64-full",
+      "reportHash": "b1ff745a2fce1654da1dc1730283e77c296621e26a9e0a590d0a5576bb0ef0ab",
+      "evidenceClass": "FIXTURE_NON_EMPIRICAL",
+      "before": {
+        "train": {
+          "samples": 11019,
+          "policyCrossEntropy": 1.7267964298721015,
+          "valueMSE": 1.024740871787778,
+          "teacherAgreement": 0.18794808966330884
+        },
+        "development": {
+          "samples": 1402,
+          "policyCrossEntropy": 1.7416138985114755,
+          "valueMSE": 1.032756925366099,
+          "teacherAgreement": 0.181169757489301
+        }
+      },
+      "after": {
+        "train": {
+          "samples": 11019,
+          "policyCrossEntropy": 0.25641573127432127,
+          "valueMSE": 0.5430991996747214,
+          "teacherAgreement": 1
+        },
+        "development": {
+          "samples": 1402,
+          "policyCrossEntropy": 0.2766539662171075,
+          "valueMSE": 0.5245340432234012,
+          "teacherAgreement": 1
+        }
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 1.0101602770199272
+        },
+        {
+          "epoch": 2,
+          "loss": 0.5533139800845384
+        },
+        {
+          "epoch": 3,
+          "loss": 0.4787732453616151
+        },
+        {
+          "epoch": 4,
+          "loss": 0.45209117207051885
+        },
+        {
+          "epoch": 5,
+          "loss": 0.43837277690209214
+        },
+        {
+          "epoch": 6,
+          "loss": 0.4299435135055685
+        },
+        {
+          "epoch": 7,
+          "loss": 0.4221909900172709
+        },
+        {
+          "epoch": 8,
+          "loss": 0.41619807203388537
+        },
+        {
+          "epoch": 9,
+          "loss": 0.41036871131172126
+        },
+        {
+          "epoch": 10,
+          "loss": 0.40648364283896116
+        },
+        {
+          "epoch": 11,
+          "loss": 0.40372548788780704
+        },
+        {
+          "epoch": 12,
+          "loss": 0.4001688052929299
+        },
+        {
+          "epoch": 13,
+          "loss": 0.397893014777982
+        },
+        {
+          "epoch": 14,
+          "loss": 0.39532287673469946
+        },
+        {
+          "epoch": 15,
+          "loss": 0.3929872559921709
+        },
+        {
+          "epoch": 16,
+          "loss": 0.39275936917890447
+        }
+      ],
+      "optimizerSteps": 1392,
+      "parameterCount": 5569,
+      "parameterDeltas": {
+        "w": 15.361974912507163,
+        "b": 1.0819184392181291,
+        "policy": 5.655680231471179,
+        "value": 1.3461521365750313,
+        "valueBias": 0.05625251528623147
+      },
+      "modelHash": "21d893bcecfdf4f23ec63a23983ed15cd57d04909b81a143f08e07178420b2ba",
+      "seconds": 3.1480490999965696
+    }
+  ],
+  "selfplay": {
+    "evidenceClass": "FIXTURE_NON_EMPIRICAL",
+    "rounds": 16,
+    "games": 1024,
+    "optimizerSteps": 16,
+    "finalModel": "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-015\\model.json",
+    "finalModelHash": "2e90a7dd5a995a1221020ef267ae0134580375a632772dd3c5cb144543758386",
+    "seconds": 49.35417199999938,
+    "receipts": [
+      {
+        "round": 0,
+        "operation": "collect",
+        "argv": [
+          "node",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\learning.cjs",
+          "selfplay",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--split",
+          "train",
+          "--blocks",
+          "16",
+          "--seed-offset",
+          "100000",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\bc-h64-full\\model.json",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-000"
+        ],
+        "exitCode": 0,
+        "seconds": 2.373409800005902
+      },
+      {
+        "round": 0,
+        "operation": "update",
+        "argv": [
+          "C:\\Users\\13758\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\train.py",
+          "rl",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--data",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-000\\samples.jsonl",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\bc-h64-full\\model.json",
+          "--epochs",
+          "1",
+          "--lr",
+          "0.0003",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-000"
+        ],
+        "exitCode": 0,
+        "seconds": 0.5630119999987073
+      },
+      {
+        "round": 1,
+        "operation": "collect",
+        "argv": [
+          "node",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\learning.cjs",
+          "selfplay",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--split",
+          "train",
+          "--blocks",
+          "16",
+          "--seed-offset",
+          "101000",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-000\\model.json",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-001"
+        ],
+        "exitCode": 0,
+        "seconds": 2.3795898999960627
+      },
+      {
+        "round": 1,
+        "operation": "update",
+        "argv": [
+          "C:\\Users\\13758\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\train.py",
+          "rl",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--data",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-001\\samples.jsonl",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-000\\model.json",
+          "--epochs",
+          "1",
+          "--lr",
+          "0.0003",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-001"
+        ],
+        "exitCode": 0,
+        "seconds": 0.5626625000004424
+      },
+      {
+        "round": 2,
+        "operation": "collect",
+        "argv": [
+          "node",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\learning.cjs",
+          "selfplay",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--split",
+          "train",
+          "--blocks",
+          "16",
+          "--seed-offset",
+          "102000",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-001\\model.json",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-002"
+        ],
+        "exitCode": 0,
+        "seconds": 2.5157564999972237
+      },
+      {
+        "round": 2,
+        "operation": "update",
+        "argv": [
+          "C:\\Users\\13758\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\train.py",
+          "rl",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--data",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-002\\samples.jsonl",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-001\\model.json",
+          "--epochs",
+          "1",
+          "--lr",
+          "0.0003",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-002"
+        ],
+        "exitCode": 0,
+        "seconds": 0.5763881000020774
+      },
+      {
+        "round": 3,
+        "operation": "collect",
+        "argv": [
+          "node",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\learning.cjs",
+          "selfplay",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--split",
+          "train",
+          "--blocks",
+          "16",
+          "--seed-offset",
+          "103000",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-002\\model.json",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-003"
+        ],
+        "exitCode": 0,
+        "seconds": 2.489029999997001
+      },
+      {
+        "round": 3,
+        "operation": "update",
+        "argv": [
+          "C:\\Users\\13758\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\train.py",
+          "rl",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--data",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-003\\samples.jsonl",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-002\\model.json",
+          "--epochs",
+          "1",
+          "--lr",
+          "0.0003",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-003"
+        ],
+        "exitCode": 0,
+        "seconds": 0.5794991000002483
+      },
+      {
+        "round": 4,
+        "operation": "collect",
+        "argv": [
+          "node",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\learning.cjs",
+          "selfplay",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--split",
+          "train",
+          "--blocks",
+          "16",
+          "--seed-offset",
+          "104000",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-003\\model.json",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-004"
+        ],
+        "exitCode": 0,
+        "seconds": 2.383221500000218
+      },
+      {
+        "round": 4,
+        "operation": "update",
+        "argv": [
+          "C:\\Users\\13758\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\train.py",
+          "rl",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--data",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-004\\samples.jsonl",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-003\\model.json",
+          "--epochs",
+          "1",
+          "--lr",
+          "0.0003",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-004"
+        ],
+        "exitCode": 0,
+        "seconds": 0.5681325999976252
+      },
+      {
+        "round": 5,
+        "operation": "collect",
+        "argv": [
+          "node",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\learning.cjs",
+          "selfplay",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--split",
+          "train",
+          "--blocks",
+          "16",
+          "--seed-offset",
+          "105000",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-004\\model.json",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-005"
+        ],
+        "exitCode": 0,
+        "seconds": 2.4895501999999397
+      },
+      {
+        "round": 5,
+        "operation": "update",
+        "argv": [
+          "C:\\Users\\13758\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\train.py",
+          "rl",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--data",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-005\\samples.jsonl",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-004\\model.json",
+          "--epochs",
+          "1",
+          "--lr",
+          "0.0003",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-005"
+        ],
+        "exitCode": 0,
+        "seconds": 0.5827467999988585
+      },
+      {
+        "round": 6,
+        "operation": "collect",
+        "argv": [
+          "node",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\learning.cjs",
+          "selfplay",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--split",
+          "train",
+          "--blocks",
+          "16",
+          "--seed-offset",
+          "106000",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-005\\model.json",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-006"
+        ],
+        "exitCode": 0,
+        "seconds": 2.4813206999970134
+      },
+      {
+        "round": 6,
+        "operation": "update",
+        "argv": [
+          "C:\\Users\\13758\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\train.py",
+          "rl",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--data",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-006\\samples.jsonl",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-005\\model.json",
+          "--epochs",
+          "1",
+          "--lr",
+          "0.0003",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-006"
+        ],
+        "exitCode": 0,
+        "seconds": 0.5801748000012594
+      },
+      {
+        "round": 7,
+        "operation": "collect",
+        "argv": [
+          "node",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\learning.cjs",
+          "selfplay",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--split",
+          "train",
+          "--blocks",
+          "16",
+          "--seed-offset",
+          "107000",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-006\\model.json",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-007"
+        ],
+        "exitCode": 0,
+        "seconds": 2.487830500002019
+      },
+      {
+        "round": 7,
+        "operation": "update",
+        "argv": [
+          "C:\\Users\\13758\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\train.py",
+          "rl",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--data",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-007\\samples.jsonl",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-006\\model.json",
+          "--epochs",
+          "1",
+          "--lr",
+          "0.0003",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-007"
+        ],
+        "exitCode": 0,
+        "seconds": 0.5807083999970928
+      },
+      {
+        "round": 8,
+        "operation": "collect",
+        "argv": [
+          "node",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\learning.cjs",
+          "selfplay",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--split",
+          "train",
+          "--blocks",
+          "16",
+          "--seed-offset",
+          "108000",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-007\\model.json",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-008"
+        ],
+        "exitCode": 0,
+        "seconds": 2.3586553999994067
+      },
+      {
+        "round": 8,
+        "operation": "update",
+        "argv": [
+          "C:\\Users\\13758\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\train.py",
+          "rl",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--data",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-008\\samples.jsonl",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-007\\model.json",
+          "--epochs",
+          "1",
+          "--lr",
+          "0.0003",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-008"
+        ],
+        "exitCode": 0,
+        "seconds": 0.5602635999966878
+      },
+      {
+        "round": 9,
+        "operation": "collect",
+        "argv": [
+          "node",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\learning.cjs",
+          "selfplay",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--split",
+          "train",
+          "--blocks",
+          "16",
+          "--seed-offset",
+          "109000",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-008\\model.json",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-009"
+        ],
+        "exitCode": 0,
+        "seconds": 2.706212700002652
+      },
+      {
+        "round": 9,
+        "operation": "update",
+        "argv": [
+          "C:\\Users\\13758\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\train.py",
+          "rl",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--data",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-009\\samples.jsonl",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-008\\model.json",
+          "--epochs",
+          "1",
+          "--lr",
+          "0.0003",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-009"
+        ],
+        "exitCode": 0,
+        "seconds": 0.625080000005255
+      },
+      {
+        "round": 10,
+        "operation": "collect",
+        "argv": [
+          "node",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\learning.cjs",
+          "selfplay",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--split",
+          "train",
+          "--blocks",
+          "16",
+          "--seed-offset",
+          "110000",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-009\\model.json",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-010"
+        ],
+        "exitCode": 0,
+        "seconds": 2.858142400000361
+      },
+      {
+        "round": 10,
+        "operation": "update",
+        "argv": [
+          "C:\\Users\\13758\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\train.py",
+          "rl",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--data",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-010\\samples.jsonl",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-009\\model.json",
+          "--epochs",
+          "1",
+          "--lr",
+          "0.0003",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-010"
+        ],
+        "exitCode": 0,
+        "seconds": 0.576381400001992
+      },
+      {
+        "round": 11,
+        "operation": "collect",
+        "argv": [
+          "node",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\learning.cjs",
+          "selfplay",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--split",
+          "train",
+          "--blocks",
+          "16",
+          "--seed-offset",
+          "111000",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-010\\model.json",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-011"
+        ],
+        "exitCode": 0,
+        "seconds": 2.73087719999603
+      },
+      {
+        "round": 11,
+        "operation": "update",
+        "argv": [
+          "C:\\Users\\13758\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\train.py",
+          "rl",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--data",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-011\\samples.jsonl",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-010\\model.json",
+          "--epochs",
+          "1",
+          "--lr",
+          "0.0003",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-011"
+        ],
+        "exitCode": 0,
+        "seconds": 0.6319911000027787
+      },
+      {
+        "round": 12,
+        "operation": "collect",
+        "argv": [
+          "node",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\learning.cjs",
+          "selfplay",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--split",
+          "train",
+          "--blocks",
+          "16",
+          "--seed-offset",
+          "112000",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-011\\model.json",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-012"
+        ],
+        "exitCode": 0,
+        "seconds": 2.432112300004519
+      },
+      {
+        "round": 12,
+        "operation": "update",
+        "argv": [
+          "C:\\Users\\13758\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\train.py",
+          "rl",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--data",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-012\\samples.jsonl",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-011\\model.json",
+          "--epochs",
+          "1",
+          "--lr",
+          "0.0003",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-012"
+        ],
+        "exitCode": 0,
+        "seconds": 0.5565549000020837
+      },
+      {
+        "round": 13,
+        "operation": "collect",
+        "argv": [
+          "node",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\learning.cjs",
+          "selfplay",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--split",
+          "train",
+          "--blocks",
+          "16",
+          "--seed-offset",
+          "113000",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-012\\model.json",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-013"
+        ],
+        "exitCode": 0,
+        "seconds": 2.419850899997982
+      },
+      {
+        "round": 13,
+        "operation": "update",
+        "argv": [
+          "C:\\Users\\13758\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\train.py",
+          "rl",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--data",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-013\\samples.jsonl",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-012\\model.json",
+          "--epochs",
+          "1",
+          "--lr",
+          "0.0003",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-013"
+        ],
+        "exitCode": 0,
+        "seconds": 0.5671749999964959
+      },
+      {
+        "round": 14,
+        "operation": "collect",
+        "argv": [
+          "node",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\learning.cjs",
+          "selfplay",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--split",
+          "train",
+          "--blocks",
+          "16",
+          "--seed-offset",
+          "114000",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-013\\model.json",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-014"
+        ],
+        "exitCode": 0,
+        "seconds": 2.5008165999970515
+      },
+      {
+        "round": 14,
+        "operation": "update",
+        "argv": [
+          "C:\\Users\\13758\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\train.py",
+          "rl",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--data",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-014\\samples.jsonl",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-013\\model.json",
+          "--epochs",
+          "1",
+          "--lr",
+          "0.0003",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-014"
+        ],
+        "exitCode": 0,
+        "seconds": 0.564949899999192
+      },
+      {
+        "round": 15,
+        "operation": "collect",
+        "argv": [
+          "node",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\learning.cjs",
+          "selfplay",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--split",
+          "train",
+          "--blocks",
+          "16",
+          "--seed-offset",
+          "115000",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-014\\model.json",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-015"
+        ],
+        "exitCode": 0,
+        "seconds": 2.4708754999956
+      },
+      {
+        "round": 15,
+        "operation": "update",
+        "argv": [
+          "C:\\Users\\13758\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "C:\\projects\\Pokemon_omni\\tools\\battle-lab\\train.py",
+          "rl",
+          "--protocol",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\data\\protocol.json",
+          "--data",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\rollout-015\\samples.jsonl",
+          "--model",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-014\\model.json",
+          "--epochs",
+          "1",
+          "--lr",
+          "0.0003",
+          "--out",
+          "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2\\runs\\selfplay\\update-015"
+        ],
+        "exitCode": 0,
+        "seconds": 0.5745012999977916
+      }
+    ]
+  },
+  "finalEvaluation": [
+    {
+      "name": "protected-initial-power",
+      "modelHash": "0dee942fab6d346a5b987b1244b1ba09dd35a82f7ff972bdb85832ec622d3849",
+      "reportHash": "c4e84c01f015a69c74b2d4ab06771846b791b8326e6b57b124b0c7ea0ae9ca33",
+      "summary": {
+        "games": 96,
+        "completed": 96,
+        "truncated": 0,
+        "wins": 1,
+        "losses": 95,
+        "draws": 0,
+        "completedWinRate": 0.010416666666666666,
+        "completedScore": 0.010416666666666666,
+        "allGameScoreBounds": [
+          0.010416666666666666,
+          0.010416666666666666
+        ],
+        "completeBlocks": 24,
+        "completeBlockScore": 0.010416666666666666,
+        "completeBlockScoreCI95": [
+          0,
+          0.03125
+        ],
+        "intervalUnavailableReason": null,
+        "intervalMethod": "2000-resample percentile bootstrap over complete four-leg blocks; conditional on completion; approximate on this synthetic fixture schedule only"
+      }
+    },
+    {
+      "name": "protected-initial-random",
+      "modelHash": "0dee942fab6d346a5b987b1244b1ba09dd35a82f7ff972bdb85832ec622d3849",
+      "reportHash": "7364d15f431080cc5c3dc533038548eb5a6b474915ce45521934d1827a4dc478",
+      "summary": {
+        "games": 96,
+        "completed": 95,
+        "truncated": 1,
+        "wins": 30,
+        "losses": 65,
+        "draws": 0,
+        "completedWinRate": 0.3157894736842105,
+        "completedScore": 0.3157894736842105,
+        "allGameScoreBounds": [
+          0.3125,
+          0.3229166666666667
+        ],
+        "completeBlocks": 23,
+        "completeBlockScore": 0.32608695652173914,
+        "completeBlockScoreCI95": [
+          0.22826086956521738,
+          0.42391304347826086
+        ],
+        "intervalUnavailableReason": null,
+        "intervalMethod": "2000-resample percentile bootstrap over complete four-leg blocks; conditional on completion; approximate on this synthetic fixture schedule only"
+      }
+    },
+    {
+      "name": "protected-bc-power",
+      "modelHash": "21d893bcecfdf4f23ec63a23983ed15cd57d04909b81a143f08e07178420b2ba",
+      "reportHash": "b65fef8109f7adaf8e414e5d8cfc0c9ec2557feea246ec5324d311a2d949e7f1",
+      "summary": {
+        "games": 96,
+        "completed": 96,
+        "truncated": 0,
+        "wins": 50,
+        "losses": 46,
+        "draws": 0,
+        "completedWinRate": 0.5208333333333334,
+        "completedScore": 0.5208333333333334,
+        "allGameScoreBounds": [
+          0.5208333333333334,
+          0.5208333333333334
+        ],
+        "completeBlocks": 24,
+        "completeBlockScore": 0.5208333333333334,
+        "completeBlockScoreCI95": [
+          0.4270833333333333,
+          0.6145833333333334
+        ],
+        "intervalUnavailableReason": null,
+        "intervalMethod": "2000-resample percentile bootstrap over complete four-leg blocks; conditional on completion; approximate on this synthetic fixture schedule only"
+      }
+    },
+    {
+      "name": "protected-bc-random",
+      "modelHash": "21d893bcecfdf4f23ec63a23983ed15cd57d04909b81a143f08e07178420b2ba",
+      "reportHash": "4fef2bef646cec7ae6da4529c341d6f22e34165b2b8c3bb3e4a286b68f013b3c",
+      "summary": {
+        "games": 96,
+        "completed": 96,
+        "truncated": 0,
+        "wins": 95,
+        "losses": 1,
+        "draws": 0,
+        "completedWinRate": 0.9895833333333334,
+        "completedScore": 0.9895833333333334,
+        "allGameScoreBounds": [
+          0.9895833333333334,
+          0.9895833333333334
+        ],
+        "completeBlocks": 24,
+        "completeBlockScore": 0.9895833333333334,
+        "completeBlockScoreCI95": [
+          0.96875,
+          1
+        ],
+        "intervalUnavailableReason": null,
+        "intervalMethod": "2000-resample percentile bootstrap over complete four-leg blocks; conditional on completion; approximate on this synthetic fixture schedule only"
+      }
+    },
+    {
+      "name": "protected-rl-power",
+      "modelHash": "2e90a7dd5a995a1221020ef267ae0134580375a632772dd3c5cb144543758386",
+      "reportHash": "5fe0ac4c832e3c5b9f4dae808d9e0238bc47ca688fdf14893e1dfa1afafd67e3",
+      "summary": {
+        "games": 96,
+        "completed": 96,
+        "truncated": 0,
+        "wins": 58,
+        "losses": 38,
+        "draws": 0,
+        "completedWinRate": 0.6041666666666666,
+        "completedScore": 0.6041666666666666,
+        "allGameScoreBounds": [
+          0.6041666666666666,
+          0.6041666666666666
+        ],
+        "completeBlocks": 24,
+        "completeBlockScore": 0.6041666666666666,
+        "completeBlockScoreCI95": [
+          0.53125,
+          0.6875
+        ],
+        "intervalUnavailableReason": null,
+        "intervalMethod": "2000-resample percentile bootstrap over complete four-leg blocks; conditional on completion; approximate on this synthetic fixture schedule only"
+      }
+    },
+    {
+      "name": "protected-rl-random",
+      "modelHash": "2e90a7dd5a995a1221020ef267ae0134580375a632772dd3c5cb144543758386",
+      "reportHash": "06390f7c841c235ce4674308e509b5a081ef50326e6fe7a043a2b5a4c6e1ddfe",
+      "summary": {
+        "games": 96,
+        "completed": 96,
+        "truncated": 0,
+        "wins": 93,
+        "losses": 3,
+        "draws": 0,
+        "completedWinRate": 0.96875,
+        "completedScore": 0.96875,
+        "allGameScoreBounds": [
+          0.96875,
+          0.96875
+        ],
+        "completeBlocks": 24,
+        "completeBlockScore": 0.96875,
+        "completeBlockScoreCI95": [
+          0.9375,
+          1
+        ],
+        "intervalUnavailableReason": null,
+        "intervalMethod": "2000-resample percentile bootstrap over complete four-leg blocks; conditional on completion; approximate on this synthetic fixture schedule only"
+      }
+    },
+    {
+      "name": "protected-power-power",
+      "modelHash": null,
+      "reportHash": "691facf11cf80f90197b7f2d7b0ffa757a6bf083e82a253d5a7b426dd75bc617",
+      "summary": {
+        "games": 96,
+        "completed": 96,
+        "truncated": 0,
+        "wins": 48,
+        "losses": 48,
+        "draws": 0,
+        "completedWinRate": 0.5,
+        "completedScore": 0.5,
+        "allGameScoreBounds": [
+          0.5,
+          0.5
+        ],
+        "completeBlocks": 24,
+        "completeBlockScore": 0.5,
+        "completeBlockScoreCI95": null,
+        "intervalUnavailableReason": "no observed between-block variation; percentile bootstrap is uninformative",
+        "intervalMethod": "2000-resample percentile bootstrap over complete four-leg blocks; conditional on completion; approximate on this synthetic fixture schedule only"
+      }
+    }
+  ],
+  "audits": {
+    "code": {
+      "path": "build/battle-lab/learning-v1/reports/code-audit-v2.json",
+      "sha256": "08005e5832023fd8a769165808aac9771c6d2c968b6c1eab90597a530604e54c"
+    },
+    "protected": {
+      "path": "build/battle-lab/reproduce-v2/protected-audit.json",
+      "sha256": "bf28c7d115664660958ca6f6ec70895c0329f4f1a4348632aa1c5d3d577dd235"
+    }
+  },
+  "limitations": [
+    "Synthetic team compositions share fixed sets across splits",
+    "Teacher is a weak power heuristic; feature includes that power prior",
+    "No belief model, recurrent memory, search, strong external opponent or GBA integration",
+    "RL versus BC superiority was not tested directly; no human-level claim",
+    "Same-environment fresh-process reproduction, not a clean-machine reproduction"
+  ]
+}

@@ -1,0 +1,5 @@
+# This training implementation has one Python runtime dependency, with no
+# transitive Python packages. Existing tested runtime: CPython 3.12.14, NumPy 2.3.5.
+# No installer is invoked by any training entrypoint. Per-run environment.json
+# records the actual complete installed distribution set and interpreter hash.
+numpy==2.3.5
