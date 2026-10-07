@@ -15,9 +15,26 @@ paths['/plans.json']=['content/training/plans.json','application/json; charset=u
 for(const [url,file,mime] of [['/gba','adapters/pokedex-preview/gba.html','text/html; charset=utf-8'],['/gba-player.js','adapters/pokedex-preview/gba-player.js','text/javascript; charset=utf-8'],['/emulator/mgba.js','.cache/toolchains/mgba-wasm/dist/mgba/mgba.js','text/javascript; charset=utf-8'],['/emulator/mgba.wasm','.cache/toolchains/mgba-wasm/dist/mgba/mgba.wasm','application/wasm'],['/omni-dex.gba','build/gba/omni-dex.gba','application/octet-stream']])paths[url]=[file,mime];
 paths['/gba-save.js']=['adapters/pokedex-preview/gba-save.js','text/javascript; charset=utf-8'];
 paths['/play']=['adapters/pokedex-preview/play.html','text/html; charset=utf-8'];
+paths['/story']=['adapters/pokedex-preview/story.html','text/html; charset=utf-8'];
+paths['/story-player.js']=['adapters/pokedex-preview/story-player.js','text/javascript; charset=utf-8'];
+paths['/story-playthrough.json']=['build/pallet/story-playthrough/story.json','application/json; charset=utf-8'];
 paths['/pallet-save.js']=['adapters/pokedex-preview/pallet-save.js','text/javascript; charset=utf-8'];
 paths['/pallet-scene.json']=['build/pallet/scene-audit.json','application/json; charset=utf-8'];
 paths['/omni-pallet.gba']=['build/pallet/omni-pallet.gba','application/octet-stream'];
+// Stream the local recording with byte ranges so chapter seeking does not load
+// or gzip the entire movie into memory. Only this explicit media path is exposed.
+function serveStoryVideo(req,res){
+ const file=path.join(root,'build/pallet/story-playthrough/story.mp4');
+ if(!fs.existsSync(file)){res.writeHead(404);res.end('Story recording is not built');return;}
+ const size=fs.statSync(file).size;let start=0,end=size-1;
+ if(req.headers.range){const match=/^bytes=(\d+)-(\d*)$/.exec(req.headers.range);
+  if(!match){res.writeHead(416,{'Content-Range':`bytes */${size}`});res.end();return;}
+  start=Number(match[1]);end=match[2]?Math.min(Number(match[2]),size-1):size-1;
+  if(!Number.isSafeInteger(start)||!Number.isSafeInteger(end)||start>end){res.writeHead(416,{'Content-Range':`bytes */${size}`});res.end();return;}
+ }
+ res.writeHead(req.headers.range?206:200,{'Content-Type':'video/mp4','Accept-Ranges':'bytes','Content-Length':end-start+1,'Cache-Control':'no-cache','X-Content-Type-Options':'nosniff',...(req.headers.range?{'Content-Range':`bytes ${start}-${end}/${size}`}:{})});
+ const stream=fs.createReadStream(file,{start,end});stream.on('error',()=>res.destroy());res.on('close',()=>stream.destroy());stream.pipe(res);
+}
 const cache=new Map();
-const server=http.createServer((req,res)=>{const pathname=new URL(req.url,'http://127.0.0.1').pathname,item=paths[pathname];if(req.method!=='GET'||!item){res.writeHead(404);res.end('Not found');return;}try{const file=path.join(root,item[0]),stat=fs.statSync(file);let data=cache.get(file);if(!data||data.mtime!==stat.mtimeMs){const bytes=fs.readFileSync(file);data={mtime:stat.mtimeMs,bytes,gzip:zlib.gzipSync(bytes)};cache.set(file,data);}const compressed=/\bgzip\b/.test(req.headers['accept-encoding']||'');res.writeHead(200,{'Content-Type':item[1],'Cache-Control':'no-cache','X-Content-Type-Options':'nosniff','Content-Security-Policy':"default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' https://play.pokemonshowdown.com https://raw.githubusercontent.com https://zukan.pokemon.co.jp https://www.pokemon.co.jp https://www.serebii.net https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com; connect-src 'self'; object-src 'none'; base-uri 'none'",...(compressed?{'Content-Encoding':'gzip','Vary':'Accept-Encoding'}:{})});res.end(compressed?data.gzip:data.bytes);}catch(e){res.writeHead(503,{'Content-Type':'text/plain; charset=utf-8'});res.end('图鉴构建文件缺失。请运行 tools/build_pokedex.ps1。');}});
+const server=http.createServer((req,res)=>{const pathname=new URL(req.url,'http://127.0.0.1').pathname,item=paths[pathname];if(req.method==='GET'&&pathname==='/story-playthrough.mp4'){serveStoryVideo(req,res);return;}if(req.method!=='GET'||!item){res.writeHead(404);res.end('Not found');return;}try{const file=path.join(root,item[0]),stat=fs.statSync(file);let data=cache.get(file);if(!data||data.mtime!==stat.mtimeMs){const bytes=fs.readFileSync(file);data={mtime:stat.mtimeMs,bytes,gzip:zlib.gzipSync(bytes)};cache.set(file,data);}const compressed=/\bgzip\b/.test(req.headers['accept-encoding']||'');res.writeHead(200,{'Content-Type':item[1],'Cache-Control':'no-cache','X-Content-Type-Options':'nosniff','Content-Security-Policy':"default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' https://play.pokemonshowdown.com https://raw.githubusercontent.com https://zukan.pokemon.co.jp https://www.pokemon.co.jp https://www.serebii.net https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com; connect-src 'self'; object-src 'none'; base-uri 'none'",...(compressed?{'Content-Encoding':'gzip','Vary':'Accept-Encoding'}:{})});res.end(compressed?data.gzip:data.bytes);}catch(e){res.writeHead(503,{'Content-Type':'text/plain; charset=utf-8'});res.end('图鉴构建文件缺失。请运行 tools/build_pokedex.ps1。');}});
 server.listen(port,'127.0.0.1',()=>console.log(`Omni Pokedex preview: http://127.0.0.1:${port}`));

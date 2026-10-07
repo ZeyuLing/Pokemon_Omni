@@ -1,0 +1,83 @@
+{
+  "checked_at": "2026-10-08",
+  "rom_sha256": "b0545e5ba2721ef8402b64a98c73551311768408ae2d267773cfc679da4659ee",
+  "video_sha256": "0af8a6aecc340f75c5b5bde87aaf359a5e4b6a015aa61fb9565dce62289227ce",
+  "seconds": 844.7365036010742,
+  "buttons": 520,
+  "continuous": true,
+  "progress_injection": false,
+  "browser_save_access": false,
+  "route": "Gary battle; accept old-man capture lesson; heal; receive parcel; buy a ball; return parcel; save",
+  "chapters": [
+    {
+      "title": "新游戏",
+      "seconds": 2.009124755859375
+    },
+    {
+      "title": "战争、停战会谈与各方布局",
+      "seconds": 3.3820266723632812
+    },
+    {
+      "title": "真新镇：叫醒与出发",
+      "seconds": 336.3944549560547
+    },
+    {
+      "title": "大木研究所与机房",
+      "seconds": 368.0549125671387
+    },
+    {
+      "title": "大木赠礼：四只伙伴与培养工具",
+      "seconds": 404.9056091308594
+    },
+    {
+      "title": "小茂首战",
+      "seconds": 539.8685646057129
+    },
+    {
+      "title": "查看伙伴与工具包",
+      "seconds": 597.7983283996582
+    },
+    {
+      "title": "沿一号道路前往常青市",
+      "seconds": 618.4923133850098
+    },
+    {
+      "title": "老人捕捉教学与独角虫赠礼",
+      "seconds": 654.7905006408691
+    },
+    {
+      "title": "常青市宝可梦中心",
+      "seconds": 719.6015167236328
+    },
+    {
+      "title": "友好商店：领取博士包裹与购物",
+      "seconds": 735.7414855957031
+    },
+    {
+      "title": "携包裹返回真新镇",
+      "seconds": 762.9148979187012
+    },
+    {
+      "title": "向大木交还博士包裹",
+      "seconds": 812.9421043395996
+    },
+    {
+      "title": "保存：本段剧情结束",
+      "seconds": 829.8020095825195
+    }
+  ],
+  "parcel_returned": true,
+  "final_party": 5,
+  "final_balls": 106,
+  "browser_checks": [
+    "video playback",
+    "three chapter seeks",
+    "byte range 206 and invalid range 416",
+    "390px layout without horizontal overflow",
+    "no page errors"
+  ],
+  "limitations": [
+    "One continuous main branch; mutually exclusive alternate branches are separately tested",
+    "Recording is current game presentation, not final approval of every art asset"
+  ]
+}

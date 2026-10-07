@@ -24,6 +24,8 @@
 
 ## 现在开始游戏
 
+[观看完整开场流程：新游戏至常青市购物、送回博士包裹](http://127.0.0.1:4173/story)。约 14 分 05 秒，连续实际 ROM 录像，保留对白与游戏音乐；支持章节定位，独立于玩家存档。重新生成：`node tools/record_story_playthrough.cjs`，随后运行 `python tools/encode_story_playthrough.py`（使用本地已有的 `.cache/war-video-runtime` 编码依赖）。录像留在 `build/pallet/story-playthrough/`，不入 Git。
+
 核心玩法已接入**伙伴跟随与骑乘**：两者可以由不同个体同时启用。[试用入口](http://127.0.0.1:4173/play?travel) 包含 179 个可骑乘基础物种，支持加速、完整原生小智坐姿、逐物种四向座位／遮挡和上下骑过渡，不写入正式存档。拉普拉斯等水系可以陆地骑乘，飞行坐骑遵守地面碰撞；冲浪另判权限。当前 179 只已检查四向两帧实际 ROM 画面，全物种跟随、完整水面通行和全部形态尚未完成，详见 [玩法规则与实际范围](docs/47-companion-and-riding.md)。
 
 2026-10-05：跟随与骑乘已拆为两个独立个体，可同时存在；START 与队伍首页改用 Rocket 原生布局／图块，背包伤药先选对象。已开始从两份归档 ROM 批量准备全物种战斗图和队伍图标；**全物种场地动画与全部形态仍未完成**。见 [界面与资产覆盖记录](docs/48-interface-and-species-assets.md)。
