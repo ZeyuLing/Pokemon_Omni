@@ -1,0 +1,8 @@
+{
+  "status": "blocked_by_user_review",
+  "http_status": 400,
+  "reason": "需要人工批准至少 4 个不同对局；当前 0 个。未批准数据不会用于训练。",
+  "approved": 0,
+  "optimizer_updates": 0,
+  "trained_weights": false
+}

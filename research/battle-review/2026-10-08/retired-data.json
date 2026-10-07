@@ -1,0 +1,51 @@
+[
+  {
+    "source": "C:\\projects\\Pokemon_omni\\build\\battle-lab\\initial-20261006",
+    "destination": "C:\\projects\\Pokemon_omni\\build\\retired-battle-data-20261008\\initial-20261006",
+    "files": 50,
+    "bytes": 468974.0,
+    "status": "quarantined_not_deleted"
+  },
+  {
+    "source": "C:\\projects\\Pokemon_omni\\build\\battle-lab\\learning-v1",
+    "destination": "C:\\projects\\Pokemon_omni\\build\\retired-battle-data-20261008\\learning-v1",
+    "files": 3598,
+    "bytes": 281363936.0,
+    "status": "quarantined_not_deleted"
+  },
+  {
+    "source": "C:\\projects\\Pokemon_omni\\build\\battle-lab\\reproduce-v2",
+    "destination": "C:\\projects\\Pokemon_omni\\build\\retired-battle-data-20261008\\reproduce-v2",
+    "files": 2680,
+    "bytes": 169702780.0,
+    "status": "quarantined_not_deleted"
+  },
+  {
+    "source": "C:\\projects\\Pokemon_omni\\build\\battle-lab\\trajectories-20261006",
+    "destination": "C:\\projects\\Pokemon_omni\\build\\retired-battle-data-20261008\\trajectories-20261006",
+    "files": 15,
+    "bytes": 5217358.0,
+    "status": "quarantined_not_deleted"
+  },
+  {
+    "source": "C:\\projects\\Pokemon_omni\\build\\battle-lab\\validation-20261006",
+    "destination": "C:\\projects\\Pokemon_omni\\build\\retired-battle-data-20261008\\validation-20261006",
+    "files": 482,
+    "bytes": 4624610.0,
+    "status": "quarantined_not_deleted"
+  },
+  {
+    "source": "C:\\projects\\Pokemon_omni\\build\\battle-lab\\viewer",
+    "destination": "C:\\projects\\Pokemon_omni\\build\\retired-battle-data-20261008\\viewer",
+    "files": 2,
+    "bytes": 122124.0,
+    "status": "quarantined_not_deleted"
+  },
+  {
+    "source": "C:\\projects\\Pokemon_omni\\build\\battle-data\\2026-10-07\\prior-probe",
+    "destination": "C:\\projects\\Pokemon_omni\\build\\retired-battle-data-20261008\\prior-probe",
+    "files": 6,
+    "bytes": 170972.0,
+    "status": "quarantined_not_deleted"
+  }
+]

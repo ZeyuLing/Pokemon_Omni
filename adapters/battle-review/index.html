@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Omni · 对战数据审查</title><link rel="stylesheet" href="/style.css"></head>
+<body><a class="skip" href="#detail">跳到对局详情</a>
+<header class="top"><div class="brand"><span class="ball" aria-hidden="true"></span><strong>OMNI</strong><span class="divider"></span><span>对战数据审查</span></div><span class="local"><i></i> 本地工作台 · 研究数据</span></header>
+<main><div class="heading"><div><p class="eyebrow">DATA REVIEW / 数据准入</p><h1>先看清每一步，再交给模型。</h1><p class="muted">抽样检查真实内容，记录判断依据。只有你批准的轨迹才能进入研究试训。</p></div><button id="sample" class="primary">随机抽样 <span aria-hidden="true">↗</span></button></div>
+<section id="summary" class="summary" aria-label="数据概况"><p>正在读取已校验的数据索引…</p></section>
+<div id="notice" role="status" aria-live="polite"></div>
+<div class="workspace">
+<aside class="library" aria-label="对局列表"><div class="section-title"><h2>数据样本</h2><span id="list-total"></span></div>
+<label for="query">搜索对局 ID</label><input id="query" type="search" placeholder="例如 gen4ou-…" autocomplete="off">
+<div class="filters"><div><label for="source">来源</label><select id="source"><option value="">所有来源</option><option value="gen4ou-prefix">Gen 4 OU · 前缀抽样</option><option value="gen4nu">Gen 4 NU · 完整分区</option></select></div><div><label for="status">审核状态</label><select id="status"><option value="">所有状态</option><option value="pending">待审核</option><option value="approved">已批准</option><option value="rejected">已拒绝</option></select></div></div>
+<label for="missing">动作完整度</label><select id="missing"><option value="">全部</option><option value="no">无缺失动作</option><option value="yes">包含缺失动作</option></select>
+<div id="cases" class="cases" aria-live="polite"></div><div class="pagination"><button id="prev-page" aria-label="上一页">←</button><span id="page-info"></span><button id="next-page" aria-label="下一页">→</button></div>
+</aside>
+<section id="detail" class="detail" tabindex="-1" aria-label="对局详情"><div class="empty">正在载入对局…</div></section>
+<aside class="review" aria-label="审核与训练"><div class="section-title"><h2>审核决定</h2><span class="small-label">人工准入</span></div><div id="review-context" class="muted">选择一条轨迹后进行审核。</div>
+<div class="warning"><strong>人类回放 ≠ 完整真值</strong><p>我方配置可能经过推测；缺少实际能力值。只能批准用于非商业研究试训。</p></div>
+<label for="note">审核依据</label><textarea id="note" rows="4" placeholder="例如：抽查换人和招式序列合理；已知缺失动作仅用于屏蔽，不补造答案。"></textarea>
+<label class="check"><input id="ack" type="checkbox"><span>我已查看轨迹并接受上述限制，仅批准已知动作用于研究试训。</span></label>
+<button id="approve" class="primary wide" disabled>批准该轨迹用于试训</button><div class="review-actions"><button id="reject" disabled>拒绝</button><button id="reset" disabled>撤回 / 待审核</button></div><p id="review-receipt" class="caption"></p>
+<section class="training"><div class="section-title"><h2>研究试训</h2><span class="small-label">OFFLINE AWR</span></div><p>10 轮动作预训练 + 30 轮离线优势加权更新。只读取人工批准的数据，不读取旧模拟数据。</p><p class="caption">至少批准 4 个不同对局；按对局分组留出开发集。此试验不代表对战强度。</p><button id="train" class="wide" disabled>使用已批准数据开始试训</button><div id="training-state" role="status" aria-live="polite"></div></section>
+</aside></div>
+<footer>来源：Metamon 人类回放重建 · CC BY-NC 4.0 <span>旧简单模拟数据已隔离 · 默认不批准任何数据</span></footer></main><script src="/app.js"></script></body></html>
