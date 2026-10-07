@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "assets": {
+    "gen4ou-0": {
+      "url": "https://www.smogon.com/stats/2026-09/chaos/gen4ou-0.json",
+      "file": "stats/gen4ou-0.json",
+      "license": "Aggregate statistics: public domain per pkmn/smogon README",
+      "purpose": "configuration prior, not trajectories",
+      "retrieved_at": "2026-10-06T18:09:20.410857+00:00",
+      "status": "materialized",
+      "bytes": 1260362,
+      "sha256": "d159125a5b12683636f2224af6b85ef1348bf69de117711a900f0071b4a7f2e6",
+      "content_range": null,
+      "coverage": "complete_response"
+    },
+    "gen4ou-1760": {
+      "url": "https://www.smogon.com/stats/2026-09/chaos/gen4ou-1760.json",
+      "file": "stats/gen4ou-1760.json",
+      "license": "Aggregate statistics: public domain per pkmn/smogon README",
+      "purpose": "configuration prior, not trajectories",
+      "retrieved_at": "2026-10-06T18:09:23.037606+00:00",
+      "status": "materialized",
+      "bytes": 1062156,
+      "sha256": "fccb5129c7e5966473165b08f7960e4cbfb92fe5ea4ed0426a0ade64a0273204",
+      "content_range": null,
+      "coverage": "complete_response"
+    },
+    "gen9ou-1825": {
+      "url": "https://www.smogon.com/stats/2026-09/chaos/gen9ou-1825.json",
+      "file": "stats/gen9ou-1825.json",
+      "license": "Aggregate statistics: public domain per pkmn/smogon README",
+      "purpose": "configuration prior, not trajectories",
+      "retrieved_at": "2026-10-06T18:09:25.770522+00:00",
+      "status": "materialized",
+      "bytes": 7270227,
+      "sha256": "829618fcb551ca4765a728f62ff5a1ad8a9bcb5458b6c0c199f6c31c2b9f9927",
+      "content_range": null,
+      "coverage": "complete_response"
+    },
+    "gen9nationaldex-1760": {
+      "url": "https://www.smogon.com/stats/2026-09/chaos/gen9nationaldex-1760.json",
+      "file": "stats/gen9nationaldex-1760.json",
+      "license": "Aggregate statistics: public domain per pkmn/smogon README",
+      "purpose": "configuration prior, not trajectories",
+      "retrieved_at": "2026-10-06T18:10:46.117053+00:00",
+      "status": "materialized",
+      "bytes": 9683304,
+      "sha256": "d2bd0bd4e525ff289bec1fc742191275c38d64615b34ccbc2e97b4965ffea876",
+      "content_range": null,
+      "coverage": "complete_response"
+    },
+    "gen4nu.tar.gz": {
+      "url": "https://huggingface.co/datasets/jakegrigsby/metamon-parsed-replays/resolve/f80c25b5fdc7ee9c288419a2e7af284704109b46/gen4nu.tar.gz",
+      "file": "metamon/gen4nu.tar.gz",
+      "license": "CC-BY-NC-4.0",
+      "purpose": "noncommercial research inspection only; not game release data",
+      "retrieved_at": "2026-10-06T18:09:37.176801+00:00",
+      "status": "materialized",
+      "bytes": 20493851,
+      "sha256": "016f1c358f3125dc27733c73f583e2558b6da394a6c75884b84da987fd75b682",
+      "content_range": null,
+      "coverage": "complete_response"
+    },
+    "replay_stats.tar.gz": {
+      "url": "https://huggingface.co/datasets/jakegrigsby/metamon-parsed-replays/resolve/f80c25b5fdc7ee9c288419a2e7af284704109b46/replay_stats.tar.gz",
+      "file": "metamon/replay_stats.tar.gz",
+      "license": "CC-BY-NC-4.0",
+      "purpose": "noncommercial research inspection only; not game release data",
+      "retrieved_at": "2026-10-06T18:09:42.708780+00:00",
+      "status": "materialized",
+      "bytes": 3529622,
+      "sha256": "5eec16930ac04022795923f68258362ef8ec819f01a5813cc02d392a2c17e3f3",
+      "content_range": null,
+      "coverage": "complete_response"
+    },
+    "gen4ou-prefix": {
+      "url": "https://huggingface.co/datasets/jakegrigsby/metamon-parsed-replays/resolve/f80c25b5fdc7ee9c288419a2e7af284704109b46/gen4ou.tar.gz",
+      "file": "metamon/gen4ou.tar.gz.prefix",
+      "license": "CC-BY-NC-4.0",
+      "purpose": "bounded first-member schema sample; not full dataset acquisition",
+      "retrieved_at": "2026-10-06T18:09:45.550664+00:00",
+      "status": "materialized",
+      "bytes": 2097152,
+      "sha256": "29b3226854166d21a655b26b2e77abb9f6f09efc78ca7b19d50f333a25a63c0a",
+      "content_range": "bytes 0-2097151/1907162183",
+      "coverage": "archive_prefix_only"
+    },
+    "lz4-wheel": {
+      "url": "https://files.pythonhosted.org/packages/a5/0b/a54cd7406995ab097fceb907c7eb13a6ddd49e0b231e448f1a81a50af65c/lz4-4.4.5-cp312-cp312-win_amd64.whl",
+      "file": "runtime/lz4-4.4.5-cp312-cp312-win_amd64.whl",
+      "license": "BSD-3-Clause",
+      "purpose": "isolated sample decompression; no global install",
+      "retrieved_at": "2026-10-06T18:09:48.202106+00:00",
+      "status": "materialized",
+      "bytes": 99497,
+      "sha256": "713a777de88a73425cf08eb11f742cd2c98628e79a8673d6a52e3c5f0c116f33",
+      "content_range": null,
+      "coverage": "complete_response"
+    }
+  }
+}

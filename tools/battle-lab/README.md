@@ -114,6 +114,8 @@ bootstrap 为 2000 次重采样的近似百分位区间，仅描述此合成测�
 
 实际验证与下一阶段：[对战训练基础记录](../../docs/battle-training-foundation.md)。
 
+公开数据的实际采集、质量检查、许可区分与后续训练方案见 [对战训练数据来源](../../docs/battle-data-sources.md)。`acquire-data.py` 获取有界样本，`inspect-data.py` 检查完整/前缀轨迹，`probe-prior-teams.cjs` 验证聚合统计生成合法队伍的工程路径；这些工具不启动模型训练。
+
 ## 动画回放
 
 将保存的真实对局重新校验并导出为 Showdown 动画播放器：

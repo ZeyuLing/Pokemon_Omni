@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "authority": "User requested data source organization and collection; bounded public research sample",
+  "max_total_bytes": 60000000,
+  "assets": [
+    {
+      "id": "gen4ou-0",
+      "file": "stats/gen4ou-0.json",
+      "url": "https://www.smogon.com/stats/2026-09/chaos/gen4ou-0.json",
+      "license": "Aggregate statistics: public domain per pkmn/smogon README",
+      "acquisition_allowed": true,
+      "purpose": "configuration prior, not trajectories",
+      "max_bytes": 1260362,
+      "expected_sha256": "d159125a5b12683636f2224af6b85ef1348bf69de117711a900f0071b4a7f2e6",
+      "expected_bytes": 1260362
+    },
+    {
+      "id": "gen4ou-1760",
+      "file": "stats/gen4ou-1760.json",
+      "url": "https://www.smogon.com/stats/2026-09/chaos/gen4ou-1760.json",
+      "license": "Aggregate statistics: public domain per pkmn/smogon README",
+      "acquisition_allowed": true,
+      "purpose": "configuration prior, not trajectories",
+      "max_bytes": 1062156,
+      "expected_sha256": "fccb5129c7e5966473165b08f7960e4cbfb92fe5ea4ed0426a0ade64a0273204",
+      "expected_bytes": 1062156
+    },
+    {
+      "id": "gen9ou-1825",
+      "file": "stats/gen9ou-1825.json",
+      "url": "https://www.smogon.com/stats/2026-09/chaos/gen9ou-1825.json",
+      "license": "Aggregate statistics: public domain per pkmn/smogon README",
+      "acquisition_allowed": true,
+      "purpose": "configuration prior, not trajectories",
+      "max_bytes": 7270227,
+      "expected_sha256": "829618fcb551ca4765a728f62ff5a1ad8a9bcb5458b6c0c199f6c31c2b9f9927",
+      "expected_bytes": 7270227
+    },
+    {
+      "id": "gen9nationaldex-1760",
+      "file": "stats/gen9nationaldex-1760.json",
+      "url": "https://www.smogon.com/stats/2026-09/chaos/gen9nationaldex-1760.json",
+      "license": "Aggregate statistics: public domain per pkmn/smogon README",
+      "acquisition_allowed": true,
+      "purpose": "configuration prior, not trajectories",
+      "max_bytes": 16000000,
+      "expected_sha256": "d2bd0bd4e525ff289bec1fc742191275c38d64615b34ccbc2e97b4965ffea876",
+      "expected_bytes": 9683304
+    },
+    {
+      "id": "gen4nu.tar.gz",
+      "file": "metamon/gen4nu.tar.gz",
+      "url": "https://huggingface.co/datasets/jakegrigsby/metamon-parsed-replays/resolve/f80c25b5fdc7ee9c288419a2e7af284704109b46/gen4nu.tar.gz",
+      "license": "CC-BY-NC-4.0",
+      "acquisition_allowed": true,
+      "purpose": "noncommercial research inspection only; not game release data",
+      "max_bytes": 20493851,
+      "expected_bytes": 20493851,
+      "expected_sha256": "016f1c358f3125dc27733c73f583e2558b6da394a6c75884b84da987fd75b682"
+    },
+    {
+      "id": "replay_stats.tar.gz",
+      "file": "metamon/replay_stats.tar.gz",
+      "url": "https://huggingface.co/datasets/jakegrigsby/metamon-parsed-replays/resolve/f80c25b5fdc7ee9c288419a2e7af284704109b46/replay_stats.tar.gz",
+      "license": "CC-BY-NC-4.0",
+      "acquisition_allowed": true,
+      "purpose": "noncommercial research inspection only; not game release data",
+      "max_bytes": 3529622,
+      "expected_bytes": 3529622,
+      "expected_sha256": "5eec16930ac04022795923f68258362ef8ec819f01a5813cc02d392a2c17e3f3"
+    },
+    {
+      "id": "gen4ou-prefix",
+      "file": "metamon/gen4ou.tar.gz.prefix",
+      "url": "https://huggingface.co/datasets/jakegrigsby/metamon-parsed-replays/resolve/f80c25b5fdc7ee9c288419a2e7af284704109b46/gen4ou.tar.gz",
+      "license": "CC-BY-NC-4.0",
+      "acquisition_allowed": true,
+      "purpose": "bounded first-member schema sample; not full dataset acquisition",
+      "max_bytes": 2097152,
+      "range_bytes": 2097152,
+      "expected_sha256": "29b3226854166d21a655b26b2e77abb9f6f09efc78ca7b19d50f333a25a63c0a",
+      "expected_bytes": 2097152
+    },
+    {
+      "id": "lz4-wheel",
+      "file": "runtime/lz4-4.4.5-cp312-cp312-win_amd64.whl",
+      "url": "https://files.pythonhosted.org/packages/a5/0b/a54cd7406995ab097fceb907c7eb13a6ddd49e0b231e448f1a81a50af65c/lz4-4.4.5-cp312-cp312-win_amd64.whl",
+      "license": "BSD-3-Clause",
+      "acquisition_allowed": true,
+      "purpose": "isolated sample decompression; no global install",
+      "max_bytes": 99497,
+      "expected_bytes": 99497,
+      "expected_sha256": "713a777de88a73425cf08eb11f742cd2c98628e79a8673d6a52e3c5f0c116f33"
+    }
+  ],
+  "purpose": "Frozen content lock for exact reproduction of acquired bounded sample"
+}

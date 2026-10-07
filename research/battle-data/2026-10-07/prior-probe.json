@@ -1,0 +1,63 @@
+{
+  "evidenceClass": "ENGINEERING_VALIDATION",
+  "origin": "SYNTHETIC_FROM_MARGINAL_USAGE_STATS",
+  "reference": "pokemon-showdown@0.11.11",
+  "format": "gen4ou",
+  "seed": 20261007,
+  "attempts": 268,
+  "acceptedSets": 256,
+  "uniqueSpecies": 45,
+  "uniqueItems": 25,
+  "uniqueMoves": 115,
+  "uniqueSpreads": 127,
+  "rejected": {
+    "Tyranitar can't get its egg move combination (dragondance, pursuit) from any possible father.": 3,
+    "(Is this incorrect? If so, post the chainbreeding instructions in Bug Reports)": 7,
+    "Roserade can't get its egg move combination (spikes, leafstorm) from any possible father.": 2,
+    "Zapdos has multiple copies of Hidden Power Grass.": 2,
+    "Zapdos's Hidden Power type Ice is incompatible with Hidden Power Grass": 2,
+    "Zapdos has multiple copies of Hidden Power Flying.": 1,
+    "Zapdos's Hidden Power type Ice is incompatible with Hidden Power Flying": 1,
+    "Magneton has multiple copies of Hidden Power Ice.": 1,
+    "Magneton's Hidden Power type Ground is incompatible with Hidden Power Ice": 1,
+    "Blastoise can't get its egg move combination (mirrorcoat, waterspout) from any possible father.": 1,
+    "Blissey's move Copycat is incompatible with Seismic Toss.": 1,
+    "Tyranitar can't get its egg move combination (pursuit, dragondance) from any possible father.": 1
+  },
+  "sourceSha256": "fccb5129c7e5966473165b08f7960e4cbfb92fe5ea4ed0426a0ade64a0273204",
+  "teamCount": 32,
+  "probes": [
+    {
+      "terminated": true,
+      "truncated": false,
+      "winner": "p1",
+      "reason": "win",
+      "turn": 12,
+      "steps": 18
+    },
+    {
+      "terminated": true,
+      "truncated": false,
+      "winner": "p2",
+      "reason": "win",
+      "turn": 17,
+      "steps": 24
+    },
+    {
+      "terminated": true,
+      "truncated": false,
+      "winner": "p2",
+      "reason": "win",
+      "turn": 36,
+      "steps": 46
+    },
+    {
+      "terminated": true,
+      "truncated": false,
+      "winner": "p1",
+      "reason": "win",
+      "turn": 29,
+      "steps": 40
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "schema": 1,
+  "assets": [
+    {
+      "path": "build/battle-data/2026-10-07/acquisition.json",
+      "bytes": 4788,
+      "sha256": "bc5348a2a39bf0934b442ebf6f0f586676e82564537809dbd060c8e72816fdc1"
+    },
+    {
+      "path": "build/battle-data/2026-10-07/acquisition-attempt-1.json",
+      "bytes": 4653,
+      "sha256": "2fe27a55229c2baf856dbf1f33cfad89ee643b94c3641ab266788c095c131ade"
+    },
+    {
+      "path": "build/battle-data/2026-10-07/inspection.json",
+      "bytes": 6152,
+      "sha256": "190eeeb86af9cf02a347db119a9a2d16218d5fd82c6e619f2dfa1be8c4d5b8a8"
+    },
+    {
+      "path": "build/battle-data/2026-10-07/trajectory-index.jsonl",
+      "bytes": 2125854,
+      "sha256": "46ae6e561faf441ebd1ba2af8fa7bf740384978fa8ea4dee8de62c22853bd6a3"
+    },
+    {
+      "path": "build/battle-data/2026-10-07/prior-probe/generated-teams.json",
+      "bytes": 123974,
+      "sha256": "00ebe8f6131a1a559c922a9bb1337bfc820a1af905f10bc75faa2cf837c8e893"
+    },
+    {
+      "path": "build/battle-data/2026-10-07/prior-probe/report.json",
+      "bytes": 2041,
+      "sha256": "cf11496e801b5cc93a397524e40f12459f2ddc3031dfddf5c54a085842ec6d03"
+    },
+    {
+      "path": "build/battle-data/discovery/chaos-index.html",
+      "bytes": 34398,
+      "sha256": "a09c6af0a277a237ea46c4843cacdb9c2aae753f9e905a43c87214a2f1523d03"
+    },
+    {
+      "path": "build/battle-data/discovery/code-tree.json",
+      "bytes": 70669,
+      "sha256": "6fa880ac7c4abf9a8b14606f86121c31d19db3bea1d86e4152e73434eee80177"
+    },
+    {
+      "path": "build/battle-data/discovery/lz4-pypi.json",
+      "bytes": 53587,
+      "sha256": "a0cf3e7adbd417d2eb42d95f60505bcc1334e17e06bcc807cec50b58c1718a06"
+    },
+    {
+      "path": "build/battle-data/discovery/metamon-git.txt",
+      "bytes": 4753,
+      "sha256": "088b0de5b9fc4e7a411d0883f89f5430f3fe48251b3892bfbf31976a4ef1dd45"
+    },
+    {
+      "path": "build/battle-data/discovery/metamon-interface.py",
+      "bytes": 60080,
+      "sha256": "348c4c7eb4e720c3d4cab26ac85af9a42833c8a6f5b9be7528e6dc21ab4220e0"
+    },
+    {
+      "path": "build/battle-data/discovery/metamon-readme.md",
+      "bytes": 63115,
+      "sha256": "498b2324376af5d7a38cabc84d8007c200133f1938445d2f4c42da925257829f"
+    },
+    {
+      "path": "build/battle-data/discovery/parsed-card.txt",
+      "bytes": 6049,
+      "sha256": "53e88bb6b13ec8d49762e7db247707d11f52649eab8010df52ffa072fbf3aee6"
+    },
+    {
+      "path": "build/battle-data/discovery/parsed-meta.json",
+      "bytes": 2700,
+      "sha256": "5a8eedfc4000b5c1fb02441f60bc1f8e5237184c4e0059a02ef6daabeb64fa5e"
+    },
+    {
+      "path": "build/battle-data/discovery/parsed-tree.txt",
+      "bytes": 6396,
+      "sha256": "295a37332f97264bc2d53e3b70a00f2dcf53475de625220f3fe13649f30c232f"
+    },
+    {
+      "path": "build/battle-data/discovery/parser-readme.md",
+      "bytes": 864,
+      "sha256": "774d204216f530c4144df389cd355540bee321693ebfda04a674e6f2ee48826f"
+    },
+    {
+      "path": "build/battle-data/discovery/pile-card.txt",
+      "bytes": 3246,
+      "sha256": "d391d2a125db38ae6e37813503ac29bb4e0f59a30c930d5a2577610b96e1542b"
+    },
+    {
+      "path": "build/battle-data/discovery/pile-meta.txt",
+      "bytes": 2121,
+      "sha256": "fbd8dbe9a26afd8eacacbf8ee47902e55be9d79937652bd89cdeecfd74953c35"
+    },
+    {
+      "path": "build/battle-data/discovery/pile-tree.json",
+      "bytes": 7487,
+      "sha256": "3597c9d516d002ed3d707d40f029e74841481f2538fc100642f96f2845fc41df"
+    },
+    {
+      "path": "build/battle-data/discovery/raw-meta.json",
+      "bytes": 4024,
+      "sha256": "0bf34f3936414ba5cf2bcaf53903a6218f0c9fa68f427ed9173b9d91314d3f70"
+    },
+    {
+      "path": "build/battle-data/discovery/sets-api.md",
+      "bytes": 1536,
+      "sha256": "13e975af378846d69b38780d4ede65dc9409f135b7ccaa1d5493eaa926612710"
+    },
+    {
+      "path": "build/battle-data/discovery/sets-readme.txt",
+      "bytes": 2492,
+      "sha256": "d5f0c7a94627e43d476cb1736f81a18e2bbbbae61a812050d6a8f1737e1cc006"
+    },
+    {
+      "path": "build/battle-data/discovery/stats-index.txt",
+      "bytes": 17242,
+      "sha256": "23d4ee1ddf2f58726b8c41f4aa2570ae4b73b9cdb7e644403460afe3efbc7471"
+    },
+    {
+      "path": "build/battle-data/discovery/teams-card.txt",
+      "bytes": 3532,
+      "sha256": "7e6f5562e4f29d524ca8907499a0a10a017a921456553fae2595a0c44e895b01"
+    },
+    {
+      "path": "build/battle-data/discovery/teams-meta.txt",
+      "bytes": 3696,
+      "sha256": "418eaad5c0a40d8417fc327a2f8938c44fee824db22be6102c19ebac2acd12c8"
+    },
+    {
+      "path": "build/battle-data/discovery/teams-tree.json",
+      "bytes": 18566,
+      "sha256": "84d67c434dde19cbbb07ba303f6a51a0bfb4a1543866c95dc6b6847fd2d6e29d"
+    }
+  ]
+}

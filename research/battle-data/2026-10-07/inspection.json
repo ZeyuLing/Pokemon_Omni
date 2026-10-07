@@ -1,0 +1,262 @@
+{
+  "schema": 1,
+  "purpose": "data readiness audit, not model training or performance evaluation",
+  "lz4_version": "4.4.5",
+  "datasets": {
+    "gen4nu": {
+      "states": 131360,
+      "nonterminal_steps": 127230,
+      "missing_nonterminal_actions": 12954,
+      "known_nonterminal_actions": 114276,
+      "out_of_candidate_range": 0,
+      "exact_stats_states": 0,
+      "terminal_states": 4130,
+      "trajectories": 4130,
+      "unique_battles": 2065,
+      "outcomes": {
+        "win": 2065,
+        "loss": 2065
+      },
+      "formats": {
+        "gen4nu": 4130
+      },
+      "state_fields": [
+        "available_switches",
+        "battle_field",
+        "battle_lost",
+        "battle_won",
+        "can_tera",
+        "forced_switch",
+        "format",
+        "opponent_active_pokemon",
+        "opponent_conditions",
+        "opponent_prev_move",
+        "opponent_teampreview",
+        "opponents_remaining",
+        "player_active_pokemon",
+        "player_conditions",
+        "player_prev_move",
+        "weather"
+      ],
+      "pokemon_fields": [
+        "ability",
+        "accuracy_boost",
+        "atk_boost",
+        "base_atk",
+        "base_def",
+        "base_hp",
+        "base_spa",
+        "base_spd",
+        "base_spe",
+        "base_species",
+        "def_boost",
+        "effect",
+        "evasion_boost",
+        "hp_pct",
+        "item",
+        "lvl",
+        "moves",
+        "name",
+        "spa_boost",
+        "spd_boost",
+        "spe_boost",
+        "status",
+        "tera_type",
+        "types"
+      ],
+      "selection": "whole archive",
+      "missing_action_fraction": 0.10181560952605517
+    },
+    "gen4ou-prefix": {
+      "states": 5640,
+      "nonterminal_steps": 5484,
+      "missing_nonterminal_actions": 566,
+      "known_nonterminal_actions": 4918,
+      "out_of_candidate_range": 0,
+      "exact_stats_states": 0,
+      "terminal_states": 156,
+      "trajectories": 156,
+      "unique_battles": 93,
+      "outcomes": {
+        "win": 85,
+        "loss": 71
+      },
+      "formats": {
+        "gen4ou": 156
+      },
+      "state_fields": [
+        "available_switches",
+        "battle_field",
+        "battle_lost",
+        "battle_won",
+        "can_tera",
+        "forced_switch",
+        "format",
+        "opponent_active_pokemon",
+        "opponent_conditions",
+        "opponent_prev_move",
+        "opponents_remaining",
+        "player_active_pokemon",
+        "player_conditions",
+        "player_prev_move",
+        "weather"
+      ],
+      "pokemon_fields": [
+        "ability",
+        "accuracy_boost",
+        "atk_boost",
+        "base_atk",
+        "base_def",
+        "base_hp",
+        "base_spa",
+        "base_spd",
+        "base_spe",
+        "base_species",
+        "def_boost",
+        "effect",
+        "evasion_boost",
+        "hp_pct",
+        "item",
+        "lvl",
+        "moves",
+        "name",
+        "spa_boost",
+        "spd_boost",
+        "spe_boost",
+        "status",
+        "tera_type",
+        "types"
+      ],
+      "selection": "complete members in first 2 MiB; nonrandom convenience sample",
+      "missing_action_fraction": 0.10320933625091175
+    }
+  },
+  "statistics": {
+    "gen4ou-0.json": {
+      "info": {
+        "metagame": "gen4ou",
+        "cutoff": 0,
+        "cutoff deviation": 0,
+        "team type": null,
+        "number of battles": 57675
+      },
+      "species": 248,
+      "fields": [
+        "Raw count",
+        "Viability Ceiling",
+        "Abilities",
+        "Items",
+        "Spreads",
+        "Moves",
+        "Tera Types",
+        "Happiness",
+        "Teammates",
+        "Checks and Counters",
+        "usage"
+      ]
+    },
+    "gen4ou-1760.json": {
+      "info": {
+        "metagame": "gen4ou",
+        "cutoff": 1760,
+        "cutoff deviation": 0,
+        "team type": null,
+        "number of battles": 57675
+      },
+      "species": 101,
+      "fields": [
+        "Raw count",
+        "Viability Ceiling",
+        "Abilities",
+        "Items",
+        "Spreads",
+        "Moves",
+        "Tera Types",
+        "Happiness",
+        "Teammates",
+        "Checks and Counters",
+        "usage"
+      ]
+    },
+    "gen9nationaldex-1760.json": {
+      "info": {
+        "metagame": "gen9nationaldex",
+        "cutoff": 1760,
+        "cutoff deviation": 0,
+        "team type": null,
+        "number of battles": 426601
+      },
+      "species": 359,
+      "fields": [
+        "Raw count",
+        "Viability Ceiling",
+        "Abilities",
+        "Items",
+        "Spreads",
+        "Moves",
+        "Tera Types",
+        "Happiness",
+        "Teammates",
+        "Checks and Counters",
+        "usage"
+      ]
+    },
+    "gen9ou-1825.json": {
+      "info": {
+        "metagame": "gen9ou",
+        "cutoff": 1825,
+        "cutoff deviation": 0,
+        "team type": null,
+        "number of battles": 574541
+      },
+      "species": 243,
+      "fields": [
+        "Raw count",
+        "Viability Ceiling",
+        "Abilities",
+        "Items",
+        "Spreads",
+        "Moves",
+        "Tera Types",
+        "Happiness",
+        "Teammates",
+        "Checks and Counters",
+        "usage"
+      ]
+    }
+  },
+  "replay_statistics": [
+    {
+      "file": "replay_stats/gen1ou_team_rosters.json",
+      "bytes": 5842008
+    },
+    {
+      "file": "replay_stats/gen3ou_team_rosters.json",
+      "bytes": 14207577
+    },
+    {
+      "file": "replay_stats/gen4ou_team_rosters.json",
+      "bytes": 12604503
+    },
+    {
+      "file": "replay_stats/gen4ou_pokemon.json",
+      "bytes": 19668070
+    },
+    {
+      "file": "replay_stats/gen3ou_pokemon.json",
+      "bytes": 17372527
+    },
+    {
+      "file": "replay_stats/gen2ou_pokemon.json",
+      "bytes": 9243450
+    },
+    {
+      "file": "replay_stats/gen1ou_pokemon.json",
+      "bytes": 5623804
+    },
+    {
+      "file": "replay_stats/gen2ou_team_rosters.json",
+      "bytes": 4826061
+    }
+  ]
+}

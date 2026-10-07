@@ -1,0 +1,33 @@
+{
+  "completed_date": "2026-10-08",
+  "scope": "data discovery, bounded acquisition, schema audit, environment probe; no optimizer run",
+  "unit_tests": {
+    "command": "python tests/battle-data.test.py",
+    "passed": 4,
+    "failed": 0
+  },
+  "locked_asset_reverification": {
+    "materialized": 8,
+    "verified": 8
+  },
+  "engineering_battles": {
+    "count": 4,
+    "terminated": 4,
+    "truncated": 0,
+    "step_replay_verified": 4
+  },
+  "independent_review": {
+    "scope": "data scripts and measured data artifacts, prior to final prose document",
+    "findings": [
+      "cache must respect strengthened acquisition plan",
+      "IV origin includes validator normalization"
+    ],
+    "disposition": "both fixed; cache regression tests added"
+  },
+  "files": {
+    "tools/battle-lab/acquire-data.py": "01377e8494efae847c70ca932c9f5d438bc029af5c0ea0a1ba97c55c6697553d",
+    "tools/battle-lab/inspect-data.py": "15033906f17005085d767fbf24158758a425f3337ba88cb416f3a3ddc5129599",
+    "tools/battle-lab/probe-prior-teams.cjs": "e112d1de9831f15da03b1ce3ee4a3fef20f1f4dc044fcddf181bf8403d76af69",
+    "tests/battle-data.test.py": "e8da9bcf5bb9f0668e72cc6fdbad1ee54aed4aa5335cc33c5c53221e00a703c3"
+  }
+}

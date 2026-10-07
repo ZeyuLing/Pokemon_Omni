@@ -1,0 +1,141 @@
+{
+  "schema": 1,
+  "date": "2026-10-07",
+  "request": "将可获取的数据来源先进行整理和搜集，然后看看在已有的数据上我们可以如何训练",
+  "scope": "data acquisition and readiness, no new model optimization",
+  "sources": [
+    {
+      "id": "existing-local-rollouts",
+      "kind": "synthetic controlled trajectories",
+      "status": "already_local",
+      "path": "build/battle-lab/reproduce-v2",
+      "scope": "gen4ou, 18 fixed species configurations",
+      "evidence_class": "FIXTURE_NON_EMPIRICAL",
+      "training_games": 256,
+      "training_rows": 11019,
+      "selfplay_games": 1024,
+      "use": "engineering regression only; keep previous protected split isolated"
+    },
+    {
+      "id": "showdown-reference",
+      "kind": "rules and simulation",
+      "status": "already_local",
+      "path": "tools/legality-reference/node_modules/pokemon-showdown",
+      "version": "0.11.11",
+      "url": "https://github.com/smogon/pokemon-showdown",
+      "license": "MIT (code; not an assertion about all Pokemon IP)",
+      "use": "generate exact POV trajectories; adapter currently gen4ou only"
+    },
+    {
+      "id": "smogon-monthly",
+      "kind": "aggregate marginal configuration statistics",
+      "status": "downloaded_4_files",
+      "url": "https://www.smogon.com/stats/2026-09/chaos/",
+      "license": "public-domain aggregate statistics per pkmn/smogon README",
+      "license_evidence": "https://github.com/pkmn/smogon#readme",
+      "formats": [
+        "gen4ou",
+        "gen9ou",
+        "gen9nationaldex"
+      ],
+      "limitations": [
+        "counts are aggregate underlying battles, not downloaded replays",
+        "two Gen4 rating cutoffs overlap; do not add counts",
+        "marginals do not identify joint sets or original teams"
+      ]
+    },
+    {
+      "id": "metamon-parsed-replays",
+      "kind": "reconstructed human POV trajectories",
+      "status": "one_complete_small_partition_plus_bounded_ou_prefix",
+      "url": "https://huggingface.co/datasets/jakegrigsby/metamon-parsed-replays",
+      "revision": "f80c25b5fdc7ee9c288419a2e7af284704109b46",
+      "license": "CC-BY-NC-4.0",
+      "license_scope": "dataset card",
+      "deployment_eligibility": "not cleared for commercial game/model release",
+      "publisher_reported_trajectories_approx": 5300000,
+      "full_gen4ou_archive_bytes": 1907162183,
+      "use": "research offline RL / masked imitation after adapter audit",
+      "limitations": [
+        "missing actions",
+        "inferred own sets",
+        "base stats not actual stats",
+        "candidate masks not full engine legal masks",
+        "no per-field reconstruction confidence in inspected samples"
+      ]
+    },
+    {
+      "id": "metamon-replay-statistics",
+      "kind": "compatible roster/set frequency summaries",
+      "status": "downloaded_complete_archive",
+      "url": "https://huggingface.co/datasets/jakegrigsby/metamon-parsed-replays",
+      "revision": "f80c25b5fdc7ee9c288419a2e7af284704109b46",
+      "license": "CC-BY-NC-4.0",
+      "files": 8,
+      "use": "research priors only; compatibility counts are not observed full-set frequencies"
+    },
+    {
+      "id": "metamon-raw-replays",
+      "kind": "spectator logs",
+      "status": "metadata_only",
+      "url": "https://huggingface.co/datasets/jakegrigsby/metamon-raw-replays",
+      "revision": "792a86b5cdbcab9696032e947483b218453a0d4f",
+      "publisher_metadata_battles": 2681841,
+      "publisher_metadata_download_bytes": 5699542013,
+      "license": "not declared in inspected dataset card/API",
+      "acquisition_eligibility": "payload deferred; dataset-specific permission unresolved",
+      "use": "reconstruction and independent parser audit; no direct PPO ingestion"
+    },
+    {
+      "id": "metamon-parsed-pile",
+      "kind": "external self-play trajectories",
+      "status": "metadata_only",
+      "url": "https://huggingface.co/datasets/jakegrigsby/metamon-parsed-pile",
+      "revision": "4f800783dd2078928969f1515ac466af858f0e48",
+      "publisher_reported_trajectories_approx": 22000000,
+      "gen4ou_payload_bytes": {
+        "pac-base": 6486201469,
+        "pac-exploratory": 6974168418
+      },
+      "license": "not declared in inspected dataset card/API",
+      "acquisition_eligibility": "payload deferred; permission and large acquisition not resolved",
+      "use": "candidate offline RL data, not our on-policy data"
+    },
+    {
+      "id": "metamon-teams",
+      "kind": "human sample teams and inferred/generated replay teams",
+      "status": "metadata_only",
+      "url": "https://huggingface.co/datasets/jakegrigsby/metamon-teams",
+      "revision": "bff785c80a06273faee1c675d368948f5dd65d44",
+      "license": "not declared in inspected dataset card/API",
+      "acquisition_eligibility": "payload deferred; dataset-specific permission unresolved",
+      "publisher_gen4_counts_approx": {
+        "competitive": "<30",
+        "gl_05_26": 48000,
+        "hl_05_26": 6000
+      },
+      "limitations": [
+        "predicted teams are not original player teams",
+        "current legality must be rechecked",
+        "competitive teams used repeatedly in upstream evaluation; unsuitable as independent final test"
+      ]
+    },
+    {
+      "id": "pkmn-smogon-sets",
+      "kind": "curated sets and sample teams",
+      "status": "API_and_rights_documentation_only",
+      "url": "https://github.com/pkmn/smogon",
+      "license": "wrapper code MIT; set/analysis content copyrighted by Smogon and contributors",
+      "acquisition_eligibility": "bulk payload excluded pending content permission",
+      "use": "source catalogue and optional permission-cleared human configuration input"
+    },
+    {
+      "id": "showdown-replay-api",
+      "kind": "public spectator replay service",
+      "status": "documentation_verified; no broad crawl",
+      "url": "https://github.com/smogon/pokemon-showdown-client/blob/master/WEB-API.md",
+      "license": "API documentation/code does not grant replay-data license",
+      "use": "targeted source verification or future rights-cleared collection"
+    }
+  ]
+}
