@@ -44,6 +44,8 @@ int omni_adventure_store(OmniAdventure *,uint8_t slot);
 int omni_adventure_withdraw(OmniAdventure *,uint8_t slot);
 void omni_adventure_new(OmniAdventure *);
 int omni_adventure_enter(OmniAdventure *,uint16_t location);
+enum {OMNI_FIELD_NONE,OMNI_FIELD_GARY,OMNI_FIELD_OLD_MAN};
+unsigned omni_initialization_field_event(const OmniAdventure *,unsigned x,unsigned y);
 uint8_t omni_adventure_interact(OmniAdventure *,uint8_t person);
 const char *omni_adventure_dialogue(uint8_t talk);
 const char *omni_adventure_objective(const OmniAdventure *);

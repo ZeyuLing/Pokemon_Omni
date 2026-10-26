@@ -29,6 +29,15 @@ uint16_t omni_partner_stat(const OmniPartner *m,uint8_t stat){const OmniStarter 
 static void create_mon(OmniPartner *m,unsigned choice){const OmniStarter *s=&omni_starters[choice-1];unsigned i;memset(m,0,sizeof(*m));m->species=s->species;m->level=5;m->experience=125;for(i=0;i<6;++i)m->ivs[i]=31;for(i=0;i<4;++i){m->moves[i]=s->moves[i];m->pp[i]=s->pp[i];}m->hp=omni_partner_stat(m,0);}
 void omni_adventure_new(OmniAdventure *s){if(!s)return;memset(s,0,sizeof(*s));s->rng=0x50414c4cu;s->location=OMNI_BEDROOM;s->money=3000;}
 int omni_adventure_enter(OmniAdventure *s,uint16_t location){if(!s||location<1||location>10)return OMNI_ADVENTURE_ARGUMENT;if(location>=6&&location<=9&&(!s->starter||((s->events&OMNI_EVENT_INITIALIZATION)&&!(s->events&OMNI_EVENT_GARY_DONE))))return OMNI_ADVENTURE_LOCKED;s->location=location;return OMNI_ADVENTURE_OK;}
+unsigned omni_initialization_field_event(const OmniAdventure *s,unsigned x,unsigned y){
+ /* A scene condition is evaluated before field input, after a completed step,
+  * and after continuing a save. Completion flags, not approach direction,
+  * select the event. The Viridian band covers every northern approach. */
+ if(!s||!(s->events&OMNI_EVENT_INITIALIZATION))return OMNI_FIELD_NONE;
+ if(s->location==OMNI_LAB&&(s->events&OMNI_EVENT_GIFTS)&&!(s->events&OMNI_EVENT_GARY_DONE))return OMNI_FIELD_GARY;
+ if(s->location==OMNI_VIRIDIAN&&x<48&&y<=10&&(s->events&OMNI_EVENT_DELIVERED)&&!(s->events&OMNI_EVENT_OLD_DONE))return OMNI_FIELD_OLD_MAN;
+ return OMNI_FIELD_NONE;
+}
 void omni_adventure_heal(OmniAdventure *s){unsigned i;if(!s)return;for(i=0;i<s->party_count;++i){unsigned k;s->party[i].hp=omni_partner_stat(&s->party[i],0);s->party[i].status=0;for(k=0;k<4;++k)s->party[i].pp[k]=(uint8_t)omni_move_pp(s->party[i].moves[k]);}}
 uint8_t omni_adventure_interact(OmniAdventure *s,uint8_t person){
  static const uint8_t places[]={0,5,2,5,1,1,4,5,3};
@@ -130,11 +139,11 @@ int omni_adventure_load(OmniAdventure *s,const uint8_t *in,size_t n){OmniAdventu
 const char *omni_adventure_objective(const OmniAdventure *s){
  if(!s->starter)return "前往研究所，认识皮卡丘";
  if((s->events&OMNI_EVENT_INITIALIZATION)&&!(s->events&OMNI_EVENT_GARY_DONE))return "完成研究所的小茂对战";
- if((s->events&OMNI_EVENT_INITIALIZATION)&&!(s->events&OMNI_EVENT_OLD_DONE))return "拜访常青市北面的捕捉老人";
  if(!(s->events&OMNI_EVENT_CENTER))return "沿一号道路前往常青中心";
  if(!(s->events&OMNI_EVENT_INITIALIZATION)&&!(s->events&OMNI_EVENT_ROCKET))return "保护中心，阻止火箭队";
  if(!(s->events&OMNI_EVENT_PARCEL))return "去常青商店领取博士包裹";
  if(!(s->events&OMNI_EVENT_DELIVERED))return "把包裹送回大木研究所";
+ if((s->events&OMNI_EVENT_INITIALIZATION)&&!(s->events&OMNI_EVENT_OLD_DONE))return "完成常青市北面的老人事件";
  return "开场完成，常青森林待开放";
 }
 const char *omni_adventure_visit(OmniAdventure *s,uint8_t person){
@@ -193,6 +202,7 @@ int omni_initialization_gifts(OmniAdventure *s,const OmniDex *dex,OmniDexState *
 }
 int omni_initialization_battle(OmniAdventure *s,OmniPractice *b,uint8_t kind,const OmniDex *dex,OmniDexState *state){
  unsigned i,choice;if(!s||!b||!(s->events&OMNI_EVENT_GIFTS)||kind<3||kind>5)return OMNI_ADVENTURE_LOCKED;
+ if(kind!=OMNI_BATTLE_GARY&&!(s->events&OMNI_EVENT_DELIVERED))return OMNI_ADVENTURE_LOCKED;
  if((kind==OMNI_BATTLE_GARY&&(s->location!=OMNI_LAB||(s->events&OMNI_EVENT_GARY_DONE)))||(kind!=OMNI_BATTLE_GARY&&(s->location!=OMNI_VIRIDIAN||(s->events&OMNI_EVENT_OLD_DONE))))return OMNI_ADVENTURE_LOCKED;
  for(i=0;i<s->party_count&&!s->party[i].hp;++i){}if(i==s->party_count)return OMNI_ADVENTURE_LOCKED;
  choice=kind==OMNI_BATTLE_GARY?3:kind==OMNI_BATTLE_OLD_MAN?5:8;

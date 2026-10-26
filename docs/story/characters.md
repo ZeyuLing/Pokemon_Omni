@@ -169,7 +169,7 @@
 | [研究所数据研究员](characters/lab-data-researcher.md) | 已采用 | 整理招式与属性标签。 |
 | [研究所视觉语言研究员](characters/lab-vlm-researcher.md) | 已采用 | 研究视觉与语言模型；不知小智的秘密。 |
 | [研究所机房工程师](characters/lab-server-engineer.md) | 已采用 | 维护计算节点；不知小智的秘密。 |
-| [常青市捕捉老人](characters/viridian-old-man.md) | 已采用 | 向小智提供捕捉教学，或在被拒绝后发起对战。 |
+| [常青市捕捉老人](characters/viridian-old-man.md) | 已采用 | 小智送回博士包裹后，北行时主动接近并提供不可绕过的捕捉教学；被拒绝则发起对战，成功分支赠独角虫并警告火箭队渗透。 |
 | [小智的妙蛙种子](characters/ash-bulbasaur.md) | 已采用 | 由大木赠给小智的初始伙伴之一。 |
 | [小智的小火龙](characters/ash-charmander.md) | 已采用 | 由大木赠给小智的初始伙伴之一。 |
 | [小智的杰尼龟](characters/ash-squirtle.md) | 已采用 | 由大木赠给小智的初始伙伴之一。 |

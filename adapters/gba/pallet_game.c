@@ -71,7 +71,8 @@ static void transition(uint8_t target){fade_target=target;fade_ticks=8;}
 static uint8_t story_seq=255,story_beat,gary_present,gary_moving,gary_leaving,gary_direction=1,tutorial_bag_seen;
 static uint8_t training_tool,training_field,training_value,storage_mode,storage_cursor;
 static int gary_x=80,gary_y=64;static uint16_t gary_clock;
-static OmniWalkPoint gary_path[32];static unsigned gary_path_count;
+static uint8_t story_actor,old_active,old_moving,old_direction;static int old_x,old_y;
+static OmniWalkPoint gary_path[128];static unsigned gary_path_count;
 static void story_start(unsigned id);static void story_next(void);static void story_move_tick(void);
 static void draw_training(void);static void draw_storage(void);static void training_tick(uint16_t pressed);static void storage_tick(uint16_t pressed);
 static void initialization_resume(void);static void initialization_result(unsigned kind,unsigned outcome);
@@ -79,10 +80,12 @@ static unsigned bag_count(void);static const char *bag_name(unsigned index);
 static uint32_t save_seq;static int save_slot=-1;
 static uint8_t save_bytes[12500];
 static const char *dialogue,*next_page;
+static uint16_t dialog_clock;static unsigned dialog_total;static uint8_t dialog_revealed;
+static unsigned field_page_letters(const char *);
 static char buffer[512];
 static const char save_signature[] __attribute__((used))="SRAM_V113";
 /* Passive emulator observability. No write/cheat commands are exposed. */
-volatile uint32_t omni_pallet_probe[37];
+volatile uint32_t omni_pallet_probe[40];
 volatile uint32_t omni_presentation_probe[56];
 volatile uint32_t omni_travel_probe[20];
 
@@ -97,10 +100,12 @@ static uint32_t get32(const uint8_t *p){return p[0]|((uint32_t)p[1]<<8)|((uint32
 static void put32(uint8_t *p,uint32_t v){unsigned i;for(i=0;i<4;++i)p[i]=(uint8_t)(v>>(i*8));}
 static const PalletMap *map(void){return &pallet_maps[game.location-1];}
 static int actor_visible(const PalletActor *a){if(a->person==3&&(game.events&OMNI_EVENT_INITIALIZATION))return gary_present;if(a->person==19)return !(game.events&OMNI_EVENT_WOKE);return !a->starter||!game.starter;}
-static int actor_at(int x,int y){unsigned i;const PalletMap *m=map();for(i=m->actors;i<m->actors+m->actor_count;++i)if(pallet_actors[i].x==x&&pallet_actors[i].y==y&&actor_visible(&pallet_actors[i]))return (int)i;return -1;}
+static unsigned actor_tile_x(const PalletActor *a){if(a->person==3&&(game.events&OMNI_EVENT_INITIALIZATION)&&gary_present)return (unsigned)gary_x/16;if(a->person==18&&old_active)return (unsigned)old_x/16;return a->x;}
+static unsigned actor_tile_y(const PalletActor *a){if(a->person==3&&(game.events&OMNI_EVENT_INITIALIZATION)&&gary_present)return (unsigned)gary_y/16;if(a->person==18&&old_active)return (unsigned)old_y/16;return a->y;}
+static int actor_at(int x,int y){unsigned i;const PalletMap *m=map();for(i=m->actors;i<m->actors+m->actor_count;++i)if(actor_tile_x(&pallet_actors[i])==(unsigned)x&&actor_tile_y(&pallet_actors[i])==(unsigned)y&&actor_visible(&pallet_actors[i]))return (int)i;return -1;}
 static const PalletWarp *warp_at(int x,int y){unsigned i;const PalletMap *m=map();for(i=m->warps;i<m->warps+m->warp_count;++i)if(pallet_warps[i].x==x&&pallet_warps[i].y==y)return &pallet_warps[i];return 0;}
 static int position_valid(unsigned location,unsigned x,unsigned y){const PalletMap *m;if(location<1||location>10)return 0;m=&pallet_maps[location-1];return x<m->w&&y<m->h&&!pallet_world_blob[m->collision+y*m->w+x];}
-static void message(const char *s,unsigned after){dialogue=s;next_page=s;after_dialog=(uint8_t)after;screen=DIALOG;dirty=1;}
+static void message(const char *s,unsigned after){dialogue=s;next_page=s;dialog_clock=omni_gba_clock();dialog_total=field_page_letters(s);dialog_revealed=0;after_dialog=(uint8_t)after;screen=DIALOG;dirty=1;}
 /* Source pixels stay at their native resolution. Bit 15 marks transparency. */
 static void ui_crop(unsigned offset,int width,int sx,int sy,int w,int h,int x,int y){
  const uint16_t *p=(const uint16_t*)(omni_game_ui_blob+offset);int row,col;
@@ -159,6 +164,8 @@ static unsigned rocket_code(const char **str){
  else if(code>=0xc0){code=((code&31)<<6)|(p[0]&63);++p;}
  *str=(const char*)p;return code;
 }
+static unsigned field_page_letters(const char *s){unsigned row,count=0;for(row=0;row<2&&*s;++row){unsigned w=0;while(*s&&*s!='\n'){const char *q=s;unsigned code=rocket_code(&q),cw=((code>=0x4e00&&code<=0x9fff)||code==0x3002)?12:6;if(w+cw>204)break;s=q;w+=cw;++count;}if(*s=='\n')++s;}return count;}
+static unsigned field_visible_letters(void){return dialog_revealed?dialog_total:(uint16_t)(omni_gba_clock()-dialog_clock)/2u;}
 static int rocket_text(int x,int y,const char *str,int end){
  while(*str){
   unsigned code=rocket_code(&str),lo=0,hi=OMNI_ROCKET_GLYPHS,row,col;
@@ -267,11 +274,12 @@ intro_overlay:
 static void heading(const char *s){box(0,0,240,23,BLUE);text(7,3,s,PAPER,237);}
 static const char *paragraph_color(const char *s,int x,int y,unsigned rows,uint16_t color){unsigned row=0,w=0;char line[96];unsigned n=0;while(*s&&row<rows){unsigned bytes=1,width=6;const unsigned char c=(unsigned char)*s;if(c>=0xe0){bytes=3;width=12;}else if(c>=0xc0){bytes=2;width=12;}if(*s=='\n'||w+width>216){line[n]=0;text(x,y+(int)row*17,line,color,234);++row;n=w=0;if(*s=='\n')++s;if(row==rows)break;continue;}while(bytes--)line[n++]=*s++;w+=width;}if(n&&row<rows){line[n]=0;text(x,y+(int)row*17,line,color,234);}return s;}
 static const char *paragraph(const char *s,int x,int y,unsigned rows){return paragraph_color(s,x,y,rows,INK);}
-static void text_box(const char *s){unsigned row;char line[128];rocket_bitmap(OMNI_ROCKET_FRAME,240,48,0,112);for(row=0;row<2&&*s;++row){unsigned n=0,w=0;while(*s&&*s!='\n'){const char *q=s;unsigned code=rocket_code(&q),cw=((code>=0x4e00&&code<=0x9fff)||code==0x3002)?12:6;if(w+cw>204)break;while(s<q)line[n++]=*s++;w+=cw;}line[n]=0;rocket_text(16,121+(int)row*14,line,220);if(*s=='\n')++s;}next_page=s;rocket_bitmap(OMNI_ROCKET_ARROW,8,16,222,137);}
+static void text_box(const char *s){unsigned row,printed=0,visible=field_visible_letters();char line[128];rocket_bitmap(OMNI_ROCKET_FRAME,240,48,0,112);for(row=0;row<2&&*s;++row){unsigned n=0,w=0;while(*s&&*s!='\n'){const char *q=s;unsigned code=rocket_code(&q),cw=((code>=0x4e00&&code<=0x9fff)||code==0x3002)?12:6;if(w+cw>204)break;if(printed++<visible){while(s<q)line[n++]=*s++;}else s=q;w+=cw;}line[n]=0;rocket_text(16,121+(int)row*14,line,220);if(*s=='\n')++s;}next_page=s;if(visible>=dialog_total)rocket_bitmap(OMNI_ROCKET_ARROW,8,16,222,137);}
+
 static void dma_row(const uint16_t *source,volatile uint16_t *dest,unsigned count){REG32(0x040000d4)=(uint32_t)(uintptr_t)source;REG32(0x040000d8)=(uint32_t)(uintptr_t)dest;REG32(0x040000dc)=(((uintptr_t)source|(uintptr_t)dest|count*2u)&3u)?0x80000000u|count:0x84000000u|(count/2u);}
 static OMNI_WORLD_FAST void sprite(unsigned id,unsigned frame,int wx,int wy,unsigned flip){const PalletMap *m=map();const PalletSprite *s=&pallet_sprites[id];const uint16_t *pixels=(const uint16_t*)(pallet_world_blob+s->offset)+(frame%s->frames)*512;unsigned row,col;for(row=0;row<32;++row){int y=wy-16+(int)row,dy=y-camera_y+origin_y;if(dy<0||dy>=160)continue;for(col=0;col<16;++col){int x=wx+(int)col,dx=x-camera_x+origin_x;uint16_t c=pixels[row*16+(flip?15-col:col)];if(dx<0||dx>=240||(c&0x8000))continue;if(x>=0&&x<m->w*16&&y>=0&&y<m->h*16&&(pallet_world_blob[m->mask+(y*m->w*16+x)/8]&(1u<<((y*m->w*16+x)%8))))continue;omni_gba_surface[dy*240+dx]=c;}}}
 static unsigned face_frame(unsigned dir){return dir==0?0:dir==1?1:2;}
-static int actor_world_y(const PalletActor *a){return a->person==3&&(game.events&OMNI_EVENT_INITIALIZATION)?gary_y:a->y*16;}
+static int actor_world_y(const PalletActor *a){if(a->person==18&&old_active)return old_y;return a->person==3&&(game.events&OMNI_EVENT_INITIALIZATION)?gary_y:a->y*16;}
 static unsigned travel_species(void){return game.companion&&game.companion<=game.party_count&&game.party[game.companion-1].hp?game.party[game.companion-1].species:0;}
 static unsigned mount_species(void){return game.mount&&game.mount<=game.party_count&&game.party[game.mount-1].hp?game.party[game.mount-1].species:0;}
 static unsigned travel_terrain(int x,int y){unsigned t=(game.location==1||game.location==6||game.location==7)?OMNI_LAND:OMNI_LAND|OMNI_INDOOR;const PalletMap *m=map();if(x>=0&&y>=0&&x<m->w&&y<m->h&&pallet_world_blob[m->grass+y*m->w+x])t|=OMNI_ROUGH;return t;}
@@ -314,7 +322,7 @@ static OMNI_WORLD_FAST void draw_world(void){
  for(row=0;row<(unsigned)(height<160?height:160);++row)dma_row((const uint16_t*)(pallet_world_blob+m->art)+(row+camera_y)*width+camera_x,omni_gba_surface+(row+origin_y)*240+origin_x,(unsigned)(width<240?width:240));
  for(i=m->actors;i<m->actors+m->actor_count;++i)if(actor_visible(&pallet_actors[i]))ordered[count++]=i;
  for(i=0;i<count;++i)for(j=i+1;j<count;++j)if(actor_world_y(&pallet_actors[ordered[j]])<actor_world_y(&pallet_actors[ordered[i]])){unsigned temp=ordered[i];ordered[i]=ordered[j];ordered[j]=temp;}
- for(i=0;i<=count;++i){if(companion_order<0&&travel.visible&&(i==count||travel.y<actor_world_y(&pallet_actors[ordered[i]]))&&travel.y<=wy){travel_picture(travel.species,travel.x,travel.y,travel.face,travel.walking,0);companion_order=1;}if(player_order<0&&(i==count||wy<actor_world_y(&pallet_actors[ordered[i]]))){unsigned frame=face_frame(direction);if(moving&&((frame_count/4)&1))frame=(direction==0?3:direction==1?5:7)+(walk_phase&1);if(riding||ride_transition){travel_picture(mount_species(),wx,wy,direction,moving,0);travel_rider(wx,wy);travel_picture(mount_species(),wx,wy,direction,moving,1);}else sprite(0,frame,wx,wy,direction==3);player_order=1;}if(companion_order<0&&travel.visible&&player_order>=0&&(i==count||travel.y<actor_world_y(&pallet_actors[ordered[i]]))){travel_picture(travel.species,travel.x,travel.y,travel.face,travel.walking,0);companion_order=1;}if(i<count){const PalletActor *a=&pallet_actors[ordered[i]];if(a->person==3&&(game.events&OMNI_EVENT_INITIALIZATION)){unsigned f=face_frame(gary_direction);if(gary_moving&&((frame_count/4)&1))f=(gary_direction==0?3:gary_direction==1?5:7)+((frame_count/8)&1);sprite(a->sprite,f,gary_x,gary_y,gary_direction==3);}else sprite(a->sprite,face_frame(a->direction),a->x*16,a->y*16,a->direction==3);}}
+ for(i=0;i<=count;++i){if(companion_order<0&&travel.visible&&(i==count||travel.y<actor_world_y(&pallet_actors[ordered[i]]))&&travel.y<=wy){travel_picture(travel.species,travel.x,travel.y,travel.face,travel.walking,0);companion_order=1;}if(player_order<0&&(i==count||wy<actor_world_y(&pallet_actors[ordered[i]]))){unsigned frame=face_frame(direction);if(moving&&((frame_count/4)&1))frame=(direction==0?3:direction==1?5:7)+(walk_phase&1);if(riding||ride_transition){travel_picture(mount_species(),wx,wy,direction,moving,0);travel_rider(wx,wy);travel_picture(mount_species(),wx,wy,direction,moving,1);}else sprite(0,frame,wx,wy,direction==3);player_order=1;}if(companion_order<0&&travel.visible&&player_order>=0&&(i==count||travel.y<actor_world_y(&pallet_actors[ordered[i]]))){travel_picture(travel.species,travel.x,travel.y,travel.face,travel.walking,0);companion_order=1;}if(i<count){const PalletActor *a=&pallet_actors[ordered[i]];if(a->person==3&&(game.events&OMNI_EVENT_INITIALIZATION)){unsigned f=face_frame(gary_direction);if(gary_moving&&((frame_count/4)&1))f=(gary_direction==0?3:gary_direction==1?5:7)+((frame_count/8)&1);sprite(a->sprite,f,gary_x,gary_y,gary_direction==3);}else if(a->person==18&&old_active){unsigned f=face_frame(old_direction);if(old_moving&&((frame_count/4)&1))f=(old_direction==0?3:old_direction==1?5:7)+((frame_count/8)&1);sprite(a->sprite,f,old_x,old_y,old_direction==3);}else sprite(a->sprite,face_frame(a->direction),a->x*16,a->y*16,a->direction==3);}}
 }
 static unsigned dex_index(uint16_t species){unsigned i;for(i=0;i<omni_pokedex_catalog.count;++i)if(omni_pokedex_catalog.entries[i].national==species&&omni_pokedex_catalog.entries[i].category==1)return i;return 0;}
 /* Rocket main_menu.c: content at (16,8), 26 tiles wide; native 8px border. */
@@ -480,7 +488,7 @@ static int read_slot(unsigned slot,uint32_t *sequence,int apply){
  *sequence=get32(header+4);if(apply){riding=0;omni_travel_reset(&travel,0,0,0,0);game=temp;memcpy(dex_flags,scratch_flags,sizeof(dex_flags));px=save_bytes[9];py=save_bytes[10];direction=save_bytes[11];}return 1;
 }
 static int load_game(void){uint32_t a=0,b=0;int va=read_slot(0,&a,0),vb=read_slot(1,&b,0);unsigned first=(vb&&(!va||(int32_t)(b-a)>0))?1:0;uint32_t seq;if(!va&&!vb)return 0;if(read_slot(first,&seq,1)){save_slot=(int)first;save_seq=seq;return 1;}return 0;}
-static void begin_new(void){travel_trial=0;riding=0;ride_transition=0;omni_travel_reset(&travel,0,0,0,0);omni_adventure_new(&game);game.events|=OMNI_EVENT_INITIALIZATION;play_clock_remainder=0;memset(dex_flags,0,sizeof(dex_flags));px=6;py=6;direction=0;moving=0;anim_x=anim_y=0;gary_present=0;save_game();story_start(STORY_WAKE);}
+static void begin_new(void){travel_trial=0;old_active=old_moving=0;riding=0;ride_transition=0;omni_travel_reset(&travel,0,0,0,0);omni_adventure_new(&game);game.events|=OMNI_EVENT_INITIALIZATION;play_clock_remainder=0;memset(dex_flags,0,sizeof(dex_flags));px=6;py=6;direction=0;moving=0;anim_x=anim_y=0;gary_present=0;save_game();story_start(STORY_WAKE);}
 static void begin_intro(uint8_t new_game){preview_return=screen;intro_new_game=new_game;war_ticks=0;omni_presentation_begin(&presentation,OMNI_INTRO_COUNT);screen=INTRO;dirty=1;}
 static void end_intro(void){REG16(0x04000050)=0;if(intro_new_game)begin_new();else{screen=preview_return;dirty=1;}}
 static void talk_person(uint8_t person){
@@ -488,7 +496,7 @@ static void talk_person(uint8_t person){
  custom=omni_research_dialogue(person);if(custom){message(custom,AFTER_WORLD);return;}
  if(person==19){message("妈妈：快去研究所吧，博士还在等你！",AFTER_WORLD);return;}
  if(person==21||(person==OMNI_PC&&(game.events&OMNI_EVENT_GIFTS))){storage_mode=storage_cursor=0;screen=STORAGE;dirty=1;return;}
- if(person==18){if(game.events&OMNI_EVENT_WEEDLE_PENDING){unsigned boxed=game.party_count>=6;if(omni_initialization_weedle(&game,&omni_pokedex_catalog,&dex_state))message("老人：队伍和电脑都满了。\n独角虫先留在我这里，整理后再来吧。",AFTER_WORLD);else{save_game();message(boxed?"收到了独角虫，已送入电脑！\n老人：小心附近的火箭队！":"收到了独角虫！\n老人：小心附近的火箭队！",AFTER_WORLD);}return;}if(game.events&OMNI_EVENT_OLD_DONE)message("老人：你可要小心，最近火箭队好像已经渗透到附近了！",AFTER_WORLD);else story_start(STORY_OLD_OFFER);return;}
+ if(person==18){if(!(game.events&OMNI_EVENT_DELIVERED)){message("老人正在忙。先把博士的包裹送回去吧。",AFTER_WORLD);return;}if(game.events&OMNI_EVENT_WEEDLE_PENDING){unsigned boxed=game.party_count>=6;if(omni_initialization_weedle(&game,&omni_pokedex_catalog,&dex_state))message("老人：队伍和电脑都满了。\n独角虫先留在我这里，整理后再来吧。",AFTER_WORLD);else{save_game();message(boxed?"收到了独角虫，已送入电脑！\n老人：小心附近的火箭队！":"收到了独角虫！\n老人：小心附近的火箭队！",AFTER_WORLD);}return;}if(game.events&OMNI_EVENT_OLD_DONE)message("老人：你可要小心，最近火箭队好像已经渗透到附近了！",AFTER_WORLD);else story_start(STORY_OLD_OFFER);return;}
  if(person==OMNI_OAK&&(game.events&OMNI_EVENT_INITIALIZATION)&&!(game.events&OMNI_EVENT_GARY_DONE)){story_start(game.events&OMNI_EVENT_GIFTS?STORY_GARY_RETURN:STORY_OAK);return;}
 
  if(person==OMNI_ROCKET){if(!(game.events&OMNI_EVENT_CENTER)){message("武藏：别挡着我们。\n先照顾你的皮卡丘去吧！",AFTER_WORLD);return;}challenge_kind=OMNI_BATTLE_ROCKET;message((game.events&OMNI_EVENT_ROCKET)?"小次郎：这次换个战术！\n想再较量一次吗？":"武藏、小次郎和喵喵出现了！\n他们想夺走中心的宝可梦。\n小智决定保护大家。",AFTER_CHALLENGE);return;}
@@ -509,9 +517,10 @@ static int connection(int x,int y){unsigned dest=0;int nx=x,ny=y;
  else if(game.location==6&&y<0){dest=7;nx=x+12;ny=39;}
  else if(game.location==7&&y>=40&&x>=12&&x<36){dest=6;nx=x-12;ny=0;}
  if(!dest)return 0;if((game.events&OMNI_EVENT_INITIALIZATION)&&!(game.events&OMNI_EVENT_GARY_DONE)){message("先去研究所，完成与大木博士的约定。",AFTER_WORLD);return 1;}if(!game.starter){message("先去大木研究所领取伙伴吧。",AFTER_WORLD);return 1;}
- if(position_valid(dest,(unsigned)nx,(unsigned)ny)){omni_adventure_enter(&game,(uint16_t)dest);px=(uint8_t)nx;py=(uint8_t)ny;encounter_cooldown=6;save_game();}return 1;
+ if(position_valid(dest,(unsigned)nx,(unsigned)ny)){if(omni_adventure_enter(&game,(uint16_t)dest))return 1;old_active=old_moving=0;px=(uint8_t)nx;py=(uint8_t)ny;encounter_cooldown=6;save_game();}return 1;
 }
-static void finish_step(void){const PalletWarp *w=warp_at(px,py);moving=0;anim_x=anim_y=0;omni_travel_sample(&travel,16);++walk_phase;if(w){uint8_t from=(uint8_t)game.location;omni_adventure_enter(&game,w->dest_map);px=w->dest_x;py=w->dest_y;if(outdoors(w->dest_map)){++py;direction=0;}else if(outdoors(from)){--py;direction=1;}else if(from==OMNI_SERVERS||w->dest_map==OMNI_SERVERS){direction=0;}else{++py;direction=0;}if(!position_valid(game.location,px,py)){px=w->dest_x;py=w->dest_y;}encounter_cooldown=6;dirty=1;save_game();}
+static void finish_step(void){const PalletWarp *w=warp_at(px,py);moving=0;anim_x=anim_y=0;omni_travel_sample(&travel,16);++walk_phase;if(w){uint8_t from=(uint8_t)game.location;if(omni_adventure_enter(&game,w->dest_map)){px=(uint8_t)((int)px-(int)move_dx+1);py=(uint8_t)((int)py-(int)move_dy+1);return;}old_active=old_moving=0;px=w->dest_x;py=w->dest_y;if(outdoors(w->dest_map)){++py;direction=0;}else if(outdoors(from)){--py;direction=1;}else if(from==OMNI_SERVERS||w->dest_map==OMNI_SERVERS){direction=0;}else{++py;direction=0;}if(!position_valid(game.location,px,py)){px=w->dest_x;py=w->dest_y;}encounter_cooldown=6;dirty=1;save_game();}
+ else if(!travel_trial&&omni_initialization_field_event(&game,px,py)){unsigned event=omni_initialization_field_event(&game,px,py);story_start(event==OMNI_FIELD_GARY?STORY_GARY_RETURN:STORY_OLD_OFFER);}
  else if(encounter_cooldown)--encounter_cooldown;
  else if(!travel_trial&&omni_adventure_step(&game,pallet_world_blob[map()->grass+py*map()->w+px])&&!omni_adventure_battle(&game,&battle,OMNI_BATTLE_WILD,&omni_pokedex_catalog,&dex_state)){menu_cursor=0;battle_page=0;battle_cursor=0;capture_failed=0;screen=BATTLE;dirty=1;}
 }
@@ -568,7 +577,7 @@ static void battle_notice(const char *message){dialogue=message;log_index=255;sc
 static void throw_ball(void){int result;if(battle.kind==OMNI_BATTLE_TUTORIAL&&!tutorial_bag_seen){battle_notice("老人：先打开背包，看看精灵球口袋。\n回到这里也能按R直接丢球。");return;}bag_in_battle=0;result=omni_adventure_capture(&game,&battle,&omni_pokedex_catalog,&dex_state);if(!result)finish_battle();else if(result==OMNI_ADVENTURE_ALREADY){capture_failed=1;omni_practice_wait(&battle,&turn);log_index=0;battle_log(0);}else battle_notice(game.party_count>=6?"队伍已满。先去电脑寄存伙伴。":"不能投球：检查精灵球与对手。");}
 static void flee_battle(void){if(!omni_adventure_escape(&game,&battle))finish_battle();else battle_notice("训练师对战不能逃走。");}
 static void switch_partner(unsigned slot){if(!omni_adventure_switch(&game,&battle,(uint8_t)slot)){battle_page=0;battle_cursor=0;omni_practice_wait(&battle,&turn);log_index=0;battle_log(0);}else battle_notice("这位伙伴现在不能接替出战。");}
-static void probe(void){omni_pallet_probe[0]=0x50414c54u;omni_pallet_probe[1]=0x4f4d4e49u;omni_pallet_probe[2]=screen;omni_pallet_probe[3]=game.location;omni_pallet_probe[4]=px;omni_pallet_probe[5]=py;omni_pallet_probe[6]=direction;omni_pallet_probe[7]=game.chapter;omni_pallet_probe[8]=game.starter;omni_pallet_probe[9]=menu_cursor;omni_pallet_probe[10]=moving;omni_pallet_probe[11]=battle.mons[0].hp;omni_pallet_probe[12]=battle.mons[1].hp;omni_pallet_probe[13]=battle.turns;omni_pallet_probe[14]=game.potions;omni_pallet_probe[15]=game.battles_played;omni_pallet_probe[16]=game.party_count;omni_pallet_probe[17]=game.events;omni_pallet_probe[18]=game.balls;omni_pallet_probe[19]=game.party[0].level;omni_pallet_probe[20]=story_seq;omni_pallet_probe[21]=story_beat;omni_pallet_probe[22]=gary_present;omni_pallet_probe[23]=gary_x;omni_pallet_probe[24]=gary_y;omni_pallet_probe[25]=game.storage_count;omni_pallet_probe[26]=battle_page;omni_pallet_probe[27]=menu_cursor;omni_pallet_probe[28]=game.party[0].form;omni_pallet_probe[29]=game.party[0].nature;omni_pallet_probe[30]=game.party[0].evs[3];omni_pallet_probe[31]=game.party[0].evs[5];omni_pallet_probe[32]=battle.mons[1].level;omni_pallet_probe[33]=game.party[0].bond_eligible;omni_pallet_probe[34]=battle.opponent_count;omni_pallet_probe[35]=battle.opponent_slot;omni_pallet_probe[36]=battle.mons[0].species;}
+static void probe(void){omni_pallet_probe[0]=0x50414c54u;omni_pallet_probe[1]=0x4f4d4e49u;omni_pallet_probe[2]=screen;omni_pallet_probe[3]=game.location;omni_pallet_probe[4]=px;omni_pallet_probe[5]=py;omni_pallet_probe[6]=direction;omni_pallet_probe[7]=game.chapter;omni_pallet_probe[8]=game.starter;omni_pallet_probe[9]=menu_cursor;omni_pallet_probe[10]=moving;omni_pallet_probe[11]=battle.mons[0].hp;omni_pallet_probe[12]=battle.mons[1].hp;omni_pallet_probe[13]=battle.turns;omni_pallet_probe[14]=game.potions;omni_pallet_probe[15]=game.battles_played;omni_pallet_probe[16]=game.party_count;omni_pallet_probe[17]=game.events;omni_pallet_probe[18]=game.balls;omni_pallet_probe[19]=game.party[0].level;omni_pallet_probe[20]=story_seq;omni_pallet_probe[21]=story_beat;omni_pallet_probe[22]=gary_present;omni_pallet_probe[23]=gary_x;omni_pallet_probe[24]=gary_y;omni_pallet_probe[25]=game.storage_count;omni_pallet_probe[26]=battle_page;omni_pallet_probe[27]=menu_cursor;omni_pallet_probe[28]=game.party[0].form;omni_pallet_probe[29]=game.party[0].nature;omni_pallet_probe[30]=game.party[0].evs[3];omni_pallet_probe[31]=game.party[0].evs[5];omni_pallet_probe[32]=battle.mons[1].level;omni_pallet_probe[33]=game.party[0].bond_eligible;omni_pallet_probe[34]=battle.opponent_count;omni_pallet_probe[35]=battle.opponent_slot;omni_pallet_probe[36]=battle.mons[0].species;omni_pallet_probe[37]=story_actor;omni_pallet_probe[38]=story_actor==18?old_x:gary_x;omni_pallet_probe[39]=story_actor==18?old_y:gary_y;}
 static void tick(uint16_t keys){
  uint16_t pressed=omni_gba_input_pressed();++frame_count;
  if(fade_ticks){if(--fade_ticks==4){screen=fade_target;dirty=1;}return;}
@@ -582,7 +591,8 @@ static void tick(uint16_t keys){
  if(screen==WORLD&&!travel_trial&&(pressed&SELECT)){omni_presentation_speed(&presentation);speed_notice=96;dirty=1;}
  if(screen==DEX){if(dex_wait_release){if(keys&dex_wait_release)return;dex_wait_release=0;}omni_game_dex_tick(keys);if(!omni_game_dex_is_open()){omni_gba_input_clear();screen=menu_return;dirty=1;}return;}
  if(screen==WORLD&&moving){int speed=(int)omni_travel_speed(moving==3,moving==2,travel_terrain(px,py));anim_x+=((int)move_dx-1)*speed;anim_y+=((int)move_dy-1)*speed;omni_travel_sample(&travel,(unsigned)(16-(anim_x<0?-anim_x:anim_x)-(anim_y<0?-anim_y:anim_y)));dirty=1;if(!anim_x&&!anim_y)finish_step();return;}
- if(screen==WORLD){if(pressed&R){travel_toggle_ride();return;}if(pressed&L){travel_toggle_follow(game.companion?game.companion:1);return;}if(pressed&START){screen=MENU;menu_cursor=0;dirty=1;}else if(pressed&A)interact();else if(keys&UP)start_step(1,keys&B);else if(keys&DOWN)start_step(0,keys&B);else if(keys&LEFT)start_step(2,keys&B);else if(keys&RIGHT)start_step(3,keys&B);return;}
+ if(screen==WORLD){unsigned event=omni_initialization_field_event(&game,px,py);if(!travel_trial&&event){story_start(event==OMNI_FIELD_GARY?STORY_GARY_RETURN:STORY_OLD_OFFER);return;}if(pressed&R){travel_toggle_ride();return;}if(pressed&L){travel_toggle_follow(game.companion?game.companion:1);return;}if(pressed&START){screen=MENU;menu_cursor=0;dirty=1;}else if(pressed&A)interact();else if(keys&UP)start_step(1,keys&B);else if(keys&DOWN)start_step(0,keys&B);else if(keys&LEFT)start_step(2,keys&B);else if(keys&RIGHT)start_step(3,keys&B);return;}
+ if(screen==DIALOG&&!dialog_revealed){dirty=1;if(field_visible_letters()>=dialog_total)dialog_revealed=1;}
  if(!pressed)return;dirty=1;
  switch(screen){
  case COVER:
@@ -593,7 +603,7 @@ static void tick(uint16_t keys){
   if(pressed&(A|B|START)){menu_cursor=0;transition(FILE_MENU);}break;
  case FILE_MENU:if(pressed&L){begin_intro(0);break;}if(pressed&R){preview_return=FILE_MENU;cast_cursor=cast_credits=0;screen=CAST;break;}if(pressed&B){transition(COVER);break;}if(has_save&&(pressed&(UP|DOWN)))menu_cursor^=1;if(pressed&(A|START)){if(has_save&&!menu_cursor){load_game();screen=WORLD;initialization_resume();}else if(has_save)screen=NEW_CONFIRM;else begin_intro(1);}break;
  case NEW_CONFIRM:if(pressed&A)begin_intro(1);if(pressed&B)screen=FILE_MENU;break;
- case DIALOG:if(pressed&(A|B)){if(*next_page)dialogue=next_page;else{if(after_dialog==AFTER_STORY){story_next();break;}screen=after_dialog==AFTER_TRAINING?TRAINING:after_dialog==AFTER_STORAGE?STORAGE:after_dialog==AFTER_CHALLENGE?CHALLENGE:after_dialog==AFTER_MENU?MENU:after_dialog==AFTER_BAG?BAG:after_dialog==AFTER_SHOP?SHOP:WORLD;if(screen==CHALLENGE)menu_cursor=0;}}break;
+ case DIALOG:if(pressed&(A|B)){if(field_visible_letters()<dialog_total){dialog_revealed=1;break;}if(*next_page)message(next_page,after_dialog);else{if(after_dialog==AFTER_STORY){story_next();break;}screen=after_dialog==AFTER_TRAINING?TRAINING:after_dialog==AFTER_STORAGE?STORAGE:after_dialog==AFTER_CHALLENGE?CHALLENGE:after_dialog==AFTER_MENU?MENU:after_dialog==AFTER_BAG?BAG:after_dialog==AFTER_SHOP?SHOP:WORLD;if(screen==CHALLENGE)menu_cursor=0;}}break;
  case MENU:if(pressed&UP)menu_cursor=(menu_cursor+5)%6;if(pressed&DOWN)menu_cursor=(menu_cursor+1)%6;if(pressed&(B|START))screen=WORLD;if(pressed&A){switch(menu_cursor){case 0:if(DEX_DEBUG_ACCESS||game.starter){omni_game_dex_open();omni_game_dex_tick(0);menu_return=MENU;screen=DEX;dex_wait_release=1;}else message("先在研究所领取伙伴和图鉴。",AFTER_MENU);break;case 1:team_action=team_summary=team_item=team_switch=0;party_cursor=0;screen=TEAM;break;case 2:bag_in_battle=0;bag_pocket=0;bag_cursor=0;screen=BAG;break;case 3:screen=TRAINER;break;case 4:message(travel_trial?"试用模式不会覆盖冒险存档。":save_game()?"冒险记录已保存。\n下次可以从这里继续。":"保存失败，请重试。",AFTER_MENU);break;default:screen=WORLD;break;}}break;
  case TEAM:
  if(team_summary){if(pressed&B)team_summary=0;break;}

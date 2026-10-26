@@ -2,6 +2,7 @@
   "id": "pallet-initialization",
   "visibility": "player_safe",
   "date": null,
+  "event_order": ["wake", "gifts", "gary_battle", "parcel_received", "parcel_delivered", "old_man_required"],
   "relative_timing": {"gary_departure_days_before": 3, "ash_arrival_days_before": 3},
   "sequences": [
     {"id":"wake","beats":[
@@ -57,6 +58,7 @@
       {"actor":"oak","text":"大木：我已经替伙伴们恢复了体力。沿北边的一号道路，去常青市看看吧。"}
     ]},
     {"id":"old_offer","beats":[
+      {"action":"old_approach"},
       {"actor":"viridian-old-man","text":"老人：小伙子！要不要我教你捉宝可梦啊？"},
       {"action":"old_choice"}
     ]},

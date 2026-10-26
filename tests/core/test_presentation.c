@@ -5,6 +5,17 @@ static unsigned failed_line;
 unsigned presentation_failure_line(void){return failed_line;}
 unsigned presentation_test(void){
  OmniPresentation a,b;unsigned i;
+ {uint8_t cells[25]={0};uint16_t scratch[50];OmniWalkPoint route[25],point;uint8_t face=0;OmniWalkGrid grid={cells,5,5};unsigned count;
+  /* A player/NPC occupancy cell blocks the direct path; all interpolation
+   * samples must stay outside it, including across segment boundaries. */
+  cells[12]=1;count=omni_walk_plan(&grid,0,2,4,2,route,25,scratch,50);CHECK(count==7);
+  for(i=0;i<=160;++i){CHECK(omni_walk_sample(&grid,route,count,i,160,&point,&face));CHECK(omni_walk_clear(&grid,point.x,point.y));}
+  CHECK(point.x==64&&point.y==48);
+  CHECK(!omni_walk_plan(&grid,0,2,4,2,route,2,scratch,50));
+  CHECK(!omni_walk_plan(&grid,0,2,4,2,route,25,scratch,49));
+  for(i=0;i<5;++i)cells[i*5+2]=1;
+  CHECK(!omni_walk_plan(&grid,0,2,4,2,route,25,scratch,50));
+ }
  omni_presentation_init(&a,65520);omni_presentation_begin(&a,2);
  omni_presentation_advance(&a,16,64);CHECK(a.scene_ticks==32);
  omni_presentation_skip(&a,0);omni_presentation_advance(&a,48,64);

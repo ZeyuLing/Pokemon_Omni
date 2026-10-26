@@ -5,7 +5,7 @@ R=Path(__file__).resolve().parents[1]
 def main():
     p=json.loads((R/'content/pallet-town/initialization.json').read_text('utf8'))
     assert p['visibility']=='player_safe' and p['date'] is None
-    actions=['none','wake_done','gifts','gary_enter','gary_leave','gary_battle','old_choice','old_tutorial','old_battle','weedle']
+    actions=['none','wake_done','gifts','gary_enter','gary_leave','gary_battle','old_approach','old_choice','old_tutorial','old_battle','weedle']
     assert len({s['id'] for s in p['sequences']})==len(p['sequences'])
     for s in p['sequences']:
         for b in s['beats']:

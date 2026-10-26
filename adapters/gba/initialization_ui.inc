@@ -1,17 +1,43 @@
 /* GBA staging and controls. Story text and rewards are portable data/core. */
+static uint8_t story_occupied[48*40];
+static uint16_t story_scratch[48*40*2];
+static OmniWalkGrid story_grid(void){
+ const PalletMap *m=map();unsigned i;OmniWalkGrid grid={story_occupied,m->w,m->h};
+ if(m->w*m->h>sizeof(story_occupied)){grid.cells=0;return grid;}
+ memcpy(story_occupied,pallet_world_blob+m->collision,m->w*m->h);
+ story_occupied[py*m->w+px]=1;
+ for(i=m->actors;i<m->actors+m->actor_count;++i){const PalletActor *a=&pallet_actors[i];if(a->person!=story_actor&&actor_visible(a))story_occupied[actor_tile_y(a)*m->w+actor_tile_x(a)]=1;}
+ return grid;
+}
+static unsigned story_plan(unsigned fx,unsigned fy,unsigned tx,unsigned ty){
+ OmniWalkGrid grid=story_grid();return omni_walk_plan(&grid,fx,fy,tx,ty,gary_path,128,story_scratch,sizeof(story_scratch)/sizeof(story_scratch[0]));
+}
+static void story_walk_begin(void){gary_clock=omni_gba_clock();screen=STORY_MOVE;dirty=1;}
+static void story_walk_blocked(void){gary_moving=old_moving=0;story_seq=255;message("人物路线被阻挡，请重新交谈。",AFTER_WORLD);}
 static void gary_walk(unsigned leaving){
- unsigned i;gary_path_count=0;gary_leaving=(uint8_t)leaving;gary_present=gary_moving=1;
- for(i=12;i>=5;--i)gary_path[gary_path_count++]=(OmniWalkPoint){96,(int16_t)((i+1)*16)};
- gary_path[gary_path_count++]=(OmniWalkPoint){80,96};gary_path[gary_path_count++]=(OmniWalkPoint){80,80};
- if(leaving)for(i=0;i<gary_path_count/2;++i){OmniWalkPoint t=gary_path[i];gary_path[i]=gary_path[gary_path_count-1-i];gary_path[gary_path_count-1-i]=t;}
- gary_x=gary_path[0].x;gary_y=gary_path[0].y-16;gary_direction=leaving?0:1;gary_clock=omni_gba_clock();screen=STORY_MOVE;dirty=1;
+ static const uint8_t doors[][2]={{6,12},{5,12},{7,12}};
+ static const uint8_t seats[][2]={{5,4},{5,5},{6,5},{7,5}};
+ unsigned a,b;gary_path_count=0;gary_leaving=(uint8_t)leaving;story_actor=3;
+ if(game.location!=OMNI_LAB){story_walk_blocked();return;}
+ for(a=0;a<3&&!gary_path_count;++a)for(b=0;b<4&&!gary_path_count;++b)
+  gary_path_count=story_plan(leaving?(unsigned)gary_x/16:doors[a][0],leaving?(unsigned)gary_y/16:doors[a][1],leaving?doors[a][0]:seats[b][0],leaving?doors[a][1]:seats[b][1]);
+ if(!gary_path_count){story_walk_blocked();return;}
+ gary_present=gary_moving=1;gary_x=gary_path[0].x;gary_y=gary_path[0].y-16;gary_direction=leaving?0:1;story_walk_begin();
+}
+static void old_walk(void){
+ static const int dx[]={0,-1,1,0},dy[]={-1,0,0,1};unsigned i;int tx,ty;story_actor=18;gary_path_count=0;
+ if(!old_active){old_x=20*16;old_y=9*16;}
+ for(i=0;i<4&&!gary_path_count;++i){tx=(int)px+dx[i];ty=(int)py+dy[i];if(tx<0||ty<0)continue;gary_path_count=story_plan((unsigned)old_x/16,(unsigned)old_y/16,(unsigned)tx,(unsigned)ty);}
+ if(!gary_path_count){story_walk_blocked();return;}
+ old_active=old_moving=1;old_x=gary_path[0].x;old_y=gary_path[0].y-16;story_walk_begin();
 }
 static void story_move_tick(void){
- const PalletMap *m=map();OmniWalkGrid grid={pallet_world_blob+m->collision,m->w,m->h};OmniWalkPoint point;uint8_t face=1;
+ OmniWalkGrid grid=story_grid();OmniWalkPoint point;uint8_t face=1;
  unsigned ticks=(uint16_t)(omni_gba_clock()-gary_clock),duration=(gary_path_count-1)*8;
- if(!omni_walk_sample(&grid,gary_path,gary_path_count,ticks,duration,&point,&face)){gary_moving=0;message("人物路线被阻挡，请与博士重新交谈。",AFTER_WORLD);return;}
- gary_x=point.x;gary_y=point.y-16;gary_direction=face;
- if(ticks>=duration){gary_moving=0;if(gary_leaving)gary_present=0;story_next();}
+ if(!omni_walk_sample(&grid,gary_path,gary_path_count,ticks,duration,&point,&face)){story_walk_blocked();return;}
+ if(story_actor==18){old_x=point.x;old_y=point.y-16;old_direction=face;}
+ else{gary_x=point.x;gary_y=point.y-16;gary_direction=face;}
+ if(ticks>=duration){if(story_actor==18){int dx=(int)px*16-old_x,dy=(int)py*16-old_y;old_direction=(uint8_t)(dx>0?3:dx<0?2:dy>0?0:1);direction=(uint8_t)(old_direction^1u);}gary_moving=old_moving=0;if(story_actor==3&&gary_leaving)gary_present=0;story_next();}
 }
 static void initialization_fight(unsigned kind){
  if(omni_initialization_battle(&game,&battle,(uint8_t)kind,&omni_pokedex_catalog,&dex_state)){story_seq=255;message("伙伴还需要休息。请准备好再来。",AFTER_WORLD);return;}
@@ -27,6 +53,7 @@ static void story_next(void){
   case STORY_ACTION_GIFTS:
    if(omni_initialization_gifts(&game,&omni_pokedex_catalog,&dex_state)){story_seq=255;message("这份出发礼物已经领取。",AFTER_WORLD);return;}
    save_game();message("搭档皮卡丘与关都御三家加入队伍！\n获得图鉴、100个精灵球与培养工具包。",AFTER_STORY);return;
+  case STORY_ACTION_OLD_APPROACH:old_walk();return;
   case STORY_ACTION_GARY_ENTER:gary_walk(0);return;
   case STORY_ACTION_GARY_LEAVE:gary_walk(1);return;
   case STORY_ACTION_GARY_BATTLE:initialization_fight(OMNI_BATTLE_GARY);return;
@@ -41,14 +68,14 @@ static void story_next(void){
 }
 static void story_start(unsigned id){riding=0;omni_travel_reset(&travel,game.location,travel_species(),px*16,py*16);story_seq=(uint8_t)id;story_beat=0;story_next();}
 static void initialization_resume(void){
- gary_present=0;story_seq=255;
+ gary_present=0;old_active=old_moving=0;story_seq=255;
  if(!(game.events&OMNI_EVENT_INITIALIZATION))return;
  if(!(game.events&OMNI_EVENT_WOKE)&&game.location==OMNI_BEDROOM)story_start(STORY_WAKE);
  else if((game.events&OMNI_EVENT_GIFTS)&&!(game.events&OMNI_EVENT_GARY_DONE)&&game.location==OMNI_LAB)story_start(STORY_GARY_RETURN);
 }
 static void initialization_result(unsigned kind,unsigned outcome){
  save_game();encounter_cooldown=6;
- if(kind==OMNI_BATTLE_GARY){gary_present=1;gary_x=80;gary_y=64;story_start(outcome==1?STORY_GARY_WIN:STORY_GARY_LOSS);}
+ if(kind==OMNI_BATTLE_GARY){if(!gary_present){gary_x=80;gary_y=64;}gary_present=1;story_start(outcome==1?STORY_GARY_WIN:STORY_GARY_LOSS);}
  else story_start(kind==OMNI_BATTLE_TUTORIAL?STORY_OLD_CAUGHT:outcome==1?STORY_OLD_WIN:STORY_OLD_LOSS);
 }
 static const char *training_names[]={"性格薄荷","特性胶囊","一键6V","努力值调整器","穿洞绳"};

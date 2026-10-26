@@ -148,8 +148,13 @@ int main(void){
   for(i=1;i<3;++i){unsigned playerhp=b.mons[0].hp;assert(!omni_practice_next_opponent(&b,&full,&state));assert(b.mons[1].species==(i==1?16:19)&&b.mons[1].level==8-i);assert(!b.outcome&&b.mons[0].hp==playerhp);b.mons[1].hp=1;assert(!omni_practice_turn(&b,2,&out)&&b.outcome==1);}
   assert(omni_practice_next_opponent(&b,&full,&state)==OMNI_ADVENTURE_LOCKED);
   assert(!omni_practice_finish(&g,&b));assert(g.events&OMNI_EVENT_GARY_DONE);assert(g.party[0].hp==omni_partner_stat(&g.party[0],0));
+  { unsigned flags,x,y;OmniAdventure scenario=g;
+   for(flags=0;flags<2048;++flags){scenario.events=(uint16_t)flags;
+    for(x=0;x<48;++x)for(y=9;y<=11;++y){unsigned expected=(flags&OMNI_EVENT_INITIALIZATION)&&(flags&OMNI_EVENT_DELIVERED)&&!(flags&OMNI_EVENT_OLD_DONE)&&y<=10;scenario.location=OMNI_VIRIDIAN;assert(omni_initialization_field_event(&scenario,x,y)==(expected?OMNI_FIELD_OLD_MAN:OMNI_FIELD_NONE));}
+   }
+  }
   g=copy;assert(!omni_initialization_battle(&g,&b,OMNI_BATTLE_GARY,&full,&state));b.mons[0].hp=0;b.outcome=2;assert(!omni_practice_finish(&g,&b));assert((g.events&OMNI_EVENT_GARY_DONE)&&g.location==OMNI_LAB&&g.money==3000);
-  omni_adventure_enter(&g,OMNI_VIRIDIAN);assert(!omni_initialization_battle(&g,&b,OMNI_BATTLE_TUTORIAL,&full,&state));assert(!omni_adventure_capture(&g,&b,&full,&state)&&g.balls==100);assert(!omni_practice_finish(&g,&b));
+  omni_adventure_enter(&g,OMNI_VIRIDIAN);assert(omni_initialization_battle(&g,&b,OMNI_BATTLE_TUTORIAL,&full,&state)==OMNI_ADVENTURE_LOCKED);g.events|=OMNI_EVENT_PARCEL|OMNI_EVENT_DELIVERED;assert(!omni_initialization_battle(&g,&b,OMNI_BATTLE_TUTORIAL,&full,&state));assert(!omni_adventure_capture(&g,&b,&full,&state)&&g.balls==100);assert(!omni_practice_finish(&g,&b));
   g.party[4]=g.party[5]=g.party[0];g.party_count=6;g.storage_count=12;for(i=0;i<12;++i)g.storage[i]=g.party[0];
   assert(omni_initialization_weedle(&g,&full,&state)==OMNI_ADVENTURE_LOCKED);assert(g.events&OMNI_EVENT_WEEDLE_PENDING);
   g.storage_count=0;memset(g.storage,0,sizeof(g.storage));assert(!omni_initialization_weedle(&g,&full,&state));assert(g.storage_count==1&&g.storage[0].species==13);assert(omni_initialization_weedle(&g,&full,&state)==OMNI_ADVENTURE_ALREADY);

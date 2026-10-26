@@ -7206,7 +7206,7 @@
       "name": "常青市捕捉老人",
       "kind": "human",
       "status": "adopted",
-      "role": "向小智提供捕捉教学，或在被拒绝后发起对战。",
+      "role": "小智送回博士包裹后，北行时主动接近并提供不可绕过的捕捉教学；被拒绝则发起对战，成功分支赠独角虫并警告火箭队渗透。",
       "birth_year": null,
       "birth_basis": null,
       "death_event": null,

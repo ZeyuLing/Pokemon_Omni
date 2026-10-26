@@ -1,0 +1,128 @@
+{
+  "pass": true,
+  "gateFrontier": [
+    8,
+    20,
+    21,
+    22
+  ],
+  "gateCases": [
+    {
+      "speed": 1,
+      "x": 8,
+      "saveResume": true
+    },
+    {
+      "speed": 1,
+      "x": 20,
+      "saveResume": false
+    },
+    {
+      "speed": 1,
+      "x": 21,
+      "saveResume": false
+    },
+    {
+      "speed": 1,
+      "x": 22,
+      "saveResume": false
+    },
+    {
+      "speed": 2,
+      "x": 8,
+      "saveResume": false
+    },
+    {
+      "speed": 2,
+      "x": 20,
+      "saveResume": false
+    },
+    {
+      "speed": 2,
+      "x": 21,
+      "saveResume": false
+    },
+    {
+      "speed": 2,
+      "x": 22,
+      "saveResume": false
+    },
+    {
+      "speed": 4,
+      "x": 8,
+      "saveResume": false
+    },
+    {
+      "speed": 4,
+      "x": 20,
+      "saveResume": false
+    },
+    {
+      "speed": 4,
+      "x": 21,
+      "saveResume": false
+    },
+    {
+      "speed": 4,
+      "x": 22,
+      "saveResume": false
+    }
+  ],
+  "parcelBeforeOldMan": true,
+  "fieldTextReveal": true,
+  "firstConfirmReveals": true,
+  "heldConfirmDoesNotSkip": true,
+  "rom": "98775f7d2f2ab4488e8b9eb7aac02d662b8a517d369f535bda543ae0b6109f0f",
+  "buttons": 1303,
+  "nativeAshGallery": true,
+  "nativeAshTrainerCard": true,
+  "garyWin": true,
+  "garyLoss": true,
+  "walkSamples": 172,
+  "serverRoom": true,
+  "partnerExclusiveMove": true,
+  "toolPersistence": true,
+  "tutorialR": true,
+  "oldManDuel": true,
+  "onceOnlyGifts": true,
+  "parcel": true,
+  "saveContinue": true,
+  "companionPersistence": true,
+  "corruptSlotFallback": true,
+  "checked_at": "2026-10-26",
+  "coverage": "All four reachable south-to-north frontier columns [8,20,21,22] at 1/2/4 speeds; valid branch snapshots only, no injected event flags in ROM tests",
+  "core_flag_combinations": 2048,
+  "engine_scope": "Bounded Omni script sequencing with source-engine behavior references; full upstream script VM and command set not ported",
+  "source_references": {
+    "pokefirered/field_control_avatar.c": {
+      "commit": "c75f352304d529f6ba92d4f74b9cf8b5c3810788",
+      "sha256": "305daa295f88ce682b2b1868700d2f76012c659cb0df2905e6177a51ee4e9b8d",
+      "use": "Behavior inspection, not full runtime port"
+    },
+    "pokefirered/field_message_box.c": {
+      "commit": "c75f352304d529f6ba92d4f74b9cf8b5c3810788",
+      "sha256": "38969672a37611f46b7ff54ba2172129d8a9690f7a6ce4587b02203233ea1c0e",
+      "use": "Behavior inspection, not full runtime port"
+    },
+    "pokefirered/script.c": {
+      "commit": "c75f352304d529f6ba92d4f74b9cf8b5c3810788",
+      "sha256": "1cc4aade1f821e5f218ba7c191b1217e5a3cf942d0bfd0f32f775ce1f808437c",
+      "use": "Behavior inspection, not full runtime port"
+    },
+    "pokeemerald-ui/field_control_avatar.c": {
+      "commit": "5eff78649e7170a877b961ef0b3da13b81a16038",
+      "sha256": "6482017054c860a083ac259b17b88647bb941bd6eb7cbadac1c6b05142cedb7a",
+      "use": "Behavior inspection, not full runtime port"
+    },
+    "pokeemerald-ui/field_message_box.c": {
+      "commit": "5eff78649e7170a877b961ef0b3da13b81a16038",
+      "sha256": "048f5e0a0cda9ec4aba2cc1df8b53908f895fc2899f392981e8535a900e10c9e",
+      "use": "Behavior inspection, not full runtime port"
+    },
+    "pokeemerald-ui/script.c": {
+      "commit": "5eff78649e7170a877b961ef0b3da13b81a16038",
+      "sha256": "2e13b7ef37ba4fc203b5ca491acc3db8556153b4942aad979026a102866be826",
+      "use": "Behavior inspection, not full runtime port"
+    }
+  }
+}

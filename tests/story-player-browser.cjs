@@ -7,7 +7,7 @@ const {chromium}=require(process.env.OMNI_PLAYWRIGHT_PATH||'C:/Users/13758/.cach
  const invalid=await page.request.get(base+'/story-playthrough.mp4',{headers:{Range:'bytes=9007199254740991-'}});assert.equal(invalid.status(),416);
  await page.goto(base+'/story');await page.waitForFunction(()=>document.querySelector('video').readyState>=1);
  await page.waitForFunction(()=>document.querySelectorAll('#chapters button').length===14);
- const metadata=await page.locator('video').evaluate(v=>({duration:v.duration,width:v.videoWidth,height:v.videoHeight}));assert(metadata.duration>840&&metadata.duration<850);assert.equal(metadata.width,720);assert.equal(metadata.height,480);
+ const metadata=await page.locator('video').evaluate(v=>({duration:v.duration,width:v.videoWidth,height:v.videoHeight}));const recorded=require("../build/pallet/story-playthrough/story.json");assert(Math.abs(metadata.duration-recorded.seconds)<1);assert.equal(metadata.width,720);assert.equal(metadata.height,480);
  await page.locator('video').evaluate(v=>{v.muted=true;return v.play();});await page.waitForFunction(()=>document.querySelector('video').currentTime>1);
  for(const title of ['真新镇：叫醒与出发','友好商店：领取博士包裹与购物','向大木交还博士包裹']){
   await page.getByRole('button',{name:new RegExp(title)}).click();await page.waitForFunction(()=>!document.querySelector('video').seeking&&document.querySelector('video').readyState>=2);await page.waitForTimeout(1200);
